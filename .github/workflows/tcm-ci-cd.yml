@@ -1,0 +1,352 @@
+# ============================================================
+# tcm-ci-cd.yml — 中医药教材编写平台 CI/CD 工作流
+# 仓库: beijingcdy/tcm-textbook-series
+# 维护者: Hermes Agent @ Nous Research
+# ============================================================
+name: TCM 教材 CI/CD
+
+"on":
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened, edited]
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+env:
+  ACTOR: beijingcdy
+  PROJECT_ROOT: ${{ github.workspace }}
+
+jobs:
+  # ── JOB 1: 推送 master — 质量检查 + JSON 摘要 ────────
+  quality-check:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 安装 markdownlint
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq markdownlint 2>/dev/null || true
+          npm install -g markdownlint-cli2 2>/dev/null || true
+
+      - name: Markdown 语法检查
+        id: lint
+        continue-on-error: true
+        run: |
+          echo "::group::📐 Markdown Lint 结果"
+          if command -v markdownlint-cli2 &>/dev/null; then
+            markdownlint-cli2 "**/*.md" \
+              --config '{"MD013":{"line_length":120},"MD033":false,"MD041":false}' \
+              --no-html 2>&1 | tee lint-report.txt
+          elif command -v markdownlint &>/dev/null; then
+            markdownlint "**/*.md" \
+              --disable MD013 MD033 MD041 \
+              2>&1 | tee lint-report.txt
+          else
+            echo "⚠️ 未找到 markdownlint，跳过语法检查"
+          fi
+          echo "::endgroup::"
+
+      - name: 生成 JSON 摘要
+        id: summary
+        run: |
+          echo "::group::📊 生成文件摘要"
+          python3 << 'PYEOF'
+          import os, json, datetime
+          base = os.environ.get("GITHUB_WORKSPACE", ".")
+          EXCLUDED_DIRS = {'.git', '__pycache__', 'node_modules', '.venv', 'venv', '.github'}
+          EXCLUDED_FILES = {'.DS_Store', 'Thumbs.db'}
+          summary = {
+              'repo': 'beijingcdy/tcm-textbook-series',
+              'timestamp': datetime.datetime.utcnow().isoformat() + 'Z',
+              'actor': 'beijingcdy',
+              'commit_sha': os.environ.get("GITHUB_SHA", "unknown"),
+              'departments': {},
+              'totals': {'files': 0, 'dirs': 0, 'size_bytes': 0}
+          }
+          for root, dirs, files in os.walk(base):
+              dirs[:] = [d for d in dirs if d not in EXCLUDED_DIRS]
+              for f in files:
+                  if f in EXCLUDED_FILES:
+                      continue
+                  fp = os.path.join(root, f)
+                  try:
+                      sz = os.path.getsize(fp)
+                  except OSError:
+                      sz = 0
+                  summary['totals']['files'] += 1
+                  summary['totals']['size_bytes'] += sz
+          with open("file-summary.json", "w", encoding="utf-8") as f:
+              json.dump(summary, f, indent=2, ensure_ascii=False)
+          print(f"文件总数: {summary['totals']['files']}, 总大小: {summary['totals']['size_bytes']} 字节")
+          PYEOF
+          echo "::endgroup::"
+
+      - name: 上传摘要产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: tcm-file-summary
+          path: file-summary.json
+
+      - name: 发布评论式消息
+        run: |
+          echo "::group::📝 推送摘要"
+          python3 << 'PYEOF'
+          import json
+          d = json.load(open("file-summary.json"))
+          print("=" * 50)
+          print("  🏥 TCM 教材仓库推送摘要")
+          print("=" * 50)
+          print(f"  仓库: beijingcdy/tcm-textbook-series")
+          print(f"  提交: {d['commit_sha']}")
+          print(f"  推送者: beijingcdy")
+          print(f"  文件总数: {d['totals']['files']} 个")
+          print(f"  总大小: {d['totals']['size_bytes'] / 1024:.1f} KB")
+          print(f"  分支: master")
+          print("=" * 50)
+          PYEOF
+          echo "::endgroup::"
+
+      - name: lint 报警
+        if: steps.lint.outcome == 'failure'
+        run: |
+          echo "::warning::⚠️ Markdown 语法检查发现潜在问题，请查看 lint-report.txt"
+
+  # ── JOB 2: Pull Request — 文档差异 + Frontmatter 校验 ──
+  pr-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 文档差异检查
+        id: diff
+        run: |
+          echo "::group::📋 PR 文档变更清单"
+          git diff --name-only origin/master...HEAD \
+            | grep -E '\.md$|\.json$|\.yaml$|\.yml$' \
+            | tee changed-files.txt
+          COUNT=$(wc -l < changed-files.txt)
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          if [ "$COUNT" -eq 0 ]; then
+            echo "✅ 本次 PR 未涉及文档变更"
+          else
+            git diff --stat origin/master...HEAD -- '*.md' '*.json' '*.yaml' '*.yml'
+          fi
+          echo "::endgroup::"
+
+      - name: 领域规范 Frontmatter 校验
+        id: frontmatter
+        run: |
+          echo "::group::🔍 校验 domain-specs 元数据完整性"
+          python3 << 'PYEOF'
+          import os, re, sys
+          SPEC_DIR = "domain-specs"
+          errors = []
+          if not os.path.isdir(SPEC_DIR):
+              print(f"⚠️ 目录 {SPEC_DIR} 不存在，跳过校验")
+              sys.exit(0)
+          for fname in sorted(os.listdir(SPEC_DIR)):
+              if not fname.endswith(".md"):
+                  continue
+              fpath = os.path.join(SPEC_DIR, fname)
+              with open(fpath, "r", encoding="utf-8") as f:
+                  content = f.read()
+              checks = {
+                  "领域编号": bool(re.search(r'# DOMAIN_SPEC_', content)),
+                  "对应院系": bool(re.search(r'对应院系[：:]', content)),
+                  "学科总数/教材总数": bool(re.search(r'学科总[数计][：:]', content)),
+                  "编写轮次": bool(re.search(r'编写轮次[：:]', content)),
+                  "领域概述 (## 一)": bool(re.search(r'## 一[、.]\s*领域概述', content)),
+                  "学科总览 (## 二)": bool(re.search(r'## 二[、.]\s*学科总览', content)),
+                  "学科表格": bool(re.search(r'\|\s*:---:\s*\|\s*:---:', content)),
+              }
+              file_errs = []
+              for name, ok in checks.items():
+                  if not ok:
+                      file_errs.append(f"  ❌ 缺少: {name}")
+              if file_errs:
+                  errors.append(f"\n📄 {fname}:")
+                  errors.extend(file_errs)
+              else:
+                  print(f"  ✅ {fname} — 元数据完整")
+          if errors:
+              print("\n".join(errors))
+              print(f"\n❌ 共 {len(errors)} 个问题")
+              sys.exit(1)
+          else:
+              print(f"\n✅ 所有 domain-specs 校验通过")
+          PYEOF
+          echo "::endgroup::"
+
+      - name: 评论 PR 检查结果
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const diffCount = '${{ steps.diff.outputs.count }}' || '0';
+            const diffNote = diffCount === '0'
+              ? '✅ 本次 PR 未涉及文档变更'
+              : `📄 本次 PR 涉及 ${diffCount} 个文档变更`;
+            const fmOut = `${{ steps.frontmatter.outcome }}`;
+            const fmNote = fmOut === 'success'
+              ? '✅ 领域规范 Frontmatter 校验通过'
+              : '❌ 领域规范 Frontmatter 校验发现问题，请查看日志';
+            const body = `## 📋 TCM 教材 PR 检查报告\n\n` +
+              `### 文档差异\n${diffNote}\n\n` +
+              `### Frontmatter 校验\n${fmNote}\n\n` +
+              `### 操作建议\n` +
+              `- 确保 domain-specs 包含完整元数据\n` +
+              `- 修改 domain-specs 后同步更新 DOMAIN_INDEX.md\n` +
+              `- 确认编写轮次与 KANBAN 看板一致\n\n---\n*Hermes Agent @ Nous Research*`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });
+
+  # ── JOB 3: 每日定时 — 看板进度报告 ───────────────────
+  daily-report:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 生成进度报告
+        id: report
+        run: |
+          echo "::group::📈 生成每日项目进度报告"
+          python3 << 'PYEOF'
+          import os, re, json, datetime
+
+          KANBAN_FILE = "KANBAN_SOFTWARE_ENGINEERING.md"
+          DOMAIN_INDEX = "DOMAIN_INDEX.md"
+          SUMMARY_JSON = "kanban-progress-summary.json"
+
+          data = {
+              "report_date": datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "repo": "beijingcdy/tcm-textbook-series",
+              "actor": "beijingcdy",
+              "domains": {},
+              "overall_progress": {}
+          }
+
+          if os.path.exists(DOMAIN_INDEX):
+              with open(DOMAIN_INDEX, "r") as f:
+                  content = f.read()
+              lines = content.split("\n")
+              in_table = False
+              for line in lines:
+                  if "领域编号" in line and "院系映射" in line:
+                      in_table = True
+                      continue
+                  if in_table and line.startswith("| :"):
+                      continue
+                  if in_table and line.startswith("| D"):
+                      parts = [p.strip() for p in line.split("|")[1:-1]]
+                      if len(parts) >= 6:
+                          data["domains"][parts[0]] = {
+                              "department": parts[1],
+                              "subjects": int(parts[2]) if parts[2].isdigit() else parts[2],
+                              "textbooks": int(parts[3]) if parts[3].isdigit() else parts[3],
+                              "lines": int(parts[4]) if parts[4].isdigit() else parts[4],
+                              "file_size": parts[5],
+                              "rounds": parts[6] if len(parts) > 6 else "N/A"
+                          }
+                  elif in_table and "合计" in line:
+                      parts = [p.strip() for p in line.split("|")[1:-1]]
+                      if len(parts) >= 4:
+                          data["overall_progress"] = {
+                              "total_subjects": int(parts[2].replace(",","")) if parts[2].replace(",","").isdigit() else parts[2],
+                              "total_textbooks": int(parts[3].replace(",","")) if parts[3].replace(",","").isdigit() else parts[3],
+                              "total_lines": int(parts[4].replace(",","")) if parts[4].replace(",","").isdigit() else parts[4],
+                          }
+
+          stages_order = ["需求分析", "体系设计", "内容编写", "审核评阅", "教学应用", "修订迭代"]
+          if os.path.exists(KANBAN_FILE):
+              with open(KANBAN_FILE, "r") as f:
+                  content = f.read()
+              for stage in stages_order:
+                  key = stage.replace(" ", "-")
+                  count = len(re.findall(rf"\[{stage[:2]}", content)) or len(re.findall(rf"#.*{stage}", content))
+                  data["overall_progress"][key] = count if count else "进行中"
+
+          # 生成 Markdown 报告
+          r = []
+          r.append("# 📊 中医药教材编写平台 · 每日进度报告\n")
+          r.append(f"> **生成时间**：{data['report_date']}")
+          r.append(f"> **数据源**：{KANBAN_FILE} + {DOMAIN_INDEX}\n")
+          r.append("---\n")
+          r.append("## 一、总体进度概览\n")
+          if data["overall_progress"]:
+              op = data["overall_progress"]
+              r.append("| 指标 | 数值 |")
+              r.append("|:----|:----:|")
+              if "total_subjects" in op:
+                  r.append(f"| 总学科数 | {op['total_subjects']} |")
+              if "total_textbooks" in op:
+                  r.append(f"| 总教材数 | {op['total_textbooks']} |")
+              if "total_lines" in op:
+                  r.append(f"| 总行数 | {op['total_lines']} |")
+          r.append("")
+          r.append("## 二、八大院系进度明细\n")
+          r.append("| 领域 | 院系 | 学科数 | 教材数 | 行数 | 轮次 |")
+          r.append("|:---:|:----:|:-----:|:-----:|:---:|:---:|")
+          for did in sorted(data["domains"].keys()):
+              d = data["domains"][did]
+              r.append(f"| {did} | {d['department']} | {d['subjects']} | {d['textbooks']} | {d['lines']} | {d['rounds']} |")
+          r.append("")
+          r.append("## 三、编写阶段状态\n")
+          r.append("| 阶段 | 状态 |")
+          r.append("|:----|:----:|")
+          for stage in stages_order:
+              key = stage.replace(" ", "-")
+              val = data["overall_progress"].get(key, "待确认")
+              r.append(f"| {stage} | {val} |")
+          r.append("")
+          r.append("---")
+          r.append(f"> *Hermes Agent @ Nous Research 自动生成 | beijingcdy/tcm-textbook-series*")
+
+          with open("daily-progress-report.md", "w", encoding="utf-8") as f:
+              f.write("\n".join(r))
+          with open(SUMMARY_JSON, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+
+          print(f"✅ 报告已生成: daily-progress-report.md + {SUMMARY_JSON}")
+          print(f"   院系数: {len(data['domains'])}, 总学科数: {data['overall_progress'].get('total_subjects', 'N/A')}")
+          PYEOF
+          echo "::endgroup::"
+
+      - name: 上传产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: tcm-daily-progress
+          path: |
+            daily-progress-report.md
+            kanban-progress-summary.json
+          retention-days: 30
+
+      - name: 发布 Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync(
+              `${process.env.GITHUB_WORKSPACE}/daily-progress-report.md`, 'utf8'
+            );
+            const today = new Date().toISOString().split('T')[0];
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📊 每日进度报告 — ${today}`,
+              body: body + '\n\n---\n*自动化报告 · 北京时间每日 16:00 更新*',
+              labels: ['daily-report', 'automation']
+            });

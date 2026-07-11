@@ -1,0 +1,307 @@
+# ============================================================
+# tcm-human-review.yml — 人机互动审核工作流
+# 用于教材内容的三方人机审核流程
+# 仓库: beijingcdy/tcm-textbook-series
+# ============================================================
+name: TCM 人机互动审核
+
+"on":
+  workflow_dispatch:
+    inputs:
+      department:
+        description: "院系 / 领域（D01-D08 或 all）"
+        required: true
+        default: "D01"
+        type: choice
+        options:
+          - D01 - 中医学院
+          - D02 - 中药学院
+          - D03 - 针灸学院
+          - D04 - 推拿学院
+          - D05 - 骨伤学院
+          - D06 - 五官口腔学院
+          - D07 - 中医智能学院
+          - D08 - 中医管理学院
+          - all - 全部领域
+
+      textbook_id:
+        description: "教材编号（如 CM-01 或 all）"
+        required: true
+        default: "all"
+        type: string
+
+      review_type:
+        description: "审核类型"
+        required: true
+        default: "content"
+        type: choice
+        options:
+          - content - 内容审核
+          - technical - 技术审核
+          - pedagogical - 教学审核
+          - full - 全面审核
+
+      reviewer_role:
+        description: "审核者角色"
+        required: true
+        default: "peer"
+        type: choice
+        options:
+          - author - 章节作者（L4）
+          - editor - 学科主编（L3）
+          - domain-lead - 领域主编（L2）
+          - peer - 同行专家审稿
+          - student - 学生代表审读
+
+env:
+  ACTOR: beijingcdy
+  PROJECT_ROOT: ${{ github.workspace }}
+
+jobs:
+  # ────────────────────────────────────────────────────────
+  # JOB: 生成审核清单并标记审核状态
+  # ────────────────────────────────────────────────────────
+  review-checklist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 解析输入参数
+        id: parse
+        run: |
+          echo "::group::🔧 审核参数"
+          DEPT="${{ github.event.inputs.department }}"
+          BOOK="${{ github.event.inputs.textbook_id }}"
+          RTYPE="${{ github.event.inputs.review_type }}"
+          RROLE="${{ github.event.inputs.reviewer_role }}"
+          echo "院系/领域: ${DEPT}"
+          echo "教材编号: ${BOOK}"
+          echo "审核类型: ${RTYPE}"
+          echo "审核角色: ${RROLE}"
+          echo "dept=$DEPT" >> $GITHUB_OUTPUT
+          echo "book=$BOOK" >> $GITHUB_OUTPUT
+          echo "rtype=$RTYPE" >> $GITHUB_OUTPUT
+          echo "rrole=$RROLE" >> $GITHUB_OUTPUT
+          echo "::endgroup::"
+
+      - name: 生成审核清单
+        id: checklist
+        run: |
+          echo "::group::📋 生成《人机互动审核清单》"
+          python3 << 'PYEOF'
+          import os, json, datetime, re
+
+          DEPT = "${{ steps.parse.outputs.dept }}"
+          BOOK = "${{ steps.parse.outputs.book }}"
+          RTYPE = "${{ steps.parse.outputs.rtype }}"
+          RROLE = "${{ steps.parse.outputs.rrole }}"
+
+          # 领域映射表
+          DEPT_MAP = {
+              "D01": {"name": "中医学院", "prefix": "CM"},
+              "D02": {"name": "中药学院", "prefix": "PH"},
+              "D03": {"name": "针灸学院", "prefix": "AC"},
+              "D04": {"name": "推拿学院", "prefix": "TU"},
+              "D05": {"name": "骨伤学院", "prefix": "OR"},
+              "D06": {"name": "五官口腔学院", "prefix": "EN"},
+              "D07": {"name": "中医智能学院", "prefix": "AI"},
+              "D08": {"name": "中医管理学院", "prefix": "MG"},
+          }
+
+          # 审核项模板（按类型）
+          REVIEW_ITEMS = {
+              "content": [
+                  ("C01", "学术准确性", "内容是否符合中医经典理论与现代循证依据"),
+                  ("C02", "术语规范性", "中医术语使用是否规范（参考 GB/T 国家标准）"),
+                  ("C03", "引用完整性", "引文、参考文献是否完整标注出处"),
+                  ("C04", "案例真实性", "临床案例是否真实、典型，有无夸大或误导"),
+                  ("C05", "文化敏感性", "内容是否尊重传统文化，避免文化不当表述"),
+              ],
+              "technical": [
+                  ("T01", "格式规范性", "Markdown 格式是否正确，元数据是否完整"),
+                  ("T02", "图表可读性", "插图、表格是否清晰，图注是否完整"),
+                  ("T03", "链接有效性", "内部交叉引用和外部链接是否有效"),
+                  ("T04", "版本一致性", "文件命名、编号是否与 DOMAIN_INDEX 一致"),
+                  ("T05", "代码/数据可复现", "涉及数据分析的内容是否可复现"),
+              ],
+              "pedagogical": [
+                  ("P01", "学习目标清晰度", "每章的学习目标是否明确可衡量"),
+                  ("P02", "难度层级适配", "内容深度是否适配目标学段（U/M/D）"),
+                  ("P03", "练习与测评", "是否有配套练习、思考题和测评方案"),
+                  ("P04", "知识衔接", "章节间知识衔接是否自然通畅"),
+                  ("P05", "教学适用性", "教材是否便于教师授课和学生学习"),
+              ],
+          }
+
+          # 根据审核类型合并清单
+          if RTYPE == "full":
+              items = []
+              for rtype_key in ["content", "technical", "pedagogical"]:
+                  items.extend(REVIEW_ITEMS[rtype_key])
+          else:
+              items = REVIEW_ITEMS.get(RTYPE, REVIEW_ITEMS["content"])
+
+          # 确定待审核文件范围
+          dept_folder = DEPT.split(" - ")[0] if " - " in DEPT else DEPT
+          if DEPT == "all - 全部领域" or DEPT == "all":
+              scope = "全部领域 (D01-D08)"
+              review_dirs = ["domain-specs", "drafts"]
+          elif dept_folder in DEPT_MAP:
+              dept_info = DEPT_MAP[dept_folder]
+              scope = f"{dept_folder} - {dept_info['name']}"
+              review_dirs = ["domain-specs", "drafts"]
+          else:
+              scope = DEPT
+              review_dirs = ["."]
+
+          # 生成审核清单 Markdown
+          now = datetime.datetime.utcnow()
+          lines = []
+          lines.append(f"# 🧑‍⚖️ 人机互动审核清单\n")
+          lines.append(f"> **生成时间**：{now.isoformat()}Z")
+          lines.append(f"> **审核范围**：{scope}")
+          lines.append(f"> **教材编号**：{BOOK}")
+          lines.append(f"> **审核类型**：{RTYPE}")
+          lines.append(f"> **审核角色**：{RROLE}")
+          lines.append(f"> **审核人员**：beijingcdy\n")
+          lines.append("---\n")
+          lines.append("## 一、审核项清单\n")
+          lines.append("| 编号 | 审核维度 | 审核要点 | 通过 ✅ | 需修改 ✏️ | 不适用 ⏭️ | 备注 |")
+          lines.append("|:---:|:--------|:--------|:------:|:---------:|:---------:|:----:|")
+          for item_id, title, desc in items:
+              lines.append(f"| {item_id} | {title} | {desc} | ☐ | ☐ | ☐ | |")
+
+          lines.append("")
+          lines.append("## 二、待审核文件\n")
+          lines.append("| 文件路径 | 状态 | 备注 |")
+          lines.append("|:---------|:----:|:----:|")
+
+          # 扫描文件
+          found_files = []
+          for d in review_dirs:
+              if not os.path.isdir(d):
+                  continue
+              for root, dirs, files in os.walk(d):
+                  dirs[:] = [d for d in dirs if not d.startswith(".")]
+                  for fname in sorted(files):
+                      if not fname.endswith((".md", ".json", ".yaml", ".yml")):
+                          continue
+                      fpath = os.path.join(root, fname)
+                      # 过滤非目标文件
+                      if dept_folder != "all" and dept_folder in DEPT_MAP:
+                          prefix = DEPT_MAP[dept_folder]["prefix"]
+                          if not (prefix in fname or dept_folder in fname):
+                              continue
+                      found_files.append(os.path.relpath(fpath))
+
+          for fp in found_files[:30]:
+              lines.append(f"| {fp} | ⏳ 待审核 | |")
+          if len(found_files) > 30:
+              lines.append(f"| ... 还有 {len(found_files) - 30} 个文件 | — | 已截断 |")
+
+          lines.append("")
+          lines.append("## 三、审核结论\n")
+          lines.append("- **总体评价**：")
+          lines.append("- **主要问题**：")
+          lines.append("- **修改建议**：")
+          lines.append("- **审核人签名**：______________")
+          lines.append("- **审核日期**：______________")
+          lines.append("")
+          lines.append("---")
+          lines.append(f"> *本清单由 Hermes Agent @ Nous Research 自动生成 | 仓库：beijingcdy/tcm-textbook-series*")
+          lines.append(f"> *审核模板版本：v1.0 | 人机互动模式*")
+
+          checklist = "\n".join(lines)
+
+          with open("review-checklist.md", "w", encoding="utf-8") as f:
+              f.write(checklist)
+
+          # 生成审核状态 JSON
+          status = {
+              "review_id": f"review-{now.strftime('%Y%m%d-%H%M%S')}",
+              "timestamp": now.isoformat() + "Z",
+              "scope": scope,
+              "textbook": BOOK,
+              "review_type": RTYPE,
+              "reviewer_role": RROLE,
+              "actor": "beijingcdy",
+              "items": [{"id": iid, "title": t, "point": d, "status": "pending"} for iid, t, d in items],
+              "files_count": len(found_files),
+              "status": "pending",
+          }
+
+          with open("review-status.json", "w", encoding="utf-8") as f:
+              json.dump(status, f, indent=2, ensure_ascii=False)
+
+          print(f"✅ 审核清单已生成: review-checklist.md")
+          print(f"✅ 审核状态已生成: review-status.json")
+          print(f"📋 审核项数: {len(items)}")
+          print(f"📂 待审文件数: {len(found_files)}")
+          print(f"🏥 审核范围: {scope}")
+          PYEOF
+          echo "::endgroup::"
+
+      - name: 上传审核清单
+        uses: actions/upload-artifact@v4
+        with:
+          name: tcm-review-checklist
+          path: |
+            review-checklist.md
+            review-status.json
+          retention-days: 90
+
+      - name: 输出审核摘要到 Job Summary
+        run: |
+          echo "::group::📊 审核摘要"
+          python3 << 'PYEOF'
+          import json
+          with open("review-status.json") as f:
+              status = json.load(f)
+          print(f"🧑‍⚖️ 人机互动审核 #{status['review_id']}")
+          print(f"范围: {status['scope']}")
+          print(f"教材: {status['textbook']}")
+          print(f"类型: {status['review_type']}")
+          print(f"角色: {status['reviewer_role']}")
+          print(f"审核项: {len(status['items'])}")
+          print(f"待审文件: {status['files_count']}")
+          print(f"状态: {status['status']}")
+          PYEOF
+          echo "::endgroup::"
+
+      - name: 设置审核状态（标记）
+        run: |
+          echo "::group::🏷️ 标记审核状态"
+          echo "REVIEW_ID=review-$(date -u '+%Y%m%d-%H%M%S')" >> $GITHUB_ENV
+          python3 << 'PYEOF'
+          import json
+          with open("review-status.json") as f:
+              status = json.load(f)
+          # 在 GitHub Actions 中标记审核状态
+          print(f"✅ 审核状态已标记为: {status['status']}")
+          print(f"🆔 审核编号: {status['review_id']}")
+          print(f"📅 创建时间: {status['timestamp']}")
+          # 输出到 GITHUB_STEP_SUMMARY (GitHub Actions 原生摘要)
+          with open(os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null"), "a") as summary:
+              summary.write(f"## 🧑‍⚖️ 人机互动审核结果\n\n")
+              summary.write(f"- **审核编号**: {status['review_id']}\n")
+              summary.write(f"- **范围**: {status['scope']}\n")
+              summary.write(f"- **教材**: {status['textbook']}\n")
+              summary.write(f"- **类型**: {status['review_type']}\n")
+              summary.write(f"- **角色**: {status['reviewer_role']}\n")
+              summary.write(f"- **审核项**: {len(status['items'])}\n")
+              summary.write(f"- **待审文件**: {status['files_count']}\n\n")
+              summary.write(f"下载 `tcm-review-checklist` 产物获取完整的审核清单。\n")
+          PYEOF
+          echo "::endgroup::"
+
+      - name: 完成通知
+        run: |
+          echo "::notice::🧑‍⚖️ 人机互动审核已完成。审查范围: ${{ steps.parse.outputs.dept }}, 教材: ${{ steps.parse.outputs.book }}"
+          echo ""
+          echo "📋 下一步操作:"
+          echo "  1. 下载 tcm-review-checklist 产物"
+          echo "  2. 打开 review-checklist.md 逐项审核"
+          echo "  3. 在审查项表格中标记 ✅ / ✏️ / ⏭️"
+          echo "  4. 填写审核结论并提交 PR 反馈"
