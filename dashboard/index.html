@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中医教材编写平台 · 三方共享统筹看板</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2333;
+    --border: #30363d;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #d29922;
+    --accent4: #f78166;
+    --gold: #d4a843;
+    --tag-editor: #7ee787;
+    --tag-writer: #79c0ff;
+    --tag-user: #ffa657;
+    --bar-bg: #21262d;
+    --shadow: 0 2px 8px rgba(0,0,0,.4);
+    --radius: 8px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* ── Header ── */
+  .header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .logo { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+  .logo span { color: var(--gold); }
+  .logo small { font-size: 13px; font-weight: 400; color: var(--text2); margin-left: 8px; }
+  .gateway-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+    background: #0d3a1f; color: var(--accent2);
+    border: 1px solid #1a5c32;
+  }
+  .gateway-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  .hermes-tagline {
+    font-size: 12px; color: var(--text2);
+    padding: 4px 12px; background: var(--surface2);
+    border-radius: 20px; border: 1px solid var(--border);
+  }
+  .hermes-tagline strong { color: var(--accent); }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex; gap: 2px;
+    background: var(--surface);
+    padding: 0 32px;
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+  }
+  .tab {
+    padding: 12px 22px; cursor: pointer;
+    font-size: 14px; font-weight: 500;
+    color: var(--text2);
+    border-bottom: 2px solid transparent;
+    transition: all .15s;
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .tab:hover { color: var(--text); background: var(--surface2); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab .badge {
+    font-size: 11px; padding: 1px 7px; border-radius: 10px;
+    background: var(--surface2); color: var(--text2);
+  }
+  .tab.active .badge { background: #0d3060; color: var(--accent); }
+  .tab-icon { font-size: 16px; }
+
+  /* ── Content ── */
+  .content { padding: 24px 32px; max-width: 1400px; margin: 0 auto; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── Stats Grid ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+  }
+  .stat-card .label { font-size: 13px; color: var(--text2); margin-bottom: 4px; }
+  .stat-card .value { font-size: 28px; font-weight: 700; }
+  .stat-card .sub { font-size: 12px; color: var(--text2); margin-top: 4px; }
+  .stat-card.color1 { border-left: 3px solid var(--accent); }
+  .stat-card.color2 { border-left: 3px solid var(--accent2); }
+  .stat-card.color3 { border-left: 3px solid var(--accent3); }
+  .stat-card.color4 { border-left: 3px solid var(--accent4); }
+  .stat-card.color5 { border-left: 3px solid var(--gold); }
+
+  /* ── Progress Bar ── */
+  .progress-section { margin-bottom: 28px; }
+  .progress-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  .progress-item { margin-bottom: 12px; }
+  .progress-item .row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 3px; }
+  .progress-item .row .name { font-weight: 500; }
+  .progress-item .row .count { color: var(--text2); }
+  .bar-track { height: 6px; background: var(--bar-bg); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; transition: width .6s ease; }
+  .bar-fill.accent { background: linear-gradient(90deg, var(--accent), #79c0ff); }
+  .bar-fill.green { background: linear-gradient(90deg, var(--accent2), #56d364); }
+  .bar-fill.gold { background: linear-gradient(90deg, var(--accent3), #e3b341); }
+  .bar-fill.red { background: linear-gradient(90deg, var(--accent4), #ff7b72); }
+
+  /* ── Section ── */
+  .section { margin-bottom: 32px; }
+  .section-title {
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-title .icon { font-size: 18px; }
+
+  /* ── Cards ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 12px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    transition: border-color .15s;
+  }
+  .card:hover { border-color: var(--accent); }
+  .card .card-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .card .card-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+  .card .tag {
+    font-size: 11px; padding: 2px 10px; border-radius: 10px;
+    background: var(--surface2); color: var(--text2);
+  }
+  .card .tag.ready { background: #0d3060; color: var(--accent); }
+  .card .tag.todo { background: #3d1f0a; color: var(--accent3); }
+  .card .tag.done { background: #0d3a1f; color: var(--accent2); }
+  .card .tag.blocked { background: #3d0a0a; color: var(--accent4); }
+  .card .tag.p1 { background: #3d0a0a; color: #ff7b72; }
+  .card .tag.p2 { background: #0d3060; color: var(--accent); }
+  .card .tag.p3 { background: #3d1f0a; color: var(--accent3); }
+  .card .card-body { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+  /* ── Epic Timeline ── */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .timeline-item {
+    position: relative; margin-bottom: 20px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .timeline-item::before {
+    content: ''; position: absolute; left: -20px; top: 18px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+  }
+  .timeline-item.tl-p1::before { background: var(--accent4); }
+  .timeline-item.tl-p2::before { background: var(--accent3); }
+  .timeline-item.tl-p3::before { background: var(--text2); }
+  .timeline-item .tl-title { font-weight: 600; font-size: 14px; }
+  .timeline-item .tl-meta { font-size: 12px; color: var(--text2); margin-top: 4px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .timeline-item .tl-scope { font-size: 12px; color: var(--text2); margin-top: 6px; }
+
+  /* ── Role Dashboard ── */
+  .role-hero {
+    background: linear-gradient(135deg, var(--surface), var(--surface2));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .role-hero .icon-box {
+    width: 64px; height: 64px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+  .role-hero .icon-box.editor { background: #0d3a1f; }
+  .role-hero .icon-box.writer { background: #0d3060; }
+  .role-hero .icon-box.user { background: #3d1f0a; }
+  .role-hero .role-desc { flex: 1; }
+  .role-hero .role-desc h2 { font-size: 20px; margin-bottom: 4px; }
+  .role-hero .role-desc p { font-size: 13px; color: var(--text2); }
+  .role-hero .ai-badge {
+    padding: 6px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 600;
+    background: #1a0a3d; color: #b087f7;
+    border: 1px solid #2d1a5c;
+  }
+
+  /* ── Table ── */
+  .table-wrap { overflow-x: auto; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    text-align: left; padding: 10px 12px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    color: var(--text2); font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  tbody tr:hover { background: var(--surface2); }
+
+  /* ── Filters ── */
+  .filter-bar {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .filter-btn {
+    padding: 6px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 500;
+    cursor: pointer; transition: all .15s;
+    border: 1px solid var(--border);
+    background: transparent; color: var(--text2);
+  }
+  .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+  .filter-btn.active { background: #0d3060; color: var(--accent); border-color: var(--accent); }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .header { padding: 12px 16px; }
+    .tabs { padding: 0 16px; }
+    .content { padding: 16px; }
+    .tab { padding: 10px 14px; font-size: 13px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center; padding: 20px;
+    color: var(--text2); font-size: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  .footer strong { color: var(--accent); }
+
+  /* ── Role action buttons ── */
+  .action-bar { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .btn {
+    padding: 7px 18px; border-radius: 6px;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: all .15s;
+    border: 1px solid var(--border);
+    background: var(--surface2); color: var(--text);
+    text-decoration: none;
+  }
+  .btn:hover { background: #30363d; }
+  .btn-primary { background: #238636; border-color: #2ea043; color: #fff; }
+  .btn-primary:hover { background: #2ea043; }
+  .btn-accent { background: #1f6feb; border-color: #388bfd; color: #fff; }
+  .btn-accent:hover { background: #388bfd; }
+
+  /* ── Mini Kanban columns ── */
+  .kanban-columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .kanban-col { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; min-height: 120px; }
+  .kanban-col h4 { font-size: 13px; color: var(--text2); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+  .kanban-col .col-count { font-size: 12px; color: var(--text2); background: var(--surface2); padding: 1px 8px; border-radius: 10px; }
+  .kanban-card { padding: 8px 10px; margin-bottom: 6px; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; font-size: 12px; cursor: default; }
+  .kanban-card:hover { border-color: var(--accent); }
+  .kanban-card .kc-title { font-weight: 500; }
+  .kanban-card .kc-meta { font-size: 11px; color: var(--text2); margin-top: 3px; }
+
+  /* Activity feed */
+  .feed { }
+  .feed-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .feed-item:last-child { border-bottom: none; }
+  .feed-icon { font-size: 18px; flex-shrink: 0; width: 24px; text-align: center; }
+  .feed-text { font-size: 13px; }
+  .feed-text .highlight { color: var(--accent); }
+  .feed-time { font-size: 11px; color: var(--text2); margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header class="header">
+  <div class="header-left">
+    <div class="logo">📚 <span>中医教材</span>编写平台 <small>120 门学科 · 四层协作</small></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <span class="gateway-badge"><span class="dot"></span> Hermes Gateway 运行中 · PID 7128</span>
+    <span class="hermes-tagline">✍ 由 <strong>Hermes Agent</strong> 原始编写 · 人类三方审校完善</span>
+  </div>
+</header>
+
+<!-- ═══════════ TABS ═══════════ -->
+<nav class="tabs" id="tabNav">
+  <div class="tab active" data-panel="planner">
+    <span class="tab-icon">📊</span> 项目统筹
+    <span class="badge">L1</span>
+  </div>
+  <div class="tab" data-panel="editor">
+    <span class="tab-icon">🔍</span> 编辑审稿者
+    <span class="badge">L2·L3</span>
+  </div>
+  <div class="tab" data-panel="writer">
+    <span class="tab-icon">✏️</span> 教材写作者
+    <span class="badge">L4</span>
+  </div>
+  <div class="tab" data-panel="user">
+    <span class="tab-icon">📖</span> 教材使用者
+    <span class="badge">自学·本科</span>
+  </div>
+</nav>
+
+<!-- ═══════════ CONTENT ═══════════ -->
+<div class="content">
+
+<!-- ────────── PANEL 1: 项目统筹 ────────── -->
+<div class="panel active" id="panel-planner">
+
+  <!-- Global Stats -->
+  <div class="stats-grid">
+    <div class="stat-card color1"><div class="label">总计学科</div><div class="value">120</div><div class="sub">8 大专业领域</div></div>
+    <div class="stat-card color2"><div class="label">编写轮次</div><div class="value">6</div><div class="sub">R1-R6 + 质量 + 终验</div></div>
+    <div class="stat-card color3"><div class="label">Story 卡片</div><div class="value" id="totalStories">42</div><div class="sub">已分配/待分配</div></div>
+    <div class="stat-card color4"><div class="label">已完成</div><div class="value" id="totalDone">1</div><div class="sub">✅ 第1章导论已结</div></div>
+    <div class="stat-card color5"><div class="label">编写章节</div><div class="value">~1,600</div><div class="sub">每章 ~20 病证单位</div></div>
+  </div>
+
+  <!-- Domain Progress -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🏛️</span> 八大领域进度总览</div>
+    <div class="progress-section" id="domainProgress"></div>
+  </div>
+
+  <!-- Epic Timeline -->
+  <div class="section">
+    <div class="section-title"><span class="icon">🗓️</span> 编写轮次时间线（Epic 看板）</div>
+    <div class="timeline" id="epicTimeline"></div>
+  </div>
+
+  <!-- Mini Kanban: All Boards Summary -->
+  <div class="section">
+    <div class="section-title"><span class="icon">📋</span> 看板全景（所有看板卡片分布）</div>
+    <div class="kanban-columns" id="miniKanban"></div>
+  </div>
+
+</div>
+
+<!-- ────────── PANEL 2: 编辑审稿者 ────────── -->
+<div class="panel" id="panel-editor">
+  <div class="role-hero">
+    <div class="icon-box editor">🔍</div>
+    <div class="role-desc">
+      <h2>编辑审稿者工作台</h2>
+      <p>审查教材内容的科学性、系统性、教学适切性和可读性。按评分卡打分（科学性40% + 系统性25% + 教学适切性20% + 可读性15%）。</p>
+    </div>
+    <span class="ai-badge">🤖 Hermes 生成 · 人类审校</span>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card color2"><div class="label">待初审 (L3)</div><div class="value" id="reviewReady">0</div><div class="sub">等待学科主编审阅</div></div>
+    <div class="stat-card color1"><div class="label">复审 (L2)</div><div class="value">0</div><div class="sub">领域主编一致性审</div></div>
+    <div class="stat-card color4"><div class="label">终验 (L1)</div><div class="value" id="epicCount">8</div><div class="sub">行业主编终审签字</div></div>
+    <div class="stat-card color3"><div class="label">需要修改</div><div class="value">0</div><div class="sub">L3 驳回 L4</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">📄</span> 待审阅章节</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>领域</th><th>教材</th><th>章节</th><th>当前状态</th><th>操作</th></tr></thead>
+        <tbody id="editorReviewTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">📊</span> 领域级 Story 状态速览</div>
+    <div id="editorDomainTable" class="table-wrap"></div>
+  </div>
+</div>
+
+<!-- ────────── PANEL 3: 教材写作者 ────────── -->
+<div class="panel" id="panel-writer">
+  <div class="role-hero">
+    <div class="icon-box writer">✏️</div>
+    <div class="role-desc">
+      <h2>教材写作者工作台</h2>
+      <p>按"病证单位"范式编写章节内容。左栏：西医分子靶点/基因通路；右栏：中医证候场论顺应。60-30-10 习题配比。</p>
+    </div>
+    <span class="ai-badge">🤖 Hermes 主力编写 · 人类调整完善</span>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card color1"><div class="label">我的任务</div><div class="value" id="writerMyTasks">1</div><div class="sub">已分配章节</div></div>
+    <div class="stat-card color2"><div class="label">已完成</div><div class="value">1</div><div class="sub">✅ D01-S01 第1章导论</div></div>
+    <div class="stat-card color3"><div class="label">待编写</div><div class="value" id="writerPending">2</div><div class="sub">阴阳学说 · 五行学说</div></div>
+    <div class="stat-card color4"><div class="label">活跃领域</div><div class="value">8</div><div class="sub">全 8 领域已就绪</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">📝</span> 各领域章节编写任务</div>
+    <div class="filter-bar" id="writerFilter">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="todo">待编写</button>
+      <button class="filter-btn" data-filter="ready">就绪</button>
+      <button class="filter-btn" data-filter="done">已完成</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>领域</th><th>教材</th><th>章节</th><th>状态</th><th>轮次</th><th>操作</th></tr></thead>
+        <tbody id="writerTaskTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">📐</span> 病证单位编写范式 <span style="font-size:12px;color:var(--text2);font-weight:400;">（最小编写原子）</span></div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-title">🧬 病侧（西医）</div>
+        <div class="card-body">
+          分子靶点 · 基因通路 · 病理机制<br>
+          诊断标准 · 分型分级 · 流行病学<br>
+          <span style="color:var(--accent2);">由 Hermes 自动生成文献综述</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">☯ 证侧（中医）</div>
+        <div class="card-body">
+          证候场论 · 辨证分型 · 经典依据<br>
+          方证对应 · 针灸取穴 · 调护方案<br>
+          <span style="color:var(--accent2);">由 Hermes 检索经典库生成</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚡ 双栏关联</div>
+        <div class="card-body">
+          病⇌证对应关系 · 以病索证 · 以证溯病<br>
+          每个病证单位 ~800-1200 字<br>
+          <span style="color:var(--accent2);">人类调整交叉验证</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────── PANEL 4: 教材使用者 ────────── -->
+<div class="panel" id="panel-user">
+  <div class="role-hero">
+    <div class="icon-box user">📖</div>
+    <div class="role-desc">
+      <h2>教材使用者空间</h2>
+      <p>自学读者与本科生阅览平台。可浏览全部 120 门学科目录、已完成的教材章节、提交使用反馈。</p>
+    </div>
+    <span class="ai-badge">🤖 Hermes 编写 · 人类反馈迭代</span>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card color1"><div class="label">已发布教材</div><div class="value" id="userPublished">1</div><div class="sub">CM-01 中医基础理论（第1章）</div></div>
+    <div class="stat-card color2"><div class="label">全部教材</div><div class="value">120</div><div class="sub">8 领域 × 15 门</div></div>
+    <div class="stat-card color3"><div class="label">编写中</div><div class="value" id="userProgress">41</div><div class="sub">计划中/就绪</div></div>
+    <div class="stat-card color5"><div class="label">本科必修</div><div class="value">~80</div><div class="sub">U1-U10 学段</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">🔎</span> 教材目录（按领域浏览）</div>
+    <div class="filter-bar" id="userDomainFilter">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="D01">D01 中医</button>
+      <button class="filter-btn" data-filter="D02">D02 中药</button>
+      <button class="filter-btn" data-filter="D03">D03 针灸</button>
+      <button class="filter-btn" data-filter="D04">D04 推拿</button>
+      <button class="filter-btn" data-filter="D05">D05 骨伤</button>
+      <button class="filter-btn" data-filter="D06">D06 五官口腔</button>
+      <button class="filter-btn" data-filter="D07">D07 中医智能</button>
+      <button class="filter-btn" data-filter="D08">D08 管理</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>教材编号</th><th>教材名称</th><th>领域</th><th>轮次</th><th>状态</th><th>操作</th></tr></thead>
+        <tbody id="userCatalogTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="icon">💬</span> 提交使用反馈</div>
+    <div class="card" style="background:var(--surface2);">
+      <div class="card-body">
+        <p style="margin-bottom:8px;">发现内容有误？某个知识点需要补充？请告诉我们，Hermes 将根据反馈迭代教材。</p>
+        <div class="action-bar">
+          <a class="btn btn-primary" href="#">📝 提交勘误</a>
+          <a class="btn btn-accent" href="#">📚 阅读已完成章节</a>
+          <a class="btn" href="#">⭐ 收藏教材</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Footer ── -->
+<div class="footer">
+  <p>Powered by <strong>Hermes Agent</strong> · 中医中药病证单位教材编写平台 · 120 门学科 · 四层 L1-L4 多智能体协作</p>
+  <p style="margin-top:4px;">Hermes Gateway 常驻运行 · 60s Dispatcher 自动调度 · L4 作者在浪潮服务器 192.168.1.11 并行编写</p>
+</div>
+
+</div><!-- /content -->
+
+<script>
+// ═══════════════ DATA ═══════════════
+
+const DOMAINS = [
+  {id:'D01', name:'中医学院', subjects:28, books:32, prefix:'CM', color:'#58a6ff', rounds:'1-6'},
+  {id:'D02', name:'中药学院', subjects:20, books:24, prefix:'MM', color:'#3fb950', rounds:'1-5'},
+  {id:'D03', name:'针灸学院', subjects:12, books:14, prefix:'AT', color:'#d29922', rounds:'1-4'},
+  {id:'D04', name:'推拿学院', subjects:10, books:10, prefix:'TU', color:'#f78166', rounds:'2-5'},
+  {id:'D05', name:'骨伤学院', subjects:12, books:14, prefix:'OR', color:'#bc8cff', rounds:'2-5'},
+  {id:'D06', name:'五官口腔学院', subjects:10, books:10, prefix:'ENT',color:'#79c0ff', rounds:'3-6'},
+  {id:'D07', name:'中医智能学院', subjects:14, books:16, prefix:'AI', color:'#ffa657', rounds:'2-6'},
+  {id:'D08', name:'中医管理学院', subjects:14, books:14, prefix:'MG', color:'#7ee787', rounds:'3-6'},
+];
+
+const EPICS = [
+  {title:'[P1] 轮次1：核心基础与文化通识', round:1, window:'2026-09 ~ 2027-02', pending:true,
+   scope:'D01-S01~S04, D02-S01~S04, D03-S01~S02 · 10学科'},
+  {title:'[P1] 轮次2：经典基础与进阶', round:2, window:'2027-01 ~ 2027-06', pending:true,
+   scope:'D01-S05~S09, D02-S05~S08, D03-S03~S05, D04-S01~S04 · 15学科'},
+  {title:'[P1] 轮次3：临床各科与专科', round:3, window:'2027-05 ~ 2027-12', pending:true,
+   scope:'D01-S10~S17, D02-S09~S13, D03-S06~S09, D05-S01~S07, D06-S01~S03, D08-S01~S05 · 30学科'},
+  {title:'[P2] 轮次4：临床深化与交叉学科', round:4, window:'2027-10 ~ 2028-05', pending:true,
+   scope:'全部8领域参与 · 28学科'},
+  {title:'[P2] 轮次5：硕士深化与交叉学科', round:5, window:'2028-03 ~ 2028-08', pending:true,
+   scope:'D01-S23~S26, D02-S17~S20, D03-S12, D06-S08~S10, D07-S12~S14, D08-S10~S13 · ~18学科'},
+  {title:'[P3] 轮次6：博士前沿与产业管理', round:6, window:'2028-06 ~ 2028-09', pending:true,
+   scope:'D01-S27~S28, D08-S14'},
+  {title:'[P1] 质量体系与编写规范', round:0, window:'全程', pending:true,
+   scope:'编写风格指南 · 术语标准化 · 评分卡 · 跨域接口协议'},
+  {title:'[P2] 终验发布与项目归档', round:0, window:'2028-09 ~', pending:true,
+   scope:'全部134种教材L1终验 · 出版对接 · 项目复盘'}
+];
+
+// Board card counts from real kanban data
+const BOARD_COUNTS = {
+  'tcm-epic': {ready:8, total:8},
+  'tcm-domain-d01': {done:1, ready:5, todo:2, total:8},
+  'tcm-domain-d02': {ready:7, total:7},
+  'tcm-domain-d03': {ready:3, total:3},
+  'tcm-domain-d04': {ready:4, total:4},
+  'tcm-domain-d05': {ready:6, total:6},
+  'tcm-domain-d06': {ready:3, total:3},
+  'tcm-domain-d07': {ready:4, total:4},
+  'tcm-domain-d08': {ready:6, total:6},
+};
+
+// Writing tasks (from actual kanban data)
+const WRITING_TASKS = [
+  {domain:'D01', subject:'S01', book:'CM-01', chapter:'第1章', title:'中医药学导论', status:'done', round:1, assignee:'tcm-author'},
+  {domain:'D01', subject:'S01', book:'CM-01', chapter:'第2章', title:'阴阳学说', status:'todo', round:1, assignee:'tcm-author'},
+  {domain:'D01', subject:'S01', book:'CM-01', chapter:'第3章', title:'五行学说', status:'todo', round:1, assignee:'tcm-author'},
+];
+
+// Domain Stories from real kanban
+const DOMAIN_STORIES = {
+  D01:[
+    {name:'中医基础理论', sub:'S01', book:'CM-01', credits:5, round:1, status:'ready'},
+    {name:'中医诊断学', sub:'S02', book:'CM-02', credits:5, round:1, status:'ready'},
+    {name:'医古文基础', sub:'S03', book:'CM-03', credits:3, round:1, status:'ready'},
+    {name:'中国医学史', sub:'S04', book:'CM-04', credits:2, round:1, status:'ready'},
+    {name:'内经选读', sub:'S09', book:'CM-09', credits:4, round:2, status:'ready'},
+  ],
+  D02:[
+    {name:'临床中药学', sub:'S01', book:'MM-01', credits:6, round:1, status:'ready'},
+    {name:'方剂学(上)', sub:'S02', book:'MM-02', credits:4, round:1, status:'ready'},
+    {name:'药用植物学', sub:'S04', book:'MM-04', credits:3, round:1, status:'ready'},
+  ],
+  D03:[
+    {name:'经络腧穴学', sub:'S01', book:'AT-01', credits:5, round:1, status:'ready'},
+    {name:'刺法灸法学', sub:'S02', book:'AT-02', credits:4, round:1, status:'ready'},
+  ],
+  D04:[
+    {name:'推拿学基础', sub:'S01', book:'TU-01', credits:4, round:2, status:'ready'},
+    {name:'推拿手法学', sub:'S02', book:'TU-02', credits:5, round:2, status:'ready'},
+    {name:'推拿诊断学', sub:'S03', book:'TU-03', credits:3, round:2, status:'ready'},
+    {name:'推拿功法学', sub:'S04', book:'TU-04', credits:2, round:2, status:'ready'},
+  ],
+  D05:[
+    {name:'中医骨伤科学基础', sub:'S01', book:'OR-01', credits:4, round:2, status:'ready'},
+    {name:'骨伤诊断学', sub:'S02', book:'OR-02', credits:4, round:2, status:'ready'},
+  ],
+  D06:[
+    {name:'中医眼科学', sub:'S01', book:'ENT-01', credits:3, round:3, status:'ready'},
+    {name:'中医耳鼻喉科学', sub:'S02', book:'ENT-02', credits:3, round:3, status:'ready'},
+    {name:'中医口腔科学', sub:'S03', book:'ENT-03', credits:2, round:3, status:'ready'},
+  ],
+  D07:[
+    {name:'中医药人工智能导论', sub:'S01', book:'AI-01', credits:3, round:2, status:'ready'},
+    {name:'中医信息学', sub:'S02', book:'AI-02', credits:3, round:2, status:'ready'},
+    {name:'中医药数据科学', sub:'S03', book:'AI-03', credits:3, round:2, status:'ready'},
+    {name:'中医知识图谱', sub:'S04', book:'AI-04', credits:3, round:2, status:'ready'},
+  ],
+  D08:[
+    {name:'医院管理学', sub:'S01', book:'MG-01', credits:4, round:3, status:'ready'},
+    {name:'中医药经济学', sub:'S02', book:'MG-02', credits:3, round:3, status:'ready'},
+    {name:'中医药政策与法规', sub:'S04', book:'MG-04', credits:2, round:3, status:'ready'},
+  ],
+};
+
+// ═══════════════ RENDER ═══════════════
+
+function render() {
+  renderDomainProgress();
+  renderEpicTimeline();
+  renderMiniKanban();
+  renderEditorReview();
+  renderEditorDomain();
+  renderWriterTasks();
+  renderUserCatalog();
+  updateStats();
+}
+
+function renderDomainProgress() {
+  const el = document.getElementById('domainProgress');
+  let html = '';
+  for (const d of DOMAINS) {
+    const stories = DOMAIN_STORIES[d.id] || [];
+    const ready = stories.filter(s => s.status==='ready').length;
+    const done = stories.filter(s => s.status==='done').length;
+    const total = stories.length;
+    const pct = total > 0 ? Math.round(((done+ready)/total)*100) : 0;
+    const barClass = pct >= 100 ? 'green' : pct >= 50 ? 'gold' : 'accent';
+    html += `<div class="progress-item">
+      <div class="row">
+        <span class="name" style="color:${d.color}">${d.id} ${d.name}</span>
+        <span class="count">${done} done · ${ready} ready · ${total} total</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill ${barClass}" style="width:${pct}%"></div></div>
+    </div>`;
+  }
+  el.innerHTML = html;
+}
+
+function renderEpicTimeline() {
+  const el = document.getElementById('epicTimeline');
+  el.innerHTML = EPICS.map(e => {
+    const cls = e.title.includes('P1') ? 'tl-p1' : e.title.includes('P2') ? 'tl-p2' : 'tl-p3';
+    return `<div class="timeline-item ${cls}">
+      <div class="tl-title">${e.title}</div>
+      <div class="tl-meta"><span>📅 ${e.window}</span><span>📋 ${e.scope}</span><span class="tag ready">待启动</span></div>
+    </div>`;
+  }).join('');
+}
+
+function renderMiniKanban() {
+  const el = document.getElementById('miniKanban');
+  const boards = [
+    {slug:'tcm-epic', label:'🏆 总控Epic'},
+    {slug:'tcm-domain-d01', label:'🏥 中医学院'},
+    {slug:'tcm-domain-d02', label:'🌿 中药学院'},
+    {slug:'tcm-domain-d03', label:'📍 针灸学院'},
+    {slug:'tcm-domain-d04', label:'🤚 推拿学院'},
+    {slug:'tcm-domain-d05', label:'🦴 骨伤学院'},
+    {slug:'tcm-domain-d06', label:'👁️ 五官口腔'},
+    {slug:'tcm-domain-d07', label:'🤖 中医智能'},
+    {slug:'tcm-domain-d08', label:'📊 管理'},
+  ];
+  el.innerHTML = boards.map(b => {
+    const c = BOARD_COUNTS[b.slug] || {ready:0, todo:0, done:0, blocked:0, total:0};
+    const cols = [
+      {status:'todo', label:'待办', count:c.todo||0},
+      {status:'ready', label:'就绪', count:c.ready||0},
+      {status:'done', label:'完成', count:c.done||0},
+      {status:'blocked', label:'阻塞', count:c.blocked||0},
+    ].filter(x=>x.count>0);
+    return `<div class="kanban-col" style="border-left: 3px solid ${DOMAINS.find(d=>b.slug.includes(d.id.toLowerCase()))?.color||'var(--accent)'}">
+      <h4>${b.label} <span class="col-count">${c.total}</span></h4>
+      ${cols.map(co => `<div class="kanban-card"><div class="kc-title"><span class="tag ${co.status}">${co.status}</span> ${co.count}</div></div>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+function renderEditorReview() {
+  const tbody = document.getElementById('editorReviewTable');
+  const rows = [];
+  for (const [did, stories] of Object.entries(DOMAIN_STORIES)) {
+    for (const s of stories) {
+      rows.push(`<tr>
+        <td>${did}</td>
+        <td><strong>${s.book}</strong> ${s.name}</td>
+        <td>${s.sub}</td>
+        <td><span class="tag ${s.status}">${s.status}</span></td>
+        <td><a class="btn btn-accent" style="padding:3px 12px;font-size:12px;" href="#">审查</a></td>
+      </tr>`);
+    }
+  }
+  tbody.innerHTML = rows.join('');
+}
+
+function renderEditorDomain() {
+  const el = document.getElementById('editorDomainTable');
+  let html = '<table><thead><tr><th>领域</th><th>Story数</th><th>就绪</th><th>完成</th><th>进度</th></tr></thead><tbody>';
+  for (const d of DOMAINS) {
+    const stories = DOMAIN_STORIES[d.id] || [];
+    const ready = stories.filter(s=>s.status==='ready').length;
+    const done = stories.filter(s=>s.status==='done').length;
+    const total = stories.length;
+    const pct = total > 0 ? Math.round((done+ready)/total*100) : 0;
+    html += `<tr>
+      <td style="color:${d.color};font-weight:600;">${d.id} ${d.name}</td>
+      <td>${total}</td>
+      <td>${ready}</td>
+      <td>${done}</td>
+      <td><div class="bar-track" style="width:120px;display:inline-block;vertical-align:middle;"><div class="bar-fill accent" style="width:${pct}%"></div></div> ${pct}%</td>
+    </tr>`;
+  }
+  html += '</tbody></table>';
+  el.innerHTML = html;
+}
+
+function renderWriterTasks() {
+  const tbody = document.getElementById('writerTaskTable');
+  tbody.innerHTML = WRITING_TASKS.map(t => {
+    const d = DOMAINS.find(d=>d.id===t.domain);
+    return `<tr data-status="${t.status}">
+      <td style="color:${d?.color}">${t.domain} ${d?.name||''}</td>
+      <td><strong>${t.book}</strong></td>
+      <td>${t.chapter}：${t.title}</td>
+      <td><span class="tag ${t.status}">${t.status}</span></td>
+      <td>R${t.round}</td>
+      <td>${t.status==='todo'?`<a class="btn btn-primary" style="padding:3px 12px;font-size:12px;" href="#">领取</a>`:t.status==='done'?'✅':''}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderUserCatalog() {
+  const tbody = document.getElementById('userCatalogTable');
+  const rows = [];
+  for (const [did, stories] of Object.entries(DOMAIN_STORIES)) {
+    const d = DOMAINS.find(x=>x.id===did);
+    for (const s of stories) {
+      const statusLabel = s.status==='done'?'已发布':s.status==='ready'?'就绪中':'计划';
+      const statusTag = s.status==='done'?'done':s.status==='ready'?'ready':'todo';
+      rows.push({domain:did, name:s.name, book:s.book, round:s.round, status:s.status, statusLabel, statusTag,
+        html:`<tr data-domain="${did}">
+          <td><strong>${s.book}</strong></td>
+          <td>${s.name}</td>
+          <td style="color:${d?.color}">${did}</td>
+          <td>R${s.round}</td>
+          <td><span class="tag ${statusTag}">${statusLabel}</span></td>
+          <td><a class="btn" style="padding:3px 12px;font-size:12px;" href="#">${s.status==='done'?'阅读':'预览'}</a></td>
+        </tr>`
+      });
+    }
+  }
+  tbody.innerHTML = rows.map(r=>r.html).join('');
+}
+
+function updateStats() {
+  let totalStories = 0, totalDone = 0, totalReady = 0;
+  for (const stories of Object.values(DOMAIN_STORIES)) {
+    totalStories += stories.length;
+    totalDone += stories.filter(s=>s.status==='done').length;
+    totalReady += stories.filter(s=>s.status==='ready').length;
+  }
+  document.getElementById('totalStories').textContent = totalStories;
+  document.getElementById('totalDone').textContent = totalDone;
+  document.getElementById('reviewReady').textContent = totalReady;
+  document.getElementById('epicCount').textContent = EPICS.length;
+  document.getElementById('writerMyTasks').textContent = WRITING_TASKS.filter(t=>t.status!=='done').length;
+  document.getElementById('writerPending').textContent = WRITING_TASKS.filter(t=>t.status==='todo').length;
+  document.getElementById('userPublished').textContent = totalDone;
+  document.getElementById('userProgress').textContent = totalReady;
+}
+
+// ═══════════════ TAB SWITCHING ═══════════════
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.panel).classList.add('active');
+  });
+});
+
+// ═══════════════ FILTERING ═══════════════
+document.querySelectorAll('.filter-bar').forEach(bar => {
+  const btns = bar.querySelectorAll('.filter-btn');
+  const table = bar.closest('.section')?.querySelector('table');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      if (!table) return;
+      table.querySelectorAll('tbody tr').forEach(tr => {
+        if (filter === 'all' || tr.dataset.status === filter || tr.dataset.domain === filter) {
+          tr.style.display = '';
+        } else {
+          tr.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+
+// ═══════════════ INIT ═══════════════
+document.addEventListener('DOMContentLoaded', render);
+</script>
+
+</body>
+</html>
