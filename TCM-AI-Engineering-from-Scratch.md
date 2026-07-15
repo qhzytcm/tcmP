@@ -1,521 +1,411 @@
 # TCM-AI-Engineering-from-Scratch
-## 中医药系列教材 · AI 工程化编写实战计划
+## 多智能体协作编写120门中医药教科书 · 智能工程落地中医药领域
 
-> **核心理念**：Learn it, Do it, Ship it  
-> **目标**：以 AI Engineering 方法论完成 120 门中医药学科教材编写  
-> **灵感**：[AI Engineering from Scratch](https://github.com/chiphuyen/ai-engineering-from-scratch) — Chip Huyen  
-> **适配**：中医药知识工程 · 四层多智能体体系 · CI/CD 人机互动
-
----
-
-## 一、项目总览
-
-### 1.1 核心理念映射
-
-```
-"AI Engineering from Scratch"  →  "TCM-AI-Engineering"
-         ↓                              ↓
-  传统软件工程 + AI              中医药知识工程 + Multi-Agent
-         ↓                              ↓
-  Learn AI concepts             学习中医 AI 工程化方法
-  Do hands-on projects          上手编写病证单位教材
-  Ship production systems       交付 120 门可教学教材
-```
-
-### 1.2 项目定位
-
-| 维度 | 传统教材编写 | TCM-AI Engineering |
-|:----|:-----------|:------------------|
-| **编写方式** | 人类逐字撰写 | Hermes Agent 主力 + 人类审校 |
-| **版本管理** | Word 文档 + 邮件 | Git + GitHub + CI/CD |
-| **质量控制** | 领域专家抽审 | G1/G2/G3 三级自动门禁 |
-| **迭代速度** | 3-5 年/套 | 18 个月/120 门 |
-| **可复现性** | 依赖个人经验 | 依赖本体论 + SOUL.md |
-| **知识原子** | 章节 → 段落 | 病证单位（60,000+ 节点）|
-
-### 1.3 团队架构（四层 × AI Engineering 角色）
-
-```
-┌─────────────────────────────────────────────────────┐
-│             TCM-AI Engineering 团队                   │
-├──────────┬──────────┬──────────┬──────────────────────┤
-│    L1     │    L2    │    L3    │         L4          │
-│ 行业主编  │ 领域主编  │ 学科主编  │     章节作者        │
-│          │          │          │                      │
-│ AI 架构师 │ AI 工程师 │ AI 开发者 │   AI 内容生产者     │
-│  1人     │  8人     │ 120人    │  1,200人            │
-└──────────┴──────────┴──────────┴──────────────────────┘
-```
+> **项目类型**：分布式网络软件工程  
+> **技术栈**：Hermes Agent Multi-Agent · GitHub CI/CD · 四层本体论架构  
+> **交付物**：①120门递进式教材 ②CI/CD可进化的网络平台  
+> **总周期**：18个月（2026.07 - 2028.01）
 
 ---
 
-## 二、Learn It — 学习阶段（第 1-2 月）
+# 第一类交付物：120门学科教材
+## 递进顺序符合认知成长
 
-### 2.1 团队学习路径
-
-```
-第1周：AI Engineering 基础
-  ├── 课程：AI System Design (Chip Huyen)
-  ├── 实操：Hermes Agent 安装与配置
-  └── 产出：每位成员 Hermes --version
-
-第2周：Hermes Agent 深度实操
-  ├── 课程：Multi-Agent Orchestration
-  ├── 实操：创建 Profile + SOUL.md + Kanban
-  └── 产出：L1-L4 各创建一个 Agent Profile
-
-第3周：本体论与知识工程
-  ├── 课程：Ontology Theory + Protégé 实操
-  ├── 实操：设计 D01 领域的 OWL 本体
-  └── 产出：tcm-knowledge-universe.owl
-
-第4周：病证单位范式
-  ├── 课程：Disease-Syndrome Unit 编写规范
-  ├── 实操：用双栏格式编写 3 个病证单位
-  └── 产出：10 个标准病证单位 + 模板
-
-第5-6周：CI/CD 人机互动
-  ├── 课程：GitHub Actions + 质量门禁
-  ├── 实操：配置 tcm-ci-cd.yml + 触发一次流水线
-  └── 产出：绿色 CI 流水线运行
-
-第7-8周：地域适应与季节调整
-  ├── 课程：区域病证分布 + 季节教学法
-  ├── 实操：编写南方 vs 北方的 L4 SOUL.md
-  └── 产出：6 大地理分区 × 4 季的 L4 模板
-```
-
-### 2.2 学习成果验收
-
-```yaml
-learning_checklist:
-  L1:
-    - 能运行 hermes gateway + API Server
-    - 能设计 OWL 本体文件
-    - 能仲裁 L2 跨领域冲突
-  L2:
-    - 能配置领域看板 tcm-domain-DXX
-    - 能编写领域 SOUL.md（含个人学术思想）
-    - 能创建 Story 卡片
-  L3:
-    - 能使用 kanban create/task/complete
-    - 能编写学科大纲 + 样章
-    - 能运行 G2 质量门禁
-  L4:
-    - 能使用双栏病证单位模板
-    - 能提交 PR 到 GitHub
-    - 能根据地域调整内容比重
-```
-
-### 2.3 学习环境准备
-
-```bash
-# 每位团队成员初始化
-hermes --version                          # 确认 Hermes 已安装
-hermes profile create my-profile          # 创建个人 Profile
-hermes doctor                             # 健康检查
-
-# 项目目录
-mkdir -p ~/tcm-learning/{notes,exercises,projects}
-cd ~/tcm-learning
-git init
-git remote add origin git@github.com:beijingcdy/tcm-textbook-series.git
-
-# 学习资源
-# - AI Engineering from Scratch: https://github.com/chiphuyen/ai-engineering-from-scratch
-# - Hermes Agent 文档: https://hermes-agent.nousresearch.com/docs
-# - Protégé Ontology: https://protege.stanford.edu
-# - OWL 2 入门: https://www.w3.org/TR/owl2-primer/
-```
-
----
-
-## 三、Do It — 实践阶段（第 3-12 月）
-
-### 3.1 六轮次编写节奏
+### 一、认知递进架构（六层阶梯）
 
 ```
-轮次 1-2（第3-4月）：核心基础（10 学科）
-  ├── D01-S01 中医基础理论
-  ├── D02-S01 临床中药学
-  └── D03-S01 经络腧穴学
-  → 每个学科 15 章，每章 3-5 个病证单位
+认知层次递进逻辑：
 
-轮次 3-4（第5-8月）：临床各科（60 学科）
-  ├── D01-S13~S17 内科·外科·妇科·儿科
-  ├── D05-S01~S12 骨伤学科群
-  └── 高峰期：6 领域同时编写
-
-轮次 5-6（第9-12月）：深化与交叉（50 学科）
-  ├── D07-S01~S14 中医智能学院
-  ├── D08-S01~S14 管理学院
-  └── 终验前修订
+  第六层：前沿创新     → 博后·博士层级（整合·创造）
+  第五层：学科交叉     → 博士·硕士层级（跨域·应用）
+  第四层：临床专科     → 硕士·本科高年级（实践·综合）
+  第三层：诊断治疗     → 本科中年级（分析·运用）
+  第二层：基础经典     → 本科低年级（理解·记忆）
+  第一层：文化通识     → 全体层级（感知·认知）
 ```
 
-### 3.2 每个 Sprint（2 周）的日常
+### 二、120 学科递进顺序表
 
-```yaml
-sprint_rhythm:
-  day_1_mon:
-    - L1: 签批本周编写的轮次计划
-    - L2: 从看板领取 Story 分发给 L3
-    - L3: 将 Story 拆解为 Task（每章 1 个）
-    - L4: 从看板领取 Task
-  
-  day_2_4:
-    - L4: Hermes Agent 自动编写（~30 分钟/章）
-    - L4: 人类调整完善（~2 小时/章）
-    - L4: 提交 PR 到 GitHub
-  
-  day_5:
-    - L3: 审查 L4 提交的 PR
-    - G2 门禁检查（≥85/100）
-    - 驳回则 L4 修改，再提交
-  
-  day_6_9:
-    - L2: 领域一致性审查
-    - 跨域接口对齐
-  
-  day_10:
-    - L1: 轮次进度评审
-    - 签发下周编写令
-    - 记录全局判例
-```
+#### 第一层：文化通识（10 学科）— 感知·认知
 
-### 3.3 "Do It" 实战命令
+| 编号 | 学科 | 院系 | 学分 | 前置 |
+|:----:|------|:----:|:----:|:----:|
+| CM-01 | 中医基础理论 | D01 | 5 | 无 |
+| CM-04 | 中国医学史 | D01 | 2 | 无 |
+| CM-03 | 医古文基础 | D01 | 3 | 无 |
+| AT-01 | 经络腧穴学 | D03 | 5 | CM-01 |
+| MM-04 | 药用植物学 | D02 | 3 | 无 |
+| AI-01 | 中医药人工智能导论 | D07 | 3 | 无 |
+| MG-01 | 医院管理学 | D08 | 4 | 无 |
+| CM-05 | 中医思维方法论 | D01 | 3 | CM-01 |
+| CM-06 | 中医文献学 | D01 | 2 | CM-03 |
+| CM-07 | 中医经典导读 | D01 | 3 | CM-01 |
 
-```bash
-# L4 作者：从看板领取章节任务
-hermes kanban boards switch tcm-domain-D01
-hermes kanban take t_xxxxx
+#### 第二层：基础经典（15 学科）— 理解·记忆
 
-# Hermes Agent 编写草稿
-hermes chat -q "请编写《中医基础理论》第2章阴阳学说，
-包含以下病证单位：
-1. 阴虚证（病侧：TGF-β信号通路 / 证侧：阴液不足）
-2. 阳虚证（病侧：线粒体功能障碍 / 证侧：温煦失职）
-3. 阴阳两虚证（病侧：能量代谢紊乱 / 证侧：阴阳互损）
-使用双栏格式，每病证单位800-1000字。"
+| 编号 | 学科 | 院系 | 学分 | 前置 |
+|:----:|------|:----:|:----:|:----:|
+| CM-02 | 中医诊断学 | D01 | 5 | CM-01 |
+| MM-01 | 临床中药学 | D02 | 6 | CM-01 |
+| MM-02 | 方剂学(上) | D02 | 4 | MM-01 |
+| AT-02 | 刺法灸法学 | D03 | 4 | AT-01 |
+| CM-09 | 内经选读 | D01 | 4 | CM-01, CM-03 |
+| CM-10 | 伤寒论 | D01 | 5 | CM-02 |
+| CM-11 | 金匮要略 | D01 | 4 | CM-02 |
+| CM-12 | 温病学 | D01 | 4 | CM-02 |
+| AT-03 | 针灸治疗学 | D03 | 5 | AT-01 |
+| MM-05 | 中药化学 | D02 | 4 | MM-01 |
+| MM-06 | 中药药理学 | D02 | 4 | MM-01 |
+| MM-07 | 中药鉴定学 | D02 | 3 | MM-04 |
+| MM-08 | 中药炮制学 | D02 | 3 | MM-01 |
+| TU-01 | 推拿学基础 | D04 | 4 | CM-01, AT-01 |
+| OR-01 | 中医骨伤科学基础 | D05 | 4 | CM-01, CM-02 |
 
-# 将输出保存为草稿
-cat > drafts/D01-S01/chapter-02-yinyang-v1.md
-# [粘贴 Hermes 输出]
+#### 第三层：诊断治疗（20 学科）— 分析·运用
 
-# 提交 PR
-git checkout -b feat/D01-S01-ch02-yinyang
-git add drafts/D01-S01/chapter-02-yinyang-v1.md
-git commit -m "feat(D01-S01): 第2章阴阳学说 v1
-- 病证单位：阴虚/阳虚/阴阳两虚
-- 双栏格式：病侧分子通路 + 证侧场论
-- 字数：3,200 字"
-git push origin feat/D01-S01-ch02-yinyang
+| 编号 | 学科 | 院系 | 学分 | 前置 |
+|:----:|------|:----:|:----:|:----:|
+| CM-13 | 内科学(上) | D01 | 5 | CM-02, MM-01 |
+| CM-14 | 内科学(下) | D01 | 5 | CM-13 |
+| CM-15 | 外科学 | D01 | 4 | CM-02 |
+| CM-16 | 妇科学 | D01 | 4 | CM-13 |
+| CM-17 | 儿科学 | D01 | 4 | CM-13 |
+| MM-09 | 中药资源学 | D02 | 3 | MM-04 |
+| MM-10 | 中药栽培养殖学 | D02 | 3 | MM-04 |
+| MM-11 | 中药药剂学 | D02 | 4 | MM-01 |
+| MM-12 | 中药分析学 | D02 | 3 | MM-05 |
+| MM-13 | 中药调剂学 | D02 | 2 | MM-01 |
+| AT-04 | 针灸医籍选读 | D03 | 3 | AT-01, CM-03 |
+| AT-05 | 实验针灸学 | D03 | 3 | AT-01 |
+| TU-02 | 推拿手法学 | D04 | 5 | TU-01 |
+| TU-03 | 推拿诊断学 | D04 | 3 | TU-01, CM-02 |
+| TU-04 | 推拿功法学 | D04 | 2 | TU-01 |
+| OR-02 | 骨伤诊断学 | D05 | 4 | OR-01 |
+| OR-03 | 骨伤影像学 | D05 | 3 | OR-01 |
+| OR-04 | 骨伤生物力学 | D05 | 3 | OR-01 |
+| OR-05 | 正骨学 | D05 | 5 | OR-02 |
+| ENT-01 | 中医眼科学 | D06 | 3 | CM-01, CM-02, CM-13 |
 
-# 在 GitHub 创建 PR → 触发 tcm-human-review.yml 工作流
-```
+#### 第四层：临床专科（35 学科）— 实践·综合
 
-### 3.4 质量门禁执行
+| 编号 | 学科 | 院系 | 学分 | 前置 |
+|:----:|------|:----:|:----:|:----:|
+| CM-18 | 急诊学 | D01 | 3 | CM-13 |
+| CM-19 | 皮肤科学 | D01 | 2 | CM-13 |
+| CM-20 | 男科学 | D01 | 2 | CM-13 |
+| CM-21 | 老年病学 | D01 | 2 | CM-13 |
+| CM-22 | 肿瘤学 | D01 | 3 | CM-13 |
+| AT-06 | 微针疗法 | D03 | 3 | AT-02 |
+| AT-07 | 针灸神经科学 | D03 | 3 | AT-05 |
+| AT-08 | 针灸康复学 | D03 | 3 | AT-03 |
+| AT-09 | 针灸美容 | D03 | 2 | AT-02 |
+| AT-10 | 针灸文献学 | D03 | 2 | AT-04 |
+| TU-05 | 小儿推拿学 | D04 | 3 | TU-02 |
+| TU-06 | 脏腑推拿学 | D04 | 3 | TU-01 |
+| TU-07 | 经络推拿学 | D04 | 3 | TU-01 |
+| TU-08 | 一指禅推拿 | D04 | 3 | TU-02 |
+| TU-09 | 推拿康复学 | D04 | 3 | TU-02 |
+| TU-10 | 国际推拿学 | D04 | 2 | TU-02 |
+| OR-06 | 筋伤学 | D05 | 4 | OR-02 |
+| OR-07 | 骨病学 | D05 | 3 | OR-02 |
+| OR-08 | 骨科手术学 | D05 | 4 | OR-05 |
+| OR-09 | 关节损伤学 | D05 | 3 | OR-05 |
+| OR-10 | 脊柱损伤学 | D05 | 3 | OR-05 |
+| OR-11 | 骨伤康复学 | D05 | 3 | OR-05 |
+| OR-12 | 骨伤手法学 | D05 | 3 | OR-02 |
+| ENT-02 | 中医耳鼻喉科学 | D06 | 3 | CM-13 |
+| ENT-03 | 中医口腔科学 | D06 | 2 | CM-01, CM-02 |
+| ENT-04 | 喉科学 | D06 | 2 | CM-13 |
+| ENT-05 | 五官科护理学 | D06 | 2 | CM-02 |
+| ENT-06 | 中西医结合眼科学 | D06 | 3 | ENT-01 |
+| ENT-07 | 中西医结合耳鼻喉科学 | D06 | 3 | ENT-02 |
+| MG-02 | 中医药经济学 | D08 | 3 | MG-01 |
+| MG-03 | 中医药市场营销 | D08 | 3 | MG-01 |
+| MG-04 | 中医药政策与法规 | D08 | 2 | MG-01 |
+| MG-05 | 医疗机构管理 | D08 | 3 | MG-01 |
+| MG-06 | 健康管理学 | D08 | 3 | MG-01 |
+| MG-07 | 养生管理学 | D08 | 3 | MG-01 |
 
-```yaml
-# .github/workflows/tcm-gate-G1.yml
-name: "G1 作者自检门禁"
-on: [pull_request]
-jobs:
-  quality:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: "G1 检查"
-        run: |
-          # 1. 病证单位完整性
-          grep -c "病侧：" ${{ github.head_ref }} || exit 1
-          grep -c "证侧：" ${{ github.head_ref }} || exit 1
-          
-          # 2. 字数检查
-          wc -m ${{ github.head_ref }} | awk '$1 < 800 {exit 1}'
-          
-          # 3. 自检清单
-          grep -c "\[x\] 自检完成" ${{ github.head_ref }} || exit 1
-```
+#### 第五层：学科交叉（25 学科）— 跨域·应用
 
----
+| 编号 | 学科 | 院系 | 学分 | 前置 |
+|:----:|------|:----:|:----:|:----:|
+| MM-14 | 中药制剂分析 | D02 | 3 | MM-11 |
+| MM-15 | 中药商品学 | D02 | 2 | MM-01 |
+| MM-16 | 中药毒理学 | D02 | 2 | MM-06 |
+| MM-17 | 药代动力学 | D02 | 3 | MM-06 |
+| MM-18 | 生物技术 | D02 | 3 | MM-05 |
+| MM-19 | 海洋中药学 | D02 | 2 | MM-01 |
+| MM-20 | 民族药学 | D02 | 2 | MM-01 |
+| AI-02 | 中医信息学 | D07 | 3 | AI-01 |
+| AI-03 | 中医药数据科学 | D07 | 3 | AI-01 |
+| AI-04 | 中医知识图谱 | D07 | 3 | AI-01, AI-02 |
+| AI-05 | 中医自然语言处理 | D07 | 3 | AI-02 |
+| AI-06 | 中医临床决策支持 | D07 | 3 | AI-03, CM-13 |
+| AI-07 | 中医影像智能分析 | D07 | 3 | AI-01 |
+| AI-08 | 中医电子病历与CDSS | D07 | 3 | AI-06 |
+| AI-09 | 中医智能仪器与可穿戴 | D07 | 3 | AI-01 |
+| AI-10 | 中医智能康复 | D07 | 3 | AI-09 |
+| AI-11 | 计算中医学 | D07 | 4 | AI-04 |
+| AI-12 | 数字化诊疗 | D07 | 3 | AI-06 |
+| AI-13 | AI伦理与治理 | D07 | 2 | AI-01 |
+| AI-14 | 智能药物发现 | D07 | 3 | AI-03, MM-06 |
+| CM-23 | 循证医学 | D01 | 3 | CM-13 |
+| CM-24 | 中医临床思维 | D01 | 3 | CM-13 |
+| AT-11 | 针灸临床研究 | D03 | 3 | AT-05 |
+| MG-08 | 公共卫生管理 | D08 | 3 | MG-01 |
+| MG-09 | 医保管理 | D08 | 3 | MG-01 |
 
-## 四、Ship It — 交付阶段（第 13-18 月）
+#### 第六层：前沿创新（15 学科）— 整合·创造
 
-### 4.1 交付物清单
+| 编号 | 学科 | 院系 | 学分 | 前置 |
+|:----:|------|:----:|:----:|:----:|
+| CM-25 | 各家学说 | D01 | 4 | CM-02 |
+| CM-26 | 中医学术史 | D01 | 3 | CM-04 |
+| CM-27 | 辨证论治体系研究 | D01 | 3 | CM-09 |
+| CM-28 | 学科建设与前沿 | D01 | 2 | 全部 |
+| AT-12 | 针灸国际传播与标准化 | D03 | 2 | AT-03 |
+| ENT-08 | 口腔内科学 | D06 | 3 | ENT-03 |
+| ENT-09 | 口腔颌面外科学 | D06 | 3 | ENT-03 |
+| ENT-10 | 口腔正畸学 | D06 | 3 | ENT-03 |
+| MG-10 | 知识产权与标准化 | D08 | 2 | MG-04 |
+| MG-11 | 中医药国际传播 | D08 | 2 | MG-01 |
+| MG-12 | 中医药信息管理 | D08 | 3 | MG-01 |
+| MG-13 | 中医药人力资源管理 | D08 | 2 | MG-01 |
+| MG-14 | 中医药康养产业管理 | D08 | 3 | MG-01 |
+| AI-15 | 中医大模型 | D07 | 3 | AI-11, AI-05 |
+| AI-16 | AI驱动的中医新药研发 | D07 | 3 | AI-14 |
 
-```
-├── 📚 教材（134 种）
-│   ├── CM-01~CM-32  中医学院（28 学科）
-│   ├── MM-01~MM-24  中药学院（20 学科）
-│   ├── AT-01~AT-14  针灸学院（12 学科）
-│   ├── TU-01~TU-10  推拿学院（10 学科）
-│   ├── OR-01~OR-14  骨伤学院（12 学科）
-│   ├── ENT-01~ENT-10 五官口腔（10 学科）
-│   ├── AI-01~AI-16  中医智能（14 学科）
-│   └── MG-01~MG-14  管理学院（14 学科）
-│
-├── 🔧 基础设施
-│   ├── .github/workflows/    CI/CD 流水线
-│   ├── profiles/             四层 Agent Profile
-│   └── souls/                L1-L4 SOUL.md
-│
-├── 📊 看板
-│   ├── tcm-epic              总控看板（8 Epic）
-│   └── tcm-domain-D0*        8 个领域看板
-│
-└── 🏗️ 部署
-    ├── 前端服务器（114.115.211.254:8000）
-    ├── Hermes API（114.115.211.254:8642）
-    └── Git 仓库（GitHub）
-```
+> **总计**：10 + 15 + 20 + 35 + 25 + 15 = **120 学科**
 
-### 4.2 三阶段签收
-
-```yaml
-phase_1_review:
-  who: "L3 学科主编"
-  what: "每章逐字审阅 + G2 门禁"
-  score: "≥85/100"
-  duration: "2 日/章"
-  
-phase_2_audit:
-  who: "L2 领域主编"
-  what: "领域一致性 + 跨域接口"
-  score: "≥92/100"
-  duration: "3 日/学科"
-  
-phase_3_acceptance:
-  who: "L1 行业主编"
-  what: "宇宙归一化 + 战略符合度"
-  score: "≥95/100"
-  duration: "5 日/轮次"
-  action: "签发《终验合格证》"
-```
-
-### 4.3 Ship 仪式
-
-```bash
-# 每轮次完成，L1 签发终验
-echo "轮次 N 终验合格" > approved/round-N-certificate.md
-git add approved/
-git commit -m "ship: 轮次 N 终验通过 - $(date +%Y-%m-%d)"
-
-# GitHub Release
-gh release create v0.$(date +%Y%m%d) \
-  --title "轮次 N 教材交付" \
-  --notes "共交付 $(ls drafts/ | wc -l) 章"
-```
-
----
-
-## 五、CI/CD 完整流水线
-
-### 5.1 流水线总图
-
-```yaml
-# .github/workflows/tcm-full-pipeline.yml
-name: "TCM-AI-Engineering Pipeline"
-
-on:
-  push:
-    branches: [master, feat/*]
-  pull_request:
-    branches: [master]
-  schedule:
-    - cron: "0 8 * * *"  # 每日报告
-
-jobs:
-  # ── Stage 1: Code → Agent 编写 ──
-  agent_write:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Hermes Agent 自动编写"
-        run: |
-          hermes chat -q "${{ github.event.head_commit.message }}"
-          # → 输出到 drafts/
-
-  # ── Stage 2: Integration → 自动检查 ──
-  g1_quality:
-    needs: [agent_write]
-    runs-on: ubuntu-latest
-    steps:
-      - name: "G1 门禁：病证单位完整性"
-        run: ./scripts/g1-check.sh
-      - name: "G1 门禁：格式规范"
-        run: markdownlint drafts/
-
-  # ── Stage 3: Deploy → 部署看板 ──
-  deploy_dashboard:
-    needs: [g1_quality]
-    runs-on: ubuntu-latest
-    steps:
-      - name: "同步到云服务器"
-        run: |
-          rsync -avz drafts/ root@114.115.211.254:/var/www/tcm-dashboard/
-
-  # ── Stage 4: Monitor → 日进度报告 ──
-  daily_report:
-    if: github.event_name == 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - name: "生成进度报告"
-        run: |
-          echo "# 编写进度日报" > daily-report.md
-          echo "已完成：$(find drafts/ -name '*.md' | wc -l) 章" >> daily-report.md
-          echo "待审核：$(hermes kanban list --json | jq length) 卡" >> daily-report.md
-```
-
-### 5.2 人工介入点
-
-| 流程节点 | 自动/人工 | 人做什么 |
-|:---------|:--------:|:---------|
-| G1 检查 | 🤖 自动 | — |
-| G2 学科审核 | 👤 **人工** | L3 逐字审阅教材内容 |
-| 跨域接口 | 🤖 自动 + 👤 确认 | L2 确认跨域依赖一致性 |
-| G3 终验 | 👤 **人工** | L1 签发合格证 |
-| 地域适配 | 🤖 自动 | 根据环境变量调整病证比例 |
-| 季节调整 | 🤖 自动 | 根据系统日期选择教学重点 |
-
----
-
-## 六、项目启动命令
-
-### 6.1 首次初始化
-
-```bash
-# 1. 克隆项目
-git clone git@github.com:beijingcdy/tcm-textbook-series.git
-cd tcm-textbook-series
-
-# 2. 创建学习分支
-git checkout -b learn/ai-engineering-from-scratch
-
-# 3. 安装 Hermes（每位成员）
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
-
-# 4. 创建个人 Profile
-hermes profile create team-member-$(whoami) --clone-from default
-
-# 5. 创建 L1 主编 Profile
-hermes profile create tcm-chief-editor --clone-from default
-```
-
-### 6.2 启动首次 Pilot（轮次 1：10 学科）
-
-```bash
-# 创建 D01-S01 中医基础理论的 15 章编写任务
-hermes kanban boards switch tcm-domain-d01
-for ch in \
-  "编写第1章：中医药学导论" \
-  "编写第2章：阴阳学说" \
-  "编写第3章：五行学说" \
-  "编写第4章：藏象学说" \
-  "编写第5章：精气血津液神"; do
-  hermes kanban create "$ch" --assignee tcm-author
-done
-
-# 启动 Gateway Dispatcher
-hermes gateway start
-
-# 60s 后验证
-sleep 90
-hermes kanban list
-# 应看到 running 状态 → Agent 正在自动编写
-```
-
----
-
-## 七、度量指标
-
-### 7.1 关键结果（KRs）
-
-| 指标 | 当前 | 目标 | 测量方式 |
-|:----|:---:|:----:|:---------|
-| 编写速度 | ~1 章/天 | 5 章/天 | Kanban done/天 |
-| 病证单位 × 教材 | 0 | 60,000+ | `grep -r "病侧" drafts/*.md | wc -l` |
-| G1 通过率 | — | ≥ 95% | GitHub Actions |
-| 人类审校时间 | — | ≤ 2h/章 | 看板 in_review → done |
-| CI/CD 绿跑率 | — | ≥ 90% | Actions 统计 |
-| 地区适配覆盖率 | — | 6/6 分区 | SOUL.md 检查 |
-
-### 7.2 学习曲线验收
+### 三、认知成长曲线
 
 ```mermaid
-gantt
-    title TCM-AI-Engineering 学习里程碑
-    dateFormat  YYYY-MM-DD
-    section Learn It
-    读 AI Engineering from Scratch       :a1, 2026-07-14, 7d
-    Hermes Agent 实操                   :a2, after a1, 7d
-    本体论 + Protégé                    :a3, after a2, 7d
-    病证单位模板编写                     :a4, after a3, 7d
-    CI/CD 配置                          :a5, after a4, 14d
-    section Do It
-    轮次1：核心基础 10学科              :b1, after a5, 60d
-    轮次2-3：临床各科 60学科            :b2, after b1, 120d
-    轮次4-6：深化交叉 50学科            :b3, after b2, 120d
-    section Ship It
-    G2/G3 门禁审阅                     :c1, after b3, 90d
-    终验签收 + Release                 :c2, after c1, 30d
+graph LR
+    A[文化通识<br>感知认知] --> B[基础经典<br>理解记忆]
+    B --> C[诊断治疗<br>分析运用]
+    C --> D[临床专科<br>实践综合]
+    D --> E[学科交叉<br>跨域应用]
+    E --> F[前沿创新<br>整合创造]
+    
+    style A fill:#4a9eff
+    style B fill:#3fb950
+    style C fill:#d29922
+    style D fill:#f78166
+    style E fill:#bc8cff
+    style F fill:#ff6b6b
 ```
 
 ---
 
-## 八、快速启动指南
+# 第二类交付物：分布式网络软件工程项目
+## CI/CD 可进化的网络平台
 
-### 第一步：团队注册 GitHub
+### 一、平台架构总图
 
-```bash
-# 每位成员
-git config --global user.name "你的名字"
-git config --global user.email "你的邮箱"
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    TCM-AI-Engineering 网络平台                        │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
+│  │  前端服务层    │  │  API 服务层   │  │  后端执行层    │              │
+│  │              │  │              │  │              │              │
+│  │ Nginx :80/443│  │ Hermes API   │  │ 本地 Gateway  │              │
+│  │ 看板 HTML    │  │ :8642        │  │ 云服务器GW   │              │
+│  │ 管理面板     │  │ OpenAPI/Swagger│  │ 浪潮服务器GW  │              │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘              │
+│         │                 │                 │                       │
+│         └─────────────────┼─────────────────┘                       │
+│                           │                                         │
+│                    ┌──────▼───────┐                                 │
+│                    │  CI/CD 流水线  │                                 │
+│                    │  GitHub       │                                 │
+│                    │  Actions      │                                 │
+│                    │  G1/G2/G3    │                                 │
+│                    └──────┬───────┘                                 │
+│                           │                                         │
+│                    ┌──────▼───────┐                                 │
+│                    │  知识存储层    │                                 │
+│                    │  Git LFS     │                                 │
+│                    │  SQLite Kanban│                                 │
+│                    │  OWL 本体    │                                 │
+│                    └──────────────┘                                 │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
-### 第二步：克隆 + 学习
+### 二、Hermes Agent 与 CLI 共同进化路径
 
-```bash
-git clone git@github.com:beijingcdy/tcm-textbook-series.git
-cd tcm-textbook-series
-git checkout -b learn/ai-engineering
-# 开始读 README.md → 按 Learn It 路径学习
+#### 阶段一：CLI 单兵作战（第1-2月）
+```
+hermes chat -q "写第2章阴阳学说"
+→ 终端输出教材内容
+→ 手动复制到 drafts/
+→ 手动 git commit
 ```
 
-### 第三步：第一个 "Do It"
+**能力成熟度**：🤖 Agent 知如何写 · 👤 人知如何部署
 
-```bash
-# 写你的第一个病证单位
-cat > exercises/my-first-dsu.md << 'EOF'
-# 病证单位：阴虚证
+#### 阶段二：Gateway 自动调度（第3-5月）
+```
+hermes gateway start
+→ Dispatcher 60s 轮询看板
+→ 自动领取 ready 任务
+→ 自动编写 → 自动提交
+```
 
-## 病侧（西医）
-- **分子靶点**：TGF-β/Smad 信号通路
-- **基因**：TGFB1, SMAD2, SMAD3
-- **病理机制**：细胞外基质过度沉积 → 组织纤维化
-- **诊断标准**：血清 TGF-β1 ↑, 影像学显示组织萎缩
+**能力成熟度**：🤖 Agent 自动领取 · 👤 人只做审校
 
-## 证侧（中医）
-- **证候**：形体消瘦、口燥咽干、潮热盗汗
-- **病机**：阴液不足 → 虚热内生
-- **经典依据**：《素问·阴阳应象大论》"阴胜则阳病"
-- **方药**：六味地黄丸（熟地、山茱萸、山药、泽泻、丹皮、茯苓）
+#### 阶段三：CI/CD 流水线（第6-9月）
+```
+git push origin feat/chapter-02
+→ GitHub Actions 自动触发
+→ G1 质量门禁检查
+→ 自动同步到云服务器
+→ 看板实时更新进度
+```
 
-## 双栏对应
-| 病侧 | 证侧对应 |
-|:----|:---------|
-| TGF-β ↑ | 虚火内生 |
-| 组织纤维化 | 阴虚不荣 |
-| 能量代谢 ↓ | 形体消瘦 |
-EOF
+**能力成熟度**：🤖 Agent 写入 + 检查 · 👤 人只做 G2/G3
 
-echo "✅ 你的第一个病证单位已创建！"
+#### 阶段四：多服务器分布式（第10-14月）
+```
+本机 Windows ←→ 华为云前端 ←→ 浪潮后端
+    Gateway         Nginx         CLI Agents
+    API Server      看板          编写任务
+    Kanban          公网访问      分布式执行
+```
+
+**能力成熟度**：🤖 Agent 多节点协作 · 👤 人全局监控
+
+#### 阶段五：自适应进化（第15-18月）
+```
+基于反馈的自动修订：
+学生反馈 → GitHub Issue → Agent 自动分析 → 自动修订 PR
+地域季节 → 环境变量 → SOUL.md 自动调整 → 内容自动适配
+```
+
+**能力成熟度**：🤖 Agent 自适应迭代 · 👤 人仅战略性决策
+
+### 三、平台组件清单
+
+#### 3.1 前端服务（公网可访问）
+
+| 组件 | 技术 | 地址 | 用途 |
+|:----|:----|:----|:------|
+| **统筹看板** | HTML+CSS+JS | `:8000` | 三方协作·进度追踪 |
+| **管理面板** | FastAPI+Vue | `:9119` | Hermes 配置管理 |
+| **API Server** | aiohttp | `:8642` | OpenAI 兼容接口 |
+| **Nginx 代理** | nginx | `:8080` | 静态资源+反向代理 |
+
+#### 3.2 CI/CD 流水线
+
+| 工作流 | 触发器 | 功能 |
+|:-------|:-------|:-----|
+| `tcm-ci-cd.yml` | push/PR/定时 | 质量检查+每日报告 |
+| `tcm-human-review.yml` | 手动触发 | 人机互动评审 |
+| `tcm-gate-G1.yml` | PR自动 | 作者自检门禁 |
+| `tcm-deploy.yml` | merge master | 自动部署到云服务器 |
+
+#### 3.3 四层 Agent Profile
+
+| Profile | 角色 | 模型 | 后端 | 工具集 |
+|:--------|:----|:----:|:----|:-------|
+| `tcm-chief-editor` | L1 行业主编 | deepseek-v4 | 本地 | kanban, terminal |
+| `tcm-domain-D01~08` | L2 领域主编 | deepseek-v4 | SSH/浪潮 | kanban, terminal |
+| `tcm-subject-Dxx-Sxx` | L3 学科主编 | deepseek-v4 | Daytona | kanban, file |
+| `tcm-author` | L4 章节作者 | deepseek-v4-pro | 浪潮·Docker | terminal, file |
+
+#### 3.4 数据存储
+
+| 数据 | 存储方式 | 位置 |
+|:----|:---------|:-----|
+| 教材草稿 | Git + Markdown | GitHub |
+| 领域规范 | Git + Markdown | domain-specs/ |
+| 看板任务 | SQLite | ~/.hermes/kanban.db |
+| 本体知识 | OWL/RDF | ontology/ |
+| 用户配置 | YAML | ~/.hermes/config.yaml |
+| 凭证密钥 | .env | ~/.hermes/.env |
+
+### 四、网络拓扑
+
+```
+                          Internet
+                             │
+                     ┌───────▼────────┐
+                     │  华为云服务器    │ 114.115.211.254
+                     │  Nginx :80/443  │
+                     │  Dashboard:8000 │ ← 行业专家/公众评价入口
+                     │  Admin Panel:9119│ ← 项目策划人管理入口
+                     └───────┬────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+     ┌────────▼───┐  ┌──────▼──────┐  ┌───▼────────┐
+     │ 本地 Windows│  │ 浪潮硬服务器  │  │ 华为硬服务器 │
+     │ Hermes Gateway│  │ 192.168.1.11 │  │ 192.168.1.12 │
+     │ API Server   │  │ L4 ×50并发  │  │ 分布式后端   │
+     │ Kanban Disk  │  │ CursorAgent  │  │ 自动启动服务 │
+     └─────────────┘  └─────────────┘  └─────────────┘
+```
+
+### 五、CI/CD 进化矩阵
+
+| 版本 | CLI 能力 | Gateway 能力 | CI/CD 能力 | 教材完成量 |
+|:----:|:---------|:-------------|:-----------|:----------:|
+| v0.1 | 单次对话编写 | 未启用 | 无 | 0 章 |
+| v0.2 | skill 模板编写 | 手动调度 | G1 门禁 | 10 章 |
+| v0.3 | 多轮迭代 | 60s dispatcher | G1+G2 | 50 章 |
+| v0.4 | 批量化 | 7 后端分布 | 全自动 | 200 章 |
+| v0.5 | 自适应 | 地域季节感知 | CI/CD 闭环 | 500 章 |
+| v0.6 | 自我修订 | 反馈驱动 | 全链路 | 800 章 |
+| v1.0 | **进化完成** | **网络平台就绪** | **生产级 CI/CD** | **1,600 章** ✅ |
+
+### 六、平台进化里程碑
+
+```
+M1（第2月）：CLI 可对话编写第一份教材
+  → hermes chat -q "写..."
+  → 产出：第1章中医药学导论
+
+M2（第4月）：Gateway 自动调度 + 看板
+  → 启动 hermes gateway start
+  → 产出：第2-90章（轮次1-2）
+
+M3（第6月）：CI/CD 流水线 + G1/G2 门禁
+  → GitHub Actions 自动检查
+  → 产出：第91-300章（轮次3）
+
+M4（第10月）：三服务器分布式部署
+  → 公网看板 + API 可访问
+  → 产出：第301-800章（轮次4-5）
+
+M5（第14月）：自适应修订 + 地域季节适配
+  → SOUL.md 根据环境变量调整
+  → 产出：第801-1,200章（轮次6）
+
+M6（第18月）：全平台进化完成
+  → 120门学科 + CI/CD 网络平台
+  → 交付：1,600章 + 分布式系统
 ```
 
 ---
 
-> **项目名称**：TCM-AI-Engineering-from-Scratch  
-> **核心理念**：Learn it, Do it, Ship it  
-> **总周期**：18 个月（2026.07 - 2028.01）  
-> **总产出**：120 门学科 × ~15 章 = **~1,600 章教材**  
-> **执行引擎**：Hermes Agent Multi-Agent System  
-> **版本管理**：GitHub + CI/CD  
-> **公开访问**：http://114.115.211.254:8000
+## 项目总览 · 双交付物对照
+
+| 维度 | ① 120门教材 | ② 网络软件平台 |
+|:----|:------------|:--------------|
+| **本质** | 知识产品 | 技术基础设施 |
+| **递进逻辑** | 认知成长（感知→创造） | Agent+CLI 共同进化（单兵→自适应） |
+| **交付标准** | G3 ≥95/100 | CI/CD 绿跑率 ≥90% |
+| **用户** | 本科生·研究生·自学者 | 项目策划人·审稿者·开发者 |
+| **管理者** | L1 行业主编 | L1+技术运维 |
+| **版本** | 教材 v1.0 | 平台 v1.0 |
+| **GitHub** | `tcm-textbook-series` | 同一仓库 `.github/workflows/` |
+
+---
+
+> **一句话总结**：  
+> **120门递进教材**满足「教什么」——从文化通识走到前沿创新；  
+> **分布式网络平台**实现「怎么教」——从CLI对话进化到CI/CD自适应。  
+> 两者互为表里，共同构成中医药智能工程的完整交付。  
+> 项目地址：**http://114.115.211.254:8000**
