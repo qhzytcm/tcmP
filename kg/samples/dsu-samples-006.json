@@ -1,0 +1,2436 @@
+[
+  {
+    "id": "DSU-00064",
+    "disease_side": {
+      "disease_name": "缺血性脑卒中",
+      "icd_code": "8B11",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "t-PA",
+        "NMDA受体",
+        "TNF-α/IL-1β",
+        "AQP4水通道蛋白"
+      ],
+      "gene_pathways": [
+        "缺血级联反应（能量衰竭→兴奋毒性→炎症）",
+        "TLR4/MyD88/NF-κB脑缺血通路",
+        "PI3K/Akt神经保护通路",
+        "Nrf2/ARE氧化应激通路"
+      ],
+      "biomarkers": [
+        "CT排除出血",
+        "DWI-MRI梗死核心",
+        "NIHSS评分",
+        "血脂血糖HbA1c"
+      ],
+      "epidemiology": "中国每年新发约250万，致残率约75%，第一大致残病因",
+      "western_treatment": "超早期溶栓（阿替普酶4.5h内）；血管内取栓（前循环6-24h）；抗血小板/他汀二级预防"
+    },
+    "syndrome_side": {
+      "syndrome_name": "气虚血瘀、风中经络证",
+      "pattern_type": "气滞血瘀证",
+      "zangfu": "肝·脾·经络",
+      "six_channels": "不适用",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "半表半里证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "虚实夹杂"
+      },
+      "key_symptoms": [
+        "半身不遂（偏瘫）",
+        "口眼歪斜",
+        "言语謇涩",
+        "肌肤不仁"
+      ],
+      "secondary_symptoms": [
+        "神疲乏力",
+        "面色苍白",
+        "气短懒言",
+        "流涎",
+        "患侧浮肿"
+      ],
+      "tongue": "舌暗淡或有瘀斑苔薄白",
+      "pulse": "脉弦细涩或虚弱无力",
+      "field_theory": "气虚则血行无力脉络瘀阻。正气虚弱脉络空虚，风邪乘虚入中经络，痹阻气血、筋脉失养则半身不遂口眼歪斜。气虚为本、血瘀为标，治以益气活血通络。",
+      "classical_basis": "《金匮要略·中风历节病脉证并治》：\"夫风之为病，当半身不遂……脉微而数，中风使然。\""
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "偏瘫言语障碍对应脑动脉闭塞→神经元不可逆损伤→缺血级联反应。气虚对应侧支灌注不足，血瘀对应血管闭塞。",
+      "biological_basis": "脑动脉粥样硬化斑块破裂/心源性栓塞→血流中断→能量衰竭→谷氨酸释放→NMDA受体→Ca²⁺内流+炎症级联→ROS↑+侧支代偿不足→不可逆梗死",
+      "evidence_level": "A级-多中心RCT",
+      "key_references": [
+        "《中国急性缺血性脑卒中诊治指南》2023",
+        "《中医内科学·中风》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "补阳还五汤",
+      "formula_source": "《医林改错》",
+      "modifications": [
+        {
+          "condition": "急性期2周内",
+          "adjustment": "加水蛭、全蝎、地龙、僵蚕破瘀通络"
+        },
+        {
+          "condition": "言语障碍明显",
+          "adjustment": "加石菖蒲、远志、郁金、胆南星化痰开窍"
+        },
+        {
+          "condition": "肢体麻木",
+          "adjustment": "加鸡血藤、丝瓜络、桑枝通经活络"
+        },
+        {
+          "condition": "高血压眩晕",
+          "adjustment": "加天麻、钩藤、菊花、石决明平肝潜阳"
+        }
+      ],
+      "acupuncture_rx": [
+        "百会",
+        "风池",
+        "肩髃",
+        "曲池",
+        "合谷",
+        "环跳",
+        "阳陵泉",
+        "足三里",
+        "太冲"
+      ],
+      "dietary_therapy": "地中海饮食、深海鱼油、低盐低脂低糖；忌烟酒",
+      "prognosis": "恢复期3-6个月康复黄金期；约30%可生活自理",
+      "caution": "超早期溶栓时间窗内首选；二级预防抗血小板他汀不可停"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "《金匮要略》论中风以\"半身不遂\"为特征，最早以专篇论述中风。",
+      "sage_ref_sun": "《备急千金要方》卷八·诸风：孙思邈\"小续命汤\"治疗中风，为中风急性期提供了方药。",
+      "typical_case": "患者袁某，男，62岁。突发右侧肢体无力2小时言语不清。NIHSS 12分。DWI示左侧基底节急性梗死。溶栓后NIHSS降至6分。予补阳还五汤加减配合康复训练，2周后可扶行，3月后生活基本自理。",
+      "teaching_points": [
+        "补阳还五汤重用黄芪（大剂补气）——气行则血行",
+        "中风急性期中西医结合策略：溶栓/取栓+补气活血",
+        "王清任\"气虚归并\"理论"
+      ],
+      "exam_questions": [
+        "补阳还五汤为什么重用黄芪至120g？",
+        "缺血性脑卒中的中西医分期论治？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00065",
+    "disease_side": {
+      "disease_name": "特发性面神经麻痹（Bell麻痹）",
+      "icd_code": "AB02",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "HSV-1病毒DNA",
+        "TLR3/7/9抗病毒受体",
+        "TNF-α/IL-6",
+        "VEGF血管供应因子"
+      ],
+      "gene_pathways": [
+        "TLR3/7-TRIF-NF-κB抗病毒炎症通路",
+        "MAPK/ERK神经修复通路",
+        "BDNF/TrkB神经营养通路"
+      ],
+      "biomarkers": [
+        "House-Brackmann分级I-VI级",
+        "ENoG>90%变性预后差",
+        "MRI面神经强化"
+      ],
+      "epidemiology": "发病率约20-30/10万，孕妇发病率更高（45/10万），90%可自发改善",
+      "western_treatment": "糖皮质激素（泼尼松60mg/日5天渐减）发病72h内最有效；抗病毒用于重症；眼保护"
+    },
+    "syndrome_side": {
+      "syndrome_name": "风邪外袭、经络痹阻证",
+      "pattern_type": "风寒束表证",
+      "zangfu": "经络·阳明·少阳",
+      "six_channels": "太阳病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "表证",
+        "cold_heat": "寒热错杂",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": [
+        "突发一侧面部肌肉松弛瘫痪",
+        "口角歪向健侧",
+        "患侧额纹消失闭眼不全",
+        "鼻唇沟变浅"
+      ],
+      "secondary_symptoms": [
+        "耳后疼痛",
+        "味觉减退",
+        "听觉过敏",
+        "流泪流涎",
+        "受风史"
+      ],
+      "tongue": "舌淡红苔薄白或薄黄",
+      "pulse": "脉浮紧或浮数",
+      "field_theory": "面部为手足阳明经和手足少阳经分布。正气不足风寒/风热乘虚侵袭面部经络，经脉痹阻气血不通则弛纵不收，健侧相对紧张则口角歪斜。风为阳邪其性轻扬上行犯头面。",
+      "classical_basis": "《灵枢·经筋》：\"足阳明之筋……卒口僻，急者目不合。\"——《金匮要略》：\"邪气反缓，正气即急，正气引邪，㖞僻不遂。\""
+    },
+    "bridge": {
+      "mapping_type": "间接对应",
+      "mapping_description": "突发口眼歪斜对应HSV-1激活→面神经炎症水肿→骨性面神经管压迫→神经传导阻滞。风邪对应病毒激活，经络痹阻对应神经水肿。",
+      "biological_basis": "免疫力下降→HSV-1在膝状神经节激活→TLR3/7→NF-κB→TNF-α↑→面神经炎症水肿（\"风邪外袭\"）+ 面神经管压迫（\"脉络痹阻\"）→神经传导阻滞",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《特发性面神经麻痹诊治指南》2022",
+        "《中医内科学·中风/口僻》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "牵正散",
+      "formula_source": "《杨氏家藏方》",
+      "modifications": [
+        {
+          "condition": "风热证耳后痛舌红苔黄",
+          "adjustment": "加金银花、连翘、黄芩疏风清热"
+        },
+        {
+          "condition": "风寒证恶寒舌淡",
+          "adjustment": "加羌活、防风、白芷散寒"
+        },
+        {
+          "condition": "久治不愈1月以上",
+          "adjustment": "加黄芪、当归、丹参补气活血"
+        },
+        {
+          "condition": "面肌痉挛后遗症",
+          "adjustment": "加白芍、甘草、全蝎缓急解痉"
+        }
+      ],
+      "acupuncture_rx": [
+        "阳白透鱼腰",
+        "太阳透率谷",
+        "四白透迎香",
+        "地仓透颊车",
+        "下关",
+        "合谷",
+        "太冲",
+        "风池"
+      ],
+      "dietary_therapy": "注意口腔清洁；补充B族维生素；忌辛辣生冷",
+      "prognosis": "约85%在3-6月内完全或基本恢复",
+      "caution": "急性期（3天内）激素最有效；闭眼不全需护眼防角膜炎"
+    },
+    "teaching": {
+      "difficulty": 2,
+      "stage": "住院医-1",
+      "sage_ref_zhang": "仲景论\"邪气反缓，正气即急，正气引邪\"——解释了为什么口角歪向健侧而不是患侧。",
+      "sage_ref_sun": "《备急千金要方》卷八·诸风：孙思邈记载了治疗\"口目㖞斜\"的方药和针灸。",
+      "typical_case": "患者刘某，男，35岁。晨起左面部瘫痪、口角右歪、左眼闭合不全额纹消失，耳后隐痛。舌淡红苔薄白，脉浮。予牵正散加减+泼尼松60mg/日+针刺。1周后改善，4周后基本恢复。",
+      "teaching_points": [
+        "牵正散白附子白僵蚕全蝎三药的配伍",
+        "面瘫针灸\"远端取穴+局部透刺\"特点",
+        "Bell麻痹与中枢性面瘫的鉴别"
+      ],
+      "exam_questions": [
+        "周围性面瘫与中枢性面瘫的鉴别要点——额纹是否受累？",
+        "牵正散中白附子的作用？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00066",
+    "disease_side": {
+      "disease_name": "三叉神经痛",
+      "icd_code": "8B82",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "Nav1.7/1.8钠离子通道",
+        "TRPV1伤害感受器",
+        "CGRP",
+        "P2X3嘌呤受体"
+      ],
+      "gene_pathways": [
+        "Nav Na⁺通道电压门控兴奋通路",
+        "TRPV1/TRPA1疼痛信号通路",
+        "MAPK/ERK神经病理性疼痛通路"
+      ],
+      "biomarkers": [
+        "MRI排除继发性（肿瘤/血管压迫/MS）",
+        "扳机点识别",
+        "VAS评分"
+      ],
+      "epidemiology": "发病率约12-27/10万，好发50岁以上女性（女:男=3:1），右侧多于左侧60%",
+      "western_treatment": "卡马西平/奥卡西平一线；加巴喷丁/普瑞巴林二线；微血管减压术MVD；射频消融/伽玛刀"
+    },
+    "syndrome_side": {
+      "syndrome_name": "肝火上炎、风火上扰证",
+      "pattern_type": "肝火上炎证",
+      "zangfu": "肝·胆·经络",
+      "six_channels": "少阳病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "半表半里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": [
+        "面部发作性电击样/刀割样剧痛",
+        "一侧三叉神经分布区（Ⅱ/Ⅲ支）",
+        "触发点诱发（说话/洗脸/刷牙）",
+        "发作持续数秒至2分钟"
+      ],
+      "secondary_symptoms": [
+        "烦躁易怒",
+        "口干口苦",
+        "面红目赤",
+        "大便秘结",
+        "不敢洗脸刷牙"
+      ],
+      "tongue": "舌红苔黄或薄黄",
+      "pulse": "脉弦滑或弦数",
+      "field_theory": "肝火旺盛循经上炎于头面，风火相煽上扰，面部经络气血壅滞不通则暴痛。风性善行数变故疼痛如电击来去迅速。触发点痛为风动特征——微小扰动即可引动肝风。",
+      "classical_basis": "《灵枢·经脉》论阳明胃经\"是动则病……颜黑……则恶人与火\"，与三叉神经痛之面痛畏触特征相通。"
+    },
+    "bridge": {
+      "mapping_type": "间接对应",
+      "mapping_description": "阵发性面痛触发电刺激特征对应三叉神经根入脑干区（REZ）血管压迫→脱髓鞘→异位放电。肝风对应异常神经放电，肝火对应疼痛信号传入增强。",
+      "biological_basis": "三叉神经REZ区血管压迫→局部脱髓鞘→轴索暴露→触突间非突触性传递/异位冲动+Naw1.7高表达→C纤维触发剧痛",
+      "evidence_level": "D级-病例对照",
+      "key_references": [
+        "《三叉神经痛诊疗指南》2023",
+        "《中医内科学·头痛/面痛》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "龙胆泻肝汤合川芎茶调散",
+      "formula_source": "《医宗金鉴》合《局方》",
+      "modifications": [
+        {
+          "condition": "痛阈值低发作极频",
+          "adjustment": "加全蝎、蜈蚣、僵蚕、地龙息风止痉"
+        },
+        {
+          "condition": "痛势剧烈",
+          "adjustment": "加乳香、没药、延胡索活血定痛"
+        },
+        {
+          "condition": "面肌抽动",
+          "adjustment": "加白芍、甘草、天麻缓急"
+        }
+      ],
+      "acupuncture_rx": [
+        "下关",
+        "攒竹（Ⅰ支）",
+        "四白（Ⅱ支）",
+        "地仓颊车（Ⅲ支）",
+        "合谷",
+        "太冲"
+      ],
+      "dietary_therapy": "软食避免咀嚼诱发；忌辛辣油炸过冷过热食物",
+      "prognosis": "卡马西平对70%有效；MVD手术5年治愈率70-80%",
+      "caution": "卡马西平需监测血常规肝功能及药疹"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "少阳经病变面部症状——《伤寒论》第264条\"少阳中风\"。",
+      "sage_ref_sun": "《备急千金要方》卷十三·心脏·头面风第八：记载了治疗\"头面风\"的方药。",
+      "typical_case": "患者周某，女，58岁。右面颊阵发性电击样剧痛2月，说话刷牙即触发V2/3支，每日发作10余次，烦躁易怒口干苦。MRI排除继发性。卡马西平200mg tid控制不佳。舌红苔黄，脉弦数。予龙胆泻肝汤合川芎茶调散加减+全蝎6g蜈蚣2条。3剂后发作减至3-4次/日，疼痛强度减轻。7剂后偶发。续服2周基本控制。",
+      "teaching_points": [
+        "扳机点触发机制与\"风动\"理论对应",
+        "卡马西平与清肝息风药协同",
+        "龙胆泻肝汤\"清肝经湿热\"与\"泻肝胆实火\""
+      ],
+      "exam_questions": [
+        "三叉神经痛原发性和继发性的鉴别要点？",
+        "从风火相煽角度分析三叉神经痛的病机特点？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00067",
+    "disease_side": {
+      "disease_name": "腰椎间盘突出症/坐骨神经痛",
+      "icd_code": "FA80/8B91",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "髓核TNF-α/IL-1β神经根炎症",
+        "MMP-3/9椎间盘基质降解",
+        "COX-2/PGE2",
+        "TRPV1神经根痛觉"
+      ],
+      "gene_pathways": [
+        "NF-κB/MAPK神经根炎症通路",
+        "Wnt/β-catenin椎间盘退变通路",
+        "TGF-β纤维环修复通路"
+      ],
+      "biomarkers": [
+        "腰椎MRI（金标准）",
+        "SLRT直腿抬高阳性<60°",
+        "ODI功能障碍指数"
+      ],
+      "epidemiology": "终身患病率约13-40%，好发于青壮年体力劳动者",
+      "western_treatment": "保守（NSAIDs/肌松剂/硬膜外激素注射）；微创椎间孔镜；开放手术椎板切除减压融合"
+    },
+    "syndrome_side": {
+      "syndrome_name": "寒湿阻络、气滞血瘀证",
+      "pattern_type": "气滞血瘀证",
+      "zangfu": "肾·膀胱经·经络",
+      "six_channels": "不适用",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": [
+        "一侧腰臀至下肢后外侧放射性疼痛",
+        "疼痛如刺刀割",
+        "夜间疼痛加重",
+        "活动受限"
+      ],
+      "secondary_symptoms": [
+        "腰部僵直活动不利",
+        "患肢麻木发凉",
+        "遇寒加重得温稍减",
+        "咳嗽用力时痛剧"
+      ],
+      "tongue": "舌暗紫或有瘀斑苔白腻",
+      "pulse": "脉弦紧或弦涩",
+      "field_theory": "足太阳膀胱经循腰背下肢后侧。寒湿客于腰部经络，气血凝滞不通则痛。腰部为肾之府，肾虚腰府失养则椎间盘退变易损。疼痛沿太阳经路线向下放射——正是坐骨神经分布路线。",
+      "classical_basis": "《金匮要略·五脏风寒积聚病脉证并治》：\"肾著之病，其人身体重，腰中冷，如坐水中……甘姜苓术汤主之。\""
+    },
+    "bridge": {
+      "mapping_type": "间接对应",
+      "mapping_description": "腰臀下肢放射痛对应腰椎间盘突出→髓核化学刺激（TNF-α）和机械压迫。瘀血对应压迫，寒湿对应炎症水肿。",
+      "biological_basis": "椎间盘退变→纤维环破裂→髓核突出→压迫神经根+ TNF-α/IL-1β/PGE2释放→神经根炎症水肿+ TRPV1/CGRP激活→放射痛",
+      "evidence_level": "C级-队列研究",
+      "key_references": [
+        "《腰椎间盘突出症诊疗指南》2023",
+        "《中医骨伤科学》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "独活寄生汤合身痛逐瘀汤",
+      "formula_source": "《千金要方》合《医林改错》",
+      "modifications": [
+        {
+          "condition": "急性期剧痛",
+          "adjustment": "加延胡索、川乌、草乌（先煎）散寒定痛"
+        },
+        {
+          "condition": "下肢麻木",
+          "adjustment": "加鸡血藤、木瓜、伸筋草通络"
+        },
+        {
+          "condition": "腰膝酸软肾虚",
+          "adjustment": "加杜仲、续断、牛膝补肾"
+        },
+        {
+          "condition": "久病瘀血明显",
+          "adjustment": "加地龙、水蛭破瘀通络"
+        }
+      ],
+      "acupuncture_rx": [
+        "肾俞",
+        "大肠俞",
+        "秩边",
+        "环跳",
+        "殷门",
+        "委中",
+        "阳陵泉",
+        "承山",
+        "昆仑"
+      ],
+      "dietary_therapy": "杜仲牛膝猪骨汤温阳散寒；忌生冷避潮湿",
+      "prognosis": "约80%保守6周内改善；手术优良率>85%",
+      "caution": "马尾综合征需紧急手术；避免暴力推拿"
+    },
+    "teaching": {
+      "difficulty": 3,
+      "stage": "住院医-2",
+      "sage_ref_zhang": "《金匮要略》\"肾著\"篇——甘姜苓术汤为寒湿腰痛经典方。",
+      "sage_ref_sun": "《备急千金要方》卷十九·肾脏·腰痛第七：独活寄生汤为\"肾虚血瘀\"腰痛代表方。",
+      "typical_case": "患者刘某，男，45岁。弯腰搬物后左腰腿痛3天沿大腿后外侧放射。MRI L4/5左后突出压迫S1神经根。SLRT 30°。予独活寄生汤合身痛逐瘀汤加减+卧床牵引，7剂减轻2周明显好转。",
+      "teaching_points": [
+        "独活寄生汤\"祛风湿补肝肾止痹痛\"三法合一",
+        "保守vs手术适应证",
+        "膀胱经与坐骨神经解剖重合"
+      ],
+      "exam_questions": [
+        "独活寄生汤为什么祛风湿药和补肝肾药同用？",
+        "腰椎间盘突出症中医辨证分型？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00068",
+    "disease_side": {
+      "disease_name": "偏头痛",
+      "icd_code": "8A80",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "CGRP降钙素基因相关肽",
+        "5-HT1B/1D受体",
+        "TRPV1/CGRP三叉神经血管系统",
+        "Nav1.1钠通道"
+      ],
+      "gene_pathways": [
+        "三叉神经-血管活化通路",
+        "皮质扩散抑制CSD通路",
+        "5-HT信号通路",
+        "线粒体能量代谢通路"
+      ],
+      "biomarkers": [
+        "ICHD-3诊断标准",
+        "无特异性生物标志物（临床诊断）",
+        "排除继发性头痛"
+      ],
+      "epidemiology": "全球患病率约15%，女性约是男性3倍，好发25-55岁",
+      "western_treatment": "急性期（曲普坦、吉泮/地坦CGRP拮抗剂、NSAIDs）；预防（β阻滞剂、CGRP单抗、肉毒素A）"
+    },
+    "syndrome_side": {
+      "syndrome_name": "肝阳上亢、风阳上扰证",
+      "pattern_type": "肝火上炎证",
+      "zangfu": "肝·胆·经络",
+      "six_channels": "少阳病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "半表半里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": [
+        "偏侧搏动性头痛",
+        "中重度反复发作",
+        "伴恶心呕吐",
+        "畏光畏声"
+      ],
+      "secondary_symptoms": [
+        "眩晕耳鸣",
+        "烦躁易怒",
+        "失眠多梦",
+        "目赤口苦",
+        "月经前加重"
+      ],
+      "tongue": "舌红苔薄黄或少苔",
+      "pulse": "脉弦数或弦细数",
+      "field_theory": "肝体阴用阳主升发疏泄。肝阴不足肝阳上亢，化风化火上扰清窍则搏动头痛。肝胆经脉布于头侧（少阳经），故头痛偏侧。肝火犯胃则恶心。诸风掉眩皆属于肝。",
+      "classical_basis": "《素问·方盛衰论》：\"气上不下，头痛巅疾。\"《伤寒论》少阳头痛。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "偏侧搏动痛恶心畏光对应CSD→三叉神经激活→CGRP释放→脑膜血管扩张神经源性炎症。",
+      "biological_basis": "触发因素→CSD去极化波+激活三叉神经传入→CGRP/SP释放→脑膜血管扩张（\"风火上扰\"）+肥大细胞脱颗粒→神经源性炎症→丘脑→疼痛+孤束核→恶心",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《偏头痛诊治指南》2023",
+        "Goadsby PJ. N Engl J Med 2017"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "天麻钩藤饮",
+      "formula_source": "《杂病证治新义》",
+      "modifications": [
+        {
+          "condition": "头痛剧烈呕吐",
+          "adjustment": "加川芎30g、白芷、蔓荆子引经止痛"
+        },
+        {
+          "condition": "肝火亢盛目赤便秘",
+          "adjustment": "加龙胆草、夏枯草、大黄"
+        },
+        {
+          "condition": "经前发作",
+          "adjustment": "加当归、白芍、柴胡调肝"
+        },
+        {
+          "condition": "失眠多梦",
+          "adjustment": "加酸枣仁、远志、夜交藤"
+        }
+      ],
+      "acupuncture_rx": [
+        "太阳",
+        "率谷",
+        "风池",
+        "百会",
+        "太冲",
+        "足临泣",
+        "合谷",
+        "外关"
+      ],
+      "dietary_therapy": "避免触发食物（红酒、奶酪、巧克力）；规律作息",
+      "prognosis": "慢性病可有效控制；约50%经正规预防后发作频率减半",
+      "caution": "曲普坦过量可致MOH"
+    },
+    "teaching": {
+      "difficulty": 3,
+      "stage": "住院医-2",
+      "sage_ref_zhang": "三阳头痛经络定位：太阳（头项）、阳明（前额）、少阳（侧头）。",
+      "sage_ref_sun": "《备急千金要方》卷十三·心脏·头面风第八：载有\"治头风方\"。",
+      "typical_case": "患者吴某，女，36岁。反复发作性左侧偏头痛8年，每月发作3-4次，呈搏动性剧痛伴恶心呕吐、畏光畏声，每次持续8-24小时，月经期加重，有先兆（闪光暗点）。舌红苔薄黄，脉弦数。予天麻钩藤饮加减+舒马曲普坦鼻喷雾剂急性期治疗。2个月后发作频率减至每月1次。加用普萘洛尔预防，中药续服3个月，6个月随访偶有轻度发作。",
+      "teaching_points": [
+        "天麻钩藤饮平肝息风清热活血配伍",
+        "偏头痛急性期与预防期分期论治",
+        "CGRP单抗——从5-HT时代进入CGRP时代"
+      ],
+      "exam_questions": [
+        "天麻钩藤饮中牛膝的配伍意义——引血下行的靶向作用？",
+        "偏头痛先兆的中医病机解释——风阳扰动与CSD的对应？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00069",
+    "disease_side": {
+      "disease_name": "癫痫",
+      "icd_code": "8A60",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "GABAA受体（抑制性）",
+        "NMDA/AMPA受体（兴奋性谷氨酸）",
+        "Nav1.1/1.2钠通道",
+        "T型钙通道Cav3.2"
+      ],
+      "gene_pathways": [
+        "GABA能抑制性突触传递通路",
+        "谷氨酸能兴奋性突触通路",
+        "mTOR信号通路",
+        "HCN通道起搏电流"
+      ],
+      "biomarkers": [
+        "EEG痫样放电",
+        "长程视频EEG监测",
+        "头颅MRI",
+        "基因检测"
+      ],
+      "epidemiology": "全球约5000万患者，年发病率约50/10万，中国患病率约7‰",
+      "western_treatment": "抗癫痫药（丙戊酸/拉莫三嗪/左乙拉西坦/卡马西平按类型选）；手术切除病灶/VNS/DBS"
+    },
+    "syndrome_side": {
+      "syndrome_name": "风痰闭窍、肝风内动证（痫证）",
+      "pattern_type": "肝气郁结证",
+      "zangfu": "肝·脾·心",
+      "six_channels": "厥阴病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒热错杂",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": [
+        "突然仆倒不省人事",
+        "四肢抽搐口吐白沫",
+        "两目上视牙关紧闭",
+        "发作后困倦嗜睡"
+      ],
+      "secondary_symptoms": [
+        "发作前先兆",
+        "喉中痰鸣",
+        "面色青紫",
+        "白睛有瘀丝"
+      ],
+      "tongue": "舌淡红或暗红苔白腻或黄腻",
+      "pulse": "脉弦滑或弦数",
+      "field_theory": "痫证范畴。先天禀赋不足或情志失调，脏腑失调痰浊内生。肝风内动挟痰浊上蒙清窍内扰心神则卒然昏倒。肝风鼓动经络则四肢抽搐。痰涎上涌则口吐白沫。痰为痫证宿根。",
+      "classical_basis": "《素问·奇病论》：\"人生而有病巅疾者……此得之在母腹中时。\"——《金匮要略》风引汤\"除热瘫痫\"。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "抽搐神昏口吐白沫对应神经元异常同步放电→传播至全脑→强直-阵挛发作。",
+      "biological_basis": "大脑皮层局灶病变→GABAa↓/NMDA↑→局部发作放电+放电扩散→脑干网状结构→意识丧失+双侧皮质→全身强直-阵挛+自主神经→唾液分泌↑→口吐白沫",
+      "evidence_level": "C级-队列研究",
+      "key_references": [
+        "《癫痫诊治指南》2023",
+        "《中医内科学·痫证》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "定痫丸",
+      "formula_source": "《医学心悟》",
+      "modifications": [
+        {
+          "condition": "发作频繁痰火壅盛",
+          "adjustment": "加礞石、大黄、黄芩、沉香泻火涤痰"
+        },
+        {
+          "condition": "肝火亢盛烦躁",
+          "adjustment": "加龙胆草、栀子、柴胡清肝"
+        },
+        {
+          "condition": "失眠多梦",
+          "adjustment": "加龙骨、牡蛎、远志重镇安神"
+        },
+        {
+          "condition": "缓解期脾虚痰多",
+          "adjustment": "合六君子汤健脾化痰"
+        }
+      ],
+      "acupuncture_rx": [
+        "百会",
+        "神庭",
+        "本神",
+        "风府",
+        "大椎",
+        "丰隆",
+        "太冲",
+        "足三里"
+      ],
+      "dietary_therapy": "生酮饮食（儿童难治性有效）；避免酒精睡眠剥夺闪光刺激",
+      "prognosis": "约70%患者1-2种ASM可控制发作",
+      "caution": "ASM需规律服药不可突然停药；孕龄女性避免丙戊酸"
+    },
+    "teaching": {
+      "difficulty": 5,
+      "stage": "主治医",
+      "sage_ref_zhang": "《金匮要略》风引汤——大黄配龙骨牡蛎石膏寒水石，开重镇息风清热治痫先河。",
+      "sage_ref_sun": "《备急千金要方》卷十四·小肠腑·风癫第五：孙思邈载有治疗癫痫的多首方剂。",
+      "typical_case": "患者黄某，男，16岁。反复发作性抽搐2年，每月发作1-2次。发作时突然倒地、四肢强直抽搐、口吐白沫、意识丧失约3分钟，发作后昏睡。EEG示广泛性痫样放电。舌红苔黄腻，脉弦滑。予定痫丸加减配合丙戊酸500mg/日。3个月后发作减至每2月1次。加用左乙拉西坦后完全控制9个月。中药以健脾化痰息风定痫调理，随访1年无发作。",
+      "teaching_points": [
+        "\"痰\"为痫证宿根——定痫丸涤痰开窍息风",
+        "发作分类与中医辨证的关系",
+        "ASM选药原则"
+      ],
+      "exam_questions": [
+        "定痫丸中天麻全蝎僵蚕的配伍含义？为何用虫类药物？",
+        "全面性强直-阵挛发作与癫痫持续状态的中西医处理？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00070",
+    "disease_side": {
+      "disease_name": "帕金森病",
+      "icd_code": "8A00",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "酪氨酸羟化酶TH/黑质多巴胺神经元",
+        "α-突触核蛋白（路易小体）",
+        "多巴胺D1/D2受体",
+        "MAO-B"
+      ],
+      "gene_pathways": [
+        "多巴胺能突触传递通路",
+        "线粒体复合体I功能障碍通路",
+        "α-突触核蛋白聚集/自噬-溶酶体通路",
+        "小胶质细胞TLR4/NF-κB神经炎症通路"
+      ],
+      "biomarkers": [
+        "临床诊断（英国脑库标准）",
+        "DAT-PET多巴胺转运蛋白显像",
+        "嗅觉减退/RBD前驱期"
+      ],
+      "epidemiology": "65岁以上患病率约1.7%，中国约300万患者",
+      "western_treatment": "左旋多巴/多巴胺激动剂/MAO-B抑制剂/COMT抑制剂；DBS深部脑刺激"
+    },
+    "syndrome_side": {
+      "syndrome_name": "肝肾阴虚、虚风内动证（颤证）",
+      "pattern_type": "肝肾阴虚证",
+      "zangfu": "肝·肾·筋脉",
+      "six_channels": "厥阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒热错杂",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "静止性震颤（搓丸样）",
+        "肌强直（铅管样/齿轮样）",
+        "运动缓慢（动作迟缓）",
+        "姿势步态障碍"
+      ],
+      "secondary_symptoms": [
+        "表情减少面具脸",
+        "小写征",
+        "便秘",
+        "嗅觉减退",
+        "RBD"
+      ],
+      "tongue": "舌暗红少苔或薄白苔裂纹",
+      "pulse": "脉弦细或沉细涩",
+      "field_theory": "肝主筋、肾主骨生髓。肝肾阴虚则筋骨失养，虚风内动则震颤。肾精不足髓海空虚则动作迟缓。肝血不足筋脉失濡则肌强直。肝肾阴虚为本、风火痰瘀为标。",
+      "classical_basis": "《素问·至真要大论》：\"诸风掉眩，皆属于肝。\"——《素问·脉要精微论》论\"振掉\"病机在肝肾。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "震颤肌强直运动迟缓对应黑质多巴胺能神经元退变→纹状体多巴胺缺乏→基底节环路异常。",
+      "biological_basis": "α-突触核蛋白聚集→路易小体→黑质多巴胺能神经元丢失+线粒体复合体I障碍→ATP↓→多巴胺合成↓→纹状体多巴胺↓>80%→运动症状",
+      "evidence_level": "C级-队列研究",
+      "key_references": [
+        "《帕金森病诊治指南》2023",
+        "《中医内科学·颤证》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "大定风珠合地黄饮子",
+      "formula_source": "《温病条辨》合《宣明论方》",
+      "modifications": [
+        {
+          "condition": "震颤明显",
+          "adjustment": "加天麻、钩藤、蜈蚣、僵蚕息风定颤"
+        },
+        {
+          "condition": "便秘顽固",
+          "adjustment": "加火麻仁、肉苁蓉润肠"
+        },
+        {
+          "condition": "抑郁焦虑",
+          "adjustment": "加柴胡、白芍、郁金、合欢皮"
+        },
+        {
+          "condition": "流涎",
+          "adjustment": "加益智仁、乌药缩泉固涩"
+        }
+      ],
+      "acupuncture_rx": [
+        "百会",
+        "风池",
+        "太冲",
+        "合谷",
+        "阳陵泉",
+        "足三里",
+        "三阴交",
+        "曲池"
+      ],
+      "dietary_therapy": "高纤维饮食防便秘；增加豆制品深海鱼",
+      "prognosis": "进行性加重病程；药物治疗有效控制症状5-10年",
+      "caution": "左旋多巴日剂量不宜过大；DBS手术时机"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "仲景\"虚劳\"理论为肝肾阴虚病机奠定依据。",
+      "sage_ref_sun": "《备急千金要方》卷十一·肝脏·筋极第四：孙思邈论肝虚筋病涉及震颤症状。",
+      "typical_case": "患者王某，男，68岁。右手静止性震颤2年，动作迟缓、小写征、面具脸、便秘。UPDRS-III 32分。舌暗红少苔，脉弦细。予大定风珠合地黄饮子加减+美多巴125mg tid。3月后震颤减轻动作改善UPDRS-III 20分。1年后症状稳定运动波动少，生活质量明显改善。",
+      "teaching_points": [
+        "肝肾阴虚虚风内动病机特点",
+        "大定风珠\"血肉有情之品\"填补真阴",
+        "左旋多巴/中药分期治疗策略"
+      ],
+      "exam_questions": [
+        "诸风掉眩皆属于肝——帕金森病震颤的中医解释？",
+        "从肝肾阴虚角度分析左旋多巴远期并发症？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00071",
+    "disease_side": {
+      "disease_name": "甲状腺功能亢进症",
+      "icd_code": "5A10",
+      "category": "内分泌代谢病",
+      "molecular_targets": [
+        "TSH受体/刺激性抗体TSI",
+        "TPO甲状腺过氧化物酶",
+        "甲状腺球蛋白Tg",
+        "β-肾上腺素受体"
+      ],
+      "gene_pathways": [
+        "TSH-R-cAMP-PKA通路",
+        "PI3K/Akt/mTOR甲状腺增殖通路",
+        "NF-κB甲状腺自身免疫炎症通路"
+      ],
+      "biomarkers": [
+        "TSH↓、FT3/FT4↑",
+        "TPOAb/TgAb阳性",
+        "TRAb阳性",
+        "甲状腺摄碘率↑"
+      ],
+      "epidemiology": "患病率约1.3%，女性高于男性约5:1，好发20-50岁",
+      "western_treatment": "抗甲状腺药物（甲巯咪唑/丙硫氧嘧啶）；放射性131I；甲状腺次全切；β阻滞剂控制心率"
+    },
+    "syndrome_side": {
+      "syndrome_name": "肝火亢盛、气阴两虚证（瘿病）",
+      "pattern_type": "肝火上炎证",
+      "zangfu": "肝·心·肾",
+      "six_channels": "少阳病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "半表半里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "虚实夹杂"
+      },
+      "key_symptoms": [
+        "颈前肿大质软光滑",
+        "怕热心悸手颤",
+        "多食消瘦体重下降",
+        "烦躁易怒失眠"
+      ],
+      "secondary_symptoms": [
+        "多汗怕热皮肤潮湿",
+        "眼突目胀",
+        "口干口苦",
+        "大便频数"
+      ],
+      "tongue": "舌红苔黄或少苔",
+      "pulse": "脉弦数或弦细数",
+      "field_theory": "甲状腺属\"瘿\"范畴。肝气郁结化火灼伤气阴。肝火亢盛则怕热心悸、多食消瘦（火能消谷）。肝风内动则手颤。肝开窍于目，肝火上炎则眼突。气阴两虚是本、肝火亢盛是标。",
+      "classical_basis": "《诸病源候论·瘿候》：\"瘿者由忧恚气结所生。\"——巢元方论瘿病由情志不畅所致。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "怕热心悸手颤多食对应TRAb刺激TSH受体→甲状腺激素过量→全身高代谢。肝火对应甲状腺激素产热和交感效应。",
+      "biological_basis": "TSI结合TSH受体→cAMP-PKA→T3/T4合成分泌↑×10倍+Na⁺/K⁺-ATP酶↑→线粒体氧化磷酸化解偶联→产热↑（怕热）+β-AR→心率↑/震颤+蛋白质脂肪分解→消瘦",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《甲亢诊疗指南》2023",
+        "《中医外科学·瘿病》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "龙胆泻肝汤合生脉散",
+      "formula_source": "《医宗金鉴》合《千金方》",
+      "modifications": [
+        {
+          "condition": "心慌心动过速",
+          "adjustment": "加黄连、莲子心清心安神"
+        },
+        {
+          "condition": "手颤严重",
+          "adjustment": "加天麻、钩藤、石决明平肝"
+        },
+        {
+          "condition": "突眼明显",
+          "adjustment": "加枸杞、女贞子、菊花养肝明目"
+        },
+        {
+          "condition": "甲状腺肿结节",
+          "adjustment": "加浙贝母、夏枯草、牡蛎化痰软坚"
+        }
+      ],
+      "acupuncture_rx": [
+        "人迎",
+        "水突",
+        "天突",
+        "间使",
+        "内关",
+        "太冲",
+        "足三里",
+        "三阴交"
+      ],
+      "dietary_therapy": "忌碘饮食（禁海带紫菜海鲜碘盐）；高热量高蛋白",
+      "prognosis": "药物治疗18-24月停药复发率约50%；131I致甲减需终身替代",
+      "caution": "甲亢危象需紧急处理；妊娠期首选PTU"
+    },
+    "teaching": {
+      "difficulty": 3,
+      "stage": "主治医",
+      "sage_ref_zhang": "《千金要方》以海藻昆布为主要药物治疗瘿病——碘剂治疗甲亢的雏形。",
+      "sage_ref_sun": "《备急千金要方》卷十一·肝脏：孙思邈记载了\"治瘿方\"。",
+      "typical_case": "患者赵某，女，32岁。颈粗怕热心悸手颤2月，体重下降8kg。FT3↑FT4↑TSH↓0.01mIU/L，TRAb(+)。龙胆泻肝汤合生脉散+甲巯咪唑。4周改善12周甲功正常。中药巩固半年停药，随访1年未复发。",
+      "teaching_points": [
+        "Graves病\"肝火亢盛气阴两虚\"病机特点",
+        "ATD与中药协同治疗",
+        "甲亢分期论治"
+      ],
+      "exam_questions": [
+        "甲亢的中西医辨证分型？",
+        "从\"火能消谷\"分析高代谢机制？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00072",
+    "disease_side": {
+      "disease_name": "甲状腺功能减退症",
+      "icd_code": "5A00",
+      "category": "内分泌代谢病",
+      "molecular_targets": [
+        "TSH受体/TSH",
+        "TPO甲状腺过氧化物酶",
+        "甲状腺球蛋白Tg",
+        "脱碘酶（T4→T3转化）"
+      ],
+      "gene_pathways": [
+        "TSH-R-cAMP-PKA通路（反馈性↑）",
+        "下丘脑-垂体-甲状腺轴负反馈通路"
+      ],
+      "biomarkers": [
+        "TSH↑、FT4↓",
+        "TPOAb/TgAb阳性（桥本甲减）",
+        "血胆固醇升高",
+        "甲状腺B超弥漫性病变"
+      ],
+      "epidemiology": "患病率约1-2%，女性高于男性约8:1，随年龄增长升高",
+      "western_treatment": "左甲状腺素（L-T4）替代治疗，终身服药，剂量个体化"
+    },
+    "syndrome_side": {
+      "syndrome_name": "脾肾阳虚证",
+      "pattern_type": "脾肾阳虚证",
+      "zangfu": "脾·肾",
+      "six_channels": "少阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "神疲乏力嗜睡",
+        "畏寒怕冷",
+        "体重增加",
+        "记忆力减退反应迟钝"
+      ],
+      "secondary_symptoms": [
+        "面色苍白或萎黄",
+        "皮肤干燥脱屑",
+        "毛发稀疏脱落",
+        "便秘",
+        "下肢非凹陷性水肿",
+        "女性月经紊乱"
+      ],
+      "tongue": "舌淡胖苔白滑或白腻",
+      "pulse": "脉沉迟细弱或沉缓",
+      "field_theory": "肾为先天之本主一身阳气，脾为后天之本主运化。脾肾阳虚则阳气不足温煦失职，故畏寒怕冷、神疲嗜睡。阳不化气则水湿内停，泛溢肌肤则水肿。脾虚运化失司则体重增加便秘。肾精不足髓海空虚则记忆力减退。苔白滑脉沉迟为阳虚之典型征象。",
+      "classical_basis": "《金匮要略·血痹虚劳病脉证并治》：\"虚劳腰痛，少腹拘急，小便不利者，八味肾气丸主之。\"——仲景开温补肾阳之先河。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "畏寒怕冷嗜睡体重增加对应甲状腺激素不足→基础代谢率下降→全身各系统功能减退。脾肾阳虚对应T3/T4不足导致的低代谢状态。",
+      "biological_basis": "自身免疫/甲状腺手术/131I→甲状腺滤泡破坏→T3/T4合成分泌减少>90%→TSH反馈性↑+Na⁺/K⁺-ATP酶↓→产热↓（畏寒怕冷）+能量代谢↓→体重↑+神经系统→反应迟钝（\"阳虚髓海失养\"）+胃肠蠕动↓→便秘",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《甲减诊治指南》2023",
+        "《中医内科学·虚劳》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "金匮肾气丸合补中益气汤",
+      "formula_source": "《金匮要略》合《脾胃论》",
+      "modifications": [
+        {
+          "condition": "水肿明显",
+          "adjustment": "加茯苓、猪苓、泽泻、车前子利水消肿"
+        },
+        {
+          "condition": "贫血面色苍白",
+          "adjustment": "加当归、阿胶、何首乌养血"
+        },
+        {
+          "condition": "便秘",
+          "adjustment": "加肉苁蓉、火麻仁、郁李仁温润通便"
+        },
+        {
+          "condition": "黏液性水肿昏迷危象",
+          "adjustment": "配合静脉L-T4急救"
+        }
+      ],
+      "acupuncture_rx": [
+        "肾俞",
+        "脾俞",
+        "命门",
+        "关元",
+        "气海",
+        "足三里",
+        "三阴交",
+        "太溪"
+      ],
+      "dietary_therapy": "高蛋白低脂饮食、补充硒和锌；十字花科蔬菜适量勿生食",
+      "prognosis": "终身替代预后良好，甲减危象死亡率高",
+      "caution": "L-T4需空腹清晨服药避免与钙铁剂同服；老年人起始剂量宜小"
+    },
+    "teaching": {
+      "difficulty": 2,
+      "stage": "住院医-1",
+      "sage_ref_zhang": "《金匮要略》肾气丸——\"阴中求阳\"的组方思想为后世温补肾阳的经典范式。",
+      "sage_ref_sun": "《备急千金要方》卷十九·肾脏：孙思邈记载了\"补肾方\"。",
+      "typical_case": "患者李某，女，48岁。疲乏怕冷体重增加5年，反应迟钝。TSH 56mIU/L，FT4 4.2pmol/L，TPOAb阳性。金匮肾气丸合补中益气汤+L-T4 50μg/日。8周后TSH降至8.5mIU/L，症状明显改善。",
+      "teaching_points": [
+        "\"阴中求阳\"——金匮肾气丸熟地+附子的配伍特点",
+        "甲减终身替代治疗与中药温阳的协同",
+        "肾阳为一身阳气之根本——甲减多系统症状的阳虚解释"
+      ],
+      "exam_questions": [
+        "金匮肾气丸\"阴中求阳\"的配伍依据？",
+        "原发甲减与中枢性甲减的中西医鉴别？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00073",
+    "disease_side": {
+      "disease_name": "2型糖尿病",
+      "icd_code": "5A11",
+      "category": "内分泌代谢病",
+      "molecular_targets": [
+        "胰岛素受体（INSR）",
+        "GLUT4葡萄糖转运体（骨骼肌/脂肪）",
+        "DPP-4二肽基肽酶4",
+        "SGLT2钠-葡萄糖共转运体2"
+      ],
+      "gene_pathways": [
+        "胰岛素-PI3K-Akt信号通路（葡萄糖摄取）",
+        "AMPK能量代谢通路",
+        "GLP-1肠促胰素通路",
+        "NF-κB糖尿病炎症通路"
+      ],
+      "biomarkers": [
+        "FPG≥7.0mmol/L或HbA1c≥6.5%",
+        "OGTT 2h血糖≥11.1mmol/L",
+        "胰岛素/C肽水平",
+        "胰岛自身抗体（排除1型）"
+      ],
+      "epidemiology": "中国成人患病率约12.8%，约1.4亿患者，是全球第一糖尿病大国",
+      "western_treatment": "生活方式干预；二甲双胍一线；SGLT2i/GLP-1RA联合/单用；胰岛素强化；血糖血压血脂综合管理"
+    },
+    "syndrome_side": {
+      "syndrome_name": "气阴两虚证（消渴）",
+      "pattern_type": "肝肾阴虚证",
+      "zangfu": "肾·肺·胃",
+      "six_channels": "少阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "口干多饮",
+        "多食易饥",
+        "尿频量多",
+        "疲乏无力"
+      ],
+      "secondary_symptoms": [
+        "形体消瘦",
+        "五心烦热",
+        "大便干燥",
+        "视物模糊",
+        "肢体麻木（并发症期）"
+      ],
+      "tongue": "舌红少津苔薄黄或少苔",
+      "pulse": "脉细数或弦细滑",
+      "field_theory": "消渴病机核心在阴津亏损、燥热偏盛。肺主治节为水之上源，肺燥津伤则口干多饮（上消）。胃火炽盛腐熟水谷则多食易饥（中消）。肾虚封藏失司则尿频量多（下消）。气阴两虚贯穿全程——气虚则疲乏无力、阴虚则内热消瘦。久病气阴两伤、瘀血阻络则变证百出（眼/肾/足/心病）。",
+      "classical_basis": "《金匮要略·消渴小便不利淋病脉证并治》：\"男子消渴，小便反多，以饮一斗，小便一斗，肾气丸主之。\"——《素问·奇病论》：\"此人必数食甘美而多肥也……转为消渴。\""
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "三多一少疲劳对应胰岛素抵抗+胰岛β细胞功能减退→血糖升高→渗透性利尿→代谢紊乱。气阴两虚对应胰岛素信号障碍和代谢异常的消耗状态。",
+      "biological_basis": "肥胖/遗传→脂肪组织巨噬细胞浸润→TNF-α↑→IRS-1丝氨酸磷酸化→PI3K-Akt↓→GLUT4转位↓→胰岛素抵抗（\"气虚不运\"）+β细胞代偿性分泌→耗竭→胰岛素↓→葡萄糖利用障碍→能量不足+高血糖→渗透性利尿→流失水电解质（\"阴虚燥热\"）",
+      "evidence_level": "A级-多中心RCT",
+      "key_references": [
+        "《中国2型糖尿病防治指南》2024",
+        "《中医内科学·消渴》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "消渴方合玉液汤",
+      "formula_source": "《丹溪心法》合《医学衷中参西录》",
+      "modifications": [
+        {
+          "condition": "上消口干明显",
+          "adjustment": "加天花粉、葛根、沙参生津止渴"
+        },
+        {
+          "condition": "中消多食善饥",
+          "adjustment": "加石膏、知母、黄连清胃泻火"
+        },
+        {
+          "condition": "下消尿频量多",
+          "adjustment": "加益智仁、桑螵蛸、金钱子固肾缩泉"
+        },
+        {
+          "condition": "并发症前期瘀血",
+          "adjustment": "加丹参、川芎、地龙活血通络"
+        }
+      ],
+      "acupuncture_rx": [
+        "胰俞（经外奇穴）",
+        "肺俞",
+        "脾俞",
+        "肾俞",
+        "足三里",
+        "三阴交",
+        "太溪"
+      ],
+      "dietary_therapy": "低GI饮食、低碳水、优质蛋白、膳食纤维；忌含糖饮料、精制碳水、油炸食品",
+      "prognosis": "早期干预可逆转前期；需长期综合管理；并发症是主要致死致残原因",
+      "caution": "血糖监测个体化；关注心肾保护（SGLT2i/GLP-1RA）；教育患者识别低血糖"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "《金匮要略·消渴》篇：\"渴欲饮水，口干舌燥者，白虎加人参汤主之。\"——仲景以白虎清热、人参益气，开气阴两虚消渴之治法。",
+      "sage_ref_sun": "《备急千金要方》卷二十一·消渴：孙思邈首倡\"消渴病所慎者三：一饮酒，二房室，三咸食及面。\"——饮食管理思想超越时代。",
+      "typical_case": "患者吴某，男，52岁。口干多饮多尿3月，体重下降10kg。FPG 13.6mmol/L，HbA1c 10.2%。舌红少津苔薄黄，脉细数。予消渴方合玉液汤加减+二甲双胍+生活方式干预。8周后FPG 7.2mmol/L，HbA1c 7.1%。3月后停中药仅二甲双胍维持。",
+      "teaching_points": [
+        "消渴\"上中下三消\"分证论治与西医对应",
+        "孙思邈糖尿病饮食管理思想——先于现代1500年",
+        "\"气阴两虚\"对应胰岛素抵抗和β细胞功能不全"
+      ],
+      "exam_questions": [
+        "消渴的三消分证与西医糖尿病分期的对应？",
+        "从\"气虚不运\"角度分析胰岛素抵抗的中医机制？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00074",
+    "disease_side": {
+      "disease_name": "痛风",
+      "icd_code": "FA24",
+      "category": "内分泌代谢病",
+      "molecular_targets": [
+        "URAT1尿酸盐转运体（肾脏重吸收）",
+        "GLUT9尿酸转运体",
+        "XO黄嘌呤氧化酶",
+        "TLR4/MyD88/NF-κB关节炎症通路"
+      ],
+      "gene_pathways": [
+        "尿酸合成（嘌呤代谢）通路",
+        "URAT1/GLUT9尿酸转运通路",
+        "NLRP3炎症小体/IL-1β痛风炎症通路"
+      ],
+      "biomarkers": [
+        "血尿酸>420μmol/L（男）>360μmol/L（女）",
+        "关节滑液尿酸盐结晶（金标准）",
+        "双能CT尿酸盐沉积",
+        "关节超声双轨征"
+      ],
+      "epidemiology": "中国患病率约1.1-3.0%，男性远高于女性，好发40岁以上",
+      "western_treatment": "急性期（秋水仙碱/NSAIDs/糖皮质激素）；降尿酸（别嘌醇/非布司他/苯溴马隆）；碱化尿液"
+    },
+    "syndrome_side": {
+      "syndrome_name": "湿热下注、痹阻经络证（热痹）",
+      "pattern_type": "脾胃湿热证",
+      "zangfu": "脾·肾·经络",
+      "six_channels": "太阴病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": [
+        "第一跖趾关节红肿胀痛（夜间发作）",
+        "关节灼热痛不可触",
+        "大脚趾为主（单关节炎）",
+        "疼痛常在夜间或清晨发作"
+      ],
+      "secondary_symptoms": [
+        "发热",
+        "口干口苦",
+        "小便短赤",
+        "反复发作关节变形（慢性期）",
+        "痛风石（耳廓/关节）"
+      ],
+      "tongue": "舌红苔黄腻",
+      "pulse": "脉滑数或弦滑",
+      "field_theory": "过食膏粱厚味、嗜酒过度损伤脾胃，运化失职则湿浊内生。湿浊郁久化热，湿热浊毒下注关节，痹阻经络气血不通则突发剧痛。湿热浊毒煎熬成石则为痛风石。第一跖趾属足太阴脾经所过，脾运不及湿浊最易停聚之处。急性期以清热利湿泄浊通络为法。",
+      "classical_basis": "《金匮要略·中风历节病脉证并治》：\"历节痛，不可屈伸……诸肢节疼痛，身体尪羸，脚肿如脱，头眩短气，温温欲吐，桂枝芍药知母汤主之。\"——仲景论历节病类似痛风。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "急性关节红肿胀痛对应尿酸盐结晶沉积→激活NLRP3炎症小体→IL-1β释放→中性粒细胞趋化→急性关节炎。湿热对应炎症反应，浊毒对应尿酸盐结晶。",
+      "biological_basis": "高嘌呤饮食/饮酒→尿酸生成↑+肾脏排泄↓→血尿酸过饱和→尿酸盐结晶在关节（尤其第一跖趾关节温度低pH低处）沉积→滑膜细胞吞噬结晶→NLRP3炎症小体→caspase-1→IL-1β释放（\"湿热毒邪\"）→中性粒细胞趋化→急性滑膜炎（\"红肿胀痛\"）→反复发作→关节破坏+痛风石",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《中国痛风诊治指南》2023",
+        "《中医内科学·痹证》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "四妙丸合宣痹汤",
+      "formula_source": "《成方便读》合《温病条辨》",
+      "modifications": [
+        {
+          "condition": "关节红肿热痛甚",
+          "adjustment": "加忍冬藤、络石藤、黄柏、连翘清热通络"
+        },
+        {
+          "condition": "痛不可忍",
+          "adjustment": "加延胡索、乳香、没药活血定痛"
+        },
+        {
+          "condition": "发热口干",
+          "adjustment": "加石膏、知母、生地清热养阴"
+        },
+        {
+          "condition": "痛风石形成",
+          "adjustment": "加浙贝母、夏枯草、皂角刺化痰散结"
+        }
+      ],
+      "acupuncture_rx": [
+        "足三里",
+        "阴陵泉",
+        "三阴交",
+        "曲池",
+        "合谷",
+        "太溪",
+        "脾俞",
+        "阿是穴"
+      ],
+      "dietary_therapy": "低嘌呤饮食（忌动物内脏海鲜浓汤啤酒）；多饮水>2000ml/日；碱化尿液pH6.2-6.9",
+      "prognosis": "急性期3-7天可缓解；规范降尿酸治疗可控制发作减少90%",
+      "caution": "急性期不宜加用降尿酸药（引发转移性发作）需炎症控制后2周加用；别嘌醇需监测HLA-B*5801"
+    },
+    "teaching": {
+      "difficulty": 3,
+      "stage": "住院医-2",
+      "sage_ref_zhang": "《金匮要略》桂枝芍药知母汤为治疗历节病（类似痛风和类风湿关节炎）的经典方，体现了\"祛风散寒除湿清热\"并用的组方思想。",
+      "sage_ref_sun": "《备急千金要方》卷八·诸风：孙思邈记载了多种治疗\"历节风\"的方药。",
+      "typical_case": "患者陈某，男，45岁。右足第一跖趾关节红肿剧痛24小时，夜间发作VAS 9分。血尿酸586μmol/L。舌红苔黄腻，脉滑数。予四妙丸合宣痹汤加减+依托考昔。3天红肿明显消退，7天疼痛消失。2周后加非布司他40mg/日开始降尿酸，中药续服4周。随访半年血尿酸达标无发作。",
+      "teaching_points": [
+        "痛风急性期\"清热利湿\"与缓解期\"降尿酸\"分期治疗",
+        "\"浊毒\"理论——尿酸作为中医\"湿浊毒邪\"的生物学对应",
+        "四妙丸清热利湿治疗痛风的分子机制（NLRP3/IL-1β抑制）"
+      ],
+      "exam_questions": [
+        "四妙丸中黄柏和苍术的配伍意义？",
+        "痛风急性期为什么不能用降尿酸药？",
+        "高尿酸血症的中医\"治未病\"策略？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00075",
+    "disease_side": {
+      "disease_name": "肥胖症",
+      "icd_code": "5B80",
+      "category": "内分泌代谢病",
+      "molecular_targets": [
+        "MC4R黑皮质素4受体",
+        "GLP-1受体（肠促胰素）",
+        "PPARγ过氧化物酶体增殖物激活受体γ",
+        "NPY/AgRP神经肽食欲调节因子"
+      ],
+      "gene_pathways": [
+        "瘦素-黑皮质素（Lep-MC4R）食欲调控通路",
+        "GLP-1肠促胰素-胰岛素分泌通路",
+        "AMPK能量代谢通路",
+        "脂肪组织Wnt/β-catenin分化通路"
+      ],
+      "biomarkers": [
+        "BMI≥28（中国标准）",
+        "WC腰围≥90cm（男）≥85cm（女）",
+        "体脂率男性>25%女性>30%",
+        "代谢综合征组分数"
+      ],
+      "epidemiology": "中国成人超重率34.3%、肥胖率16.4%，总人数居全球第一",
+      "western_treatment": "生活方式干预（饮食+运动+行为）；减重药物（GLP-1受体激动剂司美格鲁肽/利拉鲁肽、奥利司他）；减重代谢手术（Roux-en-Y胃旁路/袖状胃切除）"
+    },
+    "syndrome_side": {
+      "syndrome_name": "痰湿内盛、脾虚不运证",
+      "pattern_type": "痰湿阻肺证",
+      "zangfu": "脾·胃",
+      "six_channels": "太阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒热错杂",
+        "deficiency_excess": "虚实夹杂"
+      },
+      "key_symptoms": [
+        "形体肥胖臃肿",
+        "身重困倦嗜睡",
+        "脘腹痞满纳多",
+        "活动后气短"
+      ],
+      "secondary_symptoms": [
+        "头昏沉不清",
+        "大便黏滞不爽",
+        "口淡不渴",
+        "面部油脂多",
+        "四肢沉重"
+      ],
+      "tongue": "舌淡胖苔白厚腻",
+      "pulse": "脉濡滑或沉细滑",
+      "field_theory": "脾主运化水谷精微。过食肥甘厚味、少动多静损伤脾运，水谷不化精微反生膏脂痰湿，停于皮下膏膜则为肥胖。痰湿困脾则脘腹痞满，湿阻清阳则头昏身重。脾虚无力运化输布则气短乏力。精微不布、油脂混入津血则高血脂高血糖。痰湿与肥胖互为因果。",
+      "classical_basis": "《素问·通评虚实论》：\"肥贵人则膏粱之疾也。\"——《金匮要略·痰饮咳嗽病脉证并治》：\"病痰饮者，当以温药和之。\"——治痰饮为治疗肥胖提供了基本法则。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "肥胖身重困倦特征对应能量摄入>消耗→白色脂肪组织过度堆积→脂肪细胞肥大增生→低度慢性炎症和胰岛素抵抗。痰湿对应脂肪堆积和代谢紊乱。",
+      "biological_basis": "高热量饮食+久坐→PPARγ↑/SREBP-1c↑→脂肪合成分化↑+AMPK↓→脂肪酸氧化↓→白色脂肪组织大量堆积（\"膏脂蓄积\"）+脂肪组织巨噬细胞浸润→TNF-α/IL-6↑（\"痰湿化热\"）+脂肪因子（瘦素抵抗/脂联素↓）→胰岛素抵抗→代谢综合征",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《肥胖症诊治指南》中华内分泌代谢杂志2023",
+        "《中医内科学·肥胖》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "防己黄芪汤合二陈汤",
+      "formula_source": "《金匮要略》合《太平惠民和剂局方》",
+      "modifications": [
+        {
+          "condition": "脂肪肝明显",
+          "adjustment": "加荷叶、决明子、生山楂、泽泻降脂化浊"
+        },
+        {
+          "condition": "便秘",
+          "adjustment": "加大黄、枳实、槟榔通腑导滞"
+        },
+        {
+          "condition": "高血压",
+          "adjustment": "加天麻、钩藤、菊花平肝潜阳"
+        },
+        {
+          "condition": "糖尿病前期",
+          "adjustment": "加黄连、知母、地骨皮清热降糖"
+        }
+      ],
+      "acupuncture_rx": [
+        "丰隆",
+        "天枢",
+        "中脘",
+        "关元",
+        "足三里",
+        "阴陵泉",
+        "脾俞",
+        "胃俞"
+      ],
+      "dietary_therapy": "限能量平衡膳食（CRD）或低碳水饮食；结合运动每日>30min；忌含糖饮料油炸高脂食品",
+      "prognosis": "通过生活方式+药物可减重5-15%；减重>10%可显著改善代谢并发症",
+      "caution": "GLP-1RA常见胃肠道反应；减重速度不宜过快；手术适应证（BMI≥32.5伴并发症）需评估"
+    },
+    "teaching": {
+      "difficulty": 2,
+      "stage": "住院医-1",
+      "sage_ref_zhang": "《金匮要略·痰饮咳嗽病脉证并治》\"病痰饮者当以温药和之\"——痰湿理论指导肥胖治疗，健脾温运化湿是核心治法。",
+      "sage_ref_sun": "《备急千金要方》卷十一·肝脏：孙思邈论\"肝劳\"（过度劳伤肝脏）与现代代谢性肝病、肥胖代谢应激的损伤相通。",
+      "typical_case": "患者高某，男，35岁。BMI 32.5，体重98kg，腹部肥胖。身重困倦、头昏嗜睡、大便黏滞。导痰汤合五苓散加减+生活方式干预。3月减重12kg BMI降至27.8，血脂ALT正常。半年BMI 25.1。",
+      "teaching_points": [
+        "\"脾为生痰之源\"——肥胖的痰湿本质",
+        "减重药物GLP-1RA的中医解读（\"调节气机升降\"）",
+        "防己黄芪汤\"益气利水\"的肥胖治疗特点"
+      ],
+      "exam_questions": [
+        "从代谢角度分析\"痰湿内盛\"证的生物学基础？",
+        "GLP-1RA（司美格鲁肽）与中医药的协同策略？"
+      ]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-9章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00076",
+    "disease_side": {
+      "disease_name": "骨质疏松症",
+      "icd_code": "FB83",
+      "category": "内分泌代谢病",
+      "molecular_targets": [
+        "RANKL/OPG骨保护素",
+        "PTH1R",
+        "VDR维生素D受体",
+        "组织蛋白酶K"
+      ],
+      "gene_pathways": [
+        "RANK-RANKL-OPG骨吸收通路",
+        "Wnt/beta-catenin骨形成通路"
+      ],
+      "biomarkers": [
+        "DXA T值<=-2.5",
+        "FRAX骨折风险评估",
+        "P1NP/CTX-1骨转换标志物"
+      ],
+      "epidemiology": "60岁以上患病率约36%，绝经后女性约50%",
+      "western_treatment": "钙剂+VD基础；双膦酸盐/地舒单抗抗骨吸收；特立帕肽促骨形成"
+    },
+    "syndrome_side": {
+      "syndrome_name": "肾精亏虚、骨痿证",
+      "pattern_type": "肝肾阴虚证",
+      "zangfu": "肾·肝·骨",
+      "six_channels": "少阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "腰背疼痛酸软乏力",
+        "身高缩短驼背",
+        "轻微外力即骨折",
+        "活动能力下降"
+      ],
+      "secondary_symptoms": [
+        "腰膝酸软",
+        "牙齿松动",
+        "耳鸣健忘",
+        "发脱齿摇"
+      ],
+      "tongue": "舌淡暗苔薄白或少苔",
+      "pulse": "脉沉细弱或尺脉无力",
+      "field_theory": "肾主骨生髓藏精。肾精亏虚则骨枯髓减、骨质疏松。肾为先天之本，年高则天癸竭精血衰，肾虚骨失所养发为骨痿。治以补肾填精壮骨。",
+      "classical_basis": "《素问-痿论》：肾气热则腰脊不举骨枯而髓减发为骨痿。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "骨痛骨折对应骨吸收>骨形成。肾精亏虚对应绝经后/衰老引起骨代谢负平衡。",
+      "biological_basis": "雌激素下降→RANKL↑/OPG↓→破骨细胞活化+成骨细胞Wnt信号↓→骨形成↓→骨折风险↑",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《骨质疏松症诊疗指南》2023",
+        "《中医骨伤科学》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "左归丸合六味地黄丸",
+      "formula_source": "《景岳全书》合《小儿药证直诀》",
+      "modifications": [
+        {
+          "condition": "腰背痛甚",
+          "adjustment": "加杜仲、续断、骨碎补补肾壮骨"
+        },
+        {
+          "condition": "兼阳虚畏寒",
+          "adjustment": "加鹿角胶、肉苁蓉温补肾阳"
+        },
+        {
+          "condition": "骨折后",
+          "adjustment": "加丹参、血竭、自然铜接骨"
+        }
+      ],
+      "acupuncture_rx": [
+        "肾俞",
+        "脾俞",
+        "命门",
+        "腰阳关",
+        "关元",
+        "足三里",
+        "太溪",
+        "悬钟"
+      ],
+      "dietary_therapy": "高钙食物奶制品豆制品；VD晒太阳每日15min；负重运动防跌倒",
+      "prognosis": "药物可增骨密度5-10%/年；综合管理降低骨折风险50%",
+      "caution": "双膦酸盐需防颌骨坏死和股骨非典型骨折"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "《金匮要略》肾气丸治疗肾虚腰痛——补肾壮骨的源头。",
+      "sage_ref_sun": "《备急千金要方》孙思邈记载补肾强骨方剂。",
+      "typical_case": "患者李某，女，68岁。腰背痛2年伴压缩性骨折。DXA T值-3.2。左归丸合六味地黄丸+钙剂VD+阿仑膦酸钠。6月后疼痛减轻，1年后DXA T值-2.6。未再发骨折。",
+      "teaching_points": [
+        "从骨质疏松理解肾精的生物学本质",
+        "双膦酸盐与补肾中药的协同",
+        "左归丸与右归丸鉴别应用"
+      ],
+      "exam_questions": [
+        "左归丸与右归丸治疗骨质疏松的鉴别应用？",
+        "从RANKL/OPG通路分析肾精对骨代谢的调控？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00077",
+    "disease_side": {
+      "disease_name": "缺铁性贫血",
+      "icd_code": "3A02",
+      "category": "血液病",
+      "molecular_targets": [
+        "DMT1二价金属转运蛋白1",
+        "TfR1转铁蛋白受体",
+        "铁调素hepcidin",
+        "铁蛋白"
+      ],
+      "gene_pathways": [
+        "BMP-SMAD-hepcidin铁代谢调控通路",
+        "HIF-2alpha-DMT1肠铁吸收通路"
+      ],
+      "biomarkers": [
+        "血清铁<8umol/L",
+        "铁蛋白<15ug/L",
+        "转铁蛋白饱和度<16%",
+        "Hb<120g/L(女)"
+      ],
+      "epidemiology": "全球最常见贫血，中国患病率约15-20%，孕妇儿童高发",
+      "western_treatment": "口服铁剂（硫酸亚铁/多糖铁）；静脉铁剂；病因治疗"
+    },
+    "syndrome_side": {
+      "syndrome_name": "脾胃虚弱、气血两虚证",
+      "pattern_type": "脾肾阳虚证",
+      "zangfu": "脾·胃·心",
+      "six_channels": "太阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "面色萎黄或苍白无华",
+        "头晕眼花",
+        "心悸气短",
+        "疲乏无力"
+      ],
+      "secondary_symptoms": [
+        "食欲不振",
+        "口唇指甲淡白",
+        "皮肤干燥",
+        "月经量少色淡"
+      ],
+      "tongue": "舌淡红苔薄白",
+      "pulse": "脉细弱或芤脉",
+      "field_theory": "脾为后天之本、气血生化之源。脾胃虚弱运化失职则水谷精微不能化生血液。血虚面色失荣则萎黄苍白，心血不足则心悸气短，清窍失养则头晕眼花。",
+      "classical_basis": "《灵枢-决气》：中焦受气取汁变化而赤是谓血。"
+    },
+    "bridge": {
+      "mapping_type": "直接对应",
+      "mapping_description": "贫血对应铁缺乏导致血红素合成不足Hb下降组织缺氧。脾胃虚弱对应铁摄入/吸收不足。",
+      "biological_basis": "铁摄入不足/丢失过多→铁储存耗尽→血清铁↓→骨髓有核红细胞铁缺乏→血红素合成↓→Hb减少+组织缺氧",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《缺铁性贫血诊治指南》2022",
+        "《中医内科学-虚劳》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "归脾汤合八珍汤",
+      "formula_source": "《济生方》合《正体类要》",
+      "modifications": [
+        {
+          "condition": "铁吸收障碍",
+          "adjustment": "加炒麦芽、砂仁醒脾开胃"
+        },
+        {
+          "condition": "月经过多",
+          "adjustment": "加阿胶、艾叶止血"
+        },
+        {
+          "condition": "严重贫血",
+          "adjustment": "结合静脉铁剂"
+        }
+      ],
+      "acupuncture_rx": [
+        "足三里",
+        "脾俞",
+        "心俞",
+        "气海",
+        "关元",
+        "三阴交",
+        "血海",
+        "膈俞"
+      ],
+      "dietary_therapy": "高铁食物红肉动物肝脏；搭配维C促吸收；忌茶咖啡与铁同服",
+      "prognosis": "铁剂4周Hb可上升>20g/L；补足储存铁需2-4月",
+      "caution": "口服铁剂注意胃肠道反应；Hb正常后续补铁2-3月补足储存铁"
+    },
+    "teaching": {
+      "difficulty": 2,
+      "stage": "住院医-1",
+      "sage_ref_zhang": "《金匮要略》小建中汤治虚劳——补血先补脾的思想。",
+      "sage_ref_sun": "《备急千金要方》卷三·妇人：孙思邈重视妇人血虚治疗。",
+      "typical_case": "患者林某，女，28岁。头昏心悸疲乏半年，面色苍白，月经量多。Hb 78g/L，MCV 68fL，铁蛋白6ug/L。舌淡苔薄白，脉细弱。予归脾汤合八珍汤+硫酸亚铁缓释片。4周后Hb升至102g/L。2月后Hb正常。续服归脾丸2月巩固。嘱多食红肉肝类。",
+      "teaching_points": [
+        "中焦受气取汁变化而赤是谓血",
+        "铁剂与归脾汤的协同——补铁+健脾",
+        "补足储存铁的治疗原则"
+      ],
+      "exam_questions": [
+        "归脾汤补血先补脾的组方原理？",
+        "缺铁性贫血与中医血虚证的对应关系？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00078",
+    "disease_side": {
+      "disease_name": "再生障碍性贫血",
+      "icd_code": "3A70",
+      "category": "血液病",
+      "molecular_targets": [
+        "CD34+造血干细胞",
+        "IFN-gamma/TNF-alpha造血抑制因子",
+        "Fas/FasL凋亡通路",
+        "端粒酶"
+      ],
+      "gene_pathways": [
+        "造血干细胞自我更新Wnt/Notch通路",
+        "Th1介导造血抑制通路",
+        "Fas-caspase凋亡通路"
+      ],
+      "biomarkers": [
+        "全血细胞减少(三系下降)",
+        "骨髓增生低下",
+        "CD34+细胞明显减少",
+        "PNH克隆检测"
+      ],
+      "epidemiology": "发病率约4-8/百万，好发15-25岁和60岁以上",
+      "western_treatment": "免疫抑制治疗（ATG+环孢素）；促造血（TPO-RA）；造血干细胞移植"
+    },
+    "syndrome_side": {
+      "syndrome_name": "肾精亏虚、髓枯血虚证",
+      "pattern_type": "脾肾阳虚证",
+      "zangfu": "肾·脾·髓",
+      "six_channels": "少阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒热错杂",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "进行性面色苍白",
+        "反复感染发热",
+        "皮肤黏膜出血（瘀斑鼻衄）",
+        "高度疲乏"
+      ],
+      "secondary_symptoms": [
+        "头晕眼花",
+        "低热骨痛",
+        "口舌生疮",
+        "腰膝酸软"
+      ],
+      "tongue": "舌淡胖有齿痕苔白",
+      "pulse": "脉沉细数或虚大无力",
+      "field_theory": "肾藏精主骨生髓，髓生血。肾精亏虚则髓海枯竭、无血化生。再障之根在肾虚髓枯，标在血虚发热出血。脾为后天之本，肾虚日久必累及脾。",
+      "classical_basis": "《灵枢-经脉》论肾足少阴之脉。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "全血细胞减少对应造血干细胞免疫损伤导致骨髓脂肪化、造血衰竭。肾精亏虚对应造血干细胞池耗竭。",
+      "biological_basis": "自身反应性T细胞→IFN-gamma/TNF-alpha↑→CD34+干细胞Fas凋亡+抑制造血→骨髓脂肪化→三系减少",
+      "evidence_level": "C级-队列研究",
+      "key_references": [
+        "《再障诊治指南》2022",
+        "《中医内科学-虚劳》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "左归丸合十四味建中汤",
+      "formula_source": "《景岳全书》合《局方》",
+      "modifications": [
+        {
+          "condition": "感染发热",
+          "adjustment": "加金银花、连翘、板蓝根清热解毒"
+        },
+        {
+          "condition": "出血明显",
+          "adjustment": "加仙鹤草、白茅根、三七凉血止血"
+        },
+        {
+          "condition": "阳虚畏寒",
+          "adjustment": "加鹿角胶、补骨脂、淫羊藿温阳"
+        }
+      ],
+      "acupuncture_rx": [
+        "肾俞",
+        "脾俞",
+        "命门",
+        "关元",
+        "足三里",
+        "三阴交",
+        "血海",
+        "膈俞"
+      ],
+      "dietary_therapy": "高蛋白高维生素易消化饮食；注意食品卫生防感染",
+      "prognosis": "慢性再障免疫抑制治疗有效率约60-70%",
+      "caution": "ATG过敏风险；环孢素需监测血药浓度"
+    },
+    "teaching": {
+      "difficulty": 5,
+      "stage": "主任医",
+      "sage_ref_zhang": "《金匮要略》薯蓣丸治虚劳诸不足——扶正抵御外邪。",
+      "sage_ref_sun": "《备急千金要方》卷十九·肾脏：孙思邈论肾虚实辨证。",
+      "typical_case": "患者周某，男，22岁。Hb 46g/L, WBC 1.2x10^9/L, PLT 15x10^9/L，骨髓增生低下。予左归丸合十四味建中汤+ATG+环孢素+艾曲波帕。4周脱离输血。6月三系恢复。",
+      "teaching_points": [
+        "再障肾虚髓枯与造血干细胞衰竭对应",
+        "ATG+环孢素+补肾填精中西医结合",
+        "再生障碍性贫血的分型与预后评估"
+      ],
+      "exam_questions": [
+        "再障中医辨证分型与西医严重程度对应？",
+        "ATG/环孢素免疫抑制的祛邪效应与补肾中药扶正的结合？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00079",
+    "disease_side": {
+      "disease_name": "急性髓系白血病",
+      "icd_code": "2A60",
+      "category": "血液病",
+      "molecular_targets": [
+        "FLT3-ITD/TKD突变",
+        "NPM1突变",
+        "IDH1/2突变",
+        "DNMT3A突变"
+      ],
+      "gene_pathways": [
+        "JAK-STAT信号通路(FLT3激活)",
+        "PI3K/Akt/mTOR增殖通路",
+        "BCL2抗凋亡通路"
+      ],
+      "biomarkers": [
+        "骨髓原始细胞>=20%",
+        "流式免疫分型(MPO/CD34/CD117)",
+        "NPM1/FLT3-ITD预后分层"
+      ],
+      "epidemiology": "中国发病率约3-4/10万，AML中位发病年龄65-70岁",
+      "western_treatment": "诱导化疗(7+3方案)；靶向药(FLT3/IDH/BCL2抑制剂)；造血干细胞移植"
+    },
+    "syndrome_side": {
+      "syndrome_name": "热毒炽盛、气阴两虚证(急劳/热劳)",
+      "pattern_type": "肝火上炎证",
+      "zangfu": "肾·髓·心·肝",
+      "six_channels": "厥阴病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "虚实夹杂"
+      },
+      "key_symptoms": [
+        "持续高热不退",
+        "出血(瘀斑鼻衄牙龈)",
+        "面色苍白乏力",
+        "骨痛"
+      ],
+      "secondary_symptoms": [
+        "咽喉肿痛糜烂",
+        "淋巴结肿大",
+        "肝脾肿大",
+        "盗汗消瘦"
+      ],
+      "tongue": "舌红绛苔黄燥或少苔",
+      "pulse": "脉弦滑数或细数",
+      "field_theory": "白血病属中医急劳热劳范畴。热毒直入骨髓耗灼精血、扰乱营血。邪热炽盛则高热；热入营血迫血妄行则出血；热毒煎熬骨髓则骨痛。",
+      "classical_basis": "《素问-评热病论》：邪之所凑其气必虚。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "高热出血贫血对应白血病细胞克隆性增殖导致正常造血受抑。热毒对应异常克隆增殖，髓枯血虚对应正常造血受抑。",
+      "biological_basis": "造血干细胞基因突变→BCL2↑→异常克隆增殖+正常造血受抑→贫血/PLT下降+白血病细胞浸润→骨痛+细胞因子→发热消耗",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《急性髓系白血病诊治指南》2023",
+        "《中医内科学-血证/急劳》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "清营汤合犀角地黄汤",
+      "formula_source": "《温病条辨》合《千金要方》",
+      "modifications": [
+        {
+          "condition": "高热神昏",
+          "adjustment": "加安宫牛黄丸清热解毒开窍"
+        },
+        {
+          "condition": "出血严重",
+          "adjustment": "加茜草、仙鹤草、三七凉血止血"
+        },
+        {
+          "condition": "化疗后呕吐",
+          "adjustment": "加法半夏、陈皮和胃降逆"
+        }
+      ],
+      "acupuncture_rx": [
+        "大椎",
+        "曲池",
+        "合谷",
+        "血海",
+        "膈俞",
+        "足三里",
+        "三阴交",
+        "肾俞"
+      ],
+      "dietary_therapy": "无菌饮食(化疗期)；高蛋白高热量高维生素",
+      "prognosis": "AML诱导缓解率约60-80%；5年生存率约30-40%",
+      "caution": "强化疗有骨髓抑制和感染风险；HSCT是唯一根治手段"
+    },
+    "teaching": {
+      "difficulty": 5,
+      "stage": "主任医",
+      "sage_ref_zhang": "《金匮要略》虚劳辨证系统为白血病正虚邪实认识奠基。",
+      "sage_ref_sun": "《备急千金要方》犀角地黄汤为清热解毒凉血散瘀代表方。",
+      "typical_case": "患者王某，男，48岁。高热2周Hb 68g/L, WBC 56x10^9/L(原始72%), PLT 18x10^9/L。骨髓原始84%, FLT3-ITD(+)。清营汤合犀角地黄汤+7+3化疗+米哚妥林。1疗程CR，续以移植巩固。随访2年无复发生存。",
+      "teaching_points": [
+        "AML热毒壅盛气阴两虚",
+        "清营汤透热转气理论",
+        "FLT3抑制剂与中医辨证结合"
+      ],
+      "exam_questions": [
+        "从热入营血分析AML的出血和高热？",
+        "中医药在白血病化疗中减轻毒副反应的策略？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00080",
+    "disease_side": {
+      "disease_name": "弥漫大B细胞淋巴瘤",
+      "icd_code": "2B33",
+      "category": "血液病",
+      "molecular_targets": [
+        "CD20(利妥昔单抗靶点)",
+        "BCL2/BCL6抗凋亡蛋白",
+        "MYC增殖转录因子",
+        "PD-L1免疫逃逸"
+      ],
+      "gene_pathways": [
+        "BCR-BTK-NF-kappaB信号通路",
+        "BCL2抗凋亡通路",
+        "PI3K/Akt/mTOR增殖通路"
+      ],
+      "biomarkers": [
+        "淋巴结活检(金标准)",
+        "PET-CT分期Deauville评分",
+        "LDH升高",
+        "beta2-微球蛋白"
+      ],
+      "epidemiology": "年发病率约6-10/10万，DLBCL占NHL的30-40%",
+      "western_treatment": "R-CHOP方案一线标准；CAR-T治疗复发难治"
+    },
+    "syndrome_side": {
+      "syndrome_name": "痰瘀互结、气阴两虚证(石疽/恶核)",
+      "pattern_type": "气滞血瘀证",
+      "zangfu": "肝·脾·经络",
+      "six_channels": "少阳病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "半表半里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "虚实夹杂"
+      },
+      "key_symptoms": [
+        "进行性无痛性淋巴结肿大",
+        "发热盗汗体重减轻(B症状)",
+        "乏力",
+        "肿块推之可动或固定"
+      ],
+      "secondary_symptoms": [
+        "局部压迫症状",
+        "皮肤瘙痒",
+        "肝脾肿大",
+        "纳呆消瘦"
+      ],
+      "tongue": "舌暗紫或有瘀点苔白腻或黄腻",
+      "pulse": "脉弦滑或滑数",
+      "field_theory": "淋巴瘤属中医石疽恶核范畴。痰浊瘀血互结于经络凝集成块则淋巴结肿大。痰瘀日久化热则发热盗汗。气阴为痰热所伤则消瘦乏力。",
+      "classical_basis": "《灵枢-寒热》：寒热瘰疬在于颈腋者此皆鼠瘘寒热之毒气也。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "淋巴结进行性肿大有B症状对应恶性B细胞增殖导致淋巴结构破坏。痰瘀互结对应异常淋巴细胞增殖的肿块。",
+      "biological_basis": "B细胞BCL6/BCL2/MYC基因重排→NF-kappaB持续激活→单克隆增殖→肿块形成+PI3K/Akt→LDH↑→B症状+PD-L1→免疫逃逸",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": [
+        "《中国淋巴瘤诊治指南》2023",
+        "《中医外科学-石疽》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "消瘰丸合柴胡疏肝散",
+      "formula_source": "《医学心悟》合《景岳全书》",
+      "modifications": [
+        {
+          "condition": "B症状发热盗汗",
+          "adjustment": "加青蒿、鳖甲、丹皮滋阴清热"
+        },
+        {
+          "condition": "化疗后骨髓抑制",
+          "adjustment": "加黄芪、当归益气养血"
+        },
+        {
+          "condition": "局部肿块大",
+          "adjustment": "加夏枯草、浙贝母软坚散结"
+        }
+      ],
+      "acupuncture_rx": [
+        "天鼎",
+        "扶突",
+        "肩井",
+        "曲池",
+        "足三里",
+        "丰隆",
+        "太冲",
+        "血海"
+      ],
+      "dietary_therapy": "高蛋白高能量易消化饮食；忌烟酒辛辣",
+      "prognosis": "DLBCL R-CHOP治愈率约60-70%",
+      "caution": "CAR-T后CRS和ICANS需密切监护"
+    },
+    "teaching": {
+      "difficulty": 5,
+      "stage": "副主任医",
+      "sage_ref_zhang": "张仲景小柴胡汤为和解少阳治疗淋巴结肿大的思路。",
+      "sage_ref_sun": "《备急千金要方》孙思邈记载治恶核肿痛方。",
+      "typical_case": "患者刘某，女，38岁。右颈部淋巴结肿大3月伴B症状。PET-CT Deauville 5分，活检DLBCL(GCB型)。R-CHOPx6周期+消瘰丸合柴胡疏肝散。2周期后PET-CT CR。续中药巩固。随访3年无复发。",
+      "teaching_points": [
+        "石疽与淋巴瘤对应",
+        "R-CHOP+中药减毒增效",
+        "CAR-T与中医扶正祛邪"
+      ],
+      "exam_questions": [
+        "从痰瘀互结分析淋巴瘤的证候特点？",
+        "消瘰丸治疗淋巴瘤组方依据——浙贝母玄参牡蛎的配伍？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00081",
+    "disease_side": {
+      "disease_name": "格林-巴利综合征(多发性神经炎)",
+      "icd_code": "8C01",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "神经节苷脂GM1/GD1a",
+        "TLR4/NF-kappaB自身免疫炎症",
+        "电压门控钠通道",
+        "补体C5b-9"
+      ],
+      "gene_pathways": [
+        "cAMP-PKA神经修复通路",
+        "TLR4-MyD88-NF-kappaB周围神经免疫通路",
+        "MAPK轴突再生通路"
+      ],
+      "biomarkers": [
+        "脑脊液蛋白-细胞分离",
+        "NCV减慢F波消失",
+        "抗GM1/GD1a抗体"
+      ],
+      "epidemiology": "年发病率约1-2/10万，空肠弯曲菌是最常见前驱",
+      "western_treatment": "IVIG 0.4g/kg/日x5日；血浆置换；呼吸支持"
+    },
+    "syndrome_side": {
+      "syndrome_name": "湿热浸淫、筋脉失养证(痿证)",
+      "pattern_type": "脾胃湿热证",
+      "zangfu": "脾·胃·经络",
+      "six_channels": "太阴病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "虚实夹杂"
+      },
+      "key_symptoms": [
+        "急性四肢对称性弛缓性瘫痪",
+        "远端感觉异常(麻木刺痛)",
+        "腱反射减弱或消失",
+        "从下肢向上发展"
+      ],
+      "secondary_symptoms": [
+        "前驱感染史(腹泻/上感后1-4周)",
+        "肌肉酸痛",
+        "自主神经紊乱",
+        "呼吸肌无力"
+      ],
+      "tongue": "舌红苔黄腻或薄黄",
+      "pulse": "脉濡数或滑数",
+      "field_theory": "本病属痿证范畴。湿热毒邪浸淫筋脉，气血阻滞、筋脉弛缓不收则为痿软。湿热不攘，大筋软短、小筋弛长——湿热为痿证重要病机。",
+      "classical_basis": "《素问-痿论》：五脏因肺热叶焦发为痿躄。《素问-生气通天论》：湿热不攘弛长为痿。"
+    },
+    "bridge": {
+      "mapping_type": "间接对应",
+      "mapping_description": "四肢弛缓性瘫痪对应自身免疫性脱髓鞘导致神经传导阻滞。湿热对应自身免疫炎症。",
+      "biological_basis": "前驱感染→分子模拟→抗GM1抗体→抗体结合郎飞结→补体MAC形成→钠通道簇破坏+巨噬细胞脱髓鞘→传导阻滞→瘫痪",
+      "evidence_level": "D级-病例对照",
+      "key_references": [
+        "《GBS诊治指南》2023",
+        "《中医内科学-痿证》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "加味二妙散合四妙勇安汤",
+      "formula_source": "《丹溪心法》合《验方新编》",
+      "modifications": [
+        {
+          "condition": "呼吸困难",
+          "adjustment": "配合机械通气"
+        },
+        {
+          "condition": "自主神经紊乱",
+          "adjustment": "加生脉散益气复脉"
+        },
+        {
+          "condition": "恢复期气虚",
+          "adjustment": "合补中益气汤"
+        }
+      ],
+      "acupuncture_rx": [
+        "肩髃",
+        "曲池",
+        "合谷",
+        "环跳",
+        "阳陵泉",
+        "足三里",
+        "华佗夹脊穴"
+      ],
+      "dietary_therapy": "高蛋白高维生素饮食；吞咽障碍者鼻饲；康复期功能锻炼",
+      "prognosis": "约80%可基本恢复；约5-15%残留永久后遗症",
+      "caution": "监测呼吸功能和自主神经；VTE预防"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "《金匮要略》论但手臂不遂者此为痹——肢体瘫痪的鉴别。",
+      "sage_ref_sun": "《备急千金要方》孙思邈论风痹治疗。",
+      "typical_case": "患者徐某，男，36岁。腹泻后1周双下肢进行性无力3天累及双上肢。CSF蛋白1.8g/L。加味二妙散合四妙勇安汤+IVIG。2周后病情停止，1月可坐，3月扶行，6月基本自理。",
+      "teaching_points": [
+        "GBS湿热浸淫筋脉失养",
+        "IVIG+中药祛湿通络",
+        "格林-巴利综合征的临床分型与预后"
+      ],
+      "exam_questions": [
+        "从湿热不攘大筋软短小筋弛长分析GBS经典？",
+        "IVIG治疗GBS的免疫调节机制与中医扶正祛邪的对应？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00082",
+    "disease_side": {
+      "disease_name": "重症肌无力",
+      "icd_code": "8C60",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "AChR乙酰胆碱受体",
+        "MuSK肌肉特异性酪氨酸激酶",
+        "补体C5b-9",
+        "RyR兰尼碱受体"
+      ],
+      "gene_pathways": [
+        "AChR聚集-突触后膜信号通路",
+        "补体经典活化通路",
+        "NF-kappaB自身免疫通路"
+      ],
+      "biomarkers": [
+        "新斯的明试验阳性",
+        "AChR抗体阳性(约85%)",
+        "MuSK抗体阳性",
+        "重复神经电刺激递减"
+      ],
+      "epidemiology": "患病率约15-25/10万，好发20-40岁女性(男女比约1:2)",
+      "western_treatment": "溴吡斯的明(对症)；免疫抑制(激素/MMF)；胸腺切除；C5抑制剂/FcRn拮抗剂"
+    },
+    "syndrome_side": {
+      "syndrome_name": "脾胃虚弱、中气下陷证(痿证/睑废)",
+      "pattern_type": "脾肾阳虚证",
+      "zangfu": "脾·肾·筋脉",
+      "six_channels": "太阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "晨轻暮重波动性肌无力",
+        "上睑下垂/复视",
+        "吞咽困难声音嘶哑",
+        "四肢近端无力"
+      ],
+      "secondary_symptoms": [
+        "咀嚼疲劳",
+        "颈肌无力头前倾",
+        "呼吸困难(危象)",
+        "苦笑面容"
+      ],
+      "tongue": "舌淡苔薄白",
+      "pulse": "脉沉细弱或虚大无力",
+      "field_theory": "脾主四肢肌肉。脾胃虚弱则气血不足、肌肉失养。中气不足升举无力则上睑下垂。脾阳不升则吞咽困难。治痿独取阳明——补益脾胃贯穿全程。",
+      "classical_basis": "《素问-太阴阳明论》：脾病不能为胃行其津液故四肢不用焉。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "波动性肌无力对应AChR抗体导致突触后膜AChR破坏、信号传递障碍。中气下陷对应AChR破坏导致的肌力不足。",
+      "biological_basis": "胸腺异常→AChR抗体产生+补体C5b-9→突触后膜AChR减少/破坏→终极电位振幅↓→不足以触发动作电位→肌无力",
+      "evidence_level": "C级-队列研究",
+      "key_references": [
+        "《MG诊治指南》2023",
+        "《中医内科学-痿证》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "补中益气汤合黄芪桂枝五物汤",
+      "formula_source": "《脾胃论》合《金匮要略》",
+      "modifications": [
+        {
+          "condition": "复视明显",
+          "adjustment": "加枸杞、菊花养肝明目"
+        },
+        {
+          "condition": "吞咽困难",
+          "adjustment": "加桔梗、枳壳、威灵仙利咽"
+        },
+        {
+          "condition": "呼吸困难",
+          "adjustment": "加山萸肉、五味子纳气"
+        },
+        {
+          "condition": "激素后阴虚",
+          "adjustment": "加知母、黄柏、生地滋阴"
+        }
+      ],
+      "acupuncture_rx": [
+        "攒竹",
+        "丝竹空",
+        "阳白",
+        "足三里",
+        "脾俞",
+        "肾俞",
+        "百会",
+        "气海"
+      ],
+      "dietary_therapy": "高蛋白易消化饮食；避免劳累感染情绪波动",
+      "prognosis": "免疫治疗有效率80-90%",
+      "caution": "危象需紧急呼吸支持；溴吡斯的明需长期维持"
+    },
+    "teaching": {
+      "difficulty": 4,
+      "stage": "主治医",
+      "sage_ref_zhang": "《金匮要略》论极虚——气血虚弱的理论。",
+      "sage_ref_sun": "《备急千金要方》孙思邈论肺气虚。",
+      "typical_case": "患者杨某，女，32岁。上睑下垂晨轻暮重2月伴复视。新斯的明(+)AChR抗体(+)8.5nmol/L。补中益气汤合黄芪桂枝五物汤+溴吡斯的明60mg tid+泼尼松30mg/日。4周后OSCAR从32降至12，8周明显好转。",
+      "teaching_points": [
+        "脾主肌肉——MG的中医核心病机",
+        "治痿独取阳明——补脾胃",
+        "益气升阳与溴吡斯的明改善传导"
+      ],
+      "exam_questions": [
+        "MG与Lambert-Eaton综合征鉴别？",
+        "补中益气汤益气升阳与溴吡斯的明改善传导——中西医结合？"
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第7-11章",
+      "version": "1.0.0",
+      "status": "draft",
+      "created_at": "2026-07-23T00:00:00Z"
+    },
+    "id": "DSU-00083",
+    "disease_side": {
+      "disease_name": "阿尔茨海默病",
+      "icd_code": "8A20",
+      "category": "神经系统疾病",
+      "molecular_targets": [
+        "beta-淀粉样蛋白Abeta",
+        "tau蛋白(NFT核心)",
+        "乙酰胆碱酯酶AChE",
+        "BACE1 beta-分泌酶"
+      ],
+      "gene_pathways": [
+        "APP/PS1/PS2-gamma分泌酶淀粉样级联通路",
+        "tau过磷酸化GSK-3beta/CDK5通路",
+        "胆碱能突触通路",
+        "小胶质细胞TREM2神经炎症通路"
+      ],
+      "biomarkers": [
+        "MRI内侧颞叶萎缩MTA评分",
+        "PET-Abeta/Tau显像",
+        "CSF Abeta42下降/p-tau181升高",
+        "MoCA/MMSE评分"
+      ],
+      "epidemiology": "65岁以上患病率约5-8%，85岁以上约30-50%，中国约1000万患者",
+      "western_treatment": "多奈哌齐/卡巴拉汀(胆碱酯酶抑制剂)；美金刚(NMDA拮抗剂)；Abeta单抗(仑卡奈单抗/多奈单抗)"
+    },
+    "syndrome_side": {
+      "syndrome_name": "髓海不足、肾虚痰瘀证(痴呆)",
+      "pattern_type": "脾肾阳虚证",
+      "zangfu": "肾·心·脾",
+      "six_channels": "少阴病",
+      "eight_principles": {
+        "yin_yang": "阴证",
+        "exterior_interior": "里证",
+        "cold_heat": "寒热错杂",
+        "deficiency_excess": "虚证"
+      },
+      "key_symptoms": [
+        "进行性近记忆力下降(首发症状)",
+        "失语找词困难",
+        "失用操作不能",
+        "失认不认识亲人"
+      ],
+      "secondary_symptoms": [
+        "性格改变淡漠易激惹",
+        "空间定向障碍迷路",
+        "执行功能下降",
+        "行为异常游走重复"
+      ],
+      "tongue": "舌淡暗或有瘀点苔薄白或白腻",
+      "pulse": "脉沉细涩或弦细",
+      "field_theory": "肾藏精生髓充脑。肾精亏虚髓海不足则脑失濡养、神明失聪。脾虚不运则痰浊内生。气滞血瘀则瘀阻脑络。痰瘀虚三者互结。",
+      "classical_basis": "《灵枢-海论》：髓海不足则脑转耳鸣胫酸眩冒目无所见懈怠安卧。"
+    },
+    "bridge": {
+      "mapping_type": "机制对应",
+      "mapping_description": "记忆力下降认知障碍对应Abeta沉积导致tau过磷酸化NFT神经元死亡脑萎缩。髓海不足对应脑萎缩，痰瘀对应Abeta沉积和tau缠结。",
+      "biological_basis": "APP突变/APOEe4→Abeta42沉积老年斑→微胶质TREM2→神经炎症→tau过磷酸化→NFT→神经元丢失→脑萎缩→ACh下降→认知下降",
+      "evidence_level": "C级-队列研究",
+      "key_references": [
+        "《阿尔茨海默病诊治指南》2023",
+        "《中医内科学-健忘/痴呆》十三五教材"
+      ]
+    },
+    "clinical": {
+      "recommended_formula": "七福饮合当归芍药散",
+      "formula_source": "《景岳全书》合《金匮要略》",
+      "modifications": [
+        {
+          "condition": "痰浊重言语不清",
+          "adjustment": "加石菖蒲、远志、胆南星化痰开窍"
+        },
+        {
+          "condition": "血瘀明显",
+          "adjustment": "加川芎、丹参、水蛭化瘀通络"
+        },
+        {
+          "condition": "精神行为症状",
+          "adjustment": "加龙骨、牡蛎、酸枣仁安神"
+        }
+      ],
+      "acupuncture_rx": [
+        "百会",
+        "神庭",
+        "本神",
+        "风池",
+        "四神聪",
+        "足三里",
+        "丰隆",
+        "太溪",
+        "三阴交"
+      ],
+      "dietary_therapy": "地中海饮食、Omega-3(深海鱼)、保持社交和认知训练",
+      "prognosis": "进行性不可逆病程；药物可延缓认知下降6-12月",
+      "caution": "Abeta单抗需MRI监测ARIA；关注照顾者负担"
+    },
+    "teaching": {
+      "difficulty": 5,
+      "stage": "主任医",
+      "sage_ref_zhang": "《金匮要略》薯蓣丸治虚劳诸不足——为AD扶正治疗提供思路。",
+      "sage_ref_sun": "《备急千金要方》定志丸(人参远志茯苓菖蒲)治疗健忘。",
+      "typical_case": "患者张某，男，75岁。记忆下降3年MMSE 18/30。MRI双侧海马萎缩MTA 3级。七福饮合当归芍药散+多奈哌齐。6月后MMSE 20/30。1年MMSE 19/30(缓慢下降)。",
+      "teaching_points": [
+        "AD肾虚髓空与脑萎缩对应",
+        "孙思邈定志丸治疗健忘",
+        "Abeta单抗与中医药协同"
+      ],
+      "exam_questions": [
+        "从髓海不足分析AD？",
+        "从痰瘀清窍与Abeta沉积和tau缠结的对应关系？"
+      ]
+    }
+  }
+]
