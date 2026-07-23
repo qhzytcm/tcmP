@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#0a0a0a">
-<title>六者·中医医院AI平台</title>
+<title>六者·中医医院AI平台 | 医·患·药·械·规·法 智能体</title>
 <link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;六者AI平台&quot;,&quot;short_name&quot;:&quot;六者&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0a0a0a&quot;,&quot;theme_color&quot;:&quot;#0a0a0a&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2300ff88'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='18' fill='%23000'%3E六%3C/text%3E%3C/svg%3E&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/svg+xml&quot;}]}">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -72,7 +72,7 @@ const SUGGEST = {
   'pharmacist':['附子15g半夏10g','知母缺货替代','查黄芪库存'],
   'device':['CT-001状态','采购超声150万','球管损坏应急'],
   'regulator':['内科Q2质控','针灸科排班','查看全院运营'],
-  'legal':['术后并发症风险评估','生成手术同意书','查医疗纠纷条例'],
+  'legal':['阑尾炎穿孔手术医保报销上限','阿胶医保报销吗','知情同意书生成','查医疗纠纷条例','术前沟通告知'],
 };
 let currentRole = 'sage-zhang-zhongjing';
 let history = [];
@@ -158,8 +158,30 @@ async function send() {
       url = API+'/regulators/quality';
       body = {department:text.trim(), period:'2026Q2'};
     } else if (tag.id === 'legal') {
-      url = API+'/legals/risk';
-      body = {case_description:text, department:'全院'};
+      // 智能路由：根据查询内容选择法者API
+      const lower = text.toLowerCase();
+      if (/医保|报销|保险|费用|多少钱|封顶|起付|自费|比例/.test(lower)) {
+        url = API+'/legals/insurance/coverage';
+        body = {disease:text, treatment:'', insurance_type:'职工医保'};
+      } else if (/药品|药价|阿胶|安宫|人参|中药/.test(lower)) {
+        url = API+'/legals/insurance/drug';
+        body = {drug:text};
+      } else if (/知情同意|同意书|签字/.test(lower)) {
+        url = API+'/legals/consent';
+        body = {procedure:text};
+      } else if (/法规|条例|法律|民法典|医师法/.test(lower)) {
+        url = API+'/legals/regulation';
+        body = {keyword:text};
+      } else if (/案例|判例|赔偿|纠纷/.test(lower)) {
+        url = API+'/legals/cases';
+        body = {keywords:text};
+      } else if (/预防|培训|科室/.test(lower)) {
+        url = API+'/legals/prevention';
+        body = {department:text};
+      } else {
+        url = API+'/legals/risk';
+        body = {case_description:text, department:'全院'};
+      }
     }
     
     const resp = await fetch(url, {
@@ -168,8 +190,11 @@ async function send() {
     });
     const data = await resp.json();
     const reply = data.reply || data.advice || data.consent_draft || 
-      (data.risk_level ? '风险等级: '+data.risk_level+'('+data.score+'分)\n建议: '+data.immediate_actions?.join(', ') : 
-      JSON.stringify(data, null, 2).slice(0, 1000));
+      (data.risk_level ? '⚠️ 风险评估: '+data.risk_level+'('+data.score+'分)\n建议: '+(data.immediate_actions||[]).join(', ') :
+      (data.annual_limit ? '【医保报销信息】\n年度封顶线: '+data.annual_limit+'\n报销比例: '+data.reimbursement_ratio+'\n起付线: '+data.deductible+'\n医保类型: '+data.insurance_type+'\n\n说明: '+data.note :
+      (data.total_est ? '【费用预估】\n总费用: '+data.total_est+'\n医保支付: '+data.insurance_pay+'\n自付: '+data.patient_pay+'\n\n执行指南: '+data.action_guide :
+      (data.category ? '【药品医保属性】\n药品: '+data.drug+'\n类别: '+data.category+'\n自付比例: '+(data.self_pay_ratio||'0')+'%\n限制条件: '+(data.conditions||'无') :
+      JSON.stringify(data, null, 2).slice(0, 1000)))));
     addMsg(currentRole, reply);
   } catch(e) {
     addMsg('system', '请求失败: '+e.message);

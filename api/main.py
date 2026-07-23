@@ -750,6 +750,41 @@ def prevention_advice(department: str = "", historical_issues: list = []):
         "checklist":["知情同意书签署","病历24h内完成","手术安全核对","出院指导记录"],
     }
 
+
+
+# ── 法者医保API ──
+@app.get("/legals/insurance/coverage")
+def insurance_coverage(disease: str = "", treatment: str = "", insurance_type: str = "职工医保", hospital_level: str = "三级"):
+    """医保报销范围查询"""
+    plans = {"职工医保":{"limit":500000,"ip_ratio":85,"op_ratio":70,"ip_deduct":1300,"op_deduct":1800},
+             "城乡居民医保":{"limit":250000,"ip_ratio":75,"op_ratio":50,"ip_deduct":500,"op_deduct":1000}}
+    p = plans.get(insurance_type, plans["职工医保"])
+    ip = "住院" in treatment or "手术" in treatment
+    return {"disease":disease or "阑尾炎穿孔","insurance_type":insurance_type,
+        "annual_limit":f"{p['limit']/10000:.0f}万元",
+        "reimbursement_ratio":f"{p['ip_ratio'] if ip else p['op_ratio']}%",
+        "deductible":f"{p['ip_deduct'] if ip else p['op_deduct']}元",
+        "note":"实际报销=(总费用-起付线-自费部分)x报销比例，非直接按封顶线赔付"}
+
+@app.get("/legals/insurance/drug")
+def insurance_drug(drug: str = ""):
+    """药品医保属性"""
+    db = {"阿胶":{"cat":"乙类","self_pay":20,"cond":"限气血两虚证"},
+          "安宫牛黄丸":{"cat":"甲类","self_pay":0,"cond":"限热病神昏"},
+          "人参":{"cat":"丙类(自费)","self_pay":100,"cond":"完全自费"}}
+    info = db.get(drug, {"cat":"未收录","self_pay":0,"cond":"建议咨询医保办"})
+    return {"drug":drug,"category":info["cat"],"self_pay_ratio":info["self_pay"],"conditions":info["cond"]}
+
+@app.post("/legals/insurance/estimate")
+def insurance_estimate(diagnosis: str = "", treatment: str = "", days: int = 7, insurance_type: str = "职工医保"):
+    """费用预估"""
+    p = {"职工医保":{"limit":500000,"ratio":85,"deduct":1300},"城乡居民医保":{"limit":250000,"ratio":75,"deduct":500}}.get(insurance_type,{"limit":500000,"ratio":85,"deduct":1300})
+    cost = {"阑尾炎穿孔":18000,"肺炎":8500,"骨折":25000,"白内障":12000,"冠心病":35000}.get(diagnosis, days*1200)
+    sp = cost*0.15
+    ip = max(0,(cost-p['deduct']-sp)*p['ratio']/100)
+    return {"diagnosis":diagnosis,"total_est":f"{cost:.0f}元","insurance_pay":f"{ip:.0f}元",
+        "patient_pay":f"{max(0,cost-ip):.0f}元",
+        "action_guide":f"1.办住院时出示医保卡 2.确认{insurance_type} 3.出院直接结算"}
 # ── 启动 ──
 if __name__ == "__main__":
     import uvicorn
