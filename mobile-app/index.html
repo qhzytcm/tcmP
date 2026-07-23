@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#0a0a0a">
+<title>六者·中医医院AI平台</title>
+<link rel="manifest" href="data:application/json,{&quot;name&quot;:&quot;六者AI平台&quot;,&quot;short_name&quot;:&quot;六者&quot;,&quot;start_url&quot;:&quot;/&quot;,&quot;display&quot;:&quot;standalone&quot;,&quot;background_color&quot;:&quot;#0a0a0a&quot;,&quot;theme_color&quot;:&quot;#0a0a0a&quot;,&quot;icons&quot;:[{&quot;src&quot;:&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%2300ff88'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='18' fill='%23000'%3E六%3C/text%3E%3C/svg%3E&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/svg+xml&quot;}]}">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{background:#0a0a0a;color:#e0e0e0;font-family:'Courier New',monospace;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+#header{background:#0d0d0d;padding:8px 12px;border-bottom:1px solid #1a3a2a;display:flex;align-items:center;gap:8px;flex-shrink:0;min-height:44px}
+#header .brand{color:#00ff88;font-weight:bold;font-size:14px;white-space:nowrap}
+#header .status{padding:2px 8px;border-radius:4px;font-size:10px;background:#1a1a2e;color:#888}
+#header .role-selector{flex:1;display:flex;gap:3px;overflow-x:auto;scrollbar-width:none;padding:0 4px}
+#header .role-selector::-webkit-scrollbar{display:none}
+.role-btn{padding:4px 10px;border-radius:12px;border:1px solid #333;background:transparent;color:#999;font-size:11px;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:inherit;min-width:50px;text-align:center}
+.role-btn.active{background:#00ff8822;border-color:#00ff88;color:#00ff88}
+#output{flex:1;overflow-y:auto;padding:12px;font-size:13px;line-height:1.6;scroll-behavior:smooth}
+#output::-webkit-scrollbar{width:4px}
+#output::-webkit-scrollbar-thumb{background:#1a3a2a;border-radius:2px}
+.msg{margin:4px 0;padding:6px 10px;border-radius:6px;animation:fadeIn .2s}
+.msg.user{background:#1a1a2e;border-left:3px solid #4a9eff}
+.msg.agent{background:#0d1f17;border-left:3px solid #00ff88}
+.msg.system{background:#1a1a1a;border-left:3px solid #ffaa00;color:#ccc;font-size:11px}
+.msg .role-tag{font-size:10px;color:#888;margin-bottom:2px}
+.msg .content{white-space:pre-wrap;word-break:break-word}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+#input-bar{background:#0d0d0d;border-top:1px solid #1a3a2a;padding:8px 12px;display:flex;gap:8px;flex-shrink:0;align-items:center;padding-bottom:calc(8px + env(safe-area-inset-bottom))}
+#prompt{color:#4a9eff;font-size:12px;white-space:nowrap}
+#input{flex:1;background:#1a1a1a;border:1px solid #333;border-radius:6px;padding:10px 12px;color:#e0e0e0;font-family:inherit;font-size:14px;outline:none;min-height:44px;transition:border-color .2s}
+#input:focus{border-color:#00ff88}
+#input::placeholder{color:#555;font-size:12px}
+#send-btn{background:#00ff8822;border:1px solid #00ff88;color:#00ff88;border-radius:6px;padding:10px 16px;font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap;min-height:44px}
+#send-btn:active{background:#00ff8844}
+#suggestions{display:flex;gap:4px;padding:4px 12px;overflow-x:auto;flex-shrink:0;scrollbar-width:none;background:#0a0a0a}
+#suggestions::-webkit-scrollbar{display:none}
+.suggestion{padding:4px 10px;border-radius:10px;border:1px solid #333;background:#111;color:#888;font-size:11px;cursor:pointer;white-space:nowrap;transition:all .2s;font-family:inherit}
+.suggestion:active{background:#222;color:#00ff88}
+@media(prefers-color-scheme:light){body{background:#f5f5f5;color:#333}#header{background:#eee;border-color:#ddd}#input-bar{background:#eee;border-color:#ddd}#input{background:#fff;border-color:#ccc;color:#333}.msg.agent{background:#e8f5e9;border-left-color:#4caf50}.msg.user{background:#e3f2fd;border-left-color:#2196f3}.msg.system{background:#fff3e0;border-left-color:#ff9800}#header .brand{color:#2e7d32}#prompt{color:#1565c0}#send-btn{background:#4caf5022;border-color:#4caf50;color:#2e7d32}.role-btn.active{background:#4caf5022;border-color:#4caf50;color:#2e7d32}#suggestions{background:#f5f5f5}}
+</style></head>
+<body>
+<div id="header">
+  <span class="brand">⚕六者</span>
+  <div class="role-selector" id="roleSelector"></div>
+  <span class="status" id="statusDot">◉</span>
+</div>
+<div id="suggestions" id="suggestionsList"></div>
+<div id="output">
+  <div class="msg system"><div class="content">⚕ 六者·中医医院AI平台 已连接<br>输入 /help 查看所有命令<br>选择角色开始对话，或直接提问</div></div>
+</div>
+<div id="input-bar">
+  <span id="prompt">医者&gt;</span>
+  <input id="input" type="text" placeholder="输入病症/问题..." autofocus>
+  <button id="send-btn">发送</button>
+</div>
+<script>
+const API = 'https://www.zyyywaccn.com.cn/api/sages';
+const ROLES = [
+  {id:'sage-zhang-zhongjing', label:'张仲景', api:'consult'},
+  {id:'sage-sun-simiao', label:'孙思邈', api:'consult'},
+  {id:'patient', label:'患者', api:'symptom-check'},
+  {id:'pharmacist', label:'药者', api:'review'},
+  {id:'device', label:'械者', api:'maintenance'},
+  {id:'regulator', label:'规者', api:'quality'},
+  {id:'legal', label:'法者', api:'risk'},
+];
+const SUGGEST = {
+  'sage-zhang-zhongjing':['发热恶寒无汗','咳嗽气喘胸闷','头痛项背强','失眠多梦'],
+  'sage-sun-simiao':['大医精诚讲解','养生方法','全科案例'],
+  'patient':['喉咙痛发烧','头痛两天','胃痛恶心','咳嗽有痰'],
+  'pharmacist':['附子15g半夏10g','知母缺货替代','查黄芪库存'],
+  'device':['CT-001状态','采购超声150万','球管损坏应急'],
+  'regulator':['内科Q2质控','针灸科排班','查看全院运营'],
+  'legal':['术后并发症风险评估','生成手术同意书','查医疗纠纷条例'],
+};
+let currentRole = 'sage-zhang-zhongjing';
+let history = [];
+
+function addMsg(role, content, type='agent') {
+  const out = document.getElementById('output');
+  const div = document.createElement('div');
+  div.className = 'msg ' + type;
+  const tag = ROLES.find(r=>r.id===role);
+  div.innerHTML = `<div class="role-tag">${tag?tag.label:role}</div><div class="content">${content}</div>`;
+  out.appendChild(div);
+  out.scrollTop = out.scrollHeight;
+}
+
+function showSuggestions(role) {
+  const s = document.getElementById('suggestions');
+  const items = SUGGEST[role] || [];
+  s.innerHTML = items.map(t => `<button class="suggestion" onclick="document.getElementById('input').value='${t.replace(/'/g,"\\'")}';send()">${t}</button>`).join('');
+}
+
+function switchRole(roleId) {
+  currentRole = roleId;
+  document.querySelectorAll('.role-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.role === roleId);
+  });
+  const tag = ROLES.find(r=>r.id===roleId);
+  document.getElementById('prompt').textContent = (tag?tag.label:'?') + '>';
+  document.getElementById('input').placeholder = tag && tag.id.includes('sage') ? '输入症状请医圣辨证...' : '输入您的问题...';
+  showSuggestions(roleId);
+}
+
+async function send() {
+  const input = document.getElementById('input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMsg(currentRole, text, 'user');
+  
+  if (text === '/help') {
+    addMsg('system', 
+      '命令列表:\n/roles - 切换角色\n/clear - 清屏\n/health - 检查服务\n/roles [角色名] - 直接切换\n\n当前角色: ' + (ROLES.find(r=>r.id===currentRole)?.label||currentRole) +
+      '\n\n直接输入症状或问题，AI会自动回答!' , 'system');
+    return;
+  }
+  if (text === '/clear') { document.getElementById('output').innerHTML = ''; return; }
+  if (text === '/roles') {
+    addMsg('system', ROLES.map(r=>r.label+' ('+r.id+')').join('\n'), 'system'); return;
+  }
+  if (text.startsWith('/roles ')) {
+    const id = text.slice(7).trim();
+    const match = ROLES.find(r=>r.id===id||r.label===id);
+    if (match) switchRole(match.id);
+    else addMsg('system','角色未找到，可用: /roles 查看列表','system');
+    return;
+  }
+  if (text === '/health') {
+    try {
+      const r = await fetch(API+'/health');
+      const d = await r.json();
+      addMsg('system', '服务状态: '+d.status+'\n版本: '+d.version+'\n医圣: '+d.sages_loaded, 'system');
+    } catch(e) { addMsg('system', '连接失败: '+e.message, 'system'); }
+    return;
+  }
+
+  try {
+    let url, body;
+    const tag = ROLES.find(r=>r.id===currentRole);
+    if (!tag) throw new Error('未知角色');
+    
+    if (tag.id.includes('sage')) {
+      url = API+'/consult/'+tag.id;
+      body = {chief_complaint:text, key_symptoms:[], user_level:'住院医-1'};
+    } else if (tag.id === 'patient') {
+      url = API+'/patients/symptom-check';
+      body = {symptoms:text.split(/[,，、\s]+/).filter(Boolean), duration_days:1};
+    } else if (tag.id === 'pharmacist') {
+      url = API+'/pharmacists/review';
+      body = {herbs:text.split(/[,，、\s]+/).filter(Boolean)};
+    } else if (tag.id === 'device') {
+      url = API+'/devices/maintenance';
+      body = {device_id:text.trim()};
+    } else if (tag.id === 'regulator') {
+      url = API+'/regulators/quality';
+      body = {department:text.trim(), period:'2026Q2'};
+    } else if (tag.id === 'legal') {
+      url = API+'/legals/risk';
+      body = {case_description:text, department:'全院'};
+    }
+    
+    const resp = await fetch(url, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    });
+    const data = await resp.json();
+    const reply = data.reply || data.advice || data.consent_draft || 
+      (data.risk_level ? '风险等级: '+data.risk_level+'('+data.score+'分)\n建议: '+data.immediate_actions?.join(', ') : 
+      JSON.stringify(data, null, 2).slice(0, 1000));
+    addMsg(currentRole, reply);
+  } catch(e) {
+    addMsg('system', '请求失败: '+e.message);
+  }
+}
+
+// Init
+(function() {
+  const sel = document.getElementById('roleSelector');
+  ROLES.forEach(r => {
+    const btn = document.createElement('button');
+    btn.className = 'role-btn' + (r.id===currentRole?' active':'');
+    btn.textContent = r.label;
+    btn.dataset.role = r.id;
+    btn.onclick = () => switchRole(r.id);
+    sel.appendChild(btn);
+  });
+  showSuggestions(currentRole);
+  
+  document.getElementById('input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') send();
+  });
+  document.getElementById('send-btn').onclick = send;
+  
+  // Check health
+  fetch(API+'/health').then(r=>r.json()).then(d=>{
+    document.getElementById('statusDot').style.color = '#00ff88';
+  }).catch(()=>{
+    document.getElementById('statusDot').style.color = '#ff4444';
+  });
+})();
+</script>
+</body>
+</html>

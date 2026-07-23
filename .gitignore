@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.virtualenvs/
+.venv/
+venv/
+
+# Environment & secrets
+.env
+*key*
+*.pem
+*.crt
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Large binaries
+*.zip
+*.tar.gz
+*.vmdk
+*.AppImage
+
+# Node
+node_modules/
+
+# Temp
+/tmp/
