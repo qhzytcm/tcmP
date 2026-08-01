@@ -162,7 +162,8 @@ async function send() {
       const lower = text.toLowerCase();
       if (/医保|报销|保险|费用|多少钱|封顶|起付|自费|比例/.test(lower)) {
         url = API+'/legals/insurance/coverage';
-        body = {disease:text, treatment:'', insurance_type:'职工医保'};
+        const hasSurgery = /手术|住院|急诊|穿孔/.test(lower);
+        body = {disease:text, treatment: hasSurgery ? '急诊手术' : '门诊', insurance_type:'职工医保'};
       } else if (/药品|药价|阿胶|安宫|人参|中药/.test(lower)) {
         url = API+'/legals/insurance/drug';
         body = {drug:text};

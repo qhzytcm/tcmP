@@ -753,20 +753,21 @@ def prevention_advice(department: str = "", historical_issues: list = []):
 
 
 # ── 法者医保API ──
-@app.get("/legals/insurance/coverage")
+@app.post("/legals/insurance/coverage")
 def insurance_coverage(disease: str = "", treatment: str = "", insurance_type: str = "职工医保", hospital_level: str = "三级"):
     """医保报销范围查询"""
     plans = {"职工医保":{"limit":500000,"ip_ratio":85,"op_ratio":70,"ip_deduct":1300,"op_deduct":1800},
              "城乡居民医保":{"limit":250000,"ip_ratio":75,"op_ratio":50,"ip_deduct":500,"op_deduct":1000}}
     p = plans.get(insurance_type, plans["职工医保"])
-    ip = "住院" in treatment or "手术" in treatment
+    combined = treatment + disease
+    ip = "住院" in combined or "手术" in combined or "急诊" in combined
     return {"disease":disease or "阑尾炎穿孔","insurance_type":insurance_type,
         "annual_limit":f"{p['limit']/10000:.0f}万元",
         "reimbursement_ratio":f"{p['ip_ratio'] if ip else p['op_ratio']}%",
         "deductible":f"{p['ip_deduct'] if ip else p['op_deduct']}元",
         "note":"实际报销=(总费用-起付线-自费部分)x报销比例，非直接按封顶线赔付"}
 
-@app.get("/legals/insurance/drug")
+@app.post("/legals/insurance/drug")
 def insurance_drug(drug: str = ""):
     """药品医保属性"""
     db = {"阿胶":{"cat":"乙类","self_pay":20,"cond":"限气血两虚证"},
