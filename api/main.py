@@ -343,17 +343,44 @@ def get_agent_soul(role: str):
 
 @app.post("/agents/{role}/chat")
 def agent_chat(role: str, req: AgentChatRequest):
-    """六者人格驱动对话——SOUL作为System Prompt注入DeepSeek"""
+    """六者人格驱动对话——SOUL 作为 System Prompt 注入 DeepSeek
+    G1 增强：自动附加内网病证检索证据（diagnose/bianzheng Top-3），降 token 且有据可查"""
     soul = agent_engine.get_soul(role)
     hint = AGENT_ROLE_HINTS.get(role, "")
-    prompt = f"""用户消息：{req.message}
-背景：{req.context or '无'}
+    msg = req.message
+    context = req.context or ""
+
+    # ── G1: 检索增强（内网零 token，检索结果作为证据注入）──
+    retrieval_note = ""
+    try:
+        eng = get_tcm_engine()
+        if eng is not None:
+            import re as _re
+            # 从用户消息提取症状候选（去标点拆词）
+            words = [w for w in _re.split(r"[，,。；;？?！!\s]", msg) if len(w) >= 2][:8]
+            if words:
+                diag = eng.diagnose(words, 3)
+                bz = eng.bianzheng(words, 3)
+                d_txt = "；".join(f"{x['disease']}({x['icd11_code'] or '--'})"
+                                  for x in diag["results"])
+                b_txt = "；".join(f"{x['syndrome']}→{x['formula']}"
+                                  for x in bz["results"])
+                retrieval_note = (f"\n\n【内网病证检索证据（自动注入，供参考）】\n"
+                                  f"疑似疾病 Top3: {d_txt}\n"
+                                  f"疑似证候 Top3: {b_txt}")
+    except Exception as e:
+        retrieval_note = f"\n\n【检索增强不可用: {e}】"
+
+    prompt = f"""用户消息：{msg}
+背景：{context or '无'}{retrieval_note}
 
 请严格保持「{AGENT_ROLES_CN.get(role, role)}」角色身份（核心职责：{hint}），
-依据你的灵魂设定（SOUL）与中医知识作答，输出结构化中文回复。"""
+依据你的灵魂设定（SOUL）与中医知识作答，输出结构化中文回复。
+若检索证据与你的判断一致，可引用之；若不一致，请说明你的独立判断。"""
     reply = call_llm(soul, prompt)
     return {"role": role, "name_cn": AGENT_ROLES_CN.get(role, role),
-            "mode": "chat", "reply": reply}
+            "mode": "chat", "rag_enhanced": bool(retrieval_note),
+            "reply": reply}
 
 @app.get("/sages")
 def list_sages():
