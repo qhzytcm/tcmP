@@ -56,3 +56,16 @@ python main.py
 - **工具**：`python scripts/icd11_client.py 高血压`（中文桥接）/ `--code BA00` / `--en hypertension`
 - **标注**：103 个病证单位已标注（74 个标准编码 + 29 个实体 ID），字段 `disease_side.icd11_*`
 - **限制**：华为云（公网）访问不到内网 API，中文搜索自动降级英文；编码端点由镜像 API 能力决定（MMS 线性化端点镜像未实现，db 补齐）
+
+## 病证单元 Embedding 引擎（v3.0）
+
+论著落地（ESWA 2025 "Decoding the mind: A RAG-LLM on ICD-11"）：病证单元 Document → embedding → 余弦检索 Top-K → 诊断/辨证/RAG 报告。**内网零 token 检索，仅报告需 LLM 小上下文（↓95% token）**。
+
+| 端点 | 功能 | 示例 |
+|:-----|:-----|:-----|
+| `POST/GET /diag` | 疾病诊断（症状→病） | `/diag?q=恶寒,发热,无汗` → CA00 普通感冒 |
+| `POST/GET /bianzheng` | 证候辨证（症状→证） | `/bianzheng?q=口苦,咽干` → 肝胆湿热证 |
+| `GET /semantic-search` | 语义检索（向量+FTS5 融合） | `?q=失眠多梦` |
+| `POST /rag` | RAG 诊断报告（LLM 精修） | 症状 → Top-K + 报告 |
+
+技术：TF-IDF 字符 n-gram + SQLite FTS5 + RRF 融合；BGE 语义向量为升级路径（ModelScope 下载）。详见 `docs/ARCH-EMBEDDING.md`
