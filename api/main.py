@@ -357,7 +357,7 @@ def agent_chat(role: str, req: AgentChatRequest):
         if eng is not None:
             import re as _re
             # 从用户消息提取症状候选（去标点拆词）
-            words = [w for w in _re.split(r"[，,。；;？?！!\s]", msg) if len(w) >= 2][:8]
+            words = [w for w in _re.split(r"[，,。；;？?！!\s、]", msg) if len(w) >= 2][:8]
             if words:
                 diag = eng.diagnose(words, 3)
                 bz = eng.bianzheng(words, 3)
