@@ -15,6 +15,7 @@ from pydantic import BaseModel
 
 # ── 配置 ──
 SAGE_DIR = Path(__file__).parent.parent / "sages"
+AGENT_DIR = Path(__file__).parent.parent / "agents"
 KG_DIR = Path(__file__).parent.parent / "kg-schema"
 DEEPSEEK_API = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "") or "«sk-placeholder»"
@@ -70,6 +71,11 @@ class InventoryRequest(BaseModel):
 
 class TraceRequest(BaseModel):
     herb: str; batch: str = ""
+
+# ── 六者对话请求模型 ──
+class AgentChatRequest(BaseModel):
+    message: str
+    context: Optional[str] = None
 
 # ── 械者数据结构 ──
 class DeviceMaintenanceRequest(BaseModel):
@@ -157,10 +163,78 @@ class SageEngine:
 
 engine = SageEngine()
 
+# ── 六者Agent引擎（SOUL人格加载）──
+AGENT_ROLES_CN = {
+    "healer": "医者", "patient": "患者", "pharmacist": "药者",
+    "device": "械者", "regulator": "规者", "legal": "法者",
+}
+AGENT_ROLE_HINTS = {
+    "healer": "临床诊疗建议+师带徒教学，辅助决策，不代做终诊断",
+    "patient": "就医导诊、症状自查、用药说明，通俗易懂",
+    "pharmacist": "合理用药审核、药物相互作用、十八反十九畏、饮片溯源",
+    "device": "医疗设备维护预警、影像辅助、器械采购论证、质控校准",
+    "regulator": "医疗质量管理、排班优化、设备管理、应急调度",
+    "legal": "纠纷风险评估、知情同意书、法规查询、医保政策",
+}
+
+class AgentEngine:
+    def __init__(self):
+        self.agents = {}; self._load_agents()
+    def _load_agents(self):
+        for role in AGENT_ROLES_CN:
+            soul_file = AGENT_DIR / role / "SOUL.md"
+            if not soul_file.exists():  # 兼容线上布局 {role}-agent/SOUL.md
+                alt = AGENT_DIR.parent / f"{role}-agent" / "SOUL.md"
+                if alt.exists():
+                    soul_file = alt
+            if soul_file.exists():
+                c = soul_file.read_text(encoding="utf-8")
+                sid = re.search(r'name:\s*(\S+)', c)
+                rid = sid.group(1) if sid else role
+                self.agents[role] = {"id": rid, "role": role,
+                    "name_cn": AGENT_ROLES_CN[role], "soul": c}
+                print(f"  ✅ [{role}] {AGENT_ROLES_CN[role]}人格加载 · {rid}")
+    def get_soul(self, role: str) -> str:
+        a = self.agents.get(role)
+        if not a: raise HTTPException(404, f"六者角色 '{role}' 未找到（可用: {', '.join(AGENT_ROLES_CN)}）")
+        return a["soul"]
+
+agent_engine = AgentEngine()
+
 # ── 医圣API ──
 @app.get("/health")
 def health():
-    return {"status": "ok", "sages_loaded": len(engine.sages), "version": "2.0.0"}
+    return {"status": "ok", "sages_loaded": len(engine.sages),
+            "agents_loaded": len(agent_engine.agents), "version": "2.1.0"}
+
+# ── 六者Agent API（SOUL人格加载）──
+@app.get("/agents")
+def list_agents():
+    """六者角色清单 + 人格加载状态"""
+    return [{"role": a["role"], "id": a["id"], "name_cn": a["name_cn"],
+             "soul_loaded": True, "soul_lines": a["soul"].count("\n") + 1,
+             "hint": AGENT_ROLE_HINTS[a["role"]]}
+            for a in agent_engine.agents.values()]
+
+@app.get("/agents/{role}/soul")
+def get_agent_soul(role: str):
+    """返回指定角色的完整SOUL人格（供前端人格加载/调试）"""
+    return {"role": role, "name_cn": AGENT_ROLES_CN.get(role, role),
+            "soul": agent_engine.get_soul(role)}
+
+@app.post("/agents/{role}/chat")
+def agent_chat(role: str, req: AgentChatRequest):
+    """六者人格驱动对话——SOUL作为System Prompt注入DeepSeek"""
+    soul = agent_engine.get_soul(role)
+    hint = AGENT_ROLE_HINTS.get(role, "")
+    prompt = f"""用户消息：{req.message}
+背景：{req.context or '无'}
+
+请严格保持「{AGENT_ROLES_CN.get(role, role)}」角色身份（核心职责：{hint}），
+依据你的灵魂设定（SOUL）与中医知识作答，输出结构化中文回复。"""
+    reply = call_llm(soul, prompt)
+    return {"role": role, "name_cn": AGENT_ROLES_CN.get(role, role),
+            "mode": "chat", "reply": reply}
 
 @app.get("/sages")
 def list_sages():

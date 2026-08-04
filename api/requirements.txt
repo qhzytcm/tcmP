@@ -1,0 +1,8 @@
+# tcmP API 依赖清单
+# 目标环境1（生产）：华为云 CentOS 7.6 + /www/anaconda3 Python 3.9.13
+# 目标环境2（开发）：本地 Anaconda Python 3.9.12
+# 版本与生产环境已安装版本锁定，避免升级引入不兼容（pydantic 1.x / 2.x 差异）
+fastapi==0.95.1
+uvicorn==0.21.1
+pydantic==1.10.7
+starlette==0.26.1
