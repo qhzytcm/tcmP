@@ -42,3 +42,17 @@ python main.py
 | `deps/wheels-win/` | win_amd64 (cp39) | 本地 Windows 开发离线安装 |
 
 离线安装：`pip install --no-index --find-links deps/wheels-linux -r api/requirements.txt`（服务器见 `deps/install-linux.sh`）
+
+## ICD-11 编码桥接（v2.2）
+
+病证图谱 ICD-11 标准编码（病历/医保对接）双通道：
+
+| 通道 | 说明 |
+|---|---|
+| 内网 API | `192.168.0.111:8080`（WHO whoicd/icd-api 容器，2026-01 MMS en+zh），中文搜索 |
+| 本地 db | `data/icd11_mms.db`（31,838 实体，release 2026-01），Foundation ID → 标准编码 |
+
+- **API 端点**：`GET /icd/search?q=病名`（中文桥接，长词滑动窗口自适应）· `GET /icd/code/{编码}` 反查 · `GET /icd/id/{foundation_id}`
+- **工具**：`python scripts/icd11_client.py 高血压`（中文桥接）/ `--code BA00` / `--en hypertension`
+- **标注**：103 个病证单位已标注（74 个标准编码 + 29 个实体 ID），字段 `disease_side.icd11_*`
+- **限制**：华为云（公网）访问不到内网 API，中文搜索自动降级英文；编码端点由镜像 API 能力决定（MMS 线性化端点镜像未实现，db 补齐）
