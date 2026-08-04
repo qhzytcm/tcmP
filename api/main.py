@@ -213,6 +213,19 @@ except Exception as e:
     icd11 = None
     print(f"  ⚠️ ICD-11 客户端加载失败: {e}")
 
+# ── 病证单元 Embedding 引擎（论著 RAG 范式：诊断/辨证/语义检索）──
+_tcm_engine = None
+def get_tcm_engine():
+    global _tcm_engine
+    if _tcm_engine is None:
+        try:
+            from tcm_embed import TCMSearchEngine
+            _tcm_engine = TCMSearchEngine()
+            print(f"  ✅ 病证单元引擎加载（{len(_tcm_engine.docs)} DSU, FTS5 就绪）")
+        except Exception as e:
+            print(f"  ⚠️ 病证单元引擎加载失败: {e}")
+    return _tcm_engine
+
 # ── 医圣API ──
 @app.get("/health")
 def health():
@@ -241,6 +254,77 @@ def icd_id(foundation_id: str):
     if not icd11:
         return {"error": "ICD-11 客户端不可用（db 缺失）"}
     return icd11.code_by_id(foundation_id) or {"error": f"ID {foundation_id} 未找到"}
+
+# ── 病证单元诊断/辨证 API（embedding 检索，内网零 token）──
+class SymptomRequest(BaseModel):
+    symptoms: list[str]
+    top_k: int = 5
+
+def _parse_symptoms(q: Optional[str], req: Optional[SymptomRequest]) -> list:
+    if req is not None:
+        return req.symptoms
+    if q:
+        return [s.strip() for s in q.replace("，", ",").split(",") if s.strip()]
+    return []
+
+@app.post("/diag")
+def diag(req: SymptomRequest):
+    """疾病诊断：症状 -> 病（embedding 检索，零 LLM token）"""
+    eng = get_tcm_engine()
+    if eng is None:
+        return {"error": "病证单元引擎不可用"}
+    return eng.diagnose(req.symptoms, req.top_k)
+
+@app.get("/diag")
+def diag_get(q: str = "", top_k: int = 5):
+    """疾病诊断（GET 版）：/diag?q=恶寒,发热"""
+    eng = get_tcm_engine()
+    if eng is None:
+        return {"error": "病证单元引擎不可用"}
+    syms = _parse_symptoms(q, None)
+    if not syms:
+        return {"error": "请提供症状 q=恶寒,发热"}
+    return eng.diagnose(syms, top_k)
+
+@app.post("/bianzheng")
+def bianzheng(req: SymptomRequest):
+    """证候辨证：症状 -> 证（病证单元证侧检索）"""
+    eng = get_tcm_engine()
+    if eng is None:
+        return {"error": "病证单元引擎不可用"}
+    return eng.bianzheng(req.symptoms, req.top_k)
+
+@app.get("/bianzheng")
+def bianzheng_get(q: str = "", top_k: int = 5):
+    """证候辨证（GET 版）：/bianzheng?q=口苦,咽干"""
+    eng = get_tcm_engine()
+    if eng is None:
+        return {"error": "病证单元引擎不可用"}
+    syms = _parse_symptoms(q, None)
+    if not syms:
+        return {"error": "请提供症状 q=口苦,咽干"}
+    return eng.bianzheng(syms, top_k)
+
+@app.post("/rag")
+def rag(req: SymptomRequest):
+    """RAG 诊断报告：内网检索 Top-K + DeepSeek 精修（仅消费小上下文）"""
+    eng = get_tcm_engine()
+    if eng is None:
+        return {"error": "病证单元引擎不可用"}
+    return eng.rag(req.symptoms, DEEPSEEK_KEY, req.top_k)
+
+@app.get("/semantic-search")
+def semantic_search(q: str = "", top_k: int = 5):
+    """语义检索：症状/病名/证候 -> 病证单元（embedding + FTS5 融合）"""
+    eng = get_tcm_engine()
+    if eng is None:
+        return {"error": "病证单元引擎不可用"}
+    syms = _parse_symptoms(q, None)
+    if not syms:
+        return {"error": "请提供查询词 q=失眠"}
+    r = eng.diagnose(syms, top_k)
+    r["mode"] = "semantic_search"
+    return r
 
 # ── 六者Agent API（SOUL人格加载）──
 @app.get("/agents")
