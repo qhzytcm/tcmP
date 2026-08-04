@@ -23,7 +23,11 @@
         "IL-5水平升高"
       ],
       "epidemiology": "全球约3.34亿患者，中国成人患病率约4.2%，儿童患病率约3.0%，近年持续上升",
-      "western_treatment": "ICS/LABA吸入治疗一线，LAMA三线，奥马珠单抗（抗IgE）用于重症，白三烯受体拮抗剂"
+      "western_treatment": "ICS/LABA吸入治疗一线，LAMA三线，奥马珠单抗（抗IgE）用于重症，白三烯受体拮抗剂",
+      "icd11_code": "CA23.32",
+      "icd11_foundation_id": "577724120",
+      "icd11_title_cn": "未特指的哮喘，单纯性",
+      "icd11_title_en": "Unspecified asthma, uncomplicated"
     },
     "syndrome_side": {
       "syndrome_name": "寒哮证（冷哮）",
@@ -147,7 +151,11 @@
         "痰培养可检出病原体"
       ],
       "epidemiology": "成人急性呼吸道感染中约90%由病毒引起，冬季高发，各年龄段均可患病",
-      "western_treatment": "对症治疗为主：镇咳(右美沙芬)、祛痰(氨溴索)、退热，抗生素仅用于明确细菌感染"
+      "western_treatment": "对症治疗为主：镇咳(右美沙芬)、祛痰(氨溴索)、退热，抗生素仅用于明确细菌感染",
+      "icd11_code": "CA42",
+      "icd11_foundation_id": "727572936",
+      "icd11_title_cn": "急性支气管炎",
+      "icd11_title_en": "Acute bronchitis"
     },
     "syndrome_side": {
       "syndrome_name": "风热犯肺证",
@@ -268,7 +276,11 @@
         "8-异前列腺素(氧化应激标志物)"
       ],
       "epidemiology": "我国40岁以上人群患病率约13.5%，北方高于南方，吸烟是最主要危险因素",
-      "western_treatment": "戒烟首位，支气管扩张剂(噻托溴铵、沙美特罗)，黏液溶解剂(N-乙酰半胱氨酸)，急性加重期加抗生素"
+      "western_treatment": "戒烟首位，支气管扩张剂(噻托溴铵、沙美特罗)，黏液溶解剂(N-乙酰半胱氨酸)，急性加重期加抗生素",
+      "icd11_code": "CA20.1",
+      "icd11_foundation_id": "290835130",
+      "icd11_title_cn": "慢性支气管炎",
+      "icd11_title_en": "Chronic bronchitis"
     },
     "syndrome_side": {
       "syndrome_name": "痰湿壅肺证",
@@ -391,7 +403,11 @@
         "IL-6升高"
       ],
       "epidemiology": "全球第三大死因，中国40岁以上患病率约13.7%，吸烟者患病率比非吸烟者高5-6倍",
-      "western_treatment": "支气管扩张剂(LAMA/LABA/ICS三联)，氧疗，肺康复，奈舒利·格隆溴铵等三联吸入"
+      "western_treatment": "支气管扩张剂(LAMA/LABA/ICS三联)，氧疗，肺康复，奈舒利·格隆溴铵等三联吸入",
+      "icd11_code": "CA22",
+      "icd11_foundation_id": "133207228",
+      "icd11_title_cn": "慢性阻塞性肺疾病",
+      "icd11_title_en": "Chronic obstructive pulmonary disease"
     },
     "syndrome_side": {
       "syndrome_name": "肺肾气虚证",
@@ -515,7 +531,11 @@
         "α1-AT降低（α1-抗胰蛋白酶缺乏型）"
       ],
       "epidemiology": "COPD患者中约50%有肺气肿表现，吸烟者发病率显著增高",
-      "western_treatment": "戒烟、支气管扩张剂、肺减容术、肺移植（终末期）"
+      "western_treatment": "戒烟、支气管扩张剂、肺减容术、肺移植（终末期）",
+      "icd11_code": "CA21",
+      "icd11_foundation_id": "1948124976",
+      "icd11_title_cn": "肺气肿",
+      "icd11_title_en": "Emphysema"
     },
     "syndrome_side": {
       "syndrome_name": "肺脾肾虚、痰瘀互结证",
@@ -639,7 +659,11 @@
         "Xpert MTB/RIF检测阳性"
       ],
       "epidemiology": "2023年全球新发结核病例约1080万，中国年新发病例约74.8万（全球第三），耐多药结核占比约7%",
-      "western_treatment": "2HRZE/4HR标准方案（异烟肼、利福平、吡嗪酰胺、乙胺丁醇），耐多药用贝达喹啉、利奈唑胺"
+      "western_treatment": "2HRZE/4HR标准方案（异烟肼、利福平、吡嗪酰胺、乙胺丁醇），耐多药用贝达喹啉、利奈唑胺",
+      "icd11_code": "1B10",
+      "icd11_foundation_id": "882244568",
+      "icd11_title_cn": "呼吸系统结核",
+      "icd11_title_en": "Tuberculosis of the respiratory system"
     },
     "syndrome_side": {
       "syndrome_name": "肺阴亏虚证",
@@ -764,7 +788,9 @@
         "PaO₂/FiO₂<300mmHg"
       ],
       "epidemiology": "中国社区获得性肺炎年发病率为7.2‰，65岁以上人群高达25‰，肺炎链球菌最常见",
-      "western_treatment": "抗生素经验治疗（β-内酰胺类+大环内酯类或呼吸喹诺酮），重症需支持治疗及糖皮质激素"
+      "western_treatment": "抗生素经验治疗（β-内酰胺类+大环内酯类或呼吸喹诺酮），重症需支持治疗及糖皮质激素",
+      "icd11_foundation_id": "59420827",
+      "icd11_title_cn": "社区获得性肺炎"
     },
     "syndrome_side": {
       "syndrome_name": "风热犯肺证",
@@ -887,7 +913,11 @@
         "红细胞计数及HCT升高（继发性红细胞增多）"
       ],
       "epidemiology": "我国肺心病患病率约0.5%，40岁以上人群约1.0%，COPD患者中约20-30%最终发展为肺心病",
-      "western_treatment": "氧疗基础，利尿剂（螺内酯），血管扩张剂（钙通道阻滞剂、前列环素），抗凝，严重者肺移植"
+      "western_treatment": "氧疗基础，利尿剂（螺内酯），血管扩张剂（钙通道阻滞剂、前列环素），抗凝，严重者肺移植",
+      "icd11_code": "BB01.5",
+      "icd11_foundation_id": "738218522",
+      "icd11_title_cn": "肺源性心脏病",
+      "icd11_title_en": "Cor pulmonale"
     },
     "syndrome_side": {
       "syndrome_name": "阳虚水泛证",
@@ -1012,7 +1042,11 @@
         "FVC(用力肺活量)进行性下降"
       ],
       "epidemiology": "发病率约2.8-9.3/10万/年，好发于50岁以上男性，确诊后中位生存期约3-5年",
-      "western_treatment": "抗纤维化药（吡非尼酮、尼达尼布），氧疗，肺康复，肺移植（唯一根治手段）"
+      "western_treatment": "抗纤维化药（吡非尼酮、尼达尼布），氧疗，肺康复，肺移植（唯一根治手段）",
+      "icd11_code": "CB03.4",
+      "icd11_foundation_id": "1074069640",
+      "icd11_title_cn": "特发性肺纤维化",
+      "icd11_title_en": "Idiopathic pulmonary fibrosis"
     },
     "syndrome_side": {
       "syndrome_name": "气阴两虚、痰瘀阻络证",
@@ -1136,7 +1170,11 @@
         "微量白蛋白尿(MAU)"
       ],
       "epidemiology": "中国成人高血压患病率约27.5%（约2.45亿），知晓率约51.6%，控制率约16.8%",
-      "western_treatment": "钙通道阻滞剂（硝苯地平）、ACEI/ARB、噻嗪类利尿剂、β受体阻滞剂"
+      "western_treatment": "钙通道阻滞剂（硝苯地平）、ACEI/ARB、噻嗪类利尿剂、β受体阻滞剂",
+      "icd11_code": "BA00",
+      "icd11_foundation_id": "761947693",
+      "icd11_title_cn": "原发性高血压",
+      "icd11_title_en": "Essential hypertension"
     },
     "syndrome_side": {
       "syndrome_name": "肝阳上亢证",
@@ -1261,7 +1299,11 @@
         "肌钙蛋白T/I（心肌损伤标志物）"
       ],
       "epidemiology": "中国冠心病患者约1139万，急性心肌梗死年发病率约55/10万，是心血管死亡首位原因",
-      "western_treatment": "抗血小板（阿司匹林+氯吡格雷/替格瑞洛），他汀类，β受体阻滞剂，ACEI/ARB，血运重建（PCI/CABG）"
+      "western_treatment": "抗血小板（阿司匹林+氯吡格雷/替格瑞洛），他汀类，β受体阻滞剂，ACEI/ARB，血运重建（PCI/CABG）",
+      "icd11_code": "BA52.0",
+      "icd11_foundation_id": "1911344636",
+      "icd11_title_cn": "自体冠状动脉粥样硬化",
+      "icd11_title_en": "Coronary atherosclerosis of native coronary artery"
     },
     "syndrome_side": {
       "syndrome_name": "胸阳痹阻、痰瘀互结证",
@@ -1384,7 +1426,11 @@
         "QTc间期>450ms(男)/>470ms(女)"
       ],
       "epidemiology": "中国房颤患者约800万，65岁以上人群患病率约5.9%，是最常见的心律失常类型",
-      "western_treatment": "抗心律失常药（胺碘酮、普罗帕酮），β受体阻滞剂，抗凝（房颤），射频消融，起搏器植入"
+      "western_treatment": "抗心律失常药（胺碘酮、普罗帕酮），β受体阻滞剂，抗凝（房颤），射频消融，起搏器植入",
+      "icd11_code": "MC81",
+      "icd11_foundation_id": "449943282",
+      "icd11_title_cn": "心脏搏动异常",
+      "icd11_title_en": "Abnormalities of heart beat"
     },
     "syndrome_side": {
       "syndrome_name": "心脾两虚证",
@@ -1506,7 +1552,9 @@
         "可溶性ST2（心肌纤维化标志物）"
       ],
       "epidemiology": "中国心力衰竭患者约890万，住院心衰患者5年死亡率约50%，是心血管病最后的战场",
-      "western_treatment": "四联基石疗法：ARNI/ACEI/ARB + β阻滞剂 + MRA + SGLT2i；利尿剂缓解症状"
+      "western_treatment": "四联基石疗法：ARNI/ACEI/ARB + β阻滞剂 + MRA + SGLT2i；利尿剂缓解症状",
+      "icd11_foundation_id": "1619115863",
+      "icd11_title_cn": "慢性心力衰竭"
     },
     "syndrome_side": {
       "syndrome_name": "心肾阳虚、水饮凌心证",
@@ -1632,7 +1680,11 @@
         "心肌MRI示LGE（晚期钆强化）"
       ],
       "epidemiology": "发病率约10-22/10万/年，多见于青少年及青壮年，约50%有前驱病毒感染史",
-      "western_treatment": "休息为基础，抗病毒（阿昔洛韦），免疫调节（IVIG），心衰常规治疗，严重者临时起搏/ECMO"
+      "western_treatment": "休息为基础，抗病毒（阿昔洛韦），免疫调节（IVIG），心衰常规治疗，严重者临时起搏/ECMO",
+      "icd11_code": "1D85",
+      "icd11_foundation_id": "874478433",
+      "icd11_title_cn": "病毒性心肌炎",
+      "icd11_title_en": "Viral carditis"
     },
     "syndrome_side": {
       "syndrome_name": "热毒侵心、气阴两伤证",
@@ -1755,7 +1807,11 @@
         "HDL-C<1.0mmol/L"
       ],
       "epidemiology": "中国成人血脂异常患病率约40.4%，LDL-C升高是ASCVD最重要的危险因素",
-      "western_treatment": "他汀类一线（阿托伐他汀、瑞舒伐他汀），依折麦布，PCSK9抑制剂（瑞百安/保妥适）"
+      "western_treatment": "他汀类一线（阿托伐他汀、瑞舒伐他汀），依折麦布，PCSK9抑制剂（瑞百安/保妥适）",
+      "icd11_code": "5C80",
+      "icd11_foundation_id": "2023062398",
+      "icd11_title_cn": "高脂蛋白血症",
+      "icd11_title_en": "Hyperlipoproteinaemia"
     },
     "syndrome_side": {
       "syndrome_name": "痰湿内阻证",
@@ -1878,7 +1934,11 @@
         "冠状动脉钙化评分(CAC)"
       ],
       "epidemiology": "动脉粥样硬化是心脑血管疾病共同的病理基础，中国40岁以上人群颈动脉斑块检出率约40%",
-      "western_treatment": "他汀类、抗血小板、控制危险因素（降压、降糖、戒烟），血运重建"
+      "western_treatment": "他汀类、抗血小板、控制危险因素（降压、降糖、戒烟），血运重建",
+      "icd11_code": "BD40",
+      "icd11_foundation_id": "109367356",
+      "icd11_title_cn": "动脉粥样硬化性慢性动脉闭塞性疾病",
+      "icd11_title_en": "Atherosclerotic chronic arterial occlusive disease"
     },
     "syndrome_side": {
       "syndrome_name": "气虚血瘀证",
@@ -2002,7 +2062,9 @@
         "超声心动图示瓣膜狭窄/关闭不全"
       ],
       "epidemiology": "全球风心病患者约4100万，中国农村地区仍有较高发病率，好发于儿童及青少年",
-      "western_treatment": "青霉素预防链球菌感染，心衰治疗，瓣膜置换术（机械瓣/生物瓣）"
+      "western_treatment": "青霉素预防链球菌感染，心衰治疗，瓣膜置换术（机械瓣/生物瓣）",
+      "icd11_foundation_id": "1121431779",
+      "icd11_title_cn": "心脏瓣膜病"
     },
     "syndrome_side": {
       "syndrome_name": "风寒湿痹、内含于心证",
@@ -2124,7 +2186,11 @@
         "静息ECG正常或非特异性ST-T改变"
       ],
       "epidemiology": "中国稳定型心绞痛患病率约3.6%，是冠心病最常见的类型",
-      "western_treatment": "抗血小板（阿司匹林），他汀，β受体阻滞剂，硝酸酯类（发作时），钙通道阻滞剂"
+      "western_treatment": "抗血小板（阿司匹林），他汀，β受体阻滞剂，硝酸酯类（发作时），钙通道阻滞剂",
+      "icd11_code": "BA40.0",
+      "icd11_foundation_id": "253490233",
+      "icd11_title_cn": "不稳定性心绞痛",
+      "icd11_title_en": "Unstable angina"
     },
     "syndrome_side": {
       "syndrome_name": "气阴两虚、心脉瘀阻证",
@@ -2247,7 +2313,11 @@
         "BNP/NT-proBNP升高"
       ],
       "epidemiology": "中国急性心梗年发病率约55/10万，近年呈年轻化趋势，30-40岁人群发病率上升",
-      "western_treatment": "急诊PCI（经皮冠状动脉介入治疗）首选，溶栓（无法及时PCI时），双联抗血小板（替格瑞洛+阿司匹林）"
+      "western_treatment": "急诊PCI（经皮冠状动脉介入治疗）首选，溶栓（无法及时PCI时），双联抗血小板（替格瑞洛+阿司匹林）",
+      "icd11_code": "BA41",
+      "icd11_foundation_id": "1334938734",
+      "icd11_title_cn": "急性心肌梗死",
+      "icd11_title_en": "Acute myocardial infarction"
     },
     "syndrome_side": {
       "syndrome_name": "真心痛（阳衰血瘀）证",
@@ -2372,7 +2442,11 @@
         "6分钟步行距离<450m"
       ],
       "epidemiology": "患病率约15-50/百万，好发于30-50岁女性（女:男=4:1），特发性占50%",
-      "western_treatment": "靶向药物三联（内皮素受体拮抗剂+PDE5i+前列环素类似物），氧疗，肺移植"
+      "western_treatment": "靶向药物三联（内皮素受体拮抗剂+PDE5i+前列环素类似物），氧疗，肺移植",
+      "icd11_code": "BB01",
+      "icd11_foundation_id": "1496633964",
+      "icd11_title_cn": "肺动脉高压",
+      "icd11_title_en": "Pulmonary hypertension"
     },
     "syndrome_side": {
       "syndrome_name": "肺肾气虚、痰瘀阻络证",

@@ -24,7 +24,11 @@
         "肠道菌群双歧杆菌/拟杆菌比例下降"
       ],
       "epidemiology": "全球成人患病率约14%，女性高于男性约2:1，65岁以上达30-40%",
-      "western_treatment": "生活方式调整；渗透性泻药（聚乙二醇、乳果糖）；促动力药（普芦卡必利）；促分泌药（利那洛肽）；生物反馈治疗"
+      "western_treatment": "生活方式调整；渗透性泻药（聚乙二醇、乳果糖）；促动力药（普芦卡必利）；促分泌药（利那洛肽）；生物反馈治疗",
+      "icd11_code": "ME05.0",
+      "icd11_foundation_id": "502284069",
+      "icd11_title_cn": "便秘",
+      "icd11_title_en": "Constipation"
     },
     "syndrome_side": {
       "syndrome_name": "气虚便秘证",
@@ -149,7 +153,9 @@
         "D-木糖吸收试验降低"
       ],
       "epidemiology": "我国慢性腹泻患病率约5-10%，好发于青壮年，女性略高，农村高于城市",
-      "western_treatment": "对症止泻（洛哌丁胺、蒙脱石散）；益生菌调节；抗生素用于细菌过度生长"
+      "western_treatment": "对症止泻（洛哌丁胺、蒙脱石散）；益生菌调节；抗生素用于细菌过度生长",
+      "icd11_foundation_id": "1796265387",
+      "icd11_title_cn": "慢性腹泻伴绒毛萎缩"
     },
     "syndrome_side": {
       "syndrome_name": "脾虚湿盛证",
@@ -274,7 +280,9 @@
         "G-17胃泌素-17"
       ],
       "epidemiology": "我国成人患病率>50%，Hp感染率约55%，慢性萎缩性胃炎癌变风险约0.5-1%/年",
-      "western_treatment": "Hp阳性四联疗法（PPI+铋剂+2种抗生素）；抑酸PPI/H2RA；胃黏膜保护剂（瑞巴派特、替普瑞酮）"
+      "western_treatment": "Hp阳性四联疗法（PPI+铋剂+2种抗生素）；抑酸PPI/H2RA；胃黏膜保护剂（瑞巴派特、替普瑞酮）",
+      "icd11_foundation_id": "865968881",
+      "icd11_title_cn": "慢性胃炎，不可归类于他处者"
     },
     "syndrome_side": {
       "syndrome_name": "脾胃湿热证",
@@ -400,7 +408,11 @@
         "血清胃泌素G-17"
       ],
       "epidemiology": "终身患病率约5-10%，十二指肠溃疡好发于青壮年，胃溃疡好发于中老年，男女比约3:1",
-      "western_treatment": "PPI抑酸（奥美拉唑、雷贝拉唑）；Hp根除四联疗法；胃黏膜保护剂（瑞巴派特、硫糖铝）"
+      "western_treatment": "PPI抑酸（奥美拉唑、雷贝拉唑）；Hp根除四联疗法；胃黏膜保护剂（瑞巴派特、硫糖铝）",
+      "icd11_code": "DA61",
+      "icd11_foundation_id": "1145813715",
+      "icd11_title_cn": "消化性溃疡，部位未特指",
+      "icd11_title_en": "Peptic ulcer, site unspecified"
     },
     "syndrome_side": {
       "syndrome_name": "肝胃不和证",
@@ -522,7 +534,11 @@
         "阻抗-pH监测反流次数"
       ],
       "epidemiology": "我国每周反流症状患病率约12.5%，好发于中老年和肥胖者",
-      "western_treatment": "PPI抑酸一线治疗；促动力药（莫沙必利）；H2RA；抗反流手术（腹腔镜胃底折叠术）"
+      "western_treatment": "PPI抑酸一线治疗；促动力药（莫沙必利）；H2RA；抗反流手术（腹腔镜胃底折叠术）",
+      "icd11_code": "DA22",
+      "icd11_foundation_id": "1391387859",
+      "icd11_title_cn": "胃-食管反流病",
+      "icd11_title_en": "Gastro-oesophageal reflux disease"
     },
     "syndrome_side": {
       "syndrome_name": "肝胃郁热证",
@@ -648,7 +664,11 @@
         "FibroScan肝脏弹性≥7.3kPa"
       ],
       "epidemiology": "全球约2.57亿慢性感染者，中国HBsAg阳性率约5-6%",
-      "western_treatment": "核苷类似物（恩替卡韦、丙酚替诺福韦）；聚乙二醇干扰素-α；肝移植（终末期）"
+      "western_treatment": "核苷类似物（恩替卡韦、丙酚替诺福韦）；聚乙二醇干扰素-α；肝移植（终末期）",
+      "icd11_code": "1E51.0",
+      "icd11_foundation_id": "352087872",
+      "icd11_title_cn": "慢性乙型肝炎",
+      "icd11_title_en": "Chronic hepatitis B"
     },
     "syndrome_side": {
       "syndrome_name": "肝郁脾虚证",
@@ -772,7 +792,11 @@
         "Child-Pugh/MELD评分"
       ],
       "epidemiology": "全球约1.12亿人，中国HBV相关肝硬化仍为主要病因",
-      "western_treatment": "病因治疗（抗病毒/戒酒）；并发症管理（利尿剂、内镜套扎、TIPS、肝移植）；肝癌筛查"
+      "western_treatment": "病因治疗（抗病毒/戒酒）；并发症管理（利尿剂、内镜套扎、TIPS、肝移植）；肝癌筛查",
+      "icd11_code": "DB93.0",
+      "icd11_foundation_id": "1377614074",
+      "icd11_title_cn": "肝纤维化",
+      "icd11_title_en": "Hepatic fibrosis"
     },
     "syndrome_side": {
       "syndrome_name": "水湿内停证（鼓胀）",
@@ -898,7 +922,9 @@
         "FIB-4肝纤维化评分"
       ],
       "epidemiology": "全球患病率约25-30%，中国约29.2%，已取代病毒性肝炎成为慢性肝病第一病因",
-      "western_treatment": "生活方式干预（减重≥7%低碳水饮食）；吡格列酮；GLP-1受体激动剂；奥贝胆酸"
+      "western_treatment": "生活方式干预（减重≥7%低碳水饮食）；吡格列酮；GLP-1受体激动剂；奥贝胆酸",
+      "icd11_foundation_id": "2005424315",
+      "icd11_title_cn": "脂肪代谢"
     },
     "syndrome_side": {
       "syndrome_name": "痰湿内阻证",
@@ -1022,7 +1048,11 @@
         "B超胆囊壁增厚>4mm"
       ],
       "epidemiology": "我国患病率约10%，女性多于男性（约3:1），40-60岁高发",
-      "western_treatment": "禁食补液抗感染（三代头孢+甲硝唑）；解痉止痛；腹腔镜胆囊切除术（金标准）"
+      "western_treatment": "禁食补液抗感染（三代头孢+甲硝唑）；解痉止痛；腹腔镜胆囊切除术（金标准）",
+      "icd11_code": "DC12.0",
+      "icd11_foundation_id": "2071113448",
+      "icd11_title_cn": "急性胆囊炎",
+      "icd11_title_en": "Acute cholecystitis"
     },
     "syndrome_side": {
       "syndrome_name": "肝胆湿热证",
@@ -1147,7 +1177,11 @@
         "BISAP/Ranson评分"
       ],
       "epidemiology": "全球发病率约34/10万，胆源性最常见，男性高于女性，重症死亡率约15-30%",
-      "western_treatment": "禁食补液、镇痛、抑制胰酶分泌（生长抑素）；重症需ICU监护、ERCP、手术清创"
+      "western_treatment": "禁食补液、镇痛、抑制胰酶分泌（生长抑素）；重症需ICU监护、ERCP、手术清创",
+      "icd11_code": "DC31",
+      "icd11_foundation_id": "698285441",
+      "icd11_title_cn": "急性胰腺炎",
+      "icd11_title_en": "Acute pancreatitis"
     },
     "syndrome_side": {
       "syndrome_name": "阳明腑实证/结胸证",
@@ -1269,7 +1303,9 @@
         "肾脏病理（金标准）"
       ],
       "epidemiology": "中国慢性肾脏病患病率约10.8%，其中慢性肾炎约占40%，好发于青壮年",
-      "western_treatment": "RAAS阻断剂（ACEI/ARB）降蛋白；免疫抑制剂（激素/CsA/MMF）根据病理类型选用；终末期透析/移植"
+      "western_treatment": "RAAS阻断剂（ACEI/ARB）降蛋白；免疫抑制剂（激素/CsA/MMF）根据病理类型选用；终末期透析/移植",
+      "icd11_foundation_id": "897257355",
+      "icd11_title_cn": "慢性肾炎综合征"
     },
     "syndrome_side": {
       "syndrome_name": "脾肾气虚、水湿内停证",
@@ -1393,7 +1429,11 @@
         "24h尿代谢分析"
       ],
       "epidemiology": "我国患病率约6.5%，好发于30-50岁男性，夏秋季高发，复发率5年约50%",
-      "western_treatment": "急性发作止痛（NSAIDs/杜冷丁）；输尿管镜碎石（URS）、体外冲击波碎石（ESWL）、PCNL；药物排石（坦索罗辛α受体阻滞剂）"
+      "western_treatment": "急性发作止痛（NSAIDs/杜冷丁）；输尿管镜碎石（URS）、体外冲击波碎石（ESWL）、PCNL；药物排石（坦索罗辛α受体阻滞剂）",
+      "icd11_code": "GB70.0",
+      "icd11_foundation_id": "389168514",
+      "icd11_title_cn": "肾结石",
+      "icd11_title_en": "Calculus of kidney"
     },
     "syndrome_side": {
       "syndrome_name": "下焦湿热瘀阻证",
@@ -1516,7 +1556,11 @@
         "B超前列腺体积>30mL"
       ],
       "epidemiology": "60岁以上男性患病率>50%，80岁以上>90%，随年龄增长发病率持续上升",
-      "western_treatment": "α1受体阻滞剂（坦索罗辛、多沙唑嗪）快速缓解症状；5α-还原酶抑制剂（非那雄胺、度他雄胺）缩小腺体；经尿道前列腺电切术TURP"
+      "western_treatment": "α1受体阻滞剂（坦索罗辛、多沙唑嗪）快速缓解症状；5α-还原酶抑制剂（非那雄胺、度他雄胺）缩小腺体；经尿道前列腺电切术TURP",
+      "icd11_code": "GA90",
+      "icd11_foundation_id": "978159279",
+      "icd11_title_cn": "前列腺增生",
+      "icd11_title_en": "Hyperplasia of prostate"
     },
     "syndrome_side": {
       "syndrome_name": "肾虚瘀阻证（癃闭）",
@@ -1640,7 +1684,9 @@
         "白细胞酯酶阳性"
       ],
       "epidemiology": "女性患病率远高于男性（约8:1），约50%女性一生中至少经历一次UTI，复发率高",
-      "western_treatment": "抗生素（呋喃妥因、磷霉素氨丁三醇、头孢菌素、喹诺酮类）3-7天疗程"
+      "western_treatment": "抗生素（呋喃妥因、磷霉素氨丁三醇、头孢菌素、喹诺酮类）3-7天疗程",
+      "icd11_foundation_id": "120069809",
+      "icd11_title_cn": "急性细菌性或真菌性膀胱炎"
     },
     "syndrome_side": {
       "syndrome_name": "膀胱湿热证（热淋）",
@@ -1763,7 +1809,9 @@
         "尿WBC升高"
       ],
       "epidemiology": "性活跃人群高发，男性多于女性（症状更明显），淋菌性尿道炎发病率约20-30/10万",
-      "western_treatment": "抗生素（头孢曲松+阿奇霉素双联治疗淋菌性；多西环素或阿奇霉素治疗非淋菌性）；性伴同治"
+      "western_treatment": "抗生素（头孢曲松+阿奇霉素双联治疗淋菌性；多西环素或阿奇霉素治疗非淋菌性）；性伴同治",
+      "icd11_foundation_id": "741364388",
+      "icd11_title_cn": "其他尿道炎"
     },
     "syndrome_side": {
       "syndrome_name": "湿热下注证（热淋/白浊）",
@@ -1882,7 +1930,11 @@
         "胃肠传输时间异常"
       ],
       "epidemiology": "全球患病率约11%，女性多于男性，好发于20-50岁青壮年，IBS-D（腹泻型）约占40%",
-      "western_treatment": "解痉（匹维溴铵、奥替溴铵）；止泻（洛哌丁胺）；促动力（普芦卡必利）；低FODMAP饮食；心理认知行为疗法"
+      "western_treatment": "解痉（匹维溴铵、奥替溴铵）；止泻（洛哌丁胺）；促动力（普芦卡必利）；低FODMAP饮食；心理认知行为疗法",
+      "icd11_code": "DD91.0",
+      "icd11_foundation_id": "1158238623",
+      "icd11_title_cn": "肠易激综合征",
+      "icd11_title_en": "Irritable bowel syndrome"
     },
     "syndrome_side": {
       "syndrome_name": "肝郁脾虚证（痛泻）",
@@ -2008,7 +2060,11 @@
         "CRP/ESR升高"
       ],
       "epidemiology": "我国患病率约11.6/10万，逐年上升，好发于20-40岁青壮年，男女无差异",
-      "western_treatment": "5-ASA（美沙拉嗪）轻中度；激素（泼尼松）重度/急性期；免疫抑制剂（硫唑嘌呤、甲氨蝶呤）；生物制剂（抗TNF-α、抗整合素、JAK抑制剂）"
+      "western_treatment": "5-ASA（美沙拉嗪）轻中度；激素（泼尼松）重度/急性期；免疫抑制剂（硫唑嘌呤、甲氨蝶呤）；生物制剂（抗TNF-α、抗整合素、JAK抑制剂）",
+      "icd11_code": "DD71",
+      "icd11_foundation_id": "784669405",
+      "icd11_title_cn": "溃疡性结肠炎",
+      "icd11_title_en": "Ulcerative colitis"
     },
     "syndrome_side": {
       "syndrome_name": "大肠湿热蕴毒证",
@@ -2133,7 +2189,11 @@
         "CA19-9（鉴别胰腺癌）"
       ],
       "epidemiology": "全球患病率约50/10万，中国常见病因为胆源性（约50%）和酒精性（约30%）",
-      "western_treatment": "胰酶替代疗法（脂肪酶25000-50000U/餐）；疼痛管理（NSAIDs/神经阻滞）；内镜ERCP取石/支架；手术（胰管引流/胰十二指肠切除）"
+      "western_treatment": "胰酶替代疗法（脂肪酶25000-50000U/餐）；疼痛管理（NSAIDs/神经阻滞）；内镜ERCP取石/支架；手术（胰管引流/胰十二指肠切除）",
+      "icd11_code": "DC32",
+      "icd11_foundation_id": "1758007371",
+      "icd11_title_cn": "慢性胰腺炎",
+      "icd11_title_en": "Chronic pancreatitis"
     },
     "syndrome_side": {
       "syndrome_name": "脾虚瘀阻证",
@@ -2257,7 +2317,11 @@
         "血红蛋白降低（肾性贫血）"
       ],
       "epidemiology": "中国CKD患病率10.8%。终末期肾病发病率约100-120/百万人口，需透析或移植维持生命",
-      "western_treatment": "控制血压/降蛋白（ACEI/ARB）；延缓肾功能恶化（SGLT2i）；贫血纠正（EPO/铁剂）；钙磷代谢调整；肾脏替代治疗（透析/移植）"
+      "western_treatment": "控制血压/降蛋白（ACEI/ARB）；延缓肾功能恶化（SGLT2i）；贫血纠正（EPO/铁剂）；钙磷代谢调整；肾脏替代治疗（透析/移植）",
+      "icd11_code": "GB61",
+      "icd11_foundation_id": "412389819",
+      "icd11_title_cn": "慢性肾脏病",
+      "icd11_title_en": "Chronic kidney disease"
     },
     "syndrome_side": {
       "syndrome_name": "脾肾阳虚、湿浊内蕴证",
@@ -2381,7 +2445,9 @@
         "肾脏B超/CT排除结构异常"
       ],
       "epidemiology": "女性患病率远高于男性，反复发作UTI年发生率约25%，复杂UTI（伴结石/糖尿病/插管等）治疗难度大",
-      "western_treatment": "根据药敏结果选用敏感抗生素（耐药率高需联合用药）；处理基础病因（取石/更换导管/纠正糖尿病）"
+      "western_treatment": "根据药敏结果选用敏感抗生素（耐药率高需联合用药）；处理基础病因（取石/更换导管/纠正糖尿病）",
+      "icd11_foundation_id": "1976317967",
+      "icd11_title_cn": "妊娠期未特指尿路感染"
     },
     "syndrome_side": {
       "syndrome_name": "湿热下注、邪留正伤证",

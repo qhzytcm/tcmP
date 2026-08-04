@@ -24,7 +24,11 @@
         "血脂血糖HbA1c"
       ],
       "epidemiology": "中国每年新发约250万，致残率约75%，第一大致残病因",
-      "western_treatment": "超早期溶栓（阿替普酶4.5h内）；血管内取栓（前循环6-24h）；抗血小板/他汀二级预防"
+      "western_treatment": "超早期溶栓（阿替普酶4.5h内）；血管内取栓（前循环6-24h）；抗血小板/他汀二级预防",
+      "icd11_code": "8B11",
+      "icd11_foundation_id": "636274910",
+      "icd11_title_cn": "缺血性脑卒中",
+      "icd11_title_en": "Cerebral ischaemic stroke"
     },
     "syndrome_side": {
       "syndrome_name": "气虚血瘀、风中经络证",
@@ -148,7 +152,9 @@
         "MRI面神经强化"
       ],
       "epidemiology": "发病率约20-30/10万，孕妇发病率更高（45/10万），90%可自发改善",
-      "western_treatment": "糖皮质激素（泼尼松60mg/日5天渐减）发病72h内最有效；抗病毒用于重症；眼保护"
+      "western_treatment": "糖皮质激素（泼尼松60mg/日5天渐减）发病72h内最有效；抗病毒用于重症；眼保护",
+      "icd11_foundation_id": "1361621661",
+      "icd11_title_cn": "特发性急性面神经麻痹"
     },
     "syndrome_side": {
       "syndrome_name": "风邪外袭、经络痹阻证",
@@ -271,7 +277,11 @@
         "VAS评分"
       ],
       "epidemiology": "发病率约12-27/10万，好发50岁以上女性（女:男=3:1），右侧多于左侧60%",
-      "western_treatment": "卡马西平/奥卡西平一线；加巴喷丁/普瑞巴林二线；微血管减压术MVD；射频消融/伽玛刀"
+      "western_treatment": "卡马西平/奥卡西平一线；加巴喷丁/普瑞巴林二线；微血管减压术MVD；射频消融/伽玛刀",
+      "icd11_code": "8B82.0",
+      "icd11_foundation_id": "1803581281",
+      "icd11_title_cn": "三叉神经痛",
+      "icd11_title_en": "Trigeminal neuralgia"
     },
     "syndrome_side": {
       "syndrome_name": "肝火上炎、风火上扰证",
@@ -388,7 +398,11 @@
         "ODI功能障碍指数"
       ],
       "epidemiology": "终身患病率约13-40%，好发于青壮年体力劳动者",
-      "western_treatment": "保守（NSAIDs/肌松剂/硬膜外激素注射）；微创椎间孔镜；开放手术椎板切除减压融合"
+      "western_treatment": "保守（NSAIDs/肌松剂/硬膜外激素注射）；微创椎间孔镜；开放手术椎板切除减压融合",
+      "icd11_code": "FA80.9",
+      "icd11_foundation_id": "968794127",
+      "icd11_title_cn": "腰椎间盘退变伴椎间盘脱出",
+      "icd11_title_en": "Intervertebral disc degeneration of lumbar spine with prolapsed disc"
     },
     "syndrome_side": {
       "syndrome_name": "寒湿阻络、气滞血瘀证",
@@ -512,7 +526,11 @@
         "排除继发性头痛"
       ],
       "epidemiology": "全球患病率约15%，女性约是男性3倍，好发25-55岁",
-      "western_treatment": "急性期（曲普坦、吉泮/地坦CGRP拮抗剂、NSAIDs）；预防（β阻滞剂、CGRP单抗、肉毒素A）"
+      "western_treatment": "急性期（曲普坦、吉泮/地坦CGRP拮抗剂、NSAIDs）；预防（β阻滞剂、CGRP单抗、肉毒素A）",
+      "icd11_code": "8A80",
+      "icd11_foundation_id": "669367341",
+      "icd11_title_cn": "偏头痛",
+      "icd11_title_en": "Migraine"
     },
     "syndrome_side": {
       "syndrome_name": "肝阳上亢、风阳上扰证",
@@ -637,7 +655,9 @@
         "基因检测"
       ],
       "epidemiology": "全球约5000万患者，年发病率约50/10万，中国患病率约7‰",
-      "western_treatment": "抗癫痫药（丙戊酸/拉莫三嗪/左乙拉西坦/卡马西平按类型选）；手术切除病灶/VNS/DBS"
+      "western_treatment": "抗癫痫药（丙戊酸/拉莫三嗪/左乙拉西坦/卡马西平按类型选）；手术切除病灶/VNS/DBS",
+      "icd11_foundation_id": "1397288146",
+      "icd11_title_cn": "癫痫或癫痫发作"
     },
     "syndrome_side": {
       "syndrome_name": "风痰闭窍、肝风内动证（痫证）",
@@ -760,7 +780,11 @@
         "嗅觉减退/RBD前驱期"
       ],
       "epidemiology": "65岁以上患病率约1.7%，中国约300万患者",
-      "western_treatment": "左旋多巴/多巴胺激动剂/MAO-B抑制剂/COMT抑制剂；DBS深部脑刺激"
+      "western_treatment": "左旋多巴/多巴胺激动剂/MAO-B抑制剂/COMT抑制剂；DBS深部脑刺激",
+      "icd11_code": "8A00.0",
+      "icd11_foundation_id": "296066191",
+      "icd11_title_cn": "帕金森病",
+      "icd11_title_en": "Parkinson disease"
     },
     "syndrome_side": {
       "syndrome_name": "肝肾阴虚、虚风内动证（颤证）",
@@ -884,7 +908,11 @@
         "甲状腺摄碘率↑"
       ],
       "epidemiology": "患病率约1.3%，女性高于男性约5:1，好发20-50岁",
-      "western_treatment": "抗甲状腺药物（甲巯咪唑/丙硫氧嘧啶）；放射性131I；甲状腺次全切；β阻滞剂控制心率"
+      "western_treatment": "抗甲状腺药物（甲巯咪唑/丙硫氧嘧啶）；放射性131I；甲状腺次全切；β阻滞剂控制心率",
+      "icd11_code": "5A02.1",
+      "icd11_foundation_id": "1328823989",
+      "icd11_title_cn": "甲状腺毒症伴毒性单个甲状腺结节",
+      "icd11_title_en": "Thyrotoxicosis with toxic single thyroid nodule"
     },
     "syndrome_side": {
       "syndrome_name": "肝火亢盛、气阴两虚证（瘿病）",
@@ -1006,7 +1034,11 @@
         "甲状腺B超弥漫性病变"
       ],
       "epidemiology": "患病率约1-2%，女性高于男性约8:1，随年龄增长升高",
-      "western_treatment": "左甲状腺素（L-T4）替代治疗，终身服药，剂量个体化"
+      "western_treatment": "左甲状腺素（L-T4）替代治疗，终身服药，剂量个体化",
+      "icd11_code": "5A00",
+      "icd11_foundation_id": "1722092627",
+      "icd11_title_cn": "甲状腺功能减退症",
+      "icd11_title_en": "Hypothyroidism"
     },
     "syndrome_side": {
       "syndrome_name": "脾肾阳虚证",
@@ -1132,7 +1164,11 @@
         "胰岛自身抗体（排除1型）"
       ],
       "epidemiology": "中国成人患病率约12.8%，约1.4亿患者，是全球第一糖尿病大国",
-      "western_treatment": "生活方式干预；二甲双胍一线；SGLT2i/GLP-1RA联合/单用；胰岛素强化；血糖血压血脂综合管理"
+      "western_treatment": "生活方式干预；二甲双胍一线；SGLT2i/GLP-1RA联合/单用；胰岛素强化；血糖血压血脂综合管理",
+      "icd11_code": "5A11",
+      "icd11_foundation_id": "119724091",
+      "icd11_title_cn": "2型糖尿病",
+      "icd11_title_en": "Type 2 diabetes mellitus"
     },
     "syndrome_side": {
       "syndrome_name": "气阴两虚证（消渴）",
@@ -1255,7 +1291,11 @@
         "关节超声双轨征"
       ],
       "epidemiology": "中国患病率约1.1-3.0%，男性远高于女性，好发40岁以上",
-      "western_treatment": "急性期（秋水仙碱/NSAIDs/糖皮质激素）；降尿酸（别嘌醇/非布司他/苯溴马隆）；碱化尿液"
+      "western_treatment": "急性期（秋水仙碱/NSAIDs/糖皮质激素）；降尿酸（别嘌醇/非布司他/苯溴马隆）；碱化尿液",
+      "icd11_code": "FA25",
+      "icd11_foundation_id": "395622227",
+      "icd11_title_cn": "痛风",
+      "icd11_title_en": "Gout"
     },
     "syndrome_side": {
       "syndrome_name": "湿热下注、痹阻经络证（热痹）",
@@ -1381,7 +1421,11 @@
         "代谢综合征组分数"
       ],
       "epidemiology": "中国成人超重率34.3%、肥胖率16.4%，总人数居全球第一",
-      "western_treatment": "生活方式干预（饮食+运动+行为）；减重药物（GLP-1受体激动剂司美格鲁肽/利拉鲁肽、奥利司他）；减重代谢手术（Roux-en-Y胃旁路/袖状胃切除）"
+      "western_treatment": "生活方式干预（饮食+运动+行为）；减重药物（GLP-1受体激动剂司美格鲁肽/利拉鲁肽、奥利司他）；减重代谢手术（Roux-en-Y胃旁路/袖状胃切除）",
+      "icd11_code": "5B81",
+      "icd11_foundation_id": "149403041",
+      "icd11_title_cn": "肥胖症",
+      "icd11_title_en": "Obesity"
     },
     "syndrome_side": {
       "syndrome_name": "痰湿内盛、脾虚不运证",
@@ -1510,7 +1554,11 @@
         "P1NP/CTX-1骨转换标志物"
       ],
       "epidemiology": "60岁以上患病率约36%，绝经后女性约50%",
-      "western_treatment": "钙剂+VD基础；双膦酸盐/地舒单抗抗骨吸收；特立帕肽促骨形成"
+      "western_treatment": "钙剂+VD基础；双膦酸盐/地舒单抗抗骨吸收；特立帕肽促骨形成",
+      "icd11_code": "KB61.3",
+      "icd11_foundation_id": "109776301",
+      "icd11_title_cn": "新生儿骨质减少",
+      "icd11_title_en": "Neonatal osteopenia"
     },
     "syndrome_side": {
       "syndrome_name": "肾精亏虚、骨痿证",
@@ -1628,7 +1676,11 @@
         "Hb<120g/L(女)"
       ],
       "epidemiology": "全球最常见贫血，中国患病率约15-20%，孕妇儿童高发",
-      "western_treatment": "口服铁剂（硫酸亚铁/多糖铁）；静脉铁剂；病因治疗"
+      "western_treatment": "口服铁剂（硫酸亚铁/多糖铁）；静脉铁剂；病因治疗",
+      "icd11_code": "3A00",
+      "icd11_foundation_id": "1577750667",
+      "icd11_title_cn": "缺铁性贫血",
+      "icd11_title_en": "Iron deficiency anaemia"
     },
     "syndrome_side": {
       "syndrome_name": "脾胃虚弱、气血两虚证",
@@ -1747,7 +1799,9 @@
         "PNH克隆检测"
       ],
       "epidemiology": "发病率约4-8/百万，好发15-25岁和60岁以上",
-      "western_treatment": "免疫抑制治疗（ATG+环孢素）；促造血（TPO-RA）；造血干细胞移植"
+      "western_treatment": "免疫抑制治疗（ATG+环孢素）；促造血（TPO-RA）；造血干细胞移植",
+      "icd11_foundation_id": "1754559132",
+      "icd11_title_cn": "再生障碍性贫血"
     },
     "syndrome_side": {
       "syndrome_name": "肾精亏虚、髓枯血虚证",
@@ -1865,7 +1919,11 @@
         "NPM1/FLT3-ITD预后分层"
       ],
       "epidemiology": "中国发病率约3-4/10万，AML中位发病年龄65-70岁",
-      "western_treatment": "诱导化疗(7+3方案)；靶向药(FLT3/IDH/BCL2抑制剂)；造血干细胞移植"
+      "western_treatment": "诱导化疗(7+3方案)；靶向药(FLT3/IDH/BCL2抑制剂)；造血干细胞移植",
+      "icd11_code": "2A60.3",
+      "icd11_foundation_id": "1611980611",
+      "icd11_title_cn": "急性髓系白血病，采用其他标准不可归类在他处者",
+      "icd11_title_en": "Acute myeloid leukaemia, not elsewhere classified by criteria of other types"
     },
     "syndrome_side": {
       "syndrome_name": "热毒炽盛、气阴两虚证(急劳/热劳)",
@@ -1984,7 +2042,11 @@
         "beta2-微球蛋白"
       ],
       "epidemiology": "年发病率约6-10/10万，DLBCL占NHL的30-40%",
-      "western_treatment": "R-CHOP方案一线标准；CAR-T治疗复发难治"
+      "western_treatment": "R-CHOP方案一线标准；CAR-T治疗复发难治",
+      "icd11_code": "2A81",
+      "icd11_foundation_id": "1946973604",
+      "icd11_title_cn": "弥漫大B细胞淋巴瘤",
+      "icd11_title_en": "Diffuse large B-cell lymphomas"
     },
     "syndrome_side": {
       "syndrome_name": "痰瘀互结、气阴两虚证(石疽/恶核)",
@@ -2102,7 +2164,11 @@
         "抗GM1/GD1a抗体"
       ],
       "epidemiology": "年发病率约1-2/10万，空肠弯曲菌是最常见前驱",
-      "western_treatment": "IVIG 0.4g/kg/日x5日；血浆置换；呼吸支持"
+      "western_treatment": "IVIG 0.4g/kg/日x5日；血浆置换；呼吸支持",
+      "icd11_code": "8C01.0",
+      "icd11_foundation_id": "1196874419",
+      "icd11_title_cn": "急性炎性脱髓鞘性多发性神经病",
+      "icd11_title_en": "Acute inflammatory demyelinating polyneuropathy"
     },
     "syndrome_side": {
       "syndrome_name": "湿热浸淫、筋脉失养证(痿证)",
@@ -2220,7 +2286,11 @@
         "重复神经电刺激递减"
       ],
       "epidemiology": "患病率约15-25/10万，好发20-40岁女性(男女比约1:2)",
-      "western_treatment": "溴吡斯的明(对症)；免疫抑制(激素/MMF)；胸腺切除；C5抑制剂/FcRn拮抗剂"
+      "western_treatment": "溴吡斯的明(对症)；免疫抑制(激素/MMF)；胸腺切除；C5抑制剂/FcRn拮抗剂",
+      "icd11_code": "8C60",
+      "icd11_foundation_id": "1270100227",
+      "icd11_title_cn": "重症肌无力",
+      "icd11_title_en": "Myasthenia gravis"
     },
     "syndrome_side": {
       "syndrome_name": "脾胃虚弱、中气下陷证(痿证/睑废)",
@@ -2344,7 +2414,11 @@
         "MoCA/MMSE评分"
       ],
       "epidemiology": "65岁以上患病率约5-8%，85岁以上约30-50%，中国约1000万患者",
-      "western_treatment": "多奈哌齐/卡巴拉汀(胆碱酯酶抑制剂)；美金刚(NMDA拮抗剂)；Abeta单抗(仑卡奈单抗/多奈单抗)"
+      "western_treatment": "多奈哌齐/卡巴拉汀(胆碱酯酶抑制剂)；美金刚(NMDA拮抗剂)；Abeta单抗(仑卡奈单抗/多奈单抗)",
+      "icd11_code": "8A20",
+      "icd11_foundation_id": "1611724421",
+      "icd11_title_cn": "阿尔茨海默病",
+      "icd11_title_en": "Alzheimer disease"
     },
     "syndrome_side": {
       "syndrome_name": "髓海不足、肾虚痰瘀证(痴呆)",

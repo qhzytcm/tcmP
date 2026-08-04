@@ -24,7 +24,9 @@
         "子宫动脉PI(搏动指数)升高"
       ],
       "epidemiology": "女性患病率约50%-90%，其中重度痛经影响10%-20%青龄女性学业生活，初潮后6-12个月高发",
-      "western_treatment": "NSAIDs（布洛芬、萘普生一线），口服避孕药（激素抑制排卵），钙通道阻滞剂（硝苯地平），严重者考虑Mirena宫内节育器"
+      "western_treatment": "NSAIDs（布洛芬、萘普生一线），口服避孕药（激素抑制排卵），钙通道阻滞剂（硝苯地平），严重者考虑Mirena宫内节育器",
+      "icd11_foundation_id": "1442999941",
+      "icd11_title_cn": "原发性痛经"
     },
     "syndrome_side": {
       "syndrome_name": "寒凝血瘀证",
@@ -148,7 +150,9 @@
         "子宫内膜厚度异常(超声)"
       ],
       "epidemiology": "发病率约10%-15%，青春期和围绝经期为双高峰，占妇科门诊量的20%-30%",
-      "western_treatment": "急性期：高效孕激素止血（炔诺酮、甲羟孕酮），诊断性刮宫；调整周期：口服避孕药、孕激素后半周期疗法；围绝经期：曼月乐环"
+      "western_treatment": "急性期：高效孕激素止血（炔诺酮、甲羟孕酮），诊断性刮宫；调整周期：口服避孕药、孕激素后半周期疗法；围绝经期：曼月乐环",
+      "icd11_foundation_id": "357921189",
+      "icd11_title_cn": "功能失调性子宫出血"
     },
     "syndrome_side": {
       "syndrome_name": "气虚不摄证",
@@ -272,7 +276,11 @@
         "盆腔超声示输卵管积液/盆腔积液"
       ],
       "epidemiology": "性活跃期女性发病率约5%-15%，未经治疗的急性盆腔炎约20%转为慢性，不孕症中约30%与盆腔炎相关",
-      "western_treatment": "抗生素治疗（覆盖淋球菌、衣原体、厌氧菌的多药联合），物理治疗，严重粘连者手术松解或输卵管造口"
+      "western_treatment": "抗生素治疗（覆盖淋球菌、衣原体、厌氧菌的多药联合），物理治疗，严重粘连者手术松解或输卵管造口",
+      "icd11_code": "GA05.1",
+      "icd11_foundation_id": "596443103",
+      "icd11_title_cn": "慢性盆腔炎",
+      "icd11_title_en": "Chronic pelvic inflammatory disease"
     },
     "syndrome_side": {
       "syndrome_name": "湿热瘀结证",
@@ -396,7 +404,9 @@
         "颈椎MRI示椎间盘退变/突出/椎管狭窄"
       ],
       "epidemiology": "患病率约10%-20%，随年龄增加，40-60岁高发。近年因伏案工作增加，年轻化趋势明显，30岁以下患病率升至15%左右",
-      "western_treatment": "保守治疗：NSAIDs、肌松剂、物理牵引；介入治疗：神经根阻滞；手术治疗：前路颈椎间盘切除融合术(ACDF)、人工椎间盘置换"
+      "western_treatment": "保守治疗：NSAIDs、肌松剂、物理牵引；介入治疗：神经根阻滞；手术治疗：前路颈椎间盘切除融合术(ACDF)、人工椎间盘置换",
+      "icd11_foundation_id": "706963687",
+      "icd11_title_cn": "颈椎关节强硬 不伴有脊髓病或神经根病"
     },
     "syndrome_side": {
       "syndrome_name": "气滞血瘀证(颈部)",
@@ -520,7 +530,11 @@
         "腰椎MRI示椎间盘突出/游离"
       ],
       "epidemiology": "人群患病率约5%-10%，年发病率约1%-2%，高发于40-60岁，L4/5和L5/S1为最常见节段（占95%）",
-      "western_treatment": "保守：卧床休息、NSAIDs、肌松剂、神经阻滞；微创：椎间孔镜髓核摘除；开放手术：椎板切除减压、椎间融合术"
+      "western_treatment": "保守：卧床休息、NSAIDs、肌松剂、神经阻滞；微创：椎间孔镜髓核摘除；开放手术：椎板切除减压、椎间融合术",
+      "icd11_code": "FA80.9",
+      "icd11_foundation_id": "968794127",
+      "icd11_title_cn": "腰椎间盘退变伴椎间盘脱出",
+      "icd11_title_en": "Intervertebral disc degeneration of lumbar spine with prolapsed disc"
     },
     "syndrome_side": {
       "syndrome_name": "寒湿痹阻证(腰部)",
@@ -647,7 +661,11 @@
         "膝关节X线示Kellgren-Lawrence分级"
       ],
       "epidemiology": "发病率随年龄递增，50岁以上约50%，65岁以上约80%；女性>男性，膝>髋>手",
-      "western_treatment": "基础治疗：减重、肌力锻炼、氨基葡萄糖；药物：NSAIDs(外用首选)、关节腔注射玻璃酸钠/糖皮质激素；手术：关节镜、截骨、人工关节置换"
+      "western_treatment": "基础治疗：减重、肌力锻炼、氨基葡萄糖；药物：NSAIDs(外用首选)、关节腔注射玻璃酸钠/糖皮质激素；手术：关节镜、截骨、人工关节置换",
+      "icd11_code": "FA01",
+      "icd11_foundation_id": "1685726407",
+      "icd11_title_cn": "膝关节骨关节炎",
+      "icd11_title_en": "Osteoarthritis of knee"
     },
     "syndrome_side": {
       "syndrome_name": "肝肾亏虚证",
@@ -773,7 +791,11 @@
         "皮肤点刺试验阳性"
       ],
       "epidemiology": "全球患病率10%-40%，中国约18%，城市高于农村，呈上升趋势。儿童和青少年高发",
-      "western_treatment": "鼻用糖皮质激素（一线）、口服抗组胺药（二线）、白三烯受体拮抗剂（孟鲁司特）、变应原特异性免疫治疗(SIT)"
+      "western_treatment": "鼻用糖皮质激素（一线）、口服抗组胺药（二线）、白三烯受体拮抗剂（孟鲁司特）、变应原特异性免疫治疗(SIT)",
+      "icd11_code": "CA08.0",
+      "icd11_foundation_id": "1711769234",
+      "icd11_title_cn": "变应性鼻炎",
+      "icd11_title_en": "Allergic rhinitis"
     },
     "syndrome_side": {
       "syndrome_name": "肺气虚寒证",
@@ -898,7 +920,11 @@
         "喉镜示咽黏膜充血、淋巴滤泡增生"
       ],
       "epidemiology": "发病率约5%-15%，为耳鼻喉科门诊最常见疾病之一。北方发病率高于南方，教师、歌唱演员等用嗓多职业高发",
-      "western_treatment": "去除病因（戒烟酒、改善环境）、漱口液含漱、含片（西地碘、复方地喹氯铵）、黏液促排剂（氨溴索）、反流相关性予以质子泵抑制剂"
+      "western_treatment": "去除病因（戒烟酒、改善环境）、漱口液含漱、含片（西地碘、复方地喹氯铵）、黏液促排剂（氨溴索）、反流相关性予以质子泵抑制剂",
+      "icd11_code": "CA09.2",
+      "icd11_foundation_id": "1101977204",
+      "icd11_title_cn": "慢性咽炎",
+      "icd11_title_en": "Chronic pharyngitis"
     },
     "syndrome_side": {
       "syndrome_name": "阴虚肺燥证",
@@ -1022,7 +1048,11 @@
         "脑电图β波活动增强（觉醒过度）"
       ],
       "epidemiology": "成人患病率约10%-15%，慢性失眠约6%-10%，女性:男性约为1.4:1，老年人患病率更高（约30%-40%）",
-      "western_treatment": "认知行为疗法(CBT-I，一线)、苯二氮䓬受体激动剂(BZRAs，短期)、食欲素受体拮抗剂(Suvorexant)、褪黑素受体激动剂(Ramelteon)"
+      "western_treatment": "认知行为疗法(CBT-I，一线)、苯二氮䓬受体激动剂(BZRAs，短期)、食欲素受体拮抗剂(Suvorexant)、褪黑素受体激动剂(Ramelteon)",
+      "icd11_code": "7A00",
+      "icd11_foundation_id": "323148092",
+      "icd11_title_cn": "慢性失眠症",
+      "icd11_title_en": "Chronic insomnia"
     },
     "syndrome_side": {
       "syndrome_name": "心肾不交证",
@@ -1147,7 +1177,11 @@
         "偏头痛发作间期脑功能连接异常(fMRI)"
       ],
       "epidemiology": "全球患病率约10%-15%，女性:男性约为3:1，高发于25-55岁，我国患病率约9.3%",
-      "western_treatment": "急性期：曲普坦类（舒马普坦等）、NSAIDs（双氯芬酸/布洛芬）、地坦类（Lasmiditan）；预防性：β受体阻滞剂（普萘洛尔）、CGRP单克隆抗体（Erenumab等）、托吡酯、氟桂利嗪"
+      "western_treatment": "急性期：曲普坦类（舒马普坦等）、NSAIDs（双氯芬酸/布洛芬）、地坦类（Lasmiditan）；预防性：β受体阻滞剂（普萘洛尔）、CGRP单克隆抗体（Erenumab等）、托吡酯、氟桂利嗪",
+      "icd11_code": "8A80",
+      "icd11_foundation_id": "669367341",
+      "icd11_title_cn": "偏头痛",
+      "icd11_title_en": "Migraine"
     },
     "syndrome_side": {
       "syndrome_name": "肝阳上亢证(头部)",

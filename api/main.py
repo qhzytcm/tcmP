@@ -6,7 +6,7 @@
 - 药者Agent处方审核/药物相互作用/替代建议/库存管理/饮片溯源
 """
 from __future__ import annotations
-import os, json, re, urllib.request, urllib.error
+import os, sys, json, re, urllib.request, urllib.error
 from pathlib import Path
 from typing import Optional
 from fastapi import FastAPI, HTTPException
@@ -201,11 +201,46 @@ class AgentEngine:
 
 agent_engine = AgentEngine()
 
+# ── ICD-11 查询（病证编码桥接：中文名->API->db 标准编码）──
+_ICD11_SCRIPTS = Path(__file__).parent.parent / "scripts"
+if str(_ICD11_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(_ICD11_SCRIPTS))
+try:
+    from icd11_client import ICD11Client
+    icd11 = ICD11Client(api_base=os.environ.get("ICD_API_BASE", "http://192.168.0.111:8080"))
+    print(f"  ✅ ICD-11 客户端加载（db: {icd11.db_path.name}, API: {icd11.api_base}）")
+except Exception as e:
+    icd11 = None
+    print(f"  ⚠️ ICD-11 客户端加载失败: {e}")
+
 # ── 医圣API ──
 @app.get("/health")
 def health():
     return {"status": "ok", "sages_loaded": len(engine.sages),
-            "agents_loaded": len(agent_engine.agents), "version": "2.1.0"}
+            "agents_loaded": len(agent_engine.agents),
+            "icd11_loaded": icd11 is not None, "version": "2.2.0"}
+
+# ── ICD-11 API（病证编码桥接）──
+@app.get("/icd/search")
+def icd_search(q: str = "", limit: int = 5):
+    """中文病证名 -> ICD-11 标准编码（API 不可达时降级英文搜索）"""
+    if not icd11:
+        return {"error": "ICD-11 客户端不可用（db 缺失）"}
+    return {"query": q, "results": icd11.lookup(q, limit)}
+
+@app.get("/icd/code/{code}")
+def icd_code(code: str):
+    """ICD-11 编码反查"""
+    if not icd11:
+        return {"error": "ICD-11 客户端不可用（db 缺失）"}
+    return icd11.code_lookup(code) or {"error": f"编码 {code} 未找到"}
+
+@app.get("/icd/id/{foundation_id}")
+def icd_id(foundation_id: str):
+    """Foundation ID -> MMS 标准编码"""
+    if not icd11:
+        return {"error": "ICD-11 客户端不可用（db 缺失）"}
+    return icd11.code_by_id(foundation_id) or {"error": f"ID {foundation_id} 未找到"}
 
 # ── 六者Agent API（SOUL人格加载）──
 @app.get("/agents")

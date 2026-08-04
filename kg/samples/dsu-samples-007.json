@@ -29,7 +29,11 @@
         "Tzanck涂片多核巨细胞"
       ],
       "epidemiology": "约1/3人一生中会患带状疱疹，好发50岁以上，VZV再激活率随年龄和免疫下降增加",
-      "western_treatment": "抗病毒(阿昔洛韦/伐昔洛韦/泛昔洛韦72h内)；镇痛(加巴喷丁/普瑞巴林/阿米替林)；带状疱疹疫苗预防"
+      "western_treatment": "抗病毒(阿昔洛韦/伐昔洛韦/泛昔洛韦72h内)；镇痛(加巴喷丁/普瑞巴林/阿米替林)；带状疱疹疫苗预防",
+      "icd11_code": "1E91",
+      "icd11_foundation_id": "523481501",
+      "icd11_title_cn": "带状疱疹",
+      "icd11_title_en": "Zoster"
     },
     "syndrome_side": {
       "syndrome_name": "湿热火毒蕴结、气滞血瘀证(蛇串疮/缠腰火丹)",
@@ -154,7 +158,11 @@
         "关节症状(PsA)影像学"
       ],
       "epidemiology": "全球患病率约2-3%，中国约0.5-1%，好发20-40岁，有家族聚集性",
-      "western_treatment": "外用(糖皮质激素/VD3衍生物)；光疗(NB-UVB)；系统治疗(甲氨蝶呤/阿维A)；生物制剂(抗TNF-alpha/IL-17/IL-23)；JAK抑制剂"
+      "western_treatment": "外用(糖皮质激素/VD3衍生物)；光疗(NB-UVB)；系统治疗(甲氨蝶呤/阿维A)；生物制剂(抗TNF-alpha/IL-17/IL-23)；JAK抑制剂",
+      "icd11_code": "EA90",
+      "icd11_foundation_id": "63698555",
+      "icd11_title_cn": "银屑病",
+      "icd11_title_en": "Psoriasis"
     },
     "syndrome_side": {
       "syndrome_name": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
@@ -277,7 +285,11 @@
         "痤疮丙酸杆菌培养"
       ],
       "epidemiology": "好发青春期，中国青少年患病率约80-90%，25岁以上女性迟发性痤疮约12%",
-      "western_treatment": "外用(维A酸/过氧化苯甲酰/克林霉素)；口服(四环素类抗生素/异维A酸/螺内酯/COC)；物理治疗(红蓝光/化学剥脱)"
+      "western_treatment": "外用(维A酸/过氧化苯甲酰/克林霉素)；口服(四环素类抗生素/异维A酸/螺内酯/COC)；物理治疗(红蓝光/化学剥脱)",
+      "icd11_code": "ED80",
+      "icd11_foundation_id": "1892393023",
+      "icd11_title_cn": "痤疮",
+      "icd11_title_en": "Acne"
     },
     "syndrome_side": {
       "syndrome_name": "肺经风热、湿热瘀结证",
@@ -399,7 +411,11 @@
         "慢性荨麻疹活动性评分UAS7"
       ],
       "epidemiology": "全球约20%人口一生中至少发作一次，慢性荨麻疹(>6周)患病率约0.5-1%",
-      "western_treatment": "二代H1抗组胺药(西替利嗪/氯雷他定/非索非那定)一线；二线(抗组胺加倍/联合H2拮抗剂/白三烯受体拮抗剂)；三线(奥马珠单抗/环孢素)"
+      "western_treatment": "二代H1抗组胺药(西替利嗪/氯雷他定/非索非那定)一线；二线(抗组胺加倍/联合H2拮抗剂/白三烯受体拮抗剂)；三线(奥马珠单抗/环孢素)",
+      "icd11_code": "EB05",
+      "icd11_foundation_id": "993242399",
+      "icd11_title_cn": "未特指类型的荨麻疹",
+      "icd11_title_en": "Urticaria of unspecified type"
     },
     "syndrome_side": {
       "syndrome_name": "风热外袭、营卫不和证(瘾疹/风疹块)",
@@ -523,7 +539,9 @@
         "FLG基因突变检测"
       ],
       "epidemiology": "全球儿童患病率约15-20%，成人约3-5%，婴幼儿发病高峰(1岁前)，中国发病逐年上升",
-      "western_treatment": "基础保湿(润肤剂修复屏障)；外用抗炎(TCS/TCI钙调神经磷酸酶抑制剂)；系统治疗(抗组胺/环孢素/Dupilumab抗IL-4Ralpha/乌帕替尼JAKi)"
+      "western_treatment": "基础保湿(润肤剂修复屏障)；外用抗炎(TCS/TCI钙调神经磷酸酶抑制剂)；系统治疗(抗组胺/环孢素/Dupilumab抗IL-4Ralpha/乌帕替尼JAKi)",
+      "icd11_foundation_id": "1887882424",
+      "icd11_title_cn": "皮炎或湿疹"
     },
     "syndrome_side": {
       "syndrome_name": "湿热浸淫、脾虚湿蕴证(湿疮/浸淫疮)",
@@ -645,7 +663,11 @@
         "OCT视神经纤维层厚度下降"
       ],
       "epidemiology": "全球第一不可逆致盲眼病，40岁以上患病率约2-3%，中国约2000万患者",
-      "western_treatment": "降眼压眼药水(前列腺素衍生物拉坦前列素/他氟前列素一线、beta阻滞剂/CAI/alpha激动剂)；激光小梁成形术(SLT)；小梁切除术/引流阀植入术"
+      "western_treatment": "降眼压眼药水(前列腺素衍生物拉坦前列素/他氟前列素一线、beta阻滞剂/CAI/alpha激动剂)；激光小梁成形术(SLT)；小梁切除术/引流阀植入术",
+      "icd11_code": "9C61.0",
+      "icd11_foundation_id": "1849071057",
+      "icd11_title_cn": "原发性开角型青光眼",
+      "icd11_title_en": "Primary open-angle glaucoma"
     },
     "syndrome_side": {
       "syndrome_name": "肝肾阴虚、肝阳上亢证(青风内障/绿风内障)",
@@ -769,7 +791,11 @@
         "LOCS III分级(NC/NO/C/P)"
       ],
       "epidemiology": "全球第一致盲眼病，60岁以上患病率约50%，80岁以上>90%",
-      "western_treatment": "白内障超声乳化摘除+IOL植入术(唯一有效治疗)；无有效药物"
+      "western_treatment": "白内障超声乳化摘除+IOL植入术(唯一有效治疗)；无有效药物",
+      "icd11_code": "9B10",
+      "icd11_foundation_id": "109841337",
+      "icd11_title_cn": "白内障",
+      "icd11_title_en": "Cataract"
     },
     "syndrome_side": {
       "syndrome_name": "肝肾不足、晶珠混浊证(圆翳内障/如银内障)",
@@ -893,7 +919,9 @@
         "鼻咽镜(排除鼻咽癌/RP)"
       ],
       "epidemiology": "儿童最常见耳病，90%学龄前儿童曾患OME，是儿童传导性耳聋最常见原因",
-      "western_treatment": "观察随访(大部分3月内自愈)；药物治疗(鼻用激素/黏液促排剂)；鼓膜置管/腺样体切除"
+      "western_treatment": "观察随访(大部分3月内自愈)；药物治疗(鼻用激素/黏液促排剂)；鼓膜置管/腺样体切除",
+      "icd11_foundation_id": "800153181",
+      "icd11_title_cn": "非化脓性中耳炎"
     },
     "syndrome_side": {
       "syndrome_name": "风寒外袭、痰湿阻窍证(耳胀/耳闭)",
@@ -1016,7 +1044,11 @@
         "嗅觉功能检测(CCRC/SSS)"
       ],
       "epidemiology": "中国患病率约8%，伴鼻息肉者约占20-30%，好发30-60岁",
-      "western_treatment": "鼻用糖皮质激素(莫米松/氟替卡松)/NS；鼻窦手术(ESS)；生物制剂(抗IL-4Ralpha度普利尤单抗/抗IL-5美泊利单抗)；长期管理"
+      "western_treatment": "鼻用糖皮质激素(莫米松/氟替卡松)/NS；鼻窦手术(ESS)；生物制剂(抗IL-4Ralpha度普利尤单抗/抗IL-5美泊利单抗)；长期管理",
+      "icd11_code": "CA0A",
+      "icd11_foundation_id": "1836987572",
+      "icd11_title_cn": "慢性鼻窦炎",
+      "icd11_title_en": "Chronic rhinosinusitis"
     },
     "syndrome_side": {
       "syndrome_name": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
@@ -1141,7 +1173,9 @@
         "脑影像(前额叶/海马体积缩小)"
       ],
       "epidemiology": "全球约3.8%人口受影响，中国终生患病率约6.9%，女性约是男性2倍",
-      "western_treatment": "SSRIs(舍曲林/帕罗西汀/艾司西酞普兰)一线；SNRIs(文拉法辛/度洛西汀)；NDRI(安非他酮)；NaSSA(米氮平)；心理治疗；ECT/rTMS"
+      "western_treatment": "SSRIs(舍曲林/帕罗西汀/艾司西酞普兰)一线；SNRIs(文拉法辛/度洛西汀)；NDRI(安非他酮)；NaSSA(米氮平)；心理治疗；ECT/rTMS",
+      "icd11_foundation_id": "1563440232",
+      "icd11_title_cn": "抑郁障碍"
     },
     "syndrome_side": {
       "syndrome_name": "肝气郁结、心神失养证(郁证/百合病)",
@@ -1267,7 +1301,11 @@
         "脑电/心率变异性(HRV下降)"
       ],
       "epidemiology": "全球终生患病率约3-5%，中国约2%，女性高于男性，常共病抑郁症",
-      "western_treatment": "SSRIs/SNRIs一线(帕罗西汀/舍曲林/文拉法辛)；抗焦虑作用起效较慢(2-4周)；丁螺环酮/坦度螺酮；苯二氮卓(短期/按需)；心理治疗(CBT/正念)"
+      "western_treatment": "SSRIs/SNRIs一线(帕罗西汀/舍曲林/文拉法辛)；抗焦虑作用起效较慢(2-4周)；丁螺环酮/坦度螺酮；苯二氮卓(短期/按需)；心理治疗(CBT/正念)",
+      "icd11_code": "6B00",
+      "icd11_foundation_id": "1712535455",
+      "icd11_title_cn": "广泛性焦虑障碍",
+      "icd11_title_en": "Generalised anxiety disorder"
     },
     "syndrome_side": {
       "syndrome_name": "胆郁痰扰、心神不宁证(惊悸/不寐)",
@@ -1392,7 +1430,9 @@
         "Epworth嗜睡量表ESS(排除过度嗜睡)"
       ],
       "epidemiology": "中国成人失眠率约9-15%，女性高于男性，中老年和妇女围绝经期高发",
-      "western_treatment": "CBT-I(失眠认知行为治疗)一线；苯二氮卓受体激动剂(Z-drugs如右佐匹克隆/唑吡坦)；褪黑素受体激动剂(雷美替胺)；食欲素受体拮抗剂(达利雷生/苏沃雷生)"
+      "western_treatment": "CBT-I(失眠认知行为治疗)一线；苯二氮卓受体激动剂(Z-drugs如右佐匹克隆/唑吡坦)；褪黑素受体激动剂(雷美替胺)；食欲素受体拮抗剂(达利雷生/苏沃雷生)",
+      "icd11_foundation_id": "562388953",
+      "icd11_title_cn": "失眠症，不可归类于他处者"
     },
     "syndrome_side": {
       "syndrome_name": "心肾不交、阴虚火旺证(不寐)",
@@ -1517,7 +1557,9 @@
         "TNM分期(CT/PET-CT)"
       ],
       "epidemiology": "中国发病率首位恶性肿瘤，年发约80万，5年生存率约19.7%(含各期)",
-      "western_treatment": "早期手术(IA-IIIA)；靶向治疗(EGFR-TKI奥希替尼/吉非替尼、ALK-TKI阿来替尼等)；免疫治疗(PD-1/PD-L1抑制剂帕博利珠单抗等)；化疗(培美曲塞+铂类)；放疗/SBRT"
+      "western_treatment": "早期手术(IA-IIIA)；靶向治疗(EGFR-TKI奥希替尼/吉非替尼、ALK-TKI阿来替尼等)；免疫治疗(PD-1/PD-L1抑制剂帕博利珠单抗等)；化疗(培美曲塞+铂类)；放疗/SBRT",
+      "icd11_foundation_id": "947165291",
+      "icd11_title_cn": "肺癌"
     },
     "syndrome_side": {
       "syndrome_name": "气阴两虚、痰瘀毒结证(肺积/息贲)",
@@ -1641,7 +1683,11 @@
         "HER2/PD-L1/CPS/CLDN18.2检测"
       ],
       "epidemiology": "全球第四大常见癌症，第二癌症死因，中国高发(每年新发约40万)，幽门螺杆菌是首要致病因子",
-      "western_treatment": "早期内镜下切除(EMR/ESD)；手术(胃切除+D2淋巴结清扫)；化疗(S-1+奥沙利铂/XELOX)；靶向(曲妥珠单抗HER2+、zolbetuximab CLDN18.2+)；免疫(纳武利尤单抗PD-1)"
+      "western_treatment": "早期内镜下切除(EMR/ESD)；手术(胃切除+D2淋巴结清扫)；化疗(S-1+奥沙利铂/XELOX)；靶向(曲妥珠单抗HER2+、zolbetuximab CLDN18.2+)；免疫(纳武利尤单抗PD-1)",
+      "icd11_code": "2B72",
+      "icd11_foundation_id": "1397617262",
+      "icd11_title_cn": "胃恶性肿瘤",
+      "icd11_title_en": "Malignant neoplasms of stomach"
     },
     "syndrome_side": {
       "syndrome_name": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
@@ -1765,7 +1811,9 @@
         "TNM/BCLC分期"
       ],
       "epidemiology": "中国肝癌第四常见恶性肿瘤、第二癌症死因，年发约37万，80%与HBV/HCV相关，男性高于女性约3:1",
-      "western_treatment": "手术切除/肝移植/消融(RFA/MWA)；TACE/HAIC(介入)；靶向(索拉非尼/仑伐替尼)；免疫(阿替利珠单抗+贝伐珠单抗)；系统化疗(FOLFOX)"
+      "western_treatment": "手术切除/肝移植/消融(RFA/MWA)；TACE/HAIC(介入)；靶向(索拉非尼/仑伐替尼)；免疫(阿替利珠单抗+贝伐珠单抗)；系统化疗(FOLFOX)",
+      "icd11_foundation_id": "290874188",
+      "icd11_title_cn": "肝纤维板层型肝细胞癌"
     },
     "syndrome_side": {
       "syndrome_name": "肝郁脾虚、瘀毒互结证(肝积/鼓胀)",
@@ -1890,7 +1938,9 @@
         "BRCA1/2胚系突变检测"
       ],
       "epidemiology": "全球女性最常见癌症，每年新发约230万；中国年新发约42万，发病呈年轻化趋势(45-55岁高发)",
-      "western_treatment": "手术(保乳/全切+前哨淋巴结清扫)；化疗(蒽环+紫杉类/新辅助)；靶向(曲妥珠单抗/帕妥珠单抗/T-DM1/T-DXd)；内分泌(Tam/AI/Fulvestrant/CDK4/6抑制剂)；免疫(PD-1/PD-L1)"
+      "western_treatment": "手术(保乳/全切+前哨淋巴结清扫)；化疗(蒽环+紫杉类/新辅助)；靶向(曲妥珠单抗/帕妥珠单抗/T-DM1/T-DXd)；内分泌(Tam/AI/Fulvestrant/CDK4/6抑制剂)；免疫(PD-1/PD-L1)",
+      "icd11_foundation_id": "1047754165",
+      "icd11_title_cn": "乳房恶性肿瘤"
     },
     "syndrome_side": {
       "syndrome_name": "肝气郁结、冲任失调证(乳岩/乳石痈)",
@@ -2014,7 +2064,11 @@
         "RAS/BRAF基因检测"
       ],
       "epidemiology": "全球第三常见癌症、第二癌症死因；中国年新发约56万，居恶性肿瘤第二，发病年轻化趋势",
-      "western_treatment": "手术(结肠癌根治/TME全直肠系膜切除)±辅助化疗(FOLFOX/XELOX/CAPOX)；新辅助放化疗(局部晚期直肠癌)；靶向(贝伐珠/西妥昔/帕尼单抗)；免疫(PD-1/MSI-H dMMR)"
+      "western_treatment": "手术(结肠癌根治/TME全直肠系膜切除)±辅助化疗(FOLFOX/XELOX/CAPOX)；新辅助放化疗(局部晚期直肠癌)；靶向(贝伐珠/西妥昔/帕尼单抗)；免疫(PD-1/MSI-H dMMR)",
+      "icd11_code": "2B93",
+      "icd11_foundation_id": "642412809",
+      "icd11_title_cn": "未特指部位的大肠恶性肿瘤",
+      "icd11_title_en": "Malignant neoplasms of large intestine, site unspecified"
     },
     "syndrome_side": {
       "syndrome_name": "湿热蕴结、瘀毒内阻证(肠蕈/脏毒)",
@@ -2138,7 +2192,11 @@
         "PET-CT(远处转移)"
       ],
       "epidemiology": "中国南方高发(两广/福建/香港/台湾)，发病与EBV感染、遗传(特定HLA)、腌制食品(咸鱼)相关，好发40-60岁男性",
-      "western_treatment": "放疗(IMRT调强适形放疗——根治手段)；化疗(诱导+同步+辅助)；靶向(EGFR单抗西妥昔/尼妥珠单抗)；免疫(PD-1/PD-L1)"
+      "western_treatment": "放疗(IMRT调强适形放疗——根治手段)；化疗(诱导+同步+辅助)；靶向(EGFR单抗西妥昔/尼妥珠单抗)；免疫(PD-1/PD-L1)",
+      "icd11_code": "2B6B",
+      "icd11_foundation_id": "547578362",
+      "icd11_title_cn": "鼻咽恶性肿瘤",
+      "icd11_title_en": "Malignant neoplasms of nasopharynx"
     },
     "syndrome_side": {
       "syndrome_name": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
@@ -2261,7 +2319,11 @@
         "血清Tg/抗Tg(术后监测)"
       ],
       "epidemiology": "甲状腺癌是全球发病率增长最快的实体肿瘤，中国女性发病率第4位(男:女≈1:3)，好发30-50岁，预后最佳",
-      "western_treatment": "手术(腺叶全切/近全切±中央区/颈淋巴结清扫)；TSH抑制治疗(L-T4)；131I放疗(高危/远处转移)；靶向(多靶点TKI仑伐替尼/索拉非尼对进展期/转移性)"
+      "western_treatment": "手术(腺叶全切/近全切±中央区/颈淋巴结清扫)；TSH抑制治疗(L-T4)；131I放疗(高危/远处转移)；靶向(多靶点TKI仑伐替尼/索拉非尼对进展期/转移性)",
+      "icd11_code": "2D10.1",
+      "icd11_foundation_id": "929788705",
+      "icd11_title_cn": "甲状腺乳头状癌",
+      "icd11_title_en": "Papillary carcinoma of thyroid gland"
     },
     "syndrome_side": {
       "syndrome_name": "痰气交阻、瘀毒凝结证(石瘿)",
@@ -2385,7 +2447,11 @@
         "TRUS引导经直肠前列腺穿刺活检(金标准)"
       ],
       "epidemiology": "全球男性第二常见癌症，中国年新发约12万，发病率快速上升，好发60岁以上男性，>70岁>50%",
-      "western_treatment": "ADT(雄激素剥夺治疗=LHRH激动剂/拮抗剂+AR拮抗剂恩扎卢胺/阿帕他胺/达罗他胺)；放疗(外放疗/近距离)；手术(根治性前列腺切除)；化疗(多西他赛)；靶向(PARP抑制剂BRCA突变者)"
+      "western_treatment": "ADT(雄激素剥夺治疗=LHRH激动剂/拮抗剂+AR拮抗剂恩扎卢胺/阿帕他胺/达罗他胺)；放疗(外放疗/近距离)；手术(根治性前列腺切除)；化疗(多西他赛)；靶向(PARP抑制剂BRCA突变者)",
+      "icd11_code": "2C82",
+      "icd11_foundation_id": "1552457716",
+      "icd11_title_cn": "前列腺恶性肿瘤",
+      "icd11_title_en": "Malignant neoplasms of prostate"
     },
     "syndrome_side": {
       "syndrome_name": "肾虚瘀毒证(癃闭/积证)",
