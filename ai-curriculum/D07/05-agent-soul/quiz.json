@@ -1,0 +1,78 @@
+{
+  "lesson": "05-agent-soul",
+  "title": "Agent 工程：医圣人格与师带徒回路",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "L4 的 StructuredRAG 是「无状态问答函数」，要变成六者平台的「可对话 Agent」，缺的是？",
+      "options": [
+        "更快的检索",
+        "角色（SOUL 人格）、工具、状态记忆、教学反馈回路",
+        "更大的语料库",
+        "更长的 prompt"
+      ],
+      "correct": 1,
+      "explanation": "函数每次调用都一样；Agent 有『我是谁』（SOUL）、『我能做什么』（工具）、『我记得什么』（状态）、『怎么教』（师带徒回路）。本课把这四样组装起来。"
+    },
+    {
+      "stage": "check",
+      "question": "SOUL（人格文件）的核心三要素是？",
+      "options": [
+        "名字、年龄、外貌",
+        "身份定位、学识边界（防编造）、价值观/说话风格",
+        "API 密钥、模型名、温度",
+        "六经、八纲、方剂"
+      ],
+      "correct": 1,
+      "explanation": "生产 SOUL.md（张仲景 524 行）核心是：身份（医圣/辨证论治奠基人）、学识边界（以伤寒金匮为本行，不编造条文）、价值观与风格（『观其脉证，知犯何逆，随证治之』）。边界防幻觉，风格保人格。"
+    },
+    {
+      "stage": "check",
+      "question": "Agent Loop 中「工具结果回注上下文」的作用是？",
+      "options": [
+        "减少 token",
+        "让 LLM 基于真实检索证据作答（observe→act 闭环），而非凭记忆编造",
+        "加快响应速度",
+        "记录日志"
+      ],
+      "correct": 1,
+      "explanation": "L5 的 consult 中：检索工具（病证库）的结果拼进 user prompt 再交给 LLM——这就是『观察→行动』：Agent 先查证，再回答。L3 的 RAG 也是这个思想的特例。"
+    },
+    {
+      "stage": "check",
+      "question": "师带徒回路中 user_level（住院医-1 → 主治医）控制什么？",
+      "options": [
+        "检索的 top_k",
+        "讲解深度与教学要求：基础概念 → 鉴别诊断 → 疑难病机，且出题难度同步变化",
+        "回答长度",
+        "是否引用经典"
+      ],
+      "correct": 1,
+      "explanation": "同一主诉，住院医-1 讲清六经八纲基础概念，主治医讲鉴别诊断与经方加减，副主任医讨论疑难病机——与医圣成长引擎的路径（住院医-1 伤寒入门 → 主任医 温病大家）一致。"
+    },
+    {
+      "stage": "post",
+      "question": "无 LLM API Key 时，SageAgent 的 consult 仍能工作，原因是？",
+      "options": [
+        "系统会拒绝服务",
+        "本地师带徒模板降级：检索 Top-K + 辨证/论治/经典/思考题骨架，深度随 user_level 变化（零 token）",
+        "使用免费模型",
+        "跳过检索直接输出"
+      ],
+      "correct": 1,
+      "explanation": "graceful degradation：本地模板给出结构完整的带教骨架（辨证→论治→经典→思考题→免责），且教学深度仍按 user_level 变化——离线也有教学回路。生产 rag() 无 key 降级本地是同一设计。"
+    },
+    {
+      "stage": "post",
+      "question": "SageAgent 的对话历史（history）在六者平台中的对应物是？",
+      "options": [
+        "没有对应物",
+        "医圣成长档案：每次问诊入档，支撑「对话=进化信号→日志→图谱→Agent调优→自动上线」的 CI/CD 人机闭环",
+        "只是内存缓存",
+        "数据库备份"
+      ],
+      "correct": 1,
+      "explanation": "平台的 CI/CD 闭环以日志为进化信号：问诊记录（学生阶段、主诉、回答模式）沉淀为成长档案，驱动图谱更新与 Agent 调优。本课的 history 就是该闭环的最小实现。"
+    }
+  ]
+}
