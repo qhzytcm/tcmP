@@ -1,0 +1,78 @@
+{
+  "lesson": "04-structured-output",
+  "title": "LLM 工程：结构化输出（JSON Schema 校验生成报告）",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "L3 的 LLM 报告是自由文本，平台下游（处方审核、图谱注入、风险评估）最大的痛点是？",
+      "options": [
+        "报告太短",
+        "机器无法直接消费——每个下游都要写脆弱的正则解析",
+        "文本格式不美观",
+        "LLM 输出太慢"
+      ],
+      "correct": 1,
+      "explanation": "自由文本只适合人读。机器流程（药者审核、图谱注入、六者工具调用）需要结构化字段。本课的解法：让生成器输出 JSON + JSON Schema 校验，机器可直接消费。"
+    },
+    {
+      "stage": "check",
+      "question": "JSON Schema 校验器能检查哪些内容？",
+      "options": [
+        "只有字段类型",
+        "类型(type)、必填(required)、枚举(enum)、正则(pattern)、长度(minLength)、范围(minimum/maximum)等",
+        "只有是否合法 JSON",
+        "只有字段数量"
+      ],
+      "correct": 1,
+      "explanation": "校验器把『JSON 可解析』升级为『JSON 符合契约』：ICD 编码要匹配 ^[0-9A-Z][0-9A-Z.]*$（注意精神/神经类以数字开头如 7A00）、confidence 要在 0-1、证据等级要在枚举内——平台 DSU 的 schema.json 就是这么约束 60,000+ 节点的。"
+    },
+    {
+      "stage": "check",
+      "question": "LLM 输出的 JSON 校验失败时，正确的处理顺序是？",
+      "options": [
+        "直接丢弃结果",
+        "把校验错误喂回 prompt 让 LLM 修正（重试）→ 仍失败则降级本地模板",
+        "忽略错误继续用",
+        "重新训练模型"
+      ],
+      "correct": 1,
+      "explanation": "重试-降级两级策略：错误信息是宝贵的修正信号（『缺必填字段 disease』），喂回 prompt 后多数模型能自纠；重试用尽后降级为确定性本地模板（graceful degradation），保证系统永远有输出。"
+    },
+    {
+      "stage": "check",
+      "question": "本课手写的 MiniValidator 与生产 FastAPI/Pydantic 的关系是？",
+      "options": [
+        "完全无关",
+        "同源的校验语义——Pydantic 是 FastAPI 的请求校验器，本课用 ~60 行实现核心关键字（type/required/enum/pattern）",
+        "MiniValidator 是 Pydantic 的替代品",
+        "Pydantic 不支持 JSON Schema"
+      ],
+      "correct": 1,
+      "explanation": "api/main.py 里每个 BaseModel（ConsultRequest、SymptomRequest）就是 Pydantic 声明的 JSON Schema，FastAPI 自动校验请求体——与 MiniValidator 校验 LLM 输出是同一思想：『不合法就不让进系统』。"
+    },
+    {
+      "stage": "post",
+      "question": "DeepSeek API 的 response_format={\"type\":\"json_object\"} 的作用是？",
+      "options": [
+        "加快生成速度",
+        "让模型尽量输出合法 JSON（结构化输出的生产级开关），但仍需 Schema 校验兜底",
+        "禁止输出中文",
+        "限制输出长度"
+      ],
+      "correct": 1,
+      "explanation": "json_object 把输出约束为 JSON 形态，大幅提高首次解析成功率；但『是 JSON』不等于『符合契约』——字段缺失/类型错仍需 Schema 校验 + 重试兜底。工程上永远假设 LLM 会出错。"
+    },
+    {
+      "stage": "post",
+      "question": "结构化输出对六者 SOUL 平台的意义是？",
+      "options": [
+        "只影响医者 Agent",
+        "工具调用参数可机器校验、图谱注入免人工清洗、下游流程（审核/风险评估）可自动化——全平台数据交换的契约层",
+        "让 SOUL 更有人格",
+        "减少 API 调用次数"
+      ],
+      "correct": 1,
+      "explanation": "六者 Agent 之间、Agent 与图谱之间、Agent 与用户 APP 之间的数据交换都需要契约：参数校验（调用前）、输出校验（调用后）。结构化输出 + Schema 是平台『人机对话 → 日志 → 图谱 → Agent 调优』闭环中机器可处理的前提。"
+    }
+  ]
+}
