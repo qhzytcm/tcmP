@@ -4,7 +4,7 @@ gen_rl_notes_xlsx.py — 《强化学习的数学基础》读书笔记生成器
 ==========================================================
 参考: 赵世钰(Shiyu Zhao) Mathematical Foundation of Reinforcement Learning
       (Springer, https://github.com/MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning)
-输出: 桌面《强化学习的数学基础.xlsx》，10 个 sheet（RL01-RL10），每章含:
+输出: 桌面《强化学习的数学原理-赵世钰.xlsx》，10 个 sheet（RL01-RL10），每章含:
   Part1 原书读书笔记（核心概念/关键公式/算法/书特色）
   Part2 tcmP 平台适应性改写（hermes-generating-content：平台映射/配置接口/安装依赖/实践）
 
@@ -16,7 +16,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
-OUT = Path(r"C:\Users\DELL\Desktop\强化学习的数学基础.xlsx")
+OUT = Path(r"C:\Users\DELL\Desktop\强化学习的数学原理-赵世钰.xlsx")
 
 # ───────────────── 十章读书笔记数据 ─────────────────
 # 每章: {sheet, title, rows: [(模块, 内容), ...]}
