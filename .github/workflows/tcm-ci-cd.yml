@@ -350,3 +350,41 @@ jobs:
               body: body + '\n\n---\n*自动化报告 · 北京时间每日 16:00 更新*',
               labels: ['daily-report', 'automation']
             });
+
+  # ── JOB 4: AI 课程门禁审计（audit_lessons.py）──────────
+  # 校验 ai-curriculum/ 每门课程的四件套契约：
+  #   L001 目录命名 · L002 docs 六拍 · L003 main.py 编译
+  #   L004 quiz 6 题契约 · L005 outputs 制品 frontmatter
+  #   L006 tests.py 自动跑 · L007 main.py --self-test 自动跑
+  # --strict：任一规则失败 → job 失败 → PR 被拦截
+  ai-curriculum-audit:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 运行课程门禁审计
+        id: audit
+        run: |
+          echo "::group::📚 AI 课程门禁审计（L001-L007）"
+          if [ -d ai-curriculum ]; then
+            python3 scripts/audit_lessons.py --strict --json | tee audit-report.json
+          else
+            echo "⚠️ ai-curriculum/ 不存在，跳过"
+            echo '{"tool":"audit_lessons.py","skipped":true}' | tee audit-report.json
+          fi
+          echo "::endgroup::"
+
+      - name: 上传审计报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-curriculum-audit
+          path: audit-report.json
+
+      - name: 审计失败提示
+        if: failure()
+        run: |
+          echo "::error::❌ AI 课程门禁未通过——请运行 python3 scripts/audit_lessons.py 查看违规项并修复"

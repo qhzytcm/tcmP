@@ -1,0 +1,78 @@
+{
+  "lesson": "03-rag-dialogue",
+  "title": "RAG 与病证知识问答：诊断 → 辨证 → 方剂建议",
+  "questions": [
+    {
+      "stage": "pre",
+      "question": "要让平台回答「患者症状 → 最可能疾病 + 证候 + 方剂」，最经济的做法是？",
+      "options": [
+        "用病案数据重新训练一个大模型（微调）",
+        "先在内网检索病证库拿到 Top-K，再把检索结果交给 LLM 综合回答（RAG）",
+        "人工编写所有病证的问答规则",
+        "让 LLM 凭记忆直接回答，不查任何库"
+      ],
+      "correct": 1,
+      "explanation": "RAG = 检索增强生成：模型权重不变，答案锚定在检索到的文档上。比微调便宜（按查询计费而非按训练计费）、新鲜（改库即可）、可溯源。这正是 tcmP /api/sages/rag 的架构。"
+    },
+    {
+      "stage": "check",
+      "question": "RAG 管线四步的正确顺序是？",
+      "options": [
+        "Generate → Retrieve → Augment → Query",
+        "Query → Retrieve → Augment → Generate",
+        "Retrieve → Generate → Query → Augment",
+        "Query → Generate → Retrieve → Augment"
+      ],
+      "correct": 1,
+      "explanation": "用户查询 Query → 混合检索 Retrieve（L2 的向量+倒排+RRF）→ 上下文组装与指令增强 Augment → 生成 Generate（本地模板或 LLM）。"
+    },
+    {
+      "stage": "check",
+      "question": "生成指令中「只允许引用检索结果中的疾病与证候，不得引入库外内容」这条约束的作用是？",
+      "options": [
+        "减少输出长度",
+        "防止幻觉——让答案锚定在检索证据上，可溯源",
+        "加快检索速度",
+        "满足格式要求"
+      ],
+      "correct": 1,
+      "explanation": "RAG 防幻觉的第一道闸：LLM 综合时被限制在 Top-K 检索结果的范围内作答，不能凭训练记忆编造库外病证。配合 faithfulness 评估（输出引用是否都在上下文中）形成闭环。"
+    },
+    {
+      "stage": "check",
+      "question": "生产引擎 rag() 无 DeepSeek Key 时的行为是？",
+      "options": [
+        "直接报错拒绝服务",
+        "降级为本地模板生成，返回内网检索结果（零 token 消耗）",
+        "用免费模型替代",
+        "跳过检索只返回症状"
+      ],
+      "correct": 1,
+      "explanation": "降级设计（graceful degradation）：无 key 时返回「本地模式」报告——最可能病证 = Top1、鉴别 = Top1 vs Top2、附证据与免责。零 token、离线可用、确定性可测。教学版 generate_local 对齐此设计。"
+    },
+    {
+      "stage": "post",
+      "question": "faithfulness 评估检查的是？",
+      "options": [
+        "检索结果是否准确",
+        "生成报告引用的病证能否溯源到检索上下文（覆盖率）",
+        "LLM 响应速度",
+        "token 消耗量"
+      ],
+      "correct": 1,
+      "explanation": "faithfulness（忠实度）= 生成内容对检索证据的忠实程度。教学版实现为覆盖率：报告引用 Top-K 中多少病名。本地模板模式覆盖率 100%（完全按 Top-K 生成）；LLM 模式需逐句核查，这是 RAG 上线前必须过的评估关。"
+    },
+    {
+      "stage": "post",
+      "question": "平台「降 token 设计」的核心思想是？",
+      "options": [
+        "用更小的模型",
+        "检索/排序/融合全部内网完成，LLM 只消费 Top-K 小上下文做最后精修",
+        "限制用户提问次数",
+        "只返回检索结果不给 LLM"
+      ],
+      "correct": 1,
+      "explanation": "降 token：脏活（分词、向量、倒排、RRF 融合、排序）全在本地 SQLite/Python 完成，只有最后一步综合报告调用 LLM，且上下文仅 Top-K 摘要（tcm_embed.rag 的 token_estimate = len(prompt)//2 即度量）。6 万病证单元 × 内网检索 = 零 token；一次问答 ≈ 几百 token。"
+    }
+  ]
+}
