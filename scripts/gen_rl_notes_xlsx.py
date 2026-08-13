@@ -56,25 +56,46 @@ def main():
     wb = Workbook()
     wb.remove(wb.active)
 
-    # 0) 四级目录（0cmrl目录，置于最前）
+    # 0) 四级目录（0cmrl目录，置于最前；结合三审现实映射重建）
     ws = wb.create_sheet(title="0cmrl目录")
-    ws.append(["层级", "四级编码", "标题", "内容定位", "双目标标注"])
+    ws.append(["层级", "四级编码", "标题", "内容定位", "预计字数",
+               "主编(user.md)", "中医药主审(tcmreviewer.md)", "智能主审(aireviewer.md)",
+               "双目标/职业标注"])
     for c in ws[1]:
         c.font = Font(bold=True, color="FFFFFF")
         c.fill = HDR_FILL
     ws.freeze_panes = "A2"
+    # 三审映射说明（0映射1/2/3 初稿语义）
+    mapping_notes = [
+        ("映射说明", "0映射1 · user.md", "主编人选初稿：统筹十章结构、双目标（教材+平台）决策、终审定稿",
+         "专业能力：全局规划+AI趋势研判", "—", "✓ 主编主责", "○ 协审", "○ 协审",
+         "现实映射：主编=项目负责人；每章引言/职业应用/小结由主编统筹"),
+        ("映射说明", "0映射2 · tcmreviewer.md", "中医药主审初稿：辨证准确性/方剂合规/医学术语规范/医案真实性",
+         "专业能力：中医药本体+数字化适配", "—", "○ 协审", "✓ 主审主责", "○ 协审",
+         "现实映射：中医药专家；语境/医案/辨证小节主审"),
+        ("映射说明", "0映射3 · aireviewer.md", "智能主审初稿：数学公式/算法正确性/代码与数据校验/平台接口一致性",
+         "专业能力：AI技术+趋势适应（RL前沿）", "—", "○ 协审", "○ 协审", "✓ 主审主责",
+         "现实映射：AI 审校（门禁自动化）；数学/算法/接口小节主审"),
+        ("篇幅预算", "全书 ≤300,000 字", "每章 3 万字：知识节 3000×6 + 平台实践 2400 + 语境 3000 + 职业应用 3000 + 章末 1500",
+         "段落基准 500 字/段", "—", "—", "—", "—",
+         "保障每章正文内容充分展开，10 章合计 30 万字上限"),
+    ]
+    for note in mapping_notes:
+        ws.append(list(note))
+        for c in ws[ws.max_row]:
+            c.font = Font(italic=True, color="7F6000")
     toc = toc_rows()
     lv_fill = {"章": "4472C4", "节": "DDEBF7", "小节": "E2EFDA", "段落": None}
-    for lv, code, title, note, tag in toc:
-        ws.append([lv, code, title, note, tag])
+    for row in toc:
+        ws.append(list(row))
         r = ws.max_row
-        f = lv_fill.get(lv)
+        f = lv_fill.get(row[0])
         if f:
             ws.cell(r, 1).fill = PatternFill("solid", fgColor=f)
             ws.cell(r, 1).font = Font(bold=True)
-        ws.cell(r, 4).alignment = Alignment(wrap_text=True, vertical="top")
-        ws.cell(r, 5).alignment = Alignment(wrap_text=True, vertical="top")
-    for col, width in zip("ABCDE", (8, 12, 30, 52, 44)):
+        for col in (4, 8):
+            ws.cell(r, col).alignment = Alignment(wrap_text=True, vertical="top")
+    for col, width in zip("ABCDEFGHI", (8, 12, 30, 46, 10, 12, 14, 12, 40)):
         ws.column_dimensions[col].width = width
 
     for ch in CHAPTERS:
