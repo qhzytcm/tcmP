@@ -23,8 +23,9 @@ sys.path.insert(0, str(HERE))
 from rl_v3_a import CHAPTERS_A      # noqa: E402
 from rl_v3_b import CHAPTERS_B      # noqa: E402
 from rl_v3_c import CHAPTERS_C      # noqa: E402
-from rl_v2_data import PROGRAMMING_GUIDE, REVIEW_MAPPING  # noqa: E402
+from rl_v2_data import PROGRAMMING_GUIDE  # noqa: E402
 from rl_v4_toc import toc_rows      # noqa: E402
+from rl_v5_reviewers import REVIEW_SHEETS  # noqa: E402
 
 CHAPTERS = CHAPTERS_A + CHAPTERS_B + CHAPTERS_C
 OUT = Path(r"C:\Users\DELL\Desktop\强化学习的数学原理-赵世钰.xlsx")
@@ -139,15 +140,16 @@ def main():
         ws.append([i, mod, content])
     style_sheet(ws, len(g["rows"]))
 
-    rv = REVIEW_MAPPING
-    ws = wb.create_sheet(title=rv["sheet"])
-    ws.append(HEADERS)
-    ws.append(["映射角色", rv["title"], "由主编确认后补全"])
-    for c in ws[2]:
-        c.font = Font(bold=True)
-    for i, (mod, content) in enumerate(rv["rows"], 1):
-        ws.append([i, mod, content])
-    style_sheet(ws, len(rv["rows"]))
+    rv = REVIEW_SHEETS
+    for rs in rv:
+        ws = wb.create_sheet(title=rs["sheet"])
+        ws.append(HEADERS)
+        ws.append(["映射角色", rs["title"], "三审现实映射初稿（结合 user.md / tcmreviewer.md / aireviewer.md）"])
+        for c in ws[2]:
+            c.font = Font(bold=True)
+        for i, (mod, content) in enumerate(rs["rows"], 1):
+            ws.append([i, mod, content])
+        style_sheet(ws, len(rs["rows"]))
 
     wb.save(OUT)
     n_p1 = sum(1 for ch in CHAPTERS for m, _ in ch["rows"] if m.startswith("[Part1"))
