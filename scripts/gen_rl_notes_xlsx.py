@@ -24,6 +24,7 @@ from rl_v3_a import CHAPTERS_A      # noqa: E402
 from rl_v3_b import CHAPTERS_B      # noqa: E402
 from rl_v3_c import CHAPTERS_C      # noqa: E402
 from rl_v2_data import PROGRAMMING_GUIDE, REVIEW_MAPPING  # noqa: E402
+from rl_v4_toc import toc_rows      # noqa: E402
 
 CHAPTERS = CHAPTERS_A + CHAPTERS_B + CHAPTERS_C
 OUT = Path(r"C:\Users\DELL\Desktop\强化学习的数学原理-赵世钰.xlsx")
@@ -54,6 +55,27 @@ def style_sheet(ws, n_rows):
 def main():
     wb = Workbook()
     wb.remove(wb.active)
+
+    # 0) 四级目录（0cmrl目录，置于最前）
+    ws = wb.create_sheet(title="0cmrl目录")
+    ws.append(["层级", "四级编码", "标题", "内容定位", "双目标标注"])
+    for c in ws[1]:
+        c.font = Font(bold=True, color="FFFFFF")
+        c.fill = HDR_FILL
+    ws.freeze_panes = "A2"
+    toc = toc_rows()
+    lv_fill = {"章": "4472C4", "节": "DDEBF7", "小节": "E2EFDA", "段落": None}
+    for lv, code, title, note, tag in toc:
+        ws.append([lv, code, title, note, tag])
+        r = ws.max_row
+        f = lv_fill.get(lv)
+        if f:
+            ws.cell(r, 1).fill = PatternFill("solid", fgColor=f)
+            ws.cell(r, 1).font = Font(bold=True)
+        ws.cell(r, 4).alignment = Alignment(wrap_text=True, vertical="top")
+        ws.cell(r, 5).alignment = Alignment(wrap_text=True, vertical="top")
+    for col, width in zip("ABCDE", (8, 12, 30, 52, 44)):
+        ws.column_dimensions[col].width = width
 
     for ch in CHAPTERS:
         ws = wb.create_sheet(title=ch["sheet"])
