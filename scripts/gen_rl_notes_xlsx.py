@@ -29,6 +29,20 @@ from rl_v4_toc import toc_rows      # noqa: E402
 CHAPTERS = CHAPTERS_A + CHAPTERS_B + CHAPTERS_C
 OUT = Path(r"C:\Users\DELL\Desktop\强化学习的数学原理-赵世钰.xlsx")
 
+# 章节 sheet 命名映射（RL01-RL10 → 1cmrl-* ~ 10cmrl-*，置于 0cmrl目录 之后）
+SHEET_NAMES = {
+    "RL01": "1cmrl-conceptions",      # 第1章 基本概念
+    "RL02": "2cmrl-bellman",          # 第2章 状态价值与贝尔曼方程
+    "RL03": "3cmrl-optimality",       # 第3章 最优状态价值与贝尔曼最优方程
+    "RL04": "4cmrl-iteration",        # 第4章 价值迭代与策略迭代
+    "RL05": "5cmrl-montecarlo",       # 第5章 蒙特卡洛方法
+    "RL06": "6cmrl-approximation",    # 第6章 随机逼近
+    "RL07": "7cmrl-tdlearning",       # 第7章 时序差分方法
+    "RL08": "8cmrl-valuefunction",    # 第8章 价值函数方法
+    "RL09": "9cmrl-policygradient",   # 第9章 策略梯度方法
+    "RL10": "10cmrl-acloop",          # 第10章 Actor-Critic 方法
+}
+
 HEADERS = ["序号", "模块", "内容"]
 P1_FILL = PatternFill("solid", fgColor="DDEBF7")     # Part1 原文正文：浅蓝
 P2_FILL = PatternFill("solid", fgColor="E2EFDA")     # Part2 平台改写：浅绿
@@ -99,7 +113,12 @@ def main():
         ws.column_dimensions[col].width = width
 
     for ch in CHAPTERS:
-        ws = wb.create_sheet(title=ch["sheet"])
+        sheet_name = ch["sheet"]
+        for prefix, new_name in SHEET_NAMES.items():
+            if sheet_name.startswith(prefix):
+                sheet_name = new_name
+                break
+        ws = wb.create_sheet(title=sheet_name)
         ws.append(HEADERS)
         ws.append(["章", ch["title"],
                    "《Mathematical Foundation of Reinforcement Learning》赵世钰 (Shiyu Zhao), Springer"])
