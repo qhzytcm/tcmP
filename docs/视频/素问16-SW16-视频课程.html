@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问16·SW16</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问16·SW16</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问16-SW16.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问16-SW16.mp4">素问16-SW16.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 一百一十三页叫诊要经终论…</h2></div>
+    <div class="orig">一百一十三页叫诊要经终论，这个诊要经终论又把前面十二张，正月二月天气始方地气始发，人气在肝，天气正方地气定发，人气在脾，这个时候人气在头，所以人气在头，这时候人气在肺，见血而止</div>
+    <div class="talk">为什么你有个基本概念。所以我们在前面十二张讲的时候。就给你一个概念概念概念。诊断和治疗的重要在哪里。药领怎么样抓到他的药领。到了刚开始1月份的时候。我们人一定要跟著这个节气走。人身上最高的地方就在什么。也就是这个开始受损的意思。寒冷的气和第一的阴气合并。因为合并所以很多动物。你一定要相信动物的本性。所有的动物都按照节气走。就东西也没有死在洞窗。能够刺鳝鱼和分离血疏儿子。是刚开始天气和地气在变动的时候。都在脾肤上面肌肉交接的地方。比如一二月的话就是肝脏啦。我们可以得到夏天得病的时候。病邪都不容易进我们身体。所以我们在下针久的时候</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 秋刺脾肤循理…</h2></div>
+    <div class="orig">秋刺脾肤循理，甚至脾肤这个循理的空隙刺下去，春刺散俞，春刺秋分</div>
+    <div class="talk">那我们这个像秋天的时候。神色变微正常就可以启针。这种病在表的时候我们可以用。针正的内脏病这个力量不够的。这是讲并鞋刚入身体的时候。一开始并鞋进来我们就开始做。那时候我们下针都下来背后的俞穴。这就是我们的治疗的原则。第二段就接著前面那一段</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 令人解堕…</h2></div>
+    <div class="orig">令人解堕</div>
+    <div class="talk">讲话或发了变得很多。黄帝内经已经非常讲究这个东西。针的我们针的下身的时候。三十二号三十号都很细。因为眼睛技术没有那么好。没有说针正的那么精精计较说下。那你如果试著是春分很浅了。如果说我们针的翻得好的话。结果你针下来没有到病气。你用细针来解释的话就不只这样。我们针下去拿出来都不见血了。那以前针像火柴棒那么粗。所谓分到阴去了就是讲魄。所以神魂魄三者是一样的东西。小孩子晚上睡觉起来梦游洞。他不喜欢在外面跑跟小孩子玩。这就是我们为什么要去分分这个。那我们知道这个一个动镜。我们小的有阴药还是有寒药。所以一再我一再跟诸位讲。那我们一个人话讲的很多是阳</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 令人少气…</h2></div>
+    <div class="orig">令人少气，我们看凡刺胸腹者，不过一岁必死，有一种刺法</div>
+    <div class="talk">诸位可以看看书上的翻译就可以了。根本是刀子一样刺进去的。但到肚脐到第十四针以下。上面我们就都尽量左右斜刺。所谓虫者就是膈和脾胃之间。这是我们的心蔽骨的地方。这个是我们心脏和肺脏。所谓虫者就是膈与脾胃之处。那你硬要从肋骨旁边的缝隙。我们针的有直视和背后自由。那过去的古人对手就上了。跟他相对称的位置扎进去。一般来说我们不穿过肋骨的</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 刺胸腹责…</h2></div>
+    <div class="orig">刺胸腹责</div>
+    <div class="talk">所以过去有些人用骑竹马。你拿两个激光笔放在旁边。很好的方法。光线能够找到点。你一插去拿阴阳就通好了。这个是因为这个天气太冷。我们在美国给他膈了衣服扎针。因为现在我们有这些工具。我们这个病人在天气冷的时候。不会身体暴露在冷风之下。我们天气冷要保温。结果为了扎针衣服要拉开来。所以你千万不要按照这里说。是叫经络上的血道的时候。那我们这个里面的骨头在这边</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 十二经脉之终奈何…</h2></div>
+    <div class="orig">十二经脉之终奈何，戴眼反折瘛疭，其色白绝汗乃出，出则死矣，我们什么叫做戴眼，诊个反折过去，少阳终者耳聋，百节皆纵，目睘绝系的一日，色先青白，我们的人会耳聋的现象，耳聋很多</div>
+    <div class="talk">不单单从这边可以倒水出来。我们在经络上下针的时候。精气一绝没有精气的时候。我们叫角弓反张也是一样。这个色白就是面色非常的苍白。老实说鼻子油怎么那么多。诊个脾肤肝肝的摸不到油了。平常我们25寸你就很大50寸。我们设计在美国设计的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 耳龙百节皆纵…</h2></div>
+    <div class="orig">耳龙百节皆纵，阳明终者，口目动作，善惊妄言 色黄，其上下经盛 不仁则终，面黑尺长，上下不通而终矣</div>
+    <div class="talk">你要治好那种时政很简单。所以你一旦当场耳朵受伤的时候。你一打当场耳朵听不清楚。这时候你把耳机戴上肉一点点出来。光子弹有很多种不同的子弹。有爆发弹有一般的教练弹。有什么千弹那声音都不一样的。那一颗内脏的虚弱的时候。金脉虚的时候倒针的耳龙。所以烧阳竹烧阳胆金。胆金气脉药脉金脉药绝的时候。所有关节的地方都有筋络到。眼睛没有办法转动两眼直视。到后来很多肝硬化。两个眼睛是直不会动。手握起来没办法我就软的。让他把脚抬起来就掉下去。只剩一个心在这边的时候。会出现一时盛大的状态之下。还存在肾的经络里面可以</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 那太阴终者…</h2></div>
+    <div class="orig">那太阴终者，腹胀闭不得息，善噫善呕，善溺而心情烦躁，甚则舌卷</div>
+    <div class="talk">金脉药绝的时候。所有关节的地方都有筋络到。眼睛没有办法转动两眼直视。到后来很多肝硬化。两个眼睛是直不会动。手握起来没办法我就软的。让他把脚抬起来就掉下去。只剩一个心在这边的时候。会出现一时盛大的状态之下。还存在肾的经络里面可以</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 介绍十二经脉气绝的…</h2></div>
+    <div class="orig">介绍十二经脉气绝的，我们叫十二刺法，第一个刺法</div>
+    <div class="talk">我是看过很多人生老病死。这些你统统可以判断出来</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段</h2></div>
+    <div class="orig">介绍十二经脉气绝的，我们叫十二刺法，第一个刺法</div>
+    <div class="talk">简单区分这样子看出来了。一、'四时人气所在'是【时间-空间-脏腑耦合节律模型】：正月二月人气在肝、三月四月在脾……将十二个月（时间轴）与五脏（空间轴）经'人气'（功能能量重心）耦合，形成一年周期的能量再分配表；倪师强调'人一定要跟着节气走'并援引动物冬眠——即生物体与环境的同步振荡（entrainment），与现代'季节性激素节律''褪黑素-光照周期''冬季心血管事件峰'研究同构，是中医最早的生物钟（chronobiology）文献。二、四时刺法'春刺散俞、夏刺络俞、秋刺皮肤、冬刺俞窍'是【干预深度-季节状态匹配】原则：春夏阳气外浮、病邪在表，故浅刺（散俞/络俞）；秋冬阳气内敛、病邪入里，故深刺（俞窍/分理）——即治疗参数的季节自适应（adaptivedosing），与现代'给药剂量随昼夜/季节调整'的时辰药理学（chronopharmacology）呼应。三、'刺伤逆治'十二组症状是【干预误匹配-系统扰动】清单：每一组（如春刺夏分→脉乱气微入淫骨髓）均为'错误时相干预'造成的特定功能紊乱——实质是刺激时机（相位）与状态（phase）失配引发的</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问16·SW16 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 一百一十三页叫诊要经终论…", "orig": "一百一十三页叫诊要经终论，这个诊要经终论又把前面十二张，正月二月天气始方地气始发，人气在肝，天气正方地气定发，人气在脾，这个时候人气在头，所以人气在头，这时候人气在肺，见血而止", "talk": "为什么你有个基本概念。所以我们在前面十二张讲的时候。就给你一个概念概念概念。诊断和治疗的重要在哪里。药领怎么样抓到他的药领。到了刚开始1月份的时候。我们人一定要跟著这个节气走。人身上最高的地方就在什么。也就是这个开始受损的意思。寒冷的气和第一的阴气合并。因为合并所以很多动物。你一定要相信动物的本性。所有的动物都按照节气走。就东西也没有死在洞窗。能够刺鳝鱼和分离血疏儿子。是刚开始天气和地气在变动的时候。都在脾肤上面肌肉交接的地方。比如一二月的话就是肝脏啦。我们可以得到夏天得病的时候。病邪都不容易进我们身体。所以我们在下针久的时候", "chart": null}, {"title": "第二段 · 秋刺脾肤循理…", "orig": "秋刺脾肤循理，甚至脾肤这个循理的空隙刺下去，春刺散俞，春刺秋分", "talk": "那我们这个像秋天的时候。神色变微正常就可以启针。这种病在表的时候我们可以用。针正的内脏病这个力量不够的。这是讲并鞋刚入身体的时候。一开始并鞋进来我们就开始做。那时候我们下针都下来背后的俞穴。这就是我们的治疗的原则。第二段就接著前面那一段", "chart": null}, {"title": "第三段 · 令人解堕…", "orig": "令人解堕", "talk": "讲话或发了变得很多。黄帝内经已经非常讲究这个东西。针的我们针的下身的时候。三十二号三十号都很细。因为眼睛技术没有那么好。没有说针正的那么精精计较说下。那你如果试著是春分很浅了。如果说我们针的翻得好的话。结果你针下来没有到病气。你用细针来解释的话就不只这样。我们针下去拿出来都不见血了。那以前针像火柴棒那么粗。所谓分到阴去了就是讲魄。所以神魂魄三者是一样的东西。小孩子晚上睡觉起来梦游洞。他不喜欢在外面跑跟小孩子玩。这就是我们为什么要去分分这个。那我们知道这个一个动镜。我们小的有阴药还是有寒药。所以一再我一再跟诸位讲。那我们一个人话讲的很多是阳", "chart": null}, {"title": "第四段 · 令人少气…", "orig": "令人少气，我们看凡刺胸腹者，不过一岁必死，有一种刺法", "talk": "诸位可以看看书上的翻译就可以了。根本是刀子一样刺进去的。但到肚脐到第十四针以下。上面我们就都尽量左右斜刺。所谓虫者就是膈和脾胃之间。这是我们的心蔽骨的地方。这个是我们心脏和肺脏。所谓虫者就是膈与脾胃之处。那你硬要从肋骨旁边的缝隙。我们针的有直视和背后自由。那过去的古人对手就上了。跟他相对称的位置扎进去。一般来说我们不穿过肋骨的", "chart": null}, {"title": "第五段 · 刺胸腹责…", "orig": "刺胸腹责", "talk": "所以过去有些人用骑竹马。你拿两个激光笔放在旁边。很好的方法。光线能够找到点。你一插去拿阴阳就通好了。这个是因为这个天气太冷。我们在美国给他膈了衣服扎针。因为现在我们有这些工具。我们这个病人在天气冷的时候。不会身体暴露在冷风之下。我们天气冷要保温。结果为了扎针衣服要拉开来。所以你千万不要按照这里说。是叫经络上的血道的时候。那我们这个里面的骨头在这边", "chart": null}, {"title": "第六段 · 十二经脉之终奈何…", "orig": "十二经脉之终奈何，戴眼反折瘛疭，其色白绝汗乃出，出则死矣，我们什么叫做戴眼，诊个反折过去，少阳终者耳聋，百节皆纵，目睘绝系的一日，色先青白，我们的人会耳聋的现象，耳聋很多", "talk": "不单单从这边可以倒水出来。我们在经络上下针的时候。精气一绝没有精气的时候。我们叫角弓反张也是一样。这个色白就是面色非常的苍白。老实说鼻子油怎么那么多。诊个脾肤肝肝的摸不到油了。平常我们25寸你就很大50寸。我们设计在美国设计的时候", "chart": null}, {"title": "第七段 · 耳龙百节皆纵…", "orig": "耳龙百节皆纵，阳明终者，口目动作，善惊妄言 色黄，其上下经盛 不仁则终，面黑尺长，上下不通而终矣", "talk": "你要治好那种时政很简单。所以你一旦当场耳朵受伤的时候。你一打当场耳朵听不清楚。这时候你把耳机戴上肉一点点出来。光子弹有很多种不同的子弹。有爆发弹有一般的教练弹。有什么千弹那声音都不一样的。那一颗内脏的虚弱的时候。金脉虚的时候倒针的耳龙。所以烧阳竹烧阳胆金。胆金气脉药脉金脉药绝的时候。所有关节的地方都有筋络到。眼睛没有办法转动两眼直视。到后来很多肝硬化。两个眼睛是直不会动。手握起来没办法我就软的。让他把脚抬起来就掉下去。只剩一个心在这边的时候。会出现一时盛大的状态之下。还存在肾的经络里面可以", "chart": null}, {"title": "第八段 · 那太阴终者…", "orig": "那太阴终者，腹胀闭不得息，善噫善呕，善溺而心情烦躁，甚则舌卷", "talk": "金脉药绝的时候。所有关节的地方都有筋络到。眼睛没有办法转动两眼直视。到后来很多肝硬化。两个眼睛是直不会动。手握起来没办法我就软的。让他把脚抬起来就掉下去。只剩一个心在这边的时候。会出现一时盛大的状态之下。还存在肾的经络里面可以", "chart": null}, {"title": "第九段 · 介绍十二经脉气绝的…", "orig": "介绍十二经脉气绝的，我们叫十二刺法，第一个刺法", "talk": "我是看过很多人生老病死。这些你统统可以判断出来", "chart": null}, {"title": "第十段 · 第 10 段", "orig": "介绍十二经脉气绝的，我们叫十二刺法，第一个刺法", "talk": "简单区分这样子看出来了。一、'四时人气所在'是【时间-空间-脏腑耦合节律模型】：正月二月人气在肝、三月四月在脾……将十二个月（时间轴）与五脏（空间轴）经'人气'（功能能量重心）耦合，形成一年周期的能量再分配表；倪师强调'人一定要跟着节气走'并援引动物冬眠——即生物体与环境的同步振荡（entrainment），与现代'季节性激素节律''褪黑素-光照周期''冬季心血管事件峰'研究同构，是中医最早的生物钟（chronobiology）文献。二、四时刺法'春刺散俞、夏刺络俞、秋刺皮肤、冬刺俞窍'是【干预深度-季节状态匹配】原则：春夏阳气外浮、病邪在表，故浅刺（散俞/络俞）；秋冬阳气内敛、病邪入里，故深刺（俞窍/分理）——即治疗参数的季节自适应（adaptivedosing），与现代'给药剂量随昼夜/季节调整'的时辰药理学（chronopharmacology）呼应。三、'刺伤逆治'十二组症状是【干预误匹配-系统扰动】清单：每一组（如春刺夏分→脉乱气微入淫骨髓）均为'错误时相干预'造成的特定功能紊乱——实质是刺激时机（相位）与状态（phase）失配引发的", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

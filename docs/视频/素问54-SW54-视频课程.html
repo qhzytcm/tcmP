@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问54·SW54</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问54·SW54</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问54-SW54.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问54-SW54.mp4">素问54-SW54.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 针解篇第54 黄帝问他希…</h2></div>
+    <div class="orig">针解篇第54 黄帝问他希望知道九针之道，九针的虚实之道 如何应用这九针，岐伯 刺虚则实之 针下热也 气实乃热，满而泄之 针下寒也 气虚乃寒，菀陈则除之 菀陈则是血脉</div>
+    <div class="talk">这里呢 针就更深入的 一下。我们所谓的寒热 虚实寒热。我们在临床上下针的时候 看得很清楚。胃痛的时候 现在很痛啊 很难过。我管理什么虚实 后来足三里针下去。那足三里下针的时候 足三里是本穴。你如果下针 你再平补平息在那边的时候。病人的胃加时症 过一下子 针下去会热。就那个会凉 就代表气散掉了。如果是寒症的时候 你要真的慢慢热起来。所以从一个血上面 你再做无所谓补血的时候。无所谓虚实都能够治的时候 最明显。所以说 我们虚热人里面是寒的对不对。你针下去以后 针热起来 就代表虚 虚则实之。如果是虚症的人 气虚的 你针下去以后。他如果出寒的 是因为虚。经脉上面有淤血 大家可以看到</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 言实与虚者 寒温气多少也…</h2></div>
+    <div class="orig">言实与虚者 寒温气多少也</div>
+    <div class="talk">所以我们身上 尤其是脚上面。手上面不多 大部分是针在脚上面。脚上面 因为上半身是阳 下半身是阴。所以淤血大部分停在下半身。上半身有淤血 大部分是内伤。撞伤或打伤或跌打损伤 或是头部有出血。绝大多数经络上有淤血的时候。所以你看那个筋脉流度脚拉起来。有没有能看到手上伸筋脉流脚上没有。目前还没有发现 大陆是那脚上面。因为脚是阴 下半身是阴。那遇到有络脉上有淤血的时候。虚而出则及 按著这个虚证。就是我们刚刚简单讲就是。你不要按它 让它血尽量出来。虚证的时候 我们长文证的时候。尽量去按它 不要让它气跑掉</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 虚实之要 九针最妙…</h2></div>
+    <div class="orig">虚实之要 九针最妙</div>
+    <div class="talk">那这个寒热若无又若有者。所以疾不可知也 有时候很浅。那这个道主第四行下方的。我们这个 当然过去的我们的黄帝。九针我们现在墙壁上有一些九针。我们现在用的针 我们都有毫针。都是用细针 都没有用粗针了。因为这个古人跟今人不一样。古人体力用得多 肌肉很扎实。我们那个细针根本没有用。现在的人很松 一搓进去。以前的针要这样暂时拉出来。同时我们有很多地方用来放血。因为冬天的时候外面天寒地冻。他本来就有病了 这叫寒。我们有一些放血 在卧烧上就可以把它放掉。我们选取的针却也不一样</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 那你一定要留针 留针…</h2></div>
+    <div class="orig">那你一定要留针 留针，那留针留到阴气隆至，你怎么知道 阳气隆至</div>
+    <div class="talk">会有这种选择 这种针的形状。就是我们过去所谓的锋针 很细。还有这个梅花针 梅花扣 皮肤放血。那倒是第二行 430页。他说中间那边 刺实针要让它变虚。成功把砸完针留在那边 要等它阴起来。你说我怎么知道它阴起来。那这个时候你把针拔出来。如果是虚者 一定要等到阳气到。你怎么知道阳气来了 针下是热的。如果不热 你要把它抓起来捻一捻针。然后你就跟他说 我在等针热 再帮你起针。他等一下就告诉你 针很热了。其实你变成怕针吧 你不跟你讲热。你让它寒热气到很快 很简单。不单单是病人 包括医生在内。各位看后面 后面这个写得非常好</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 如临深渊 不敢堕 不敢停…</h2></div>
+    <div class="orig">如临深渊 不敢堕 不敢停下来，手如握虎 欲其壮 神无营于众物的，静志观病人 无左右视之</div>
+    <div class="talk">那你要治病在内还是在外。所以说我们平常在引气的时候。这个病人膀胱经痛 膀胱经痛。你右边痛我们扎左边 一针。你说委中 它虚证我们扎委中。鹰骨先扎扎委中 让它一条筋痛。如果我们真的做针灸 怎么做呢。一针下了这个地方 病痛的地方</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 导引手如握虎…</h2></div>
+    <div class="orig">导引手如握虎</div>
+    <div class="talk">你用一吋的人针 扎一半进去。竞争近距离现在远是如一的。握到 两只手握到的时候。你们平常不用用 我很少用。下次我拍个录影带给你们看。中针就是那个瘫痪掉到什么用给你们看。两只针抓 因为你用一次。你在做捻转的时候是一样的动作。所以你这个手往这边转的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段</h2></div>
+    <div class="orig">导引手如握虎</div>
+    <div class="talk">那你如果在导引那边看电视。这个状况其实是说你在那边看。肚子里面的肌块有硬块肿瘤的时候。那如果真的做导引的时候</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 所谓三里者 下膝三寸…</h2></div>
+    <div class="orig">所谓三里者 下膝三寸，所谓跗上者 举膝分易见，九针应天地四时的道理</div>
+    <div class="talk">所以我们砸完针都把灯关掉。病人神一到的时候气得来。所以整首跟家一定要分开。这个不要从那里跑出来跑进来的</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 请传于后世…</h2></div>
+    <div class="orig">请传于后世，时节四时主的是筋，五音主的人的声音，六律主得阴阳和气，七星我们眼睛，八风就是气的出入</div>
+    <div class="talk">这个齐伯就开始解释我们的九针。这个九针就是在墙上挂了九针。有这个会产生这个和气的现象。我们的九窍就是人身上有九窍</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段</h2></div>
+    <div class="orig">请传于后世，时节四时主的是筋，五音主的人的声音，六律主得阴阳和气，七星我们眼睛，八风就是气的出入</div>
+    <div class="talk">再让大小变成的地方九个。来对应我们人身上的刺法。我现在拿到的只是给你看。现在都是一般的针就可以了。你是否遇到过视频一听就懂。它能把你快速梳理知识框架。让零散的知识点一目了然。告别学了后面忘了前边的问题。搜索人纪求真下载使用吧。Hermes独立理解《针解》:通读倪师讲解并对照《黄帝内经全文.xls》SW54原文后,本篇实为'针刺操作学总纲'——以针下寒热定补泻、以留针候气定时机、以医者心神定疗效,以系统科学视角重审如下。一、【针下寒热=生物反馈的实时指标】刺虚则实之针下热(补法→热感)、满而泄之针下寒(泻法→凉感)——针下寒热即'气至'的即时生物反馈,现代对应'针刺得气'的神经-血管反应(局部血流改变→温度变化),'气实乃热/气虚乃寒'即'机能状态-温度'相关(代谢活跃产热/抑制失温),是'操作-反馈-判定'闭环的古代实时监测系统——与现代'生物反馈治疗'同构。二、【菀陈则除之=代谢废物的清除机制】经脉淤血当放血清除——即'病理性产物-清除干预'的排邪思维,现代对应'瘀血-微循环障碍'的放血疗法(刺络放血改善局部循环/清除炎症介质);'淤血多停于下。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问54·SW54 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 针解篇第54 黄帝问他希…", "orig": "针解篇第54 黄帝问他希望知道九针之道，九针的虚实之道 如何应用这九针，岐伯 刺虚则实之 针下热也 气实乃热，满而泄之 针下寒也 气虚乃寒，菀陈则除之 菀陈则是血脉", "talk": "这里呢 针就更深入的 一下。我们所谓的寒热 虚实寒热。我们在临床上下针的时候 看得很清楚。胃痛的时候 现在很痛啊 很难过。我管理什么虚实 后来足三里针下去。那足三里下针的时候 足三里是本穴。你如果下针 你再平补平息在那边的时候。病人的胃加时症 过一下子 针下去会热。就那个会凉 就代表气散掉了。如果是寒症的时候 你要真的慢慢热起来。所以从一个血上面 你再做无所谓补血的时候。无所谓虚实都能够治的时候 最明显。所以说 我们虚热人里面是寒的对不对。你针下去以后 针热起来 就代表虚 虚则实之。如果是虚症的人 气虚的 你针下去以后。他如果出寒的 是因为虚。经脉上面有淤血 大家可以看到", "chart": null}, {"title": "第二段 · 言实与虚者 寒温气多少也…", "orig": "言实与虚者 寒温气多少也", "talk": "所以我们身上 尤其是脚上面。手上面不多 大部分是针在脚上面。脚上面 因为上半身是阳 下半身是阴。所以淤血大部分停在下半身。上半身有淤血 大部分是内伤。撞伤或打伤或跌打损伤 或是头部有出血。绝大多数经络上有淤血的时候。所以你看那个筋脉流度脚拉起来。有没有能看到手上伸筋脉流脚上没有。目前还没有发现 大陆是那脚上面。因为脚是阴 下半身是阴。那遇到有络脉上有淤血的时候。虚而出则及 按著这个虚证。就是我们刚刚简单讲就是。你不要按它 让它血尽量出来。虚证的时候 我们长文证的时候。尽量去按它 不要让它气跑掉", "chart": null}, {"title": "第三段 · 虚实之要 九针最妙…", "orig": "虚实之要 九针最妙", "talk": "那这个寒热若无又若有者。所以疾不可知也 有时候很浅。那这个道主第四行下方的。我们这个 当然过去的我们的黄帝。九针我们现在墙壁上有一些九针。我们现在用的针 我们都有毫针。都是用细针 都没有用粗针了。因为这个古人跟今人不一样。古人体力用得多 肌肉很扎实。我们那个细针根本没有用。现在的人很松 一搓进去。以前的针要这样暂时拉出来。同时我们有很多地方用来放血。因为冬天的时候外面天寒地冻。他本来就有病了 这叫寒。我们有一些放血 在卧烧上就可以把它放掉。我们选取的针却也不一样", "chart": null}, {"title": "第四段 · 那你一定要留针 留针…", "orig": "那你一定要留针 留针，那留针留到阴气隆至，你怎么知道 阳气隆至", "talk": "会有这种选择 这种针的形状。就是我们过去所谓的锋针 很细。还有这个梅花针 梅花扣 皮肤放血。那倒是第二行 430页。他说中间那边 刺实针要让它变虚。成功把砸完针留在那边 要等它阴起来。你说我怎么知道它阴起来。那这个时候你把针拔出来。如果是虚者 一定要等到阳气到。你怎么知道阳气来了 针下是热的。如果不热 你要把它抓起来捻一捻针。然后你就跟他说 我在等针热 再帮你起针。他等一下就告诉你 针很热了。其实你变成怕针吧 你不跟你讲热。你让它寒热气到很快 很简单。不单单是病人 包括医生在内。各位看后面 后面这个写得非常好", "chart": null}, {"title": "第五段 · 如临深渊 不敢堕 不敢停…", "orig": "如临深渊 不敢堕 不敢停下来，手如握虎 欲其壮 神无营于众物的，静志观病人 无左右视之", "talk": "那你要治病在内还是在外。所以说我们平常在引气的时候。这个病人膀胱经痛 膀胱经痛。你右边痛我们扎左边 一针。你说委中 它虚证我们扎委中。鹰骨先扎扎委中 让它一条筋痛。如果我们真的做针灸 怎么做呢。一针下了这个地方 病痛的地方", "chart": null}, {"title": "第六段 · 导引手如握虎…", "orig": "导引手如握虎", "talk": "你用一吋的人针 扎一半进去。竞争近距离现在远是如一的。握到 两只手握到的时候。你们平常不用用 我很少用。下次我拍个录影带给你们看。中针就是那个瘫痪掉到什么用给你们看。两只针抓 因为你用一次。你在做捻转的时候是一样的动作。所以你这个手往这边转的时候", "chart": null}, {"title": "第七段 · 第 7 段", "orig": "导引手如握虎", "talk": "那你如果在导引那边看电视。这个状况其实是说你在那边看。肚子里面的肌块有硬块肿瘤的时候。那如果真的做导引的时候", "chart": null}, {"title": "第八段 · 所谓三里者 下膝三寸…", "orig": "所谓三里者 下膝三寸，所谓跗上者 举膝分易见，九针应天地四时的道理", "talk": "所以我们砸完针都把灯关掉。病人神一到的时候气得来。所以整首跟家一定要分开。这个不要从那里跑出来跑进来的", "chart": null}, {"title": "第九段 · 请传于后世…", "orig": "请传于后世，时节四时主的是筋，五音主的人的声音，六律主得阴阳和气，七星我们眼睛，八风就是气的出入", "talk": "这个齐伯就开始解释我们的九针。这个九针就是在墙上挂了九针。有这个会产生这个和气的现象。我们的九窍就是人身上有九窍", "chart": null}, {"title": "第十段 · 第 10 段", "orig": "请传于后世，时节四时主的是筋，五音主的人的声音，六律主得阴阳和气，七星我们眼睛，八风就是气的出入", "talk": "再让大小变成的地方九个。来对应我们人身上的刺法。我现在拿到的只是给你看。现在都是一般的针就可以了。你是否遇到过视频一听就懂。它能把你快速梳理知识框架。让零散的知识点一目了然。告别学了后面忘了前边的问题。搜索人纪求真下载使用吧。Hermes独立理解《针解》:通读倪师讲解并对照《黄帝内经全文.xls》SW54原文后,本篇实为'针刺操作学总纲'——以针下寒热定补泻、以留针候气定时机、以医者心神定疗效,以系统科学视角重审如下。一、【针下寒热=生物反馈的实时指标】刺虚则实之针下热(补法→热感)、满而泄之针下寒(泻法→凉感)——针下寒热即'气至'的即时生物反馈,现代对应'针刺得气'的神经-血管反应(局部血流改变→温度变化),'气实乃热/气虚乃寒'即'机能状态-温度'相关(代谢活跃产热/抑制失温),是'操作-反馈-判定'闭环的古代实时监测系统——与现代'生物反馈治疗'同构。二、【菀陈则除之=代谢废物的清除机制】经脉淤血当放血清除——即'病理性产物-清除干预'的排邪思维,现代对应'瘀血-微循环障碍'的放血疗法(刺络放血改善局部循环/清除炎症介质);'淤血多停于下。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

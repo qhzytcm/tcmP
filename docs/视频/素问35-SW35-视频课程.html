@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问35·SW35</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问35·SW35</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问35-SW35.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问35-SW35.mp4">素问35-SW35.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 疟论第35…</h2></div>
+    <div class="orig">疟论第35，很像疟疾，非常多的疟，疟到处横行，黄帝问所有的疟疾呢，皆生于风，他蓄作有时，有的人是忽冷忽热 有的人呢先发冷，岐伯说疟之始发也先起于毫毛，寒栗鼓颔，腰脊俱痛，那寒去则内外皆热，头痛如破 渴欲冷饮，阴阳上下交争，虚实更作，阴阳相移，阳并于阴，则阴实而阳虚</div>
+    <div class="talk">有的人定义很多 都没有关系。那代表古代就有这个病了。二次世界大赛的时候在中国。我们用针灸的手法是可以把它完全治好的。有的人好几天再发一次啊。有的人呢是先发热再发冷。因为是肾在这管子就欠伸。在这里就提到寒的症状呢。在我们等于是身体的正气。因为阳明进入了牙齿这边。胆小肠胃大肠膀胱就是阳。这阴阳应该是很和谐相处的。夫妻之间是不吵架阴阳吗。阳明经本来是多血多气的。那这是造成这种寒的样子</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 如果三阳俱虚…</h2></div>
+    <div class="orig">如果三阳俱虚，疟证在发病的时候，有时候忽冷忽热，疟证的冷呢，所以造成寒生于内，内外皆热喘而渴，津液发散太多，疟证我们看疟证，疟证的时候，我有忽冷忽热啊，这不是 少阳证，我们的半表半里的时候，我们太阳证出现的时候，当我们少阳证出现的时候，在半表半里的时候，就会有往来寒热的现象，那老师 这个少阳证太阳证，太阳证也有热多寒少，那在少阳证也有往来寒热，少阳证有多个O，忽冷忽热 恶心，我有往来寒热，就太阳证，这里的疟不是，伤寒论得了麻黄汤证，夏伤于暑 邪气盛，肠胃之外</div>
+    <div class="talk">这个血在太阳经里面就停滞不前。这时候经络上面就会发现到。阴这个阴是从里面发出来的。不要 你去看证 你问他。寒多热少 我们处方不一样。那这是在病在表 在肌表</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 常常的津液就没有了…</h2></div>
+    <div class="orig">常常的津液就没有了，所以疟疾，疟疾是打摆子有没有，以前的疟蚊啊，疟蚊是一种解释，津液伤到了，得阳而外出得阴，而内薄就往来寒热的现象，那这是一日作，那间日作呢，疟蚊啊造成疟原虫啊，内薄于阴，阳气独发，阴与阳争不得出</div>
+    <div class="talk">平常就造成人很容易出汗。然后在皮肤和肠胃的中间的地方。那你这个又或者是洗冷水。邪气在皮肤正和卫气并居。这个阳气和阴气是交换的。都是阳气在外面阴在里面。一冷天这个蚊子都不见了。这是平常我们邪气走的地方。这就造成里面已经有热了。一到秋天那时候吹到风寒。那至于说是不是西洋人说的。刚刚我们讲的一天发作一次</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 还叫打摆子…</h2></div>
+    <div class="orig">还叫打摆子，客在督脉上面，顺著督脉一路走下去，大会于风府，成为风府，这是广义的风府，那今天这个地方是风府，一天的循环会于风府，第二天日下一节，一天走一个督脉，一天走个督脉，伤重到督脉上面，督脉了二十五节，所以二十五日下至骶骨，二十六日入于脊内，病邪在督脉上面，打摆子的时候，忽冷忽热，病还在督脉上面，卫气每至于风府腠理乃发，卫气日下一节，不当风府其日作者，没有发在风府穴，风府一定要受风之府，不瘅是是风府穴</div>
+    <div class="talk">比如说今天是每天早上发。比如说这个本来是早上发。那是什么状况造成这样子的。那中医的观念的卫气的观念。你把手放到那个风口那边吹。我们卫气一天是一个周天循环。那你不管是哪边开始哪边就是。反正这边遇到的话也是一个周天。所以只是这边受到风的话。是以这边做始点来做终点。那一日一周一昼夜的循环。一椎一椎下来到了第二十五椎。二十六日以后回到第九椎。我们这个中膈的地方就是干。就是造成每天稍晚发作呢</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 风无常府…</h2></div>
+    <div class="orig">风无常府，你把风池风府，风府都遮住了，那风证和疟证，风气留其处，疟臂撞著时发时止，那疟证不是，那疟气就不一样了，这个疟疾，疟气随著经络，这是风和疟，忽冷忽热，跟疟不一样，疟是发完一天，但是疟就不一样了，疟是先寒后热，夏伤于大暑，伤于津液，其汗大出腠理开发，伤于大汗出腠理开，晚上凄沧之水寒</div>
+    <div class="talk">然后全身都裹起来对不对。你不可以电风扇在那边吹。翻译写得很详细的就不做了。比如我们太阳中风有风热。像在伤寒论里面讲的时候。但是我会告诉你一个方法。因为有些人背枢背得很熟</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 藏于腠理皮肤之中…</h2></div>
+    <div class="orig">藏于腠理皮肤之中，夏伤于暑，秋病疟有没有，寒者阴气也，风者阳气也，我们就说寒疟，那个西医看到疟，要用奎宁啊，这个我们叫温疟，其但热而不寒者，阴气先绝阳气独发，那手足热而欲呕，这只是这个瘅疟，有余者泻之，不足者补之，所以疟者之寒，汤火不能温，其实我们治疟非常简瘅</div>
+    <div class="talk">这个外面都是流了很多汗。所以夏天伤于暑天的时候。中医我们针灸也可以治好。就是因为操劳而得到的病。今天我们比如说看到热为有余。或者是在发病之前的时候。我们的定义是这样子下的</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 那疟之始发呢…</h2></div>
+    <div class="orig">那疟之始发呢，当是之时阳虚而阴盛，外无气故先寒栗，那阴虚而阳实，故先热而渴，我们说疟，阴盛则寒阳胜则热，会得到疟，我们这个节气，当天地之间的节气的时候，不按照正常的节气走的时候，不正则生疟，病之发也如火之热，方其盛时必毁，因其衰也事必大昌，疟之未发也，真气得安，邪气乃亡</div>
+    <div class="talk">跑到阴就是跑到脏里面去了。这种都很容易造成病的原因。就好像我们在病盛的时候。并在一起就阴和阳会相争。如果没有阳气来制它的话。阳气跑掉了阴气就上来了。我们一个基本上的观念要有。所以我们在调阴阳的时候。绝对不能在病发的时候去治</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 任何的疟…</h2></div>
+    <div class="orig">任何的疟，疟疾疟疾，忽冷忽热的这种，一定从四肢的末梢开始，那我常常叫大家去吃桂枝汤，所有伤寒论的出自桂枝汤，你用桂枝汤去调他，你到哪里去吃桂枝汤，发疟的时候，都是从四肢末梢开始，令邪气不得入，从四肢末梢开始发，在末梢的地方，这治疟的方法，一发一定在阴阳的末梢，那放血放掉，疟原虫跑出来，有疟原虫说，如果疟病，这个往来寒热的现象，不管你是疟原虫</div>
+    <div class="talk">我们虽然还没有介绍到伤寒论。当我们在没有发病的时候。所以我们在没有发病的时候。这个病人是早上9点钟开始发病。就会看到那个血脉盛起来。都是阴阳气最盛了的时候</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 病在阳则热而脉躁…</h2></div>
+    <div class="orig">病在阳则热而脉躁，在阴则寒而脉静，病疟的时候，发疟疾的时候症状，这一篇呢对于疟，邪气与卫气客于六腑，有时相失不能相得，故休数日乃作，疟者阴阳更胜也，数日疟或是间日疟，这个疟发的时候很好玩，往来喊著不发打摆子的时候，疟病都在四肢的末梢，这个疟就往深处走了，在四肢的末梢里把它解决掉，经言夏伤于暑，秋必病疟，四时春夏秋冬，其病异形者为反四时也，这是按照四季的节气来走，这都是按照四时的节气走，跟著四时节气不一样，按照节气走，不按照节气，要应节气而已，这个温疟还寒疟，寒气藏于骨髓之中</div>
+    <div class="talk">这代表说这个病比较多深。所以我们在没有发的时候。比如说秋天是主宿煞的节气。在秋天的时候反而特别的寒冷</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 腠理都发泄…</h2></div>
+    <div class="orig">腠理都发泄，此病藏于肾，就阴虚而阳盛，这是温疟嘛，所以温疟的话，那瘅疟呢，这个瘅疟者肺素有热，肺的津液，津液上冲比较多多，气盛于身，厥逆上冲，中气实而不外泄，那腠理开，阳气盛而不衰，其气不及于阴，所以但热而不寒</div>
+    <div class="talk">比如说你去做劳动的工作。一、【阴阳交争=周期性发热的相变模型】疟'先寒栗鼓颔、后内外皆热喘而渴'——寒热交替周期发作：阳并于阴则阴实阳虚（寒战期）、阴气逆极复出之阳则阴虚阳实（发热期）。这是'阴阳相移'的动力学模型：寒战=产热动员（交感激活外周收缩）、发热=散热代偿（血管扩张出汗），与现代疟疾'寒战期-发热期-大汗期'三期循环完全对应——疟原虫裂殖子释放触发TNF/IL-1等致热原周期性释放，即'阴阳交争'的免疫机制。二、【夏伤于暑藏于皮肤之内=潜伏感染模型】'夏伤于暑热气盛藏于皮肤之内肠胃之外'——夏季热邪潜藏、秋季汗出遇风触发：'潜伏期-诱因-发作'感染病学模型，与现代'疟疾潜伏期（肝内休眠子）''间日疟48h/三日疟72h周期'完全同构；倪师'蚊子说'与'暑气伏藏说'并陈，展示病原说（西洋）vs伏气说（中医）两种病因学并存。三、【卫气日下一节=昼夜节律-病理周期】'卫气昼日行于阳夜行于阴''邪气客于风府循膂而下，卫气日下一节故其作日晏'——以卫气循行时相解释疟发作时间（每日定时、逐日晏/早）：'节律-疾病周期'量化模型，与现代'疟疾发作与宿。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问35·SW35 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 疟论第35…", "orig": "疟论第35，很像疟疾，非常多的疟，疟到处横行，黄帝问所有的疟疾呢，皆生于风，他蓄作有时，有的人是忽冷忽热 有的人呢先发冷，岐伯说疟之始发也先起于毫毛，寒栗鼓颔，腰脊俱痛，那寒去则内外皆热，头痛如破 渴欲冷饮，阴阳上下交争，虚实更作，阴阳相移，阳并于阴，则阴实而阳虚", "talk": "有的人定义很多 都没有关系。那代表古代就有这个病了。二次世界大赛的时候在中国。我们用针灸的手法是可以把它完全治好的。有的人好几天再发一次啊。有的人呢是先发热再发冷。因为是肾在这管子就欠伸。在这里就提到寒的症状呢。在我们等于是身体的正气。因为阳明进入了牙齿这边。胆小肠胃大肠膀胱就是阳。这阴阳应该是很和谐相处的。夫妻之间是不吵架阴阳吗。阳明经本来是多血多气的。那这是造成这种寒的样子", "chart": null}, {"title": "第二段 · 如果三阳俱虚…", "orig": "如果三阳俱虚，疟证在发病的时候，有时候忽冷忽热，疟证的冷呢，所以造成寒生于内，内外皆热喘而渴，津液发散太多，疟证我们看疟证，疟证的时候，我有忽冷忽热啊，这不是 少阳证，我们的半表半里的时候，我们太阳证出现的时候，当我们少阳证出现的时候，在半表半里的时候，就会有往来寒热的现象，那老师 这个少阳证太阳证，太阳证也有热多寒少，那在少阳证也有往来寒热，少阳证有多个O，忽冷忽热 恶心，我有往来寒热，就太阳证，这里的疟不是，伤寒论得了麻黄汤证，夏伤于暑 邪气盛，肠胃之外", "talk": "这个血在太阳经里面就停滞不前。这时候经络上面就会发现到。阴这个阴是从里面发出来的。不要 你去看证 你问他。寒多热少 我们处方不一样。那这是在病在表 在肌表", "chart": null}, {"title": "第三段 · 常常的津液就没有了…", "orig": "常常的津液就没有了，所以疟疾，疟疾是打摆子有没有，以前的疟蚊啊，疟蚊是一种解释，津液伤到了，得阳而外出得阴，而内薄就往来寒热的现象，那这是一日作，那间日作呢，疟蚊啊造成疟原虫啊，内薄于阴，阳气独发，阴与阳争不得出", "talk": "平常就造成人很容易出汗。然后在皮肤和肠胃的中间的地方。那你这个又或者是洗冷水。邪气在皮肤正和卫气并居。这个阳气和阴气是交换的。都是阳气在外面阴在里面。一冷天这个蚊子都不见了。这是平常我们邪气走的地方。这就造成里面已经有热了。一到秋天那时候吹到风寒。那至于说是不是西洋人说的。刚刚我们讲的一天发作一次", "chart": null}, {"title": "第四段 · 还叫打摆子…", "orig": "还叫打摆子，客在督脉上面，顺著督脉一路走下去，大会于风府，成为风府，这是广义的风府，那今天这个地方是风府，一天的循环会于风府，第二天日下一节，一天走一个督脉，一天走个督脉，伤重到督脉上面，督脉了二十五节，所以二十五日下至骶骨，二十六日入于脊内，病邪在督脉上面，打摆子的时候，忽冷忽热，病还在督脉上面，卫气每至于风府腠理乃发，卫气日下一节，不当风府其日作者，没有发在风府穴，风府一定要受风之府，不瘅是是风府穴", "talk": "比如说今天是每天早上发。比如说这个本来是早上发。那是什么状况造成这样子的。那中医的观念的卫气的观念。你把手放到那个风口那边吹。我们卫气一天是一个周天循环。那你不管是哪边开始哪边就是。反正这边遇到的话也是一个周天。所以只是这边受到风的话。是以这边做始点来做终点。那一日一周一昼夜的循环。一椎一椎下来到了第二十五椎。二十六日以后回到第九椎。我们这个中膈的地方就是干。就是造成每天稍晚发作呢", "chart": null}, {"title": "第五段 · 风无常府…", "orig": "风无常府，你把风池风府，风府都遮住了，那风证和疟证，风气留其处，疟臂撞著时发时止，那疟证不是，那疟气就不一样了，这个疟疾，疟气随著经络，这是风和疟，忽冷忽热，跟疟不一样，疟是发完一天，但是疟就不一样了，疟是先寒后热，夏伤于大暑，伤于津液，其汗大出腠理开发，伤于大汗出腠理开，晚上凄沧之水寒", "talk": "然后全身都裹起来对不对。你不可以电风扇在那边吹。翻译写得很详细的就不做了。比如我们太阳中风有风热。像在伤寒论里面讲的时候。但是我会告诉你一个方法。因为有些人背枢背得很熟", "chart": null}, {"title": "第六段 · 藏于腠理皮肤之中…", "orig": "藏于腠理皮肤之中，夏伤于暑，秋病疟有没有，寒者阴气也，风者阳气也，我们就说寒疟，那个西医看到疟，要用奎宁啊，这个我们叫温疟，其但热而不寒者，阴气先绝阳气独发，那手足热而欲呕，这只是这个瘅疟，有余者泻之，不足者补之，所以疟者之寒，汤火不能温，其实我们治疟非常简瘅", "talk": "这个外面都是流了很多汗。所以夏天伤于暑天的时候。中医我们针灸也可以治好。就是因为操劳而得到的病。今天我们比如说看到热为有余。或者是在发病之前的时候。我们的定义是这样子下的", "chart": null}, {"title": "第七段 · 那疟之始发呢…", "orig": "那疟之始发呢，当是之时阳虚而阴盛，外无气故先寒栗，那阴虚而阳实，故先热而渴，我们说疟，阴盛则寒阳胜则热，会得到疟，我们这个节气，当天地之间的节气的时候，不按照正常的节气走的时候，不正则生疟，病之发也如火之热，方其盛时必毁，因其衰也事必大昌，疟之未发也，真气得安，邪气乃亡", "talk": "跑到阴就是跑到脏里面去了。这种都很容易造成病的原因。就好像我们在病盛的时候。并在一起就阴和阳会相争。如果没有阳气来制它的话。阳气跑掉了阴气就上来了。我们一个基本上的观念要有。所以我们在调阴阳的时候。绝对不能在病发的时候去治", "chart": null}, {"title": "第八段 · 任何的疟…", "orig": "任何的疟，疟疾疟疾，忽冷忽热的这种，一定从四肢的末梢开始，那我常常叫大家去吃桂枝汤，所有伤寒论的出自桂枝汤，你用桂枝汤去调他，你到哪里去吃桂枝汤，发疟的时候，都是从四肢末梢开始，令邪气不得入，从四肢末梢开始发，在末梢的地方，这治疟的方法，一发一定在阴阳的末梢，那放血放掉，疟原虫跑出来，有疟原虫说，如果疟病，这个往来寒热的现象，不管你是疟原虫", "talk": "我们虽然还没有介绍到伤寒论。当我们在没有发病的时候。所以我们在没有发病的时候。这个病人是早上9点钟开始发病。就会看到那个血脉盛起来。都是阴阳气最盛了的时候", "chart": null}, {"title": "第九段 · 病在阳则热而脉躁…", "orig": "病在阳则热而脉躁，在阴则寒而脉静，病疟的时候，发疟疾的时候症状，这一篇呢对于疟，邪气与卫气客于六腑，有时相失不能相得，故休数日乃作，疟者阴阳更胜也，数日疟或是间日疟，这个疟发的时候很好玩，往来喊著不发打摆子的时候，疟病都在四肢的末梢，这个疟就往深处走了，在四肢的末梢里把它解决掉，经言夏伤于暑，秋必病疟，四时春夏秋冬，其病异形者为反四时也，这是按照四季的节气来走，这都是按照四时的节气走，跟著四时节气不一样，按照节气走，不按照节气，要应节气而已，这个温疟还寒疟，寒气藏于骨髓之中", "talk": "这代表说这个病比较多深。所以我们在没有发的时候。比如说秋天是主宿煞的节气。在秋天的时候反而特别的寒冷", "chart": null}, {"title": "第十段 · 腠理都发泄…", "orig": "腠理都发泄，此病藏于肾，就阴虚而阳盛，这是温疟嘛，所以温疟的话，那瘅疟呢，这个瘅疟者肺素有热，肺的津液，津液上冲比较多多，气盛于身，厥逆上冲，中气实而不外泄，那腠理开，阳气盛而不衰，其气不及于阴，所以但热而不寒", "talk": "比如说你去做劳动的工作。一、【阴阳交争=周期性发热的相变模型】疟'先寒栗鼓颔、后内外皆热喘而渴'——寒热交替周期发作：阳并于阴则阴实阳虚（寒战期）、阴气逆极复出之阳则阴虚阳实（发热期）。这是'阴阳相移'的动力学模型：寒战=产热动员（交感激活外周收缩）、发热=散热代偿（血管扩张出汗），与现代疟疾'寒战期-发热期-大汗期'三期循环完全对应——疟原虫裂殖子释放触发TNF/IL-1等致热原周期性释放，即'阴阳交争'的免疫机制。二、【夏伤于暑藏于皮肤之内=潜伏感染模型】'夏伤于暑热气盛藏于皮肤之内肠胃之外'——夏季热邪潜藏、秋季汗出遇风触发：'潜伏期-诱因-发作'感染病学模型，与现代'疟疾潜伏期（肝内休眠子）''间日疟48h/三日疟72h周期'完全同构；倪师'蚊子说'与'暑气伏藏说'并陈，展示病原说（西洋）vs伏气说（中医）两种病因学并存。三、【卫气日下一节=昼夜节律-病理周期】'卫气昼日行于阳夜行于阴''邪气客于风府循膂而下，卫气日下一节故其作日晏'——以卫气循行时相解释疟发作时间（每日定时、逐日晏/早）：'节律-疾病周期'量化模型，与现代'疟疾发作与宿。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

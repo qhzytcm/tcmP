@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问58·SW58</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问58·SW58</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问58-SW58.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问58-SW58.mp4">素问58-SW58.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 圣人易语 良马易御有没有…</h2></div>
+    <div class="orig">圣人易语 良马易御有没有</div>
+    <div class="talk">447页 气穴论第58。这个黄帝说气穴365应一年对不对。当然岐伯就赶快巴结一下黄帝。像顽石一样敲都敲不醒的。大家真的是智慧的人你会知道。这意思就是说聪明才是高的人。他相信西医的生理解剖药学的。他跟那个药根本没有关系。那你不懂你为什么相信他。他科学 那你什么叫科学。他也不知讲不出来什么叫科学</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 背与心相控而痛…</h2></div>
+    <div class="orig">背与心相控而痛，如果阴阳不交的时候，背痛彻心，岐伯的上纪，下纪者 关元，中脘 关元，专门治心痛彻背</div>
+    <div class="talk">这个岐伯第一个回答很厉害。我那一套针法就从这里来的。然后扎完针背后再扎第十椎</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 扎了关元…</h2></div>
+    <div class="orig">扎了关元，背胸邪系阴阳，阴阳不交，造成了疾病前后痛涩，胸胁痛而不得息，上气短气 偏痛，支心贯膈，后面的督脉，我们关元穴这个地方，是小肠的募穴，关元穴本身，直接落到我们的命门</div>
+    <div class="talk">这个岐伯第一个回答很厉害。我那一套针法就从这里来的。然后扎完针背后再扎第十椎</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 命门是三焦的…</h2></div>
+    <div class="orig">命门是三焦的，命门火的地方，我们气会是膻中，膻中以上，脑是髓海，气海就在脖子这边，中间是胃脘，心痛侧背背痛彻心的现象</div>
+    <div class="talk">所以这个是脖子是气的海。黄帝已经看到这边的时候</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 关元太冲…</h2></div>
+    <div class="orig">关元太冲，任脉三八起，曲骨终极关元瑞，石门璇玑气海，原文孙络溪谷</div>
+    <div class="talk">不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 孙络溪也有这个…</h2></div>
+    <div class="orig">孙络溪也有这个，荣卫稽留，卫散荣溢，疾泻无怠 以通荣卫，见而泻之无问所会</div>
+    <div class="talk">不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 这个溪谷的会合…</h2></div>
+    <div class="orig">这个溪谷的会合，那肉之大会为谷，肉之小会为溪，脉热肉败，必将为脓</div>
+    <div class="talk">不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 那积寒留舍…</h2></div>
+    <div class="orig">那积寒留舍，荣卫不居，溪谷之间的时候，荣卫本来是行在溪谷之间，外为不仁，流在溪谷之间，那溪谷有365个穴会，这个所有的溪谷，这个溪谷</div>
+    <div class="talk">不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 中间都是有溪谷…</h2></div>
+    <div class="orig">中间都是有溪谷，如果停留在溪谷中间的时候，循脉往来，微针所及，与法相同</div>
+    <div class="talk">不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段</h2></div>
+    <div class="orig">中间都是有溪谷，如果停留在溪谷中间的时候，循脉往来，微针所及，与法相同</div>
+    <div class="talk">到了我们老师上去的时候。我们一直把它综合起来解决。在讲的时候就变得很简单了。搜索人纪求真下载使用吧。Hermes独立理解《气穴论》:通读倪师讲解并对照《黄帝内经全文.xls》SW58原文后,本篇以'气穴365应一岁'立纲,构建'穴位-时间-解剖'的三维体系,以系统科学视角重审如下。一、【365穴应一岁=穴位-时间节律的全息映射】气穴三百六十五以应一岁(一年365日)——即'穴位总数-时间周期'的全息对应,现代对应'人体-地球公转周期'的节律同步(昼夜/季节节律),与'365天-365穴'的宇宙论数字同构(类似'365经络穴位-365日'),是'人体-自然'节律对应的针灸版(与SW56皮部论十二经流注呼应)。二、【圣人易语良马易御=认知-沟通分层】聪明者一讲即懂、愚昧者如顽石难醒——即'认知能力-沟通效率'的分层,现代对应'健康素养-医患沟通'的差异;倪师以西药迷信者喻劣马,'不懂为什么相信'即'盲目信仰-缺乏批判性思维'的认知陷阱,是'循证-理性'医学观的通俗表达。三、【背与心相控=体壁-内脏的牵涉痛治疗】阴阳不交、心痛彻背背痛彻心——即'心-背。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问58·SW58 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 圣人易语 良马易御有没有…", "orig": "圣人易语 良马易御有没有", "talk": "447页 气穴论第58。这个黄帝说气穴365应一年对不对。当然岐伯就赶快巴结一下黄帝。像顽石一样敲都敲不醒的。大家真的是智慧的人你会知道。这意思就是说聪明才是高的人。他相信西医的生理解剖药学的。他跟那个药根本没有关系。那你不懂你为什么相信他。他科学 那你什么叫科学。他也不知讲不出来什么叫科学", "chart": null}, {"title": "第二段 · 背与心相控而痛…", "orig": "背与心相控而痛，如果阴阳不交的时候，背痛彻心，岐伯的上纪，下纪者 关元，中脘 关元，专门治心痛彻背", "talk": "这个岐伯第一个回答很厉害。我那一套针法就从这里来的。然后扎完针背后再扎第十椎", "chart": null}, {"title": "第三段 · 扎了关元…", "orig": "扎了关元，背胸邪系阴阳，阴阳不交，造成了疾病前后痛涩，胸胁痛而不得息，上气短气 偏痛，支心贯膈，后面的督脉，我们关元穴这个地方，是小肠的募穴，关元穴本身，直接落到我们的命门", "talk": "这个岐伯第一个回答很厉害。我那一套针法就从这里来的。然后扎完针背后再扎第十椎", "chart": null}, {"title": "第四段 · 命门是三焦的…", "orig": "命门是三焦的，命门火的地方，我们气会是膻中，膻中以上，脑是髓海，气海就在脖子这边，中间是胃脘，心痛侧背背痛彻心的现象", "talk": "所以这个是脖子是气的海。黄帝已经看到这边的时候", "chart": null}, {"title": "第五段 · 关元太冲…", "orig": "关元太冲，任脉三八起，曲骨终极关元瑞，石门璇玑气海，原文孙络溪谷", "talk": "不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算", "chart": null}, {"title": "第六段 · 孙络溪也有这个…", "orig": "孙络溪也有这个，荣卫稽留，卫散荣溢，疾泻无怠 以通荣卫，见而泻之无问所会", "talk": "不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算", "chart": null}, {"title": "第七段 · 这个溪谷的会合…", "orig": "这个溪谷的会合，那肉之大会为谷，肉之小会为溪，脉热肉败，必将为脓", "talk": "不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算", "chart": null}, {"title": "第八段 · 那积寒留舍…", "orig": "那积寒留舍，荣卫不居，溪谷之间的时候，荣卫本来是行在溪谷之间，外为不仁，流在溪谷之间，那溪谷有365个穴会，这个所有的溪谷，这个溪谷", "talk": "不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算", "chart": null}, {"title": "第九段 · 中间都是有溪谷…", "orig": "中间都是有溪谷，如果停留在溪谷中间的时候，循脉往来，微针所及，与法相同", "talk": "不晓得为什么突然讲这个治则。他就先把这三大类气穴先讲了。你可以自己回去慢慢去算", "chart": null}, {"title": "第十段 · 第 10 段", "orig": "中间都是有溪谷，如果停留在溪谷中间的时候，循脉往来，微针所及，与法相同", "talk": "到了我们老师上去的时候。我们一直把它综合起来解决。在讲的时候就变得很简单了。搜索人纪求真下载使用吧。Hermes独立理解《气穴论》:通读倪师讲解并对照《黄帝内经全文.xls》SW58原文后,本篇以'气穴365应一岁'立纲,构建'穴位-时间-解剖'的三维体系,以系统科学视角重审如下。一、【365穴应一岁=穴位-时间节律的全息映射】气穴三百六十五以应一岁(一年365日)——即'穴位总数-时间周期'的全息对应,现代对应'人体-地球公转周期'的节律同步(昼夜/季节节律),与'365天-365穴'的宇宙论数字同构(类似'365经络穴位-365日'),是'人体-自然'节律对应的针灸版(与SW56皮部论十二经流注呼应)。二、【圣人易语良马易御=认知-沟通分层】聪明者一讲即懂、愚昧者如顽石难醒——即'认知能力-沟通效率'的分层,现代对应'健康素养-医患沟通'的差异;倪师以西药迷信者喻劣马,'不懂为什么相信'即'盲目信仰-缺乏批判性思维'的认知陷阱,是'循证-理性'医学观的通俗表达。三、【背与心相控=体壁-内脏的牵涉痛治疗】阴阳不交、心痛彻背背痛彻心——即'心-背。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

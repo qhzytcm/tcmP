@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问25·SW25</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问25·SW25</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问25-SW25.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问25-SW25.mp4">素问25-SW25.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 212页 宝命全形篇…</h2></div>
+    <div class="orig">212页 宝命全形篇，木敷者其叶发</div>
+    <div class="talk">这一篇呢 如何维持生命 保养身体。如何去察病之初 也是介绍很多东西。刚开始这个黄帝 我们就问岐伯。天地之间 我们人都是生在天地之间。但有的时候这个病发起来 你不知道。你完全看不到 它在表面上。这种情形我们 最后到后来人会。等到知道病的时候 太慢了。太慢了的时候 我们不及治而死。所以说 当年他们一定知道。后世有几千年后 有西医出现。这来不及了嘛 岐伯就回答啰。过一下子 你看咸水气会脱在杯子外面。比如说无事 你躺在那边。没事你流个汗 我倒汗 对不对。或者是你坐在那边 没事你一直在流汗。还有这是 刚开始我们知道。这个人气泄出来了 表气。里面有生病了 才会气泄。好像有的时候有病 音变了。哪天你听我的声音不一样 老是生病了。所以我们弹琴的旋快断的时候。那人也就是 岐伯说人也是一样。已经可以从声音给听到了。树木如果树枝生长得太密。你看常常人家去剪枝有没有。所以我们一个人的四枝手脚。很多 应该要看得非常的润泽。实际上我们人身上会提供很多症状。这个时候你如果给他吃药。只是伤到脾肉 伤血而已</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段</h2></div>
+    <div class="orig">212页 宝命全形篇，木敷者其叶发</div>
+    <div class="talk">血气再 伤得更严重而已。做到后来变成黑色的出现了。甚至嘴巴里面的脸都是黑色的。那看到这个病这样子危险。所以你不要去难过的一次。人不失事 使知十二节的理者。本来就存在一个一些东西。你如果按照天地之间的村长。村生 夏长 秋收 冬场走。就是你没有按照他节气走。就是我们去研究拿出来就好</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 天地合气别为九野…</h2></div>
+    <div class="orig">天地合气别为九野，分为四时，我们称之为九宫，九宫宫在这边，木得金而伐，土得木而达，金得火而缺</div>
+    <div class="talk">这个我后面会跟各位介绍到。就是你可不可以帮我说明</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 万物尽然不可胜竭…</h2></div>
+    <div class="orig">万物尽然不可胜竭，我们有治神，四曰制砭石小大，五曰知腑脏血气之诊，那我们要治神</div>
+    <div class="talk">这个我后面会跟各位介绍到。就是你可不可以帮我说明</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段</h2></div>
+    <div class="orig">万物尽然不可胜竭，我们有治神，四曰制砭石小大，五曰知腑脏血气之诊，那我们要治神</div>
+    <div class="talk">他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 必先治神…</h2></div>
+    <div class="orig">必先治神</div>
+    <div class="talk">他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段</h2></div>
+    <div class="orig">必先治神</div>
+    <div class="talk">他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 善真者善导引也…</h2></div>
+    <div class="orig">善真者善导引也，导引术怎么实施呢，远近若一，这是导引</div>
+    <div class="talk">他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 神无营于众物…</h2></div>
+    <div class="orig">神无营于众物</div>
+    <div class="talk">他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 这是导引术…</h2></div>
+    <div class="orig">这是导引术，所以做导引的事</div>
+    <div class="talk">当你心神一定一专一的时候。一、'天覆地载万物悉备莫贵于人，人以天地之气生四时之法成'是【人-环境系统定位】：人作为开放系统以天地之气（能量/物质）为输入、以四时（时间节律）为法度——与现代'生态-生理耦合''生物钟-代谢'研究一致；'病发莫知其情，留淫日深着于骨髓'指出疾病的隐匿进展（潜伏期）——与现代'亚临床状态''疾病前状态'及'早期筛查'观念呼应，倪师喻西医'病成方治'为时已晚，强调'治未病'时机学。二、'盐味咸气令器津泄、弦绝音嘶败、木敷叶发'是【征兆学-系统劣化预警】：以盐潮解（湿气外渗）、弦将断（音色变异）、树过密（枝叶失调）三喻揭示疾病早期可察征兆——即'系统劣化的早期可观测信号'，与现代'早期生物标志物''故障预警信号'（振动/声学监测）思想同构；'病深声哕、坏腑、毒药无治'为晚期不可逆判据（现代'终末期-器官衰竭不可逆'）。三、'人生于地悬命于天，天地合气命之曰人'是【天人合一的生成论】：人由天地之气合而生，'能应四时者天地为之父母'（顺应节律=获得环境支持），'知万物者谓之天子'（认知自然规律=掌控力）——与现代'生态位-适应。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问25·SW25 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 212页 宝命全形篇…", "orig": "212页 宝命全形篇，木敷者其叶发", "talk": "这一篇呢 如何维持生命 保养身体。如何去察病之初 也是介绍很多东西。刚开始这个黄帝 我们就问岐伯。天地之间 我们人都是生在天地之间。但有的时候这个病发起来 你不知道。你完全看不到 它在表面上。这种情形我们 最后到后来人会。等到知道病的时候 太慢了。太慢了的时候 我们不及治而死。所以说 当年他们一定知道。后世有几千年后 有西医出现。这来不及了嘛 岐伯就回答啰。过一下子 你看咸水气会脱在杯子外面。比如说无事 你躺在那边。没事你流个汗 我倒汗 对不对。或者是你坐在那边 没事你一直在流汗。还有这是 刚开始我们知道。这个人气泄出来了 表气。里面有生病了 才会气泄。好像有的时候有病 音变了。哪天你听我的声音不一样 老是生病了。所以我们弹琴的旋快断的时候。那人也就是 岐伯说人也是一样。已经可以从声音给听到了。树木如果树枝生长得太密。你看常常人家去剪枝有没有。所以我们一个人的四枝手脚。很多 应该要看得非常的润泽。实际上我们人身上会提供很多症状。这个时候你如果给他吃药。只是伤到脾肉 伤血而已", "chart": null}, {"title": "第二段 · 第 2 段", "orig": "212页 宝命全形篇，木敷者其叶发", "talk": "血气再 伤得更严重而已。做到后来变成黑色的出现了。甚至嘴巴里面的脸都是黑色的。那看到这个病这样子危险。所以你不要去难过的一次。人不失事 使知十二节的理者。本来就存在一个一些东西。你如果按照天地之间的村长。村生 夏长 秋收 冬场走。就是你没有按照他节气走。就是我们去研究拿出来就好", "chart": null}, {"title": "第三段 · 天地合气别为九野…", "orig": "天地合气别为九野，分为四时，我们称之为九宫，九宫宫在这边，木得金而伐，土得木而达，金得火而缺", "talk": "这个我后面会跟各位介绍到。就是你可不可以帮我说明", "chart": null}, {"title": "第四段 · 万物尽然不可胜竭…", "orig": "万物尽然不可胜竭，我们有治神，四曰制砭石小大，五曰知腑脏血气之诊，那我们要治神", "talk": "这个我后面会跟各位介绍到。就是你可不可以帮我说明", "chart": null}, {"title": "第五段 · 第 5 段", "orig": "万物尽然不可胜竭，我们有治神，四曰制砭石小大，五曰知腑脏血气之诊，那我们要治神", "talk": "他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的", "chart": null}, {"title": "第六段 · 必先治神…", "orig": "必先治神", "talk": "他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的", "chart": null}, {"title": "第七段 · 第 7 段", "orig": "必先治神", "talk": "他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的", "chart": null}, {"title": "第八段 · 善真者善导引也…", "orig": "善真者善导引也，导引术怎么实施呢，远近若一，这是导引", "talk": "他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的", "chart": null}, {"title": "第九段 · 神无营于众物…", "orig": "神无营于众物", "talk": "他是属于黄帝内经的东西。捂了一个那么多篇在里面。大家读黄帝内经以后就知道。以后里面一定会比我更多的", "chart": null}, {"title": "第十段 · 这是导引术…", "orig": "这是导引术，所以做导引的事", "talk": "当你心神一定一专一的时候。一、'天覆地载万物悉备莫贵于人，人以天地之气生四时之法成'是【人-环境系统定位】：人作为开放系统以天地之气（能量/物质）为输入、以四时（时间节律）为法度——与现代'生态-生理耦合''生物钟-代谢'研究一致；'病发莫知其情，留淫日深着于骨髓'指出疾病的隐匿进展（潜伏期）——与现代'亚临床状态''疾病前状态'及'早期筛查'观念呼应，倪师喻西医'病成方治'为时已晚，强调'治未病'时机学。二、'盐味咸气令器津泄、弦绝音嘶败、木敷叶发'是【征兆学-系统劣化预警】：以盐潮解（湿气外渗）、弦将断（音色变异）、树过密（枝叶失调）三喻揭示疾病早期可察征兆——即'系统劣化的早期可观测信号'，与现代'早期生物标志物''故障预警信号'（振动/声学监测）思想同构；'病深声哕、坏腑、毒药无治'为晚期不可逆判据（现代'终末期-器官衰竭不可逆'）。三、'人生于地悬命于天，天地合气命之曰人'是【天人合一的生成论】：人由天地之气合而生，'能应四时者天地为之父母'（顺应节律=获得环境支持），'知万物者谓之天子'（认知自然规律=掌控力）——与现代'生态位-适应。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+openapi: 3.0.3
+info:
+  title: tcmP 中医医院AI网络教育平台 · 核心 API
+  version: 3.0.0
+  description: 六者医圣引擎 / A2A 会话 / ICD-11 桥接 / 病证 Embedding 检索 / 病历交换
+servers:
+  - url: https://www.zyyywaccn.com.cn/api/v3
+  - url: http://192.168.0.105:8300/api/v3
+security:
+  - bearerAuth: []
+tags:
+  - name: agents
+  - name: sessions
+  - name: knowledge
+  - name: medical
+paths:
+  # ============ 六者 Agents ============
+  /agents:
+    get:
+      tags: [agents]
+      summary: 列出六者智能体（医/患/药/械/规/法 + 师带徒并入医者）
+      operationId: listAgents
+      responses:
+        '200':
+          description: 六者清单
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/AgentBrief' }
+  /agents/{agent_id}/soul:
+    get:
+      tags: [agents]
+      summary: 获取某角色 SOUL（人格定义）
+      operationId: getSoul
+      parameters:
+        - { name: agent_id, in: path, required: true, schema: { type: string, enum: [doctor, patient, pharmacist, device, regulator, lawyer] } }
+      responses:
+        '200':
+          description: SOUL.md 内容
+          content:
+            text/markdown:
+              schema: { type: string }
+  /agents/{agent_id}/chat:
+    post:
+      tags: [agents]
+      summary: 与单 Agent 对话（同步）
+      operationId: agentChat
+      parameters:
+        - { name: agent_id, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ChatRequest' }
+      responses:
+        '200':
+          description: Agent 回复（JSON 结构化）
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AgentReply' }
+
+  # ============ A2A 会话（open-agent-studio 对齐） ============
+  /sessions:
+    post:
+      tags: [sessions]
+      summary: 会话创建
+      operationId: createSession
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SessionCreate' }
+      responses:
+        '200':
+          description: 会话句柄
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SessionHandle' }
+  /sessions/{session_id}/messages:
+    post:
+      tags: [sessions]
+      summary: '消息推送（SSE 流式: Accept: text/event-stream）'
+      operationId: sendMessage
+      parameters:
+        - { name: session_id, in: path, required: true, schema: { type: string } }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/MessageSend' }
+      responses:
+        '200':
+          description: 同步终态 message_id
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/MessageReceipt' }
+  /sessions/{session_id}/logs:
+    get:
+      tags: [sessions]
+      summary: 日志增量拉取（游标）
+      operationId: pullLogs
+      parameters:
+        - { name: session_id, in: path, required: true, schema: { type: string } }
+        - { name: after, in: query, schema: { type: string, default: '' } }
+        - { name: types, in: query, schema: { type: string, example: thinking,tool,error,metrics } }
+        - { name: limit, in: query, schema: { type: integer, default: 200 } }
+      responses:
+        '200':
+          description: 日志页
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/LogPage' }
+
+  # ============ 知识检索（内网零 token） ============
+  /diag:
+    post:
+      tags: [knowledge]
+      summary: 病证语义检索（TF-IDF+FTS5+RRF）
+      operationId: semanticSearchDiag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query: { type: string, example: 不寐 心肾不交 }
+                top_k: { type: integer, default: 10 }
+      responses:
+        '200':
+          description: 病证单元命中（L0 锚点 + 证据）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  hits:
+                    type: array
+                    items: { $ref: '#/components/schemas/DiagHit' }
+  /rag:
+    post:
+      tags: [knowledge]
+      summary: 论著 RAG 精修（Embedding Top-K 上下文）
+      operationId: ragEnhance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question: { type: string }
+                k: { type: integer, default: 5 }
+      responses:
+        '200':
+          description: 证据片段（用于 agent 回答增强）
+  /bianzheng:
+    post:
+      tags: [knowledge]
+      summary: 症状到证候候选（Embedding 引擎）
+      operationId: bianzheng
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                symptoms: { type: array, items: { type: string } }
+      responses:
+        '200':
+          description: 证候候选 + 置信度
+
+  # ============ ICD-11 桥接 ============
+  /icd/lookup:
+    post:
+      tags: [medical]
+      summary: ICD-11 中文查询（内网镜像 192.168.0.111:8080）
+      operationId: icdLookup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                term: { type: string, example: 围绝经期 }
+      responses:
+        '200':
+          description: 编码（如 GA30.0）
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: { type: string }
+                  title: { type: string }
+  /medical/record:
+    post:
+      tags: [medical]
+      summary: 病历结构化提交（Schema 见 04 病历 Schema）
+      operationId: submitMedicalRecord
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/MedicalRecord' }
+      responses:
+        '200':
+          description: 病历入库（知识图谱回流信号）
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    AgentBrief:
+      type: object
+      properties:
+        agent_id: { type: string, example: doctor }
+        name: { type: string, example: 医者 }
+        role: { type: string }
+        status: { type: string, enum: [online, offline] }
+    ChatRequest:
+      type: object
+      required: [content]
+      properties:
+        content: { type: string }
+        session_id: { type: string }
+        tools: { type: array, items: { type: string } }
+        temperature: { type: number, default: 0.3 }
+    AgentReply:
+      type: object
+      properties:
+        message_id: { type: string }
+        reply: { type: string }
+        structured: { type: object }
+        evidence: { type: array, items: { type: object } }
+        icd11: { type: string }
+    SessionCreate:
+      type: object
+      required: [agent_id, user_id]
+      properties:
+        agent_id: { type: string, enum: [doctor, patient, pharmacist, device, regulator, lawyer] }
+        user_id: { type: string }
+        channel: { type: string, example: hermes-tcmP }
+        model: { type: string }
+        params:
+          type: object
+          properties:
+            temperature: { type: number }
+            tools: { type: array, items: { type: string } }
+            max_steps: { type: integer }
+        meta:
+          type: object
+          properties:
+            locale: { type: string }
+            course: { type: string }
+    SessionHandle:
+      type: object
+      properties:
+        session_id: { type: string }
+        event_url: { type: string }
+        status: { type: string, enum: [ready, running, idle, closed] }
+    MessageSend:
+      type: object
+      required: [content]
+      properties:
+        content: { type: string }
+        attachments:
+          type: array
+          items:
+            type: object
+            properties:
+              type: { type: string, enum: [file, url, context] }
+              uri: { type: string }
+              mime: { type: string }
+        parent_msg_id: { type: string }
+    MessageReceipt:
+      type: object
+      properties:
+        message_id: { type: string }
+        status: { type: string, enum: [accepted, completed, failed] }
+    LogPage:
+      type: object
+      properties:
+        next_cursor: { type: string }
+        has_more: { type: boolean }
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              seq: { type: integer }
+              ts: { type: string, format: date-time }
+              type: { type: string, enum: [thinking, tool, message, error, metrics] }
+              payload: { type: object }
+    DiagHit:
+      type: object
+      properties:
+        unit: { type: string, example: 不寐·心肾不交证 }
+        score: { type: number }
+        evidence: { type: string }
+    MedicalRecord:
+      type: object
+      description: 病历 Schema 见 04-病历Schema.json（完整字段）

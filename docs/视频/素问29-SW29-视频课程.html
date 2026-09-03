@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问29·SW29</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问29·SW29</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问29-SW29.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问29-SW29.mp4">素问29-SW29.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 太阴阳明论…</h2></div>
+    <div class="orig">太阴阳明论，那六经里面就有个太阴经，太阴和阳明是表里，足太阴脾经和足阳明胃经，是不是表里对不对，是脾胃脉，阴阳的不同嘛，更虚更实，跟你更逆更从，或从内或从外，还在阴阳，那如果犯贼风虚邪者</div>
+    <div class="talk">伤寒论就是把六经分得很详细。那他就是研究这个黄帝内经进来的。我们看什么叫做太阴阳明论。黄帝内经问题问得很奇怪。像我们以前没有电动玩具</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 阳受之则入六腑…</h2></div>
+    <div class="orig">阳受之则入六腑，阴受之则入五脏，这里讲的是太阴的脾胃，如果入六腑，则身热不得卧，上为喘呼，入五脏则，䐜满闭塞下为，飧泄久为肠澼，太阴和阳明时热，阳明症都是淡热不寒，阳明是二阳病，才为阳明，但是阳明症，那阳明症太阴是表里，阳明是表邪进来，阴受之入五脏，阳受之入六腑，入六腑的话</div>
+    <div class="talk">这两个血证的症状就不一样。太阴是因为饮食进来而得到</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 身热不得卧…</h2></div>
+    <div class="orig">身热不得卧，入五脏䐜满闭塞</div>
+    <div class="talk">这两个血证的症状就不一样。太阴是因为饮食进来而得到</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 喉主天气…</h2></div>
+    <div class="orig">喉主天气，咽主地气，阴受湿气，阳明主合，阳明从头上往下走，大都太白，公孙一路上来，胃经从头上，头维下关颊车，承泣四白巨髎，四肢不用</div>
+    <div class="talk">进入食道跟气管不太一样。这个食物跑到气管里面去。所以所有会厌有问题的时候。这个黄帝内经就把它简化了</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 四肢皆禀气于胃…</h2></div>
+    <div class="orig">四肢皆禀气于胃，而不得至经，如果是这个必因于脾，不能替小肠行津液，不能禀水谷之气，黄帝说脾不主时，春夏秋冬脾不主时，脾者土也治中央</div>
+    <div class="talk">进入食道跟气管不太一样。这个食物跑到气管里面去。所以所有会厌有问题的时候。这个黄帝内经就把它简化了</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 各十八日寄治…</h2></div>
+    <div class="orig">各十八日寄治，不得独主于时，立冬前他就讲九天，立冬以后九天，就长夏的时间是最好，这个名为长夏，在长夏的时候，长夏过了以后，长夏后面是什么</div>
+    <div class="talk">按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 长夏一定要去…</h2></div>
+    <div class="orig">长夏一定要去，中间是长夏，都是我们的长夏的地方</div>
+    <div class="talk">按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 顾他的脾胃…</h2></div>
+    <div class="orig">顾他的脾胃，等到长夏季节到了时候</div>
+    <div class="talk">按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 有的人还长夏…</h2></div>
+    <div class="orig">有的人还长夏，以膜相连，而能为之行津液，太阴是三阴，其脉贯胃，属脾络咽，为之行气于三阴，太阴都在会，阳明者表也</div>
+    <div class="talk">按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 五脏六腑之海…</h2></div>
+    <div class="orig">五脏六腑之海，也为行气于三阳，总统阴阳</div>
+    <div class="talk">搜索人际求真下载使用吧。Hermes独立理解《太阴阳明论》:通读倪师讲解并对照《黄帝内经全文.xls》SW29原文后,本篇表面是脾与胃两脏的对话,实则是《内经》'藏象-经络-气化'三位一体方法论的浓缩演示,以现代系统科学视角可拆解为五层模型。一、【阴阳异位=解剖-功能双重分域】'阴阳异位,更虚更实,更逆更从'——太阴脾与阳明胃虽同属消化系统,却构成功能分域:脾(阴)主运化吸收、主升清,胃(阳)主受纳腐熟、主降浊;一升一降构成消化道动力的'蠕动-分泌耦合环'。'阳道实,阴道虚'可解读为:腑为'通道型器官'(实腔、传导、以通为用),脏为'加工型器官'(实质、藏精、以充为用),与现代'空腔脏器-实质脏器'的解剖分类暗合。二、【喉咽分主=上消化道双通道模型】'喉主天气,咽主地气'——气管主通气(呼吸),食管主纳谷(消化),两通道在会厌处交叉分路;倪师以'半膜(会厌)枢扭(枢纽)属少阳'释其开合,与现代吞咽反射的会厌软骨盖喉机制一致,'少阳主开合'即自主神经对气道-食道门户的调控。三、【受邪方向性=体表-内脏的梯度分布】'阳受风气,阴受湿气;伤于风者上先受。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问29·SW29 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 太阴阳明论…", "orig": "太阴阳明论，那六经里面就有个太阴经，太阴和阳明是表里，足太阴脾经和足阳明胃经，是不是表里对不对，是脾胃脉，阴阳的不同嘛，更虚更实，跟你更逆更从，或从内或从外，还在阴阳，那如果犯贼风虚邪者", "talk": "伤寒论就是把六经分得很详细。那他就是研究这个黄帝内经进来的。我们看什么叫做太阴阳明论。黄帝内经问题问得很奇怪。像我们以前没有电动玩具", "chart": null}, {"title": "第二段 · 阳受之则入六腑…", "orig": "阳受之则入六腑，阴受之则入五脏，这里讲的是太阴的脾胃，如果入六腑，则身热不得卧，上为喘呼，入五脏则，䐜满闭塞下为，飧泄久为肠澼，太阴和阳明时热，阳明症都是淡热不寒，阳明是二阳病，才为阳明，但是阳明症，那阳明症太阴是表里，阳明是表邪进来，阴受之入五脏，阳受之入六腑，入六腑的话", "talk": "这两个血证的症状就不一样。太阴是因为饮食进来而得到", "chart": null}, {"title": "第三段 · 身热不得卧…", "orig": "身热不得卧，入五脏䐜满闭塞", "talk": "这两个血证的症状就不一样。太阴是因为饮食进来而得到", "chart": null}, {"title": "第四段 · 喉主天气…", "orig": "喉主天气，咽主地气，阴受湿气，阳明主合，阳明从头上往下走，大都太白，公孙一路上来，胃经从头上，头维下关颊车，承泣四白巨髎，四肢不用", "talk": "进入食道跟气管不太一样。这个食物跑到气管里面去。所以所有会厌有问题的时候。这个黄帝内经就把它简化了", "chart": null}, {"title": "第五段 · 四肢皆禀气于胃…", "orig": "四肢皆禀气于胃，而不得至经，如果是这个必因于脾，不能替小肠行津液，不能禀水谷之气，黄帝说脾不主时，春夏秋冬脾不主时，脾者土也治中央", "talk": "进入食道跟气管不太一样。这个食物跑到气管里面去。所以所有会厌有问题的时候。这个黄帝内经就把它简化了", "chart": null}, {"title": "第六段 · 各十八日寄治…", "orig": "各十八日寄治，不得独主于时，立冬前他就讲九天，立冬以后九天，就长夏的时间是最好，这个名为长夏，在长夏的时候，长夏过了以后，长夏后面是什么", "talk": "按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏", "chart": null}, {"title": "第七段 · 长夏一定要去…", "orig": "长夏一定要去，中间是长夏，都是我们的长夏的地方", "talk": "按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏", "chart": null}, {"title": "第八段 · 顾他的脾胃…", "orig": "顾他的脾胃，等到长夏季节到了时候", "talk": "按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏", "chart": null}, {"title": "第九段 · 有的人还长夏…", "orig": "有的人还长夏，以膜相连，而能为之行津液，太阴是三阴，其脉贯胃，属脾络咽，为之行气于三阴，太阴都在会，阳明者表也", "talk": "按照我们天地定位的时候。黄帝内经已经说前九后九。所以我们为什么要知道长夏", "chart": null}, {"title": "第十段 · 五脏六腑之海…", "orig": "五脏六腑之海，也为行气于三阳，总统阴阳", "talk": "搜索人际求真下载使用吧。Hermes独立理解《太阴阳明论》:通读倪师讲解并对照《黄帝内经全文.xls》SW29原文后,本篇表面是脾与胃两脏的对话,实则是《内经》'藏象-经络-气化'三位一体方法论的浓缩演示,以现代系统科学视角可拆解为五层模型。一、【阴阳异位=解剖-功能双重分域】'阴阳异位,更虚更实,更逆更从'——太阴脾与阳明胃虽同属消化系统,却构成功能分域:脾(阴)主运化吸收、主升清,胃(阳)主受纳腐熟、主降浊;一升一降构成消化道动力的'蠕动-分泌耦合环'。'阳道实,阴道虚'可解读为:腑为'通道型器官'(实腔、传导、以通为用),脏为'加工型器官'(实质、藏精、以充为用),与现代'空腔脏器-实质脏器'的解剖分类暗合。二、【喉咽分主=上消化道双通道模型】'喉主天气,咽主地气'——气管主通气(呼吸),食管主纳谷(消化),两通道在会厌处交叉分路;倪师以'半膜(会厌)枢扭(枢纽)属少阳'释其开合,与现代吞咽反射的会厌软骨盖喉机制一致,'少阳主开合'即自主神经对气道-食道门户的调控。三、【受邪方向性=体表-内脏的梯度分布】'阳受风气,阴受湿气;伤于风者上先受。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

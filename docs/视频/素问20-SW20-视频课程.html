@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问20·SW20</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问20·SW20</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问20-SW20.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问20-SW20.mp4">素问20-SW20.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 黄帝问第二十篇 三部九候…</h2></div>
+    <div class="orig">黄帝问第二十篇 三部九候论，那么不可胜数 愿闻要道呢，这个不敢妄泄 你看他歃血而受，那这个他就问这个天地之至数，岐伯说要这个天地之至数，天地之至数合于人形血气，通决死生 为之奈何，因而三之三三九，那一者天二者地 三者人，因而三之三三者九 以应九野，所以人一有三部 部有三候，以决死生，我们人身上有三部九候的脉，这个三部 为什么有三部九候的脉，上部人耳前之动脉</div>
+    <div class="talk">七十二页 第二十章 二十篇。那黄帝说九针 他听那个岐伯叫他九针啊。就告诉你 我是绝对专心的。不敢诚心跟你学 绝对不妄想。这样就不随便给那个匪人学习。一定要吻合天地的道理 对不对。四季的变化 还有阴阳五行的变化。这个我们岐伯看174页。这个四季 我们有这个方位。中间这个天地之间有九个方向。所以我们人有九个脉的地方。所以我们人呢也有分九脉。他说上部是天在两额的动脉。就是在胆金的颧髎和弦颅的位置。这个内侧这边 有个动脉在这边。这是少阳脉气的发的地方。在人迎脉 人迎脉在两边。这是胃气 位脉的所行之处。你摸耳朵前面这边有个脉在动。一个是少阳 这个胆金的。身体的中部也分为天地人三部</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 那地以候胸中之气…</h2></div>
+    <div class="orig">那地以候胸中之气，人以候心，那上部以何候之呢</div>
+    <div class="talk">或者下针百会啊 什么样的。因为就是因为头上有天地人三部</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 那我们要知道这三部九候分…</h2></div>
+    <div class="orig">那我们要知道这三部九候分的目的肝嘛，对 你要知道这三部九候分，来以调其气之虚实，实则泻之 虚则补之，我们有三部九候，决死生奈何，第一个 形盛脉细</div>
+    <div class="talk">头上的脉气通通都没有了。比如说我们知道这是三焦经。人迎胃脉很大 你知道胃很实吗。不 养腑我讲错了 对不对。然后胃经胃经下来到脚上。你不需要去调里面的内脏。气色 脸上的气色一定是凶</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 所以三部九候…</h2></div>
+    <div class="orig">所以三部九候，每部有三候，三部九候的脉必须要均匀，所以说独大者病 独疾则病，以左手足上 上去踝五寸按之，如果其中 其应疾中手浑浑然者病，中手徐徐然者病</div>
+    <div class="talk">所以行大脉要大 行小脉要小。讲到胸 你就记得是阳的位置。如果是不相同 不协调的。人分天不 地 人 餐不。不但不调和 有的时候脉没有了。冲阳脉没了 太溪脉没了。如果是上下左右相似不可数者。有的时候这边快 那边慢。有的时候你摸人迎脉比较快。摸到那个 冲阳脉比较慢。摸到这个三焦脉比较快 或怎么样。老师没有规则 对周思正。有的地方快 有的地方慢。这里有一个很重要的就是。178页最主要讲的是什么。相同才是 相同才是正脉。如果它的脉一个过小过大。所以你如果摸 比如说摸人迎脉。耳旁的三焦脉 摸人迎脉。人迎脉比较慢 或是这个比较快。快慢 不均匀的都是生病。就一个脉疾 我没有九个脉。还有一个脉 只有它独大。一个脉跳得很迟 都是病。其应过五寸以上 蠕蠕然者不病。即硬上不能置五寸 弹之不硬则死。那老师你不是要抓他的脉</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段</h2></div>
+    <div class="orig">所以三部九候，每部有三候，三部九候的脉必须要均匀，所以说独大者病 独疾则病，以左手足上 上去踝五寸按之，如果其中 其应疾中手浑浑然者病，中手徐徐然者病</div>
+    <div class="talk">听了惊 病人已经吓死了。当然你手要把整个脾肤抓住。一弹 碰 哇 力量很大。你弹 大家那边没有反应。到这里 到这里还没有反应。这是诊断健康和病危的方式。这个手在弹那个外踝的时候。一般人弹到就会马上就反应。就是出自三部九候的诊断方式。如果说你用右手去弹他的外踝</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 三部九候…</h2></div>
+    <div class="orig">三部九候</div>
+    <div class="talk">还有大肠经的合谷穴脉动。是不是可以知道胃气如何。常人应该头尾是速度是一样的。我们知道他的病脉在哪个地方。其足不可屈伸 死必戴眼。其他都不讲为什么讲足太阳。所以黄帝的一句就是这样子</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 全部说九候 三部九候…</h2></div>
+    <div class="orig">全部说九候 三部九候，九候的脉全部显现出来，当九候的脉，那主冬 东天，盛躁喘数者为阳 主夏，热中及热病者以日中死</div>
+    <div class="talk">我们前面是不是介绍过了。又把它拿到后面来翻的时候。中医的书就是这样这样没有办法。不要动它 保持原状 不要动它。刚刚讲的那个足太阳脉气。脚屈曲而不伸死必眼上掉。然后伸脚 本来是平常讲的。这就是太阳经的脉气要觉了。那死的时候眼睛都往上翻了。然后这种化学毒我们不知道了。以前我们中医没有那么精奥。那个中药的毒我们可以知道了。那岐伯约这个解释这个冬阴夏阳。然后人迎脉 额头的脉 手部的脉。讲九候的脉就是全身上下的脉。阴脉就是纯寒的脉 纯寒的脉。一般来说夜半死 阴证的夜半死。夏天是白天 日中的时候死亡。热中也中焦 失热 还有一些温热的病。如果是因为风而得到病的 日夕而死。我们讲风就是肝病 肝脏。就是一天的这四个时辰中间。就是辰戌丑未的4个时辰</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 三部九候脉皆失…</h2></div>
+    <div class="orig">三部九候脉皆失，九候虽调犹死，如果这个七诊虽见九候，九候脉在还是会死，但是然后这时候九候脉皆失</div>
+    <div class="talk">你如果说有外面的这个七诊。我在书上面是把它解成七种的脉。很多都是五实二虚啊什么。一个人形伤神伤就没有救了。她突然开始每天的恶心啊。但是她会出现一些症状出来</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 三部九候的冬阴夏阳…</h2></div>
+    <div class="orig">三部九候的冬阴夏阳，经病者治其经，这个刺法叫做缪刺，那缪刺的法的用途呢</div>
+    <div class="talk">脾肤上我们会有阳在身上。外伤或者是一些叠拉笋伤的。虚证我们家解溪就结束了。他说既不是胃经又不是胆经</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 切而从之…</h2></div>
+    <div class="orig">切而从之</div>
+    <div class="talk">我们就按照正经的方法来治。这是古代我们研究的这样子。这种都是在经络上面的病。这个方法都是看我们决死生之要。比如说大陆上的旅行会在哪里。有时候找到黄帝内经的全本。可能在某个人的坟墓里面。一、'天地之至数，始于一终于九'是【系统采样维度的数学奠基】：一者天、二者地、三者人（三维坐标），因而三之三三者九（3×3=9）以应九野——以天地人三才为轴、每轴三候，构成九点采样网格；这与现代'多部位多点生理监测'（如多导联心电图、多通道脑电）的采样思想同构，'九野'即空间离散化，'部有三候'即每区域的三个测量点——是中医最早的'系统级信号采样协议'。二、三部九候的解剖定位（上部颔厌/大迎/耳门听宫、中部经渠/合谷/神门、下部太冲/太溪/冲阳）是【人体九区动脉搏动监测网】：覆盖头面、上肢、下肢的九个动脉窗口（颞浅/面/耳前/桡/手背/腕尺/足背/胫后/足内踝），与现代'多部位脉搏波测量'（PWV/ABI踝臂指数）的血管网络监测理念一致；倪师指认具体穴位的动静脉位置，即把抽象'候'落实到可触摸的解剖标志，是'功能-解剖'耦合的早期范式。三、'上部候头角/口齿/耳目、。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问20·SW20 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 黄帝问第二十篇 三部九候…", "orig": "黄帝问第二十篇 三部九候论，那么不可胜数 愿闻要道呢，这个不敢妄泄 你看他歃血而受，那这个他就问这个天地之至数，岐伯说要这个天地之至数，天地之至数合于人形血气，通决死生 为之奈何，因而三之三三九，那一者天二者地 三者人，因而三之三三者九 以应九野，所以人一有三部 部有三候，以决死生，我们人身上有三部九候的脉，这个三部 为什么有三部九候的脉，上部人耳前之动脉", "talk": "七十二页 第二十章 二十篇。那黄帝说九针 他听那个岐伯叫他九针啊。就告诉你 我是绝对专心的。不敢诚心跟你学 绝对不妄想。这样就不随便给那个匪人学习。一定要吻合天地的道理 对不对。四季的变化 还有阴阳五行的变化。这个我们岐伯看174页。这个四季 我们有这个方位。中间这个天地之间有九个方向。所以我们人有九个脉的地方。所以我们人呢也有分九脉。他说上部是天在两额的动脉。就是在胆金的颧髎和弦颅的位置。这个内侧这边 有个动脉在这边。这是少阳脉气的发的地方。在人迎脉 人迎脉在两边。这是胃气 位脉的所行之处。你摸耳朵前面这边有个脉在动。一个是少阳 这个胆金的。身体的中部也分为天地人三部", "chart": null}, {"title": "第二段 · 那地以候胸中之气…", "orig": "那地以候胸中之气，人以候心，那上部以何候之呢", "talk": "或者下针百会啊 什么样的。因为就是因为头上有天地人三部", "chart": null}, {"title": "第三段 · 那我们要知道这三部九候分…", "orig": "那我们要知道这三部九候分的目的肝嘛，对 你要知道这三部九候分，来以调其气之虚实，实则泻之 虚则补之，我们有三部九候，决死生奈何，第一个 形盛脉细", "talk": "头上的脉气通通都没有了。比如说我们知道这是三焦经。人迎胃脉很大 你知道胃很实吗。不 养腑我讲错了 对不对。然后胃经胃经下来到脚上。你不需要去调里面的内脏。气色 脸上的气色一定是凶", "chart": null}, {"title": "第四段 · 所以三部九候…", "orig": "所以三部九候，每部有三候，三部九候的脉必须要均匀，所以说独大者病 独疾则病，以左手足上 上去踝五寸按之，如果其中 其应疾中手浑浑然者病，中手徐徐然者病", "talk": "所以行大脉要大 行小脉要小。讲到胸 你就记得是阳的位置。如果是不相同 不协调的。人分天不 地 人 餐不。不但不调和 有的时候脉没有了。冲阳脉没了 太溪脉没了。如果是上下左右相似不可数者。有的时候这边快 那边慢。有的时候你摸人迎脉比较快。摸到那个 冲阳脉比较慢。摸到这个三焦脉比较快 或怎么样。老师没有规则 对周思正。有的地方快 有的地方慢。这里有一个很重要的就是。178页最主要讲的是什么。相同才是 相同才是正脉。如果它的脉一个过小过大。所以你如果摸 比如说摸人迎脉。耳旁的三焦脉 摸人迎脉。人迎脉比较慢 或是这个比较快。快慢 不均匀的都是生病。就一个脉疾 我没有九个脉。还有一个脉 只有它独大。一个脉跳得很迟 都是病。其应过五寸以上 蠕蠕然者不病。即硬上不能置五寸 弹之不硬则死。那老师你不是要抓他的脉", "chart": null}, {"title": "第五段 · 第 5 段", "orig": "所以三部九候，每部有三候，三部九候的脉必须要均匀，所以说独大者病 独疾则病，以左手足上 上去踝五寸按之，如果其中 其应疾中手浑浑然者病，中手徐徐然者病", "talk": "听了惊 病人已经吓死了。当然你手要把整个脾肤抓住。一弹 碰 哇 力量很大。你弹 大家那边没有反应。到这里 到这里还没有反应。这是诊断健康和病危的方式。这个手在弹那个外踝的时候。一般人弹到就会马上就反应。就是出自三部九候的诊断方式。如果说你用右手去弹他的外踝", "chart": null}, {"title": "第六段 · 三部九候…", "orig": "三部九候", "talk": "还有大肠经的合谷穴脉动。是不是可以知道胃气如何。常人应该头尾是速度是一样的。我们知道他的病脉在哪个地方。其足不可屈伸 死必戴眼。其他都不讲为什么讲足太阳。所以黄帝的一句就是这样子", "chart": null}, {"title": "第七段 · 全部说九候 三部九候…", "orig": "全部说九候 三部九候，九候的脉全部显现出来，当九候的脉，那主冬 东天，盛躁喘数者为阳 主夏，热中及热病者以日中死", "talk": "我们前面是不是介绍过了。又把它拿到后面来翻的时候。中医的书就是这样这样没有办法。不要动它 保持原状 不要动它。刚刚讲的那个足太阳脉气。脚屈曲而不伸死必眼上掉。然后伸脚 本来是平常讲的。这就是太阳经的脉气要觉了。那死的时候眼睛都往上翻了。然后这种化学毒我们不知道了。以前我们中医没有那么精奥。那个中药的毒我们可以知道了。那岐伯约这个解释这个冬阴夏阳。然后人迎脉 额头的脉 手部的脉。讲九候的脉就是全身上下的脉。阴脉就是纯寒的脉 纯寒的脉。一般来说夜半死 阴证的夜半死。夏天是白天 日中的时候死亡。热中也中焦 失热 还有一些温热的病。如果是因为风而得到病的 日夕而死。我们讲风就是肝病 肝脏。就是一天的这四个时辰中间。就是辰戌丑未的4个时辰", "chart": null}, {"title": "第八段 · 三部九候脉皆失…", "orig": "三部九候脉皆失，九候虽调犹死，如果这个七诊虽见九候，九候脉在还是会死，但是然后这时候九候脉皆失", "talk": "你如果说有外面的这个七诊。我在书上面是把它解成七种的脉。很多都是五实二虚啊什么。一个人形伤神伤就没有救了。她突然开始每天的恶心啊。但是她会出现一些症状出来", "chart": null}, {"title": "第九段 · 三部九候的冬阴夏阳…", "orig": "三部九候的冬阴夏阳，经病者治其经，这个刺法叫做缪刺，那缪刺的法的用途呢", "talk": "脾肤上我们会有阳在身上。外伤或者是一些叠拉笋伤的。虚证我们家解溪就结束了。他说既不是胃经又不是胆经", "chart": null}, {"title": "第十段 · 切而从之…", "orig": "切而从之", "talk": "我们就按照正经的方法来治。这是古代我们研究的这样子。这种都是在经络上面的病。这个方法都是看我们决死生之要。比如说大陆上的旅行会在哪里。有时候找到黄帝内经的全本。可能在某个人的坟墓里面。一、'天地之至数，始于一终于九'是【系统采样维度的数学奠基】：一者天、二者地、三者人（三维坐标），因而三之三三者九（3×3=9）以应九野——以天地人三才为轴、每轴三候，构成九点采样网格；这与现代'多部位多点生理监测'（如多导联心电图、多通道脑电）的采样思想同构，'九野'即空间离散化，'部有三候'即每区域的三个测量点——是中医最早的'系统级信号采样协议'。二、三部九候的解剖定位（上部颔厌/大迎/耳门听宫、中部经渠/合谷/神门、下部太冲/太溪/冲阳）是【人体九区动脉搏动监测网】：覆盖头面、上肢、下肢的九个动脉窗口（颞浅/面/耳前/桡/手背/腕尺/足背/胫后/足内踝），与现代'多部位脉搏波测量'（PWV/ABI踝臂指数）的血管网络监测理念一致；倪师指认具体穴位的动静脉位置，即把抽象'候'落实到可触摸的解剖标志，是'功能-解剖'耦合的早期范式。三、'上部候头角/口齿/耳目、。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

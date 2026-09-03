@@ -1,0 +1,30 @@
+digraph knowledge_tree {
+	bgcolor=white rankdir=TB
+	node [fillcolor=white fontname=SimHei fontsize=11 shape=circle style=filled]
+	edge [color="#555555" fontname=SimHei fontsize=9]
+	root [label="根: 状态-动作-奖励" shape=box]
+	g1 [label="干1: 提高认知" shape=box]
+	g2 [label="干2: 确认信仰" shape=box]
+	g3 [label="干3: 追求幸福" shape=box]
+	b11 [label="枝1-1 认知起点"]
+	b12 [label="枝1-2 决策模型"]
+	b21 [label="枝2-1 价值量化"]
+	b31 [label="枝3-1 幸福表达"]
+	l111 [label="叶: 状态S=四诊"]
+	l112 [label="叶: 动作A=方剂"]
+	l121 [label="叶: 折扣回报"]
+	l211 [label="叶: 贝尔曼账本"]
+	l311 [label="叶: 四个最适度"]
+	root -> g1
+	root -> g2
+	root -> g3
+	g1 -> b11
+	g1 -> b12
+	g2 -> b21
+	g3 -> b31
+	b11 -> l111
+	b11 -> l112
+	b12 -> l121
+	b21 -> l211
+	b31 -> l311
+}

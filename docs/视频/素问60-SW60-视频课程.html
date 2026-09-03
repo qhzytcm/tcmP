@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问60·SW60</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问60·SW60</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问60-SW60.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问60-SW60.mp4">素问60-SW60.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 我现在说我风者百病之始…</h2></div>
+    <div class="orig">我现在说我风者百病之始，那风是百病之始，现在风从外入，病人会有振寒，病人振寒汗出头痛，治疗在风府，大家都知道风府下面是脑，脑后方的整个风府，再来是哑门，从风府来调它的阴阳，不足则补 有余则泻，那大风颈项痛，我们也刺风府，风府在上椎，如果大风汗出</div>
+    <div class="talk">那这个接下来我们要谈这个骨空论。所以黄帝内经因为流传太久了。常常有时候上段不接下段。有时候文题内容跟标题有点不太符合。所以说我也要稍微忍耐一下。他明明讲的是骨空的对不对。我们从外面进入这个球的中心。有很多种方法都可以达到这个目的。目的达到的时候并就解掉了。那我们有很多重要的处方。我们去封一下一季率好了。有时候两个小时三个小时就好了。经脉上面没有好的时候就进入腑。腑上面没有好的时候就进入脏。那从皮表进来到一路上来以后。我们如何让人家用针灸来做。这个风从外进来第一个症状。因为进到我们的肌肉里面去。津液在身上我们称之为阴。那现在它不能流畅受到阻碍。所以说就会有全身很重的感觉</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 这个时候我们灸譩嘻也可以…</h2></div>
+    <div class="orig">这个时候我们灸譩嘻也可以，你痛胀刺譩嘻也可以，八髎在腰尻分间，我们还刺寒府，寒府 阳关，那取膝上外者使之拜，取足心者使之跪，像我们找涌泉让他跪到，还有那个伏兔</div>
+    <div class="talk">你病人按譩嘻譩嘻后面有反应。你灸灸它用灸的就可以了。我们就在攒竹攒竹就放血。这个我们突然就跑到一个失枕的落枕。我们则是愚被其轴正纠其中。当然我们下针有落枕点的一些奇穴。比如说我这个手抬起来很痛。翻到这边已经不能再翻下去了。你在那个点上面做个圈圈。好 这是一种治疗 治症。我们可以刺八髎还有痛的上面。诸位都读过膀胱经的八髎穴。如果这是一个腰痛的治症。那腰痛我们有治疗方法很多啦。黄帝内经已经告诉我们这个</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 任脉者起于中极之下…</h2></div>
+    <div class="orig">任脉者起于中极之下，以上毛际 循腹里，冲脉他起于气街，并少阴之经侠脐上行，至胸中而散，我们有两个气街，一个是胃气的气街，胃气的气街在大腿的上侧，我们的梁丘，我们的这个伏兔，男子内结七疝，只要看到中极讲的疝，那女子带下瘕聚，中极称之为瘕，那冲脉为病逆气里急，理解督脉为病脊强反折，公孙穴是不是主冲脉，内关有没有，我们下公孙，公孙和内关，那督脉为病不得前后</div>
+    <div class="talk">有一些我都怀疑他编错了。那他就讲到一段就没有了。为什么我们会说他是疝痛。就是有累积东西在里面面。这个就是很多人他不了解。女人的小便的地方在上面。我们在讲督脉的时候介绍过。从茎下也是从阴茎的地方开始</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 女子不孕…</h2></div>
+    <div class="orig">女子不孕，癃痔遗溺 嗌干，嗌干和口很干，治督脉治在骨上，甚者在齐下营，灵台在督脉第六椎下，这个督俞呢，那我们可以在灵台上直接下针，督俞左右各开一寸半下针，关元的地方，这个是我们要扎天突，病上冲喉者</div>
+    <div class="talk">因为灵台外开一寸半是什么。中间有一条线一样的东西。数到五后面忘掉了什么数目。上气喉咙里面发出很大的声音</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 侠髋为机…</h2></div>
+    <div class="orig">侠髋为机，骸下为辅 辅上为腘，腘上为关，头横骨为枕，阳关的穴，一般它这里讲的是居髎，胆经的居髎穴，那阳关也可以，阳关是寒府，痛及拇指，我们治它的委中，那如果坐而膝痛上，阳关都可以，那膝痛不可屈伸，治其背内，这讲的是大杼，连胻若折，太阳经是通谷穴，这种不能久立啊</div>
+    <div class="talk">因为灵台外开一寸半是什么。中间有一条线一样的东西。数到五后面忘掉了什么数目。上气喉咙里面发出很大的声音</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 髓空在脑后三分…</h2></div>
+    <div class="orig">髓空在脑后三分，另外一个在复骨下的，复骨下这是哑门穴，风府风池哑门差很近，在风府之上，现在风府穴和，那还有一个脊骨下空的地方呢，我们的长强穴，数髓空在面，这个巨髎旁边有两个凹洞</div>
+    <div class="talk">临经按照它的经来做补泻。这里突然讲到水俞穴57。我不跟你讲水俞血在哪里。但是我们真正的意思就是。脑后三分就是脑户的地方。龈基之下就是大迎穴的地方。那脊骨这是脊骨的上空的部分。那骨空如果是在两肩的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 这个是我们这个在臂臑…</h2></div>
+    <div class="orig">这个是我们这个在臂臑，讲的是我们的中渎穴，这不是风市是中渎，在中渎穴之下的地方，那胻骨空呢，胻骨空的地方，那有股际骨空，相去四寸</div>
+    <div class="talk">我们为什么要去了解骨空。老师你怎么知道它是骨头。就是在两个之间的络上面。如果两肩胛骨的骨空的地方。这个讲的就是小肠经的位置。在臂阳去腕关节四寸的地方。因为当时我的学生打的时候。中渎实际上的位置是外膝。就是在我们的横骨的位置。我们都可以在骨空上面治疗</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 我们先就灸大椎…</h2></div>
+    <div class="orig">我们先就灸大椎，以年为壮数，再灸绝骨</div>
+    <div class="talk">那过去我们灸寒热的方法。大家要记得读内经是这样子。你可能面临到是其他的病。所以我们在临床上的时候。我们从黄帝内经已经读到现在。你如果真的读了黄帝内经。因为温病是从冬、伤、于、寒。那个病是去年冬天得到伤寒。所以你读了那么多黄帝内经。他不是以黄帝内经做真正中医的。那放著就放在那边告诉你</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 像章门穴…</h2></div>
+    <div class="orig">像章门穴，脏会章门，外踝上绝骨，我们委中下来合阳，合阳再来承筋，那个合阳穴，昆仑也可以灸</div>
+    <div class="talk">那缺盆骨上切之坚痛如筋。他就放在那个大筋上面灸。我们中医的方法真的非常多。你让那个人跑到找个单杠。你的身体的重量来压住他</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 脐下关元三寸灸…</h2></div>
+    <div class="orig">脐下关元三寸灸，灸他三壮，你灸三壮以外，这寒热的灸法大椎</div>
+    <div class="talk">如果是灸了半天还是没有好。过于亢盛的经脉是哪一条。他能帮你快速梳理知识框架。让零散的知识点一目了然。搜索人纪求真下载使用吧。Hermes独立理解《骨空论》:通读倪师讲解并对照《黄帝内经全文.xls》SW60原文后,本篇以'风-奇经-骨空'三线交织立纲,是针灸'骨病-奇经'的临床总汇,以系统科学视角重审如下。一、【风者百病之始=外因-传变模型】风从外入,腠理→经脉→腑→脏的五级传变(与SW56皮部论'皮络经腑脏'完全一致)——即'病原-入侵-扩散'的感染动力学,现代对应'黏膜/皮肤屏障-淋巴-血液-脏器'的感染路径;'有汗=风无汗=寒'即'排汗-病因'鉴别(风性开泄/寒性收引),是'症状-病原'分类的临床速判。二、【风府治风=中枢-督脉的祛风要穴】风府(督脉入脑之穴)调阴阳、不足补有余泻——即'风邪-中枢'的治疗接口,现代对应'后颈-脑干-自主神经'的调节区(风府深部近延髓,针刺调节自主神经);'风府下是脑,哑门次之'即'枕骨大孔-延髓'的解剖警示(深刺危险区),是'穴位-解剖安全'的临床注解。三、【譩嘻应手=触诊-穴名互证】按譩嘻令病人呼'譩嘻'。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问60·SW60 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 我现在说我风者百病之始…", "orig": "我现在说我风者百病之始，那风是百病之始，现在风从外入，病人会有振寒，病人振寒汗出头痛，治疗在风府，大家都知道风府下面是脑，脑后方的整个风府，再来是哑门，从风府来调它的阴阳，不足则补 有余则泻，那大风颈项痛，我们也刺风府，风府在上椎，如果大风汗出", "talk": "那这个接下来我们要谈这个骨空论。所以黄帝内经因为流传太久了。常常有时候上段不接下段。有时候文题内容跟标题有点不太符合。所以说我也要稍微忍耐一下。他明明讲的是骨空的对不对。我们从外面进入这个球的中心。有很多种方法都可以达到这个目的。目的达到的时候并就解掉了。那我们有很多重要的处方。我们去封一下一季率好了。有时候两个小时三个小时就好了。经脉上面没有好的时候就进入腑。腑上面没有好的时候就进入脏。那从皮表进来到一路上来以后。我们如何让人家用针灸来做。这个风从外进来第一个症状。因为进到我们的肌肉里面去。津液在身上我们称之为阴。那现在它不能流畅受到阻碍。所以说就会有全身很重的感觉", "chart": null}, {"title": "第二段 · 这个时候我们灸譩嘻也可以…", "orig": "这个时候我们灸譩嘻也可以，你痛胀刺譩嘻也可以，八髎在腰尻分间，我们还刺寒府，寒府 阳关，那取膝上外者使之拜，取足心者使之跪，像我们找涌泉让他跪到，还有那个伏兔", "talk": "你病人按譩嘻譩嘻后面有反应。你灸灸它用灸的就可以了。我们就在攒竹攒竹就放血。这个我们突然就跑到一个失枕的落枕。我们则是愚被其轴正纠其中。当然我们下针有落枕点的一些奇穴。比如说我这个手抬起来很痛。翻到这边已经不能再翻下去了。你在那个点上面做个圈圈。好 这是一种治疗 治症。我们可以刺八髎还有痛的上面。诸位都读过膀胱经的八髎穴。如果这是一个腰痛的治症。那腰痛我们有治疗方法很多啦。黄帝内经已经告诉我们这个", "chart": null}, {"title": "第三段 · 任脉者起于中极之下…", "orig": "任脉者起于中极之下，以上毛际 循腹里，冲脉他起于气街，并少阴之经侠脐上行，至胸中而散，我们有两个气街，一个是胃气的气街，胃气的气街在大腿的上侧，我们的梁丘，我们的这个伏兔，男子内结七疝，只要看到中极讲的疝，那女子带下瘕聚，中极称之为瘕，那冲脉为病逆气里急，理解督脉为病脊强反折，公孙穴是不是主冲脉，内关有没有，我们下公孙，公孙和内关，那督脉为病不得前后", "talk": "有一些我都怀疑他编错了。那他就讲到一段就没有了。为什么我们会说他是疝痛。就是有累积东西在里面面。这个就是很多人他不了解。女人的小便的地方在上面。我们在讲督脉的时候介绍过。从茎下也是从阴茎的地方开始", "chart": null}, {"title": "第四段 · 女子不孕…", "orig": "女子不孕，癃痔遗溺 嗌干，嗌干和口很干，治督脉治在骨上，甚者在齐下营，灵台在督脉第六椎下，这个督俞呢，那我们可以在灵台上直接下针，督俞左右各开一寸半下针，关元的地方，这个是我们要扎天突，病上冲喉者", "talk": "因为灵台外开一寸半是什么。中间有一条线一样的东西。数到五后面忘掉了什么数目。上气喉咙里面发出很大的声音", "chart": null}, {"title": "第五段 · 侠髋为机…", "orig": "侠髋为机，骸下为辅 辅上为腘，腘上为关，头横骨为枕，阳关的穴，一般它这里讲的是居髎，胆经的居髎穴，那阳关也可以，阳关是寒府，痛及拇指，我们治它的委中，那如果坐而膝痛上，阳关都可以，那膝痛不可屈伸，治其背内，这讲的是大杼，连胻若折，太阳经是通谷穴，这种不能久立啊", "talk": "因为灵台外开一寸半是什么。中间有一条线一样的东西。数到五后面忘掉了什么数目。上气喉咙里面发出很大的声音", "chart": null}, {"title": "第六段 · 髓空在脑后三分…", "orig": "髓空在脑后三分，另外一个在复骨下的，复骨下这是哑门穴，风府风池哑门差很近，在风府之上，现在风府穴和，那还有一个脊骨下空的地方呢，我们的长强穴，数髓空在面，这个巨髎旁边有两个凹洞", "talk": "临经按照它的经来做补泻。这里突然讲到水俞穴57。我不跟你讲水俞血在哪里。但是我们真正的意思就是。脑后三分就是脑户的地方。龈基之下就是大迎穴的地方。那脊骨这是脊骨的上空的部分。那骨空如果是在两肩的时候", "chart": null}, {"title": "第七段 · 这个是我们这个在臂臑…", "orig": "这个是我们这个在臂臑，讲的是我们的中渎穴，这不是风市是中渎，在中渎穴之下的地方，那胻骨空呢，胻骨空的地方，那有股际骨空，相去四寸", "talk": "我们为什么要去了解骨空。老师你怎么知道它是骨头。就是在两个之间的络上面。如果两肩胛骨的骨空的地方。这个讲的就是小肠经的位置。在臂阳去腕关节四寸的地方。因为当时我的学生打的时候。中渎实际上的位置是外膝。就是在我们的横骨的位置。我们都可以在骨空上面治疗", "chart": null}, {"title": "第八段 · 我们先就灸大椎…", "orig": "我们先就灸大椎，以年为壮数，再灸绝骨", "talk": "那过去我们灸寒热的方法。大家要记得读内经是这样子。你可能面临到是其他的病。所以我们在临床上的时候。我们从黄帝内经已经读到现在。你如果真的读了黄帝内经。因为温病是从冬、伤、于、寒。那个病是去年冬天得到伤寒。所以你读了那么多黄帝内经。他不是以黄帝内经做真正中医的。那放著就放在那边告诉你", "chart": null}, {"title": "第九段 · 像章门穴…", "orig": "像章门穴，脏会章门，外踝上绝骨，我们委中下来合阳，合阳再来承筋，那个合阳穴，昆仑也可以灸", "talk": "那缺盆骨上切之坚痛如筋。他就放在那个大筋上面灸。我们中医的方法真的非常多。你让那个人跑到找个单杠。你的身体的重量来压住他", "chart": null}, {"title": "第十段 · 脐下关元三寸灸…", "orig": "脐下关元三寸灸，灸他三壮，你灸三壮以外，这寒热的灸法大椎", "talk": "如果是灸了半天还是没有好。过于亢盛的经脉是哪一条。他能帮你快速梳理知识框架。让零散的知识点一目了然。搜索人纪求真下载使用吧。Hermes独立理解《骨空论》:通读倪师讲解并对照《黄帝内经全文.xls》SW60原文后,本篇以'风-奇经-骨空'三线交织立纲,是针灸'骨病-奇经'的临床总汇,以系统科学视角重审如下。一、【风者百病之始=外因-传变模型】风从外入,腠理→经脉→腑→脏的五级传变(与SW56皮部论'皮络经腑脏'完全一致)——即'病原-入侵-扩散'的感染动力学,现代对应'黏膜/皮肤屏障-淋巴-血液-脏器'的感染路径;'有汗=风无汗=寒'即'排汗-病因'鉴别(风性开泄/寒性收引),是'症状-病原'分类的临床速判。二、【风府治风=中枢-督脉的祛风要穴】风府(督脉入脑之穴)调阴阳、不足补有余泻——即'风邪-中枢'的治疗接口,现代对应'后颈-脑干-自主神经'的调节区(风府深部近延髓,针刺调节自主神经);'风府下是脑,哑门次之'即'枕骨大孔-延髓'的解剖警示(深刺危险区),是'穴位-解剖安全'的临床注解。三、【譩嘻应手=触诊-穴名互证】按譩嘻令病人呼'譩嘻'。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

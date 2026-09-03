@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问13·移精变气论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问13·移精变气论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问13-移精变气论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问13-移精变气论.mp4">素问13-移精变气论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 《移精变气论》篇第十三…</h2></div>
+    <div class="orig">《移精变气论》篇第十三，神秘的祭祀咒语之累的内容，精神压力极大，神奇疗法都不管用了，精神内耗</div>
+    <div class="talk">欢迎来到今天的这一期深度解析。把你提供给我们的资料。不管它是一大堆枯燥的学术论文。我们都要提取出里面最震撼。最能让你恍然大悟的硬核干活干活。今天我们要为你拆解的是一份。它来自中国医学奠基之作。黄帝内经素问里的一篇叫。这是那种让人昏昏欲睡的中医理论课。哈哈听起来确实有点像。当我们深挖这份文件背后的逻辑时。这简直是一部披着医学外衣的。你可以先想象这么一个画面。你正在博物馆里闲逛。你原本可能以为上面会写满什么。这上面竟然是一个古代人。在疯狂抱怨当时的现代人。甚至连远古传下来的那种。看到这个你会不会突然有一种。人类根本就是在同一个怪圈里</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 移精变气或者祝由的方法…</h2></div>
+    <div class="orig">移精变气或者祝由的方法，这里的祝由，恬惔之世，内无眷慕之累，外无伸宦之形</div>
+    <div class="talk">是怎么一步步搞垮自己的身体的。那我们就直接从这篇文件。最犀利的开场切入吧。在这场跨越千年的对话里。黄帝直接向他的老师岐伯。为什么病反而总是治不好。岐伯并没有直接去讲什么。时候的人和自然界的。加了一层极其浪漫的滤镜</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 他们的神经系统…</h2></div>
+    <div class="orig">他们的神经系统，会让人的神经系统，长期的精神内耗</div>
+    <div class="talk">远古人不用打卡上班是没错。但他们得担心被豺狼虎豹吃掉吧。但我们这里必须区分两个概念。会迅速恢复到放松的状态。地位所带来的无休止的奔波。没有怕错过热点的那种错失恐惧症。这种源于社会和欲望的慢性压力。长期处于一种紧绷的状态。会从内部瓦解人体的正气</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 祝由这种轻柔的心理疏导…</h2></div>
+    <div class="orig">祝由这种轻柔的心理疏导，忧患缘其内，苦形伤其外，逆寒暑之宜，当你内在的精神防线，叫贼风数至虚邪朝夕</div>
+    <div class="talk">对当时所谓现代社会的批判。内心充满了焦虑和算计。也就是完全违背了自然节律。却整天待在空调房里吹冷风。却穿着单衣在那吃冰淇淋。加上失去了四季规律的闭户。文献里管这种状态。这就解释了黄帝的困惑了。面对一个已经被内卷文化。远古那种单纯靠调整意念的。肯定就变成隔靴搔痒了嘛。把自己折腾到了这种境地。更具物质性和干预性的方向。这篇文件的第二层逻辑了。也就是诊断与治疗手段的演变</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 既然看不见的心神不管用了…</h2></div>
+    <div class="orig">既然看不见的心神不管用了，色以应日，脉以应月，说中古的医生会用十日汤液去治疗八风五痹，那五痹呢，一旦察觉到外邪的八风引发了早期的痹证</div>
+    <div class="talk">医生们就必须抓住看得见的线索。向岐伯索要一套能够判断深思。为什么一定要把人体和日月扯上关系呢。这是古人重建人体与宇宙连接的方式。一眼看过去就能洞察生命力的荣枯。它的引力无声地牵引着地球上的潮汐。这就像人体内气血在经脉中涌动的脉象一样。既然你是因为脱离了自然才生病的。那医生就必须通过观察你身上留存的那种自然印记。来判断你到底偏离了多少。文献在这里做了一个非常有意思的世代对比。岐伯提到了中古世代的医生。说他们懂得在疾病刚冒头的时候。对我记得这里文献特别提到了一个细节。你能帮我们翻译一下这些专业术语吗。来自八个方向的不正常的气候变化。就是指外在的治病环境。五痹是指邪气侵入人体后。造成的骨筋脉肌皮。这五种不同层次的痹塞不通。所以中古时代的医生是怎么做的。马上就会用性质非常温和的汤药</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 他们这种做法叫把握住了标…</h2></div>
+    <div class="orig">他们这种做法叫把握住了标本，他甚至用粗工凶凶，丢掉了色脉的整体观，非要等到病形已成，头痛欲裂 精神涣散</div>
+    <div class="talk">再适度加入一些草木药材进行辅助。也就是不但看到了表面症状的标。还抓住了内在病因的本。但是当我读到岐伯对暮世。也就是后来那些暮世医生的评价时。哦哪里让你觉得反直觉了。从我们现代人的眼光来看。后来发明了各种精细的针具。熬制出了成分极其复杂的中药汤剂。这绝对是医疗技术突飞猛进的标志。来痛骂这些医生鲁莽自以为是。恰恰是这篇文献最深刻的地方。也就是病灶完全显现出来了。很多人对待自己身体的方式吗。我们就经常给自己当这种。你每天早晨猛灌三杯浓缩咖啡。或者直接吞两片强效止痛药</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 叫故故病未已 新病复起…</h2></div>
+    <div class="orig">叫故故病未已 新病复起，原本轻柔的祝由失效了，移精变气论最后一部分，治之极于一，一者因得之，闭户塞牖，系之病者，数问其情，以从其意</div>
+    <div class="talk">你正在透支整个系统的底牌。岐伯对庸医的最终判决了。反而打破了身体仅存的平衡。而那些沉迷于复杂技术的庸医。所有复杂的表象退去之后。治病的最高境界终极法则。黄帝当时也很急迫地追问。探求并获得疾病最根本的原因。医生到底该怎么去寻找这个一。文献里写了非常经典的十六个字。这十六个字到底是什么意思呢。最充满人文光辉的画面了</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 然后系之病者…</h2></div>
+    <div class="orig">然后系之病者，数问其情，以从其意，去与他们深度的精神共鸣</div>
+    <div class="talk">因为在一个患者已经被疾病。和焦虑折磨得气血虚弱的时候。切断一切外界的风寒干扰。这肯定不仅仅是为了挡风。这就引出了它的心理机制。是在剥离所有的社会属性。充满安全感和信任感的空间。要求医生把所有的注意力。抛开对疾病名称的刻板印象。病人内心深处针石的感受。甚至他们不敢对家人说出的恐惧。这太像现代的心理治疗了。头也不抬地在键盘上敲打处方。你得放下手里的那些高精尖器械。这就像一位顶级的现代医生。把平板电脑倒扣在桌面上</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 人的精神层面…</h2></div>
+    <div class="orig">人的精神层面，得神者昌，失神者亡，这里的神，如果病人还能保有内在的神，如果他的精神防线彻底崩溃，那么任何神仙妙药都回天乏术了，古老的移精变气论，看懂了原来没有精神内耗</div>
+    <div class="talk">这就引出了这篇文件最后。而是病人自身的生命意志。在经历了漫长的疾病消耗后。决定这个人深思存亡的终极判决。今天这趟深潜真的是酣畅淋漓。让我们快速为你复盘一下。这条不可思议的知识脉络吧。才是远古人类免疫力爆棚。到人类进入消耗时代后</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 闭户塞牖…</h2></div>
+    <div class="orig">闭户塞牖，把医生和患者的心神重新连接，得神者昌，失神者亡，你身体里的那个神还在吗</div>
+    <div class="talk">医学被迫演化出了诊断和药物。最后在技术滥用的死局里。我们找到了破局的终极法则。去唤醒决定人体深思的终极力量。所以就像我们一开始说的。这根本不是一篇过时的古代医书。人类从未改变过的人心弱点。我们总是试图在外部世界。寻找解决内在崩溃的解药。在这个信息爆炸万物互联。我们被迫永远线上的时代。给自己一个私密的安全空间。把注意力重新系在自己身上。永远是你自己内心的那团火。感谢你加入今天的这期深度解析。完成这场关于生命的对话。我们再一起探索新的知识宝藏。一、本篇是中医的**心理-社会医学宣言**：开篇“古之治病惟其移精变气，可祝由而已；今世毒药治其内，针石治其外，或愈或不愈”对比远古与当代的疗效差异，揭示“精神干预（祝由）先于物质干预（毒药针石）”的医学演进史观——与现代医学“安慰剂效应→心理治疗→药物治疗”的疗效层级理解相通，且“移精变气”即“转移注意力、改变气机状态”，是认知-情绪干预的古典表述。二、“往古…内无眷慕之累，外无伸宦之形，此恬惔之世，邪不能深入也”是**压力-免疫模型**的古典描述：恬惔（低心理应激）→邪不能深入（免疫力强），与现代“</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问13·移精变气论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 《移精变气论》篇第十三…", "orig": "《移精变气论》篇第十三，神秘的祭祀咒语之累的内容，精神压力极大，神奇疗法都不管用了，精神内耗", "talk": "欢迎来到今天的这一期深度解析。把你提供给我们的资料。不管它是一大堆枯燥的学术论文。我们都要提取出里面最震撼。最能让你恍然大悟的硬核干活干活。今天我们要为你拆解的是一份。它来自中国医学奠基之作。黄帝内经素问里的一篇叫。这是那种让人昏昏欲睡的中医理论课。哈哈听起来确实有点像。当我们深挖这份文件背后的逻辑时。这简直是一部披着医学外衣的。你可以先想象这么一个画面。你正在博物馆里闲逛。你原本可能以为上面会写满什么。这上面竟然是一个古代人。在疯狂抱怨当时的现代人。甚至连远古传下来的那种。看到这个你会不会突然有一种。人类根本就是在同一个怪圈里", "chart": null}, {"title": "第二段 · 移精变气或者祝由的方法…", "orig": "移精变气或者祝由的方法，这里的祝由，恬惔之世，内无眷慕之累，外无伸宦之形", "talk": "是怎么一步步搞垮自己的身体的。那我们就直接从这篇文件。最犀利的开场切入吧。在这场跨越千年的对话里。黄帝直接向他的老师岐伯。为什么病反而总是治不好。岐伯并没有直接去讲什么。时候的人和自然界的。加了一层极其浪漫的滤镜", "chart": null}, {"title": "第三段 · 他们的神经系统…", "orig": "他们的神经系统，会让人的神经系统，长期的精神内耗", "talk": "远古人不用打卡上班是没错。但他们得担心被豺狼虎豹吃掉吧。但我们这里必须区分两个概念。会迅速恢复到放松的状态。地位所带来的无休止的奔波。没有怕错过热点的那种错失恐惧症。这种源于社会和欲望的慢性压力。长期处于一种紧绷的状态。会从内部瓦解人体的正气", "chart": null}, {"title": "第四段 · 祝由这种轻柔的心理疏导…", "orig": "祝由这种轻柔的心理疏导，忧患缘其内，苦形伤其外，逆寒暑之宜，当你内在的精神防线，叫贼风数至虚邪朝夕", "talk": "对当时所谓现代社会的批判。内心充满了焦虑和算计。也就是完全违背了自然节律。却整天待在空调房里吹冷风。却穿着单衣在那吃冰淇淋。加上失去了四季规律的闭户。文献里管这种状态。这就解释了黄帝的困惑了。面对一个已经被内卷文化。远古那种单纯靠调整意念的。肯定就变成隔靴搔痒了嘛。把自己折腾到了这种境地。更具物质性和干预性的方向。这篇文件的第二层逻辑了。也就是诊断与治疗手段的演变", "chart": null}, {"title": "第五段 · 既然看不见的心神不管用了…", "orig": "既然看不见的心神不管用了，色以应日，脉以应月，说中古的医生会用十日汤液去治疗八风五痹，那五痹呢，一旦察觉到外邪的八风引发了早期的痹证", "talk": "医生们就必须抓住看得见的线索。向岐伯索要一套能够判断深思。为什么一定要把人体和日月扯上关系呢。这是古人重建人体与宇宙连接的方式。一眼看过去就能洞察生命力的荣枯。它的引力无声地牵引着地球上的潮汐。这就像人体内气血在经脉中涌动的脉象一样。既然你是因为脱离了自然才生病的。那医生就必须通过观察你身上留存的那种自然印记。来判断你到底偏离了多少。文献在这里做了一个非常有意思的世代对比。岐伯提到了中古世代的医生。说他们懂得在疾病刚冒头的时候。对我记得这里文献特别提到了一个细节。你能帮我们翻译一下这些专业术语吗。来自八个方向的不正常的气候变化。就是指外在的治病环境。五痹是指邪气侵入人体后。造成的骨筋脉肌皮。这五种不同层次的痹塞不通。所以中古时代的医生是怎么做的。马上就会用性质非常温和的汤药", "chart": null}, {"title": "第六段 · 他们这种做法叫把握住了标…", "orig": "他们这种做法叫把握住了标本，他甚至用粗工凶凶，丢掉了色脉的整体观，非要等到病形已成，头痛欲裂 精神涣散", "talk": "再适度加入一些草木药材进行辅助。也就是不但看到了表面症状的标。还抓住了内在病因的本。但是当我读到岐伯对暮世。也就是后来那些暮世医生的评价时。哦哪里让你觉得反直觉了。从我们现代人的眼光来看。后来发明了各种精细的针具。熬制出了成分极其复杂的中药汤剂。这绝对是医疗技术突飞猛进的标志。来痛骂这些医生鲁莽自以为是。恰恰是这篇文献最深刻的地方。也就是病灶完全显现出来了。很多人对待自己身体的方式吗。我们就经常给自己当这种。你每天早晨猛灌三杯浓缩咖啡。或者直接吞两片强效止痛药", "chart": null}, {"title": "第七段 · 叫故故病未已 新病复起…", "orig": "叫故故病未已 新病复起，原本轻柔的祝由失效了，移精变气论最后一部分，治之极于一，一者因得之，闭户塞牖，系之病者，数问其情，以从其意", "talk": "你正在透支整个系统的底牌。岐伯对庸医的最终判决了。反而打破了身体仅存的平衡。而那些沉迷于复杂技术的庸医。所有复杂的表象退去之后。治病的最高境界终极法则。黄帝当时也很急迫地追问。探求并获得疾病最根本的原因。医生到底该怎么去寻找这个一。文献里写了非常经典的十六个字。这十六个字到底是什么意思呢。最充满人文光辉的画面了", "chart": null}, {"title": "第八段 · 然后系之病者…", "orig": "然后系之病者，数问其情，以从其意，去与他们深度的精神共鸣", "talk": "因为在一个患者已经被疾病。和焦虑折磨得气血虚弱的时候。切断一切外界的风寒干扰。这肯定不仅仅是为了挡风。这就引出了它的心理机制。是在剥离所有的社会属性。充满安全感和信任感的空间。要求医生把所有的注意力。抛开对疾病名称的刻板印象。病人内心深处针石的感受。甚至他们不敢对家人说出的恐惧。这太像现代的心理治疗了。头也不抬地在键盘上敲打处方。你得放下手里的那些高精尖器械。这就像一位顶级的现代医生。把平板电脑倒扣在桌面上", "chart": null}, {"title": "第九段 · 人的精神层面…", "orig": "人的精神层面，得神者昌，失神者亡，这里的神，如果病人还能保有内在的神，如果他的精神防线彻底崩溃，那么任何神仙妙药都回天乏术了，古老的移精变气论，看懂了原来没有精神内耗", "talk": "这就引出了这篇文件最后。而是病人自身的生命意志。在经历了漫长的疾病消耗后。决定这个人深思存亡的终极判决。今天这趟深潜真的是酣畅淋漓。让我们快速为你复盘一下。这条不可思议的知识脉络吧。才是远古人类免疫力爆棚。到人类进入消耗时代后", "chart": null}, {"title": "第十段 · 闭户塞牖…", "orig": "闭户塞牖，把医生和患者的心神重新连接，得神者昌，失神者亡，你身体里的那个神还在吗", "talk": "医学被迫演化出了诊断和药物。最后在技术滥用的死局里。我们找到了破局的终极法则。去唤醒决定人体深思的终极力量。所以就像我们一开始说的。这根本不是一篇过时的古代医书。人类从未改变过的人心弱点。我们总是试图在外部世界。寻找解决内在崩溃的解药。在这个信息爆炸万物互联。我们被迫永远线上的时代。给自己一个私密的安全空间。把注意力重新系在自己身上。永远是你自己内心的那团火。感谢你加入今天的这期深度解析。完成这场关于生命的对话。我们再一起探索新的知识宝藏。一、本篇是中医的**心理-社会医学宣言**：开篇“古之治病惟其移精变气，可祝由而已；今世毒药治其内，针石治其外，或愈或不愈”对比远古与当代的疗效差异，揭示“精神干预（祝由）先于物质干预（毒药针石）”的医学演进史观——与现代医学“安慰剂效应→心理治疗→药物治疗”的疗效层级理解相通，且“移精变气”即“转移注意力、改变气机状态”，是认知-情绪干预的古典表述。二、“往古…内无眷慕之累，外无伸宦之形，此恬惔之世，邪不能深入也”是**压力-免疫模型**的古典描述：恬惔（低心理应激）→邪不能深入（免疫力强），与现代“", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

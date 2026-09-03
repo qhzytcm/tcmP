@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问5·阴阳应象大论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问5·阴阳应象大论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问5-阴阳应象大论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问5-阴阳应象大论.mp4">素问5-阴阳应象大论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 阴阳者天地之道</h2></div>
+    <div class="orig">阴阳者 天地之道也，那万物之纲纪呢，然后 变化之父母，嗯 那生杀之本始呢，神明之府也，所以说是生杀之本始，万物之纲纪 生杀之本始</div>
+    <div class="talk">纲纪才能顺应生长 收藏的自然节律。阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 积阳为天积阴为地</h2></div>
+    <div class="orig">积阳为天 积阴为地，阳生阴长 阳杀阴藏，这是阳生阴长，这就是阳杀阴藏</div>
+    <div class="talk">特性：积阳为天积阴为地，阴静阳躁，阳生阴长阳杀阴藏，阳化气阴成形；寒极生热，清气在下则生飧泄，浊气在上则生䐜胀。</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 阳化气阴成形</h2></div>
+    <div class="orig">阳化气 阴成形，这就是阳化气的过程，阴成形呢，热极生寒，寒气生浊</div>
+    <div class="talk">特性：积阳为天积阴为地，阴静阳躁，阳生阴长阳杀阴藏，阳化气阴成形；寒极生热，清气在下则生飧泄，浊气在上则生䐜胀。</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 清阳浊阴</h2></div>
+    <div class="orig">故清阳为天，浊阴为地，故清阳出上窍，浊阴出下窍</div>
+    <div class="talk">清阳就像天上的清气。浊阴就像大地上的浊气。升降：清阳出上窍浊阴出下窍，清阳发腠理浊阴走五脏，清阳实四肢浊阴归六腑。</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 壮火之气衰</h2></div>
+    <div class="orig">所以说少火之气壮，所以说壮火之气衰，壮火食气，气食少火</div>
+    <div class="talk">而少火作为正常的生理机能的基础。气味：味归形形归气气归精精归化；壮火食气少火生气；辛甘发散为阳，酸苦涌泄为阴。</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 阴阳偏胜</h2></div>
+    <div class="orig">阴胜则阳病，阳胜则阴病，阳胜则热，阴胜则寒的不同病理状态</div>
+    <div class="talk">病理：阴胜则阳病阳胜则阴病，阳胜则热阴胜则寒；寒伤形热伤气，气伤痛形伤肿；风胜则动热胜则肿燥胜则干寒胜则浮湿胜则濡泻。</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 七损八益</h2></div>
+    <div class="orig">则早衰之节也</div>
+    <div class="talk">它构建的这个阴阳框架实际上就展现了。它直接就把阴阳放在了古人世界观的。阴阳是理解万物秩序的一个总法则。阴阳是万物生长和发展的根本动力。阴阳就像人体内气和血的关系。比如阴阳 五行 天人相应。《视频理解阴阳应象大论》：逐段研读《素问》第五篇，核心是阴阳五行与天人合一。。阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。。情志四时：喜怒伤气寒暑伤形，暴怒伤阴暴喜伤阳；重阴必阳重阳必阴；冬伤于寒春必温病，春伤于风夏生飧泄，夏伤于暑秋必痎疟，秋伤于湿冬生咳嗽。⑦五行：东方生风风生木酸生肝，在色为苍在音为角在志为怒，怒伤肝悲胜怒；南方火中央土西方金北方水同构，万物全息对应。⑧互根：阴在内阳之守也，阳在外阴之使也。⑨诊疗：善诊者察色按脉先别阴阳；治皮毛其次治肌肤其次治筋脉其次治六腑其次治五脏；形不足者温之以气，精不足者补之以味；阳病治阴阴病治阳。</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 治病必求于本</h2></div>
+    <div class="orig">是以善诊者察于阴阳，察色按脉，先别阴阳，审清浊，观权衡规矩</div>
+    <div class="talk">阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。。情志四时：喜怒伤气寒暑伤形，暴怒伤阴暴喜伤阳；重阴必阳重阳必阴；冬伤于寒春必温病，春伤于风夏生飧泄，夏伤于暑秋必痎疟，秋伤于湿冬生咳嗽。⑦五行：东方生风风生木酸生肝，在色为苍在音为角在志为怒，怒伤肝悲胜怒；南方火中央土西方金北方水同构，万物全息对应。⑧互根：阴在内阳之守也，阳在外阴之使也。⑨诊疗：善诊者察色按脉先别阴阳；治皮毛其次治肌肤其次治筋脉其次治六腑其次治五脏；形不足者温之以气，精不足者补之以味；阳病治阴阴病治阳。</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 法阴阳</h2></div>
+    <div class="orig">故善用针者，从阴引阳从阳引阴，以右治左以左治右</div>
+    <div class="talk">阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 收束</h2></div>
+    <div class="orig">观权衡规矩，而知病所主，切 按脉 按尺寸的基本方法，观浮沉滑涩</div>
+    <div class="talk">它构建的这个阴阳框架实际上就展现了。它直接就把阴阳放在了古人世界观的。阴阳是理解万物秩序的一个总法则。阴阳是万物生长和发展的根本动力。阴阳就像人体内气和血的关系。比如阴阳 五行 天人相应。《视频理解阴阳应象大论》：逐段研读《素问》第五篇，核心是阴阳五行与天人合一。。阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。。情志四时：喜怒伤气寒暑伤形，暴怒伤阴暴喜伤阳；重阴必阳重阳必阴；冬伤于寒春必温病，春伤于风夏生飧泄，夏伤于暑秋必痎疟，秋伤于湿冬生咳嗽。⑦五行：东方生风风生木酸生肝，在色为苍在音为角在志为怒，怒伤肝悲胜怒；南方火中央土西方金北方水同构，万物全息对应。⑧互根：阴在内阳之守也，阳在外阴之使也。⑨诊疗：善诊者察色按脉先别阴阳；治皮毛其次治肌肤其次治筋脉其次治六腑其次治五脏；形不足者温之以气，精不足者补之以味；阳病治阴阴病治阳。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问5·阴阳应象大论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 阴阳者天地之道", "orig": "阴阳者 天地之道也，那万物之纲纪呢，然后 变化之父母，嗯 那生杀之本始呢，神明之府也，所以说是生杀之本始，万物之纲纪 生杀之本始", "talk": "纲纪才能顺应生长 收藏的自然节律。阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。", "chart": null}, {"title": "第二段 · 积阳为天积阴为地", "orig": "积阳为天 积阴为地，阳生阴长 阳杀阴藏，这是阳生阴长，这就是阳杀阴藏", "talk": "特性：积阳为天积阴为地，阴静阳躁，阳生阴长阳杀阴藏，阳化气阴成形；寒极生热，清气在下则生飧泄，浊气在上则生䐜胀。", "chart": null}, {"title": "第三段 · 阳化气阴成形", "orig": "阳化气 阴成形，这就是阳化气的过程，阴成形呢，热极生寒，寒气生浊", "talk": "特性：积阳为天积阴为地，阴静阳躁，阳生阴长阳杀阴藏，阳化气阴成形；寒极生热，清气在下则生飧泄，浊气在上则生䐜胀。", "chart": null}, {"title": "第四段 · 清阳浊阴", "orig": "故清阳为天，浊阴为地，故清阳出上窍，浊阴出下窍", "talk": "清阳就像天上的清气。浊阴就像大地上的浊气。升降：清阳出上窍浊阴出下窍，清阳发腠理浊阴走五脏，清阳实四肢浊阴归六腑。", "chart": null}, {"title": "第五段 · 壮火之气衰", "orig": "所以说少火之气壮，所以说壮火之气衰，壮火食气，气食少火", "talk": "而少火作为正常的生理机能的基础。气味：味归形形归气气归精精归化；壮火食气少火生气；辛甘发散为阳，酸苦涌泄为阴。", "chart": null}, {"title": "第六段 · 阴阳偏胜", "orig": "阴胜则阳病，阳胜则阴病，阳胜则热，阴胜则寒的不同病理状态", "talk": "病理：阴胜则阳病阳胜则阴病，阳胜则热阴胜则寒；寒伤形热伤气，气伤痛形伤肿；风胜则动热胜则肿燥胜则干寒胜则浮湿胜则濡泻。", "chart": null}, {"title": "第七段 · 七损八益", "orig": "则早衰之节也", "talk": "它构建的这个阴阳框架实际上就展现了。它直接就把阴阳放在了古人世界观的。阴阳是理解万物秩序的一个总法则。阴阳是万物生长和发展的根本动力。阴阳就像人体内气和血的关系。比如阴阳 五行 天人相应。《视频理解阴阳应象大论》：逐段研读《素问》第五篇，核心是阴阳五行与天人合一。。阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。。情志四时：喜怒伤气寒暑伤形，暴怒伤阴暴喜伤阳；重阴必阳重阳必阴；冬伤于寒春必温病，春伤于风夏生飧泄，夏伤于暑秋必痎疟，秋伤于湿冬生咳嗽。⑦五行：东方生风风生木酸生肝，在色为苍在音为角在志为怒，怒伤肝悲胜怒；南方火中央土西方金北方水同构，万物全息对应。⑧互根：阴在内阳之守也，阳在外阴之使也。⑨诊疗：善诊者察色按脉先别阴阳；治皮毛其次治肌肤其次治筋脉其次治六腑其次治五脏；形不足者温之以气，精不足者补之以味；阳病治阴阴病治阳。", "chart": null}, {"title": "第八段 · 治病必求于本", "orig": "是以善诊者察于阴阳，察色按脉，先别阴阳，审清浊，观权衡规矩", "talk": "阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。。情志四时：喜怒伤气寒暑伤形，暴怒伤阴暴喜伤阳；重阴必阳重阳必阴；冬伤于寒春必温病，春伤于风夏生飧泄，夏伤于暑秋必痎疟，秋伤于湿冬生咳嗽。⑦五行：东方生风风生木酸生肝，在色为苍在音为角在志为怒，怒伤肝悲胜怒；南方火中央土西方金北方水同构，万物全息对应。⑧互根：阴在内阳之守也，阳在外阴之使也。⑨诊疗：善诊者察色按脉先别阴阳；治皮毛其次治肌肤其次治筋脉其次治六腑其次治五脏；形不足者温之以气，精不足者补之以味；阳病治阴阴病治阳。", "chart": null}, {"title": "第九段 · 法阴阳", "orig": "故善用针者，从阴引阳从阳引阴，以右治左以左治右", "talk": "阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。", "chart": null}, {"title": "第十段 · 收束", "orig": "观权衡规矩，而知病所主，切 按脉 按尺寸的基本方法，观浮沉滑涩", "talk": "它构建的这个阴阳框架实际上就展现了。它直接就把阴阳放在了古人世界观的。阴阳是理解万物秩序的一个总法则。阴阳是万物生长和发展的根本动力。阴阳就像人体内气和血的关系。比如阴阳 五行 天人相应。《视频理解阴阳应象大论》：逐段研读《素问》第五篇，核心是阴阳五行与天人合一。。阴阳总纲：阴阳者天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也；治病必求于本。。情志四时：喜怒伤气寒暑伤形，暴怒伤阴暴喜伤阳；重阴必阳重阳必阴；冬伤于寒春必温病，春伤于风夏生飧泄，夏伤于暑秋必痎疟，秋伤于湿冬生咳嗽。⑦五行：东方生风风生木酸生肝，在色为苍在音为角在志为怒，怒伤肝悲胜怒；南方火中央土西方金北方水同构，万物全息对应。⑧互根：阴在内阳之守也，阳在外阴之使也。⑨诊疗：善诊者察色按脉先别阴阳；治皮毛其次治肌肤其次治筋脉其次治六腑其次治五脏；形不足者温之以气，精不足者补之以味；阳病治阴阴病治阳。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

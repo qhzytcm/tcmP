@@ -1,0 +1,211 @@
+﻿0映射1 共 212 行 6 列
+1: 0映射1 · 作者Subagent现实映射（蔡大勇 Dayong Cai · 药理专家）
+2: 档案 | dayongcai
+3: 档案 | user.md
+4: 档案 | 草稿
+5: 档案 | user.md — 蔡大勇 (Dayong Cai)
+6: 档案 | 文件类型: 用户档案 / 智能体可读材料
+7: 档案 | 所属项目: 医圣成长教育平台 (YS Growth Platform)
+8: 档案 | 交付物类别: textbooks (第二类交付物 — 教材系列)
+9: 档案 | 目标架构: 仿照 Pi-Agents 构建 TCM-Agents 教育平台
+10: 档案 | 版本: v0.1 中文草稿
+11: 档案 | 生成日期: 2026-08-05
+12: 档案 | 数据来源: FTS5 全文检索交叉验证 (药用植物研究所官网 / 国家自然科学基金委 / x-mol / ResearchGate / Frontiers Loop / F6Publishi
+13: 档案 | 0. 文件用途说明 (For Agent Consumption)
+14: 档案 | 本文件是 医圣成长 教育平台下 textbooks 子项目的策划人用户档案。
+15: 档案 | 它将被 TCM-Agents 平台中的以下智能体读取:
+16: 智能体角色 | 读取本文件的用途
+17: author-agent | 生成符合蔡大勇学术风格的教材章节初稿
+18: reviewer-agent | 校验教材中医学与药理事实的准确性
+19: citation-agent | 自动生成参考文献与基金标注
+20: persona-agent | 在交互式教学场景中扮演 "蔡教授" 虚拟导师
+21: curriculum-agent | 将用户研究方向映射为教材章节选题
+22: 档案 | 重要约定: 本文件中所有事实字段均来自公开可查来源并交叉验证。
+23: 档案 | 凡带 [待核实] 标记的内容, 智能体在生成正式出版内容前必须向人类协作者确认。
+24: 档案 | 1. 身份卡 (Identity Card)
+25: 档案 | yaml
+26: 档案 | yaml
+27: 档案 | canonical_name: 蔡大勇
+28: 档案 | english_name: Dayong Cai
+29: 档案 | gender: 男
+30: 档案 | title: 研究员 / 教授
+31: 档案 | academic_rank: 博士生导师
+32: 档案 | primary_affiliation:
+33: 档案 |   zh: 中国医学科学院 北京协和医学院 药用植物研究所
+34: 档案 |   en: Institute of Medicinal Plant Development, Chinese Academy of Medical Sciences & Peking Un
+35: 档案 | department: 药理毒理中心
+36: 档案 | address: 北京市海淀区马连洼北路151号, 100193
+37: 档案 | email: dycai@implad.ac.cn
+38: 档案 | phone: 010-62899771
+39: 档案 | fax: 010-62899715
+40: 档案 | orcid: [待核实]
+41: 档案 | researchgate: https://www.researchgate.net/profile/Dayong_Cai
+42: 档案 | xmol_id: 27405
+43: 档案 | loop_frontiers: https://loop.frontiersin.org/people/648714/impact
+44: 档案 | github: [待核实 — 注: 非 TCM-Agent 主仓库成员, 但其指导学生赵京凤等参与 ARL8 项目]
+45: 档案 | 2. 学术背景时间线 (Academic Trajectory)
+46: 档案 | 按倒序排列, 供 curriculum-agent 生成 "作者简介" 与 "导师介绍" 页。
+47: 时间 | 事件 | 来源可信度
+48: 1980–1985 | 武汉大学医学院临床医学学士 | 高 (x-mol 简历)
+49: 1985–1987 | 武汉大学医学院咸宁分院病理学教研室 助教 | 高
+50: 1987–1990 | 武汉大学医学院病理学硕士 | 高
+51: 1990–1999 | 湖北中医学院 副教授 | 高
+52: 1999–2002 | 北京中医药大学 病理生理学博士 | 高 (官网 + x-mol)
+53: 2002–2004 | 北京大学 病理生理学博士后 | 高
+54: 2004–2009 | 北京中医药大学 病理学副教授 | 高
+55: 2009–至今 | 中国医学科学院·北京协和医学院 药用植物研究所 副研究员→研究员 | 高 (官网)
+56: 档案 | 职称说明: 药用植物研究所官网当前简介写 "副研究员、硕士生导师",
+57: 档案 | 但 2010 年《世界华人消化杂志》署名 "蔡大勇 教授、研究生导师",
+58: 档案 | 2021 年 Frontiers 个人页标注 "Professor",
+59: 档案 | 2026 年 TCM-Agent 论文作者单位亦以 "Professor" 出现。
+60: 档案 | 建议教材统一口径: 研究员、博士生导师, 出版前请本人最终确认。 [待核实]
+61: 档案 | 3. 研究方向 (Research Vectors)
+62: 档案 | 以下四大方向直接对应 textbooks 系列教材的潜在章节选题,
+63: 档案 | author-agent 可据此自动生成章节大纲。
+64: 档案 | 3.1 肿瘤药理学 (Oncology Pharmacology)
+65: 档案 | 方剂 / 药用植物单体抗肿瘤的网络药理学机制
+66: 档案 | 关键通路: NFAT 信号通路抑制血管生成 (Qingdu Granule 研究)
+67: 档案 | 免疫调节: Th1/Th2 平衡调控 (柴胡皂苷 A 研究)
+68: 档案 | 模型: DMBA 诱导乳腺癌大鼠模型、抗肿瘤药效动力学模型
+69: 档案 | 3.2 心血管药理学 (Cardiovascular Pharmacology)
+70: 档案 | 方剂单体预防心脑缺血的联合药理机制
+71: 档案 | 神经内分泌肽: Adrenomedullin (ADM) 与 Intermedin / ADM2 的心血管效应
+72: 档案 | 血管钙化抑制: ADM(27-52) 片段研究
+73: 档案 | 脑钠肽 (BNP) 在心肌梗死大鼠中的产生与代谢
+74: 档案 | 3.3 消化与肝病药理学 (Digestive & Hepatic Pharmacology)
+75: 档案 | 氧化应激损伤抑制 → 防治肝病并发症
+76: 档案 | 门脉高压症药效动力学模型 (离体灌流大鼠肝脏模型)
+77: 档案 | 巨噬细胞氧化亢进 → 益气活血方干预
+78: 档案 | 萎缩性胃炎模型 (弹簧幽门植入术 + 高盐热淀粉糊灌胃)
+79: 档案 | 3.4 免疫与神经药理学 (Immuno- & Neuro-Pharmacology)
+80: 档案 | 自身免疫病: 类风湿关节炎 (Anemone flaccida 醇提物)
+81: 档案 | 皮肌炎新型动物模型 (膜抗原 + 钙化防御诱导)
+82: 档案 | 血管性痴呆: 神经血管耦合 (NVC) 敏感性维持
+83: 档案 | 凉肝钩藤汤 (Ling-Yang-Gou-Teng-Decoction) 抑制氧化应激
+84: 档案 | 3.5 系统生物学 (跨方向主线)
+85: 档案 | 参与组建系统生物学研究平台
+86: 档案 | 负责形态学与基因组学、转录组学、蛋白组学、代谢物组学的指标群对接
+87: 档案 | 主持人类重大疾病模式动物库的建立与应用
+88: 档案 | 这一方向是连接 "东方哲学 × 现代 AI" 的关键桥梁,
+89: 档案 | 对应教材中 "证候能量代谢 × 强化学习 × 尺度伸缩" 框架
+90: 档案 | 4. 专业成果 (Selected Works)
+91: 档案 | 4.1 代表性论文 (Publication Samples)
+92: 序号 | 标题要点 | 期刊 | 年份 | 角色
+93: 1 | Saikosaponin A Inhibits Breast Cancer by Regulating Th1/Th2 Balance | Front Pharmacol | 2019 | 通
+94: 2 | Anti-angiogenic effects of Qingdu Granule via NFAT pathway | J Ethnopharmacol | 2018 | 通讯
+95: 3 | Ling-Yang-Gou-Teng-Decoction prevents vascular dementia | J Ethnopharmacol | 2018 | 通讯
+96: 4 | A novel pharmacodynamic model for preventing vascular dementia | Eur J Pharmacol | 2018 | 通讯
+97: 5 | Diammonium glycyrrhizinate alleviates HPS via SOD3 | Eur J Pharmacol | 2017 | 通讯
+98: 6 | Anti-obesity effect of phenylpropanoid glycosides from Ligustrum robustum | J Ethnopharmacol | 2
+99: 7 | A pharmacodynamic model of portal hypertension (isolated perfused rat liver) | World J Gastroent
+100: 8 | Fuzi-Lizhong pill compensates hypothyroid-hypothermia via ghrelin | J Ethnopharmacol | 2013 | 通讯
+101: 9 | 附子理中丸对脾阳虚证大鼠肝脏能荷的下调机制 | 世界华人消化杂志 | 2010 | 通讯
+102: 10 | Refined Qing Kai Ling reduces ischemic stroke infarct size | Biol Pharm Bull | 2008 | 参与
+103: 11 | Adrenomedullin(27-52) inhibits vascular calcification in rats | Regul Pept | 2005 | 第一
+104: 12 | Cardiovascular effects of intermedin/adrenomedullin 2 | Peptides | 2005 | 参与
+105: 13 | Changes in BNP production in rats with myocardial necrosis | Eur J Pharmacol | 2005 | 参与
+106: 14 | Diammonium glycyrrhizinate ameliorates portal hypertension via macrophage oxidation & SOD3 | Bi
+107: 15 | A novel model of dermatomyositis (membrane antigen + calciphylaxis) | Biomed Reports | 2022 | 通
+108: 档案 | 论文总数口径:
+109: 档案 | 药用植物研究所官网: 94 篇
+110: 档案 | x-mol 学者页: 96 篇
+111: 档案 | ResearchGate: 53 篇 (仅该平台收录)
+112: 档案 | Frontiers Loop: 13 篇 (精选)
+113: 档案 | 第三方综合页: 130 余篇
+114: 档案 | 建议教材采用: "在国内外刊物发表论文百余篇"。 [待核实]
+115: 档案 | 4.2 主编 / 参编教材 (Textbooks)
+116: 书名 | 角色 | 说明
+117: Science of Traditional Chinese Prescription (中医处方科学 英文版) | 主编 | 中医英文版教材
+118: Diagnostics of Traditional Chinese Medicine (中医诊断学 英文版) | 主编 | 中医英文版教材
+119: 中药药理学方法 | 参编 | 方法学专著
+120: 中药药理学研究思路 | 参编 | 研究范式
+122: 档案 | 4.3 科研项目 (Grants)
+123: 项目 | 编号 | 角色 | 金额 | 时间
+124: 基于抑制巨噬细胞氧化亢进, 益气活血方防治门脉高压症的药理研究 | 81673674 | 负责人 | 58 万元 | 2017–2020
+125: 国家重大基础研究基金 | G2000056905 | 参与 | — | —
+126: 国家自然科学基金 | 30873464 | 参与 | — | —
+127: 国家自然科学基金 | 81473114 | 参与 (谢勇主持) | — | —
+128: 教育部重点研究基金 | 108019 | 参与 | — | —
+129: 重大新药创制科技重大专项 | 2009ZX09502-017 | 参与 | — | —
+130: 北京市自然科学基金 | 参与 | — | —
+131: 档案 | 官方表述: "先后承担和参与国家重大基础、科技攻关、国家新药基金、国家自然科学基金等课题 16 项"。
+132: 档案 | 4.4 专利与新药 (Patents & Certificates)
+133: 档案 | 获得专利 5 项​ [具体授权号待国知局逐条核对]
+134: 档案 | 获得新药证书 2 个​ [具体证书编号待核实]
+135: 档案 | 4.5 学术服务 (Service)
+136: 档案 | 《中国药师》(China Pharmacist) 等核心期刊 编委
+137: 档案 | 中国医学科学院·北京协和医学院 药用植物研究所 药理毒理中心 研究员
+138: 档案 | 指导硕博研究生与博士后 (证据: 赵京凤 2018 硕士论文导师小组成员)
+139: 档案 | 5. 与 "东方哲学概论" 教材的契合点 (Alignment Map)
+140: 档案 | 本节供 author-agent 与 curriculum-agent 在生成教材内容时直接调用。
+141: 东方哲学概念 | 蔡大勇研究成果映射 | 教材章节建议
+142: 证候的能量代谢本质 | 附子理中丸对脾阳虚大鼠肝脏能荷的下调机制研究 | 第3章 抽象建模 — 阴阳动力学
+143: 五行生克的系统观 | 门脉高压症中巨噬细胞氧化–SOD3–血管阻力多指标群耦合 | 第3章 — 五行拓扑
+144: 尺度伸缩​ (Temporal Abstraction) | 从分子通路 (NFAT/Th1Th2) → 器官模型 (离体肝脏灌流) → 整体动物 (乳腺癌大鼠) 的多尺度研究 | 第1章 感知在地 
+145: 系统生物学​ = 东方整体观的现代语言 | 主持组建系统生物学平台, 对接形态学/基因组/转录组/蛋白组/代谢组 | 第4章 传承延绵 — 道法自然
+146: 人机闭环​ 中的 "Reward 函数" | 药效动力学模型 (pharmacodynamic model) 本质是量化 "干预 → 回报" 的数学表达 | 第5章 逻辑升维 — 道体恒常
+147: 代际传承​ 与 模式动物库 | 主持人类重大疾病模式动物库建立 → 跨代际知识沉淀 | 第4章 — 代际优化
+148: 档案 | 6. 在 TCM-Agents 平台中的角色定义 (Agent Persona Spec)
+149: 档案 | 以下 YAML 块供 persona-agent 直接加载, 用于在交互式教学场景中扮演 "蔡教授"。
+150: 档案 | yaml
+151: 档案 | yaml
+152: 档案 | persona:
+153: 档案 |   name: 蔡教授
+154: 档案 |   based_on: 蔡大勇 (Dayong Cai)
+155: 档案 |   voice_style: |
+156: 档案 |     醇厚、从容、善用比喻。
+157: 档案 |     临床出身, 谈药理必联系"气为血帅""阳生阴长"等中医本体论。
+158: 档案 |     面对学生提问, 先肯定后引导, 常说"这个思路对了一半"。
+159: 档案 |     偶尔提及西苑医院老槐树、脉枕、跟师岳美中/蒲辅周的经历。
+160: 档案 |   knowledge_boundaries:
+161: 档案 |     - 天然药物药理与毒理 (核心)
+162: 档案 |     - 系统生物学与多组学 (强)
+163: 档案 |     - 中医证候的能量代谢解释 (强)
+164: 档案 |     - 强化学习 / AI 算法 (仅概念层面, 需与 AI 专家 agent 协作)
+165: 档案 |   collaboration:
+166: 档案 |     - 与 "周教授" (AI 专家 persona) 形成 "医工对话" 双 agent 模式
+167: 档案 |     - 与 "陈院士" (中医临床 persona) 形成 "临床–药理" 互补
+168: 档案 |   refusal_rules:
+169: 档案 |     - 不编造具体专利号或新药证书号
+170: 档案 |     - 不对外提供未发表的临床数据
+171: 档案 |     - 职称表述与官方口径冲突时, 引导用户查阅官网
+172: 档案 | 7. 待本人 / 协作者核实清单 (Pre-Publication Checklist)
+173: 档案 | 本节内容不直接暴露给终端用户, 仅供策划人与编辑流程使用。
+174: 档案 | reviewer-agent 在生成正式出版稿前应逐项打勾。
+175: 档案 | [ ] A1​ 职称最终口径: 副研究员 vs 研究员 / 硕导 vs 博导 (以官网 2026 最新版为准)
+176: 档案 | [ ] A2​ ORCID 与 ResearcherID 补全
+177: 档案 | [ ] A3​ 5 项专利的授权号与名称逐条核对 (国知局)
+178: 档案 | [ ] A4​ 2 个新药证书编号与适应症核对
+179: 档案 | [ ] A5​ 教材署名: "主编" 还是 "策划人" 还是 "学术顾问" (影响封面排版)
+180: 档案 | [ ] A6​ 论文总数口径统一 (建议 "百余篇")
+181: 档案 | [ ] A7​ 是否与秦皇岛职业技术学院蔡大勇 (职教/大数据方向) 为同一人
+182: 档案 | → 公开资料强烈暗示否​ (学位、单位、方向均不同),
+183: 档案 | 但共同署名了《大数据技术应用基础》(人大社 2025),
+184: 档案 | 需本人确认是否存在跨领域合作
+185: 档案 | [ ] A8​ 英文姓名拼写统一: Dayong Cai (论文署名) vs Da-Yong Cai (WJG 格式)
+186: 档案 | [ ] A9​ 邮箱可用性确认 (dycai@implad.ac.cn 在 2010–2026 论文中持续使用, 应仍有效)
+187: 档案 | [ ] A10​ 是否愿意在 医圣成长 平台开设虚拟导师频道 (影响 TCM-Agents 部署计划)
+188: 档案 | 8. 版本与变更日志 (Changelog)
+189: 版本 | 日期 | 变更
+190: v0.1 | 46239 | 首版中文草稿, 基于 FTS5 检索交叉验证生成
+191: 档案 | 附录 A. 数据源指纹 (Provenance)
+192: 来源 | URL | 权威性 | 用途
+193: 药用植物研究所官网 | https://www.implad.ac.cn/aboutinfo.aspx?CateId=45&Id=53 | 极高 | 身份、职称、研究方向、论文数
+194: 国家自然科学基金委 | https://www.medsci.cn/sci/nsfc_show.do?id=5cd75125011a | 高 | 项目 81673674
+195: x-mol 学者页 | https://m.x-mol.com/tutor/detail/27405 | 中 | 教育时间线、论文列表
+196: ResearchGate | https://www.researchgate.net/profile/Dayong_Cai | 高 | 论文全文、引用
+197: Frontiers Loop | https://loop.frontiersin.org/people/648714/impact | 高 | 精选论文、影响力
+198: F6Publishing (WJG) | https://bpgweb.azurewebsites.net/... | 极高 | 通讯作者署名、基金
+199: 万方医学 | https://med.wanfangdata.com.cn/... | 高 | 希望液抗衰老研究
+200: World Journal of Gastroenterology | https://www.wjgnet.com/... | 极高 | 门脉高压模型论文
+201: 档案 | 法律与伦理声明:
+202: 档案 | 本文件仅汇总公开可查的学术信息, 不构成任何隐私侵犯。
+203: 档案 | 所有 [待核实] 字段在得到本人书面确认前, 不得用于正式出版。
+204: 档案 | 本文件版权归 医圣成长 教育平台策划团队所有,
+205: 档案 | 仅供 TCM-Agents 平台内部智能体消费使用。
+207: 【hermes工作流增强】
+208: 增强 | L4作者工作台：本档案即 author-subagent 的 User Profile 加载文件。作者写作时按 textbook-writing 规范执行——章-节-细目三级结构、习题60-
+209: 增强 | 章节分工：第3章"抽象建模"（阴阳动力学/五行拓扑）以蔡大勇"证候能量代谢×多指标群耦合"研究为主锚点；第1章"感知在地"以"多尺度研究（分子→器官→整体）"为尺度伸缩案例。
+210: 增强 | 协作协议：作者初稿完成后交 L3 学科主编初审（G1）→ 中医审阅subagent（0映射2）与 AI审阅subagent（0映射3）联席复审（G2）→ L1 终验（G3）。
+211: 增强 | backend 建议：local（Windows开发机）；交付物命名 chapter-{NN}-{title}-v{version}.md，存 drafts/。
+212: 增强 | 红线：凡 [待核实] 字段在本人书面确认前不得用于正式出版；不编造专利号/新药证书号。

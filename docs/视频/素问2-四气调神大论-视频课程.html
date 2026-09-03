@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问2·四气调神大论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问2·四气调神大论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问2-四气调神大论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问2-四气调神大论.mp4">素问2-四气调神大论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 春三月</h2></div>
+    <div class="orig">春三月此谓发陈，这个夜卧早起很有意思，就算广步于庭了吧，被发缓形 以使志生，夜卧早起 广步于庭，此春气之应养生之道也，原文说 夜卧早起，对 还是夜卧早起，这个跟春夏的夜卧早起不一样了</div>
+    <div class="talk">最能启发我们今天生活的养生原则。如果春天没有顺应这个发陈和生的规律会怎么样。因此秋季养生一个非常重要的任务。总结下来冬季养生的关键就是一个字。每个季节的养生都不仅仅是为了当季的健康。这部分讲四季养生真是太详细太重要了。这段话可以说是对前面四季养生后果的高度概括和理论提升。也是对前面所有顺势养生论述的最终生华和落脚点。是说高明的人或者说理想的医者养生者。比如春天要发陈。春三月此谓发陈：夜卧早起、广步于庭、被发缓形、以使志生，生而勿杀、予而勿夺、赏而勿罚，逆之则伤肝，夏为寒变，奉长者少。核心理念：圣人不治已病治未病，不治已乱治未乱，譬犹渴而穿井、斗而铸锥，不亦晚乎！全篇以春夏秋冬为时间轴，揭示季节养生连续性（春生夏长秋收冬藏环环相扣）与预防医学思想，强调生活方式与自然节律同步</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 夏三月</h2></div>
+    <div class="orig">夏三月 此谓蕃秀，天地气交万物华实，然后是无厌于日，这个无厌于日可不是让你去暴晒，此夏气之应养长之道也</div>
+    <div class="talk">这个蕃秀一听就感觉特别茂盛华丽。所以蕃秀描绘的就是夏天那种万物生长到极致。夏三月此谓蕃秀：夜卧早起、无厌于日、使志无怒、使气得泄、若所爱在外，逆之则伤心，秋为痎疟，奉收者少，冬至重病</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 秋三月</h2></div>
+    <div class="orig">秋三月，此谓容平，天气以急 地气以明，首先是 早卧早起 与鸡俱兴，对应原文 此秋气之应 养收之道也</div>
+    <div class="talk">秋三月此谓容平：早卧早起、与鸡俱兴、使志安宁、收敛神气、无外其志、使肺气清，逆之则伤肺，冬为飧泄，奉藏者少</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 冬三月</h2></div>
+    <div class="orig">冬天 冬三月 此谓闭藏，早卧晚起，严重违背了无扰乎阳和闭藏的原则，此冬气之应养藏之道也</div>
+    <div class="talk">身体里用来闭藏奉藏者的资本就少了。冬三月此谓闭藏：早卧晚起、必待日光、使志若伏若匿、去寒就温、无泄皮肤使气亟夺，逆之则伤肾，春为痿厥，奉生者少</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 逆春则伤肝</h2></div>
+    <div class="orig">原文说逆之则伤肝，夏为寒变 奉长者少，跟春天那个奉长者少 类似，逆之则伤肝是一个意思</div>
+    <div class="talk">春三月此谓发陈：夜卧早起、广步于庭、被发缓形、以使志生，生而勿杀、予而勿夺、赏而勿罚，逆之则伤肝，夏为寒变，奉长者少</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 逆夏则伤心</h2></div>
+    <div class="orig">逆之则伤心，那奉收者少呢</div>
+    <div class="talk">夏三月此谓蕃秀：夜卧早起、无厌于日、使志无怒、使气得泄、若所爱在外，逆之则伤心，秋为痎疟，奉收者少，冬至重病</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 逆秋则伤肺</h2></div>
+    <div class="orig">逆之则伤肺，后面还有一句 奉藏者少，对 奉藏者少</div>
+    <div class="talk">秋三月此谓容平：早卧早起、与鸡俱兴、使志安宁、收敛神气、无外其志、使肺气清，逆之则伤肺，冬为飧泄，奉藏者少</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 逆冬则伤肾</h2></div>
+    <div class="orig">这对应了逆之则伤肾，奉生者少</div>
+    <div class="talk">冬三月此谓闭藏：早卧晚起、必待日光、使志若伏若匿、去寒就温、无泄皮肤使气亟夺，逆之则伤肾，春为痿厥，奉生者少</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 春夏养阳秋冬养阴</h2></div>
+    <div class="orig">夫四时阴阳者万物之根本也，所以圣人春夏养阳秋冬养阴以从其根，春夏养阳因为春夏两季自然界阳气式主导，那秋冬养阴呢，所以春夏养阳秋冬养阴，故与万物沉浮于生长之门</div>
+    <div class="talk">这个规律是宇宙间所有生命万物存在发展变化的根本法则。基于这个根本法则圣人是怎么做的呢。违背了四时阴阳这个根本法则。违逆了规律就等于是在砍伐自己生命的根本。这一部分反复强调了顺应四时阴阳。《视频理解四气调神大论》：对话逐段研读《素问》第二篇，核心是顺应四时阴阳、治未病。宏观规律：天气清净光明，四时阴阳为万物之根本，圣人春夏养阳、秋冬养阴，故与万物沉浮于生长之门；逆其根则伐其本、坏其真矣；从阴阳则生、逆之则死；反顺为逆是谓内格</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 治未病</h2></div>
+    <div class="orig">不治已乱治未乱</div>
+    <div class="talk">而是要在动乱还没有发生之前未乱。为了强调这种治未病思想的重要性。《视频理解四气调神大论》：对话逐段研读《素问》第二篇，核心是顺应四时阴阳、治未病。核心理念：圣人不治已病治未病，不治已乱治未乱，譬犹渴而穿井、斗而铸锥，不亦晚乎！全篇以春夏秋冬为时间轴，揭示季节养生连续性（春生夏长秋收冬藏环环相扣）与预防医学思想，强调生活方式与自然节律同步</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问2·四气调神大论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 春三月", "orig": "春三月此谓发陈，这个夜卧早起很有意思，就算广步于庭了吧，被发缓形 以使志生，夜卧早起 广步于庭，此春气之应养生之道也，原文说 夜卧早起，对 还是夜卧早起，这个跟春夏的夜卧早起不一样了", "talk": "最能启发我们今天生活的养生原则。如果春天没有顺应这个发陈和生的规律会怎么样。因此秋季养生一个非常重要的任务。总结下来冬季养生的关键就是一个字。每个季节的养生都不仅仅是为了当季的健康。这部分讲四季养生真是太详细太重要了。这段话可以说是对前面四季养生后果的高度概括和理论提升。也是对前面所有顺势养生论述的最终生华和落脚点。是说高明的人或者说理想的医者养生者。比如春天要发陈。春三月此谓发陈：夜卧早起、广步于庭、被发缓形、以使志生，生而勿杀、予而勿夺、赏而勿罚，逆之则伤肝，夏为寒变，奉长者少。核心理念：圣人不治已病治未病，不治已乱治未乱，譬犹渴而穿井、斗而铸锥，不亦晚乎！全篇以春夏秋冬为时间轴，揭示季节养生连续性（春生夏长秋收冬藏环环相扣）与预防医学思想，强调生活方式与自然节律同步", "chart": null}, {"title": "第二段 · 夏三月", "orig": "夏三月 此谓蕃秀，天地气交万物华实，然后是无厌于日，这个无厌于日可不是让你去暴晒，此夏气之应养长之道也", "talk": "这个蕃秀一听就感觉特别茂盛华丽。所以蕃秀描绘的就是夏天那种万物生长到极致。夏三月此谓蕃秀：夜卧早起、无厌于日、使志无怒、使气得泄、若所爱在外，逆之则伤心，秋为痎疟，奉收者少，冬至重病", "chart": null}, {"title": "第三段 · 秋三月", "orig": "秋三月，此谓容平，天气以急 地气以明，首先是 早卧早起 与鸡俱兴，对应原文 此秋气之应 养收之道也", "talk": "秋三月此谓容平：早卧早起、与鸡俱兴、使志安宁、收敛神气、无外其志、使肺气清，逆之则伤肺，冬为飧泄，奉藏者少", "chart": null}, {"title": "第四段 · 冬三月", "orig": "冬天 冬三月 此谓闭藏，早卧晚起，严重违背了无扰乎阳和闭藏的原则，此冬气之应养藏之道也", "talk": "身体里用来闭藏奉藏者的资本就少了。冬三月此谓闭藏：早卧晚起、必待日光、使志若伏若匿、去寒就温、无泄皮肤使气亟夺，逆之则伤肾，春为痿厥，奉生者少", "chart": null}, {"title": "第五段 · 逆春则伤肝", "orig": "原文说逆之则伤肝，夏为寒变 奉长者少，跟春天那个奉长者少 类似，逆之则伤肝是一个意思", "talk": "春三月此谓发陈：夜卧早起、广步于庭、被发缓形、以使志生，生而勿杀、予而勿夺、赏而勿罚，逆之则伤肝，夏为寒变，奉长者少", "chart": null}, {"title": "第六段 · 逆夏则伤心", "orig": "逆之则伤心，那奉收者少呢", "talk": "夏三月此谓蕃秀：夜卧早起、无厌于日、使志无怒、使气得泄、若所爱在外，逆之则伤心，秋为痎疟，奉收者少，冬至重病", "chart": null}, {"title": "第七段 · 逆秋则伤肺", "orig": "逆之则伤肺，后面还有一句 奉藏者少，对 奉藏者少", "talk": "秋三月此谓容平：早卧早起、与鸡俱兴、使志安宁、收敛神气、无外其志、使肺气清，逆之则伤肺，冬为飧泄，奉藏者少", "chart": null}, {"title": "第八段 · 逆冬则伤肾", "orig": "这对应了逆之则伤肾，奉生者少", "talk": "冬三月此谓闭藏：早卧晚起、必待日光、使志若伏若匿、去寒就温、无泄皮肤使气亟夺，逆之则伤肾，春为痿厥，奉生者少", "chart": null}, {"title": "第九段 · 春夏养阳秋冬养阴", "orig": "夫四时阴阳者万物之根本也，所以圣人春夏养阳秋冬养阴以从其根，春夏养阳因为春夏两季自然界阳气式主导，那秋冬养阴呢，所以春夏养阳秋冬养阴，故与万物沉浮于生长之门", "talk": "这个规律是宇宙间所有生命万物存在发展变化的根本法则。基于这个根本法则圣人是怎么做的呢。违背了四时阴阳这个根本法则。违逆了规律就等于是在砍伐自己生命的根本。这一部分反复强调了顺应四时阴阳。《视频理解四气调神大论》：对话逐段研读《素问》第二篇，核心是顺应四时阴阳、治未病。宏观规律：天气清净光明，四时阴阳为万物之根本，圣人春夏养阳、秋冬养阴，故与万物沉浮于生长之门；逆其根则伐其本、坏其真矣；从阴阳则生、逆之则死；反顺为逆是谓内格", "chart": null}, {"title": "第十段 · 治未病", "orig": "不治已乱治未乱", "talk": "而是要在动乱还没有发生之前未乱。为了强调这种治未病思想的重要性。《视频理解四气调神大论》：对话逐段研读《素问》第二篇，核心是顺应四时阴阳、治未病。核心理念：圣人不治已病治未病，不治已乱治未乱，譬犹渴而穿井、斗而铸锥，不亦晚乎！全篇以春夏秋冬为时间轴，揭示季节养生连续性（春生夏长秋收冬藏环环相扣）与预防医学思想，强调生活方式与自然节律同步", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

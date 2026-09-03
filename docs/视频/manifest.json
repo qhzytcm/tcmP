@@ -1,0 +1,16 @@
+{
+  "name": "黄帝内经·素问01·上古天真论",
+  "short_name": "素问01·上古天真论",
+  "description": "黄帝内经素问第一篇视频课程教学：原文+注释+讲解，语音字幕同步",
+  "start_url": "素问01-上古天真论-视频课程.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#145a32",
+  "theme_color": "#1e8449",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

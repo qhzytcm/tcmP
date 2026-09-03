@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问24·SW24</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问24·SW24</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问24-SW24.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问24-SW24.mp4">素问24-SW24.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 我们看下一张 叫做血气形…</h2></div>
+    <div class="orig">我们看下一张 叫做血气形志论，夫人之常数 正常人的是这样子的，那少阳常少血多气 阳明是不是多气多血，所以我们上面的三步 我们三部九候，就没有我们三部九候</div>
+    <div class="talk">这个血气形志论就是最早。在黄帝内经上面出现的六经辨证。所以说我们读黄帝内经一定要针灸很强。一定要针灸 不然的话你不知道我在讲什么。所以我们先讲针灸的原因就在这里面。你要不要去记 你看就好了。你看中间 人体中气血正常的比例。太阳 你只要看到多气的。比如说太阳经 是多血少气的。只有少阳跟阳明是多气的 对不对。上面的三步 悬颅角孙的地方是胆经。而前是胆经 人迎是什么 胃经 对不对。太阳经本身是多血少气的。所以足太阳经上面找不到气脉。就少了 足太阳的原因就在这里。所以说 这个在少阴上面。我们可以摸到太溪穴 还有什么。寸关尺就讲的是太阴的脉</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 这是我们的三部九候…</h2></div>
+    <div class="orig">这是我们的三部九候，所以三部九候有气脉的来源</div>
+    <div class="talk">就是因为他该经的经络多气。那三部九候的大原则就是</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 所以手足阴阳表里…</h2></div>
+    <div class="orig">所以手足阴阳表里，治病必先去其血，他写一本血证论有没有，然后泻有余补不足</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 这个形乐志苦…</h2></div>
+    <div class="orig">这个形乐志苦</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 所以说坎为水…</h2></div>
+    <div class="orig">所以说坎为水</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段</h2></div>
+    <div class="orig">所以说坎为水</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 病生于脉…</h2></div>
+    <div class="orig">病生于脉，如果一个人形乐志乐，病生于肉</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 那形苦志乐…</h2></div>
+    <div class="orig">那形苦志乐，病生于筋</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 形苦志苦…</h2></div>
+    <div class="orig">形苦志苦，形数惊恐，经络不通，病生于不仁，治之以按摩醪药</div>
+    <div class="talk">我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段</h2></div>
+    <div class="orig">形苦志苦，形数惊恐，经络不通，病生于不仁，治之以按摩醪药</div>
+    <div class="talk">所以我们连一个针孔都很小心。一、'六经气血常数'是【经脉-气血配比的状态参数表】：六经各具特征性气血比例（太阳多血少气/少阳少血多气/阳明多气多血/少阴少血多气/厥阴多血少气/太阴多气少血）——即每经的'血容量-气动力'配比，与现代'血管-神经支配密度''血流灌注-代谢需求'的器官特征研究同构；'此天之常数'即先天确定的生理基线，是'经络-气血特征谱'的量化雏形。倪师以三部九候（悬颅/人迎/冲阳/太溪/神门/太冲）指认诸经脉气所在，说明'多气之经才有可触脉动'——即血流量/搏动强度与经气多少正相关，为脉诊选点提供生理学依据。二、'手足阴阳表里'是【阴阳经-表里耦合网络】：六对表里组合（足太阳-少阴/少阳-厥阴/阳明-太阴；手太阳-少阴/少阳-心主/阳明-太阴）构成脏腑-经络的配对系统——与现代'神经节段支配'（内脏-体表牵涉）及'自主神经交配'理论对应，是'表里同治''表里双解'方剂（如小柴胡汤）的经络学基础。三、'治病必先去其血'是【病理产物清除优先原则】：先刺络放血（去瘀血）以去其苦，再泻有余补不足——即'先清除病理产物（瘀血），后调整系统平。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问24·SW24 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 我们看下一张 叫做血气形…", "orig": "我们看下一张 叫做血气形志论，夫人之常数 正常人的是这样子的，那少阳常少血多气 阳明是不是多气多血，所以我们上面的三步 我们三部九候，就没有我们三部九候", "talk": "这个血气形志论就是最早。在黄帝内经上面出现的六经辨证。所以说我们读黄帝内经一定要针灸很强。一定要针灸 不然的话你不知道我在讲什么。所以我们先讲针灸的原因就在这里面。你要不要去记 你看就好了。你看中间 人体中气血正常的比例。太阳 你只要看到多气的。比如说太阳经 是多血少气的。只有少阳跟阳明是多气的 对不对。上面的三步 悬颅角孙的地方是胆经。而前是胆经 人迎是什么 胃经 对不对。太阳经本身是多血少气的。所以足太阳经上面找不到气脉。就少了 足太阳的原因就在这里。所以说 这个在少阴上面。我们可以摸到太溪穴 还有什么。寸关尺就讲的是太阴的脉", "chart": null}, {"title": "第二段 · 这是我们的三部九候…", "orig": "这是我们的三部九候，所以三部九候有气脉的来源", "talk": "就是因为他该经的经络多气。那三部九候的大原则就是", "chart": null}, {"title": "第三段 · 所以手足阴阳表里…", "orig": "所以手足阴阳表里，治病必先去其血，他写一本血证论有没有，然后泻有余补不足", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第四段 · 这个形乐志苦…", "orig": "这个形乐志苦", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第五段 · 所以说坎为水…", "orig": "所以说坎为水", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第六段 · 第 6 段", "orig": "所以说坎为水", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第七段 · 病生于脉…", "orig": "病生于脉，如果一个人形乐志乐，病生于肉", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第八段 · 那形苦志乐…", "orig": "那形苦志乐，病生于筋", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第九段 · 形苦志苦…", "orig": "形苦志苦，形数惊恐，经络不通，病生于不仁，治之以按摩醪药", "talk": "我受唐容川的印象很大很大。我们的所谓泻有余补不足。这个经方家就是懂经方而已。那开处方了就是开处方了。然后开处方分伤寒跟温病两派。都在各门各派就这样子出来了。所以说你们要有一个概念。我们在治十二经气的时候。当然我们讲五脏气的时候", "chart": null}, {"title": "第十段 · 第 10 段", "orig": "形苦志苦，形数惊恐，经络不通，病生于不仁，治之以按摩醪药", "talk": "所以我们连一个针孔都很小心。一、'六经气血常数'是【经脉-气血配比的状态参数表】：六经各具特征性气血比例（太阳多血少气/少阳少血多气/阳明多气多血/少阴少血多气/厥阴多血少气/太阴多气少血）——即每经的'血容量-气动力'配比，与现代'血管-神经支配密度''血流灌注-代谢需求'的器官特征研究同构；'此天之常数'即先天确定的生理基线，是'经络-气血特征谱'的量化雏形。倪师以三部九候（悬颅/人迎/冲阳/太溪/神门/太冲）指认诸经脉气所在，说明'多气之经才有可触脉动'——即血流量/搏动强度与经气多少正相关，为脉诊选点提供生理学依据。二、'手足阴阳表里'是【阴阳经-表里耦合网络】：六对表里组合（足太阳-少阴/少阳-厥阴/阳明-太阴；手太阳-少阴/少阳-心主/阳明-太阴）构成脏腑-经络的配对系统——与现代'神经节段支配'（内脏-体表牵涉）及'自主神经交配'理论对应，是'表里同治''表里双解'方剂（如小柴胡汤）的经络学基础。三、'治病必先去其血'是【病理产物清除优先原则】：先刺络放血（去瘀血）以去其苦，再泻有余补不足——即'先清除病理产物（瘀血），后调整系统平。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

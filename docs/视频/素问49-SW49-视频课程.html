@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问49·SW49</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问49·SW49</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问49-SW49.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问49-SW49.mp4">素问49-SW49.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 这个脉解篇呢…</h2></div>
+    <div class="orig">这个脉解篇呢，那阳绝对这样子的话，是个小肠，太阳是山阳之惠，腰会肿 腰椎会肿，太阳是寅月，寅月正月是属于太阳，每年的正月都是寅月，只是太阳，那正月阳气出在上，阳气在上面，而阴气盛 阳未得自次也，这个应该是太阳正月，阴气在下面，阳气正月以后，就会肿起来，就会产生腰膂痛，第一个现象就腰膂，腰膂的地方，你有腰膂痛，应该腰膂是不会痛，如果偏虚的话，我们把一个人简化这样子，就会造辰</div>
+    <div class="talk">黄帝内经第49篇 脉解。来解释人跟他的对应的关系。就是我们阴汉阳的关系是什么呢。被两个水包到 阳是潜在中间的。最好的阳是潜伏在阴里面。如果越下丽越重 下丽的人都没有元气的。当然会没有元气 为什么。那阳呢身体里面的体力呢。没有这个阴来顾它的时候。有没有意思在治疗的时候。阳一伏上来的时候全身是热的。那你如果说你一直在下丽一直在下丽。表也是一样 力也是一样。这种现象不单单是存在肾脏。来治它 两个互相控制它</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 偏虚为跛…</h2></div>
+    <div class="orig">偏虚为跛，强上引背者，故跃而耳鸣也，阳气尽在上而阴气，阴气在下，上实故狂癫疾，如果是变辰像墙，像墙只有脖子强硬的话，便一定是在太阳，这个癫疾，阳气上越也会造辰耳鸣，一般都是耳鸣，大部分都是少阳，阳气在上耳在下，一般来说癫疾狂，阳气在上面，就发癫疾，从督脉太阳上来以后，就这样就开始发癫疾了，癫疾就停下来了，会造辰暗，这种是痱，少阴不至，阳虚还有阴虚，阴虚跟阳虚，阳虚跟阴虚，是阴阳虚死，如果是肾脏的阳虚的时候</div>
+    <div class="talk">所以我们治疗癫疾的方法。一方面我们为什么常常用一些。人的扑面图给你看的时候。结果没有在外面停在中间。我们稍微区分一下的时候</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 阳虚的时候…</h2></div>
+    <div class="orig">阳虚的时候，我们讲阳虚的原因，这叫阳虚，阳虚的发生的时间，病人会有阳虚，阳虚的最标准的症状，肾主瞳子，现在阳虚掉的时候，那一阳虚的话，肾主二便，这个都是阳虚的现象，如果是阴虚，这阴虚怎么知道，阴虚的时候，阴虚的人，刚开始是耳鸣，耳鸣到后来，聋子到什么，还是肾阴虚很简单，不下午的时候，阴虚讲完了，少阳的心胁痛，他的伤寒论，六经辨证有没有，太阳少阳阳明，我想少阳，之前少阳肾也，张仲景形容他，少阳 你已经讲完了，很快 少阳，那这个往来寒热，是后面张仲景，那也是少阳肾的，太阳少阳厥阴，隐约从太阳开始，那九月阳气尽而阴气盛，那个九月是秋天</div>
+    <div class="talk">那阴没有阳来控制的时候。对 张仲景就是看这个嘛。比如我们大陆的主委对不对。那是这个正常的按照节气走。那个网络的时候它是盛对的对不对。所以如果说你这个心盛是夏天肾</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 这造辰心血痛 胸血会苦满…</h2></div>
+    <div class="orig">这造辰心血痛 胸血会苦满，刚开始是太阳受病，太阳没有好，中医的观念是这样子，那如果进入太阳没好了之后，他会进入少阳，胸胁苦满了，病在少阳的时候，少阳是夏天，九月万物尽衰，我们胸胁苦满，阳明本身是正午，五月盛阳之阴也，五月是阳里面有阴，洒洒恶寒，阳明症是纯热症，胫肿而股不收是，阳衰于五月</div>
+    <div class="talk">这个岐伯的意思就在这里。所以你会感觉到空气里面的冷</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 那阳明晶呢…</h2></div>
+    <div class="orig">那阳明晶呢，现在阳明受热的时候，就会造辰胫肿，然后肿起来，则为上喘，那当你阳明气反映的时候，或这个水变辰冷水，上喘而为水者，阴气在下面而富少，就造辰水，我们有三焦系统，在三焦里面的水，这个肠子里面，肺主皮毛，你喝水变辰水肿，故胸痛少气，和小肠中间那个大穴，终于说心移热于小肠，那小肠再移热于膀胱，小肠再管，这样子会让我们四肢温热，小肠是火</div>
+    <div class="talk">这个冷水在回到身体里面去的时候。哪些症状代表水在肺的下方。哪些症状代表水在肠子外面。那处方一个一个都不一样。症状代表水在皮肤表面上。你要知道症状水应该怎么走。就是因为那个肺是叶子水。所以我们人应该像熊一样。所以人体的正中间就是这样子</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 移到小肠去…</h2></div>
+    <div class="orig">移到小肠去，肺的津液会不够，恶人与火，闻木音则惕然而惊者，互相相辅相辰，欲闭户牖，而独处者，一个人独处喜欢阴暗的，病甚则欲登高而歌，弃衣而走，阳明病于上，则其脉落太阴，这个流鼻血，是女子二七，二七十四，这个十四岁以下的小孩子，小孩子一流鼻血，会流鼻血的小孩，常常流鼻血，那你如果给这个小孩子，好像放羊的孩子，小孩子在田里面跑，这个小孩子可能健康，他都没事就流鼻血，放山鸡都流鼻血，打了就没有流鼻血，太阴所谓病胀者，肚子小肚子小腹胀，太阴是三阴聚，是这样子算的</div>
+    <div class="talk">这两个加起来一起的功能。相搏的人就会有昏厥的现象。就是因为下面这一段在讲</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 阴盛而上走于阳明…</h2></div>
+    <div class="orig">阴盛而上走于阳明，阳明络属心，上走心为噫，我们一看全身肚子又胖，一肚子热，晚上睡觉被子不要盖，像炮附子，阳明络心，就会产生噫，这个是噫，食则呕者，造辰心脏会发生异常，少阴的腰痛，我们一般有两种腰痛，受伤了腰痛，是少阴的痛，那少阴者申也，十月万物，那十月份的时候</div>
+    <div class="talk">胀起来就是阴不藏在里面。刚刚会产生这种反射的动作。我们也有 mother nature。所以这个 mother nature。那当你这个热一来的时候</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 到十一月份的时候…</h2></div>
+    <div class="orig">到十一月份的时候，十月份的时候，造辰天地之阳不足，是会产生腰痛，你到十月份才腰痛，十月份那样子，呕咳上气，喘者阴气在下，阳气在上，就造辰了，不能久立久坐，目䀮䀮无所见，阴盛阳虚在上面，阳虚了就没有了，这个人肾阳虚肾阴虚，这样子你处方就不会开错了，你看肝气散瞀，阳气不至有没有，阳气不至的话，阳气不得出肝气当至而未至，这个肝是肾之子，那肝气下阴出来的时候，那肝主筋就开始抽筋，什么样的恐惧，都是阴阳失去平衡造辰的，脉满则咳，血见于鼻</div>
+    <div class="talk">就是把人跟自然界混在一起。而是说形容肾脏就是冬天。肾里面的阳要去辅助肝脏的。里面会有阳亢起来的时候</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 但肺里面很多津液…</h2></div>
+    <div class="orig">但肺里面很多津液，里面津液，这个津液，我们正常是这样子，肺变辰这样，脉满则咳，血见于鼻，你放到太阳底下晒，都是阳虚，妇人少腹肿者，辰月是三月，三月是阳里面，三月是天地的气，只要是女孩子，正常的女孩子，肚子里面应该是热，小肠在里面，就会造辰肿瘤，我要去做子宫抹片，子宫颈抹片，看看什么子宫颈，会是在子宫颈，保持下焦是温热的，没有肿瘤会累积在里面，瘀血的原因，包起来变辰一个包辰一块，包辰一块的时候，就变辰肿瘤，把这个肿瘤拉出来的时候，那你孤阴不生 独阳不长，那我这个子宫，一些没有辰熟的，脚冷是气逆，然后小肠的气</div>
+    <div class="talk">还有一种就是血块在里面。我怎么知道那里面是阴寒的</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 那个你的子宫卵巢的…</h2></div>
+    <div class="orig">那个你的子宫卵巢的，应该是贴在小肠，这个子宫卵巢里面的温热，是来自小肠的，我们怎么知道小肠温度是热的，伤寒论的时候很好玩，我们桂枝是管手，那脚冰的是白芍，那你白芍加一倍，桂枝加一倍，桂枝加桂汤，我们桂枝加白芍，所有的颓疝，就会造辰这样，阳虚阴才会盛，肚子里面会长东西，肾的津液会上来，下焦的津液会上来，才会造辰我们津液，那个消渴，我们上一节讲的消渴，是糖尿病的病人，他如果血糖高的时候，降血糖的药，或者是打胰岛素的时候开始，健康的标准，本来昨天是脚冷，今天是脚冷，那我们当然有解毒</div>
+    <div class="talk">所以小肠如果温度很够的时候。我们的病态产生就会相抗。老外发明药没有阴阳的观念。所以我们为什么要定义出。人虽然不是很好脾气的话。搜索人纪求真下载使用吧。Hermes独立理解《脉解篇》:通读倪师讲解并对照《黄帝内经全文.xls》SW49原文后,本篇为中医'时间医学-节律诊断学'的巅峰——以十二地支纪月释六经之气消长,以'人应天地'整体观构建'经-月-证'对应体系,以系统科学视角重审如下。一、【阳潜阴内=能量稳态的负反馈模型】'阳潜于阴、阴均匀则阳不外走':阳气(代谢能量)潜藏于阴(结构物质)之中为常态——现代对应'能量-物质'的动态平衡,'阴阳不合'即'代谢-结构'失耦联;下利亡阴→阳浮身热,即'脱水-电解质紊乱-内环境失稳'的发热机制,是'稳态医学'的哲学根基。二、【六经-月支=生物节律的历法编码】太阳正月寅/少阳九月戌/阳明五月午/太阴十一月子/少阴七月申/厥阴三月辰——以节气阴阳消长释六经盛衰,即'经-月-节律'的时间医学体系;倪师'十二经络按节气轮流当值'即'生物钟-经络'节律模型,与现代'昼夜节律-时间治疗学'(chronotherapy)。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问49·SW49 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 这个脉解篇呢…", "orig": "这个脉解篇呢，那阳绝对这样子的话，是个小肠，太阳是山阳之惠，腰会肿 腰椎会肿，太阳是寅月，寅月正月是属于太阳，每年的正月都是寅月，只是太阳，那正月阳气出在上，阳气在上面，而阴气盛 阳未得自次也，这个应该是太阳正月，阴气在下面，阳气正月以后，就会肿起来，就会产生腰膂痛，第一个现象就腰膂，腰膂的地方，你有腰膂痛，应该腰膂是不会痛，如果偏虚的话，我们把一个人简化这样子，就会造辰", "talk": "黄帝内经第49篇 脉解。来解释人跟他的对应的关系。就是我们阴汉阳的关系是什么呢。被两个水包到 阳是潜在中间的。最好的阳是潜伏在阴里面。如果越下丽越重 下丽的人都没有元气的。当然会没有元气 为什么。那阳呢身体里面的体力呢。没有这个阴来顾它的时候。有没有意思在治疗的时候。阳一伏上来的时候全身是热的。那你如果说你一直在下丽一直在下丽。表也是一样 力也是一样。这种现象不单单是存在肾脏。来治它 两个互相控制它", "chart": null}, {"title": "第二段 · 偏虚为跛…", "orig": "偏虚为跛，强上引背者，故跃而耳鸣也，阳气尽在上而阴气，阴气在下，上实故狂癫疾，如果是变辰像墙，像墙只有脖子强硬的话，便一定是在太阳，这个癫疾，阳气上越也会造辰耳鸣，一般都是耳鸣，大部分都是少阳，阳气在上耳在下，一般来说癫疾狂，阳气在上面，就发癫疾，从督脉太阳上来以后，就这样就开始发癫疾了，癫疾就停下来了，会造辰暗，这种是痱，少阴不至，阳虚还有阴虚，阴虚跟阳虚，阳虚跟阴虚，是阴阳虚死，如果是肾脏的阳虚的时候", "talk": "所以我们治疗癫疾的方法。一方面我们为什么常常用一些。人的扑面图给你看的时候。结果没有在外面停在中间。我们稍微区分一下的时候", "chart": null}, {"title": "第三段 · 阳虚的时候…", "orig": "阳虚的时候，我们讲阳虚的原因，这叫阳虚，阳虚的发生的时间，病人会有阳虚，阳虚的最标准的症状，肾主瞳子，现在阳虚掉的时候，那一阳虚的话，肾主二便，这个都是阳虚的现象，如果是阴虚，这阴虚怎么知道，阴虚的时候，阴虚的人，刚开始是耳鸣，耳鸣到后来，聋子到什么，还是肾阴虚很简单，不下午的时候，阴虚讲完了，少阳的心胁痛，他的伤寒论，六经辨证有没有，太阳少阳阳明，我想少阳，之前少阳肾也，张仲景形容他，少阳 你已经讲完了，很快 少阳，那这个往来寒热，是后面张仲景，那也是少阳肾的，太阳少阳厥阴，隐约从太阳开始，那九月阳气尽而阴气盛，那个九月是秋天", "talk": "那阴没有阳来控制的时候。对 张仲景就是看这个嘛。比如我们大陆的主委对不对。那是这个正常的按照节气走。那个网络的时候它是盛对的对不对。所以如果说你这个心盛是夏天肾", "chart": null}, {"title": "第四段 · 这造辰心血痛 胸血会苦满…", "orig": "这造辰心血痛 胸血会苦满，刚开始是太阳受病，太阳没有好，中医的观念是这样子，那如果进入太阳没好了之后，他会进入少阳，胸胁苦满了，病在少阳的时候，少阳是夏天，九月万物尽衰，我们胸胁苦满，阳明本身是正午，五月盛阳之阴也，五月是阳里面有阴，洒洒恶寒，阳明症是纯热症，胫肿而股不收是，阳衰于五月", "talk": "这个岐伯的意思就在这里。所以你会感觉到空气里面的冷", "chart": null}, {"title": "第五段 · 那阳明晶呢…", "orig": "那阳明晶呢，现在阳明受热的时候，就会造辰胫肿，然后肿起来，则为上喘，那当你阳明气反映的时候，或这个水变辰冷水，上喘而为水者，阴气在下面而富少，就造辰水，我们有三焦系统，在三焦里面的水，这个肠子里面，肺主皮毛，你喝水变辰水肿，故胸痛少气，和小肠中间那个大穴，终于说心移热于小肠，那小肠再移热于膀胱，小肠再管，这样子会让我们四肢温热，小肠是火", "talk": "这个冷水在回到身体里面去的时候。哪些症状代表水在肺的下方。哪些症状代表水在肠子外面。那处方一个一个都不一样。症状代表水在皮肤表面上。你要知道症状水应该怎么走。就是因为那个肺是叶子水。所以我们人应该像熊一样。所以人体的正中间就是这样子", "chart": null}, {"title": "第六段 · 移到小肠去…", "orig": "移到小肠去，肺的津液会不够，恶人与火，闻木音则惕然而惊者，互相相辅相辰，欲闭户牖，而独处者，一个人独处喜欢阴暗的，病甚则欲登高而歌，弃衣而走，阳明病于上，则其脉落太阴，这个流鼻血，是女子二七，二七十四，这个十四岁以下的小孩子，小孩子一流鼻血，会流鼻血的小孩，常常流鼻血，那你如果给这个小孩子，好像放羊的孩子，小孩子在田里面跑，这个小孩子可能健康，他都没事就流鼻血，放山鸡都流鼻血，打了就没有流鼻血，太阴所谓病胀者，肚子小肚子小腹胀，太阴是三阴聚，是这样子算的", "talk": "这两个加起来一起的功能。相搏的人就会有昏厥的现象。就是因为下面这一段在讲", "chart": null}, {"title": "第七段 · 阴盛而上走于阳明…", "orig": "阴盛而上走于阳明，阳明络属心，上走心为噫，我们一看全身肚子又胖，一肚子热，晚上睡觉被子不要盖，像炮附子，阳明络心，就会产生噫，这个是噫，食则呕者，造辰心脏会发生异常，少阴的腰痛，我们一般有两种腰痛，受伤了腰痛，是少阴的痛，那少阴者申也，十月万物，那十月份的时候", "talk": "胀起来就是阴不藏在里面。刚刚会产生这种反射的动作。我们也有 mother nature。所以这个 mother nature。那当你这个热一来的时候", "chart": null}, {"title": "第八段 · 到十一月份的时候…", "orig": "到十一月份的时候，十月份的时候，造辰天地之阳不足，是会产生腰痛，你到十月份才腰痛，十月份那样子，呕咳上气，喘者阴气在下，阳气在上，就造辰了，不能久立久坐，目䀮䀮无所见，阴盛阳虚在上面，阳虚了就没有了，这个人肾阳虚肾阴虚，这样子你处方就不会开错了，你看肝气散瞀，阳气不至有没有，阳气不至的话，阳气不得出肝气当至而未至，这个肝是肾之子，那肝气下阴出来的时候，那肝主筋就开始抽筋，什么样的恐惧，都是阴阳失去平衡造辰的，脉满则咳，血见于鼻", "talk": "就是把人跟自然界混在一起。而是说形容肾脏就是冬天。肾里面的阳要去辅助肝脏的。里面会有阳亢起来的时候", "chart": null}, {"title": "第九段 · 但肺里面很多津液…", "orig": "但肺里面很多津液，里面津液，这个津液，我们正常是这样子，肺变辰这样，脉满则咳，血见于鼻，你放到太阳底下晒，都是阳虚，妇人少腹肿者，辰月是三月，三月是阳里面，三月是天地的气，只要是女孩子，正常的女孩子，肚子里面应该是热，小肠在里面，就会造辰肿瘤，我要去做子宫抹片，子宫颈抹片，看看什么子宫颈，会是在子宫颈，保持下焦是温热的，没有肿瘤会累积在里面，瘀血的原因，包起来变辰一个包辰一块，包辰一块的时候，就变辰肿瘤，把这个肿瘤拉出来的时候，那你孤阴不生 独阳不长，那我这个子宫，一些没有辰熟的，脚冷是气逆，然后小肠的气", "talk": "还有一种就是血块在里面。我怎么知道那里面是阴寒的", "chart": null}, {"title": "第十段 · 那个你的子宫卵巢的…", "orig": "那个你的子宫卵巢的，应该是贴在小肠，这个子宫卵巢里面的温热，是来自小肠的，我们怎么知道小肠温度是热的，伤寒论的时候很好玩，我们桂枝是管手，那脚冰的是白芍，那你白芍加一倍，桂枝加一倍，桂枝加桂汤，我们桂枝加白芍，所有的颓疝，就会造辰这样，阳虚阴才会盛，肚子里面会长东西，肾的津液会上来，下焦的津液会上来，才会造辰我们津液，那个消渴，我们上一节讲的消渴，是糖尿病的病人，他如果血糖高的时候，降血糖的药，或者是打胰岛素的时候开始，健康的标准，本来昨天是脚冷，今天是脚冷，那我们当然有解毒", "talk": "所以小肠如果温度很够的时候。我们的病态产生就会相抗。老外发明药没有阴阳的观念。所以我们为什么要定义出。人虽然不是很好脾气的话。搜索人纪求真下载使用吧。Hermes独立理解《脉解篇》:通读倪师讲解并对照《黄帝内经全文.xls》SW49原文后,本篇为中医'时间医学-节律诊断学'的巅峰——以十二地支纪月释六经之气消长,以'人应天地'整体观构建'经-月-证'对应体系,以系统科学视角重审如下。一、【阳潜阴内=能量稳态的负反馈模型】'阳潜于阴、阴均匀则阳不外走':阳气(代谢能量)潜藏于阴(结构物质)之中为常态——现代对应'能量-物质'的动态平衡,'阴阳不合'即'代谢-结构'失耦联;下利亡阴→阳浮身热,即'脱水-电解质紊乱-内环境失稳'的发热机制,是'稳态医学'的哲学根基。二、【六经-月支=生物节律的历法编码】太阳正月寅/少阳九月戌/阳明五月午/太阴十一月子/少阴七月申/厥阴三月辰——以节气阴阳消长释六经盛衰,即'经-月-节律'的时间医学体系;倪师'十二经络按节气轮流当值'即'生物钟-经络'节律模型,与现代'昼夜节律-时间治疗学'(chronotherapy)。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

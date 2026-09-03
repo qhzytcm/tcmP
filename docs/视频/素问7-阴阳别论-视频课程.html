@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问7·阴阳别论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问7·阴阳别论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问7-阴阳别论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问7-阴阳别论.mp4">素问7-阴阳别论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 四经十二从</h2></div>
+    <div class="orig">他问 人有四经十二从何位，四经应四时，那十二从应十二月，十二月应十二脉呢，这个四经十二从，我们从最开始那个四经十二从</div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 脉有阴阳</h2></div>
+    <div class="orig">脉有阴阳，知阳者知阴，知阴者知阳，先看 别于阳者 知病处也</div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 真脏与胃脘之阳</h2></div>
+    <div class="orig">对 先说这个所谓阴者 真脏也，所以后面才说见则为败 败必死也，那所谓阳者 胃脘之阳也呢，这个胃脘之阳听起来好像，而胃脘之阳代表的是后天生机的存亡，胃脘之阳代表后天生机</div>
+    <div class="talk">生死之脉：阴者真脏也，见则为败败必死也；阳者胃脘之阳也，有胃气则生。。真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 阳中之阴</h2></div>
+    <div class="orig"></div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 阴搏阳别</h2></div>
+    <div class="orig"></div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 二阳之病发心脾</h2></div>
+    <div class="orig">二阳之病发心脾，有不得隐曲，女子不月就好理解了，其传为风消</div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 三阳为病</h2></div>
+    <div class="orig">他说会下为痈肿</div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 一阳发病</h2></div>
+    <div class="orig"></div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 结阴结阳</h2></div>
+    <div class="orig">多阴少阳曰石水</div>
+    <div class="talk">比如睾丸肿痛 下坠。真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 收束死证</h2></div>
+    <div class="orig">死阴之属不过三日而死，生阳之属不过四日而死，那生阳之属呢</div>
+    <div class="talk">真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问7·阴阳别论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 四经十二从", "orig": "他问 人有四经十二从何位，四经应四时，那十二从应十二月，十二月应十二脉呢，这个四经十二从，我们从最开始那个四经十二从", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。", "chart": null}, {"title": "第二段 · 脉有阴阳", "orig": "脉有阴阳，知阳者知阴，知阴者知阳，先看 别于阳者 知病处也", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。", "chart": null}, {"title": "第三段 · 真脏与胃脘之阳", "orig": "对 先说这个所谓阴者 真脏也，所以后面才说见则为败 败必死也，那所谓阳者 胃脘之阳也呢，这个胃脘之阳听起来好像，而胃脘之阳代表的是后天生机的存亡，胃脘之阳代表后天生机", "talk": "生死之脉：阴者真脏也，见则为败败必死也；阳者胃脘之阳也，有胃气则生。。真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第四段 · 阳中之阴", "orig": "", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第五段 · 阴搏阳别", "orig": "", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第六段 · 二阳之病发心脾", "orig": "二阳之病发心脾，有不得隐曲，女子不月就好理解了，其传为风消", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第七段 · 三阳为病", "orig": "他说会下为痈肿", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第八段 · 一阳发病", "orig": "", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第九段 · 结阴结阳", "orig": "多阴少阳曰石水", "talk": "比如睾丸肿痛 下坠。真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}, {"title": "第十段 · 收束死证", "orig": "死阴之属不过三日而死，生阳之属不过四日而死，那生阳之属呢", "talk": "真脏脉预后：肝至悬绝急十八日死，心至悬绝九日死，肺至悬绝十二日死，肾至悬绝七日死，脾至悬绝四日死。⑦病证：二阳之病发心脾（女子不月，传为风消息贲）；三阳为病发寒热；一阳发病少气善咳善泄；二阳一阴发病惊骇背痛善噫善欠名风厥；二阴一阳发病善胀心满善气；三阴三阳发病偏枯萎易四肢不举。⑨结证：结阳者肿四肢，结阴者便血；阴阳结斜多阴少阳曰石水；二阳结谓之消，三阳结谓之隔，三阴结谓之水，一阴一阳结谓之喉痹；阴搏阳别谓之有子，阳加于阴谓之汗，阴虚阳搏谓之崩。⑩预后：三阴俱搏二十日死，二阴俱搏十三日死，一阴俱搏十日死，三阳俱搏且鼓三日死，三阴三阳俱搏五日死，二阳俱搏其病温十日死。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

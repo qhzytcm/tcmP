@@ -38,3 +38,15 @@ node_modules/
 
 # Temp
 /tmp/
+# ===== 2026-09-03 系统化: 大体积媒体/临时产物不入库（本地保留, 部署走服务器）=====
+# 视频课程媒体（docs/视频 6.4GB 本地资产）
+docs/视频/*.mp4
+docs/视频/*.video
+# 单文件 HTML（视频 base64 内嵌 20-117MB; 轻量版 *.视频课程.html 入库）
+docs/视频/*-视频授课.html
+docs/视频/segs*.json
+docs/视频/*.log
+# 桌面应用安装包
+/dist/
+# 临时/杂物
+*.tmp

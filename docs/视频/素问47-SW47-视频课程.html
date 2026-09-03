@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问47·SW47</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问47·SW47</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问47-SW47.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问47-SW47.mp4">素问47-SW47.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 奇病论呢…</h2></div>
+    <div class="orig">奇病论呢，他说胞络者系于肾，少阴之脉贯肾，同时系到舌本，当然是经过废再到舌本去对不对，造成胞络的这条络，在刺法里面就有谈到，无损不足益有余，以成其疹，这个我们针灸的刺法，其实是无损不足，专门胁下气满力</div>
+    <div class="talk">岐伯说就是胞之络脉绝也。因为怀胎小孩子在那边压到。不然那个孕妇没有声音了。是这个病情缠绵不去的意思。软弱无力 受尴尬的在那边讲。这个病人的心态就是这样子。那病人如果是有余的时候。你肚子里面有硬块在里面。我们攻邪的药取他的速效。那是有一定的基本的一个环境。让他体力飞到一个程度以后</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 这个不妨于食…</h2></div>
+    <div class="orig">这个不妨于食，那积是为导引服药，练功夫来做导引的法，还用导引呼吸吐纳的把气，还有环脐而痛，溢于大肠而着于肓，着于肓 保险好荒</div>
+    <div class="talk">我们平常有累积东西在里面。横肋这边是属于三焦系统。那当有病在这个地方的时候。那可是它是脏内三焦的系统里面。那这个怎么从哪里来的呢。连这个神仙都要肚子遮起来。再怎么样天气再怎么样热。所以你不要看那个车肚兜。我刚才讲肚子一定要遮好。也会连接到中焦膈了这边来</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 那肓之原在肚脐以下…</h2></div>
+    <div class="orig">那肓之原在肚脐以下，环脐而痛，有的人尺脉数甚，筋急而见，这个尺脉是沉在底下，如果你看到白色，黑色都看到在脸上的时候，看到青色黑色是不是痛证，看到白色是不是寒证，看到白色又看到黑色，黑色是痛吧，有的人病有头痛，当有所犯的大寒，大寒天的时候</div>
+    <div class="talk">这个三焦油网里面的水呢。那你也敢讲气还没有关系。这个水腻色小便就会很尖色。所以风可以让东西冷下来。但你觉得风会伤肝对不对。你不能对那风吹的肝病的人吹。就是把他从肝炎吹的肝来。这个里面当医生害人的方法一定要知道。阴脉是沉在底下的对不对。我们看到黄色红色是热证。那你光开止痛的药不会好。因为这样子分辨就很清楚了</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 再往深入跑到骨髓里面去…</h2></div>
+    <div class="orig">再往深入跑到骨髓里面去，就会朝几年头痛都不会好，髓者以脑为主，脑逆故令头痛，当然我们头痛有很多种，这个是寒造成的头痛，头痛是不是寒痛</div>
+    <div class="talk">这个一直慢慢慢慢严重的。那个蒙古池袋的骨头都不对称。本来胃已经是沿著旁边走。我们所谓邪气会逆的时候。那鼻子里面如果塞了很多东西。这个时候我们有用轻力的药。或者我们一些开一些通力的药。我这个牙痛我就自止痛药。所以你如果从个案子可以看出来。你到牙医里面给你牙齿沾个洞。所以炎症本身不会造成痛。那是因为脓肿在那边出不来。你在那边吃抗生素吃到半天。这个跟发炎完全没有关系。头会像戴帽一样戴一圈在里面</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 我们称之为脾瘅…</h2></div>
+    <div class="orig">我们称之为脾瘅，那五味入口，脾为之行它的精气，津液在脾，那甘者令人中满</div>
+    <div class="talk">真的一样就戴一圈在这边。有突然的特别特殊的味道出来。一定是常常吃很好的食物。我们在这边讲胃就是胃中的。为什么我们讲是这个脾瘅。今天你不管是你自己本身。因为你爸在白天工厂很忙。你看我在外面工厂那么辛苦。现在最大的问题是西方医学。结果那个病人在打那个胰岛素。因为他不知道病怎么来的</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 不要紧张…</h2></div>
+    <div class="orig">不要紧张，这个脾瘅是不是越来越重，有的病人紧张记忆不好忘掉</div>
+    <div class="talk">实际上美国现在最新的研究出来了。所有糖尿病血糖高发心脏病。都不是因为血糖高发心脏病。都是因为胰岛素发心脏病。和胰岛素是真正引发心脏病的原因。所以血糖高并不会发胰岛素。跟打胰岛素的后遗症是什么。那你的脑肚子越来越严重。我们开始下次都要把你胰岛素拿掉。那你血糖一直在那边三百三四百。因为你打了十年二十年了。你根本皮上一张的睡觉去了。这要代表你吃食物吃太多了。他当然要讲一些话来吓你的。所以现在所有糖尿病人发心脏病人。通通是因为药物发心脏病。不是因为高血糖发心脏病。那他一直在打那个胰岛素。刚好可以把那个血糖控制在里面。自己调节的功能能够做到。那这个病人已经二十年了。因为我们一直维持他脚是热的。现在是世界的医学群体型这样子</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 有人病口苦…</h2></div>
+    <div class="orig">有人病口苦，病名叫胆瘅，肝者中之将 取决于胆</div>
+    <div class="talk">他也不敢乖乖的站在那边。没有任何疾病可以威胁你。你就把生活习惯改一下就好了。兰臻大道上说错有什么不行。我保证你这一辈子婚姻没。这黄金年金就记载了对不对。你苦你想到肝胆嘛对不对。那口苦者这个什么叫做病呢。那有胆识有的人是吃食物。我们不是那个夫妻之间的感情的醋</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 病人很紧张很难过…</h2></div>
+    <div class="orig">病人很紧张很难过，或俞穴治之在，你回家也也口苦，癃是小便不出，这个身热如炭，人迎脉造胜，人迎脉是胃气的所在，喘息气逆，这个太阴脉，微细如发者，这个病在太阴，其盛在胃，病名曰厥死不治，我们后面有五有余二不足，这个死不治这种症状，什么叫五有余二不足</div>
+    <div class="talk">我碰到这种人干脆有没有。那你告诉我你要我怎么办。所以说如果你遇到这个病人是这样子。因为你也给他搞得犹豫不决了。脖子跟胸腔好像又分开来了。整个气往上代表阴和阳要相隔。就是我们所谓的五有余二不足。岐伯就说所谓五有余二不足</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 有余二不足呢…</h2></div>
+    <div class="orig">有余二不足呢，外得五有余内得二不足，这个其身不表不里，全身热如炭，人迎躁盛喘息，一生下来就患癫痫，气上而不下，就会发癫痫，我们癫痫怎么治，你摸他的脉又大又紧，脉变得浮大很大 很紧，绷紧在那边，肾积水的时候就不是肾风了，肾风不能食，现在大而紧</div>
+    <div class="talk">你看文字上有点不容易明了。这都是阳气往上逆的现象。因为肺脉是寸阳脉的地方。就是我们看到两种正气不足。所以你如果在加护病房里面工作。遗传不是跟遗传没有关系。这个是因为胎儿在妈妈肚子里面的时候。当然我们在针灸的时候有介绍过。你看 岐伯一定会跟胃有关系</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段</h2></div>
+    <div class="orig">有余二不足呢，外得五有余内得二不足，这个其身不表不里，全身热如炭，人迎躁盛喘息，一生下来就患癫痫，气上而不下，就会发癫痫，我们癫痫怎么治，你摸他的脉又大又紧，脉变得浮大很大 很紧，绷紧在那边，肾积水的时候就不是肾风了，肾风不能食，现在大而紧</div>
+    <div class="talk">如果你把它聚合在一起的时候。那肾就管骨的战力对不对。所以你把指导通通累积起来的时候。你在那边听话已经去看完了。病人已经告诉你他怎么样了对不对。你告诉我已经开好处方了。所以还表现得背脸比较好。然后他等他通通讲完以后。所以你会遇到什么人都有。那病人他自己的犹豫不决。你是否遇到过视频一听就懂。它能帮你快速梳理知识框架。让零散的知识点一目了然。搜索人纪求真下载使用吧。Hermes独立理解《奇病论》:通读倪师讲解并对照《黄帝内经全文.xls》SW47原文后,本篇为"奇病(疑难罕见病)病机诊断学"的典范——十大奇病横跨妇产、消化、神经、内分泌、儿科、肾病诸科,以病机统病名、以藏象释病源,以系统科学视角重审如下。一、【妊娠失音=压迫性声带功能障碍】'胞络系于肾,少阴之脉贯肾系舌本':妊娠九月子宫增大压迫盆底-腹主动脉,肾经(循行咽喉)供血受阻,声带失养而失音——现代对应'妊娠期声带水肿/喉返神经受压'的罕见并发症;'无治,当十月复'即'自限性病程'的精准判断,与产科'避免不必要干预'一致,是'不治疗即最佳治疗'的经典案例。二、【息积=气分慢性积聚】'胁下满气逆。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问47·SW47 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 奇病论呢…", "orig": "奇病论呢，他说胞络者系于肾，少阴之脉贯肾，同时系到舌本，当然是经过废再到舌本去对不对，造成胞络的这条络，在刺法里面就有谈到，无损不足益有余，以成其疹，这个我们针灸的刺法，其实是无损不足，专门胁下气满力", "talk": "岐伯说就是胞之络脉绝也。因为怀胎小孩子在那边压到。不然那个孕妇没有声音了。是这个病情缠绵不去的意思。软弱无力 受尴尬的在那边讲。这个病人的心态就是这样子。那病人如果是有余的时候。你肚子里面有硬块在里面。我们攻邪的药取他的速效。那是有一定的基本的一个环境。让他体力飞到一个程度以后", "chart": null}, {"title": "第二段 · 这个不妨于食…", "orig": "这个不妨于食，那积是为导引服药，练功夫来做导引的法，还用导引呼吸吐纳的把气，还有环脐而痛，溢于大肠而着于肓，着于肓 保险好荒", "talk": "我们平常有累积东西在里面。横肋这边是属于三焦系统。那当有病在这个地方的时候。那可是它是脏内三焦的系统里面。那这个怎么从哪里来的呢。连这个神仙都要肚子遮起来。再怎么样天气再怎么样热。所以你不要看那个车肚兜。我刚才讲肚子一定要遮好。也会连接到中焦膈了这边来", "chart": null}, {"title": "第三段 · 那肓之原在肚脐以下…", "orig": "那肓之原在肚脐以下，环脐而痛，有的人尺脉数甚，筋急而见，这个尺脉是沉在底下，如果你看到白色，黑色都看到在脸上的时候，看到青色黑色是不是痛证，看到白色是不是寒证，看到白色又看到黑色，黑色是痛吧，有的人病有头痛，当有所犯的大寒，大寒天的时候", "talk": "这个三焦油网里面的水呢。那你也敢讲气还没有关系。这个水腻色小便就会很尖色。所以风可以让东西冷下来。但你觉得风会伤肝对不对。你不能对那风吹的肝病的人吹。就是把他从肝炎吹的肝来。这个里面当医生害人的方法一定要知道。阴脉是沉在底下的对不对。我们看到黄色红色是热证。那你光开止痛的药不会好。因为这样子分辨就很清楚了", "chart": null}, {"title": "第四段 · 再往深入跑到骨髓里面去…", "orig": "再往深入跑到骨髓里面去，就会朝几年头痛都不会好，髓者以脑为主，脑逆故令头痛，当然我们头痛有很多种，这个是寒造成的头痛，头痛是不是寒痛", "talk": "这个一直慢慢慢慢严重的。那个蒙古池袋的骨头都不对称。本来胃已经是沿著旁边走。我们所谓邪气会逆的时候。那鼻子里面如果塞了很多东西。这个时候我们有用轻力的药。或者我们一些开一些通力的药。我这个牙痛我就自止痛药。所以你如果从个案子可以看出来。你到牙医里面给你牙齿沾个洞。所以炎症本身不会造成痛。那是因为脓肿在那边出不来。你在那边吃抗生素吃到半天。这个跟发炎完全没有关系。头会像戴帽一样戴一圈在里面", "chart": null}, {"title": "第五段 · 我们称之为脾瘅…", "orig": "我们称之为脾瘅，那五味入口，脾为之行它的精气，津液在脾，那甘者令人中满", "talk": "真的一样就戴一圈在这边。有突然的特别特殊的味道出来。一定是常常吃很好的食物。我们在这边讲胃就是胃中的。为什么我们讲是这个脾瘅。今天你不管是你自己本身。因为你爸在白天工厂很忙。你看我在外面工厂那么辛苦。现在最大的问题是西方医学。结果那个病人在打那个胰岛素。因为他不知道病怎么来的", "chart": null}, {"title": "第六段 · 不要紧张…", "orig": "不要紧张，这个脾瘅是不是越来越重，有的病人紧张记忆不好忘掉", "talk": "实际上美国现在最新的研究出来了。所有糖尿病血糖高发心脏病。都不是因为血糖高发心脏病。都是因为胰岛素发心脏病。和胰岛素是真正引发心脏病的原因。所以血糖高并不会发胰岛素。跟打胰岛素的后遗症是什么。那你的脑肚子越来越严重。我们开始下次都要把你胰岛素拿掉。那你血糖一直在那边三百三四百。因为你打了十年二十年了。你根本皮上一张的睡觉去了。这要代表你吃食物吃太多了。他当然要讲一些话来吓你的。所以现在所有糖尿病人发心脏病人。通通是因为药物发心脏病。不是因为高血糖发心脏病。那他一直在打那个胰岛素。刚好可以把那个血糖控制在里面。自己调节的功能能够做到。那这个病人已经二十年了。因为我们一直维持他脚是热的。现在是世界的医学群体型这样子", "chart": null}, {"title": "第七段 · 有人病口苦…", "orig": "有人病口苦，病名叫胆瘅，肝者中之将 取决于胆", "talk": "他也不敢乖乖的站在那边。没有任何疾病可以威胁你。你就把生活习惯改一下就好了。兰臻大道上说错有什么不行。我保证你这一辈子婚姻没。这黄金年金就记载了对不对。你苦你想到肝胆嘛对不对。那口苦者这个什么叫做病呢。那有胆识有的人是吃食物。我们不是那个夫妻之间的感情的醋", "chart": null}, {"title": "第八段 · 病人很紧张很难过…", "orig": "病人很紧张很难过，或俞穴治之在，你回家也也口苦，癃是小便不出，这个身热如炭，人迎脉造胜，人迎脉是胃气的所在，喘息气逆，这个太阴脉，微细如发者，这个病在太阴，其盛在胃，病名曰厥死不治，我们后面有五有余二不足，这个死不治这种症状，什么叫五有余二不足", "talk": "我碰到这种人干脆有没有。那你告诉我你要我怎么办。所以说如果你遇到这个病人是这样子。因为你也给他搞得犹豫不决了。脖子跟胸腔好像又分开来了。整个气往上代表阴和阳要相隔。就是我们所谓的五有余二不足。岐伯就说所谓五有余二不足", "chart": null}, {"title": "第九段 · 有余二不足呢…", "orig": "有余二不足呢，外得五有余内得二不足，这个其身不表不里，全身热如炭，人迎躁盛喘息，一生下来就患癫痫，气上而不下，就会发癫痫，我们癫痫怎么治，你摸他的脉又大又紧，脉变得浮大很大 很紧，绷紧在那边，肾积水的时候就不是肾风了，肾风不能食，现在大而紧", "talk": "你看文字上有点不容易明了。这都是阳气往上逆的现象。因为肺脉是寸阳脉的地方。就是我们看到两种正气不足。所以你如果在加护病房里面工作。遗传不是跟遗传没有关系。这个是因为胎儿在妈妈肚子里面的时候。当然我们在针灸的时候有介绍过。你看 岐伯一定会跟胃有关系", "chart": null}, {"title": "第十段 · 第 10 段", "orig": "有余二不足呢，外得五有余内得二不足，这个其身不表不里，全身热如炭，人迎躁盛喘息，一生下来就患癫痫，气上而不下，就会发癫痫，我们癫痫怎么治，你摸他的脉又大又紧，脉变得浮大很大 很紧，绷紧在那边，肾积水的时候就不是肾风了，肾风不能食，现在大而紧", "talk": "如果你把它聚合在一起的时候。那肾就管骨的战力对不对。所以你把指导通通累积起来的时候。你在那边听话已经去看完了。病人已经告诉你他怎么样了对不对。你告诉我已经开好处方了。所以还表现得背脸比较好。然后他等他通通讲完以后。所以你会遇到什么人都有。那病人他自己的犹豫不决。你是否遇到过视频一听就懂。它能帮你快速梳理知识框架。让零散的知识点一目了然。搜索人纪求真下载使用吧。Hermes独立理解《奇病论》:通读倪师讲解并对照《黄帝内经全文.xls》SW47原文后,本篇为\"奇病(疑难罕见病)病机诊断学\"的典范——十大奇病横跨妇产、消化、神经、内分泌、儿科、肾病诸科,以病机统病名、以藏象释病源,以系统科学视角重审如下。一、【妊娠失音=压迫性声带功能障碍】'胞络系于肾,少阴之脉贯肾系舌本':妊娠九月子宫增大压迫盆底-腹主动脉,肾经(循行咽喉)供血受阻,声带失养而失音——现代对应'妊娠期声带水肿/喉返神经受压'的罕见并发症;'无治,当十月复'即'自限性病程'的精准判断,与产科'避免不必要干预'一致,是'不治疗即最佳治疗'的经典案例。二、【息积=气分慢性积聚】'胁下满气逆。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

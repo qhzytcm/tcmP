@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问11·五藏别论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问11·五藏别论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问11-五藏别论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问11-五藏别论.mp4">素问11-五藏别论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 有人告诉他是脑髓…</h2></div>
+    <div class="orig">有人告诉他是脑髓，叫做奇恒之腑</div>
+    <div class="talk">今天咱们来聊一个特别有意思的东西。这份材料来自一部非常古老的中医典籍。我们平时都觉得自己挺了解自己身体的嘛。这些器官的名字我们从小就挂在嘴边。跟我们今天的理解可能完全是两个次元。我们身体里最核心的储藏器官是什么。你可能第一反映就是大脑。黄帝就遇到了一个难题。但有人又言之凿凿地说是肠胃。这两个答案听着就完全是拧着的。我们就借着黄帝和他老师岐伯的这段对话。来彻底梳理一下这个古老的身体观。看看古人究竟是怎么给身体里的各个部门分类的。又藏着怎样一套完全不同的逻辑。这个开头就特别有意思。连传说中的黄帝本人他都感到困惑。有些理论认为脑和髓是身体里最根本的脏。肠和胃这些消化器官才是。但听起来又好像各自都有道理。可能根本就不是用一个单一的非黑即白的标准。这两波人说的其实都没错。只是他们观察的角度和遵循的分类标准不一样。他就抛出了第一个关键概念</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 还有女子胞…</h2></div>
+    <div class="orig">还有女子胞，奇恒之腑，藏而不泻</div>
+    <div class="talk">也就是我们今天所说的子宫。这名字听起来就挺玄妙的。为什么把这六样东西归为一类呢。他们看起来功能差别很大。这套系统精妙的地方。所以这六个器官的核心特征。储存身体里最精华的物质。他们是身体里哪些深藏不露。构成我们生命最根本最稳定的物质基础。这不就是我们身体的框架。它们在这条体系里被放在了哪里</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 和奇恒之腑相对的…</h2></div>
+    <div class="orig">和奇恒之腑相对的，叫做传化之腑，是泻而不藏，这是奇恒之腑，这是传化之腑，脑髓是脏的</div>
+    <div class="talk">我感觉他们才是我身体里。就引出了岐伯的第二个概念。这五样东西是天气之所生也。所以他们的核心功能正好相反。他们存在的意义就是不断地传导。还有五脏代谢产生的浊气。不能在体内长久停留。就像一个极其繁忙的物流中转站。开头黄帝的矛盾就解开了。是从地气收藏精华的角度看的。肠胃显然不属于真正的脏</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段</h2></div>
+    <div class="orig">和奇恒之腑相对的，叫做传化之腑，是泻而不藏，这是奇恒之腑，这是传化之腑，脑髓是脏的</div>
+    <div class="talk">这五样东西是天气之所生也。所以他们的核心功能正好相反。他们存在的意义就是不断地传导。还有五脏代谢产生的浊气。不能在体内长久停留。就像一个极其繁忙的物流中转站。开头黄帝的矛盾就解开了。是从地气收藏精华的角度看的。肠胃显然不属于真正的脏</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 膀胱这些传化之腑…</h2></div>
+    <div class="orig">膀胱这些传化之腑，再加上前面奇恒之腑</div>
+    <div class="talk">它们负责传导和转化物质。所以他们的状态正好相反。你可以把它想象成一条高速公路。但这是它功能正常的表现。这条路真的被堵得水泄不通。是暂时的动态的过程性的。原文里还举了一个绝佳的例子</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 水谷入口则胃实而肠虚…</h2></div>
+    <div class="orig">水谷入口则胃实而肠虚，食下则肠实而胃虚，包括奇恒之腑和传化之腑的分类，为什么手腕上那个叫气口的，说胃者 水谷之海，六腑之大源也</div>
+    <div class="talk">随着胃的蠕动和消化。总是在被填充和排空之间交替。应该永远保持着精华的充盈。这个关于脏腑的理论框架。听起来还是非常内在的一种理论模型。他们到底是怎么应用这套理论。像汽车仪表盘一样的东西。可以读取身体内部的状态。就判断出五脏六腑的整体状态呢。身体的局部是如何反映整体的。引向了一个我们非常熟悉的器官。他用了一个非常大气的比喻</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 而气口这个诊脉的位置…</h2></div>
+    <div class="orig">而气口这个诊脉的位置，恰好属于手太阴肺经，集中地动态地体现在气口这个脉象上，五气入鼻，藏于心肺，心肺有病</div>
+    <div class="talk">胃就像容纳所有食物和水的海洋。首先被胃接收和初步处理。身体里所有脏腑的功能状态。这有点像我们现在常说的。或者说一切疾病始于肠道。古人虽然没有微生物的概念。最终都会通过胃这个总源头。通过手指触摸尺肤脉搏的皮肤。就能像一位情报分析员一样。这其实就是一种全息的观念。这种局部反映整体的思路。为了进一步证明身体各部分</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 而鼻为之不利也…</h2></div>
+    <div class="orig">而鼻为之不利也，叫拘于鬼神者</div>
+    <div class="talk">我们通过鼻子吸入的空气。都在反复强调一个核心思想。身体是一个紧密相连的有机整体。而不是一堆孤立零件的简单组合。话题突然从具体的身体构造。它没有继续讲更复杂的医术。这是一个非常深刻的收尾。最终还是要回到道的层面。哪些过分迷信鬼神之说的人。但我们可以把它理解得更宽泛一些。自己无法掌控的超自然力量</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 叫恶于针石者…</h2></div>
+    <div class="orig">叫恶于针石者，病不许治者，也必然是治之无功矣</div>
+    <div class="talk">从自身寻找原因和解决办法的人。当一个人认为自己的命运。任何内在的疗愈都无法启动。泛指古代的各种治疗方法。和不信任治疗方法本身的人。在这种强烈的抗拒心态下。因为疗愈需要身体和心神的放松与接纳。现代的安慰剂效应和反安慰剂效应。确实能极大地影响治疗效果。我觉得第三种是最发人深省的。他已经彻底放弃了求生的意志。患者内在的生命力求生意志。是所有治疗能够生效的最终前提</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 负责收藏精华的奇恒之腑…</h2></div>
+    <div class="orig">负责收藏精华的奇恒之腑，负责传导转化的传化之腑，古人通过气口诊脉的整体观</div>
+    <div class="talk">永远是病人身体里的神。这不仅仅是对古代医生的告诫。更是对我们每一个人的提醒。才是自身健康和疗愈的最终负责人。也是我们内在状态的一面镜子。古人眼中身体的两种器官系统。理解了脏器追求精华的充满。与腑气追求物质的流实之间的本质区别。患者心态作为决定性因素的古老智慧。像大脑骨骼这样稳定根本的结构。这其实描绘了一幅我们体内。那么最后我们想留给你一个问题去思考。哪些部分让你感觉是坚实的。或者你长久坚持的某个习惯。或者你不断冒出的新想法。这两种天与地的力量在你之内。或许理解了身体里的天地。也能帮助我们更好地理解生活里的天地。一、本篇核心是**藏腑二元分类学**：奇恒之腑（脑髓骨脉胆女子胞）与传化之腑（胃肠三焦膀胱）按“藏而不泻vs泻而不藏”的功能判据划分——这是最早的**功能分类法**（非解剖分类），类似系统科学按“存储元件vs传输元件”区分系统组件；且“地气所生象地”与“天气所生象天”赋予两类元件不同的物理隐喻：稳定存储（地）vs动态流动（天），与现代“储能系统vs传输系统”的系统架构思想完全同构。二、“满而不能实，实而不能满”是**容</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问11·五藏别论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 有人告诉他是脑髓…", "orig": "有人告诉他是脑髓，叫做奇恒之腑", "talk": "今天咱们来聊一个特别有意思的东西。这份材料来自一部非常古老的中医典籍。我们平时都觉得自己挺了解自己身体的嘛。这些器官的名字我们从小就挂在嘴边。跟我们今天的理解可能完全是两个次元。我们身体里最核心的储藏器官是什么。你可能第一反映就是大脑。黄帝就遇到了一个难题。但有人又言之凿凿地说是肠胃。这两个答案听着就完全是拧着的。我们就借着黄帝和他老师岐伯的这段对话。来彻底梳理一下这个古老的身体观。看看古人究竟是怎么给身体里的各个部门分类的。又藏着怎样一套完全不同的逻辑。这个开头就特别有意思。连传说中的黄帝本人他都感到困惑。有些理论认为脑和髓是身体里最根本的脏。肠和胃这些消化器官才是。但听起来又好像各自都有道理。可能根本就不是用一个单一的非黑即白的标准。这两波人说的其实都没错。只是他们观察的角度和遵循的分类标准不一样。他就抛出了第一个关键概念", "chart": null}, {"title": "第二段 · 还有女子胞…", "orig": "还有女子胞，奇恒之腑，藏而不泻", "talk": "也就是我们今天所说的子宫。这名字听起来就挺玄妙的。为什么把这六样东西归为一类呢。他们看起来功能差别很大。这套系统精妙的地方。所以这六个器官的核心特征。储存身体里最精华的物质。他们是身体里哪些深藏不露。构成我们生命最根本最稳定的物质基础。这不就是我们身体的框架。它们在这条体系里被放在了哪里", "chart": null}, {"title": "第三段 · 和奇恒之腑相对的…", "orig": "和奇恒之腑相对的，叫做传化之腑，是泻而不藏，这是奇恒之腑，这是传化之腑，脑髓是脏的", "talk": "我感觉他们才是我身体里。就引出了岐伯的第二个概念。这五样东西是天气之所生也。所以他们的核心功能正好相反。他们存在的意义就是不断地传导。还有五脏代谢产生的浊气。不能在体内长久停留。就像一个极其繁忙的物流中转站。开头黄帝的矛盾就解开了。是从地气收藏精华的角度看的。肠胃显然不属于真正的脏", "chart": null}, {"title": "第四段 · 第 4 段", "orig": "和奇恒之腑相对的，叫做传化之腑，是泻而不藏，这是奇恒之腑，这是传化之腑，脑髓是脏的", "talk": "这五样东西是天气之所生也。所以他们的核心功能正好相反。他们存在的意义就是不断地传导。还有五脏代谢产生的浊气。不能在体内长久停留。就像一个极其繁忙的物流中转站。开头黄帝的矛盾就解开了。是从地气收藏精华的角度看的。肠胃显然不属于真正的脏", "chart": null}, {"title": "第五段 · 膀胱这些传化之腑…", "orig": "膀胱这些传化之腑，再加上前面奇恒之腑", "talk": "它们负责传导和转化物质。所以他们的状态正好相反。你可以把它想象成一条高速公路。但这是它功能正常的表现。这条路真的被堵得水泄不通。是暂时的动态的过程性的。原文里还举了一个绝佳的例子", "chart": null}, {"title": "第六段 · 水谷入口则胃实而肠虚…", "orig": "水谷入口则胃实而肠虚，食下则肠实而胃虚，包括奇恒之腑和传化之腑的分类，为什么手腕上那个叫气口的，说胃者 水谷之海，六腑之大源也", "talk": "随着胃的蠕动和消化。总是在被填充和排空之间交替。应该永远保持着精华的充盈。这个关于脏腑的理论框架。听起来还是非常内在的一种理论模型。他们到底是怎么应用这套理论。像汽车仪表盘一样的东西。可以读取身体内部的状态。就判断出五脏六腑的整体状态呢。身体的局部是如何反映整体的。引向了一个我们非常熟悉的器官。他用了一个非常大气的比喻", "chart": null}, {"title": "第七段 · 而气口这个诊脉的位置…", "orig": "而气口这个诊脉的位置，恰好属于手太阴肺经，集中地动态地体现在气口这个脉象上，五气入鼻，藏于心肺，心肺有病", "talk": "胃就像容纳所有食物和水的海洋。首先被胃接收和初步处理。身体里所有脏腑的功能状态。这有点像我们现在常说的。或者说一切疾病始于肠道。古人虽然没有微生物的概念。最终都会通过胃这个总源头。通过手指触摸尺肤脉搏的皮肤。就能像一位情报分析员一样。这其实就是一种全息的观念。这种局部反映整体的思路。为了进一步证明身体各部分", "chart": null}, {"title": "第八段 · 而鼻为之不利也…", "orig": "而鼻为之不利也，叫拘于鬼神者", "talk": "我们通过鼻子吸入的空气。都在反复强调一个核心思想。身体是一个紧密相连的有机整体。而不是一堆孤立零件的简单组合。话题突然从具体的身体构造。它没有继续讲更复杂的医术。这是一个非常深刻的收尾。最终还是要回到道的层面。哪些过分迷信鬼神之说的人。但我们可以把它理解得更宽泛一些。自己无法掌控的超自然力量", "chart": null}, {"title": "第九段 · 叫恶于针石者…", "orig": "叫恶于针石者，病不许治者，也必然是治之无功矣", "talk": "从自身寻找原因和解决办法的人。当一个人认为自己的命运。任何内在的疗愈都无法启动。泛指古代的各种治疗方法。和不信任治疗方法本身的人。在这种强烈的抗拒心态下。因为疗愈需要身体和心神的放松与接纳。现代的安慰剂效应和反安慰剂效应。确实能极大地影响治疗效果。我觉得第三种是最发人深省的。他已经彻底放弃了求生的意志。患者内在的生命力求生意志。是所有治疗能够生效的最终前提", "chart": null}, {"title": "第十段 · 负责收藏精华的奇恒之腑…", "orig": "负责收藏精华的奇恒之腑，负责传导转化的传化之腑，古人通过气口诊脉的整体观", "talk": "永远是病人身体里的神。这不仅仅是对古代医生的告诫。更是对我们每一个人的提醒。才是自身健康和疗愈的最终负责人。也是我们内在状态的一面镜子。古人眼中身体的两种器官系统。理解了脏器追求精华的充满。与腑气追求物质的流实之间的本质区别。患者心态作为决定性因素的古老智慧。像大脑骨骼这样稳定根本的结构。这其实描绘了一幅我们体内。那么最后我们想留给你一个问题去思考。哪些部分让你感觉是坚实的。或者你长久坚持的某个习惯。或者你不断冒出的新想法。这两种天与地的力量在你之内。或许理解了身体里的天地。也能帮助我们更好地理解生活里的天地。一、本篇核心是**藏腑二元分类学**：奇恒之腑（脑髓骨脉胆女子胞）与传化之腑（胃肠三焦膀胱）按“藏而不泻vs泻而不藏”的功能判据划分——这是最早的**功能分类法**（非解剖分类），类似系统科学按“存储元件vs传输元件”区分系统组件；且“地气所生象地”与“天气所生象天”赋予两类元件不同的物理隐喻：稳定存储（地）vs动态流动（天），与现代“储能系统vs传输系统”的系统架构思想完全同构。二、“满而不能实，实而不能满”是**容", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

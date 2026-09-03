@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.zyyywaccn.com.cn/schema/medical-record/v1",
+  "title": "tcmP 中医电子病历 Schema",
+  "description": "六者 A2A 诊疗链路的病历交换与入库模板（中医结构化病历）",
+  "type": "object",
+  "required": ["record_id", "visit", "patient", "tcm", "diagnosis", "plan"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0" },
+    "record_id": { "type": "string", "description": "病历号（UUID）" },
+    "created_at": { "type": "string", "format": "date-time" },
+
+    "visit": {
+      "type": "object",
+      "required": ["visit_id", "mode", "date", "facility"],
+      "properties": {
+        "visit_id": { "type": "string" },
+        "mode": { "type": "string", "enum": ["outpatient", "inpatient", "telemedicine", "education"] },
+        "date": { "type": "string", "format": "date" },
+        "facility": { "type": "string" },
+        "visit_number": { "type": "integer", "description": "第几次就诊（复诊信号）" }
+      }
+    },
+
+    "patient": {
+      "type": "object",
+      "required": ["id", "age", "sex"],
+      "properties": {
+        "id": { "type": "string", "description": "匿名化患者 ID" },
+        "age": { "type": "integer", "minimum": 0, "maximum": 130 },
+        "sex": { "type": "string", "enum": ["男", "女", "其他"] },
+        "occupation": { "type": "string" },
+        "group": { "type": "string", "enum": ["成人", "儿童", "老年", "孕产"] }
+      }
+    },
+
+    "tcm": {
+      "type": "object",
+      "description": "中医四诊要素（四诊合参原始项）",
+      "required": ["inspection", "listening", "inquiry", "palpation"],
+      "properties": {
+        "inspection": {
+          "type": "object",
+          "properties": {
+            "spirit": { "type": "string", "description": "神" },
+            "face": { "type": "string", "description": "面色" },
+            "tongue_body": { "type": "string", "example": "舌红少苔" },
+            "tongue_coating": { "type": "string", "example": "苔薄黄" },
+            "tongue_subcollateral": { "type": "string" }
+          }
+        },
+        "listening": {
+          "type": "object",
+          "properties": {
+            "voice": { "type": "string" },
+            "breath": { "type": "string" },
+            "smell": { "type": "string" }
+          }
+        },
+        "inquiry": {
+          "type": "object",
+          "properties": {
+            "chief_complaint": { "type": "string", "description": "主诉" },
+            "present_illness": { "type": "string", "description": "现病史" },
+            "past_illness": { "type": "string" },
+            "sleep": { "type": "string" },
+            "appetite": { "type": "string" },
+            "stool_urine": { "type": "string", "description": "二便" },
+            "emotion": { "type": "string", "description": "情志" },
+            "menstruation": { "type": "string" }
+          }
+        },
+        "palpation": {
+          "type": "object",
+          "description": "脉象（要素分离, 见红线规范）",
+          "properties": {
+            "rate": { "type": "string", "description": "频数要素: 一息X至" },
+            "rhythm": { "type": "string", "description": "节律要素: 整齐/结/代/促" },
+            "length": { "type": "string", "description": "长短要素: 长/短/覆" },
+            "depth": { "type": "string", "description": "深浅要素: 浮/沉/中" },
+            "quality": { "type": "string", "description": "形态要素: 弦/滑/涩/细" },
+            "left_cun": { "type": "string" },
+            "right_cun": { "type": "string" },
+            "pulse_summary": { "type": "string", "example": "脉细数" }
+          }
+        }
+      }
+    },
+
+    "diagnosis": {
+      "type": "object",
+      "required": ["disease", "pattern"],
+      "properties": {
+        "disease": { "type": "string", "example": "不寐" },
+        "pattern": { "type": "string", "example": "心肾不交证" },
+        "unit": { "type": "string", "description": "L0 病证单元（图谱锚点）", "example": "不寐·心肾不交证" },
+        "icd11_traditional": { "type": "string", "description": "ICD-11 传统医学编码", "example": "SA61" },
+        "icd11_western": { "type": "string", "example": "6A00.Z 失眠" },
+        "syndrome_analysis": { "type": "string", "description": "辨证分析（病位+病性）" },
+        "ddg": {
+          "type": "object",
+          "description": "疾病诊断图谱节点（DDG 场方程输出）",
+          "properties": {
+            "node_id": { "type": "string" },
+            "field_vector": {
+              "type": "object",
+              "description": "证候场向量",
+              "properties": {
+                "location": { "type": "string", "example": "心" },
+                "nature": { "type": "string", "example": "阴虚" },
+                "qi_blood": { "type": "string", "example": "气虚" },
+                "strength": { "type": "number", "minimum": 0, "maximum": 1 }
+              }
+            },
+            "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+
+    "plan": {
+      "type": "object",
+      "required": ["principle", "formula"],
+      "properties": {
+        "principle": { "type": "string", "example": "交通心肾，引火归元" },
+        "formula": {
+          "type": "object",
+          "required": ["name", "herbs", "decoction"],
+          "properties": {
+            "name": { "type": "string", "example": "交泰丸合天王补心丹加减" },
+            "herbs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "dose", "role"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "dose": { "type": "string", "example": "9g" },
+                  "role": { "type": "string", "enum": ["君", "臣", "佐", "使"] },
+                  "preparation": { "type": "string", "example": "先煎/后下/冲服" }
+                }
+              }
+            },
+            "decoction": { "type": "string", "example": "水煎服，日一剂，早晚分服" },
+            "course": { "type": "string", "example": "7 剂" }
+          }
+        },
+        "acupuncture": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "points": { "type": "array", "items": { "type": "string" } },
+              "method": { "type": "string" }
+            }
+          }
+        },
+        "lifestyle": { "type": "array", "items": { "type": "string" }, "description": "起居调摄" },
+        "follow_up": { "type": "string", "example": "7 日后复诊" }
+      }
+    },
+
+    "reviews": {
+      "type": "object",
+      "description": "四审制（药/规/法）",
+      "properties": {
+        "pharmacist": { "type": "object", "properties": { "status": { "type": "string", "enum": ["pass", "reject", "conditional"] }, "issues": { "type": "array", "items": { "type": "string" } } } },
+        "regulator": { "type": "object", "properties": { "status": { "type": "string", "enum": ["合规", "偏差"] }, "clause": { "type": "string" } } },
+        "lawyer": { "type": "object", "properties": { "risk_level": { "type": "string", "enum": ["低", "中", "高"] }, "items": { "type": "array", "items": { "type": "object" } } } }
+      }
+    },
+
+    "outcomes": {
+      "type": "object",
+      "description": "结局随访（图谱闭环回流信号）",
+      "properties": {
+        "follow_up_result": { "type": "string", "enum": ["治愈", "好转", "未愈", "恶化", "失访"] },
+        "feedback": { "type": "string" },
+        "days_to_effect": { "type": "integer" }
+      }
+    }
+  }
+}

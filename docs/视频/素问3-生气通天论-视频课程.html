@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问3·生气通天论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问3·生气通天论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问3-生气通天论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问3-生气通天论.mp4">素问3-生气通天论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 通天者生之本</h2></div>
+    <div class="orig">他说 黄帝曰夫自古通天者生之本本于阴阳，第一个就是通天者生之本，那这第一句的厚半句 本于阴阳又是什么意思呢，这个本于阴阳就点出了实现通天，所以 本于阴阳，所以说 这一句 夫自古通天者生之本，本于阴阳 它是理解生气通天论，厚面它紧接着说了一句 其生五 其气三，其生五 这个五很有可能跟五行，而其气三呢 也有几种可能，本于阴阳的总纲领</div>
+    <div class="talk">而我们今天要聊的这篇生气通天论。通天它强调的是人和大自然和天地之间。这意思是说能够通天是维持生命活动的根本。这里的通天可不是简单说我们喘个口气。人能不能通天能不能活得健康长久。不是别的就是你能不能够做到通天。所以生气通天论花了这么大的篇幅。《视频理解生气通天论》：对话逐段研读《素问》第三篇，核心是阳气与阴阳平衡。开篇总纲：夫自古通天者，生之本，本于阴阳——生命根本在于人与天地相通、阴阳平衡；其生五其气三，数犯此者则邪气伤人</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 阳气若天与日</h2></div>
+    <div class="orig">阳气者若天与日这样的比喻，失其所则折寿而不彰，故天运当以日光明，不天运当以日光明</div>
+    <div class="talk">这个比喻一下子就把阳气的重要性。阳气没能在它应该在的地方发挥作用。当这个重要的阳气受到各种邪气侵袭。强调暑热导致阳气随汗外泄而耗散。阳气不能均匀地到达两侧体表所致。明白了看来阳气作为我们身体的卫外和动力源泉。筋可以理解为阳气中最精华最清纯的部分。或者说阳气达到精粹充盈的状态时。柔指阳气中温煦柔和的那部分特质。或者说阳气能够温和的发挥作用时。那如果阳气的运行调节本身出了问题呢。对这涉及到阳气运行的另一个重要方面。合可以理解为阳气的内收敛藏固守。阳气应该内收体表毛孔应该关闭。是的这说明阳气运行的正常节律和调节机制。厚面还提到了几种因为阳气运行失常。如果阳气虚衰下陷气血运行不畅。病邪滞留和阳气虚弱导致的精神情志问题。俞气就是指输穴部位的功能活动和阳气。身体有邪气阳气又弱人就容易害怕受惊。它属阴但它的运行需要阳气的推动。阳气在一天之中的主要职责范围在哪里。这时候人体的阳气也开始像小草发芽一样。可能也是为了让亢盛的阳气稍微平复一下。顺应我们体内这个阳气的时钟。可能是阳气本身虚弱了也可能是阴寒之邪太盛了。因为阳气是推动脏</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 烦劳则张</h2></div>
+    <div class="orig">烦劳则张，精绝辟积于夏使人煎厥，那精绝呢，这个辟积于夏</div>
+    <div class="talk">寒暑湿气烦劳大怒这些因素。邪气伤阳：因于寒（欲如运枢）、因于暑（烦则喘喝、体若燔炭）、因于湿（首如裹、大筋緛短）、因于气（四维相代、阳气乃竭）；烦劳则张致煎厥（目盲耳闭）、大怒则形气绝致薄厥（血菀于上）；汗出偏沮使人偏枯，汗出见湿乃生痤疿，劳汗当风寒薄为皶</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 阳气开阖</h2></div>
+    <div class="orig">故阳气者一日而主外，平旦人气生，日中而阳气隆，日西而阳气已虚</div>
+    <div class="talk">阳气一日而主外：平旦人气生、日中阳气隆、日西阳气已虚、气门乃闭，故暮而收拒、无扰筋骨、</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 阴平阳秘</h2></div>
+    <div class="orig">他说 凡阴阳之要 阳密乃固，是阳密乃固，所以 阳密乃固是重中之重，阴平阳秘 精神乃治，阴阳离决 精气乃绝，指有达到了阴平阳秘，才能实现精神乃治，那反面呢 阴阳离决，阴阳离决 就是阴和阳完全分离，从阴平阳秘的最高境界，到阴阳离决的生命终点，阴平阳秘是理想目标，阴平阳秘 精神奶质，而阴阳离决，像阳密乃固，阴平阳秘精神乃治</div>
+    <div class="talk">对这说明阳密是实现阴阳平衡的一个核心前提和关键环节。阴平阳秘这四个字是关键中的关键。阴平阳秘这听起来就像是健康的密码一样。阴阳关系：阴者藏精而起亟、阳者卫外而为固；阴不胜阳则脉流薄疾并乃狂，阳不胜阴则五脏气争九窍不通；凡阴阳之要阳密乃固，阴平阳秘精神乃治，阴阳离决精气乃绝。⑦四时伤：春伤于风夏生飧泄、夏伤于暑秋为痎疟、秋伤于湿冬生咳嗽、冬伤于寒春必温病。⑧五味：阴之所生本在五味，伤在五味；谨和五味则骨正筋柔、气血以流、腠理以密、长有天命</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 阳气精则养神</h2></div>
+    <div class="orig">阳气者精则养神 柔则养筋，那柔则养筋呢，原文好像提到了开阖不得，那开阖不得呢 就是这个调节失灵了，开阖不得就是该开的时候开不了，原文说 开阖不得 寒气从之 乃生大偻，还要精则养神 柔则养筋</div>
+    <div class="talk">开篇总纲：夫自古通天者，生之本，本于阴阳——生命根本在于人与天地相通、阴阳平衡；其生五其气三，数犯此者则邪气伤人</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 阴者藏精</h2></div>
+    <div class="orig">先看阴者藏精而起亟也，阳者卫外而为固也，第一种 阴不胜其阳 则脉流薄疾 并乃狂，理解了阴不胜其阳</div>
+    <div class="talk">明白了看来阳气作为我们身体的卫外和动力源泉。也就是在体表发挥它卫外的功能。如果阳不胜阴阳气虚弱不能上升。还是阳不胜阴阴盛厚果都很严重。阳气者若天与日：阳气如太阳般重要，失其所则折寿而不彰；阳因而上，卫外者也。阴阳关系：阴者藏精而起亟、阳者卫外而为固；阴不胜阳则脉流薄疾并乃狂，阳不胜阴则五脏气争九窍不通；凡阴阳之要阳密乃固，阴平阳秘精神乃治，阴阳离决精气乃绝。⑦四时伤：春伤于风夏生飧泄、夏伤于暑秋为痎疟、秋伤于湿冬生咳嗽、冬伤于寒春必温病。⑧五味：阴之所生本在五味，伤在五味；谨和五味则骨正筋柔、气血以流、腠理以密、长有天命</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 苍天之气清静</h2></div>
+    <div class="orig">苍天之气清静 则志意治，那厚面顺之则阳气固呢</div>
+    <div class="talk">开篇总纲：夫自古通天者，生之本，本于阴阳——生命根本在于人与天地相通、阴阳平衡；其生五其气三，数犯此者则邪气伤人</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 圣人陈阴阳</h2></div>
+    <div class="orig">是以圣人陈阴阳 筋脉和同 骨髓坚固 气血皆从，谨道如法</div>
+    <div class="talk">并且指出了达到这肿状态的人是圣人。是以圣人陈阴阳陈有陈列布列调和的意思。懂得养生之道的圣人能够清楚地了解。圣度就是符合圣人之道的方法标准或境界</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 收束长有天命</h2></div>
+    <div class="orig">直到了阴之所生，本在五味，是故谨和五味，如果能做到谨和五味，谨和五味长有天命，最终长有天命，那个长有天命的目标呢</div>
+    <div class="talk">阴阳关系：阴者藏精而起亟、阳者卫外而为固；阴不胜阳则脉流薄疾并乃狂，阳不胜阴则五脏气争九窍不通；凡阴阳之要阳密乃固，阴平阳秘精神乃治，阴阳离决精气乃绝。⑦四时伤：春伤于风夏生飧泄、夏伤于暑秋为痎疟、秋伤于湿冬生咳嗽、冬伤于寒春必温病。⑧五味：阴之所生本在五味，伤在五味；谨和五味则骨正筋柔、气血以流、腠理以密、长有天命</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问3·生气通天论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 通天者生之本", "orig": "他说 黄帝曰夫自古通天者生之本本于阴阳，第一个就是通天者生之本，那这第一句的厚半句 本于阴阳又是什么意思呢，这个本于阴阳就点出了实现通天，所以 本于阴阳，所以说 这一句 夫自古通天者生之本，本于阴阳 它是理解生气通天论，厚面它紧接着说了一句 其生五 其气三，其生五 这个五很有可能跟五行，而其气三呢 也有几种可能，本于阴阳的总纲领", "talk": "而我们今天要聊的这篇生气通天论。通天它强调的是人和大自然和天地之间。这意思是说能够通天是维持生命活动的根本。这里的通天可不是简单说我们喘个口气。人能不能通天能不能活得健康长久。不是别的就是你能不能够做到通天。所以生气通天论花了这么大的篇幅。《视频理解生气通天论》：对话逐段研读《素问》第三篇，核心是阳气与阴阳平衡。开篇总纲：夫自古通天者，生之本，本于阴阳——生命根本在于人与天地相通、阴阳平衡；其生五其气三，数犯此者则邪气伤人", "chart": null}, {"title": "第二段 · 阳气若天与日", "orig": "阳气者若天与日这样的比喻，失其所则折寿而不彰，故天运当以日光明，不天运当以日光明", "talk": "这个比喻一下子就把阳气的重要性。阳气没能在它应该在的地方发挥作用。当这个重要的阳气受到各种邪气侵袭。强调暑热导致阳气随汗外泄而耗散。阳气不能均匀地到达两侧体表所致。明白了看来阳气作为我们身体的卫外和动力源泉。筋可以理解为阳气中最精华最清纯的部分。或者说阳气达到精粹充盈的状态时。柔指阳气中温煦柔和的那部分特质。或者说阳气能够温和的发挥作用时。那如果阳气的运行调节本身出了问题呢。对这涉及到阳气运行的另一个重要方面。合可以理解为阳气的内收敛藏固守。阳气应该内收体表毛孔应该关闭。是的这说明阳气运行的正常节律和调节机制。厚面还提到了几种因为阳气运行失常。如果阳气虚衰下陷气血运行不畅。病邪滞留和阳气虚弱导致的精神情志问题。俞气就是指输穴部位的功能活动和阳气。身体有邪气阳气又弱人就容易害怕受惊。它属阴但它的运行需要阳气的推动。阳气在一天之中的主要职责范围在哪里。这时候人体的阳气也开始像小草发芽一样。可能也是为了让亢盛的阳气稍微平复一下。顺应我们体内这个阳气的时钟。可能是阳气本身虚弱了也可能是阴寒之邪太盛了。因为阳气是推动脏", "chart": null}, {"title": "第三段 · 烦劳则张", "orig": "烦劳则张，精绝辟积于夏使人煎厥，那精绝呢，这个辟积于夏", "talk": "寒暑湿气烦劳大怒这些因素。邪气伤阳：因于寒（欲如运枢）、因于暑（烦则喘喝、体若燔炭）、因于湿（首如裹、大筋緛短）、因于气（四维相代、阳气乃竭）；烦劳则张致煎厥（目盲耳闭）、大怒则形气绝致薄厥（血菀于上）；汗出偏沮使人偏枯，汗出见湿乃生痤疿，劳汗当风寒薄为皶", "chart": null}, {"title": "第四段 · 阳气开阖", "orig": "故阳气者一日而主外，平旦人气生，日中而阳气隆，日西而阳气已虚", "talk": "阳气一日而主外：平旦人气生、日中阳气隆、日西阳气已虚、气门乃闭，故暮而收拒、无扰筋骨、", "chart": null}, {"title": "第五段 · 阴平阳秘", "orig": "他说 凡阴阳之要 阳密乃固，是阳密乃固，所以 阳密乃固是重中之重，阴平阳秘 精神乃治，阴阳离决 精气乃绝，指有达到了阴平阳秘，才能实现精神乃治，那反面呢 阴阳离决，阴阳离决 就是阴和阳完全分离，从阴平阳秘的最高境界，到阴阳离决的生命终点，阴平阳秘是理想目标，阴平阳秘 精神奶质，而阴阳离决，像阳密乃固，阴平阳秘精神乃治", "talk": "对这说明阳密是实现阴阳平衡的一个核心前提和关键环节。阴平阳秘这四个字是关键中的关键。阴平阳秘这听起来就像是健康的密码一样。阴阳关系：阴者藏精而起亟、阳者卫外而为固；阴不胜阳则脉流薄疾并乃狂，阳不胜阴则五脏气争九窍不通；凡阴阳之要阳密乃固，阴平阳秘精神乃治，阴阳离决精气乃绝。⑦四时伤：春伤于风夏生飧泄、夏伤于暑秋为痎疟、秋伤于湿冬生咳嗽、冬伤于寒春必温病。⑧五味：阴之所生本在五味，伤在五味；谨和五味则骨正筋柔、气血以流、腠理以密、长有天命", "chart": null}, {"title": "第六段 · 阳气精则养神", "orig": "阳气者精则养神 柔则养筋，那柔则养筋呢，原文好像提到了开阖不得，那开阖不得呢 就是这个调节失灵了，开阖不得就是该开的时候开不了，原文说 开阖不得 寒气从之 乃生大偻，还要精则养神 柔则养筋", "talk": "开篇总纲：夫自古通天者，生之本，本于阴阳——生命根本在于人与天地相通、阴阳平衡；其生五其气三，数犯此者则邪气伤人", "chart": null}, {"title": "第七段 · 阴者藏精", "orig": "先看阴者藏精而起亟也，阳者卫外而为固也，第一种 阴不胜其阳 则脉流薄疾 并乃狂，理解了阴不胜其阳", "talk": "明白了看来阳气作为我们身体的卫外和动力源泉。也就是在体表发挥它卫外的功能。如果阳不胜阴阳气虚弱不能上升。还是阳不胜阴阴盛厚果都很严重。阳气者若天与日：阳气如太阳般重要，失其所则折寿而不彰；阳因而上，卫外者也。阴阳关系：阴者藏精而起亟、阳者卫外而为固；阴不胜阳则脉流薄疾并乃狂，阳不胜阴则五脏气争九窍不通；凡阴阳之要阳密乃固，阴平阳秘精神乃治，阴阳离决精气乃绝。⑦四时伤：春伤于风夏生飧泄、夏伤于暑秋为痎疟、秋伤于湿冬生咳嗽、冬伤于寒春必温病。⑧五味：阴之所生本在五味，伤在五味；谨和五味则骨正筋柔、气血以流、腠理以密、长有天命", "chart": null}, {"title": "第八段 · 苍天之气清静", "orig": "苍天之气清静 则志意治，那厚面顺之则阳气固呢", "talk": "开篇总纲：夫自古通天者，生之本，本于阴阳——生命根本在于人与天地相通、阴阳平衡；其生五其气三，数犯此者则邪气伤人", "chart": null}, {"title": "第九段 · 圣人陈阴阳", "orig": "是以圣人陈阴阳 筋脉和同 骨髓坚固 气血皆从，谨道如法", "talk": "并且指出了达到这肿状态的人是圣人。是以圣人陈阴阳陈有陈列布列调和的意思。懂得养生之道的圣人能够清楚地了解。圣度就是符合圣人之道的方法标准或境界", "chart": null}, {"title": "第十段 · 收束长有天命", "orig": "直到了阴之所生，本在五味，是故谨和五味，如果能做到谨和五味，谨和五味长有天命，最终长有天命，那个长有天命的目标呢", "talk": "阴阳关系：阴者藏精而起亟、阳者卫外而为固；阴不胜阳则脉流薄疾并乃狂，阳不胜阴则五脏气争九窍不通；凡阴阳之要阳密乃固，阴平阳秘精神乃治，阴阳离决精气乃绝。⑦四时伤：春伤于风夏生飧泄、夏伤于暑秋为痎疟、秋伤于湿冬生咳嗽、冬伤于寒春必温病。⑧五味：阴之所生本在五味，伤在五味；谨和五味则骨正筋柔、气血以流、腠理以密、长有天命", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

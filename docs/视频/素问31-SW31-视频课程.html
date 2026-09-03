@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问31·SW31</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问31·SW31</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问31-SW31.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问31-SW31.mp4">素问31-SW31.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 好 我们下次再介绍这个 …</h2></div>
+    <div class="orig">好 我们下次再介绍这个 热论篇第31，讲热论 热论篇，所有的热病 皆伤寒之类，那死了呢 差不多在六七日之间，诸阳病在一起 诸阳之属，其脉连于风府 故为诸阳主气，人之伤于寒也 则为病热，热虽甚 不会死，但两感 两感于寒必不免于死，所以所有的病热，刚开始呢 都是最初是伤于寒，他不晓得最初是伤于寒，从黄帝内经一路下来讲的都是伤于寒，如果说你本身伤于寒了，第一个是少阳，第二个是阳明，当进入少阳的时候，到阳明的时候停止了，那进入少阳就会再生，伤寒论的基础原则，伤寒论就来自这里，岐伯说伤寒一日</div>
+    <div class="talk">第31 黄帝内经第31篇。有的时候好 有的时候会恢复 有的时候会死。好了呢 比较慢 到十日以上 为什么。如果说你自己会痊愈了 比较慢。我们讲巨阳就是诸阳会 病。温病呢 就热吧 就开始热。那他们呢 就说温病吧 开始治。然后你适当的保持心情平静 开心。保持心情平静 保卫内心。可是你不知道如何去保护你自己。他有时间的后面会介绍到多少时间。当寒进入我们身体里了以后。比如说太阴 少阴 厥阴。那第二百六四页黄帝就问。节气会坏 我们人体会坏</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 刚开始是太阳受…</h2></div>
+    <div class="orig">刚开始是太阳受，所以太阳经在，膀胱经一路从头面，所以头项痛，我们称之为寒水，那个太阳晒太多了，太阳是寒水，那本身是寒水，那你已经是寒水了，正常是有一点寒水在里面面，一个里拜 阳明就会受，如果病进入阳明的阳明主肉，其脉侠鼻 络于目，而鼻干 不得卧，阳明气是由上往下，手阳明大肠经的时候，到了阳明经，那现在病进入阳明，一进入阳明的时候，阳明气本来是往下走，阳明是燥热的</div>
+    <div class="talk">一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 三日少阳受之…</h2></div>
+    <div class="orig">三日少阳受之，到少阳的话主胆，进入少阳半表半里，而少阳主胆，足少阳胆经，会有胸胁痛，而产生耳聋的现象，这个三阳经络接受，病未入于脏者，我们通通可以汗解，我们可以用汗解，在阳明证的时候，不见得都可以汗解，我们腑热，手阳明大肠，腑热的时候，便秘的人你只能来发表，便秘会越来越燥，那你如果是经热，在阳明经上面，你吃白虎汤或什么，病人会汗解，是个阳明经的便秘，你汗出经热会伤到，再加上便秘</div>
+    <div class="talk">一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 经热伤了…</h2></div>
+    <div class="orig">经热伤了，便秘你早上，经热要补回来，那你不能发表，这个人便秘，你再给他发表，是三种阳明的腑热，病会进入太阴，伤寒会进入太阴，络于嗌的地方，少阴的脉会贯肾，所以少阴脉在舌下</div>
+    <div class="talk">一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 进入厥阴…</h2></div>
+    <div class="orig">进入厥阴，厥阴脉本身是按照，烦满而囊缩，当我们进入并在厥阴的时候，这个阴囊往囊缩起来，怎么搞到一个感冒的囊缩，寒邪入厥阴了，三阴三阳五脏六腑，三阴三阳通通受病了，荣卫不行，其不两感于寒者，那边有两感于寒，巨阳病衰，头痛少愈，病在太阳</div>
+    <div class="talk">一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 不传少阳了…</h2></div>
+    <div class="orig">不传少阳了，其不两感于寒者，阳明病衰，身热少愈，九日少阴病衰，耳聋微闻，太阴病衰，他还在少阳，结果他变成太阴证，他正要进入少阳的时候，病在少阳，是少阳的处方，治之各通其脏脉，未满三日，通通可以汗解</div>
+    <div class="talk">一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 伤寒论的时候…</h2></div>
+    <div class="orig">伤寒论的时候，会有遗热，热甚而强食，故有所遗热，皆病已衰，这个热有所藏，因其谷气相薄，两热相合，如果有发热病的时候，这个遗热会停在里面面，多食则遗，两感于寒者，这个两感于寒的时候</div>
+    <div class="talk">结果过几天之后又回来了。就过了一天之后又回来了</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 太阳和少阴俱病…</h2></div>
+    <div class="orig">太阳和少阴俱病，两感于寒，少阴和太阳俱病的时候，病人就会有太阳和少阴症，口干而烦满，口干烦满是不是少阴症，头痛是太阳症，老是这个人太阳症，怎么还有这个少阴症，阳明和太阴俱病的时候，病人腹满身热，腹满是太阴症，身热是阳明症对不对，不欲食谵言，这个跟那个讲家谵言，已经神昏了，如果少阳和厥阴，少阳也感于寒，厥阴也感于寒，然后说是厥阴的寒，水浆不入，老子他六日死，我们有四逆汤救逆，灌下一些米汤，还热的米汤下去</div>
+    <div class="talk">结果过几天之后又回来了。就过了一天之后又回来了</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 五脏已伤…</h2></div>
+    <div class="orig">五脏已伤，六腑不通，荣卫不行，如是之后三日乃死，岐伯说阳明是胃气，胃气这个阳明，阳明经本来是，所以阳明经，是脚的厉兑穴，阳明经气血往回盛的时候，会不知人，阳明经气最多</div>
+    <div class="talk">本身就按照四季的节气走。所以它是天地之间的精华</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 冬伤于寒…</h2></div>
+    <div class="orig">冬伤于寒，春必病温，后夏至日为病暑，夏至之前得到的温热病，滋阴滋阴滋阴，滋阴对我们来说，你去滋阴他，除了发表的药</div>
+    <div class="talk">这里把温病跟暑病切开来了。老师这个人到春天的时候温病。一、【热病皆伤寒之类=统一病因学】'今夫热病者皆伤寒之类'把一切发热性疾病统一归因于寒邪——古代'一元病因论'：发热是机体对抗寒邪的表征而非病因本身；现代医学曾以'感染'统一发热（外源性致热原）与此同构；'热虽甚不死，两感于寒必不免于死'即单纯热高（免疫应答强）非死征、表里同病（免疫崩溃/多系统受累）才是死征——与现代'发热非危险、脓毒症多器官衰竭方危险'判断一致。二、【巨阳主气=免疫-屏障系统】太阳连风府为诸阳主气主一身之表，倪师以'寒水'喻之：体表低温层是机体与环境间的'绝缘层'——体表血管收缩维持核心温度、皮肤低温是正常隔热机制；'摸到冰是对的，滚烫才是病'即体表温度异常提示产热过载。太阳为第一道屏障，对应现代'固有免疫屏障'概念——伤寒传变即病原突破屏障逐层深入。三、【六经传变=感染进展的时序模型】一日太阳→二日阳明→三日少阳→四日太阴→五日少阴→六日厥阴，以日序构建病理进展时间轴：从体表→半表半里→里热→三阴脏腑虚损的向深传导，与现代感染病'潜伏期-前驱期-极期-恢复期'分期及重症进。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问31·SW31 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 好 我们下次再介绍这个 …", "orig": "好 我们下次再介绍这个 热论篇第31，讲热论 热论篇，所有的热病 皆伤寒之类，那死了呢 差不多在六七日之间，诸阳病在一起 诸阳之属，其脉连于风府 故为诸阳主气，人之伤于寒也 则为病热，热虽甚 不会死，但两感 两感于寒必不免于死，所以所有的病热，刚开始呢 都是最初是伤于寒，他不晓得最初是伤于寒，从黄帝内经一路下来讲的都是伤于寒，如果说你本身伤于寒了，第一个是少阳，第二个是阳明，当进入少阳的时候，到阳明的时候停止了，那进入少阳就会再生，伤寒论的基础原则，伤寒论就来自这里，岐伯说伤寒一日", "talk": "第31 黄帝内经第31篇。有的时候好 有的时候会恢复 有的时候会死。好了呢 比较慢 到十日以上 为什么。如果说你自己会痊愈了 比较慢。我们讲巨阳就是诸阳会 病。温病呢 就热吧 就开始热。那他们呢 就说温病吧 开始治。然后你适当的保持心情平静 开心。保持心情平静 保卫内心。可是你不知道如何去保护你自己。他有时间的后面会介绍到多少时间。当寒进入我们身体里了以后。比如说太阴 少阴 厥阴。那第二百六四页黄帝就问。节气会坏 我们人体会坏", "chart": null}, {"title": "第二段 · 刚开始是太阳受…", "orig": "刚开始是太阳受，所以太阳经在，膀胱经一路从头面，所以头项痛，我们称之为寒水，那个太阳晒太多了，太阳是寒水，那本身是寒水，那你已经是寒水了，正常是有一点寒水在里面面，一个里拜 阳明就会受，如果病进入阳明的阳明主肉，其脉侠鼻 络于目，而鼻干 不得卧，阳明气是由上往下，手阳明大肠经的时候，到了阳明经，那现在病进入阳明，一进入阳明的时候，阳明气本来是往下走，阳明是燥热的", "talk": "一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲", "chart": null}, {"title": "第三段 · 三日少阳受之…", "orig": "三日少阳受之，到少阳的话主胆，进入少阳半表半里，而少阳主胆，足少阳胆经，会有胸胁痛，而产生耳聋的现象，这个三阳经络接受，病未入于脏者，我们通通可以汗解，我们可以用汗解，在阳明证的时候，不见得都可以汗解，我们腑热，手阳明大肠，腑热的时候，便秘的人你只能来发表，便秘会越来越燥，那你如果是经热，在阳明经上面，你吃白虎汤或什么，病人会汗解，是个阳明经的便秘，你汗出经热会伤到，再加上便秘", "talk": "一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲", "chart": null}, {"title": "第四段 · 经热伤了…", "orig": "经热伤了，便秘你早上，经热要补回来，那你不能发表，这个人便秘，你再给他发表，是三种阳明的腑热，病会进入太阴，伤寒会进入太阴，络于嗌的地方，少阴的脉会贯肾，所以少阴脉在舌下", "talk": "一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲", "chart": null}, {"title": "第五段 · 进入厥阴…", "orig": "进入厥阴，厥阴脉本身是按照，烦满而囊缩，当我们进入并在厥阴的时候，这个阴囊往囊缩起来，怎么搞到一个感冒的囊缩，寒邪入厥阴了，三阴三阳五脏六腑，三阴三阳通通受病了，荣卫不行，其不两感于寒者，那边有两感于寒，巨阳病衰，头痛少愈，病在太阳", "talk": "一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲", "chart": null}, {"title": "第六段 · 不传少阳了…", "orig": "不传少阳了，其不两感于寒者，阳明病衰，身热少愈，九日少阴病衰，耳聋微闻，太阴病衰，他还在少阳，结果他变成太阴证，他正要进入少阳的时候，病在少阳，是少阳的处方，治之各通其脏脉，未满三日，通通可以汗解", "talk": "一直到背后 一直到后腿去。你摸 整个是汗出来是冰的。否则的话 没有这个绝缘的东西。你说老师怎么记那么清楚。很简单 你不要去记就是记。二间三间合谷 阳溪偏历温溜。所以我们是按照气的方向来讲", "chart": null}, {"title": "第七段 · 伤寒论的时候…", "orig": "伤寒论的时候，会有遗热，热甚而强食，故有所遗热，皆病已衰，这个热有所藏，因其谷气相薄，两热相合，如果有发热病的时候，这个遗热会停在里面面，多食则遗，两感于寒者，这个两感于寒的时候", "talk": "结果过几天之后又回来了。就过了一天之后又回来了", "chart": null}, {"title": "第八段 · 太阳和少阴俱病…", "orig": "太阳和少阴俱病，两感于寒，少阴和太阳俱病的时候，病人就会有太阳和少阴症，口干而烦满，口干烦满是不是少阴症，头痛是太阳症，老是这个人太阳症，怎么还有这个少阴症，阳明和太阴俱病的时候，病人腹满身热，腹满是太阴症，身热是阳明症对不对，不欲食谵言，这个跟那个讲家谵言，已经神昏了，如果少阳和厥阴，少阳也感于寒，厥阴也感于寒，然后说是厥阴的寒，水浆不入，老子他六日死，我们有四逆汤救逆，灌下一些米汤，还热的米汤下去", "talk": "结果过几天之后又回来了。就过了一天之后又回来了", "chart": null}, {"title": "第九段 · 五脏已伤…", "orig": "五脏已伤，六腑不通，荣卫不行，如是之后三日乃死，岐伯说阳明是胃气，胃气这个阳明，阳明经本来是，所以阳明经，是脚的厉兑穴，阳明经气血往回盛的时候，会不知人，阳明经气最多", "talk": "本身就按照四季的节气走。所以它是天地之间的精华", "chart": null}, {"title": "第十段 · 冬伤于寒…", "orig": "冬伤于寒，春必病温，后夏至日为病暑，夏至之前得到的温热病，滋阴滋阴滋阴，滋阴对我们来说，你去滋阴他，除了发表的药", "talk": "这里把温病跟暑病切开来了。老师这个人到春天的时候温病。一、【热病皆伤寒之类=统一病因学】'今夫热病者皆伤寒之类'把一切发热性疾病统一归因于寒邪——古代'一元病因论'：发热是机体对抗寒邪的表征而非病因本身；现代医学曾以'感染'统一发热（外源性致热原）与此同构；'热虽甚不死，两感于寒必不免于死'即单纯热高（免疫应答强）非死征、表里同病（免疫崩溃/多系统受累）才是死征——与现代'发热非危险、脓毒症多器官衰竭方危险'判断一致。二、【巨阳主气=免疫-屏障系统】太阳连风府为诸阳主气主一身之表，倪师以'寒水'喻之：体表低温层是机体与环境间的'绝缘层'——体表血管收缩维持核心温度、皮肤低温是正常隔热机制；'摸到冰是对的，滚烫才是病'即体表温度异常提示产热过载。太阳为第一道屏障，对应现代'固有免疫屏障'概念——伤寒传变即病原突破屏障逐层深入。三、【六经传变=感染进展的时序模型】一日太阳→二日阳明→三日少阳→四日太阴→五日少阴→六日厥阴，以日序构建病理进展时间轴：从体表→半表半里→里热→三阴脏腑虚损的向深传导，与现代感染病'潜伏期-前驱期-极期-恢复期'分期及重症进。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>
