@@ -29,6 +29,11 @@ CH_NAMES = {'2': '四气调神大论', '3': '生气通天论', '4': '金匮真�
             '11': '五藏别论', '12': '异法方宜论', '13': '移精变气论',
             '14': '汤液醪醴论', '15': '玉版论要'}
 CH_NAMES.update({str(i): f'SW{i}' for i in range(16, 82)})
+try:
+    from ch_names_81 import CH_NAMES_STR as _CN81
+    CH_NAMES.update(_CN81)
+except Exception:
+    pass
 
 
 def clean_part(p):
@@ -136,6 +141,8 @@ def remote_tts(ch, segs):
     for i, seg in enumerate(segs, 1):
         voice = 'zh-CN-YunxiNeural' if i in (3, 5, 6, 9, 10) else 'zh-CN-XiaoxiaoNeural'
         text = (seg['orig'] + '。' + seg['talk']).replace('，，', '，').replace('。。', '。')
+        from tts_phoneme import apply_phoneme
+        text = apply_phoneme(text)   # 医学多音字注音（脏zàng/藏象/恶wù/相傅xiàng）
         rate, pitch = seg_style(i, seg['title'], seg['talk'])
         segs_text.append((i, voice, text, rate, pitch))
     script = f'''

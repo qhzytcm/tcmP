@@ -1,0 +1,33 @@
+# tcmP 视频生成工具链依赖包（pip 安装）
+# 用法: pip install -r requirements-video.txt
+
+# --- 基础（多数已装）---
+pandas
+xlrd
+openpyxl
+matplotlib
+pillow
+numpy
+
+# --- 文本与讲稿 ---
+jieba
+openai
+
+# --- TTS ---
+edge-tts
+
+# --- 字幕 ---
+pysrt
+
+# --- 画面 ---
+python-pptx
+graphviz
+
+# --- 视频合成 ---
+moviepy
+imageio-ffmpeg
+
+# --- 可选（离线 TTS / 动画 / 数字人）---
+# modelscope        # CosyVoice2 离线 TTS（需 GPU）
+# manim             # 数学动画（可选，需 LaTeX）
+# torch             # SadTalker/Wav2Lip 数字人（可选）

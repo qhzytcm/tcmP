@@ -173,6 +173,11 @@ CH_NAMES = {'1': '上古天真论', '2': '四气调神大论', '3': '生气通�
             '11': '五藏别论', '12': '异法方宜论', '13': '移精变气论',
             '14': '汤液醪醴论', '15': '玉版论要'}
 CH_NAMES.update({str(i): f'SW{i}' for i in range(16, 82)})
+try:
+    from ch_names_81 import CH_NAMES_STR as _CN81
+    CH_NAMES.update(_CN81)
+except Exception:
+    pass
 
 
 def main():
@@ -187,17 +192,18 @@ def main():
         segs = json.loads(segs_file.read_text(encoding='utf-8'))
         subs = [{'title': s['title'], 'orig': s['orig'], 'talk': s['talk'], 'chart': None}
                 for s in segs]
-        mp4_name = f'素问01-{name}.mp4' if ch == '1' else f'素问{ch}-{name}.mp4'
+        chp = f"{int(ch):02d}"
+        mp4_name = f'素问{chp}-{name}.mp4'
         # 轻量版
-        light = DOCS / f'素问{ch}-{name}-视频课程.html'
-        light.write_text(build_html(ch, name, mp4_name, subs), encoding='utf-8')
+        light = DOCS / f'素问{chp}-{name}-视频课程.html'
+        light.write_text(build_html(chp, name, mp4_name, subs), encoding='utf-8')
         # 单文件版（视频内嵌）
         mp4 = DOCS / mp4_name
         b64 = base64.b64encode(mp4.read_bytes()).decode('ascii')
-        single = DOCS / f'素问{ch}-{name}-视频授课.html'
+        single = DOCS / f'素问{chp}-{name}-视频授课.html'
         data_src = f'data:video/mp4;base64,{b64}'
         single.write_text(
-            build_html(ch, name, data_src, subs).replace(
+            build_html(chp, name, data_src, subs).replace(
                 f'<source src="{data_src}" type="video/mp4">',
                 f'<source src="{data_src}" type="video/mp4">\n'
                 f'      <source src="{mp4_name}" type="video/mp4">'),
