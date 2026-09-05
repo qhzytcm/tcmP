@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问44·痿论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问44·痿论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问44-痿论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问44-痿论.mp4">素问44-痿论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 这痿论呢 这黄帝列已经是…</h2></div>
+    <div class="orig">这痿论呢 这黄帝列已经是第44篇，介绍痿论之前呢，顾名思义 痿，你眼睛看过去 这个人脚就痿缩掉了，那个手臂肌都痿缩掉了，痿从哪里来，如何去治疗痿，那痿缩呢，它发病在热上面，是一个热，去死寒热，这篇讨论的热，这篇这个热，我们在治痿证的时候，痿下去以后，痿证的成因，也不会有痿证出现，产生痿证，肺主身上的皮毛，心主血脉，肝主筋膜，你把它不能血脉，那肝主身的筋，那在肌肉里面，你看肌肉你如果切开来里面，主身上的肌肉</div>
+    <div class="talk">也就是说你这个没有肺的话。什么肝壳啊 皮壳 肾壳啊。我们要去把它补回来的时候。我们写一些写文言文有道理。所以所有的阴震出现的时候。所以最初婴儿在妈妈肚子里面的时候。所以认为第一个内脏是心脏。我们非常注重这个肾的水。有一片片面的白膜对不对</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 肾主身上的骨髓…</h2></div>
+    <div class="orig">肾主身上的骨髓，这个骨髓，五脏对我们五合，肥和皮毛，腥和血脉，肝和筋膜这些，当肺热叶焦的时候，这皮毛虚弱，全身都有皮毛，你哪个地方没有皮毛，那地球里面是不是很热，是不是热得像火一样，地球里面的热，这个是寒跟热两个碰在一起，你车子会过热，过热也不好，煮个热开水，看到热气，热气往下跑，你家煮热气的时候，热一直往上冲的时候，这个冷气会沉得热来，那你如果沸太热了，沸里面的津液没有了，再加上心脏的热，是不是热上加热，又加上热，皮毛就虚弱，肺胶太热了</div>
+    <div class="talk">各位要看到这种黄帝内经。所以它产生一个正常的温度</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 不断地搏动产生的热…</h2></div>
+    <div class="orig">不断地搏动产生的热，把心的热呢，当心的热，整个蒸煎这个血脉，同时会把心脏的热，心脏的热没有下来，如果是心热，热才会产生痿，现在讲的全部是热，你热在上面，脉会痿缩，里面有血脉在里面，心脏由于血和热，再来干气热，做成筋膜干，筋膜干则筋急而挛，发为筋痿，筋会痿缩，脚筋痿缩的话，趋深跟新的脉痿缩不一样，新脉痿缩脚，结果你把它用针灸做，筋痿缩掉了，筋痿缩掉的原因，我们干气热</div>
+    <div class="talk">脚没有办法踩到地上面去。它本身膝盖不利于行的时候。本身中医的观念里面认为说。可以进来然后从里面出去了</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 肺里面煮津液…</h2></div>
+    <div class="orig">肺里面煮津液，那你干气热，这个干如果太热了，热会膨胀，那你干一膨胀一热，一热就膨胀，热得伤津液，津液不够的话，筋膜就干掉了，筋痿的人呢，脾气热的胃干而渴，肌肉不仁发为肉痿，会有津液在里面，那如果说皮肌太过热了，一过热了以后，这个津液就没有了，这个太过热的现象的时候，肌肉里面的津液也没有了，肉痿缩掉了，如果是肾气太热，骨枯而髓减，发为骨痿</div>
+    <div class="talk">我们那个脾脏跟胃是表里。这两个是很接近靠在一起。所以我们胃里面会有津液。我们称如果天地和人身上的皮来比较。这个时候因为脾脏太热了</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 骨痿的人呢…</h2></div>
+    <div class="orig">骨痿的人呢，我们现在讲是痿证，痿证是热，如果是肾脏太热了，这个骨髓就会长得很好，那如果说肾脏太热了，津液伤到了，当然会影响到骨头的骨髓，当骨髓一痿缩的时候，骨髓的力量不够的时候，就发为骨痿，就不是筋痿，则发肺鸣，肺鸣则肺页，五个藏都会因肺热叶焦，而发为痿躄，痿也是发生于脏，五脏因肺，这胞络绝，那心包络绝的时候</div>
+    <div class="talk">站在他就要赶快要做好来。所以有一个人能够站在很久。那个肾骨头都没有问题的。慢慢的烧 你不是烧太快。得到阴的精来滋润他的时候</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 那你心包络…</h2></div>
+    <div class="orig">那你心包络，这个津液，心包络的，一发著心下崩，传为脉痿，思想无穷，所愿不得，意淫于外，入房太甚，宗筋宗旨，我们讲宗筋，宗筋的观念里面，宗筋之福，我们的宗筋的地方，这宗筋在我们身体下的地方，造成宗筋松弛，宗筋没有力量了，其实白淫，宗筋纬缩掉了，本身是热，原因发湿热，长期居于湿地</div>
+    <div class="talk">有心包就是把阳锁在里面。没有几个人可以买得到飞机。我们因为宗筋在这个地方。因为肝经落到这个地方来</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 经常造成胃太热了…</h2></div>
+    <div class="orig">经常造成胃太热了，造成肉痿，肉痿只得知湿地，就靠我们五脏六腑，有所远行劳倦，从大热而可，都是本身肾先受热，当天气热的时候，很热 流汗，内阀是热射于肾，那肾著水上已经水不胜火，肾的津液应该去生胜，在热天几家跑，肾津液不够了，热也不够了，肾脏津液也不够了，才不造成肾脏热的，那水不胜火，范围骨痿，骨痿都生于大热，现在足痿有一个观念，热才会产生痿，那我们在处理痿证的时候</div>
+    <div class="talk">我为什么要去知道湿伤余下。但是呢 因为你的工作的关系。所以有时候你手提不起来</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 非热者设白毛拜…</h2></div>
+    <div class="orig">非热者设白毛拜，而色白哪里，新热者色赤，我们遇到热的时候，你新热你不把它治好了，发为脉痿，脉就痿说掉了，那干热的，色苍脸色发青，发痿血之鱼，就太热的时候，脾脏热的色黄，而肉蠕动，脾热色黄，而去供应我们的肌肉的能量，那现在太热了，那脾主肌肉，肌肉就会动，生太热了，色黑而齿槁，这个也是肾脏发痿血，独取阳明，五脏六腑之海，我们的五脏，在这个都在阳明筋上面，束骨而利机关，宗筋的腑，筋膜固定住，筋膜是肝嘛，还有宗筋</div>
+    <div class="talk">我为什么要去知道湿伤余下。但是呢 因为你的工作的关系。所以有时候你手提不起来</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 以阳明合于宗筋…</h2></div>
+    <div class="orig">以阳明合于宗筋，惠于气街，而阳明为之早，皆属于带脉，种带脉不予，主痿不用，这个关元却呢，冲脉起之关元，足阳明胃已经，肌肉就停起来，那气街这个阳明胞，跟那个冲脉是交合的，也会有我们后面的督脉，带脉的环腰一圈，人生会有带脉，督脉的阳气，是从痿椎骨下来，一直落到我们的关元的地方，经脉督脉，那是以足阳明为首，阳明气一虚的时候，有的人是血脉落了，有的人是肌肉落了，筋痿了对不对，黄帝说那讲了半天痿证怎么致呢，其附说各补其荥，而通其俞穴，调其虚实和其逆顺，筋脉骨肉各以其实授越，我们知道它是筋痿，或者知道它是那个脉痿，来针灸来调查的虚实，我们可以增当筋的补他的荥穴，而通通他的俞穴，俞穴是五脏的俞穴，五脏和六腑的俞穴，痿论以后抱歉</div>
+    <div class="talk">带脉因为落到阴气的这边。独取阳明就是因为阳明筋。意思就是我们针灸的时候</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 并在阳明金…</h2></div>
+    <div class="orig">并在阳明金，有些药是去热的，起运肾痿，我在盐田工作，在晒海盐的时候，我们去买海盐，大家多吃海盐，你看那个盐田，才能够晒海盐，肾的津液不够了，是津液伤到，肾热对不对，我们知道热在这边，我们赶快把津液补回去，把热去掉，肺太热了，把肺的津液补回去，可以补津液的，那边晒海盐很有名，他们在海盐，夏天在海盐的时候，里面多热还生个哈密瓜，你会津液会脏掉，但你吃哈密瓜，它能够在那么热的地方</div>
+    <div class="talk">一个common sense。我们都没有common sense</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问44·痿论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 这痿论呢 这黄帝列已经是…", "orig": "这痿论呢 这黄帝列已经是第44篇，介绍痿论之前呢，顾名思义 痿，你眼睛看过去 这个人脚就痿缩掉了，那个手臂肌都痿缩掉了，痿从哪里来，如何去治疗痿，那痿缩呢，它发病在热上面，是一个热，去死寒热，这篇讨论的热，这篇这个热，我们在治痿证的时候，痿下去以后，痿证的成因，也不会有痿证出现，产生痿证，肺主身上的皮毛，心主血脉，肝主筋膜，你把它不能血脉，那肝主身的筋，那在肌肉里面，你看肌肉你如果切开来里面，主身上的肌肉", "talk": "也就是说你这个没有肺的话。什么肝壳啊 皮壳 肾壳啊。我们要去把它补回来的时候。我们写一些写文言文有道理。所以所有的阴震出现的时候。所以最初婴儿在妈妈肚子里面的时候。所以认为第一个内脏是心脏。我们非常注重这个肾的水。有一片片面的白膜对不对", "chart": null}, {"title": "第二段 · 肾主身上的骨髓…", "orig": "肾主身上的骨髓，这个骨髓，五脏对我们五合，肥和皮毛，腥和血脉，肝和筋膜这些，当肺热叶焦的时候，这皮毛虚弱，全身都有皮毛，你哪个地方没有皮毛，那地球里面是不是很热，是不是热得像火一样，地球里面的热，这个是寒跟热两个碰在一起，你车子会过热，过热也不好，煮个热开水，看到热气，热气往下跑，你家煮热气的时候，热一直往上冲的时候，这个冷气会沉得热来，那你如果沸太热了，沸里面的津液没有了，再加上心脏的热，是不是热上加热，又加上热，皮毛就虚弱，肺胶太热了", "talk": "各位要看到这种黄帝内经。所以它产生一个正常的温度", "chart": null}, {"title": "第三段 · 不断地搏动产生的热…", "orig": "不断地搏动产生的热，把心的热呢，当心的热，整个蒸煎这个血脉，同时会把心脏的热，心脏的热没有下来，如果是心热，热才会产生痿，现在讲的全部是热，你热在上面，脉会痿缩，里面有血脉在里面，心脏由于血和热，再来干气热，做成筋膜干，筋膜干则筋急而挛，发为筋痿，筋会痿缩，脚筋痿缩的话，趋深跟新的脉痿缩不一样，新脉痿缩脚，结果你把它用针灸做，筋痿缩掉了，筋痿缩掉的原因，我们干气热", "talk": "脚没有办法踩到地上面去。它本身膝盖不利于行的时候。本身中医的观念里面认为说。可以进来然后从里面出去了", "chart": null}, {"title": "第四段 · 肺里面煮津液…", "orig": "肺里面煮津液，那你干气热，这个干如果太热了，热会膨胀，那你干一膨胀一热，一热就膨胀，热得伤津液，津液不够的话，筋膜就干掉了，筋痿的人呢，脾气热的胃干而渴，肌肉不仁发为肉痿，会有津液在里面，那如果说皮肌太过热了，一过热了以后，这个津液就没有了，这个太过热的现象的时候，肌肉里面的津液也没有了，肉痿缩掉了，如果是肾气太热，骨枯而髓减，发为骨痿", "talk": "我们那个脾脏跟胃是表里。这两个是很接近靠在一起。所以我们胃里面会有津液。我们称如果天地和人身上的皮来比较。这个时候因为脾脏太热了", "chart": null}, {"title": "第五段 · 骨痿的人呢…", "orig": "骨痿的人呢，我们现在讲是痿证，痿证是热，如果是肾脏太热了，这个骨髓就会长得很好，那如果说肾脏太热了，津液伤到了，当然会影响到骨头的骨髓，当骨髓一痿缩的时候，骨髓的力量不够的时候，就发为骨痿，就不是筋痿，则发肺鸣，肺鸣则肺页，五个藏都会因肺热叶焦，而发为痿躄，痿也是发生于脏，五脏因肺，这胞络绝，那心包络绝的时候", "talk": "站在他就要赶快要做好来。所以有一个人能够站在很久。那个肾骨头都没有问题的。慢慢的烧 你不是烧太快。得到阴的精来滋润他的时候", "chart": null}, {"title": "第六段 · 那你心包络…", "orig": "那你心包络，这个津液，心包络的，一发著心下崩，传为脉痿，思想无穷，所愿不得，意淫于外，入房太甚，宗筋宗旨，我们讲宗筋，宗筋的观念里面，宗筋之福，我们的宗筋的地方，这宗筋在我们身体下的地方，造成宗筋松弛，宗筋没有力量了，其实白淫，宗筋纬缩掉了，本身是热，原因发湿热，长期居于湿地", "talk": "有心包就是把阳锁在里面。没有几个人可以买得到飞机。我们因为宗筋在这个地方。因为肝经落到这个地方来", "chart": null}, {"title": "第七段 · 经常造成胃太热了…", "orig": "经常造成胃太热了，造成肉痿，肉痿只得知湿地，就靠我们五脏六腑，有所远行劳倦，从大热而可，都是本身肾先受热，当天气热的时候，很热 流汗，内阀是热射于肾，那肾著水上已经水不胜火，肾的津液应该去生胜，在热天几家跑，肾津液不够了，热也不够了，肾脏津液也不够了，才不造成肾脏热的，那水不胜火，范围骨痿，骨痿都生于大热，现在足痿有一个观念，热才会产生痿，那我们在处理痿证的时候", "talk": "我为什么要去知道湿伤余下。但是呢 因为你的工作的关系。所以有时候你手提不起来", "chart": null}, {"title": "第八段 · 非热者设白毛拜…", "orig": "非热者设白毛拜，而色白哪里，新热者色赤，我们遇到热的时候，你新热你不把它治好了，发为脉痿，脉就痿说掉了，那干热的，色苍脸色发青，发痿血之鱼，就太热的时候，脾脏热的色黄，而肉蠕动，脾热色黄，而去供应我们的肌肉的能量，那现在太热了，那脾主肌肉，肌肉就会动，生太热了，色黑而齿槁，这个也是肾脏发痿血，独取阳明，五脏六腑之海，我们的五脏，在这个都在阳明筋上面，束骨而利机关，宗筋的腑，筋膜固定住，筋膜是肝嘛，还有宗筋", "talk": "我为什么要去知道湿伤余下。但是呢 因为你的工作的关系。所以有时候你手提不起来", "chart": null}, {"title": "第九段 · 以阳明合于宗筋…", "orig": "以阳明合于宗筋，惠于气街，而阳明为之早，皆属于带脉，种带脉不予，主痿不用，这个关元却呢，冲脉起之关元，足阳明胃已经，肌肉就停起来，那气街这个阳明胞，跟那个冲脉是交合的，也会有我们后面的督脉，带脉的环腰一圈，人生会有带脉，督脉的阳气，是从痿椎骨下来，一直落到我们的关元的地方，经脉督脉，那是以足阳明为首，阳明气一虚的时候，有的人是血脉落了，有的人是肌肉落了，筋痿了对不对，黄帝说那讲了半天痿证怎么致呢，其附说各补其荥，而通其俞穴，调其虚实和其逆顺，筋脉骨肉各以其实授越，我们知道它是筋痿，或者知道它是那个脉痿，来针灸来调查的虚实，我们可以增当筋的补他的荥穴，而通通他的俞穴，俞穴是五脏的俞穴，五脏和六腑的俞穴，痿论以后抱歉", "talk": "带脉因为落到阴气的这边。独取阳明就是因为阳明筋。意思就是我们针灸的时候", "chart": null}, {"title": "第十段 · 并在阳明金…", "orig": "并在阳明金，有些药是去热的，起运肾痿，我在盐田工作，在晒海盐的时候，我们去买海盐，大家多吃海盐，你看那个盐田，才能够晒海盐，肾的津液不够了，是津液伤到，肾热对不对，我们知道热在这边，我们赶快把津液补回去，把热去掉，肺太热了，把肺的津液补回去，可以补津液的，那边晒海盐很有名，他们在海盐，夏天在海盐的时候，里面多热还生个哈密瓜，你会津液会脏掉，但你吃哈密瓜，它能够在那么热的地方", "talk": "一个common sense。我们都没有common sense", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

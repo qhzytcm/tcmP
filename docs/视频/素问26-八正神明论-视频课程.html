@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问26·八正神明论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问26·八正神明论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问26-八正神明论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问26-八正神明论.mp4">素问26-八正神明论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 这个八正神明论…</h2></div>
+    <div class="orig">这个八正神明论，必有法则，结果说法天则地，合以天光 而配合天地阴阳，配合日月星辰，月郭满 满月的时候，血气实 肌肉坚，那这个月郭空的时候，肌肉减 肌肉虚，月生无泻 月满无补</div>
+    <div class="talk">邪气很实 病气很实的时候。第三行 下方。所以说因为天时而调气学。这个时候你千万不要去卸它。所以我们真的在治病的时候</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 还有乱经…</h2></div>
+    <div class="orig">还有乱经，什么叫做藏虚呢，这叫做藏虚，当你知道这个藏虚区的时候，这是乱经，所以阴阳相错，这个乱经病气会变动</div>
+    <div class="talk">那如果是不适合下针的时机。厨房也可以 还要也可以。气没有保的时候不可以卸。这个我们把它延伸到怎么样。便秘的时候它已经很密了。就会闹著精气 会比较乱。或者是大变不出 小变不出</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 沉以留止…</h2></div>
+    <div class="orig">沉以留止，一定要先知针经，太阳白天 日之寒温，还有月之虚盛，四时浮沉</div>
+    <div class="talk">最后一段讲的是什么。我现在慢慢给诸位这个图的观念。天地有夏天 东风 南风。按照四季纯夏秋冬来的风。就是正常的就不会有问题。来吹个西北风和东北风的。这个时候我们当医生就要注意。这种不按照正常来的时候。所以医生一开始我们就知道。所以说如果说平常你夏天。我们可以上宫 很好的医生。我们要知道几个有四个东西。就是那个时候我们就查到。这会用个简单的观念去想</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 就已经是四时节气了…</h2></div>
+    <div class="orig">就已经是四时节气了</div>
+    <div class="talk">或者是天很冷 居然得到热证。黄帝内经已经就是一直在强调。而是 比如说现在有一个人。你一进办公室的人气打开来。冬天的时候如果是个病人。所以你要去注意外面的节气。白天看太阳 晚上看月亮。我一摸 现在是夏天对不对</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 虚邪和正邪…</h2></div>
+    <div class="orig">虚邪和正邪，这个八证之虚邪，这个虚邪是外来的，那上工救其萌芽，下工救其已成，你害我做下工</div>
+    <div class="talk">或者是天很冷 居然得到热证。黄帝内经已经就是一直在强调。而是 比如说现在有一个人。你一进办公室的人气打开来。冬天的时候如果是个病人。所以你要去注意外面的节气。白天看太阳 晚上看月亮。我一摸 现在是夏天对不对</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 我要做上工…</h2></div>
+    <div class="orig">我要做上工，下工就病发不治，有一天早上觉得心绞痛</div>
+    <div class="talk">他拿了博士现在工作很好。你不能怪病人害你变成下功。我们过去有发生这种案例。Stress test</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 他们的下工吓到什么程度…</h2></div>
+    <div class="orig">他们的下工吓到什么程度，泻必用方者，以息方吸而内针</div>
+    <div class="talk">然后医生都看到脸色都变了。另外他这三个是非常好的朋友。中医急诊应该我们去为什么。他的真正的补卸的经验是什么</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 那补必用员…</h2></div>
+    <div class="orig">那补必用员</div>
+    <div class="talk">因为他吸气是这样膨胀的。所以你看黄帝内经是不是要懂针灸。你们如果前面没有学过针灸。所以谢避用方一定要等到时机。那你要知道什么时候是谢。我们知道实证我们才会去谢。所有的痛 巨痛 强烈的痛。你不要我们要补它的时候。下身 血在比较深的地方</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 扪针把针孔马上按住…</h2></div>
+    <div class="orig">扪针把针孔马上按住，目冥冥问其所病，索之于经，然后慧然在前</div>
+    <div class="talk">避能呼气的时候再捻针进去。然后吸气的时候再做捻转。这个形和神是完全不一样的东西。什么也不看病人的脸色已经黑了。你就至少要看一下对不对</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 这个神乎神耳不闻…</h2></div>
+    <div class="orig">这个神乎神耳不闻，目明心开而至先，慧然独悟</div>
+    <div class="talk">所以你一定要先跟太太讲清楚。所以我会把它分析得很透彻。那一定能够掌握到它的重心。你不会 我也要把你教会。这个看一看不到摸一摸不到。要让大家能够体悟的时候。好 那我找了很多好方法。你问题是其同押角 对不对。你就可以知道医生有没有神。摸脉问他病人跟你陈述的时候。一、'用针之服必有法则，法天则地合以天光'是【干预时机-环境耦合总纲】：针刺（治疗干预）必须遵循天地法则（日月星辰四时八正），即'干预参数-环境节律'匹配——与现代'时辰治疗学'（chronotherapy：化疗时辰给药/降压药时辰调整）及'手术时机选择'（circadian surgery）研究完全同构；'气定乃刺之'强调在系统稳态时点施治（待机而发），为'时机医学'的古典表述。二、'天温日明血淖液卫气浮，天寒日阴血凝泣卫气沉'是【环境-气血状态调制表】：温度/光照（天温日明/天寒日阴）调制血液流变（淖液/凝泣=黏稠度）与卫气分布（浮/沉=深浅）——与现代'温度-血液黏度''光照-自主神经'（寒冷致血黏度升高、血管收缩）研究一致；'血易泻气易行'提示治疗窗口（天温时刺络放血更易），为'环境-。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问26·八正神明论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 这个八正神明论…", "orig": "这个八正神明论，必有法则，结果说法天则地，合以天光 而配合天地阴阳，配合日月星辰，月郭满 满月的时候，血气实 肌肉坚，那这个月郭空的时候，肌肉减 肌肉虚，月生无泻 月满无补", "talk": "邪气很实 病气很实的时候。第三行 下方。所以说因为天时而调气学。这个时候你千万不要去卸它。所以我们真的在治病的时候", "chart": null}, {"title": "第二段 · 还有乱经…", "orig": "还有乱经，什么叫做藏虚呢，这叫做藏虚，当你知道这个藏虚区的时候，这是乱经，所以阴阳相错，这个乱经病气会变动", "talk": "那如果是不适合下针的时机。厨房也可以 还要也可以。气没有保的时候不可以卸。这个我们把它延伸到怎么样。便秘的时候它已经很密了。就会闹著精气 会比较乱。或者是大变不出 小变不出", "chart": null}, {"title": "第三段 · 沉以留止…", "orig": "沉以留止，一定要先知针经，太阳白天 日之寒温，还有月之虚盛，四时浮沉", "talk": "最后一段讲的是什么。我现在慢慢给诸位这个图的观念。天地有夏天 东风 南风。按照四季纯夏秋冬来的风。就是正常的就不会有问题。来吹个西北风和东北风的。这个时候我们当医生就要注意。这种不按照正常来的时候。所以医生一开始我们就知道。所以说如果说平常你夏天。我们可以上宫 很好的医生。我们要知道几个有四个东西。就是那个时候我们就查到。这会用个简单的观念去想", "chart": null}, {"title": "第四段 · 就已经是四时节气了…", "orig": "就已经是四时节气了", "talk": "或者是天很冷 居然得到热证。黄帝内经已经就是一直在强调。而是 比如说现在有一个人。你一进办公室的人气打开来。冬天的时候如果是个病人。所以你要去注意外面的节气。白天看太阳 晚上看月亮。我一摸 现在是夏天对不对", "chart": null}, {"title": "第五段 · 虚邪和正邪…", "orig": "虚邪和正邪，这个八证之虚邪，这个虚邪是外来的，那上工救其萌芽，下工救其已成，你害我做下工", "talk": "或者是天很冷 居然得到热证。黄帝内经已经就是一直在强调。而是 比如说现在有一个人。你一进办公室的人气打开来。冬天的时候如果是个病人。所以你要去注意外面的节气。白天看太阳 晚上看月亮。我一摸 现在是夏天对不对", "chart": null}, {"title": "第六段 · 我要做上工…", "orig": "我要做上工，下工就病发不治，有一天早上觉得心绞痛", "talk": "他拿了博士现在工作很好。你不能怪病人害你变成下功。我们过去有发生这种案例。Stress test", "chart": null}, {"title": "第七段 · 他们的下工吓到什么程度…", "orig": "他们的下工吓到什么程度，泻必用方者，以息方吸而内针", "talk": "然后医生都看到脸色都变了。另外他这三个是非常好的朋友。中医急诊应该我们去为什么。他的真正的补卸的经验是什么", "chart": null}, {"title": "第八段 · 那补必用员…", "orig": "那补必用员", "talk": "因为他吸气是这样膨胀的。所以你看黄帝内经是不是要懂针灸。你们如果前面没有学过针灸。所以谢避用方一定要等到时机。那你要知道什么时候是谢。我们知道实证我们才会去谢。所有的痛 巨痛 强烈的痛。你不要我们要补它的时候。下身 血在比较深的地方", "chart": null}, {"title": "第九段 · 扪针把针孔马上按住…", "orig": "扪针把针孔马上按住，目冥冥问其所病，索之于经，然后慧然在前", "talk": "避能呼气的时候再捻针进去。然后吸气的时候再做捻转。这个形和神是完全不一样的东西。什么也不看病人的脸色已经黑了。你就至少要看一下对不对", "chart": null}, {"title": "第十段 · 这个神乎神耳不闻…", "orig": "这个神乎神耳不闻，目明心开而至先，慧然独悟", "talk": "所以你一定要先跟太太讲清楚。所以我会把它分析得很透彻。那一定能够掌握到它的重心。你不会 我也要把你教会。这个看一看不到摸一摸不到。要让大家能够体悟的时候。好 那我找了很多好方法。你问题是其同押角 对不对。你就可以知道医生有没有神。摸脉问他病人跟你陈述的时候。一、'用针之服必有法则，法天则地合以天光'是【干预时机-环境耦合总纲】：针刺（治疗干预）必须遵循天地法则（日月星辰四时八正），即'干预参数-环境节律'匹配——与现代'时辰治疗学'（chronotherapy：化疗时辰给药/降压药时辰调整）及'手术时机选择'（circadian surgery）研究完全同构；'气定乃刺之'强调在系统稳态时点施治（待机而发），为'时机医学'的古典表述。二、'天温日明血淖液卫气浮，天寒日阴血凝泣卫气沉'是【环境-气血状态调制表】：温度/光照（天温日明/天寒日阴）调制血液流变（淖液/凝泣=黏稠度）与卫气分布（浮/沉=深浅）——与现代'温度-血液黏度''光照-自主神经'（寒冷致血黏度升高、血管收缩）研究一致；'血易泻气易行'提示治疗窗口（天温时刺络放血更易），为'环境-。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

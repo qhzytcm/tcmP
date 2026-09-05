@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问17·脉要精微论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问17·脉要精微论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问17-脉要精微论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问17-脉要精微论.mp4">素问17-脉要精微论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 常以平旦 阴气未动 阳气…</h2></div>
+    <div class="orig">常以平旦 阴气未动 阳气未散，饮食未进 经脉未盛，落脉调云 气血未乱，可以诊有过之脉，切脉动静而视精明，察五色 观五脏，有余不足，六腑强弱心 脉之盛衰，以此参伍 决死生之分，长则气治，短则气病，数则烦心，大则病进，上盛则气高，下盛则气胀</div>
+    <div class="talk">好我们继续看。这个你一天只能看一个病人。当然你不可能去弄个冰水。四肢的阳瞬间就回到胃里面。你就问他你早上起来喝不喝水。因为你早上起来温温整整的。坐下来的时候要赶快吃喔。臂的手在脉诊上面的时候。所以脉是这样子写下来的。胸部正好是中间横格的地方</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 精明五色者…</h2></div>
+    <div class="orig">精明五色者，言语善恶，这种是神明之乱</div>
+    <div class="talk">那你开始动手治疗的时候。那你从二开始治疗的时候。代表病一直在复原的中间。我们要设立这个标准就是。反过来就是在恢复的中间。所以平常看来跟正常你摸摸它。那下面就是跟各位提到了。当你一个脏出问题的时候。脏色就会跑到脸上来。因为从里面发出来的。已经混淆不青的盐睛。比如说一个闭人躺在那边。你还没有看到闭盐睛的时候。家里电话千万不能给他知道。因为小人大部分发生很浅。每天一直在重复讲不同的话</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 是门户不要…</h2></div>
+    <div class="orig">是门户不要，那水泉不止者，是膀胱不藏也，这个水泉不止者是膀胱，那现在是水泉不止，头请四身精神将夺，那精神将夺以，转摇不能，不能久立</div>
+    <div class="talk">我们马上可以变出寒热来。老师我们为什么要去变寒热。所以我们才需要去变寒热。包括剂量都可以拿得很准。这里面只有残渣跟水。平常我现在讲的是正常人。所以中间要有一个冷却管。这样脖子的后期比较凉一点。不会说很热的水跑到脑部去了。再到膀胱里面聚集在一起。小便的脖子很比较黄。你们要慢慢接受一些名词。这个药是专门制表阳虚的。那这个药是可以固少变的。讲的就是中医的望诊。我们在针灸学针灸的时候。他应该认识你父母亲或是谁。要包括自己小孩子都不认识。当然不认识有时候可以装。没有办法做个完整的呼吸。不需要去利用姿势来呼吸。所以脚膝盖旁边是筋会阳陵。那我们为什么要知道这些。你想办法让肝脏的功能恢复。我们要想办法让腰臂柔软</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 应不足有余为萧…</h2></div>
+    <div class="orig">应不足有余为萧，阴阳不相应，就跟著这个节气走，变成二十四个节气，揆度和揆度，他每个节气，两个礼拜一个节气，如果按照节气走，天地之变，阴阳之应，所以节气在变的时候，四变之动脉，所以说这24个节气，这两个节气呢，是阴阳在交换的时候的节气，以这两个节气，那以节气，在节气交换的时候</div>
+    <div class="talk">这个从热慢慢慢慢变成冷。原因就是因为春天比较软</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 奇恒跟揆度…</h2></div>
+    <div class="orig">奇恒跟揆度，甚饥则梦取，肝气盛则梦怒，肺气盛则梦哭，这个徙环和揆度，持脉之道呢，虚静为保，如鱼之游在波，是持脉之大法，六者持脉之大法，就当病灌汗</div>
+    <div class="talk">这二七十四天葵之二八十六。这个跟我们人的情志都有关系。我们有非常多的诊断的方式。怎么祖孙三代的脸都红的。可以提醒我们很多事情的。突然你的朋友打电话给你。内经应该是很灵活的东西。阴和阳刚好是相辅相成的。如果开发汗要下去的时候</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 当病溢饮…</h2></div>
+    <div class="orig">当病溢饮，软而散者当病食痹，所以它会有其色赤，那软而散者，色不泽者，当病足胻肿，其色黄而赤者，当病折腰，当病少血，至今不复</div>
+    <div class="talk">肌肉里面的汗都流掉了。把精的里面的汗也都发掉。那一般的医生就不敢用汗药。所以麻黄柜子上就不敢乱用。实际上就因为整段不青楚。那如果说肝的脉薄兼而长。中医这东西就要你下去消化。它的青色没有办法停在里面。所以到颜色出现的时候。人到从高处往下坠的时候。不管你是脚著地或怎么样。大部分都是胸腔这边出血。那我们为什么要知道这个。我们要把活血和化瘀的药。那你活手化瘀的药放在一起。光光它就停在肋间的这个。可是胸膈的瘀血还在那边。一散出来水就在这个附近。你摸到它手上的脉很柔和。我们仲景不是提炼过了说。我们开厨房给老外吃的时候。真正的我们身上有75%。所以我们常常用补肾的药</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 诊得心脉而急…</h2></div>
+    <div class="orig">诊得心脉而急，如果说诊得胃脉，病形何如</div>
+    <div class="talk">炮制过的味道就比较淡掉。第二餐心鲜的食物又下去。平常都没有人保护我。这我们叫置于死地而后生。那你如果会死的人都很紧张。黑黑的什么都看不到。病的传变情形是怎么样子。这是肠胃的数度就缓下来。看看你们功课有没有问题。每天晚上9点10点</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 脉风成为疠…</h2></div>
+    <div class="orig">脉风成为疠，风成为寒热，不可胜数，此皆安生，这是寒气之肿，八风之变，时病以及胜，久病和新病的区分，那你怎么知道是久病，还是新病呢，色不夺者新病，没有去久病，新病的脉都比较小，此久病也，都是新病，肝与肾脉并至，当病毁伤，如果已见血湿，尺外以候肾，尺里以候腹，那中附上左外以候肝，右外以候胃，内以候胸中</div>
+    <div class="talk">或者一直停在身体里面去。一直在受风吹的环境里面。而且有一个例子你就懂了。我们把不同的地方找出来。很优秀的分子都在西医里面。肾脉比较沉一点点。讲的半天就是这个图的位置。我已经把它画到这里给</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 为热中也…</h2></div>
+    <div class="orig">为热中也，我们称之为热中，我们称为热中，上实下虚，上虚下实，少阴厥也，则为骨痛，其有静者在足，泄及便脓血，诸过者切之</div>
+    <div class="talk">而且是你重按下去的时候。你摸到骨边的时候脉很数。这个我们有个特别的名称。所以记得这种昏眩的症状。如果是我们来区分的时候</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 推而外之…</h2></div>
+    <div class="orig">推而外之，内而不外，如果是推而内之，推而上之，上而不下，腰足清也，如果推而下之，代表头项痛也，脉气少者</div>
+    <div class="talk">这所谓的一升就一天的量。在我们血脉里面走的时候。跟夫妻相处之道也是一样。你摸到脉里面的血的数度。比如说我们这样摸脉下去。你摸脉这个观念一定要有。当我们在临床上看的时候。确定我们的诊断对与错。世界上有那么好的医生吗。所以我们在调整阴阳的时候。我们把阳固住的时候。我们制好他的半夜肚子会饿。阴气有余阳不足的时候。张仲景当年读到这边的时候。我们介绍伤寒的时候就有了。脉摸上去还可以往前后推的。你如果这个脉你把它往外拉。我们这个就是阴阳在调整。那四肢有痹症出现的时候</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问17·脉要精微论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 常以平旦 阴气未动 阳气…", "orig": "常以平旦 阴气未动 阳气未散，饮食未进 经脉未盛，落脉调云 气血未乱，可以诊有过之脉，切脉动静而视精明，察五色 观五脏，有余不足，六腑强弱心 脉之盛衰，以此参伍 决死生之分，长则气治，短则气病，数则烦心，大则病进，上盛则气高，下盛则气胀", "talk": "好我们继续看。这个你一天只能看一个病人。当然你不可能去弄个冰水。四肢的阳瞬间就回到胃里面。你就问他你早上起来喝不喝水。因为你早上起来温温整整的。坐下来的时候要赶快吃喔。臂的手在脉诊上面的时候。所以脉是这样子写下来的。胸部正好是中间横格的地方", "chart": null}, {"title": "第二段 · 精明五色者…", "orig": "精明五色者，言语善恶，这种是神明之乱", "talk": "那你开始动手治疗的时候。那你从二开始治疗的时候。代表病一直在复原的中间。我们要设立这个标准就是。反过来就是在恢复的中间。所以平常看来跟正常你摸摸它。那下面就是跟各位提到了。当你一个脏出问题的时候。脏色就会跑到脸上来。因为从里面发出来的。已经混淆不青的盐睛。比如说一个闭人躺在那边。你还没有看到闭盐睛的时候。家里电话千万不能给他知道。因为小人大部分发生很浅。每天一直在重复讲不同的话", "chart": null}, {"title": "第三段 · 是门户不要…", "orig": "是门户不要，那水泉不止者，是膀胱不藏也，这个水泉不止者是膀胱，那现在是水泉不止，头请四身精神将夺，那精神将夺以，转摇不能，不能久立", "talk": "我们马上可以变出寒热来。老师我们为什么要去变寒热。所以我们才需要去变寒热。包括剂量都可以拿得很准。这里面只有残渣跟水。平常我现在讲的是正常人。所以中间要有一个冷却管。这样脖子的后期比较凉一点。不会说很热的水跑到脑部去了。再到膀胱里面聚集在一起。小便的脖子很比较黄。你们要慢慢接受一些名词。这个药是专门制表阳虚的。那这个药是可以固少变的。讲的就是中医的望诊。我们在针灸学针灸的时候。他应该认识你父母亲或是谁。要包括自己小孩子都不认识。当然不认识有时候可以装。没有办法做个完整的呼吸。不需要去利用姿势来呼吸。所以脚膝盖旁边是筋会阳陵。那我们为什么要知道这些。你想办法让肝脏的功能恢复。我们要想办法让腰臂柔软", "chart": null}, {"title": "第四段 · 应不足有余为萧…", "orig": "应不足有余为萧，阴阳不相应，就跟著这个节气走，变成二十四个节气，揆度和揆度，他每个节气，两个礼拜一个节气，如果按照节气走，天地之变，阴阳之应，所以节气在变的时候，四变之动脉，所以说这24个节气，这两个节气呢，是阴阳在交换的时候的节气，以这两个节气，那以节气，在节气交换的时候", "talk": "这个从热慢慢慢慢变成冷。原因就是因为春天比较软", "chart": null}, {"title": "第五段 · 奇恒跟揆度…", "orig": "奇恒跟揆度，甚饥则梦取，肝气盛则梦怒，肺气盛则梦哭，这个徙环和揆度，持脉之道呢，虚静为保，如鱼之游在波，是持脉之大法，六者持脉之大法，就当病灌汗", "talk": "这二七十四天葵之二八十六。这个跟我们人的情志都有关系。我们有非常多的诊断的方式。怎么祖孙三代的脸都红的。可以提醒我们很多事情的。突然你的朋友打电话给你。内经应该是很灵活的东西。阴和阳刚好是相辅相成的。如果开发汗要下去的时候", "chart": null}, {"title": "第六段 · 当病溢饮…", "orig": "当病溢饮，软而散者当病食痹，所以它会有其色赤，那软而散者，色不泽者，当病足胻肿，其色黄而赤者，当病折腰，当病少血，至今不复", "talk": "肌肉里面的汗都流掉了。把精的里面的汗也都发掉。那一般的医生就不敢用汗药。所以麻黄柜子上就不敢乱用。实际上就因为整段不青楚。那如果说肝的脉薄兼而长。中医这东西就要你下去消化。它的青色没有办法停在里面。所以到颜色出现的时候。人到从高处往下坠的时候。不管你是脚著地或怎么样。大部分都是胸腔这边出血。那我们为什么要知道这个。我们要把活血和化瘀的药。那你活手化瘀的药放在一起。光光它就停在肋间的这个。可是胸膈的瘀血还在那边。一散出来水就在这个附近。你摸到它手上的脉很柔和。我们仲景不是提炼过了说。我们开厨房给老外吃的时候。真正的我们身上有75%。所以我们常常用补肾的药", "chart": null}, {"title": "第七段 · 诊得心脉而急…", "orig": "诊得心脉而急，如果说诊得胃脉，病形何如", "talk": "炮制过的味道就比较淡掉。第二餐心鲜的食物又下去。平常都没有人保护我。这我们叫置于死地而后生。那你如果会死的人都很紧张。黑黑的什么都看不到。病的传变情形是怎么样子。这是肠胃的数度就缓下来。看看你们功课有没有问题。每天晚上9点10点", "chart": null}, {"title": "第八段 · 脉风成为疠…", "orig": "脉风成为疠，风成为寒热，不可胜数，此皆安生，这是寒气之肿，八风之变，时病以及胜，久病和新病的区分，那你怎么知道是久病，还是新病呢，色不夺者新病，没有去久病，新病的脉都比较小，此久病也，都是新病，肝与肾脉并至，当病毁伤，如果已见血湿，尺外以候肾，尺里以候腹，那中附上左外以候肝，右外以候胃，内以候胸中", "talk": "或者一直停在身体里面去。一直在受风吹的环境里面。而且有一个例子你就懂了。我们把不同的地方找出来。很优秀的分子都在西医里面。肾脉比较沉一点点。讲的半天就是这个图的位置。我已经把它画到这里给", "chart": null}, {"title": "第九段 · 为热中也…", "orig": "为热中也，我们称之为热中，我们称为热中，上实下虚，上虚下实，少阴厥也，则为骨痛，其有静者在足，泄及便脓血，诸过者切之", "talk": "而且是你重按下去的时候。你摸到骨边的时候脉很数。这个我们有个特别的名称。所以记得这种昏眩的症状。如果是我们来区分的时候", "chart": null}, {"title": "第十段 · 推而外之…", "orig": "推而外之，内而不外，如果是推而内之，推而上之，上而不下，腰足清也，如果推而下之，代表头项痛也，脉气少者", "talk": "这所谓的一升就一天的量。在我们血脉里面走的时候。跟夫妻相处之道也是一样。你摸到脉里面的血的数度。比如说我们这样摸脉下去。你摸脉这个观念一定要有。当我们在临床上看的时候。确定我们的诊断对与错。世界上有那么好的医生吗。所以我们在调整阴阳的时候。我们把阳固住的时候。我们制好他的半夜肚子会饿。阴气有余阳不足的时候。张仲景当年读到这边的时候。我们介绍伤寒的时候就有了。脉摸上去还可以往前后推的。你如果这个脉你把它往外拉。我们这个就是阴阳在调整。那四肢有痹症出现的时候", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

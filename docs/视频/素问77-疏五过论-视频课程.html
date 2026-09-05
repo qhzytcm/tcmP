@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问77·疏五过论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问77·疏五过论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问77-疏五过论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问77-疏五过论.mp4">素问77-疏五过论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第 1 段讲解</h2></div>
+    <div class="orig"></div>
+    <div class="talk">545页 疏五过论。我们的医术一定有法则。大家可以依据的法则。那如果说我们有错的话。五过四德 这个就是医术上讲的。你犯哪五种过失 哪几种过失。第一个 第一个过呢。你以前有钱现在没钱。还是以前没钱现在有钱。人家怎么会回答你啊。我有钱没钱怪你屁事啊。目的是希望了解情志引起的。那为什么我们中医要学一些。我们望青赤黄白黑以外。我们还要学一些看相。这个先贫后富或先富后贫。看相嘛 看相也可以列入中医。那你可以把相书拿出来看。那你就不用去问他啦。研究是中国人的对不对。金头发蓝眼睛的对不对。看外国人你都问我好了。外国人刚好跟中国人。那你如果实在不会看。你不问的话就一过嘛对不对。因为以前很好现在不好。我们说有舍入减难嘛。比如说我们是当高官</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段讲解</h2></div>
+    <div class="orig">黄帝曰：呜呼远哉！闵闵乎若视深渊，若迎浮云，视深渊尚可测，迎浮云莫知其际。圣人之术，为万民式，论裁志意，必有法则，循经守数，接循医事，为万民副，故事有五过四德，汝知之乎？</div>
+    <div class="talk">那如果你没有了解清楚的话。那你按照黄帝内经做。你就按照正常的把他看。其实实在没有办法问。注意旁边的人讲的话。知道这个人过去一点事情。所以你要问旁边的人。实在不知道也没办法。那你情志喜怒无常的人。这个精气会受伤的话</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段讲解</h2></div>
+    <div class="orig">雷公避席再拜曰：臣年幼小，蒙愚以惑，不闻五过与四德，比类形名，虚引其经，心无所对。</div>
+    <div class="talk">你要比类奇恒从容知之。因为人家坐在你面前。光是按照脉来做诊断。所以我们前面有望闻问。问完以后再去摸他的脉。那你就暴喜暴忧暴怒。然后寿命就不会很长。必是有精神上的问题的话</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段讲解</h2></div>
+    <div class="orig">帝曰：凡未诊病者，必问尝贵后贱，虽不中邪，病从内生，名曰脱营。尝富后贫，名曰失精，五气留连，病有所并。医工诊之，不在藏府，不变躯形，诊之而疑，不知病名。身体日减，气虚无精，病深无气，洒洒然时惊，病深者，以其外耗于卫，内夺于荣。良工所失，不知病情，此亦治之一过也。</div>
+    <div class="talk">去改变他的精神状况。那你羡慕100万美金。来吃都死掉了对不对。何必执着在100万美金。也就是病的前因后果。我们不会说你脖子痛</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段讲解</h2></div>
+    <div class="orig">凡欲诊病者，必问饮食居处，暴乐暴苦，始乐后苦，皆伤精气，精气竭绝，形体毁沮。暴怒伤阴，暴喜伤阳，厥气上行，满脉去形。愚医治之，不知补泻，不知病情，精华日脱，邪气乃并，此治之二过也。</div>
+    <div class="talk">治疗的方法当然不一样。所以你当然要去问他。所以病情一定要知道。那你是痛的持续的痛。要多问他的病的原因。那你不能跟他肚子痛。你这个不是鸡同鸭讲。那不是跟那个雷公一样笨。结果呢造成皮肤比较。所以你知道西医那边去检查。怎么来的你也不知道。所以你如果到医院去。西医判定你什么时候死</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段讲解</h2></div>
+    <div class="orig">善为脉者，必以比类奇恒，从容知之，为工而不知道，此诊之不足贵，此治之三过也。</div>
+    <div class="talk">把病人吓死了对不对。从当天听到你讲这个话。这54天是人间炼狱。到后来我早点死算了。那有这种五种过失的人。所以西医就是第五个。所以一个人只有30秒。现在没有当官了对不对。以前有钱现在没有钱。你看你30天就死掉了。你这个乳癌活不过一年。为什么有的女人会得乳癌。为什么有的女人不会得乳癌。你不知道病怎么来的。一定要问病的前因后果。我在美国看病的时候。那我基本上我会尊重。你看脑瘤拍成脑那么大。有些人右边都瘫痪掉了。我说那西医现在怎么做了。医生说现在开刀长回来。说我活不过三个月了。三个月你不应该出去走走吗。既然你从宾州来到佛罗里达。我们不能跟人家这样讲。西医说那你说西医是死定的</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段讲解</h2></div>
+    <div class="orig">诊有三常，必问贵贱，封君败伤，及欲侯王。故贵脱势，虽不中邪，精神内伤，身必败亡。始富后贫，虽不伤邪，皮焦筋屈，痿躄为挛。医不能严，不能动神，外为柔弱，乱至失常，病不能移，则医事不行，此治之四过也。</div>
+    <div class="talk">我告诉你肿瘤怎么来的。你刚刚跟我讲他很清楚。当他肿瘤要这样长大的时候。但是你如果吃我的药。就代表你在痊愈之中。所以你不用没事去照X光了。你就跑到每天住在X光室旁边。旁边隔个墙就是X光室。所以你如果觉得人生很乏味。到X光室旁边躺了睡。所以说这种放射线的东西都不好。不需要就跟别人不需要。你现在已经告诉你要死了。那我怎么知道他没有。我们当医生一定要知道病的。找治病的原因是什么。现在其实最大的问题是。就专门跟人家讲几岁死。所以圣人之治病也必知。你看他讲的天地四时</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 第 8 段讲解</h2></div>
+    <div class="orig">凡诊者必知终始，有知余绪，切脉问名，当合男女。离绝菀结，忧恐喜怒，五藏空虚，血气离守，工不能知，何术之语。尝富大伤，斩筋绝脉，身体复行，令泽不息。故伤败结积，留薄归阳，脓积寒炅。粗工治之，亟刺阴阳，身体解散，四支转筋，死日有期，医不能明，不问所发，唯言死日，亦为粗工，此治之五过也。</div>
+    <div class="talk">所以我们治病一定有法则。绝对不是靠一个很简单的动作。同时我们要问这个年少。是老头子还是少年人。现在有个女孩子告诉你。你就没有看他才7岁。你再问他月经有没有。你这个不是没有注意看年龄吗。那人家来告诉你65岁。根本就65岁了对不对。所以要眼招子放亮看你。所以我们平常看病人几岁。common sense嘛。譬如说气胀或者胃病。后来变成胆囊对不对。我们还要再去治疗他胆。所以我们治生理病很简单。心理病我常常这种刚中。你的病例上怎么写的。这只有他自己去解决。千万不要给病人电话。你整个晚上不要睡觉。打来都是不同的病人。胀气病晚上才不能睡。所以如果你把电话号码</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 第 9 段讲解</h2></div>
+    <div class="orig">凡此五者，皆受术不通，人事不明也。故曰：圣人之治病也，必知天地阴阳，四时经纪，五藏六府，雌雄表里，刺灸砭石，毒药所主，从容人事，以明经道，贵贱贫富，各异品理，问年少长，勇怯之理，审于分部，知病本始，八正九候，诊必副矣。</div>
+    <div class="talk">结果你会害到你自己。我们中医在治病的道。气绝对不可以往外跑。最后我们不赞成开刀。老师 你看这里还讲西医</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段讲解</h2></div>
+    <div class="orig">治病之道，气内为宝，循求其理，求之不得，过在表里。守数据治，无失俞理，能行此术，终身不殆。不知俞理，五藏菀熟，痈发六府，诊病不审，是谓失常。谨守此治，与经相明，《上经》《下经》，揆度阴阳，奇恒五中，决以明堂，审于终始，可以横行。</div>
+    <div class="talk">阴气阳气本来是平衡的。扎了前面的背后的俞穴。时常就会有失误的地方。我们一定要把握这个原则。所以医生一定要清楚。所以我们一定要了解</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问77·疏五过论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第 1 段讲解", "orig": "", "talk": "545页 疏五过论。我们的医术一定有法则。大家可以依据的法则。那如果说我们有错的话。五过四德 这个就是医术上讲的。你犯哪五种过失 哪几种过失。第一个 第一个过呢。你以前有钱现在没钱。还是以前没钱现在有钱。人家怎么会回答你啊。我有钱没钱怪你屁事啊。目的是希望了解情志引起的。那为什么我们中医要学一些。我们望青赤黄白黑以外。我们还要学一些看相。这个先贫后富或先富后贫。看相嘛 看相也可以列入中医。那你可以把相书拿出来看。那你就不用去问他啦。研究是中国人的对不对。金头发蓝眼睛的对不对。看外国人你都问我好了。外国人刚好跟中国人。那你如果实在不会看。你不问的话就一过嘛对不对。因为以前很好现在不好。我们说有舍入减难嘛。比如说我们是当高官", "chart": null}, {"title": "第二段 · 第 2 段讲解", "orig": "黄帝曰：呜呼远哉！闵闵乎若视深渊，若迎浮云，视深渊尚可测，迎浮云莫知其际。圣人之术，为万民式，论裁志意，必有法则，循经守数，接循医事，为万民副，故事有五过四德，汝知之乎？", "talk": "那如果你没有了解清楚的话。那你按照黄帝内经做。你就按照正常的把他看。其实实在没有办法问。注意旁边的人讲的话。知道这个人过去一点事情。所以你要问旁边的人。实在不知道也没办法。那你情志喜怒无常的人。这个精气会受伤的话", "chart": null}, {"title": "第三段 · 第 3 段讲解", "orig": "雷公避席再拜曰：臣年幼小，蒙愚以惑，不闻五过与四德，比类形名，虚引其经，心无所对。", "talk": "你要比类奇恒从容知之。因为人家坐在你面前。光是按照脉来做诊断。所以我们前面有望闻问。问完以后再去摸他的脉。那你就暴喜暴忧暴怒。然后寿命就不会很长。必是有精神上的问题的话", "chart": null}, {"title": "第四段 · 第 4 段讲解", "orig": "帝曰：凡未诊病者，必问尝贵后贱，虽不中邪，病从内生，名曰脱营。尝富后贫，名曰失精，五气留连，病有所并。医工诊之，不在藏府，不变躯形，诊之而疑，不知病名。身体日减，气虚无精，病深无气，洒洒然时惊，病深者，以其外耗于卫，内夺于荣。良工所失，不知病情，此亦治之一过也。", "talk": "去改变他的精神状况。那你羡慕100万美金。来吃都死掉了对不对。何必执着在100万美金。也就是病的前因后果。我们不会说你脖子痛", "chart": null}, {"title": "第五段 · 第 5 段讲解", "orig": "凡欲诊病者，必问饮食居处，暴乐暴苦，始乐后苦，皆伤精气，精气竭绝，形体毁沮。暴怒伤阴，暴喜伤阳，厥气上行，满脉去形。愚医治之，不知补泻，不知病情，精华日脱，邪气乃并，此治之二过也。", "talk": "治疗的方法当然不一样。所以你当然要去问他。所以病情一定要知道。那你是痛的持续的痛。要多问他的病的原因。那你不能跟他肚子痛。你这个不是鸡同鸭讲。那不是跟那个雷公一样笨。结果呢造成皮肤比较。所以你知道西医那边去检查。怎么来的你也不知道。所以你如果到医院去。西医判定你什么时候死", "chart": null}, {"title": "第六段 · 第 6 段讲解", "orig": "善为脉者，必以比类奇恒，从容知之，为工而不知道，此诊之不足贵，此治之三过也。", "talk": "把病人吓死了对不对。从当天听到你讲这个话。这54天是人间炼狱。到后来我早点死算了。那有这种五种过失的人。所以西医就是第五个。所以一个人只有30秒。现在没有当官了对不对。以前有钱现在没有钱。你看你30天就死掉了。你这个乳癌活不过一年。为什么有的女人会得乳癌。为什么有的女人不会得乳癌。你不知道病怎么来的。一定要问病的前因后果。我在美国看病的时候。那我基本上我会尊重。你看脑瘤拍成脑那么大。有些人右边都瘫痪掉了。我说那西医现在怎么做了。医生说现在开刀长回来。说我活不过三个月了。三个月你不应该出去走走吗。既然你从宾州来到佛罗里达。我们不能跟人家这样讲。西医说那你说西医是死定的", "chart": null}, {"title": "第七段 · 第 7 段讲解", "orig": "诊有三常，必问贵贱，封君败伤，及欲侯王。故贵脱势，虽不中邪，精神内伤，身必败亡。始富后贫，虽不伤邪，皮焦筋屈，痿躄为挛。医不能严，不能动神，外为柔弱，乱至失常，病不能移，则医事不行，此治之四过也。", "talk": "我告诉你肿瘤怎么来的。你刚刚跟我讲他很清楚。当他肿瘤要这样长大的时候。但是你如果吃我的药。就代表你在痊愈之中。所以你不用没事去照X光了。你就跑到每天住在X光室旁边。旁边隔个墙就是X光室。所以你如果觉得人生很乏味。到X光室旁边躺了睡。所以说这种放射线的东西都不好。不需要就跟别人不需要。你现在已经告诉你要死了。那我怎么知道他没有。我们当医生一定要知道病的。找治病的原因是什么。现在其实最大的问题是。就专门跟人家讲几岁死。所以圣人之治病也必知。你看他讲的天地四时", "chart": null}, {"title": "第八段 · 第 8 段讲解", "orig": "凡诊者必知终始，有知余绪，切脉问名，当合男女。离绝菀结，忧恐喜怒，五藏空虚，血气离守，工不能知，何术之语。尝富大伤，斩筋绝脉，身体复行，令泽不息。故伤败结积，留薄归阳，脓积寒炅。粗工治之，亟刺阴阳，身体解散，四支转筋，死日有期，医不能明，不问所发，唯言死日，亦为粗工，此治之五过也。", "talk": "所以我们治病一定有法则。绝对不是靠一个很简单的动作。同时我们要问这个年少。是老头子还是少年人。现在有个女孩子告诉你。你就没有看他才7岁。你再问他月经有没有。你这个不是没有注意看年龄吗。那人家来告诉你65岁。根本就65岁了对不对。所以要眼招子放亮看你。所以我们平常看病人几岁。common sense嘛。譬如说气胀或者胃病。后来变成胆囊对不对。我们还要再去治疗他胆。所以我们治生理病很简单。心理病我常常这种刚中。你的病例上怎么写的。这只有他自己去解决。千万不要给病人电话。你整个晚上不要睡觉。打来都是不同的病人。胀气病晚上才不能睡。所以如果你把电话号码", "chart": null}, {"title": "第九段 · 第 9 段讲解", "orig": "凡此五者，皆受术不通，人事不明也。故曰：圣人之治病也，必知天地阴阳，四时经纪，五藏六府，雌雄表里，刺灸砭石，毒药所主，从容人事，以明经道，贵贱贫富，各异品理，问年少长，勇怯之理，审于分部，知病本始，八正九候，诊必副矣。", "talk": "结果你会害到你自己。我们中医在治病的道。气绝对不可以往外跑。最后我们不赞成开刀。老师 你看这里还讲西医", "chart": null}, {"title": "第十段 · 第 10 段讲解", "orig": "治病之道，气内为宝，循求其理，求之不得，过在表里。守数据治，无失俞理，能行此术，终身不殆。不知俞理，五藏菀熟，痈发六府，诊病不审，是谓失常。谨守此治，与经相明，《上经》《下经》，揆度阴阳，奇恒五中，决以明堂，审于终始，可以横行。", "talk": "阴气阳气本来是平衡的。扎了前面的背后的俞穴。时常就会有失误的地方。我们一定要把握这个原则。所以医生一定要清楚。所以我们一定要了解", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

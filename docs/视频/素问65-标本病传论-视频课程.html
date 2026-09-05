@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问65·标本病传论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问65·标本病传论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问65-标本病传论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问65-标本病传论.mp4">素问65-标本病传论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第 1 段讲解</h2></div>
+    <div class="orig">黄帝问曰：病有标本，刺有逆从，奈何？</div>
+    <div class="talk">黄帝内经第65篇标本论。这个皇帝问他 病有标有本。刺法有逆从 那你怎么区分他标和本呢。本就是病来治原发性 原来的地方。标是他传经 传到表面上。那你如何区分他标 什么是标 什么是本。那什么时候先去治标 什么时候先去治本。来 针灸下针的手法 顺利如何 这怎么区分。你刺的方法一定要区分阴阳。我们讲阴经阳经 你经络很熟的时候。变成说我手这里痛 阳经嘛。这里痛 阴经 你就讲完了。这里痛 你看的是 到底是阳经在胃经上面。还是在肾经上面 还是在任脉上面 对不对。我们任蛇而均落 任齐金发卖。目的是什么 就是要人分阴阳 区分阴阳。那逆从得施标本相移。所谓逆从得施就该补就补 该泻就泻。我们按照经络的虚实补泻来做。那作为按照我们针灸的法则来做的时候。绝对不会用错 绝对不会用错。那有的时候 病在标而求之于标。有的时候病在本求之于标。有时候在标而求之于本。所以治罚 有取标而得者 治好了。有的时候取本而把它治好了。有的时候逆取而得者 有的时候从而得者。万举万当 不知标本是为妄行。这个最主要是 阴阳逆从 是标本的道。小而大言一而知百 病之害。少而多谴而不可以言一而知百。</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段讲解</h2></div>
+    <div class="orig">岐伯对曰：凡刺之方，必别阴阳，前后相应，逆从得施，标本相移。故曰：“有其在标而求之于标，有其在本而求之于本，有其在本而求之于标，有其在标而求之于本”。故治有取标而得者，有取本而得者，有逆取而得者，有从取而得者。故知逆与从，正行无问，知标本者，万举万当，不知标本，是谓妄行。</div>
+    <div class="talk">反的话 这个我们急反发生的时候。很急的我们先去治急。那有个人跑来跟你讲。我一天二十四小时没小便了。你赶快先通他尿再说。你还赶他其他的 对不对。那下路吓死了 对不对。针灸 通尿 大人可以啊。我们水分水到 对不对。这个三皇 阴陵泉 三阴交地机。先把他小便滴出来嘛 对不对。你晚上睡觉好不好睡。有先病而后逆者治其本。之后才发生其他的反逆的症状。这个时候我们就是治。有一个人 这个盲肠炎堵到了。这个我们知道这一块发热。同时大便没有 腹痛。他就告诉你我腹痛了。一寸两寸中间找了压痛点。他说盲肠炎 对不对。医生啊 我这个手这里破了。结果你还不去管他的盲肠炎。简单这边讲的就是这样子。那我们有下针把它倒出来。我还是说 训练将来。又会使用经方的时候。没有病 不可以治的。从病在 初起在络上面。不然的话 现在有一个人来。腰痛 你知道吃药要吃多久</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段讲解</h2></div>
+    <div class="orig">夫阴阳逆从，标本之为道也，小而大，言一而知百病之害。少而多，浅而博，可以言一而知百也。以浅而知深，察近而知远。言标与本，易而勿及。治反为逆，治得为从。</div>
+    <div class="talk">又受伤了 腰痛或怎么样。那现在有一个病人说。没关系 我们先治你发烧好了。他们都不能动了对不对。然后这个症状出来以后。然后大便也不是很通畅。昨天才突然发发黄疸。这个时候先治他黄疸。才会有其他的症状出现</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段讲解</h2></div>
+    <div class="orig">先病而后逆者治其本，先逆而后病者治其本；先寒而后生病者治其本，先病而后生寒者治其本；先热而后生病者治其本，先热而后生中满者治其标；先病而后泄者治其本，先泄而后生他病者治其本。必且调之，乃治其他病。先病而后生中满者治其标，先中满而后烦心者治其本。人有客气，有同气。小大不利治其标，小大利治其本。病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。谨察间甚，以意调之；间者并行，甚者独行。先小大不利而后生病者，治其本。</div>
+    <div class="talk">有一个人大肠便秘道。就变成是不是造成发热。这就是你看他的先后。你如果堵到一天两天。我们就要把它清出来了。我们在下伤寒论的时候。一下陷的话造成心下痞。你们不会造成病人心下痞。我们要先去他的中满。我们食物吃到胃里面去</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段讲解</h2></div>
+    <div class="orig">夫病传者，心病先心痛，一日先欬，三日胁支痛，五日闭塞不通，身痛体重，三日不已，死，冬夜半，夏日中。，肺病喘欬，三日而胁支满痛，一日身重体痛，五日而胀，十日不已，死，冬日入，夏日出。</div>
+    <div class="talk">这个食物不应该在这里。那时候我们把中满去掉。我们有很多很好的药。先治其本而后治其标。先治其标而后治其本。一个人已经在吐血了。我要全身眷单没有力。那我刚刚跟我太太吵一下。你要先看哪个比较急。当你通通恢复了都好啦</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段讲解</h2></div>
+    <div class="orig">肝病头目眩，胁支满，三日体重身痛，五日而胀，三日腰脊少腹痛、胫酸。三日不已，死，冬日入，夏早食。</div>
+    <div class="talk">结果你标本搞不清楚。你去帮他解决同性恋的问题。如果这个前面的翻译。所以这个病传者心病。第一个会传到心脏里面的时候。一定会有心脏开始痛。肝木通通在胁了这边。少阳通通在胁了这边。如果发生在冬天的话。那怎么知道半夜跟中午。就是说我讲了五分法。是不是午时是正午是火</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段讲解</h2></div>
+    <div class="orig">脾病身痛体重，一日而胀，二日少腹腰脊痛、胫酸，三日背𦛗筋痛，小便闭。十日不已，死，冬人定，夏晏食。</div>
+    <div class="talk">病是不是起。半夜的时候是水。那水会克火。所以半夜死。所以你如果。按照五分法来做。你后面是什么。在冬天的时候。因为冬天是水。夏天的时候是火。日中会死掉。死亡的时间不一样。那你如果晓得五分法的话。什么你就不要记记了。因为五分法。就很明确告诉你。什么时候会出问题。如果是肺病。这是脏病的相传。如果肺病有喘咳。3天而造成。有胸胁苦满。这是金克木。肺有问题的时候。会影响到肝脏。如果说没好。土的话就是脾脏。如果10天。没有好的话。病人就死证。这个死了时间。冬天 夏天。本来肝主目。所以肝有病的时候。眼睛那个昏花。这个胸胁之满</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 第 8 段讲解</h2></div>
+    <div class="orig">肾病少腹腰脊痛、胻酸，三日背𦛗筋痛、小便闭，三日腹胀，三日两胁支痛，三日不已，死，冬大晨，夏晏晡。</div>
+    <div class="talk">夏天那时候早餐的时候是。后来在伤寒论的时候。张仲景在用日的时候。6天左右到第7天更换。因为第7天会更换掉。我们现在日就是日就是日。以前的古书上面的时候。一听就知道都是脾胀。两个月你不给它治好</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 第 9 段讲解</h2></div>
+    <div class="orig">胃病胀满，五日少腹腰脊痛、胻酸，三日背𦛗筋痛、小便闭，五日身体重，六日不已，死，冬夜半后，夏日昳。</div>
+    <div class="talk">脚的胫骨那边是酸的。小便一有堵塞的时候。那我们赶快让它通利出来。这个胃病其实是最好治的。就是你没有把它治好。胫就是胃经经过的地方</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段讲解</h2></div>
+    <div class="orig">膀胱病小便闭，五日少腹胀、腰脊痛、胻酸，一日腹胀，一日身体痛，二日不已，死，冬鸡鸣，夏下晡。，诸病以次是相传如是者，皆有死期，不可刺。间一脏止，及至三四脏者，乃可刺也。</div>
+    <div class="talk">我们为什么要去知道。但是你要一定要有这个概念。当你心脏有问题的时候。你首先把肺顾住的时候。那适合我们在什么条理。我们今天介绍到这里。学完还是不会用的苦恼。专为解决这些问题而生。快速搜索学过的内容。学会倪师课程的精髓。解决治己遇到的问题</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问65·标本病传论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第 1 段讲解", "orig": "黄帝问曰：病有标本，刺有逆从，奈何？", "talk": "黄帝内经第65篇标本论。这个皇帝问他 病有标有本。刺法有逆从 那你怎么区分他标和本呢。本就是病来治原发性 原来的地方。标是他传经 传到表面上。那你如何区分他标 什么是标 什么是本。那什么时候先去治标 什么时候先去治本。来 针灸下针的手法 顺利如何 这怎么区分。你刺的方法一定要区分阴阳。我们讲阴经阳经 你经络很熟的时候。变成说我手这里痛 阳经嘛。这里痛 阴经 你就讲完了。这里痛 你看的是 到底是阳经在胃经上面。还是在肾经上面 还是在任脉上面 对不对。我们任蛇而均落 任齐金发卖。目的是什么 就是要人分阴阳 区分阴阳。那逆从得施标本相移。所谓逆从得施就该补就补 该泻就泻。我们按照经络的虚实补泻来做。那作为按照我们针灸的法则来做的时候。绝对不会用错 绝对不会用错。那有的时候 病在标而求之于标。有的时候病在本求之于标。有时候在标而求之于本。所以治罚 有取标而得者 治好了。有的时候取本而把它治好了。有的时候逆取而得者 有的时候从而得者。万举万当 不知标本是为妄行。这个最主要是 阴阳逆从 是标本的道。小而大言一而知百 病之害。少而多谴而不可以言一而知百。", "chart": null}, {"title": "第二段 · 第 2 段讲解", "orig": "岐伯对曰：凡刺之方，必别阴阳，前后相应，逆从得施，标本相移。故曰：“有其在标而求之于标，有其在本而求之于本，有其在本而求之于标，有其在标而求之于本”。故治有取标而得者，有取本而得者，有逆取而得者，有从取而得者。故知逆与从，正行无问，知标本者，万举万当，不知标本，是谓妄行。", "talk": "反的话 这个我们急反发生的时候。很急的我们先去治急。那有个人跑来跟你讲。我一天二十四小时没小便了。你赶快先通他尿再说。你还赶他其他的 对不对。那下路吓死了 对不对。针灸 通尿 大人可以啊。我们水分水到 对不对。这个三皇 阴陵泉 三阴交地机。先把他小便滴出来嘛 对不对。你晚上睡觉好不好睡。有先病而后逆者治其本。之后才发生其他的反逆的症状。这个时候我们就是治。有一个人 这个盲肠炎堵到了。这个我们知道这一块发热。同时大便没有 腹痛。他就告诉你我腹痛了。一寸两寸中间找了压痛点。他说盲肠炎 对不对。医生啊 我这个手这里破了。结果你还不去管他的盲肠炎。简单这边讲的就是这样子。那我们有下针把它倒出来。我还是说 训练将来。又会使用经方的时候。没有病 不可以治的。从病在 初起在络上面。不然的话 现在有一个人来。腰痛 你知道吃药要吃多久", "chart": null}, {"title": "第三段 · 第 3 段讲解", "orig": "夫阴阳逆从，标本之为道也，小而大，言一而知百病之害。少而多，浅而博，可以言一而知百也。以浅而知深，察近而知远。言标与本，易而勿及。治反为逆，治得为从。", "talk": "又受伤了 腰痛或怎么样。那现在有一个病人说。没关系 我们先治你发烧好了。他们都不能动了对不对。然后这个症状出来以后。然后大便也不是很通畅。昨天才突然发发黄疸。这个时候先治他黄疸。才会有其他的症状出现", "chart": null}, {"title": "第四段 · 第 4 段讲解", "orig": "先病而后逆者治其本，先逆而后病者治其本；先寒而后生病者治其本，先病而后生寒者治其本；先热而后生病者治其本，先热而后生中满者治其标；先病而后泄者治其本，先泄而后生他病者治其本。必且调之，乃治其他病。先病而后生中满者治其标，先中满而后烦心者治其本。人有客气，有同气。小大不利治其标，小大利治其本。病发而有余，本而标之，先治其本，后治其标；病发而不足，标而本之，先治其标，后治其本。谨察间甚，以意调之；间者并行，甚者独行。先小大不利而后生病者，治其本。", "talk": "有一个人大肠便秘道。就变成是不是造成发热。这就是你看他的先后。你如果堵到一天两天。我们就要把它清出来了。我们在下伤寒论的时候。一下陷的话造成心下痞。你们不会造成病人心下痞。我们要先去他的中满。我们食物吃到胃里面去", "chart": null}, {"title": "第五段 · 第 5 段讲解", "orig": "夫病传者，心病先心痛，一日先欬，三日胁支痛，五日闭塞不通，身痛体重，三日不已，死，冬夜半，夏日中。，肺病喘欬，三日而胁支满痛，一日身重体痛，五日而胀，十日不已，死，冬日入，夏日出。", "talk": "这个食物不应该在这里。那时候我们把中满去掉。我们有很多很好的药。先治其本而后治其标。先治其标而后治其本。一个人已经在吐血了。我要全身眷单没有力。那我刚刚跟我太太吵一下。你要先看哪个比较急。当你通通恢复了都好啦", "chart": null}, {"title": "第六段 · 第 6 段讲解", "orig": "肝病头目眩，胁支满，三日体重身痛，五日而胀，三日腰脊少腹痛、胫酸。三日不已，死，冬日入，夏早食。", "talk": "结果你标本搞不清楚。你去帮他解决同性恋的问题。如果这个前面的翻译。所以这个病传者心病。第一个会传到心脏里面的时候。一定会有心脏开始痛。肝木通通在胁了这边。少阳通通在胁了这边。如果发生在冬天的话。那怎么知道半夜跟中午。就是说我讲了五分法。是不是午时是正午是火", "chart": null}, {"title": "第七段 · 第 7 段讲解", "orig": "脾病身痛体重，一日而胀，二日少腹腰脊痛、胫酸，三日背𦛗筋痛，小便闭。十日不已，死，冬人定，夏晏食。", "talk": "病是不是起。半夜的时候是水。那水会克火。所以半夜死。所以你如果。按照五分法来做。你后面是什么。在冬天的时候。因为冬天是水。夏天的时候是火。日中会死掉。死亡的时间不一样。那你如果晓得五分法的话。什么你就不要记记了。因为五分法。就很明确告诉你。什么时候会出问题。如果是肺病。这是脏病的相传。如果肺病有喘咳。3天而造成。有胸胁苦满。这是金克木。肺有问题的时候。会影响到肝脏。如果说没好。土的话就是脾脏。如果10天。没有好的话。病人就死证。这个死了时间。冬天 夏天。本来肝主目。所以肝有病的时候。眼睛那个昏花。这个胸胁之满", "chart": null}, {"title": "第八段 · 第 8 段讲解", "orig": "肾病少腹腰脊痛、胻酸，三日背𦛗筋痛、小便闭，三日腹胀，三日两胁支痛，三日不已，死，冬大晨，夏晏晡。", "talk": "夏天那时候早餐的时候是。后来在伤寒论的时候。张仲景在用日的时候。6天左右到第7天更换。因为第7天会更换掉。我们现在日就是日就是日。以前的古书上面的时候。一听就知道都是脾胀。两个月你不给它治好", "chart": null}, {"title": "第九段 · 第 9 段讲解", "orig": "胃病胀满，五日少腹腰脊痛、胻酸，三日背𦛗筋痛、小便闭，五日身体重，六日不已，死，冬夜半后，夏日昳。", "talk": "脚的胫骨那边是酸的。小便一有堵塞的时候。那我们赶快让它通利出来。这个胃病其实是最好治的。就是你没有把它治好。胫就是胃经经过的地方", "chart": null}, {"title": "第十段 · 第 10 段讲解", "orig": "膀胱病小便闭，五日少腹胀、腰脊痛、胻酸，一日腹胀，一日身体痛，二日不已，死，冬鸡鸣，夏下晡。，诸病以次是相传如是者，皆有死期，不可刺。间一脏止，及至三四脏者，乃可刺也。", "talk": "我们为什么要去知道。但是你要一定要有这个概念。当你心脏有问题的时候。你首先把肺顾住的时候。那适合我们在什么条理。我们今天介绍到这里。学完还是不会用的苦恼。专为解决这些问题而生。快速搜索学过的内容。学会倪师课程的精髓。解决治己遇到的问题", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问01·上古天真论</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e8449">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart img { max-height: 130px; border-radius: 6px; border: 1px solid #2c4a38; display: block; text-align: left; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; }
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .note { font-size: 14px; line-height: 1.9; color: #7f8c8d; margin-top: 8px; padding: 0 4px; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  th, td { padding: 8px 10px; font-size: 14px; text-align: left; }
+  thead th { border-top: 2.5px solid #333; border-bottom: 1.2px solid #333; background: #f7f5ef; }
+  tbody tr:last-child td { border-bottom: 2.5px solid #333; }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+  .muyu { display: block; background: #fdf6e3; border-left: 4px solid var(--gold);
+          padding: 10px 14px; margin-top: 10px; font-size: 15px; line-height: 1.9;
+          color: #7a5c00; font-weight: 700; text-align: left; }
+  .muyu .tag { color: var(--gold); font-size: 12.5px; display: block; margin-bottom: 4px; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="titlebar">
+  <h1>黄帝内经·素问01·上古天真论</h1>
+</div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问01-上古天真论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问01-上古天真论.mp4">素问01-上古天真论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段 · 开篇</div>
+      <div class="cap-orig" id="capOrig">昔在黄帝，生而神灵，弱而能言，幼而徇齐，长而敦敏，成而登天。</div>
+      <div class="cap-talk" id="capTalk">开篇立"人"：黄帝——生而神灵的圣人，向天师岐伯请教生命的根本问题。</div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+
+  <!-- 十段讲课正文（知识网络课程教学） -->
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>开篇 · 昔在黄帝，生而神灵</h2></div>
+    <div class="orig">昔在黄帝，生而神灵，弱而能言，幼而徇齐，长而敦敏，成而登天。</div>
+    <div class="talk">开篇立"人"：黄帝——生而神灵的圣人，向天师岐伯请教生命的根本问题。八句交代提问者，正文由此展开。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>发问 · 今人半寿早衰何因？</h2></div>
+    <div class="orig">乃问于天师曰：余闻上古之人，春秋皆度百岁，而动作不衰；今时之人，年半百而动作皆衰者，时世异耶？人将失之耶？</div>
+    <div class="talk">黄帝一问双问：是时代变了（外因），还是人自己失了道（内因）？岐伯全篇只答内因：养生成败，操之在己。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>总答 · 四个基本盘</h2></div>
+    <div class="orig">岐伯对曰：上古之人，其知道者，法于阴阳，和于术数，食饮有节，起居有常，不妄作劳，故能形与神俱，而尽终其天年，度百岁乃去。</div>
+    <div class="talk">长寿四基本盘：①法于阴阳 ②和于术数 ③食饮有节 ④起居有常（不妄作劳）——守住四盘，形与神俱，尽终天年。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>论上古人与论今人 · 精气神维度对比</h2></div>
+    <div class="orig">今时之人不然也，以酒为浆，以妄为常，醉以入房，以欲竭其精，以耗散其真，不知持满，不时御神，务快其心，逆于生乐，起居无节，故半百而衰也。</div>
+    <div class="talk">精气神三维度对比：<b>精</b>（物质结构）——上古人"不妄作劳"以守精，今人"醉以入房"以竭精；<b>气</b>（能量信息）——上古人"法于阴阳"以顺气，今人"以妄为常"以乱气；<b>神</b>（适应储备潜能）——上古人"形与神俱"以全神，今人"不时御神"以耗神。</div>
+    <table>
+      <thead><tr><th>维度</th><th>上古之人</th><th>今时之人</th></tr></thead>
+      <tbody>
+        <tr><td>精（物质结构）</td><td>不妄作劳，守精</td><td>醉以入房，竭精</td></tr>
+        <tr><td>气（能量信息）</td><td>法于阴阳，顺气</td><td>以妄为常，乱气</td></tr>
+        <tr><td>神（储备潜能）</td><td>形与神俱，全神</td><td>不时御神，耗神</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>圣人教下 · 恬惔虚无，真气从之</h2></div>
+    <div class="orig">夫上古圣人之教下也，皆谓之虚邪贼风，避之有时，恬惔虚无，真气从之，精神内守，病安从来。</div>
+    <div class="talk"><b>精气神 = 物质结构-能量信息-适应储备潜能最适化</b>：<b>恬惔虚无</b>——神归其位；<b>真气从之</b>——气顺其道；<b>精神内守</b>——精守其本。三者和合，病安从来。衬托出当今时代的<b>储备潜能最适化</b>：生理状态 + 心理状态 + 人机关系 + 生态协同四类潜能。<b>不是最优，而是最适</b>——确保从容长寿的全生命周期质量。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>德全不危 · 深思远虑</h2></div>
+    <div class="orig">是以志闲而少欲，心安而不惧，形劳而不倦，气从以顺，各从其欲，皆得所愿。故美其食，任其服，乐其俗，高下不相慕，其民故曰朴。是以嗜欲不能劳其目，淫邪不能惑其心，愚智贤不肖，不惧于物，故合于道。所以能年皆度百岁，而动作不衰者，以其德全不危也。</div>
+    <div class="talk"><b>德全不危，是深思远虑的生命战略</b>：<b>志闲而少欲</b>——神不外驰；<b>心安而不惧</b>——气定神闲；<b>形劳而不倦</b>——精不妄耗。"德全"是精气神三者和合的修养总纲——深思远虑，不为外物所惧，方得百岁而动作不衰。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>女子七纪 · 一七→七七</h2></div>
+    <div class="orig">女子七岁，肾气盛，齿更发长；二七而天癸至，任脉通，太冲脉盛，月事以时下，故有子；三七肾气平均，故真牙生而长极；四七筋骨坚，发长极，身体盛壮；五七阳明脉衰，面始焦，发始堕；六七三阳脉衰于上，面皆焦，发始白；七七任脉虚，太冲脉衰少，天癸竭，地道不通，故形坏而无子。</div>
+    <div class="talk">三线表详解女子七阶段，<b><div class="muyu"><span class="tag">岐伯暗喻 · 语言的语义群</span>引导观看者"观察—思考—行动"多循环迭代式自主成长</b>：观察（生理信号）→ 思考（肾气天癸盛衰规律）→ 行动（对应阶段养护策略），循环迭代。</div></div>
+    <table>
+      <thead><tr><th>阶段</th><th>年龄</th><th>观察（生理特征）</th><th>思考（规律）</th><th>行动（养护）</th></tr></thead>
+      <tbody>
+        <tr><td>一七</td><td>7</td><td>齿更发长</td><td>肾气始盛</td><td>养护先天，充足睡眠</td></tr>
+        <tr><td>二七</td><td>14</td><td>初潮，有子</td><td>天癸至，生殖开启</td><td>调经养血，情志疏导</td></tr>
+        <tr><td>三七</td><td>21</td><td>真牙生，长极</td><td>肾气平均，发育成熟</td><td>规律作息，适度锻炼</td></tr>
+        <tr><td>四七</td><td>28</td><td>筋骨坚，盛壮</td><td>生理巅峰</td><td>勿过劳，保气血</td></tr>
+        <tr><td>五七</td><td>35</td><td>面始焦，发始堕</td><td>阳明脉衰，初衰</td><td>养胃气，润面部</td></tr>
+        <tr><td>六七</td><td>42</td><td>面焦，发白</td><td>三阳脉衰，渐衰</td><td>补肾养发，调三阳</td></tr>
+        <tr><td>七七</td><td>49</td><td>绝经，形坏无子</td><td>天癸竭，生殖关闭</td><td>更年期调摄，养精血</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>男子八纪 · 一八→八八</h2></div>
+    <div class="orig">丈夫八岁，肾气实，发长齿更；二八肾气盛，天癸至，精气溢泻，阴阳和，故能有子；三八肾气平均，筋骨劲强，故真牙生而长极；四八筋骨隆盛，肌肉满壮；五八肾气衰，发堕齿槁；六八阳气衰竭于上，面焦，发鬓颁白；七八肝气衰，筋不能动，天癸竭，精少，肾藏衰，形体皆极；八八则齿发去。</div>
+    <div class="talk">三线表详解男子八阶段，<b><div class="muyu"><span class="tag">岐伯暗喻 · 语言的语义群</span>引导观看者"观察—思考—行动"多循环迭代式自主成长</b>：观察（生理信号）→ 思考（肾气天癸盛衰规律）→ 行动（对应阶段养护策略），循环迭代。</div></div>
+    <table>
+      <thead><tr><th>阶段</th><th>年龄</th><th>观察（生理特征）</th><th>思考（规律）</th><th>行动（养护）</th></tr></thead>
+      <tbody>
+        <tr><td>一八</td><td>8</td><td>发长齿更</td><td>肾气实，发育启动</td><td>养护先天，充足营养</td></tr>
+        <tr><td>二八</td><td>16</td><td>精气溢泻</td><td>天癸至，生殖开启</td><td>节欲保精，成长营养</td></tr>
+        <tr><td>三八</td><td>24</td><td>真牙生，长极</td><td>肾气平均，发育成熟</td><td>规律作息，强筋健骨</td></tr>
+        <tr><td>四八</td><td>32</td><td>筋骨隆盛，满壮</td><td>生理巅峰</td><td>勿过劳，固肾精</td></tr>
+        <tr><td>五八</td><td>40</td><td>发堕齿槁</td><td>肾气衰，初衰</td><td>补肾填精，固齿护发</td></tr>
+        <tr><td>六八</td><td>48</td><td>面焦鬓白</td><td>阳气衰，渐衰</td><td>温阳益气，调养三阳</td></tr>
+        <tr><td>七八</td><td>56</td><td>筋不能动，精少</td><td>肝衰肾衰，天癸竭</td><td>养肝柔筋，节欲保精</td></tr>
+        <tr><td>八八</td><td>64</td><td>齿发去</td><td>机能衰败</td><td>顺其自然，颐养天年</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>四境界之一二 · 贤人 · 圣人</h2></div>
+    <div class="orig">其次有贤人者，法则天地，象似日月，辨列星辰，逆从阴阳，分别四时，将从上古合同于道，亦可使益寿而有极时。其次有圣人者，处天地之和，从八风之理，适嗜欲于世俗之间，无恚嗔之心，行不欲离于世，被服章，举不欲观于俗，外不劳形于事，内无思想之患，以恬愉为务，以自得为功，形体不敝，精神不散，亦可以百数。</div>
+    <div class="talk"><b>先讲贤人</b>——储备潜能最适化的<b>跳跃式设计</b>：法则天地、象似日月、辨列星辰（主动建模天地规律）、逆从阴阳、分别四时（大胆应用）。<b>再讲圣人</b>——<b>随遇而安式设计</b>：处天地之和（生态协同）、适嗜欲于世俗（生理融入日常）、无恚嗔之心（心理平和）、以恬愉为务（与生活工具和乐相处）。由贤人至圣人，认知逐步提高。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>四境界之三四 · 至人 · 真人</h2></div>
+    <div class="orig">中古之时，有至人者，淳德全道，和于阴阳，调于四时，去世离俗，积精全神，游行天地之间，视听八达之外，此盖益其寿命而强者也，亦归于真人。黄帝曰：余闻上古有真人者，提挈天地，把握阴阳，呼吸精气，独立守神，肌肉若一，故能寿敝天地，无有终时，此其道生。</div>
+    <div class="talk"><b>先讲至人</b>——储备潜能最适化的<b>适应式设计</b>：淳德全道（生理）、积精全神（心理）、调于四时（生态）、和于阴阳（协同）。<b>再讲真人</b>——四类储备潜能最适化的<b>完美实现（塔顶式设计）</b>：提挈天地、肌肉若一（生理）、独立守神、无有终时（心理）、呼吸精气、以道御身（人机）、把握阴阳、与天地合（生态）。四境界由低到高：贤人→圣人→至人→真人——逐步提高认知的适应过程，精气神最适化，不是最优，而是最适。</div>
+  </div>
+
+</div>
+
+<div class="footer">黄帝内经·素问01·上古天真论 · 知识网络课程教学</div>
+
+<script>
+// PWA: Service Worker 注册（离线可用 + 可安装为应用）
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').catch((e) => {
+      console.log('SW 注册跳过（file:// 或 https 场景）:', e);
+    });
+  });
+}
+</script>
+
+<script>
+// 自动播放（静音起步, 单击/按键后开声 — 浏览器自动播放策略）
+const _v = document.getElementById('v');
+_v.muted = true;
+_v.play().catch(() => {});
+const _unmute = () => { _v.muted = false; _v.volume = 1; };
+document.addEventListener('click', _unmute, { once: true });
+document.addEventListener('keydown', _unmute, { once: true });
+document.addEventListener('touchstart', _unmute, { once: true });
+</script>
+
+<script>
+// 语音-字幕同步（按视频进度显示当前段）
+const SUBS = [
+  { sec: '第 1 段 · 开篇', dur: 2, chart: null,
+    orig: '昔在黄帝，生而神灵，弱而能言，幼而徇齐，长而敦敏，成而登天。',
+    talk: '开篇立"人"：黄帝——生而神灵的圣人，向天师岐伯请教生命的根本问题。' },
+  { sec: '第 2 段 · 发问', dur: 4, chart: null,
+    orig: '余闻上古之人，春秋皆度百岁，而动作不衰；今时之人，年半百而动作皆衰者，时世异耶？人将失之耶？',
+    talk: '今人半寿早衰何因？一问双问：时世之变（外因）？人自失道（内因）？岐伯只答内因。' },
+  { sec: '第 3 段 · 总答', dur: 4, chart: null,
+    orig: '上古之人，其知道者，法于阴阳，和于术数，食饮有节，起居有常，不妄作劳，故能形与神俱，而尽终其天年，度百岁乃去。',
+    talk: '四个基本盘：法于阴阳 + 和于术数 + 食饮有节 + 起居有常（不妄作劳）。' },
+  { sec: '第 4 段 · 论上古人与论今人', dur: 10, chart: 'tables/表3-男女对比.png',
+    orig: '今时之人不然也，以酒为浆，以妄为常，醉以入房，以欲竭其精，以耗散其真……故半百而衰也。',
+    talk: '精气神三维度对比：精（物质结构）守精vs竭精；气（能量信息）顺气vs乱气；神（储备潜能）全神vs耗神。' },
+  { sec: '第 5 段 · 圣人教下', dur: 20, chart: null,
+    orig: '虚邪贼风，避之有时，恬惔虚无，真气从之，精神内守，病安从来。',
+    talk: '精气神=物质结构-能量信息-适应储备潜能最适化：恬惔虚无（神）+真气从之（气）+精神内守（精）。' },
+  { sec: '第 6 段 · 德全不危', dur: 20, chart: null,
+    orig: '志闲而少欲，心安而不惧，形劳而不倦……以其德全不危也。',
+    talk: '深思远虑的生命战略：志闲少欲（神）+心安不惧（气）+形劳不倦（精）=德全不危。' },
+  { sec: '第 7 段 · 女子七纪', dur: 20, chart: 'tables/表1-女子生命周期.png',
+    orig: '女子七岁肾气盛……七七任脉虚，天癸竭，地道不通，故形坏而无子。',
+    talk: '三线表一七→七七：观察-思考-行动多循环迭代式自主成长，逐阶段引导养护。' },
+  { sec: '第 8 段 · 男子八纪', dur: 20, chart: 'tables/表2-男子生命周期.png',
+    orig: '丈夫八岁肾气实……八八则齿发去。',
+    talk: '三线表一八→八八：观察-思考-行动多循环迭代式自主成长，逐阶段引导养护。' },
+  { sec: '第 9 段 · 贤人·圣人', dur: 120, chart: null,
+    orig: '其次有贤人者，法则天地……亦可使益寿而有极时。其次有圣人者，处天地之和……亦可以百数。',
+    talk: '认知递进第一阶：先讲贤人（跳跃式设计）→ 再讲圣人（随遇而安式设计）。' },
+  { sec: '第 10 段 · 至人·真人', dur: 120, chart: null,
+    orig: '中古之时，有至人者，淳德全道……亦归于真人。余闻上古有真人者，提挈天地，把握阴阳……此其道生。',
+    talk: '认知递进终阶：先讲至人（适应式设计）→ 再讲真人（塔顶式设计）。四境界由低到高：贤人→圣人→至人→真人。' },
+];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const totalRef = SUBS.reduce((s, x) => s + x.dur, 0);
+v.addEventListener('timeupdate', () => {
+  const frac = (v.currentTime || 0) / (v.duration || 693);
+  const tRef = Math.max(0, frac * totalRef - 2.5);  // 字幕提前2.5s(校准发声早于文字)
+  let acc = 0, cur = SUBS[0];
+  for (const s of SUBS) {
+    if (tRef <= acc + s.dur) { cur = s; break; }
+    acc += s.dur;
+  }
+  if (cur) {
+    capSec.textContent = '▍' + cur.sec;
+    capOrig.textContent = cur.orig;
+    capTalk.textContent = cur.talk;
+    // 图表 3 件套: 原文-讲解-图表
+    const cc = document.getElementById('capChart');
+    if (cur.chart) {
+      cc.innerHTML = '<div class="lbl">📊 图表</div><img src="' + cur.chart + '" alt="图表">';
+    } else {
+      cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+    }
+  }
+});
+</script>
+</body>
+</html>

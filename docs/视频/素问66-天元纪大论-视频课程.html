@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问66·天元纪大论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问66·天元纪大论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问66-天元纪大论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问66-天元纪大论.mp4">素问66-天元纪大论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第 1 段讲解</h2></div>
+    <div class="orig">黄帝问曰：天有五行御五位，以生寒暑燥湿风；人有五脏化五气，以生喜怒忧思恐。论言五运相袭，而皆治之，终期之日，周而复始，予已知之矣。愿闻其与三阴三阳之候，奈何合之？</div>
+    <div class="talk">在上之前呢 我们先跟诸位解释一下。黄帝内经呢 从第65篇以后 就是66到这个一直到74篇。这些篇幅呢 丧失掉了。那所以我们跟著DVD买的时候 你会看到这个黄帝内经的这个我们自己翻译的。附带赠送给一本 就是这一本呢 是来自宋本 宋朝的刊本。那是王冰他说赚的 就是他把66张到74张补足上去。那补足上去呢 那我把中间的呢 就拷贝下来给你们。这是那个原文 那这个附送给大家去越南。那真的里面最好的一篇是我在买那个22纸的时候。本来我目的要找韩非纸 反正中国人很多纸嘛。那本书就叫22纸 韩非纸 装纸 恐纸 牢纸啊什么都有。结果我要找韩非纸 结果去找这书。好不容易找到韩非纸的全部写的东西。就拿回来一看里面有黄帝内经一篇 就是第72篇。是刺法篇 里面呢很好 所以我画了一点心思。把它翻译出来给大家看。那有翻译的话你会看得更清楚嘛。所以说我们的 我除了在我们自己写的这本黄帝内经呢。就后面就附上了 刺法 这个这一篇。黄帝内经第72篇 这是一篇。那过去我们都知道这个。中国呢比较难懂的是。伏羲 神农 还有黄帝 这三个时期。伏羲讲的是易经八卦 神农。</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段讲解</h2></div>
+    <div class="orig">鬼臾区稽首再拜对曰：昭乎哉问也！夫五运阴阳者，天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也，可不通乎!故物生谓之化，物极谓之变，阴阳不测谓之神，神用无方谓之圣。夫变化之为用也，在天为玄，在人为道，在地为化。化生五味，道生智，玄生神。神在天为风，在地为木；在天为热，在地为火；在天为湿，在地为土；在天为燥，在地为金；在天为寒，在地为水。故在天为气，在地成形，形气相感,而化生万物矣。然天地者，万物之上下也；左右者，阴阳之道路也；水火者，阴阳之征兆也；金木者，生成之终始也。气有多少，形有盛衰，上下相召而损益彰矣。，帝曰：愿闻五运之主时也何如？</div>
+    <div class="talk">黄帝问道 天上有木 火 土 金 水 五行。统御地下东 西 南 北 中五个方位。从而产生寒 暑 燥 湿 风五种气候变化。人有五脏化生五气 从而产生喜。木 丝 忧 恐五种情质变化。经论说 五运递相因袭。各有一定的主治季节。又重新开始新的轮回。我已经知道这个变化规律了。还想再听听五运和三阴三阳的结合是怎样的呢。五运和阴阳是天地自然界变化的一般规律。是自然万物的一个总纲。是事物发展变化的基础和生长毁灭的根本。是宇宙间无穷尽的变化所在。这些道理哪能不通晓呢。因而事物的开始发生叫做化。难以探测的阴阳变化叫做神。能够掌握和运用这种变化无边的原则的人叫做圣。在天表现为玄妙深远无穷。在人表现为认识事物的自然规律。在地表现为万物的生化。物质的生化而产生五味。认识了自然规律而产生智慧。深远的宇宙空间而产生神明。神明的作用在天为风</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：五气运行，各终期日，非独主时也。，帝曰：请闻其所谓也。</div>
+    <div class="talk">所以在天为无形之气。就能变化和产生万物。所以天地是万物的上下。所以左右是阴阳的道路。所以水火是阴阳的象征。所以金木是生成的终始。阴阳之气并不是一成不变的。有形物质在发展过程中。也有旺盛和衰老的区别。在上之气和在下之质互相感召。事物太过和不及的形象</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：臣积考《太始天元册》文曰：“太虚寥廓，肇基化元，万物资始，五运终天，布气真灵，总统坤元，九星悬朗，七曜周旋，曰阴曰阳，曰柔曰刚，幽显既位，寒暑弛张，生生化化，品物咸章。”臣斯十世，此之谓也。，帝曰：善。何谓气有多少，形有盛衰？</div>
+    <div class="talk">臣仔细研读太始天元册。是物质生化之本源的基础。五运行于天道中而复始。总统大地生化的本源。于是万物有阴阳的不断变化。幽暗和显明按一定的位次出现。寒冷和暑热按一定的季节往来。品物咸章的不同形象。臣斯十世研究这些道理。阴气和阳气各有多少的不同</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：阴阳之气，各有多少，故曰三阴三阳也。形有盛衰，谓五行之治，各有太过不及也。故其始也，有余而往，不足随之；不足而往，有余从之，知迎知随，气可与期。应天为天符，承岁为岁直，三合为治。，帝曰：上下相召，奈何？</div>
+    <div class="talk">各有太过不及的区别。开始是太过的阳年过后。随之而来的是不及的阴年。从之而来的是太过的阳年。迎之而至的是属于什么气。随之而至的是属于什么气。对一年中运气的盛衰情况。与岁直的五行相同的。年支的五行君相合的。天气和地气互相感召</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：寒暑燥湿风火，天之阴阳也，三阴三阳上奉之。木火土金水火，地之阴阳也，生长化收藏下应之。天以阳生阴长，地以阳杀阴藏。天有阴阳，地亦有阴阳。木火土金水火，地之阴阳也，生长化收藏，故阳中有阴，阴中有阳。所以欲知天地之阴阳者，应天之气动而不息，故五岁而右迁；应地之气静而守位，故六期而环会。动静相召，上下相临，阴阳相错，而变由生也。，帝曰：上下周纪，其有数乎？</div>
+    <div class="talk">是地的阴阳。下半年天气主之。为天之阴阳。下半年地气主之。秋冬为地之阴阳。天气有阴阳。地气也有阴阳。想要知道天地的变化情况。五行应于天干而为五运。常动而不息。每运转换一次。六气应于地之。为三阴三阳。其运行较迟。而环周一次</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：天以六为节，地以五为制。周天气者，六期为一备。终地纪者，五岁为一周。君火以明，相火以位。五六相合，而七百二十气为一纪，凡三十岁；千四百四十气，凡六十岁而为一周。不及太过，斯皆见矣。，帝曰：夫子之言，上终天气，下毕地纪，可谓悉矣。余愿闻而藏之，上以治民，下以治身，使百姓昭著，上下和亲，德泽下流，子孙无忧，传之后世，无有终时，可得闻乎？</div>
+    <div class="talk">由于动和静互相感召。天气和地气互相加临。阴气和阳气互相交错。而运气的变化就发生了。君火是有名而不主令。六气和五运互相结合。气和运的太过和不急</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 第 8 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：至数之机，迫迮以微，其来可见，其往可追，敬之者昌，慢之者亡，无道行私，必得天殃，谨奉天道，请言真要。，帝曰：善言始者必会于终，善言近者必知其远。是则至数极而道不惑，所谓明矣。愿夫子推而次之，令有条理，简而不匮，久而不绝，易用难忘，为之纲纪。至数之要，愿尽闻之。</div>
+    <div class="talk">上以调治百姓的疾苦。下以保养自己的身体。并能传之于子孙后世。使他们不使发生忧虑。并且没有终了的时候。必然要遇到天然的灾殃。现在请让我根据自然规律。讲讲其中的治理要道。凡是善于谈论事理的起始</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 第 9 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：昭乎哉问！明乎哉道！如鼓之应桴，响之应声也。臣闻之，甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。，帝曰：其于三阴三阳合之奈何？</div>
+    <div class="talk">容易掌握而不会忘记。我想听你详细的讲讲。提的问题也很高明啊。好像鼓槌在鼓上的应声</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段讲解</h2></div>
+    <div class="orig">鬼臾区曰：子午之岁，上见少阴；丑未之岁，上见太阴；寅申之岁，上见少阳；卯酉之岁，上见阳明；辰戌之岁，上见太阳；巳亥之岁，上见厥阴。少阴所谓标也，厥阴所谓终也。厥阴之上，风气主之；少阴之上，热气主之；太阴之上，湿气主之；少阳之上，相火主之；阳明之上，燥气主之；太阳之上，寒气主之。所谓本也，是谓六元。，帝曰：光乎哉道！明乎哉论！请著之玉版，藏之金匮，署曰《天元纪》。</div>
+    <div class="talk">是怎样相合的呢。午年是少阴司天。未年是太阴司天。申年是少阳司天。酉年是阳明司天。是太阳司天。亥年是厥阴司天。少阴所谓标也。厥阴是终结。三阴三阳的本源。所以叫做六元。你的论述很伟大。也很高明啊。我将把它刻在玉版上。藏在金匮里。叫做天元纪</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问66·天元纪大论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第 1 段讲解", "orig": "黄帝问曰：天有五行御五位，以生寒暑燥湿风；人有五脏化五气，以生喜怒忧思恐。论言五运相袭，而皆治之，终期之日，周而复始，予已知之矣。愿闻其与三阴三阳之候，奈何合之？", "talk": "在上之前呢 我们先跟诸位解释一下。黄帝内经呢 从第65篇以后 就是66到这个一直到74篇。这些篇幅呢 丧失掉了。那所以我们跟著DVD买的时候 你会看到这个黄帝内经的这个我们自己翻译的。附带赠送给一本 就是这一本呢 是来自宋本 宋朝的刊本。那是王冰他说赚的 就是他把66张到74张补足上去。那补足上去呢 那我把中间的呢 就拷贝下来给你们。这是那个原文 那这个附送给大家去越南。那真的里面最好的一篇是我在买那个22纸的时候。本来我目的要找韩非纸 反正中国人很多纸嘛。那本书就叫22纸 韩非纸 装纸 恐纸 牢纸啊什么都有。结果我要找韩非纸 结果去找这书。好不容易找到韩非纸的全部写的东西。就拿回来一看里面有黄帝内经一篇 就是第72篇。是刺法篇 里面呢很好 所以我画了一点心思。把它翻译出来给大家看。那有翻译的话你会看得更清楚嘛。所以说我们的 我除了在我们自己写的这本黄帝内经呢。就后面就附上了 刺法 这个这一篇。黄帝内经第72篇 这是一篇。那过去我们都知道这个。中国呢比较难懂的是。伏羲 神农 还有黄帝 这三个时期。伏羲讲的是易经八卦 神农。", "chart": null}, {"title": "第二段 · 第 2 段讲解", "orig": "鬼臾区稽首再拜对曰：昭乎哉问也！夫五运阴阳者，天地之道也，万物之纲纪，变化之父母，生杀之本始，神明之府也，可不通乎!故物生谓之化，物极谓之变，阴阳不测谓之神，神用无方谓之圣。夫变化之为用也，在天为玄，在人为道，在地为化。化生五味，道生智，玄生神。神在天为风，在地为木；在天为热，在地为火；在天为湿，在地为土；在天为燥，在地为金；在天为寒，在地为水。故在天为气，在地成形，形气相感,而化生万物矣。然天地者，万物之上下也；左右者，阴阳之道路也；水火者，阴阳之征兆也；金木者，生成之终始也。气有多少，形有盛衰，上下相召而损益彰矣。，帝曰：愿闻五运之主时也何如？", "talk": "黄帝问道 天上有木 火 土 金 水 五行。统御地下东 西 南 北 中五个方位。从而产生寒 暑 燥 湿 风五种气候变化。人有五脏化生五气 从而产生喜。木 丝 忧 恐五种情质变化。经论说 五运递相因袭。各有一定的主治季节。又重新开始新的轮回。我已经知道这个变化规律了。还想再听听五运和三阴三阳的结合是怎样的呢。五运和阴阳是天地自然界变化的一般规律。是自然万物的一个总纲。是事物发展变化的基础和生长毁灭的根本。是宇宙间无穷尽的变化所在。这些道理哪能不通晓呢。因而事物的开始发生叫做化。难以探测的阴阳变化叫做神。能够掌握和运用这种变化无边的原则的人叫做圣。在天表现为玄妙深远无穷。在人表现为认识事物的自然规律。在地表现为万物的生化。物质的生化而产生五味。认识了自然规律而产生智慧。深远的宇宙空间而产生神明。神明的作用在天为风", "chart": null}, {"title": "第三段 · 第 3 段讲解", "orig": "鬼臾区曰：五气运行，各终期日，非独主时也。，帝曰：请闻其所谓也。", "talk": "所以在天为无形之气。就能变化和产生万物。所以天地是万物的上下。所以左右是阴阳的道路。所以水火是阴阳的象征。所以金木是生成的终始。阴阳之气并不是一成不变的。有形物质在发展过程中。也有旺盛和衰老的区别。在上之气和在下之质互相感召。事物太过和不及的形象", "chart": null}, {"title": "第四段 · 第 4 段讲解", "orig": "鬼臾区曰：臣积考《太始天元册》文曰：“太虚寥廓，肇基化元，万物资始，五运终天，布气真灵，总统坤元，九星悬朗，七曜周旋，曰阴曰阳，曰柔曰刚，幽显既位，寒暑弛张，生生化化，品物咸章。”臣斯十世，此之谓也。，帝曰：善。何谓气有多少，形有盛衰？", "talk": "臣仔细研读太始天元册。是物质生化之本源的基础。五运行于天道中而复始。总统大地生化的本源。于是万物有阴阳的不断变化。幽暗和显明按一定的位次出现。寒冷和暑热按一定的季节往来。品物咸章的不同形象。臣斯十世研究这些道理。阴气和阳气各有多少的不同", "chart": null}, {"title": "第五段 · 第 5 段讲解", "orig": "鬼臾区曰：阴阳之气，各有多少，故曰三阴三阳也。形有盛衰，谓五行之治，各有太过不及也。故其始也，有余而往，不足随之；不足而往，有余从之，知迎知随，气可与期。应天为天符，承岁为岁直，三合为治。，帝曰：上下相召，奈何？", "talk": "各有太过不及的区别。开始是太过的阳年过后。随之而来的是不及的阴年。从之而来的是太过的阳年。迎之而至的是属于什么气。随之而至的是属于什么气。对一年中运气的盛衰情况。与岁直的五行相同的。年支的五行君相合的。天气和地气互相感召", "chart": null}, {"title": "第六段 · 第 6 段讲解", "orig": "鬼臾区曰：寒暑燥湿风火，天之阴阳也，三阴三阳上奉之。木火土金水火，地之阴阳也，生长化收藏下应之。天以阳生阴长，地以阳杀阴藏。天有阴阳，地亦有阴阳。木火土金水火，地之阴阳也，生长化收藏，故阳中有阴，阴中有阳。所以欲知天地之阴阳者，应天之气动而不息，故五岁而右迁；应地之气静而守位，故六期而环会。动静相召，上下相临，阴阳相错，而变由生也。，帝曰：上下周纪，其有数乎？", "talk": "是地的阴阳。下半年天气主之。为天之阴阳。下半年地气主之。秋冬为地之阴阳。天气有阴阳。地气也有阴阳。想要知道天地的变化情况。五行应于天干而为五运。常动而不息。每运转换一次。六气应于地之。为三阴三阳。其运行较迟。而环周一次", "chart": null}, {"title": "第七段 · 第 7 段讲解", "orig": "鬼臾区曰：天以六为节，地以五为制。周天气者，六期为一备。终地纪者，五岁为一周。君火以明，相火以位。五六相合，而七百二十气为一纪，凡三十岁；千四百四十气，凡六十岁而为一周。不及太过，斯皆见矣。，帝曰：夫子之言，上终天气，下毕地纪，可谓悉矣。余愿闻而藏之，上以治民，下以治身，使百姓昭著，上下和亲，德泽下流，子孙无忧，传之后世，无有终时，可得闻乎？", "talk": "由于动和静互相感召。天气和地气互相加临。阴气和阳气互相交错。而运气的变化就发生了。君火是有名而不主令。六气和五运互相结合。气和运的太过和不急", "chart": null}, {"title": "第八段 · 第 8 段讲解", "orig": "鬼臾区曰：至数之机，迫迮以微，其来可见，其往可追，敬之者昌，慢之者亡，无道行私，必得天殃，谨奉天道，请言真要。，帝曰：善言始者必会于终，善言近者必知其远。是则至数极而道不惑，所谓明矣。愿夫子推而次之，令有条理，简而不匮，久而不绝，易用难忘，为之纲纪。至数之要，愿尽闻之。", "talk": "上以调治百姓的疾苦。下以保养自己的身体。并能传之于子孙后世。使他们不使发生忧虑。并且没有终了的时候。必然要遇到天然的灾殃。现在请让我根据自然规律。讲讲其中的治理要道。凡是善于谈论事理的起始", "chart": null}, {"title": "第九段 · 第 9 段讲解", "orig": "鬼臾区曰：昭乎哉问！明乎哉道！如鼓之应桴，响之应声也。臣闻之，甲己之岁，土运统之；乙庚之岁，金运统之；丙辛之岁，水运统之；丁壬之岁，木运统之；戊癸之岁，火运统之。，帝曰：其于三阴三阳合之奈何？", "talk": "容易掌握而不会忘记。我想听你详细的讲讲。提的问题也很高明啊。好像鼓槌在鼓上的应声", "chart": null}, {"title": "第十段 · 第 10 段讲解", "orig": "鬼臾区曰：子午之岁，上见少阴；丑未之岁，上见太阴；寅申之岁，上见少阳；卯酉之岁，上见阳明；辰戌之岁，上见太阳；巳亥之岁，上见厥阴。少阴所谓标也，厥阴所谓终也。厥阴之上，风气主之；少阴之上，热气主之；太阴之上，湿气主之；少阳之上，相火主之；阳明之上，燥气主之；太阳之上，寒气主之。所谓本也，是谓六元。，帝曰：光乎哉道！明乎哉论！请著之玉版，藏之金匮，署曰《天元纪》。", "talk": "是怎样相合的呢。午年是少阴司天。未年是太阴司天。申年是少阳司天。酉年是阳明司天。是太阳司天。亥年是厥阴司天。少阴所谓标也。厥阴是终结。三阴三阳的本源。所以叫做六元。你的论述很伟大。也很高明啊。我将把它刻在玉版上。藏在金匮里。叫做天元纪", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

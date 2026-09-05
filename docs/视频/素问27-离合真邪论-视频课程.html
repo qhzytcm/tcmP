@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问27·离合真邪论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问27·离合真邪论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问27-离合真邪论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问27-离合真邪论.mp4">素问27-离合真邪论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 离合真邪论篇…</h2></div>
+    <div class="orig">离合真邪论篇，气之盛衰左右倾移，以上调下以左调右，有余不足补泻于荣输</div>
+    <div class="talk">这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 人有经脉…</h2></div>
+    <div class="orig">人有经脉，天地温和的经水安静，天寒地冻的经水凝泣，经水沸溢，那卒风暴起，则经水波涌而陇起</div>
+    <div class="talk">这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 那虚邪这个时候…</h2></div>
+    <div class="orig">那虚邪这个时候，经之动脉，时大时小</div>
+    <div class="talk">这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 后面这边就吸则内针…</h2></div>
+    <div class="orig">后面这边就吸则内针，静以久留，无令邪布，以得气为故，是先扪而循之，切而散之，推而按之，弹而怒之，抓而下之，以气至为故</div>
+    <div class="talk">这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 这个时候推阖其门…</h2></div>
+    <div class="orig">这个时候推阖其门，令神气存大气留止，因为时来时去</div>
+    <div class="talk">人比较强壮的人气度很大。二十分钟取针还是那样子。所以一般你帮别人扎针的时候。那当邪在血脉里面的时候</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段</h2></div>
+    <div class="orig">这个时候推阖其门，令神气存大气留止，因为时来时去</div>
+    <div class="talk">我知道你找你看比你不扎针。你不用管直接走进来就好了。吃到一天要吃25颗止痛药。所以他全身好像是在补药。就是代表需要治疗的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段</h2></div>
+    <div class="orig">这个时候推阖其门，令神气存大气留止，因为时来时去</div>
+    <div class="talk">就是在病气到了时候下针。我要看这个人胃病可以医。怎么吃了一个礼拜还不好</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 好 若先若后者…</h2></div>
+    <div class="orig">好 若先若后者，血气已尽，其病不可下，知机道者，不知机者，扣之不发</div>
+    <div class="talk">就是在病气到了时候下针。我要看这个人胃病可以医。怎么吃了一个礼拜还不好</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 你查三部九候的脉…</h2></div>
+    <div class="orig">你查三部九候的脉</div>
+    <div class="talk">哪些症状 我们可以看到。那如果你真气相搏的时候</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 阴阳不别 天地不分…</h2></div>
+    <div class="orig">阴阳不别 天地不分，三部九候，看到用实为虚 以邪为真，用针无义 反为气贼</div>
+    <div class="talk">就知道这条经络出问题了。一、【离合真邪=混叠信号分离】'合'是混叠、'离'是分离：真（生理基线）与邪（病理干扰）共存于经络系统，邪'时来时去、无有定处'正是非平稳干扰特征；医者从混叠观测（脉象）中分离真邪，与现代盲源分离/独立成分分析（ICA）同构；'真气者经气也，经气太虚'说明基线崩溃则辨识失效。二、【'邪'的功能性定义与命名陷阱】倪师坚持用'邪'不用病毒名：病是功能异常而非实体标签。'命名以后去看各种病毒反而不好'对应现代'过度诊断'：正子扫描发现小肿瘤→恐慌→过度治疗；'小肿瘤五十年不困扰你'即现代'带瘤生存/过度诊断'讨论。西医'世界上没有健康的人'的设定，是正常值统计框定下的疾病扩大化；'邪'作为功能状态量，与现代'综合征''功能性障碍'概念一致。三、【经水比类=跨尺度类比建模】天宿度/地经水/人经脉纳入同一动力学框架：环境温度（寒暑）与流体状态（凝泣/沸溢/波涌）的因果链即现代'环境-血管动力学'的古代版本——冬季低温→血黏度↑→心脑血管事件高发已有流行病学证据；倪师批评稀释血液药'血太稀血管破裂'，正是'抗凝-出血'权衡（血栓vs出。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问27·离合真邪论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 离合真邪论篇…", "orig": "离合真邪论篇，气之盛衰左右倾移，以上调下以左调右，有余不足补泻于荣输", "talk": "这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来", "chart": null}, {"title": "第二段 · 人有经脉…", "orig": "人有经脉，天地温和的经水安静，天寒地冻的经水凝泣，经水沸溢，那卒风暴起，则经水波涌而陇起", "talk": "这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来", "chart": null}, {"title": "第三段 · 那虚邪这个时候…", "orig": "那虚邪这个时候，经之动脉，时大时小", "talk": "这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来", "chart": null}, {"title": "第四段 · 后面这边就吸则内针…", "orig": "后面这边就吸则内针，静以久留，无令邪布，以得气为故，是先扪而循之，切而散之，推而按之，弹而怒之，抓而下之，以气至为故", "talk": "这个我们产的是邪气从外身体。大部分都是表证外面进来的。也就是说你扭伤伤到经络。伤风感冒 发烧 伤到经络。天地中间的邪进入身体的时候。很多人新一代研究中医的时候。请回去去看各种病毒以后。那里面即使有些病毒在里面。你为什么要去把它找出来", "chart": null}, {"title": "第五段 · 这个时候推阖其门…", "orig": "这个时候推阖其门，令神气存大气留止，因为时来时去", "talk": "人比较强壮的人气度很大。二十分钟取针还是那样子。所以一般你帮别人扎针的时候。那当邪在血脉里面的时候", "chart": null}, {"title": "第六段 · 第 6 段", "orig": "这个时候推阖其门，令神气存大气留止，因为时来时去", "talk": "我知道你找你看比你不扎针。你不用管直接走进来就好了。吃到一天要吃25颗止痛药。所以他全身好像是在补药。就是代表需要治疗的时候", "chart": null}, {"title": "第七段 · 第 7 段", "orig": "这个时候推阖其门，令神气存大气留止，因为时来时去", "talk": "就是在病气到了时候下针。我要看这个人胃病可以医。怎么吃了一个礼拜还不好", "chart": null}, {"title": "第八段 · 好 若先若后者…", "orig": "好 若先若后者，血气已尽，其病不可下，知机道者，不知机者，扣之不发", "talk": "就是在病气到了时候下针。我要看这个人胃病可以医。怎么吃了一个礼拜还不好", "chart": null}, {"title": "第九段 · 你查三部九候的脉…", "orig": "你查三部九候的脉", "talk": "哪些症状 我们可以看到。那如果你真气相搏的时候", "chart": null}, {"title": "第十段 · 阴阳不别 天地不分…", "orig": "阴阳不别 天地不分，三部九候，看到用实为虚 以邪为真，用针无义 反为气贼", "talk": "就知道这条经络出问题了。一、【离合真邪=混叠信号分离】'合'是混叠、'离'是分离：真（生理基线）与邪（病理干扰）共存于经络系统，邪'时来时去、无有定处'正是非平稳干扰特征；医者从混叠观测（脉象）中分离真邪，与现代盲源分离/独立成分分析（ICA）同构；'真气者经气也，经气太虚'说明基线崩溃则辨识失效。二、【'邪'的功能性定义与命名陷阱】倪师坚持用'邪'不用病毒名：病是功能异常而非实体标签。'命名以后去看各种病毒反而不好'对应现代'过度诊断'：正子扫描发现小肿瘤→恐慌→过度治疗；'小肿瘤五十年不困扰你'即现代'带瘤生存/过度诊断'讨论。西医'世界上没有健康的人'的设定，是正常值统计框定下的疾病扩大化；'邪'作为功能状态量，与现代'综合征''功能性障碍'概念一致。三、【经水比类=跨尺度类比建模】天宿度/地经水/人经脉纳入同一动力学框架：环境温度（寒暑）与流体状态（凝泣/沸溢/波涌）的因果链即现代'环境-血管动力学'的古代版本——冬季低温→血黏度↑→心脑血管事件高发已有流行病学证据；倪师批评稀释血液药'血太稀血管破裂'，正是'抗凝-出血'权衡（血栓vs出。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问64·四时刺逆从论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问64·四时刺逆从论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问64-四时刺逆从论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问64-四时刺逆从论.mp4">素问64-四时刺逆从论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第 1 段讲解</h2></div>
+    <div class="orig"></div>
+    <div class="talk">那519页 就是黄帝内经第64篇。四时刺逆从论 四时刺逆从论。是个节气 还有包括我们如何刺他的逆。当然有病有气逆的时候 我们如何去治疗。那这里面 其实我们伤寒家六经辨证下了定义。所以我就不晓得这个气血营卫温病。他们从哪里来的 我们熟住黄帝内经的话。你看到都是六经辨证 以后仲景。加上我们讲伤寒经方的数 全部在六经辨证上面。然后我们知道病毒生于寒 对不对。有寒才有温病 可是他们都不管你温病。不管你寒 通常是温病 所以病都不会治好。我们辨证是按照六经辨证。他们是按照气血营卫 我就不晓得怎么看。这个六经辨证的有余和不足。厥阴证 如果厥阴证有余的时候。病会产生阴痹 就是腿的内侧麻。所以我们最怕 病人会跟我们说。我腿麻 你说你哪里麻。麻到外面 一看胆经 胃经上面。膀胱经上面 这都很好治。内侧麻就不好治了 因为是阴经。我们希望麻的阳经 如果。阴经厥阴有余的时候。在阴经 在腿的内侧这边。那如果不足的话 就产生热痹。有余是阴痹 不足是热痹。因为阴气不够的时候。阴气不够的时候 阳气就会上来。那这个有余的话 你本来是阴经。阴有余的话 阳就不过来了。</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段讲解</h2></div>
+    <div class="orig">厥阴有余病阴痹，不足病生热痹；滑则病狐疝风；濇则病少腹积气。少阴有余病皮痹、隐轸，不足病肺痹；滑则病肺风疝；濇则病积、溲血。太阴有余病肉痹、寒中，不足病脾痹；滑则病脾风疝；濇则病积、心腹时满。阳明有余病脉痹、身时热，不足病心痹；滑则病心风疝；濇则病积、时善惊。太阳有余病骨痹、身重，不足病肾痹；滑则病肾风疝；濇则病积、时善巅疾。少阳有余病筋痹、胁满，不足病肝痹；滑则病肝风疝；濇则病积、时筋急目痛。是故春气在经脉，夏气在孙络，长夏气在肌肉，秋气在皮肤，冬气在骨髓中。</div>
+    <div class="talk">疝就记得我讲的意思。脉有阻塞的现象的时候。少阴太阴有余的时候。太阴是脾经造成肉痹。肌肉会有不仁的现象。麻木不仁或者是肌肉有削。脾土有问题大部分都是寒。中医的观念里面认为说。中医认为说脾主少腹。胃里面吃了食物以后进入小肠。小肠是非常的热是火。再多的食物进来到小肠里面去。所以我们中医认为说。所以脾收了小肠的营养以后。才会灌溉到四肢上面去。那血才会组皮在同血。能够消化所有的东西</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段讲解</h2></div>
+    <div class="orig">厥阴有余病阴痹，不足病生热痹；滑则病狐疝风；濇则病少腹积气。少阴有余病皮痹、隐轸，不足病肺痹；滑则病肺风疝；濇则病积、溲血。太阴有余病肉痹、寒中，不足病脾痹；滑则病脾风疝；濇则病积、心腹时满。阳明有余病脉痹、身时热，不足病心痹；滑则病心风疝；濇则病积、时善惊。太阳有余病骨痹、身重，不足病肾痹；滑则病肾风疝；濇则病积、时善巅疾。少阳有余病筋痹、胁满，不足病肝痹；滑则病肝风疝；濇则病积、时筋急目痛。是故春气在经脉，夏气在孙络，长夏气在肌肉，秋气在皮肤，冬气在骨髓中。</div>
+    <div class="talk">这个阳就是讲它的动能。我们看到很多脾统血。你可以看到皮肤 肌肉 骨骼 筋脉。他不知道多大的力量。那如果脾的运化不足。我们在中医的观念里面。大积的时候再去治疗。所以我们小病就要开始动手治。中医是刚开始的时候。所以常常有人就这样子。我那边跟诸位人家两个案例。早上跑到医院就跟西医说</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段讲解</h2></div>
+    <div class="orig">帝曰：余愿闻其故。</div>
+    <div class="talk">EKG high stress test。你好好的把他赶回去了。赶快放到EKG上面。先生 你的确得到心脏病了。医生我早上就告诉你。现在我已经白跑一趟。不知道发生多少次了。病人就死在医治前面。你绝对要相信你的身体。所以你要相信一个病人的。人的身体绝对不会那么差。昨天不知道今天就发病。那意外车祸我教过你们了。眼睛看一下恍惚之间。你如果不会看到恍惚之间。拿红尘黄绿蓝粒子的颜色。按按的灯光里面去练吧。阳明证大家都很熟了。这个腑就是消化系统。我们知道大便不通了</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段讲解</h2></div>
+    <div class="orig">岐伯曰：春者，天气始开，地气始泄，冻解冰释，水行经通，故人气在脉。夏者，经满气溢，入孙络受血，皮肤充实。长夏者，经络皆盛，内溢肌中。秋者，天气始收，腠理闭塞，皮肤引急。冬者，盖藏，血气在中，内着骨髓，通于五脏。是故邪气者，常随四时之气血而入客也。至其变化不可为度，然必从其经气，僻除其邪，除其邪则乱气不生。</div>
+    <div class="talk">我们有一些承气汤怎么样。反正你目标达到就好了。所以会造成骨口会有问题。这个是有余的和不足。不足的话会影响到肾脏。膀胱在前面是紧跟小肠贴到了。从肾脏跑到膀胱里面来的时候。所以膀胱里面的尿液。这个小便量在膀胱里面。帮肝脏里面代谢一下。小肠也是太阳对不对。所以我们有手太阳小肠经。这两个太阳都会下焦</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段讲解</h2></div>
+    <div class="orig">岐伯曰：春者，天气始开，地气始泄，冻解冰释，水行经通，故人气在脉。夏者，经满气溢，入孙络受血，皮肤充实。长夏者，经络皆盛，内溢肌中。秋者，天气始收，腠理闭塞，皮肤引急。冬者，盖藏，血气在中，内着骨髓，通于五脏。是故邪气者，常随四时之气血而入客也。至其变化不可为度，然必从其经气，僻除其邪，除其邪则乱气不生。</div>
+    <div class="talk">这个尿液累积在膀胱里面的时候。后来还是想再跑去对不对。西医没有含著的观念。到时候带一个那个尿袋。输尿管带了尿袋里面。FBI的Agent。把枪放在那个膝盖上面。所以你们学会要去帮助人家。病还是要把他救回来。那如果尿液排不出去。逆流的话跑到肾脏里面。本来要把这个著药排。那个那个尿液排出去。病积累积水会累积起来。如果是少阳经不足的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段讲解</h2></div>
+    <div class="orig">帝曰：逆四时而生乱气奈何？</div>
+    <div class="talk">这个食堂会经济目通。夏气因为人体里面血热。没办法跑到经里面去。这个病气在这个地方。比类到天气四季上面去。好像我们夏天都有土石流。跑到孙络小的溪流里面去了。这个什么皮肤会充实。就是会造成那一肌肉</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 第 8 段讲解</h2></div>
+    <div class="orig">帝曰：逆四时而生乱气奈何？</div>
+    <div class="talk">肌肉里面会累积到很多东西。这个气血变换的时候。但等到进入身体里面的以后。有时候就没有办法度量。你一定要依从它的经气。除去邪气则乱气不生。我之前前面跟诸位讲过。我们为什么要学十二经络。当你在络上面的时候。那个我们乱刺对不对。春天的时候应该刺他的经脉。你刺他的络脉是不及。不及的时候血气会外溢</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 第 9 段讲解</h2></div>
+    <div class="orig">岐伯曰：春刺络脉，血气外溢，令人少气；春刺肌肉，血气环逆，令人上气；春刺筋骨，血气内着，令人腹胀。夏刺经脉，血气乃竭，令人解㑊；夏刺肌肉，血气内却，令人善恐；夏刺筋骨，血气上逆，令人善怒。秋刺经脉，血气上逆，令人善忘；秋刺络脉，气不外行，令人卧不欲动；秋刺筋骨，血气内散，令人寒栗。冬刺经脉，血气皆脱，令人目不明；冬刺络脉，内气外泄，留为大痹；冬刺肌肉，阳气竭绝，令人善忘。凡此四时刺者，大逆之病，不可不从也。反之，则生乱气相淫病焉。故刺不知四时之经，病之所生，以从为逆，正气内乱，与精相薄，必审九候，正气不乱，精气不转。</div>
+    <div class="talk">那春应该刺在经络上面。只有你刺在肌肉上面。刺到这个筋骨也是太过。我们要刺在经上就好了。夏天本来病在络上面。我们应该刺到络上面。刺到肌肉都是太过了。因为我们现在的针都很细。那尤其冬天刺针的时候。这种病毒在骨边很深。就是针下去都要扎到骨上面。那我们比如说一下子一人中风。我们下针为什么都下在骨边。因为它管理一年四季。你是不是从骨边开始下手。那如果有一种人中风。春夏秋冬在塔马那边。冬天的时候起来可以活动</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段讲解</h2></div>
+    <div class="orig">帝曰：善。刺五脏，中心一日死，其动为噫；中肝五日死，其动为语；中肺三日死，其动为欬；中肾六日死，其动为嚏欠；中脾十日死，其动为吞。刺伤人五脏必死，其动则依其脏之所变候，知其死也。</div>
+    <div class="talk">那你不用扎到骨边啊。背俞的俞穴向下针的时候。我们也有一定的深浅。所以我常常跟诸位讲。一直到第十四椎命门的时候。那你如果刺到内脏的话。那你怎么刺到他心脏。这个一直讲话讲很多。中到肺的话就会有咳嗽不止。中为吞病人会不断吞口水下去。这是基本上的大原则。学完还是不会用的苦恼。专为解决这些问题而生。快速搜索学过的内容。学会倪师课程的精髓。解决自己遇到的问题</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问64·四时刺逆从论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第 1 段讲解", "orig": "", "talk": "那519页 就是黄帝内经第64篇。四时刺逆从论 四时刺逆从论。是个节气 还有包括我们如何刺他的逆。当然有病有气逆的时候 我们如何去治疗。那这里面 其实我们伤寒家六经辨证下了定义。所以我就不晓得这个气血营卫温病。他们从哪里来的 我们熟住黄帝内经的话。你看到都是六经辨证 以后仲景。加上我们讲伤寒经方的数 全部在六经辨证上面。然后我们知道病毒生于寒 对不对。有寒才有温病 可是他们都不管你温病。不管你寒 通常是温病 所以病都不会治好。我们辨证是按照六经辨证。他们是按照气血营卫 我就不晓得怎么看。这个六经辨证的有余和不足。厥阴证 如果厥阴证有余的时候。病会产生阴痹 就是腿的内侧麻。所以我们最怕 病人会跟我们说。我腿麻 你说你哪里麻。麻到外面 一看胆经 胃经上面。膀胱经上面 这都很好治。内侧麻就不好治了 因为是阴经。我们希望麻的阳经 如果。阴经厥阴有余的时候。在阴经 在腿的内侧这边。那如果不足的话 就产生热痹。有余是阴痹 不足是热痹。因为阴气不够的时候。阴气不够的时候 阳气就会上来。那这个有余的话 你本来是阴经。阴有余的话 阳就不过来了。", "chart": null}, {"title": "第二段 · 第 2 段讲解", "orig": "厥阴有余病阴痹，不足病生热痹；滑则病狐疝风；濇则病少腹积气。少阴有余病皮痹、隐轸，不足病肺痹；滑则病肺风疝；濇则病积、溲血。太阴有余病肉痹、寒中，不足病脾痹；滑则病脾风疝；濇则病积、心腹时满。阳明有余病脉痹、身时热，不足病心痹；滑则病心风疝；濇则病积、时善惊。太阳有余病骨痹、身重，不足病肾痹；滑则病肾风疝；濇则病积、时善巅疾。少阳有余病筋痹、胁满，不足病肝痹；滑则病肝风疝；濇则病积、时筋急目痛。是故春气在经脉，夏气在孙络，长夏气在肌肉，秋气在皮肤，冬气在骨髓中。", "talk": "疝就记得我讲的意思。脉有阻塞的现象的时候。少阴太阴有余的时候。太阴是脾经造成肉痹。肌肉会有不仁的现象。麻木不仁或者是肌肉有削。脾土有问题大部分都是寒。中医的观念里面认为说。中医认为说脾主少腹。胃里面吃了食物以后进入小肠。小肠是非常的热是火。再多的食物进来到小肠里面去。所以我们中医认为说。所以脾收了小肠的营养以后。才会灌溉到四肢上面去。那血才会组皮在同血。能够消化所有的东西", "chart": null}, {"title": "第三段 · 第 3 段讲解", "orig": "厥阴有余病阴痹，不足病生热痹；滑则病狐疝风；濇则病少腹积气。少阴有余病皮痹、隐轸，不足病肺痹；滑则病肺风疝；濇则病积、溲血。太阴有余病肉痹、寒中，不足病脾痹；滑则病脾风疝；濇则病积、心腹时满。阳明有余病脉痹、身时热，不足病心痹；滑则病心风疝；濇则病积、时善惊。太阳有余病骨痹、身重，不足病肾痹；滑则病肾风疝；濇则病积、时善巅疾。少阳有余病筋痹、胁满，不足病肝痹；滑则病肝风疝；濇则病积、时筋急目痛。是故春气在经脉，夏气在孙络，长夏气在肌肉，秋气在皮肤，冬气在骨髓中。", "talk": "这个阳就是讲它的动能。我们看到很多脾统血。你可以看到皮肤 肌肉 骨骼 筋脉。他不知道多大的力量。那如果脾的运化不足。我们在中医的观念里面。大积的时候再去治疗。所以我们小病就要开始动手治。中医是刚开始的时候。所以常常有人就这样子。我那边跟诸位人家两个案例。早上跑到医院就跟西医说", "chart": null}, {"title": "第四段 · 第 4 段讲解", "orig": "帝曰：余愿闻其故。", "talk": "EKG high stress test。你好好的把他赶回去了。赶快放到EKG上面。先生 你的确得到心脏病了。医生我早上就告诉你。现在我已经白跑一趟。不知道发生多少次了。病人就死在医治前面。你绝对要相信你的身体。所以你要相信一个病人的。人的身体绝对不会那么差。昨天不知道今天就发病。那意外车祸我教过你们了。眼睛看一下恍惚之间。你如果不会看到恍惚之间。拿红尘黄绿蓝粒子的颜色。按按的灯光里面去练吧。阳明证大家都很熟了。这个腑就是消化系统。我们知道大便不通了", "chart": null}, {"title": "第五段 · 第 5 段讲解", "orig": "岐伯曰：春者，天气始开，地气始泄，冻解冰释，水行经通，故人气在脉。夏者，经满气溢，入孙络受血，皮肤充实。长夏者，经络皆盛，内溢肌中。秋者，天气始收，腠理闭塞，皮肤引急。冬者，盖藏，血气在中，内着骨髓，通于五脏。是故邪气者，常随四时之气血而入客也。至其变化不可为度，然必从其经气，僻除其邪，除其邪则乱气不生。", "talk": "我们有一些承气汤怎么样。反正你目标达到就好了。所以会造成骨口会有问题。这个是有余的和不足。不足的话会影响到肾脏。膀胱在前面是紧跟小肠贴到了。从肾脏跑到膀胱里面来的时候。所以膀胱里面的尿液。这个小便量在膀胱里面。帮肝脏里面代谢一下。小肠也是太阳对不对。所以我们有手太阳小肠经。这两个太阳都会下焦", "chart": null}, {"title": "第六段 · 第 6 段讲解", "orig": "岐伯曰：春者，天气始开，地气始泄，冻解冰释，水行经通，故人气在脉。夏者，经满气溢，入孙络受血，皮肤充实。长夏者，经络皆盛，内溢肌中。秋者，天气始收，腠理闭塞，皮肤引急。冬者，盖藏，血气在中，内着骨髓，通于五脏。是故邪气者，常随四时之气血而入客也。至其变化不可为度，然必从其经气，僻除其邪，除其邪则乱气不生。", "talk": "这个尿液累积在膀胱里面的时候。后来还是想再跑去对不对。西医没有含著的观念。到时候带一个那个尿袋。输尿管带了尿袋里面。FBI的Agent。把枪放在那个膝盖上面。所以你们学会要去帮助人家。病还是要把他救回来。那如果尿液排不出去。逆流的话跑到肾脏里面。本来要把这个著药排。那个那个尿液排出去。病积累积水会累积起来。如果是少阳经不足的时候", "chart": null}, {"title": "第七段 · 第 7 段讲解", "orig": "帝曰：逆四时而生乱气奈何？", "talk": "这个食堂会经济目通。夏气因为人体里面血热。没办法跑到经里面去。这个病气在这个地方。比类到天气四季上面去。好像我们夏天都有土石流。跑到孙络小的溪流里面去了。这个什么皮肤会充实。就是会造成那一肌肉", "chart": null}, {"title": "第八段 · 第 8 段讲解", "orig": "帝曰：逆四时而生乱气奈何？", "talk": "肌肉里面会累积到很多东西。这个气血变换的时候。但等到进入身体里面的以后。有时候就没有办法度量。你一定要依从它的经气。除去邪气则乱气不生。我之前前面跟诸位讲过。我们为什么要学十二经络。当你在络上面的时候。那个我们乱刺对不对。春天的时候应该刺他的经脉。你刺他的络脉是不及。不及的时候血气会外溢", "chart": null}, {"title": "第九段 · 第 9 段讲解", "orig": "岐伯曰：春刺络脉，血气外溢，令人少气；春刺肌肉，血气环逆，令人上气；春刺筋骨，血气内着，令人腹胀。夏刺经脉，血气乃竭，令人解㑊；夏刺肌肉，血气内却，令人善恐；夏刺筋骨，血气上逆，令人善怒。秋刺经脉，血气上逆，令人善忘；秋刺络脉，气不外行，令人卧不欲动；秋刺筋骨，血气内散，令人寒栗。冬刺经脉，血气皆脱，令人目不明；冬刺络脉，内气外泄，留为大痹；冬刺肌肉，阳气竭绝，令人善忘。凡此四时刺者，大逆之病，不可不从也。反之，则生乱气相淫病焉。故刺不知四时之经，病之所生，以从为逆，正气内乱，与精相薄，必审九候，正气不乱，精气不转。", "talk": "那春应该刺在经络上面。只有你刺在肌肉上面。刺到这个筋骨也是太过。我们要刺在经上就好了。夏天本来病在络上面。我们应该刺到络上面。刺到肌肉都是太过了。因为我们现在的针都很细。那尤其冬天刺针的时候。这种病毒在骨边很深。就是针下去都要扎到骨上面。那我们比如说一下子一人中风。我们下针为什么都下在骨边。因为它管理一年四季。你是不是从骨边开始下手。那如果有一种人中风。春夏秋冬在塔马那边。冬天的时候起来可以活动", "chart": null}, {"title": "第十段 · 第 10 段讲解", "orig": "帝曰：善。刺五脏，中心一日死，其动为噫；中肝五日死，其动为语；中肺三日死，其动为欬；中肾六日死，其动为嚏欠；中脾十日死，其动为吞。刺伤人五脏必死，其动则依其脏之所变候，知其死也。", "talk": "那你不用扎到骨边啊。背俞的俞穴向下针的时候。我们也有一定的深浅。所以我常常跟诸位讲。一直到第十四椎命门的时候。那你如果刺到内脏的话。那你怎么刺到他心脏。这个一直讲话讲很多。中到肺的话就会有咳嗽不止。中为吞病人会不断吞口水下去。这是基本上的大原则。学完还是不会用的苦恼。专为解决这些问题而生。快速搜索学过的内容。学会倪师课程的精髓。解决自己遇到的问题", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

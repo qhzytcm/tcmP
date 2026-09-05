@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问40·腹中论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问40·腹中论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问40-腹中论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问40-腹中论.mp4">素问40-腹中论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 黄帝内经第四十篇…</h2></div>
+    <div class="orig">黄帝内经第四十篇，《腹中论》，一剂知二剂已，什么是鸡矢醴</div>
+    <div class="talk">饲料机关在笼子里面的不行。把那个石头和泥土也吃进去了。野生的就是我们这个放山鸡。那他在吃这种野外的食物的时候。结果你变成本来就古藏了。再给你喂了一大堆鸡大便。就是因为他吃了很多泥土</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 黄帝内经里面…</h2></div>
+    <div class="orig">黄帝内经里面，肝病的鼓胀，饮食不节，老是过两天热油回来</div>
+    <div class="talk">饲料机关在笼子里面的不行。把那个石头和泥土也吃进去了。野生的就是我们这个放山鸡。那他在吃这种野外的食物的时候。结果你变成本来就古藏了。再给你喂了一大堆鸡大便。就是因为他吃了很多泥土</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 得是饮食不节…</h2></div>
+    <div class="orig">得是饮食不节，有的是胸胁支满，四肢清冷冰冷，这个血枯的病，这个阳抗，死鱼不是腥味吗，我只要闻到腥味，我就知道我要发癫痫，这种病人我们叫血枯，有大脱血，那如果醉入房中，这个时候你阳气又卸掉，阳晶又卸掉，用于乌贼的骨头，你看乌贼打开，那海螵蛸，也称之为茜草</div>
+    <div class="talk">饲料机关在笼子里面的不行。把那个石头和泥土也吃进去了。野生的就是我们这个放山鸡。那他在吃这种野外的食物的时候。结果你变成本来就古藏了。再给你喂了一大堆鸡大便。就是因为他吃了很多泥土</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 茜草是活血花鱼的药…</h2></div>
+    <div class="orig">茜草是活血花鱼的药，你真的不要去找个麻雀卵，吃这个乌贼骨跟这个，这个茜草的时候，那要喝鲍鱼汁，鲍鱼煮汤，这种血枯，而是里面有瘀血停在里面，再闻到腥味，腥臭的味道，茜草是很有名的，活血化瘀的药，让我们讲神农本草的时候，小腹胀起来，这个伏梁的病呢，住肠胃之外不可治，切按之致死，什么叫伏梁，会有伏梁，第一个伏梁在这边，我们人外面有三焦，这个三焦一包，裹大脓血，有三焦的油网，张仲景解决这个问题，这个地方一定是热的，肚脐在这边，这个地方我们从关元下来，然后就这个地方热</div>
+    <div class="talk">就是吃完以后再吃饭的意思。你的血不一定不是很干净。然后临床上我再加个进去</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 就这一块整个是热的…</h2></div>
+    <div class="orig">就这一块整个是热的，有阳明大肠筋是不是在这边，大肠是不是跟肺表里，他大肠有破裂，鼓胀成这样子，这个阴胃，这个部位是阴嘛，阴本来是主血，肚脐以上，肚脐以下的，然后环绕著肚脐而痛，这也叫伏梁，翼于大肠而著于肓</div>
+    <div class="talk">我把那个低剂头相对我拍起来。这个泻药就对他来说是补药。实际上髀骨讲的是外侧这边</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 这里讲的肓的湿门穴道…</h2></div>
+    <div class="orig">这里讲的肓的湿门穴道，气海这个地方，肓之源在齐下，动之为水溺细之病，中心认为是风根，热中消中，不可服高粱芳草的，我们有高粱的药，那石药能够发育，芳草发狂，都是富贵人，那这种富贵的人，芳草的药，这个芳草之类的药，就从这个黄帝内经已经得到</div>
+    <div class="talk">就会造成小便排不出来的现象。Angry就是动脉胸肝玻璃。有时候如果摇动很厉害的话。医生宁可从大医院跑过来。所以非缓心和人不可肤识。那我们在用很俊的药的时候。我最常跟病人讲的就是这个。我说我是你回去想你的病</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 我们很多热药…</h2></div>
+    <div class="orig">我们很多热药，药的气是很热的，那这两种热中消中，本身身体里面就很热了，这个时候你再用热的药下去，这恐内伤脾，胸满腹脏，胸部是阳，脖子是气之海，我们有四海，是为髓海，我们有气海，上面在天柱，上面是天柱穴，那个气海的位置，上鱼是百会，是我们的风府血，风府血在管，我们有水谷之海，这个水谷之海，是在气街的位置</div>
+    <div class="talk">一下子他本来是野性很大。不要小心人家有野心欲望</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 气街这一段到秩边…</h2></div>
+    <div class="orig">气街这一段到秩边，这段叫气街，关元小肠的地方，十二经之海，那胸满腹满，凶满是阳，阳部也有问题，腹阴那部分，阴阳都有问题呢，这个胸部的阳，胸本身是阳，阳是下降的，阴是什么，那现在阳下不来，阴上不去，就会影响到我们的气海，如果我们用灸的一灸，阴阳合的时候，本来胸满，那现在胸满的，可以让阴阳合，阴阳调和的方子，让它阴阳先调和一下</div>
+    <div class="talk">那这不会影响到十二经的精脉。所有五脏六腑接受气余胃</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 用砭石类的东西它发狂…</h2></div>
+    <div class="orig">用砭石类的东西它发狂，阳下不来，本来阳是往下走，就要往阳回逆，造成胸腔是重阳，阳加上阳，非常重的阳在胸腔里面，一揪它阳气更上，砭石类的东西去破它，阳气就虚掉了，那虚著上面是阳，这时候病人会发狂，去阴阳合并的时候，你可以知道它怀子，腹中肚子，病热者阳脉也，三阳之动也，人迎是一圣，少阳二圣，太阳三圣，阳明露营，我们以寸口脉，跟人迎脉来做比较，寸口脉和人迎脉，人迎是不是，只有一部是阳明，这个人迎一圣，人迎的脉，比寸口脉，太阳变成三圣，这个我们人迎一圣，应该大阳太阳</div>
+    <div class="talk">那这个如果喝稀饭也死掉。你有没有听过人家喝稀饭死掉。但基本原则都出自这一篇</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 三阳聚在一起是太阳…</h2></div>
+    <div class="orig">三阳聚在一起是太阳，阳明是二阳会，少阳是一阳，人迎一圣，应该是少阳，少阳二圣，应该是阳明，我相信黄帝内经，阳明是二阳并，太阳是三阳并，如果太阳脉三圣，阳极的话，阳到极的话，阳会回到阴里面去，阳入于阴，这个䐜胀而头痛，我们现在讲的是腹中，但是阳是什么，太阳是生存在下面，阳就允许一个，太阳在这边，小肠是太阳，那现在阳在进入，加阳上来，当阳在入于阴的时候，这个上面阳一走，还阴就会上升，阴会上升，阴和阳永远是互相交接的，阳一走阴就会不畏，那阴一走阳会不畏，阴身阳降阳身阴降，上面是阳下面是阴，加倍的阳，肚子会生䐜胀，这个䐜胀抱歉，阳极入阴的现象，我们如果发热发上去的时候，里面有热</div>
+    <div class="talk">就是阳虚的阴上去造成头痛。到头来发到头上去的时候。还有就是阳极声音的现象</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问40·腹中论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 黄帝内经第四十篇…", "orig": "黄帝内经第四十篇，《腹中论》，一剂知二剂已，什么是鸡矢醴", "talk": "饲料机关在笼子里面的不行。把那个石头和泥土也吃进去了。野生的就是我们这个放山鸡。那他在吃这种野外的食物的时候。结果你变成本来就古藏了。再给你喂了一大堆鸡大便。就是因为他吃了很多泥土", "chart": null}, {"title": "第二段 · 黄帝内经里面…", "orig": "黄帝内经里面，肝病的鼓胀，饮食不节，老是过两天热油回来", "talk": "饲料机关在笼子里面的不行。把那个石头和泥土也吃进去了。野生的就是我们这个放山鸡。那他在吃这种野外的食物的时候。结果你变成本来就古藏了。再给你喂了一大堆鸡大便。就是因为他吃了很多泥土", "chart": null}, {"title": "第三段 · 得是饮食不节…", "orig": "得是饮食不节，有的是胸胁支满，四肢清冷冰冷，这个血枯的病，这个阳抗，死鱼不是腥味吗，我只要闻到腥味，我就知道我要发癫痫，这种病人我们叫血枯，有大脱血，那如果醉入房中，这个时候你阳气又卸掉，阳晶又卸掉，用于乌贼的骨头，你看乌贼打开，那海螵蛸，也称之为茜草", "talk": "饲料机关在笼子里面的不行。把那个石头和泥土也吃进去了。野生的就是我们这个放山鸡。那他在吃这种野外的食物的时候。结果你变成本来就古藏了。再给你喂了一大堆鸡大便。就是因为他吃了很多泥土", "chart": null}, {"title": "第四段 · 茜草是活血花鱼的药…", "orig": "茜草是活血花鱼的药，你真的不要去找个麻雀卵，吃这个乌贼骨跟这个，这个茜草的时候，那要喝鲍鱼汁，鲍鱼煮汤，这种血枯，而是里面有瘀血停在里面，再闻到腥味，腥臭的味道，茜草是很有名的，活血化瘀的药，让我们讲神农本草的时候，小腹胀起来，这个伏梁的病呢，住肠胃之外不可治，切按之致死，什么叫伏梁，会有伏梁，第一个伏梁在这边，我们人外面有三焦，这个三焦一包，裹大脓血，有三焦的油网，张仲景解决这个问题，这个地方一定是热的，肚脐在这边，这个地方我们从关元下来，然后就这个地方热", "talk": "就是吃完以后再吃饭的意思。你的血不一定不是很干净。然后临床上我再加个进去", "chart": null}, {"title": "第五段 · 就这一块整个是热的…", "orig": "就这一块整个是热的，有阳明大肠筋是不是在这边，大肠是不是跟肺表里，他大肠有破裂，鼓胀成这样子，这个阴胃，这个部位是阴嘛，阴本来是主血，肚脐以上，肚脐以下的，然后环绕著肚脐而痛，这也叫伏梁，翼于大肠而著于肓", "talk": "我把那个低剂头相对我拍起来。这个泻药就对他来说是补药。实际上髀骨讲的是外侧这边", "chart": null}, {"title": "第六段 · 这里讲的肓的湿门穴道…", "orig": "这里讲的肓的湿门穴道，气海这个地方，肓之源在齐下，动之为水溺细之病，中心认为是风根，热中消中，不可服高粱芳草的，我们有高粱的药，那石药能够发育，芳草发狂，都是富贵人，那这种富贵的人，芳草的药，这个芳草之类的药，就从这个黄帝内经已经得到", "talk": "就会造成小便排不出来的现象。Angry就是动脉胸肝玻璃。有时候如果摇动很厉害的话。医生宁可从大医院跑过来。所以非缓心和人不可肤识。那我们在用很俊的药的时候。我最常跟病人讲的就是这个。我说我是你回去想你的病", "chart": null}, {"title": "第七段 · 我们很多热药…", "orig": "我们很多热药，药的气是很热的，那这两种热中消中，本身身体里面就很热了，这个时候你再用热的药下去，这恐内伤脾，胸满腹脏，胸部是阳，脖子是气之海，我们有四海，是为髓海，我们有气海，上面在天柱，上面是天柱穴，那个气海的位置，上鱼是百会，是我们的风府血，风府血在管，我们有水谷之海，这个水谷之海，是在气街的位置", "talk": "一下子他本来是野性很大。不要小心人家有野心欲望", "chart": null}, {"title": "第八段 · 气街这一段到秩边…", "orig": "气街这一段到秩边，这段叫气街，关元小肠的地方，十二经之海，那胸满腹满，凶满是阳，阳部也有问题，腹阴那部分，阴阳都有问题呢，这个胸部的阳，胸本身是阳，阳是下降的，阴是什么，那现在阳下不来，阴上不去，就会影响到我们的气海，如果我们用灸的一灸，阴阳合的时候，本来胸满，那现在胸满的，可以让阴阳合，阴阳调和的方子，让它阴阳先调和一下", "talk": "那这不会影响到十二经的精脉。所有五脏六腑接受气余胃", "chart": null}, {"title": "第九段 · 用砭石类的东西它发狂…", "orig": "用砭石类的东西它发狂，阳下不来，本来阳是往下走，就要往阳回逆，造成胸腔是重阳，阳加上阳，非常重的阳在胸腔里面，一揪它阳气更上，砭石类的东西去破它，阳气就虚掉了，那虚著上面是阳，这时候病人会发狂，去阴阳合并的时候，你可以知道它怀子，腹中肚子，病热者阳脉也，三阳之动也，人迎是一圣，少阳二圣，太阳三圣，阳明露营，我们以寸口脉，跟人迎脉来做比较，寸口脉和人迎脉，人迎是不是，只有一部是阳明，这个人迎一圣，人迎的脉，比寸口脉，太阳变成三圣，这个我们人迎一圣，应该大阳太阳", "talk": "那这个如果喝稀饭也死掉。你有没有听过人家喝稀饭死掉。但基本原则都出自这一篇", "chart": null}, {"title": "第十段 · 三阳聚在一起是太阳…", "orig": "三阳聚在一起是太阳，阳明是二阳会，少阳是一阳，人迎一圣，应该是少阳，少阳二圣，应该是阳明，我相信黄帝内经，阳明是二阳并，太阳是三阳并，如果太阳脉三圣，阳极的话，阳到极的话，阳会回到阴里面去，阳入于阴，这个䐜胀而头痛，我们现在讲的是腹中，但是阳是什么，太阳是生存在下面，阳就允许一个，太阳在这边，小肠是太阳，那现在阳在进入，加阳上来，当阳在入于阴的时候，这个上面阳一走，还阴就会上升，阴会上升，阴和阳永远是互相交接的，阳一走阴就会不畏，那阴一走阳会不畏，阴身阳降阳身阴降，上面是阳下面是阴，加倍的阳，肚子会生䐜胀，这个䐜胀抱歉，阳极入阴的现象，我们如果发热发上去的时候，里面有热", "talk": "就是阳虚的阴上去造成头痛。到头来发到头上去的时候。还有就是阳极声音的现象", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

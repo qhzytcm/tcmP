@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问75·著至教论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问75·著至教论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问75-著至教论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问75-著至教论.mp4">素问75-著至教论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第 1 段讲解</h2></div>
+    <div class="orig">黄帝坐明堂，召雷公而问之曰：子知医之道乎？</div>
+    <div class="talk">这篇我们先来看讲 著至教论第七十五篇。这一篇呢 大家看原文。那黄帝呢 叫召雷公来。雷公是一个初出茅庐的医生嘛。这雷公说 我读过医书。没有很明白 很了解。那希望黄帝知道 就是此意。那他们过去呢 都是要上通神农。一定要上通神农 著至教，拟于二皇。那他希望学到能够上比伏羲啊。二皇就是伏羲跟神农氏嘛。黄帝说好 那你知道这个就好了。所有的中医的精神呢。就在阴阳表里上下雌雄 相输应也。互相呼应 互相扶持。而道 真的道要上知天文 下知地理 中知人事。那中医 这个以教众庶。所有的 我们的处方 我们的来源。我们的下针的手法 包括针灸的。所有的气脉怎么走 都是按照天地四时。所以要知道天地之间的道理。他的阴阳的消 消 阴消阳长的。他的这个规则 这样子的话。医术才不会有不及过偏。黄帝说：你听过《阴阳传》没有。讲了半天 我们讲那么多就是阴阳。雷公不敢讲话 说不知道 赶快讲。请黄帝来讲 讲错了被杀头对不对。当然不要讲 聪明 很聪明</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段讲解</h2></div>
+    <div class="orig">雷公对曰：诵而颇能解，解而未能别，别而未能明，明而未能彰，足以治群僚，不足至侯王。愿得受树天之度，四时阴阳合之，别星辰与日月光，以彰经术，后世益明，上通神农，著至教，疑于二皇。</div>
+    <div class="talk">那黄帝就说 三阳天为业。为业 上下无常 合而病至 偏害阴阳。雷公问：三阳莫当，是什么意思。我们讲三阳 三阳病。太阳少阳阳明 三阳并在一起的时候。速度也来得非常的快。三阳一并，病至瞬间就发。冲到头顶上就是发巅疾。所以巅疾之前人都很正常。一旦三阳一并的时候。马上发病 马上就昏倒。造成病人下利不止 或者小便失禁。这种病势来得非常快。你没有办法预期他什么时候会来。那你没有办法正确的知道。这种病又不发生在经脉上面。也没有办法按照正常的医术来诊断。那我们在三阳病的时候。比如说我们百会 百会放血。在井穴经络上面的井穴放血。诸如此类，都是让阳不并的目的。这个在仔细解释三阳的时候。至阳，阳气非常盛大 积并则为惊</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段讲解</h2></div>
+    <div class="orig">帝曰：善！无失之，此皆阴阳表里上下雌雄相輸应也，而道上知天文，下知地理，中知人事，可以长久，以教众庶，亦不疑殆，医道论篇，可传后世，可以为宝。</div>
+    <div class="talk">足太阳膀胱经在后面。这三阳是不并在一起的。并起疾风，就瞬间发病。至如礔砺 九窍皆塞。所有的九窍 眼睛 耳朵 鼻子 嘴巴。大小便全部是闭住的。那会造成干嗌 喉塞。嘴巴很干，然后吞不下东西。喉咙里面吞不下东西。那看到536页的时候。且以知天下，何以别阴阳。这句话就跟他前后有点不搭调。读者已经读到这样子是正常。阳言不别，阴言不理。请起受解，以为至道。一定要了解真正的医道。那如果说你没有办法了解真正的医道</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段讲解</h2></div>
+    <div class="orig">雷公曰：请受道，讽诵用解。</div>
+    <div class="talk">真正的医道就是讲阴阳嘛。反而会伤到人，会害到别人。你肾脏之气将绝的时候。体力都会跟着消耗掉。也就是说你如果医道。这个从容不出，人事不殷。因为下一篇讲的就是从容篇。有一个别阴阳的方法。我们前面黄帝内经通通忘掉。那你现在是躺在这边睡觉。当然这样睡觉睡那么整齐。很少都会翻来覆去嘛。我就是画个形给你看。那天气和地气交接的地方</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段讲解</h2></div>
+    <div class="orig">帝曰：子不闻《阴阳传》乎！，曰：夫三阳天为业，上下无常，合而病至，偏害阴阳。</div>
+    <div class="talk">在天地之间交接的地方是。所以在地上面三寸的话。如果是跑到这个人的这边。然后一直沿着身体过去。黄色的地方就是三寸三寸。所以人在睡觉的时候。是睡在天和地交接的地方。所以人会受到天地的滋养。这是很均衡的一种状态。是不是受天之阳比较多</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段讲解</h2></div>
+    <div class="orig">雷公曰：三阳莫当，请闻其解。</div>
+    <div class="talk">有一只老鼠在下面跑。老鼠是在天地气交接之下。你们看过老鼠站起来走过吗。另外那个澳洲对不对。平常老鼠都爬在地上跑得很快对不对。它是不是在地气比较多。这个阴阳就看出来了。这如果阴阳存在这个状态之下</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段讲解</h2></div>
+    <div class="orig">帝曰：三阳独至者，是三阳并至，并至如风雨，上为巅疾，下为漏病，外无期，内无正，不中经纪，诊无上下，以书别。</div>
+    <div class="talk">那如果有一个人跑来呢。所以你只要 common sense。所以如果说我们阳盛。那你没有把它治好了的时候</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 第 8 段讲解</h2></div>
+    <div class="orig">雷公曰：臣治疏愈，说意而已。</div>
+    <div class="talk">是不是会造成阳虚嘛。你有没有听老鼠看病。我们中医有没有听老鼠摸脉。你只要懂得阴阳的观念。你一看阴阳就马上分出来了。老鼠本身是在天地之气以下。你有没有看到老鼠在大街上。那个老鼠笨得很笨啊。它比较多起来是阴物嘛</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 第 9 段讲解</h2></div>
+    <div class="orig">帝曰：三阳者，至阳也，积并则为惊，病起疾风，至如礔砺，九窍皆塞，阳气滂溢，干嗌喉塞，并于阴，则上下无常，薄为肠澼，此谓三阳直心，坐不得起，卧者便身全。三阳之病，且以知天下，何以别阴阳，应四时，合之五行。</div>
+    <div class="talk">所以当地壳变动的时候。你还在那边傻傻的那边。所以我们要看 Mother Nature。就是老鼠就是因为怕阳虚。所以老鼠不但咬东西。那西洋人念动物学觉得就是独行嘛。老鼠的牙齿长得很快。不磨的话牙齿长得不能吃东西。实际上因为天生还是阴盛。那阳气会虚掉状态之下。所以老鼠动得很快要啃硬的东西。如果阳气再虚掉以后。从阴盛瞬间就变什么。实在里面的话老鼠就。阴实是最后的阶段了。所以老鼠的过程很简单</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段讲解</h2></div>
+    <div class="orig">雷公曰：阳言不别，阴言不理，请起受解，以为至道。，帝曰：子若受传，不知合至道以惑师教，语子至道之要。病伤五藏，筋骨以消，子言不明不别，是世主学尽矣。肾且绝，惋惋日暮，从容不出，人事不殷。</div>
+    <div class="talk">动物实验硬把它变成一样。它的DNA跟人很接近。所以我们用它来实验药。你当然得到相反的效果。所以一票人不懂阴阳。然后实验完以后药用在人身上。这就是我们治病而治阴阳。先一看阴阳就分出来了。如此你一看就知道什么物性通通出来了。我希望大家以后出去学中医的。把中医学好的人，生活的历史很简单的。所以尽量要让自己生活简单。那你没有办法专一的</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问75·著至教论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第 1 段讲解", "orig": "黄帝坐明堂，召雷公而问之曰：子知医之道乎？", "talk": "这篇我们先来看讲 著至教论第七十五篇。这一篇呢 大家看原文。那黄帝呢 叫召雷公来。雷公是一个初出茅庐的医生嘛。这雷公说 我读过医书。没有很明白 很了解。那希望黄帝知道 就是此意。那他们过去呢 都是要上通神农。一定要上通神农 著至教，拟于二皇。那他希望学到能够上比伏羲啊。二皇就是伏羲跟神农氏嘛。黄帝说好 那你知道这个就好了。所有的中医的精神呢。就在阴阳表里上下雌雄 相输应也。互相呼应 互相扶持。而道 真的道要上知天文 下知地理 中知人事。那中医 这个以教众庶。所有的 我们的处方 我们的来源。我们的下针的手法 包括针灸的。所有的气脉怎么走 都是按照天地四时。所以要知道天地之间的道理。他的阴阳的消 消 阴消阳长的。他的这个规则 这样子的话。医术才不会有不及过偏。黄帝说：你听过《阴阳传》没有。讲了半天 我们讲那么多就是阴阳。雷公不敢讲话 说不知道 赶快讲。请黄帝来讲 讲错了被杀头对不对。当然不要讲 聪明 很聪明", "chart": null}, {"title": "第二段 · 第 2 段讲解", "orig": "雷公对曰：诵而颇能解，解而未能别，别而未能明，明而未能彰，足以治群僚，不足至侯王。愿得受树天之度，四时阴阳合之，别星辰与日月光，以彰经术，后世益明，上通神农，著至教，疑于二皇。", "talk": "那黄帝就说 三阳天为业。为业 上下无常 合而病至 偏害阴阳。雷公问：三阳莫当，是什么意思。我们讲三阳 三阳病。太阳少阳阳明 三阳并在一起的时候。速度也来得非常的快。三阳一并，病至瞬间就发。冲到头顶上就是发巅疾。所以巅疾之前人都很正常。一旦三阳一并的时候。马上发病 马上就昏倒。造成病人下利不止 或者小便失禁。这种病势来得非常快。你没有办法预期他什么时候会来。那你没有办法正确的知道。这种病又不发生在经脉上面。也没有办法按照正常的医术来诊断。那我们在三阳病的时候。比如说我们百会 百会放血。在井穴经络上面的井穴放血。诸如此类，都是让阳不并的目的。这个在仔细解释三阳的时候。至阳，阳气非常盛大 积并则为惊", "chart": null}, {"title": "第三段 · 第 3 段讲解", "orig": "帝曰：善！无失之，此皆阴阳表里上下雌雄相輸应也，而道上知天文，下知地理，中知人事，可以长久，以教众庶，亦不疑殆，医道论篇，可传后世，可以为宝。", "talk": "足太阳膀胱经在后面。这三阳是不并在一起的。并起疾风，就瞬间发病。至如礔砺 九窍皆塞。所有的九窍 眼睛 耳朵 鼻子 嘴巴。大小便全部是闭住的。那会造成干嗌 喉塞。嘴巴很干，然后吞不下东西。喉咙里面吞不下东西。那看到536页的时候。且以知天下，何以别阴阳。这句话就跟他前后有点不搭调。读者已经读到这样子是正常。阳言不别，阴言不理。请起受解，以为至道。一定要了解真正的医道。那如果说你没有办法了解真正的医道", "chart": null}, {"title": "第四段 · 第 4 段讲解", "orig": "雷公曰：请受道，讽诵用解。", "talk": "真正的医道就是讲阴阳嘛。反而会伤到人，会害到别人。你肾脏之气将绝的时候。体力都会跟着消耗掉。也就是说你如果医道。这个从容不出，人事不殷。因为下一篇讲的就是从容篇。有一个别阴阳的方法。我们前面黄帝内经通通忘掉。那你现在是躺在这边睡觉。当然这样睡觉睡那么整齐。很少都会翻来覆去嘛。我就是画个形给你看。那天气和地气交接的地方", "chart": null}, {"title": "第五段 · 第 5 段讲解", "orig": "帝曰：子不闻《阴阳传》乎！，曰：夫三阳天为业，上下无常，合而病至，偏害阴阳。", "talk": "在天地之间交接的地方是。所以在地上面三寸的话。如果是跑到这个人的这边。然后一直沿着身体过去。黄色的地方就是三寸三寸。所以人在睡觉的时候。是睡在天和地交接的地方。所以人会受到天地的滋养。这是很均衡的一种状态。是不是受天之阳比较多", "chart": null}, {"title": "第六段 · 第 6 段讲解", "orig": "雷公曰：三阳莫当，请闻其解。", "talk": "有一只老鼠在下面跑。老鼠是在天地气交接之下。你们看过老鼠站起来走过吗。另外那个澳洲对不对。平常老鼠都爬在地上跑得很快对不对。它是不是在地气比较多。这个阴阳就看出来了。这如果阴阳存在这个状态之下", "chart": null}, {"title": "第七段 · 第 7 段讲解", "orig": "帝曰：三阳独至者，是三阳并至，并至如风雨，上为巅疾，下为漏病，外无期，内无正，不中经纪，诊无上下，以书别。", "talk": "那如果有一个人跑来呢。所以你只要 common sense。所以如果说我们阳盛。那你没有把它治好了的时候", "chart": null}, {"title": "第八段 · 第 8 段讲解", "orig": "雷公曰：臣治疏愈，说意而已。", "talk": "是不是会造成阳虚嘛。你有没有听老鼠看病。我们中医有没有听老鼠摸脉。你只要懂得阴阳的观念。你一看阴阳就马上分出来了。老鼠本身是在天地之气以下。你有没有看到老鼠在大街上。那个老鼠笨得很笨啊。它比较多起来是阴物嘛", "chart": null}, {"title": "第九段 · 第 9 段讲解", "orig": "帝曰：三阳者，至阳也，积并则为惊，病起疾风，至如礔砺，九窍皆塞，阳气滂溢，干嗌喉塞，并于阴，则上下无常，薄为肠澼，此谓三阳直心，坐不得起，卧者便身全。三阳之病，且以知天下，何以别阴阳，应四时，合之五行。", "talk": "所以当地壳变动的时候。你还在那边傻傻的那边。所以我们要看 Mother Nature。就是老鼠就是因为怕阳虚。所以老鼠不但咬东西。那西洋人念动物学觉得就是独行嘛。老鼠的牙齿长得很快。不磨的话牙齿长得不能吃东西。实际上因为天生还是阴盛。那阳气会虚掉状态之下。所以老鼠动得很快要啃硬的东西。如果阳气再虚掉以后。从阴盛瞬间就变什么。实在里面的话老鼠就。阴实是最后的阶段了。所以老鼠的过程很简单", "chart": null}, {"title": "第十段 · 第 10 段讲解", "orig": "雷公曰：阳言不别，阴言不理，请起受解，以为至道。，帝曰：子若受传，不知合至道以惑师教，语子至道之要。病伤五藏，筋骨以消，子言不明不别，是世主学尽矣。肾且绝，惋惋日暮，从容不出，人事不殷。", "talk": "动物实验硬把它变成一样。它的DNA跟人很接近。所以我们用它来实验药。你当然得到相反的效果。所以一票人不懂阴阳。然后实验完以后药用在人身上。这就是我们治病而治阴阳。先一看阴阳就分出来了。如此你一看就知道什么物性通通出来了。我希望大家以后出去学中医的。把中医学好的人，生活的历史很简单的。所以尽量要让自己生活简单。那你没有办法专一的", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

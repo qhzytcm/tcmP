@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问53·刺志论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问53·刺志论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问53-刺志论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问53-刺志论.mp4">素问53-刺志论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 岐伯说 气实形实…</h2></div>
+    <div class="orig">岐伯说 气实形实，气虚形虚 这是常人</div>
+    <div class="talk">我们叫刺志论。你如果长得很结实 很壮 气实。对不对 你就受说刚刚的人没有气。那气虚 行就虚 这是常态。那谷气盛 那比如说他意思。比如说有个人长得很壮 来找你。可是近来的时候 体格都很壮。这个脉实 血实 脉虚 血虚。我们去查这个人 你怎么知道他血实</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 谷入多而气少…</h2></div>
+    <div class="orig">谷入多而气少</div>
+    <div class="talk">如何反呢 再讲详细一点。饭吃得很多 吃得半天元气还是不够。这个人不断在气喘 肺气</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段</h2></div>
+    <div class="orig">谷入多而气少</div>
+    <div class="talk">脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段</h2></div>
+    <div class="orig">谷入多而气少</div>
+    <div class="talk">脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 那有的人气虚身热有没有…</h2></div>
+    <div class="orig">那有的人气虚身热有没有</div>
+    <div class="talk">脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 气虚身热得知伤暑…</h2></div>
+    <div class="orig">气虚身热得知伤暑，谷入多而气少，得知有所脱血</div>
+    <div class="talk">脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 一定有所脱血…</h2></div>
+    <div class="orig">一定有所脱血，这个谷入少而气多者，脉小血多者，饮中热也，脉大血少者，脉有风气水浆不入 此之谓也</div>
+    <div class="talk">脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 这个脉实者…</h2></div>
+    <div class="orig">这个脉实者，气实者一定是热，气虚者一定是寒</div>
+    <div class="talk">脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 入实者左手开针空也…</h2></div>
+    <div class="orig">入实者左手开针空也，入虚者左手闭针空也</div>
+    <div class="talk">就是如果是我们治疗虚证的人。虚证的人我们要下针的时候</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段</h2></div>
+    <div class="orig">入实者左手开针空也，入虚者左手闭针空也</div>
+    <div class="talk">是不是都跟诸位介绍过了</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问53·刺志论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 岐伯说 气实形实…", "orig": "岐伯说 气实形实，气虚形虚 这是常人", "talk": "我们叫刺志论。你如果长得很结实 很壮 气实。对不对 你就受说刚刚的人没有气。那气虚 行就虚 这是常态。那谷气盛 那比如说他意思。比如说有个人长得很壮 来找你。可是近来的时候 体格都很壮。这个脉实 血实 脉虚 血虚。我们去查这个人 你怎么知道他血实", "chart": null}, {"title": "第二段 · 谷入多而气少…", "orig": "谷入多而气少", "talk": "如何反呢 再讲详细一点。饭吃得很多 吃得半天元气还是不够。这个人不断在气喘 肺气", "chart": null}, {"title": "第三段 · 第 3 段", "orig": "谷入多而气少", "talk": "脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手", "chart": null}, {"title": "第四段 · 第 4 段", "orig": "谷入多而气少", "talk": "脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手", "chart": null}, {"title": "第五段 · 那有的人气虚身热有没有…", "orig": "那有的人气虚身热有没有", "talk": "脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手", "chart": null}, {"title": "第六段 · 气虚身热得知伤暑…", "orig": "气虚身热得知伤暑，谷入多而气少，得知有所脱血", "talk": "脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手", "chart": null}, {"title": "第七段 · 一定有所脱血…", "orig": "一定有所脱血，这个谷入少而气多者，脉小血多者，饮中热也，脉大血少者，脉有风气水浆不入 此之谓也", "talk": "脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手", "chart": null}, {"title": "第八段 · 这个脉实者…", "orig": "这个脉实者，气实者一定是热，气虚者一定是寒", "talk": "脸上看起来是青色 比较黑色 比较暗的。偷看人家手臂也偷看人家手", "chart": null}, {"title": "第九段 · 入实者左手开针空也…", "orig": "入实者左手开针空也，入虚者左手闭针空也", "talk": "就是如果是我们治疗虚证的人。虚证的人我们要下针的时候", "chart": null}, {"title": "第十段 · 第 10 段", "orig": "入实者左手开针空也，入虚者左手闭针空也", "talk": "是不是都跟诸位介绍过了", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

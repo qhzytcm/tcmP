@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问41·刺腰痛</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问41·刺腰痛</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问41-刺腰痛.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问41-刺腰痛.mp4">素问41-刺腰痛.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 我们叫刺腰痛论…</h2></div>
+    <div class="orig">我们叫刺腰痛论，这个腰痛腰部的问题，这个足太阳的脉呢，足太阳的脉大家都知道，令人腰痛引项脊尻，太阳正经出血，这个是太阳政的腰痛，春天是少阳，你一放血的话，不给人家放血的原因在这里面，那如果是少阳令人腰痛，循循然不可以俯仰，少阳是至少成骨之端出血，我们叫成骨之端出血，那一般讲放血，并不是说扎到很深的地方去放血，而是在阳陵泉的血的周围，你如果腰痛，在膀胱经的地方，我们在委中就好了，委中不对，委中没有在尾，膀胱经在旁边，在委中下到承山的地方，承山去的这个地方，你可以看到有青筋的地方</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 你这个青筋上…</h2></div>
+    <div class="orig">你这个青筋上，放血症皮肤上赤破，太阳脉造成的腰痛的症状，让人家不能俯仰，结果少阳不能回头看，也会让人家腰痛，善悲很容易哭，刺阳明的，秩边的位置，就会让他腰痛，阳明不能回头，竹少阴呢，令人腰痛，但是这个腰痛，他是少阴症的时候，我们在内踝上面，那如果是厥阴，那刺厥阴的脉，那个太冲的位置，找压重两下痏，肝和心包</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 心包真的在…</h2></div>
+    <div class="orig">心包真的在，腥脏如果没有心包，心包膜的，那心包膜本胂呢，也是心包会落到，心包会生病的，是心包很干，病人善言，有的人就腰痛，有的人腰痛就伤悲，还有有的人腰痛，你不用管他善悲，那个腰痛痛得很厉害，没有人腰痛的，好爽腰痛，那个解脉这条，让人腰痛痛而隐间，膀胱经常常常会，在委中委阳，足太阳经上面，你只要看到横脉，长得横脉，在上面有看到青筋的地方，找到瘀血的地方，第二段的解脉，这个解脉讲的是，腰痛如引带，长如折腰状</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 是带脉的时候…</h2></div>
+    <div class="orig">是带脉的时候，在委中到外溪部，也有看到瘀血在这里放，我们都可以放血来治疗，针灸可以治疗的范围，跟我们抱原腰痛，从委中以下这一段，很多地方都有瘀血，带脉下灵气，同阴之脉，腰痛好像有个小锤托，腰痛的地方，绝骨的端，绝骨的地方，那我们放血，你如果放血</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 把瘀血放掉就可以了…</h2></div>
+    <div class="orig">把瘀血放掉就可以了，讲的是阳维的脉，阳维脉令人腰痛，怫然肿 斥阳维之脉，阳维脉痛的时候，外观鬼阳维脉，奇迹的阳维，那可以扎飞扬血，衡络之脉，那冲脉病 伤到大部分都是举重，我会搬家举重物，伤到腰痛，造成腰痛，这个会有恶血，瘀血在里面，有瘀血的时候，有瘀血的地方，委中阳灵泉，都可以放血，我们如果胂上有瘀血，我们委中，后面的委中委阳，很多的瘀血，都有腰痛，那不管是哪一种腰痛，你在这里放血</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 看到有瘀血的…</h2></div>
+    <div class="orig">看到有瘀血的，那会阴之脉，令人腰痛，任脉痛得是很奇怪，三个地方放血，飞扬之脉，有人带脉痛，带脉武术围道，是属于带脉，在放血的时候，有时候青筋在这边，有时候青筋在那边，捧哪边捧上去放血就好，放血的治疗方法，这个昌阳脉</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 还有督脉…</h2></div>
+    <div class="orig">还有督脉，这个令人腰痛，人都会反折过来，舌卷不能言，讲的是肾，肾经和督脉的，合并的一种腰痛，是落到肾，很多的瘀血，不同的腰痛，突然一条青筋，也是这个腰痛，我们如何治疗腰痛，那个散脉，足太阳筋，也是会让人腰痛，那肉里之脉，利人的腰痛，这个肝脏，下完绝骨之后</div>
+    <div class="talk">看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 腰痛上寒…</h2></div>
+    <div class="orig">腰痛上寒，赤足太阳阳明，上热赤足缺阴，委中后面的地方找到，腰背委中求，大部分都在委中上面，这个委阳哈，找晕眩的地方放血，这个腰痛，膏胶的在坐骨交接的地方，除了放血以外</div>
+    <div class="talk">所以我们在针灸大成里面。我们真的去查辞海的时候</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 然后放血…</h2></div>
+    <div class="orig">然后放血，左取右右取左，我们讲刺腰痛，我们赤我刺腰腰痛，我们针灸可以做到这种阶段，整个刺腰痛，我在教诸位针灸的时候</div>
+    <div class="talk">所以我们在针灸大成里面。我们真的去查辞海的时候</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 我们是扎委中…</h2></div>
+    <div class="orig">我们是扎委中，由阴引阳，腰背委中求，我们在委中这边下针，除了委中以外，有时候腰痛在这边，找到压痛点，针灸下去，我在讲针灸的时候，那看到有瘀血放掉，没有瘀血下针，找压痛点下针</div>
+    <div class="talk"></div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问41·刺腰痛 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 我们叫刺腰痛论…", "orig": "我们叫刺腰痛论，这个腰痛腰部的问题，这个足太阳的脉呢，足太阳的脉大家都知道，令人腰痛引项脊尻，太阳正经出血，这个是太阳政的腰痛，春天是少阳，你一放血的话，不给人家放血的原因在这里面，那如果是少阳令人腰痛，循循然不可以俯仰，少阳是至少成骨之端出血，我们叫成骨之端出血，那一般讲放血，并不是说扎到很深的地方去放血，而是在阳陵泉的血的周围，你如果腰痛，在膀胱经的地方，我们在委中就好了，委中不对，委中没有在尾，膀胱经在旁边，在委中下到承山的地方，承山去的这个地方，你可以看到有青筋的地方", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第二段 · 你这个青筋上…", "orig": "你这个青筋上，放血症皮肤上赤破，太阳脉造成的腰痛的症状，让人家不能俯仰，结果少阳不能回头看，也会让人家腰痛，善悲很容易哭，刺阳明的，秩边的位置，就会让他腰痛，阳明不能回头，竹少阴呢，令人腰痛，但是这个腰痛，他是少阴症的时候，我们在内踝上面，那如果是厥阴，那刺厥阴的脉，那个太冲的位置，找压重两下痏，肝和心包", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第三段 · 心包真的在…", "orig": "心包真的在，腥脏如果没有心包，心包膜的，那心包膜本胂呢，也是心包会落到，心包会生病的，是心包很干，病人善言，有的人就腰痛，有的人腰痛就伤悲，还有有的人腰痛，你不用管他善悲，那个腰痛痛得很厉害，没有人腰痛的，好爽腰痛，那个解脉这条，让人腰痛痛而隐间，膀胱经常常常会，在委中委阳，足太阳经上面，你只要看到横脉，长得横脉，在上面有看到青筋的地方，找到瘀血的地方，第二段的解脉，这个解脉讲的是，腰痛如引带，长如折腰状", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第四段 · 是带脉的时候…", "orig": "是带脉的时候，在委中到外溪部，也有看到瘀血在这里放，我们都可以放血来治疗，针灸可以治疗的范围，跟我们抱原腰痛，从委中以下这一段，很多地方都有瘀血，带脉下灵气，同阴之脉，腰痛好像有个小锤托，腰痛的地方，绝骨的端，绝骨的地方，那我们放血，你如果放血", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第五段 · 把瘀血放掉就可以了…", "orig": "把瘀血放掉就可以了，讲的是阳维的脉，阳维脉令人腰痛，怫然肿 斥阳维之脉，阳维脉痛的时候，外观鬼阳维脉，奇迹的阳维，那可以扎飞扬血，衡络之脉，那冲脉病 伤到大部分都是举重，我会搬家举重物，伤到腰痛，造成腰痛，这个会有恶血，瘀血在里面，有瘀血的时候，有瘀血的地方，委中阳灵泉，都可以放血，我们如果胂上有瘀血，我们委中，后面的委中委阳，很多的瘀血，都有腰痛，那不管是哪一种腰痛，你在这里放血", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第六段 · 看到有瘀血的…", "orig": "看到有瘀血的，那会阴之脉，令人腰痛，任脉痛得是很奇怪，三个地方放血，飞扬之脉，有人带脉痛，带脉武术围道，是属于带脉，在放血的时候，有时候青筋在这边，有时候青筋在那边，捧哪边捧上去放血就好，放血的治疗方法，这个昌阳脉", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第七段 · 还有督脉…", "orig": "还有督脉，这个令人腰痛，人都会反折过来，舌卷不能言，讲的是肾，肾经和督脉的，合并的一种腰痛，是落到肾，很多的瘀血，不同的腰痛，突然一条青筋，也是这个腰痛，我们如何治疗腰痛，那个散脉，足太阳筋，也是会让人腰痛，那肉里之脉，利人的腰痛，这个肝脏，下完绝骨之后", "talk": "看黄帝内经去查那个辞海。一个阳刚开始起升的时候。你有看到皮肤上一些血脉。那其实我们在临床上的时候", "chart": null}, {"title": "第八段 · 腰痛上寒…", "orig": "腰痛上寒，赤足太阳阳明，上热赤足缺阴，委中后面的地方找到，腰背委中求，大部分都在委中上面，这个委阳哈，找晕眩的地方放血，这个腰痛，膏胶的在坐骨交接的地方，除了放血以外", "talk": "所以我们在针灸大成里面。我们真的去查辞海的时候", "chart": null}, {"title": "第九段 · 然后放血…", "orig": "然后放血，左取右右取左，我们讲刺腰痛，我们赤我刺腰腰痛，我们针灸可以做到这种阶段，整个刺腰痛，我在教诸位针灸的时候", "talk": "所以我们在针灸大成里面。我们真的去查辞海的时候", "chart": null}, {"title": "第十段 · 我们是扎委中…", "orig": "我们是扎委中，由阴引阳，腰背委中求，我们在委中这边下针，除了委中以外，有时候腰痛在这边，找到压痛点，针灸下去，我在讲针灸的时候，那看到有瘀血放掉，没有瘀血下针，找压痛点下针", "talk": "", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

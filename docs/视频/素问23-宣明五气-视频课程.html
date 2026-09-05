@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问23·宣明五气</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问23·宣明五气</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问23-宣明五气.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问23-宣明五气.mp4">素问23-宣明五气.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第23篇这个叫宣明五气篇…</h2></div>
+    <div class="orig">第23篇这个叫宣明五气篇，酸入肝辛入肺 苦入心，咸入肾甘入脾，这个五气呢，肺为咳 肝为语，病人会发怒 是谓五病</div>
+    <div class="talk">大家都现在慢慢熟起来了。应该来说我们中医的观念里面认为。眼睛会好 好 瞪得很大。大小肠气出现问题的时候。我们脏气跟腐气能够交接。三焦里面都是蒸气 热气。那如果是有出现问题的时候。膀胱无力 胃龙不约为遗。所以东西堵到可能有结石。还有呢 这个小便无法控制它</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 来 五精所并…</h2></div>
+    <div class="orig">来 五精所并，是谓五病，五脏所恶，所以心恶热，那肺恶寒就洗热了</div>
+    <div class="talk">千万不要误解 脏气有病的时候。就是中医的观念里面认为说。这五个脏气 木火土金水。一个脏气一虚 其他的就会过去。其他的脏气病到肺里面去的时候。那其他的四个脏气都往肾上去集中。所以刚刚五虚所病的时候。你看那个字一遍就是厌恶。那管所有身上肌肉里面的</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 所以它不是说脾恶湿…</h2></div>
+    <div class="orig">所以它不是说脾恶湿，那五脏化液</div>
+    <div class="talk">所以说你如果到一个地方去。发现到这个气候太肝燥了。它有大林里面有这个风花雪月。我们身上的精液排出来的时候。你因为金孔人家后面要杀你</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 那五味所禁…</h2></div>
+    <div class="orig">那五味所禁</div>
+    <div class="talk">但是主力是心脏在控制它。那我们为什么要说心主蛇。药物类选择也会有致禁忌。比如说你再给它开心腊的药。或者给它吃那个腊牛肉面。吃很多 那就是让气走得更快。不管它里面的症状是什么。所以我们知道骨病的时候。任何病有他的粗死的地方</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 那甘走肉…</h2></div>
+    <div class="orig">那甘走肉，无令多食，五病所发，阴病发于肉 肌肉，阳病发于冬</div>
+    <div class="talk">有骨癌的病人一开始都是在环跳痛。所以你无印无故突然环跳痛。骨病不可以多吃太苦的东西。但是蔬菜里面的苦味是淡味。老师 我怎么知道他精病。我这个膝盖怎么不能伸曲。就是说可以吃 但是不能多。没有说绝对不能吃 并没有。反正发在骨上面都是阴病。肌肉是阴 脾肤表面就是阳。所以你要懂这个理论以后</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段</h2></div>
+    <div class="orig">那甘走肉，无令多食，五病所发，阴病发于肉 肌肉，阳病发于冬</div>
+    <div class="talk">所以你冬天如果发病的时候。阳不潜长外的时候才会病态。夏天方便阳在外 阴在内。这个时候夏天发病的时候。我们所谓的病就是从里面出来。来 如何用表面上的病证。我们可以知道病还是阴还是阳。造成的现象 症状是什么。再斜再进入阳的时候则狂。但是主要的大筋只到颈部。我们脸上没有肾筋的穴刀。并能出现狂 发狂的现象。你记得阳都是动 阴都是进。两个缝在一起 阳抗就会巅疾。以后讲药物的时候很好玩</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 五邪所见…</h2></div>
+    <div class="orig">五邪所见</div>
+    <div class="talk">悦母一直捞捞捞 很吵对不对。她在煮菜的时候放点生半夏。那你跟悦母住在两个礼拜的时候。所以你要如果用得很好的话。这都是教诸位望诊 闻诊。我们的前面诊断有没有错。一张单子里面七八十个药</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 夏得冬脉水克火…</h2></div>
+    <div class="orig">夏得冬脉水克火，皆同命死不治，那你知道他是死不治，你也不能跟他说死不治，五脏所藏</div>
+    <div class="talk">是因为木刻度常夏的或是常夏的脉。结果你这个时候得到刻时间的脉。一般出现相刻自正的脉的时候。如果阴出于阳的现象出现的时候。所有的胀气都变到肝胀去了。没有一个小孩子生下来的时候。一定要在他相信我们的状态之下。他们好像知道以后有西医。我们为什么要去知道五肠</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 五脏所主…</h2></div>
+    <div class="orig">五脏所主，心主脉 肺主皮 脾主肉，肝主筋 脾主肉 肾主骨，那五劳所伤</div>
+    <div class="talk">比如说我们做事情的专业啊。还有字就是除了记忆以外。那个这个人如果是骨头有问题。有没有 不下 九四伤血。那我们以前尽视是越看书。小时候家里环境不是很好。我们那时候什么电脑都没有</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 久立伤骨…</h2></div>
+    <div class="orig">久立伤骨，五劳所伤 五种劳动，五脉应象</div>
+    <div class="talk">就是肺有问题 气有问题。这个 酒窝伤气就去讲完了。所以你不能坐在那边不动。当然做太久不单单是伤肉。很多治疗人那边都得治床的职业病。很多人会得治床 为什么。让你躺到身 这是不对的。大拇趾有两条筋脉会上去。一个是肿肌肉 一个是肿筋。所以应该是蹲到身是正常。所以中国以前都是妇女去蹲到。先蹲在后面把太太肩膀抬到。那所以你去上大航应该蹲得上。那个马桶子当然是科技舒服。所以我们人体真正被设计成是蹲之。所以你看我们蹲马步有没有。好好这个国家伤害赔偿怎么样。进脉区当然跟他没有关系。一、本篇是【五脏-五维规律的系统矩阵】：以'五'为纲（五味/五气/五精/五恶/五液/五禁/五发/五乱/五邪/五藏/五主/五劳/五脉）构建五脏功能的13维分类表——每维都是'五脏×五属性'的5×5映射矩阵，与现代'系统生物学-多维组学'的分类框架同构，是中医'藏象学'的结构化数据库雏形。二、'五味所入'（酸肝辛肺苦心咸肾甘脾）是【味觉-脏器亲和性映射表】：五种基本味觉对应五个脏器（味觉受体-器官分布），与现代'味觉受体（TAS1R/TAS2R）在消化道/心脏等器官的功能表达'研究（味觉信。</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问23·宣明五气 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第23篇这个叫宣明五气篇…", "orig": "第23篇这个叫宣明五气篇，酸入肝辛入肺 苦入心，咸入肾甘入脾，这个五气呢，肺为咳 肝为语，病人会发怒 是谓五病", "talk": "大家都现在慢慢熟起来了。应该来说我们中医的观念里面认为。眼睛会好 好 瞪得很大。大小肠气出现问题的时候。我们脏气跟腐气能够交接。三焦里面都是蒸气 热气。那如果是有出现问题的时候。膀胱无力 胃龙不约为遗。所以东西堵到可能有结石。还有呢 这个小便无法控制它", "chart": null}, {"title": "第二段 · 来 五精所并…", "orig": "来 五精所并，是谓五病，五脏所恶，所以心恶热，那肺恶寒就洗热了", "talk": "千万不要误解 脏气有病的时候。就是中医的观念里面认为说。这五个脏气 木火土金水。一个脏气一虚 其他的就会过去。其他的脏气病到肺里面去的时候。那其他的四个脏气都往肾上去集中。所以刚刚五虚所病的时候。你看那个字一遍就是厌恶。那管所有身上肌肉里面的", "chart": null}, {"title": "第三段 · 所以它不是说脾恶湿…", "orig": "所以它不是说脾恶湿，那五脏化液", "talk": "所以说你如果到一个地方去。发现到这个气候太肝燥了。它有大林里面有这个风花雪月。我们身上的精液排出来的时候。你因为金孔人家后面要杀你", "chart": null}, {"title": "第四段 · 那五味所禁…", "orig": "那五味所禁", "talk": "但是主力是心脏在控制它。那我们为什么要说心主蛇。药物类选择也会有致禁忌。比如说你再给它开心腊的药。或者给它吃那个腊牛肉面。吃很多 那就是让气走得更快。不管它里面的症状是什么。所以我们知道骨病的时候。任何病有他的粗死的地方", "chart": null}, {"title": "第五段 · 那甘走肉…", "orig": "那甘走肉，无令多食，五病所发，阴病发于肉 肌肉，阳病发于冬", "talk": "有骨癌的病人一开始都是在环跳痛。所以你无印无故突然环跳痛。骨病不可以多吃太苦的东西。但是蔬菜里面的苦味是淡味。老师 我怎么知道他精病。我这个膝盖怎么不能伸曲。就是说可以吃 但是不能多。没有说绝对不能吃 并没有。反正发在骨上面都是阴病。肌肉是阴 脾肤表面就是阳。所以你要懂这个理论以后", "chart": null}, {"title": "第六段 · 第 6 段", "orig": "那甘走肉，无令多食，五病所发，阴病发于肉 肌肉，阳病发于冬", "talk": "所以你冬天如果发病的时候。阳不潜长外的时候才会病态。夏天方便阳在外 阴在内。这个时候夏天发病的时候。我们所谓的病就是从里面出来。来 如何用表面上的病证。我们可以知道病还是阴还是阳。造成的现象 症状是什么。再斜再进入阳的时候则狂。但是主要的大筋只到颈部。我们脸上没有肾筋的穴刀。并能出现狂 发狂的现象。你记得阳都是动 阴都是进。两个缝在一起 阳抗就会巅疾。以后讲药物的时候很好玩", "chart": null}, {"title": "第七段 · 五邪所见…", "orig": "五邪所见", "talk": "悦母一直捞捞捞 很吵对不对。她在煮菜的时候放点生半夏。那你跟悦母住在两个礼拜的时候。所以你要如果用得很好的话。这都是教诸位望诊 闻诊。我们的前面诊断有没有错。一张单子里面七八十个药", "chart": null}, {"title": "第八段 · 夏得冬脉水克火…", "orig": "夏得冬脉水克火，皆同命死不治，那你知道他是死不治，你也不能跟他说死不治，五脏所藏", "talk": "是因为木刻度常夏的或是常夏的脉。结果你这个时候得到刻时间的脉。一般出现相刻自正的脉的时候。如果阴出于阳的现象出现的时候。所有的胀气都变到肝胀去了。没有一个小孩子生下来的时候。一定要在他相信我们的状态之下。他们好像知道以后有西医。我们为什么要去知道五肠", "chart": null}, {"title": "第九段 · 五脏所主…", "orig": "五脏所主，心主脉 肺主皮 脾主肉，肝主筋 脾主肉 肾主骨，那五劳所伤", "talk": "比如说我们做事情的专业啊。还有字就是除了记忆以外。那个这个人如果是骨头有问题。有没有 不下 九四伤血。那我们以前尽视是越看书。小时候家里环境不是很好。我们那时候什么电脑都没有", "chart": null}, {"title": "第十段 · 久立伤骨…", "orig": "久立伤骨，五劳所伤 五种劳动，五脉应象", "talk": "就是肺有问题 气有问题。这个 酒窝伤气就去讲完了。所以你不能坐在那边不动。当然做太久不单单是伤肉。很多治疗人那边都得治床的职业病。很多人会得治床 为什么。让你躺到身 这是不对的。大拇趾有两条筋脉会上去。一个是肿肌肉 一个是肿筋。所以应该是蹲到身是正常。所以中国以前都是妇女去蹲到。先蹲在后面把太太肩膀抬到。那所以你去上大航应该蹲得上。那个马桶子当然是科技舒服。所以我们人体真正被设计成是蹲之。所以你看我们蹲马步有没有。好好这个国家伤害赔偿怎么样。进脉区当然跟他没有关系。一、本篇是【五脏-五维规律的系统矩阵】：以'五'为纲（五味/五气/五精/五恶/五液/五禁/五发/五乱/五邪/五藏/五主/五劳/五脉）构建五脏功能的13维分类表——每维都是'五脏×五属性'的5×5映射矩阵，与现代'系统生物学-多维组学'的分类框架同构，是中医'藏象学'的结构化数据库雏形。二、'五味所入'（酸肝辛肺苦心咸肾甘脾）是【味觉-脏器亲和性映射表】：五种基本味觉对应五个脏器（味觉受体-器官分布），与现代'味觉受体（TAS1R/TAS2R）在消化道/心脏等器官的功能表达'研究（味觉信。", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

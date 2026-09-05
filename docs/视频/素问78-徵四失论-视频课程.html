@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问78·徵四失论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问78·徵四失论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问78-徵四失论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问78-徵四失论.mp4">素问78-徵四失论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 第 1 段讲解</h2></div>
+    <div class="orig"></div>
+    <div class="talk">这个黄帝内经呢?第78篇。我们称之为《徵四失论》。就把《徵四失论》第78篇。这个雷公学乖了 不乱问了。我们看这个雷公问他说。这个我们读书 通通读的很多 医书都读光吗。他都做到了 可是呢。看病还是会有失手 为什么?。这都是大家以后会面临到问题。这个黄帝说 你的年龄太小嘛。当然我们可以解释很多。你的智慧没有达到区分 对和错的阶段。我常常跟大家讲 我喜欢比较皮一点的 为什么?。你在跟病在作战的时候。这病人只是一个战场。你在跟病作战的时候 这是诡道。那无所不用其极 赢就好 对不对。所以中国想出了很多计策。实际上很多是害人的 对不对</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 第 2 段讲解</h2></div>
+    <div class="orig">黄帝在明堂，雷公侍坐，黄帝曰：夫子所通书受事众多矣，试言得失之意，所以得之，所以失之。</div>
+    <div class="talk">这个邪不是真的去害人的样子。你看到每个都是好人。看那个栗桂面猪也是好人 对不对。猪猪侠 他的确是好人。现在人把它弄坏掉了 对不对。所以说脑筋不要很满满地。我一板一眼地做 脑筋一定要活。这个黄帝说12个经脉。我们身上有12条经脉。诸位都学过这12个经脉。一般的医师都按照这个来做。你不十全者 你没有办法。可是你没有办法做到十全十美</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 第 3 段讲解</h2></div>
+    <div class="orig">雷公对曰：循经受业，皆言十全，其时有过失者，请闻其事解也。</div>
+    <div class="talk">你没有办法专心的看病。那志意不理内外相失。所以你常常会产生一些疑问。变成有一个人跑来告诉你。你光是一个失眠你眼睛看回去。他晚上应该是睡在那边的是阴盛阳衰。对不对 白天是不是阳盛。对不对 你可以精神在那边。晚上睡的时候阴盛到阳比较衰。那现在这个人在睡觉的时候。是不是白天的阳盛阴衰带到晚上去了。阴阳马上就分出来了。所以一定要知道阴阳逆从</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 第 4 段讲解</h2></div>
+    <div class="orig">雷公对曰：循经受业，皆言十全，其时有过失者，请闻其事解也。</div>
+    <div class="talk">他之前有很多7-11 24小时。我们国外很多24小时。连大的城市都沃尔玛都24小时。然后到下礼拜他就去调时间回来。正常的时候没有关系。那你随时要告诉自己。比如说大家不愿意排夜班对不对。当你被排了夜班 你要跟自己讲。你要跟自己讲好开心</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 第 5 段讲解</h2></div>
+    <div class="orig">帝曰：子年少，智未及邪，将言以杂合耶？夫经脉十二，络脉三百六十五，此皆人之所明知，工之所循用也。所以不十全者，精神不专，志意不理，外内相失，故时疑殆。诊不知阴阳逆从之理，此治之一失矣。</div>
+    <div class="talk">已经被因为工资的关系。硬把阴阳调得不正常对不对。那你一定要保持心情的。这一场我可以读夜书。千万不要把自己情绪弄坏掉。一定要知道阴阳逆从。这个你没有办法做到十全十美。你其实经书都是很多。可是你阴阳逆从不了解。你找到老师不好 很差。结果你是理论没有学好。就是你治病的第二过失。那希望各位找对老师。好 那我们休息一下</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 第 6 段讲解</h2></div>
+    <div class="orig">受师不卒，妄作杂术，谬言为道，更名自功，妄用砭石，后遗身咎，此治之二失也。</div>
+    <div class="talk">我们等下10分钟以后。你如果说你不适这个。去了解他的贫富贵贱之居。那你因为不明了病人。这是你会有失误的地方。这些讲的都是我们的失手</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 第 7 段讲解</h2></div>
+    <div class="orig">受师不卒，妄作杂术，谬言为道，更名自功，妄用砭石，后遗身咎，此治之二失也。</div>
+    <div class="talk">或者是吸毒或者是吃到。你不先问他这些东西。直接就卒持寸口就在那边。然后告诉他怎么回事</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 第 8 段讲解</h2></div>
+    <div class="orig">不适贫富贵贱之居，坐之薄厚，形之寒温，不适饮食之宜，不别人之勇怯，不知比类，足以自乱，不足以自明，此治之三失也。</div>
+    <div class="talk">摸脉他搞了个二十四小时。你说身体怎么讲的一大堆。一副药下来八九十味。凡是本草纲目问题里面。我们处方绝对不依照本草纲目。也知道他的贫富贵贱。也知道他的心情如何。你下针病人效果很好。就是你处方下去就是有问题</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 第 9 段讲解</h2></div>
+    <div class="orig">诊病不问其始，忧患饮食之失节，起居之过度，或伤于毒，不先言此，卒持寸口，何病能中，妄言作名，为所穷，此治之四失也。</div>
+    <div class="talk">你要心里想是不是我错。所以常常要自己了解自己有没有错。第一个诊断或者是处方。就是我们都要去考虑的。这也是我们很熟的朋友。很简单的开栀子豉汤给他。吃完早上吃完中午打电话来。奇怪没有上吐也没有下泻。然后我说那你有没有阑尾</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 第 10 段讲解</h2></div>
+    <div class="orig">是以世人之语者，驰千里之外，不明尺寸之论，诊无人事。治数之道，从容之葆，坐持寸口，诊不中五脉，百病所起，始以自怨，遗师其咎。是故治不能循理，弃术于市，妄治时愈，愚心自得。呜呼！窈窈冥冥，熟知其道？道之大者，拟于天地，配于四海，汝不知道之谕，受以明为晦。</div>
+    <div class="talk">你这个栀子豉汤怎么配的。我们按照这个你写的比例。他把栀子的比例放得最多。结果其他都是1的比例。那栀子把它放成10。吐完中午回来就好了。晚上就去打撞球去了。甚至于你跟病人明讲都没有关系</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问78·徵四失论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 第 1 段讲解", "orig": "", "talk": "这个黄帝内经呢?第78篇。我们称之为《徵四失论》。就把《徵四失论》第78篇。这个雷公学乖了 不乱问了。我们看这个雷公问他说。这个我们读书 通通读的很多 医书都读光吗。他都做到了 可是呢。看病还是会有失手 为什么?。这都是大家以后会面临到问题。这个黄帝说 你的年龄太小嘛。当然我们可以解释很多。你的智慧没有达到区分 对和错的阶段。我常常跟大家讲 我喜欢比较皮一点的 为什么?。你在跟病在作战的时候。这病人只是一个战场。你在跟病作战的时候 这是诡道。那无所不用其极 赢就好 对不对。所以中国想出了很多计策。实际上很多是害人的 对不对", "chart": null}, {"title": "第二段 · 第 2 段讲解", "orig": "黄帝在明堂，雷公侍坐，黄帝曰：夫子所通书受事众多矣，试言得失之意，所以得之，所以失之。", "talk": "这个邪不是真的去害人的样子。你看到每个都是好人。看那个栗桂面猪也是好人 对不对。猪猪侠 他的确是好人。现在人把它弄坏掉了 对不对。所以说脑筋不要很满满地。我一板一眼地做 脑筋一定要活。这个黄帝说12个经脉。我们身上有12条经脉。诸位都学过这12个经脉。一般的医师都按照这个来做。你不十全者 你没有办法。可是你没有办法做到十全十美", "chart": null}, {"title": "第三段 · 第 3 段讲解", "orig": "雷公对曰：循经受业，皆言十全，其时有过失者，请闻其事解也。", "talk": "你没有办法专心的看病。那志意不理内外相失。所以你常常会产生一些疑问。变成有一个人跑来告诉你。你光是一个失眠你眼睛看回去。他晚上应该是睡在那边的是阴盛阳衰。对不对 白天是不是阳盛。对不对 你可以精神在那边。晚上睡的时候阴盛到阳比较衰。那现在这个人在睡觉的时候。是不是白天的阳盛阴衰带到晚上去了。阴阳马上就分出来了。所以一定要知道阴阳逆从", "chart": null}, {"title": "第四段 · 第 4 段讲解", "orig": "雷公对曰：循经受业，皆言十全，其时有过失者，请闻其事解也。", "talk": "他之前有很多7-11 24小时。我们国外很多24小时。连大的城市都沃尔玛都24小时。然后到下礼拜他就去调时间回来。正常的时候没有关系。那你随时要告诉自己。比如说大家不愿意排夜班对不对。当你被排了夜班 你要跟自己讲。你要跟自己讲好开心", "chart": null}, {"title": "第五段 · 第 5 段讲解", "orig": "帝曰：子年少，智未及邪，将言以杂合耶？夫经脉十二，络脉三百六十五，此皆人之所明知，工之所循用也。所以不十全者，精神不专，志意不理，外内相失，故时疑殆。诊不知阴阳逆从之理，此治之一失矣。", "talk": "已经被因为工资的关系。硬把阴阳调得不正常对不对。那你一定要保持心情的。这一场我可以读夜书。千万不要把自己情绪弄坏掉。一定要知道阴阳逆从。这个你没有办法做到十全十美。你其实经书都是很多。可是你阴阳逆从不了解。你找到老师不好 很差。结果你是理论没有学好。就是你治病的第二过失。那希望各位找对老师。好 那我们休息一下", "chart": null}, {"title": "第六段 · 第 6 段讲解", "orig": "受师不卒，妄作杂术，谬言为道，更名自功，妄用砭石，后遗身咎，此治之二失也。", "talk": "我们等下10分钟以后。你如果说你不适这个。去了解他的贫富贵贱之居。那你因为不明了病人。这是你会有失误的地方。这些讲的都是我们的失手", "chart": null}, {"title": "第七段 · 第 7 段讲解", "orig": "受师不卒，妄作杂术，谬言为道，更名自功，妄用砭石，后遗身咎，此治之二失也。", "talk": "或者是吸毒或者是吃到。你不先问他这些东西。直接就卒持寸口就在那边。然后告诉他怎么回事", "chart": null}, {"title": "第八段 · 第 8 段讲解", "orig": "不适贫富贵贱之居，坐之薄厚，形之寒温，不适饮食之宜，不别人之勇怯，不知比类，足以自乱，不足以自明，此治之三失也。", "talk": "摸脉他搞了个二十四小时。你说身体怎么讲的一大堆。一副药下来八九十味。凡是本草纲目问题里面。我们处方绝对不依照本草纲目。也知道他的贫富贵贱。也知道他的心情如何。你下针病人效果很好。就是你处方下去就是有问题", "chart": null}, {"title": "第九段 · 第 9 段讲解", "orig": "诊病不问其始，忧患饮食之失节，起居之过度，或伤于毒，不先言此，卒持寸口，何病能中，妄言作名，为所穷，此治之四失也。", "talk": "你要心里想是不是我错。所以常常要自己了解自己有没有错。第一个诊断或者是处方。就是我们都要去考虑的。这也是我们很熟的朋友。很简单的开栀子豉汤给他。吃完早上吃完中午打电话来。奇怪没有上吐也没有下泻。然后我说那你有没有阑尾", "chart": null}, {"title": "第十段 · 第 10 段讲解", "orig": "是以世人之语者，驰千里之外，不明尺寸之论，诊无人事。治数之道，从容之葆，坐持寸口，诊不中五脉，百病所起，始以自怨，遗师其咎。是故治不能循理，弃术于市，妄治时愈，愚心自得。呜呼！窈窈冥冥，熟知其道？道之大者，拟于天地，配于四海，汝不知道之谕，受以明为晦。", "talk": "你这个栀子豉汤怎么配的。我们按照这个你写的比例。他把栀子的比例放得最多。结果其他都是1的比例。那栀子把它放成10。吐完中午回来就好了。晚上就去打撞球去了。甚至于你跟病人明讲都没有关系", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>

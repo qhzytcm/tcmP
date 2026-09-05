@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄帝内经·素问18·平人气象论</title>
+<style>
+  :root { --primary: #1e8449; --dark: #2c3e50; --gold: #b7950b; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Microsoft YaHei", "SimHei", sans-serif; background: #f4f1ea; }
+  .titlebar { background: linear-gradient(135deg, #1e8449, #145a32); color: #fff;
+              text-align: center; padding: 34px 20px; }
+  .titlebar h1 { font-size: 38px; letter-spacing: 6px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+  .player { background: #000; border-radius: 12px; overflow: hidden; margin-bottom: 26px;
+            box-shadow: 0 10px 34px rgba(0,0,0,.35); }
+  video { width: 100%; display: block; aspect-ratio: 16/9; }
+  .sync-caption { background: #0d1b12; padding: 14px 22px; min-height: 108px; }
+  .cap-sec { color: #7ee2a8; font-size: 14px; font-weight: 700; margin-bottom: 6px;
+             transition: opacity .6s; }
+  .cap-orig { color: #fdf9ef; font-size: 17px; line-height: 1.8; text-align: left;
+              transition: opacity .6s; }
+  .cap-talk { color: #9fc7ae; font-size: 15px; line-height: 1.7; margin-top: 4px; text-align: left;
+              transition: opacity .6s; }
+  .cap-chart { margin-top: 8px; border-top: 1px solid #1e3b2a; padding-top: 8px; }
+  .cap-chart .lbl { color: #7ee2a8; font-size: 13px; margin-bottom: 4px; text-align: left; }
+  .cap-gone { opacity: 0; }
+  .sec { background: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+         border: 1px solid #e5e0d6; transition: opacity .8s, box-shadow .8s; }
+  .sec.now { box-shadow: 0 0 0 3px var(--gold); }
+  .sec.done { opacity: .65; }   /* 已讲段弱化但可读（上下文保留, 防误解） */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .sec-no { background: var(--primary); color: #fff; padding: 5px 16px; border-radius: 18px; font-size: 14px; }
+  .sec h2 { color: var(--dark); font-size: 23px; }
+  .orig { font-size: 17px; line-height: 1.9; color: #2c3e50; text-align: left;
+          background: #fdf9ef; border-left: 5px solid var(--gold); padding: 14px 20px;
+          border-radius: 0 8px 8px 0; }
+  .talk { font-size: 16px; line-height: 1.9; color: #4a4a4a; text-align: left; margin-top: 10px; }
+  .talk b { color: var(--primary); }
+  .footer { text-align: center; color: #999; font-size: 13px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<div class="titlebar"><h1>黄帝内经·素问18·平人气象论</h1></div>
+
+<div class="container">
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="素问18-平人气象论.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频播放，请下载后观看：<a href="素问18-平人气象论.mp4">素问18-平人气象论.mp4</a>
+    </video>
+    <div class="sync-caption" id="capBox">
+      <div class="cap-sec" id="capSec">▍第 1 段</div>
+      <div class="cap-orig" id="capOrig"></div>
+      <div class="cap-talk" id="capTalk"></div>
+      <div class="cap-chart" id="capChart"></div>
+    </div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>第一段 · 接著我们看第18篇平人气…</h2></div>
+    <div class="orig">接著我们看第18篇平人气象论，岐伯说一个人一呼脉再动，在呼吸定息中间，这个闰以太息命曰平人，平人者不病也就无过与不及，常以不病调病人，这个人一呼脉一动，那如果人一呼脉三动，平人之常气，这里讲胃气啰，我们用胃气的有无，胃气的脉怎么看，人如果没有胃气，脉里面没有胃气，这是逆 逆者死，脉里面带一点胃气，就讲的是胃气，这都是胃气，胃气的脉带一点点弦，从平人日常气到胃，我们从脉的胃气有无</div>
+    <div class="talk">这里先明确脉动的频数语义：人一呼，脉跳动两次；一吸，脉跳动两次；呼吸转换的定息之间，脉跳动一次。合起来，一呼再动两次，加定息一次，加一吸再动两次，共五次脉动，这就是平人脉搏跳动的频数，古称"呼吸定息脉五动"。请注意，这一语义只涉及脉搏的频数要素，并不涉及脉搏的其他要素——如节律是否整齐、有无结代；脉的长短是否恒定、有无短脉覆脉；脉的深浅是沉是浮——那些是另外的脉学要素，不可混为一谈。黄帝说正常人的脉是什么呢。脉再就是两次脉搏跳两次。呼吸之间有一段息是停掉了。所以一呼一息是脉是五动。是过与不及少于五次是不及的脉。所以我说你们平常练习脉的时候。这个呼吸是以医生的呼吸为主</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>第二段 · 毛甚曰今病…</h2></div>
+    <div class="orig">毛甚曰今病，那夏胃微钩曰平，这就代表有胃气，胃气太少了，胃气比较少了，已经没有胃气了，胃气如果是少，胃气都不够了</div>
+    <div class="talk">你可以看到很多筋膜在里面。因为五脏六腑里面都有筋。所以你在肝脉春天的时候。结果你在夏天摸到冬天的脉</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>第三段 · 有胃气 则生…</h2></div>
+    <div class="orig">有胃气 则生，那病人没有胃气，你把他胃气救回来，胃气会回来，代表他胃气，贯鬲络肺，其动应衣，胃气的根的地方，胃气根的地方，并在终结而横有积</div>
+    <div class="talk">你可以看到很多筋膜在里面。因为五脏六腑里面都有筋。所以你在肝脉春天的时候。结果你在夏天摸到冬天的脉</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>第四段 · 其动应衣…</h2></div>
+    <div class="orig">其动应衣，盛喘数绝著</div>
+    <div class="talk">你可以看到很多筋膜在里面。因为五脏六腑里面都有筋。所以你在肝脉春天的时候。结果你在夏天摸到冬天的脉</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>第五段 · 是正常的胃气的脉…</h2></div>
+    <div class="orig">是正常的胃气的脉</div>
+    <div class="talk">阻绝食物是因为靠心和小肠。很多人胃下垂就是这样子</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>第六段 · 所以脉得四时顺…</h2></div>
+    <div class="orig">所以脉得四时顺，如果遇到真脏脉，这个名人真脏脉</div>
+    <div class="talk">阻绝食物是因为靠心和小肠。很多人胃下垂就是这样子</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>第七段 · 来 面肿曰风…</h2></div>
+    <div class="orig">来 面肿曰风</div>
+    <div class="talk">如果有黑黑的在这边出现。所以你就commonsense。他就会把电风扇关掉。那为什么我们要知道这个</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>第八段 · 脉有逆从四时…</h2></div>
+    <div class="orig">脉有逆从四时，春夏而脉瘦，秋冬而脉浮大，命曰逆四时也，这是逆四时，逆四时都是凶，风热而脉静，这个叫反四时业，有逆四时跟反四时，我们叫反四时，都是逆四时，胃气的脉，本身人以水谷为本，今天胃气才会有生骂，所以胃气是来自外来的食物，脉没有胃气的，就不得胃气，脉不得胃气者</div>
+    <div class="talk">如果有黑黑的在这边出现。所以你就commonsense。他就会把电风扇关掉。那为什么我们要知道这个</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>第九段 · 已经没有胃气了…</h2></div>
+    <div class="orig">已经没有胃气了，但是不是真脏脉，它的胃气还在那里，胃气没有的时候，而且完全没有胃气，但真脏脉是透尺透寸，在平人气象论，夏天以胃气为本，一定要有胃气，这是有胃气，都没有胃气了，胃气要准备上枝了</div>
+    <div class="talk">有太阳偏少阳偏的阳明偏。那病如果在脾肤表面的时候。太阳证我们分很多的处方。我们就研到这个下堂课来讲。当然这一段讲的都是脉诊。而且数度是一息五至左右。所以这是基本的一个概念</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>第十段 · 已经没有胃气了…</h2></div>
+    <div class="orig">已经没有胃气了，没有胃气的时候，那秋雨胃气会不会</div>
+    <div class="talk">大陆过去古人的文字写得很好。就好像你摸到一个水管里面。你摸上去好像是弹石头一样。一、本篇是中医的【生理基准线（baseline）定义】：开篇'平人'即确立正常脉象的量化基准——一呼脉再动、一吸脉亦再动、呼吸定息脉五动、闰以太息，共五个基本参数（呼吸耦合脉率≈72次/分，闰以太息为周期性代偿），'常以不病调病人'即以健康者基线校准病者偏差——与现代'参考范围/正常值'及'以自身为对照的动态监测'思想完全同构；脉率分级（少气/病温/痹/死）即心率变异性与严重度分层的雏形。二、'胃气为本'是【系统韧性（resilience）判据】：胃气（一息四至、缓而有力）作为脉象的'韧性分量'，其有无决定生死——'有胃气则生、无胃气则死'即系统是否保有自组织/自愈余量的终极判据；四时平脉'春弦夏钩秋毛冬石'各'微'带胃气，'但X无胃'为死——'微'（轻度特征）与'但'（纯特征）的对比确立'特征-背景'分离诊断：病理特征必须叠加于胃气背景之上才属可治，纯病理而无背景即失稳。三、四时五脏脉'春胃微弦曰平…脏真散于肝'是【季节-器官-脉象三维映射表】：将四季（时间）与五脏</div>
+  </div>
+</div>
+
+<div class="footer">黄帝内经·素问18·平人气象论 · 知识网络课程教学</div>
+
+<script>
+const SUBS = [{"title": "第一段 · 接著我们看第18篇平人气…", "orig": "接著我们看第18篇平人气象论，岐伯说一个人一呼脉再动，在呼吸定息中间，这个闰以太息命曰平人，平人者不病也就无过与不及，常以不病调病人，这个人一呼脉一动，那如果人一呼脉三动，平人之常气，这里讲胃气啰，我们用胃气的有无，胃气的脉怎么看，人如果没有胃气，脉里面没有胃气，这是逆 逆者死，脉里面带一点胃气，就讲的是胃气，这都是胃气，胃气的脉带一点点弦，从平人日常气到胃，我们从脉的胃气有无", "talk": "这里先明确脉动的频数语义：人一呼，脉跳动两次；一吸，脉跳动两次；呼吸转换的定息之间，脉跳动一次。合起来，一呼再动两次，加定息一次，加一吸再动两次，共五次脉动，这就是平人脉搏跳动的频数，古称\"呼吸定息脉五动\"。请注意，这一语义只涉及脉搏的频数要素，并不涉及脉搏的其他要素——如节律是否整齐、有无结代；脉的长短是否恒定、有无短脉覆脉；脉的深浅是沉是浮——那些是另外的脉学要素，不可混为一谈。黄帝说正常人的脉是什么呢。脉再就是两次脉搏跳两次。呼吸之间有一段息是停掉了。所以一呼一息是脉是五动。是过与不及少于五次是不及的脉。所以我说你们平常练习脉的时候。这个呼吸是以医生的呼吸为主", "chart": null}, {"title": "第二段 · 毛甚曰今病…", "orig": "毛甚曰今病，那夏胃微钩曰平，这就代表有胃气，胃气太少了，胃气比较少了，已经没有胃气了，胃气如果是少，胃气都不够了", "talk": "你可以看到很多筋膜在里面。因为五脏六腑里面都有筋。所以你在肝脉春天的时候。结果你在夏天摸到冬天的脉", "chart": null}, {"title": "第三段 · 有胃气 则生…", "orig": "有胃气 则生，那病人没有胃气，你把他胃气救回来，胃气会回来，代表他胃气，贯鬲络肺，其动应衣，胃气的根的地方，胃气根的地方，并在终结而横有积", "talk": "你可以看到很多筋膜在里面。因为五脏六腑里面都有筋。所以你在肝脉春天的时候。结果你在夏天摸到冬天的脉", "chart": null}, {"title": "第四段 · 其动应衣…", "orig": "其动应衣，盛喘数绝著", "talk": "你可以看到很多筋膜在里面。因为五脏六腑里面都有筋。所以你在肝脉春天的时候。结果你在夏天摸到冬天的脉", "chart": null}, {"title": "第五段 · 是正常的胃气的脉…", "orig": "是正常的胃气的脉", "talk": "阻绝食物是因为靠心和小肠。很多人胃下垂就是这样子", "chart": null}, {"title": "第六段 · 所以脉得四时顺…", "orig": "所以脉得四时顺，如果遇到真脏脉，这个名人真脏脉", "talk": "阻绝食物是因为靠心和小肠。很多人胃下垂就是这样子", "chart": null}, {"title": "第七段 · 来 面肿曰风…", "orig": "来 面肿曰风", "talk": "如果有黑黑的在这边出现。所以你就commonsense。他就会把电风扇关掉。那为什么我们要知道这个", "chart": null}, {"title": "第八段 · 脉有逆从四时…", "orig": "脉有逆从四时，春夏而脉瘦，秋冬而脉浮大，命曰逆四时也，这是逆四时，逆四时都是凶，风热而脉静，这个叫反四时业，有逆四时跟反四时，我们叫反四时，都是逆四时，胃气的脉，本身人以水谷为本，今天胃气才会有生骂，所以胃气是来自外来的食物，脉没有胃气的，就不得胃气，脉不得胃气者", "talk": "如果有黑黑的在这边出现。所以你就commonsense。他就会把电风扇关掉。那为什么我们要知道这个", "chart": null}, {"title": "第九段 · 已经没有胃气了…", "orig": "已经没有胃气了，但是不是真脏脉，它的胃气还在那里，胃气没有的时候，而且完全没有胃气，但真脏脉是透尺透寸，在平人气象论，夏天以胃气为本，一定要有胃气，这是有胃气，都没有胃气了，胃气要准备上枝了", "talk": "有太阳偏少阳偏的阳明偏。那病如果在脾肤表面的时候。太阳证我们分很多的处方。我们就研到这个下堂课来讲。当然这一段讲的都是脉诊。而且数度是一息五至左右。所以这是基本的一个概念", "chart": null}, {"title": "第十段 · 已经没有胃气了…", "orig": "已经没有胃气了，没有胃气的时候，那秋雨胃气会不会", "talk": "大陆过去古人的文字写得很好。就好像你摸到一个水管里面。你摸上去好像是弹石头一样。一、本篇是中医的【生理基准线（baseline）定义】：开篇'平人'即确立正常脉象的量化基准——一呼脉再动、一吸脉亦再动、呼吸定息脉五动、闰以太息，共五个基本参数（呼吸耦合脉率≈72次/分，闰以太息为周期性代偿），'常以不病调病人'即以健康者基线校准病者偏差——与现代'参考范围/正常值'及'以自身为对照的动态监测'思想完全同构；脉率分级（少气/病温/痹/死）即心率变异性与严重度分层的雏形。二、'胃气为本'是【系统韧性（resilience）判据】：胃气（一息四至、缓而有力）作为脉象的'韧性分量'，其有无决定生死——'有胃气则生、无胃气则死'即系统是否保有自组织/自愈余量的终极判据；四时平脉'春弦夏钩秋毛冬石'各'微'带胃气，'但X无胃'为死——'微'（轻度特征）与'但'（纯特征）的对比确立'特征-背景'分离诊断：病理特征必须叠加于胃气背景之上才属可治，纯病理而无背景即失稳。三、四时五脏脉'春胃微弦曰平…脏真散于肝'是【季节-器官-脉象三维映射表】：将四季（时间）与五脏", "chart": null}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capOrig = document.getElementById('capOrig');
+const capTalk = document.getElementById('capTalk');
+const SECS = document.querySelectorAll('.sec');
+const CAP_LEAD = 1.8;   // 文字先于语音出现(≤2s, 视觉比听觉敏感)
+const SEG_DUR = 20;     // 段参考时长(比例)
+const totalRef = SUBS.length * SEG_DUR;
+
+function setCap(s, on) {
+  capSec.classList.toggle('cap-gone', !on);
+  capOrig.classList.toggle('cap-gone', !on);
+  capTalk.classList.toggle('cap-gone', !on);
+  if (on && s) {
+    capSec.textContent = '\u258d' + s.title;
+    capOrig.textContent = s.orig;            // 原文全文
+    capTalk.textContent = s.talk;            // 讲解全文（不截断: 上下文完整防误解）
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = s.chart
+      ? '<div class="lbl">📊 图表</div><img src="' + s.chart + '" style="max-height:130px;border-radius:6px;" alt="图表">'
+      : '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（本段无图表）</span>';
+  }
+}
+
+// 段间衔接: 上段已讲完→撤退并显示衔接上下文（防断章误解）
+function showBridge(idx) {
+  const prev = SUBS[idx - 1];
+  const next = SUBS[idx];
+  if (prev) {
+    const tail = prev.talk.length > 40 ? prev.talk.slice(-40) : prev.talk;
+    capSec.textContent = '\u258d第' + '一二三四五六七八九十'[idx - 1] + '段已讲完';
+    capOrig.textContent = '…' + tail;
+    capTalk.textContent = '（片刻思考——下一段开讲：' + next.title + '）';
+    const cc = document.getElementById('capChart');
+    cc.innerHTML = '<div class="lbl">📊 图表</div><span style="color:#5a7d6a;font-size:13px;">（衔接中）</span>';
+  }
+}
+
+function markSec(idx) {
+  SECS.forEach(function (el, k) {
+    const n = k + 1;
+    el.classList.toggle('now', n === idx);
+    el.classList.toggle('done', n < idx);   // 已讲完: 弱化保留(上下文可回看)
+  });
+}
+
+v.addEventListener('timeupdate', function () {
+  const frac = (v.currentTime || 0) / (v.duration || 600);
+  const tRef = frac * totalRef;
+  // 语音所在段（文字窗口: 领先 CAP_LEAD 出现, 段尾+0.8s 撤退）
+  let idx = Math.floor(tRef / SEG_DUR);
+  if (idx < 0) idx = 0;
+  if (idx >= SUBS.length) idx = SUBS.length - 1;
+  const showStart = idx * SEG_DUR - CAP_LEAD;          // 文字早于语音 1.8s
+  const retreat = idx * SEG_DUR + SEG_DUR + 0.8;       // 语义结束(段尾+0.8s)撤退
+  if (tRef >= showStart && tRef <= retreat) {
+    setCap(SUBS[idx], true);
+  } else if (tRef < showStart) {
+    showBridge(idx);                                   // 衔接期: 上段尾句+下段预告
+  } else {
+    showBridge(Math.min(idx + 1, SUBS.length - 1));    // 撤退期: 衔接上下文
+  }
+  markSec(idx);
+});
+// 自动播放（静音起步, 交互开声）
+v.muted = true; v.play().catch(function () {});
+const _un = function () { v.muted = false; };
+document.addEventListener('click', _un, { once: true });
+document.addEventListener('keydown', _un, { once: true });
+</script>
+</body>
+</html>
