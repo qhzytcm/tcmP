@@ -100,19 +100,50 @@ def main():
     ap.add_argument('--force-unlock', action='store_true')
     ap.add_argument('--only-complete', action='store_true',
                     help='仅矫正「三段齐备」的单元（跳过残缺碎片，约省 40% 时间）')
+    ap.add_argument('--redo-nopunct', action='store_true',
+                    help='**只重跑「当前最优文本无标点」的单元**（标点补全专项）')
     a = ap.parse_args()
     acquire_lock(force=a.force_unlock)
     units = json.load(open(UNITS, encoding='utf-8'))
     if a.only_complete:
         keep = sum(1 for u in units if all(u['has'].values()))
         print(f'[--only-complete] 仅矫正三段齐备单元：{keep} / {len(units)}', flush=True)
+    if a.redo_nopunct:
+        # 找出当前最优文本无标点的单元 → 从已完成集合剔除 → 触发重跑
+        best = {}
+        if os.path.exists(OUTL):
+            for line in open(OUTL, encoding='utf-8', errors='replace'):
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    r = json.loads(line)
+                except Exception:
+                    continue
+                if r['i'] not in best or (r.get('ok') and not best[r['i']].get('ok')):
+                    best[r['i']] = r
+        PUNCT = '，。、；：？！'
+        tgt = set()
+        for i, u in enumerate(units):
+            r = best.get(i)
+            t = (r['out'] if (r and r.get('ok')) else u['body']) if r else u['body']
+            if sum(t.count(c) for c in PUNCT) == 0 and len(t) >= 8:
+                tgt.add(i)
+        print(f'[--redo-nopunct] 目标（无标点）单元：{len(tgt)}', flush=True)
+        globals()['_REDO'] = tgt
     ds = done_set()
+    if globals().get('_REDO'):
+        _r = set(globals()['_REDO'])
+        ds -= _r                                  # 目标集从「已完成」剔除 → 触发重跑
+        print(f'[--redo-nopunct] 已从完成集剔除 {len(_r)} 个 → 待处理 {len(_r)}', flush=True)
     print(f'单元 {len(units)} | 已完成 {len(ds)} | 待处理 {len(units)-len(ds)}', flush=True)
     t0 = time.time(); n = ok = rej = err = 0
     with open(OUTL, 'a', encoding='utf-8') as f:
         for i, u in enumerate(units):
             if i in ds:
                 continue
+            if globals().get('_REDO') is not None and i not in globals()['_REDO']:
+                continue                      # --redo-nopunct：只跑目标集
             if a.only_complete and not all(u['has'].values()):
                 continue
             if a.limit and n >= a.limit:

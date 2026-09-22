@@ -7,8 +7,9 @@ import os, sys, time
 import win32com.client as win32
 
 path = sys.argv[1] if len(sys.argv) > 1 else r'C:\Users\DELL\Desktop\病源辞典_简体横排版.docx'
+NO_SAVE = '--no-save' in sys.argv      # 只导出 PDF，**不回写 docx**（防 Word 改写字体/样式）
 path = os.path.abspath(path)
-print('目标:', path, os.path.getsize(path), 'bytes', flush=True)
+print('目标:', path, os.path.getsize(path), 'bytes', '| 回写 docx:', not NO_SAVE, flush=True)
 
 app = win32.gencache.EnsureDispatch('Word.Application')
 app.Visible = False
@@ -27,7 +28,11 @@ try:
     doc.Repaginate()
     n2 = doc.ComputeStatistics(2)
     print(f'更新后：{n2} 页', flush=True)
-    doc.Save()
+    if not NO_SAVE:
+        doc.Save()
+        print('docx 已回写', flush=True)
+    else:
+        print('（--no-save：不回写 docx，保持原字体/样式）', flush=True)
     pdf = os.path.splitext(path)[0] + '.pdf'
     doc.ExportAsFixedFormat(pdf, 17)            # wdExportFormatPDF
     print(f'PDF: {pdf} {os.path.getsize(pdf)} bytes | {n2} 页', flush=True)

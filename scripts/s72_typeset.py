@@ -18,6 +18,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.section import WD_SECTION
 from s11_docx import (_set_font, set_style_font, set_columns,
                       add_bookmark, add_pageref, add_page_field, body_para)
+from s77_clean import clean as clean_noise          # 扫描污染噪声清理
 
 DESKTOP = r'C:\Users\DELL\Desktop'
 DATA = os.path.join(ROOT, 'data')
@@ -44,6 +45,7 @@ def load_units():
     for i, u in enumerate(U):
         r = outs.get(i)
         txt = (r['out'] if (r and r.get('ok')) else u['body']) if r else u['body']
+        txt = clean_noise(txt)                        # 去扫描污染噪声
         flag = 'LLM校' if (r and r.get('ok')) else '原'
         out.append({'name': u['name'], 'body': txt, 'flag': flag, 'src': u['body']})
     return out
@@ -60,7 +62,20 @@ def stroke_keys(name, st):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--out', default=os.path.join(DESKTOP, '病源辞典_简体横排版.docx'))
+    ap.add_argument('--pagerefs', default=os.path.join(DIST, 'pdf3_pagerefs.json'),
+                    help='已解析的真实页码 JSON（由 s74 从 Word 处理副本抽取）')
     a = ap.parse_args()
+    PR = {}
+    if os.path.exists(a.pagerefs):
+        try:
+            PR = json.load(open(a.pagerefs, encoding='utf-8'))
+            print(f'页码回注: {len(PR)} 条（{os.path.basename(a.pagerefs)}）')
+        except Exception as e:
+            print('页码文件读取失败:', e)
+
+    def pg(key):
+        v = PR.get(key)
+        return str(v) if v else '1'
     units = load_units()
     ST = json.load(open(os.path.join(DATA, 'strokes.json'), encoding='utf-8'))
     print(f'单元 {len(units)} | 笔画表 {len(ST)}')
@@ -138,18 +153,25 @@ def main():
                     ('sec_body', '正文（词条 0001–%s）' % (units[-1]['no'] if units else '?'))]:
         p = doc.add_paragraph()
         r = p.add_run(cn + '　…………　P'); _set_font(r, '仿宋', 10.5)
-        add_pageref(p, key, cached='1')
+        add_pageref(p, key, cached=pg(key))
     doc.add_page_break()
 
-    # ── 病名目录（原书目录流）──
-    h = doc.add_paragraph(); r = h.add_run('病名目录（据原书 病名目录 01–47 页）')
+    # ── 病名目录（由正文单元生成：阅读序 + 真实页码；4 栏紧凑排版）──
+    # 说明：原书 OCR 目录串含大量点号/页码残渣（`. ×2122 · ×833`），
+    #       且用词表抽取会产出假名（心痛/伤寒/大肠…），故**不直接采用**；
+    #       原书目录原样保留在《03-bycd-校勘底本.docx》中供校对。
+    h = doc.add_paragraph(); r = h.add_run('病名目录（按原书阅读序 · 页码为本文档真实页码）')
     _set_font(r, '黑体', 14, bold=True); add_bookmark(h, 'sec_toc', 900005)
-    try:
-        toc = json.load(open(os.path.join(DIST, 'pdf3_toc_stream.json'), encoding='utf-8'))['pages']
-        for it in toc:
-            body_para(doc, it['text'], 10.5, indent=False)
-    except Exception as e:
-        body_para(doc, f'（目录数据缺失：{e}）', 10.5, indent=False)
+    toc_sec = doc.add_section(WD_SECTION.CONTINUOUS)
+    set_columns(toc_sec, 4)
+    for u in units:
+        p = doc.add_paragraph()
+        p.paragraph_format.space_after = Pt(0)
+        r = p.add_run(f'{u["name"]}'); _set_font(r, '仿宋', 9)
+        r2 = p.add_run('　P'); _set_font(r2, '仿宋', 9)
+        add_pageref(p, f'e{u["no"]}', cached=pg(f'e{u["no"]}'))
+    back = doc.add_section(WD_SECTION.CONTINUOUS)
+    set_columns(back, 1)
     doc.add_page_break()
 
     # ── 笔画索引（PAGEREF 页码）──
@@ -167,7 +189,7 @@ def main():
             _set_font(rr, '黑体', 11, bold=True)
         p = doc.add_paragraph()
         r = p.add_run(f'{u["no"]}　{u["name"]}　···　P'); _set_font(r, '仿宋', 10.5)
-        add_pageref(p, f'e{u["no"]}', cached='1')
+        add_pageref(p, f'e{u["no"]}', cached=pg(f'e{u["no"]}'))
     doc.add_page_break()
 
     # ── 正文（双栏 · 横行）──
