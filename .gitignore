@@ -52,3 +52,27 @@ docs/视频/*.log
 /dist/
 # 临时/杂物
 *.tmp
+
+# ===== 2026-09-10 病源辞典(03底本)流水线：大体积中间件不入库 =====
+.venv-api/
+.venv*/
+# OCR 原件目录（可由 scripts/s1|s33|s48 重新生成，共约 45MB）
+data/bingyuan_ocr/
+data/bingyuan2_ocr/
+data/bingyuan3_ocr/
+# 分页级切图与临时导出
+data/ocr_pages/
+dist/
+# 原始 PDF（503MB 等）
+*.pdf
+# 异常/归档中间件
+data/anom_out*.json
+data/anom_repair.json
+data/_archive_s20/
+data/*.禁归档*.jsonl
+# 旧版词条中间件（V3-V13 逐版迭代产物）
+data/bingyuan_terms_v*.json
+data/bingyuan_terms_icd.json
+data/bingyuan_entries.json
+# 词表缓存（可从语料重建）
+data/tcm_ref_lexicon.json

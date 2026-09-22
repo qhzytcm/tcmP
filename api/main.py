@@ -17,11 +17,13 @@ from pydantic import BaseModel
 SAGE_DIR = Path(__file__).parent.parent / "sages"
 AGENT_DIR = Path(__file__).parent.parent / "agents"
 KG_DIR = Path(__file__).parent.parent / "kg-schema"
-DEEPSEEK_API = "https://api.deepseek.com/v1/chat/completions"
-DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "") or "«sk-placeholder»"
-# 检查密钥是否有效（sk-开头+至少20字符）
-LLM_AVAILABLE = bool(DEEPSEEK_KEY.startswith("sk-") and len(DEEPSEEK_KEY) > 20)
-MODEL = "deepseek-chat"
+DEEPSEEK_API = os.environ.get("LLM_BASE", "https://api.deepseek.com/v1/chat/completions")
+DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+# 可用性：sk- 形态密钥，或显式指定 LLM_BASE（本地 ollama / 内网 OpenAI 兼容端点无需 sk-）
+LLM_AVAILABLE = bool(DEEPSEEK_KEY) and ((DEEPSEEK_KEY.startswith("sk-") and len(DEEPSEEK_KEY) > 20)
+                                        or bool(os.environ.get("LLM_BASE")))
+MODEL = os.environ.get("LLM_MODEL", "deepseek-chat")
+LLM_TIMEOUT = int(os.environ.get("LLM_TIMEOUT", "180"))   # 本地 CPU 推理较慢，默认放宽到 180s
 
 app = FastAPI(title="医圣人格API v2", version="2.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -136,7 +138,7 @@ def call_llm(system_prompt: str, user_prompt: str, max_tokens: int = 1024) -> st
     req = urllib.request.Request(DEEPSEEK_API, data=payload,
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {DEEPSEEK_KEY}"})
     try:
-        resp = urllib.request.urlopen(req, timeout=60)
+        resp = urllib.request.urlopen(req, timeout=LLM_TIMEOUT)
         data = json.loads(resp.read())
         return data["choices"][0]["message"]["content"]
     except Exception as e:
