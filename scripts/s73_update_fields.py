@@ -7,7 +7,9 @@ import os, sys, time
 import win32com.client as win32
 
 path = sys.argv[1] if len(sys.argv) > 1 else r'C:\Users\DELL\Desktop\病源辞典_简体横排版.docx'
-NO_SAVE = '--no-save' in sys.argv      # 只导出 PDF，**不回写 docx**（防 Word 改写字体/样式）
+# ⚠️ **默认不回写 docx**：Word 保存会重写字体/样式，毁掉 python-docx 设的「五号仿宋」。
+#    确需回写请显式加 --save（一般只在「第一遍：算页码」时用，且用临时副本）。
+NO_SAVE = '--save' not in sys.argv
 path = os.path.abspath(path)
 print('目标:', path, os.path.getsize(path), 'bytes', '| 回写 docx:', not NO_SAVE, flush=True)
 
