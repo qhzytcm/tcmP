@@ -1,0 +1,328 @@
+#!/usr/bin/env python3
+"""Direct JSON generation: Batch 005 (消化+泌尿, 20 DSUs, DSU-00044~00063)"""
+import json
+
+def save(data):
+    with open(r'C:\Users\DELL\textbook-project\kg-schema\samples\dsu-samples-005.json', 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"Saved {len(data)} DSUs to dsu-samples-005.json")
+
+u = []
+
+def add(item):
+    u.append(item)
+
+# ============ DSU-00044 慢性便秘 ============
+add({
+    "id": "DSU-00044", "disease_side": {"disease_name": "慢性便秘", "icd_code": "DB30.0", "category": "消化系统疾病",
+        "molecular_targets": ["5-HT4受体", "CFTR氯离子通道", "M3毒蕈碱受体", "c-Kit/ICC间质细胞"],
+        "gene_pathways": ["5-HT信号通路（肠道动力调节）", "cGMP-PKG平滑肌松弛通路", "水电解质转运CFTR/NHE3通路", "Wnt/β-catenin肠道神经发育通路"],
+        "biomarkers": ["结肠传输试验>72h", "直肠肛门测压异常", "Bristol大便分型1-2型", "肠道菌群双歧杆菌/拟杆菌比例下降"],
+        "epidemiology": "全球成人患病率约14%，女性高于男性约2:1，65岁以上达30-40%",
+        "western_treatment": "生活方式调整；渗透性泻药（聚乙二醇、乳果糖）；促动力药（普芦卡必利）；促分泌药（利那洛肽）；生物反馈治疗"},
+    "syndrome_side": {"syndrome_name": "气虚便秘证", "pattern_type": "脾肾阳虚证", "zangfu": "大肠·脾·肺", "six_channels": "太阴病",
+        "eight_principles": {"yin_yang": "阴证", "exterior_interior": "里证", "cold_heat": "寒证", "deficiency_excess": "虚证"},
+        "key_symptoms": ["大便不干硬但排便费力", "排便周期延长3-7天一行", "虽有便意但努挣乏力", "便后疲乏汗出"],
+        "secondary_symptoms": ["气短懒言", "神疲乏力", "纳食减少", "面色萎黄", "腹部坠胀感"],
+        "tongue": "舌淡胖边有齿痕苔薄白", "pulse": "脉虚软无力或细弱",
+        "field_theory": "肺主气司宣发肃降，与大肠相表里。脾主运化升清，为气血生化之源。肺脾气虚则中气下陷，精微不能上输反陷于下，大肠传送无力，故虽有大便但努挣乏力、便后气短。气虚肠道蠕动无力，糟粕停滞肠道时间过长，水分过度吸收，进一步加重排便困难。此为虚秘之典型——虚在气、实在秘。",
+        "classical_basis": "《伤寒论》第247条趺阳脉浮而涩——仲景论脾约便秘。"},
+    "bridge": {"mapping_type": "机制对应",
+        "mapping_description": "气虚便秘证的排便努挣乏力、便后疲乏特征与慢性便秘中结肠动力不足（慢传输型）、盆底肌协调障碍一致。气对应于肠蠕动能量，气虚对应于ICC网络功能下降和线粒体能量代谢不足。",
+        "biological_basis": "肠道ICC数量减少→慢波电活动异常→结肠传输减慢（\"气虚推送无力\"）+ 盆底肌协调障碍（\"中气下陷\"）+ 肠上皮AQP3/AQP4水通道表达异常→水分过度吸收→粪便干结",
+        "evidence_level": "B级-单中心RCT",
+        "key_references": ["《中国慢性便秘诊治指南》2024", "《中医内科学·便秘》十三五规划教材", "Camilleri M. Nat Rev Dis Primers 2017"]},
+    "clinical": {"recommended_formula": "黄芪汤", "formula_source": "《金匮翼》",
+        "modifications": [
+            {"condition": "气虚甚、肛门坠胀", "adjustment": "加升麻、柴胡、党参、白术升阳举陷"},
+            {"condition": "血虚面色苍白", "adjustment": "合四物汤加当归、首乌、柏子仁养血润肠"},
+            {"condition": "腹胀明显", "adjustment": "加枳壳、厚朴、莱菔子行气除胀"},
+            {"condition": "老年肾虚腰酸", "adjustment": "加肉苁蓉、牛膝、锁阳温补肾阳"}],
+        "acupuncture_rx": ["天枢", "大肠俞", "上巨虚", "支沟", "气海", "足三里", "关元"],
+        "dietary_therapy": "黄芪山药粥、芝麻核桃糊、红薯蜂蜜饮；忌浓茶、辛辣劫阴之品",
+        "prognosis": "绝大多数患者症状改善；老年患者需长期维持治疗",
+        "caution": "避免长期依赖刺激性泻药（番泻叶、大黄）以免结肠黑变病；排除器质性便秘"},
+    "teaching": {"difficulty": 2, "stage": "住院医-1",
+        "sage_ref_zhang": "《伤寒论》第247条：\"趺阳脉浮而涩，浮则胃气强，涩则小便数，浮涩相搏，大便则硬，麻子仁丸主之。\"——仲景论胃强脾弱之\"脾约\"便秘病机，开滋阴润肠法之源。",
+        "sage_ref_sun": "《备急千金要方》卷十五·脾脏下·秘涩第六：孙思邈记载了直肠纳药的外治法。",
+        "typical_case": "患者赵某，女，68岁。排便困难5年，3-5天一次，努挣后汗出心慌。曾间断服用番泻叶。刻诊：面色萎黄，神疲懒言，舌淡胖苔薄白，脉细弱。予黄芪汤加减：黄芪30g、党参15g、白术15g、火麻仁15g、当归10g、枳壳10g、升麻6g、柴胡6g、白蜜15g冲服。7剂后排便间隔缩短为2-3天，二诊原方继服14剂大便每日一行。嘱常服黄芪山药粥巩固，半年随访未复发。",
+        "teaching_points": ["虚秘与实秘的鉴别要点——虚秘不硬但努挣乏力，实秘干燥需攻下", "黄芪汤补气润肠的组方思路——塞因塞用以补开塞", "刺激性泻药的依赖性与中医药长期调治的优势"],
+        "exam_questions": ["脾约便秘的病机为什么是\"胃强脾弱\"？麻子仁丸如何针对这一病机？", "试述气虚秘、血虚秘、阴虚秘、阳虚秘的鉴别要点和代表方剂？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00045 慢性腹泻 ============
+add({
+    "id": "DSU-00045", "disease_side": {"disease_name": "慢性腹泻", "icd_code": "ME07.1", "category": "消化系统疾病",
+        "molecular_targets": ["CFTR氯离子通道", "5-HT3受体（肠道分泌调控）", "阿片受体μ亚型", "TLR4（肠道免疫调控）"],
+        "gene_pathways": ["cAMP-PKA肠道分泌通路", "TLR4/MyD88/NF-κB炎症通路", "肠-脑轴5-HT信号通路", "肠道黏膜屏障ZO-1/Occludin紧密连接通路"],
+        "biomarkers": ["粪便钙卫蛋白升高", "粪便乳铁蛋白升高", "肠道菌群16S rRNA测序异常", "D-木糖吸收试验降低"],
+        "epidemiology": "我国慢性腹泻患病率约5-10%，好发于青壮年，女性略高，农村高于城市",
+        "western_treatment": "对症止泻（洛哌丁胺、蒙脱石散）；益生菌调节；抗生素用于细菌过度生长"},
+    "syndrome_side": {"syndrome_name": "脾虚湿盛证", "pattern_type": "寒湿困脾证", "zangfu": "脾·胃·大肠", "six_channels": "太阴病",
+        "eight_principles": {"yin_yang": "阴证", "exterior_interior": "里证", "cold_heat": "寒证", "deficiency_excess": "虚证"},
+        "key_symptoms": ["大便溏薄或水样便", "反复发作迁延不愈", "食后即泻或餐后便意", "腹部隐痛喜按"],
+        "secondary_symptoms": ["脘腹胀满", "食欲不振", "面色萎黄", "神疲乏力", "肠鸣漉漉"],
+        "tongue": "舌淡胖苔白腻或白滑", "pulse": "脉濡缓或细弱",
+        "field_theory": "脾主运化水湿，为后天之本。脾虚则运化失职，水谷不化精微，反生湿浊，下注大肠则为泄泻。湿为阴邪，其性重浊黏滞，故泄泻反复发作、缠绵难愈。脾虚清气不升则食后即泻。湿阻中焦气机不利则脘腹胀满、肠鸣漉漉。脾虚气血生化不足则面色萎黄、神疲乏力。治当健脾化湿。",
+        "classical_basis": "《素问·脏气法时论》：\"脾病者……虚则腹满肠鸣，飧泄食不化。\"——《景岳全书·泄泻》：\"泄泻之本，无不由于脾胃。\""},
+    "bridge": {"mapping_type": "间接对应",
+        "mapping_description": "脾虚湿盛证的腹泻食后即作、便溏肠鸣特征对应慢性腹泻：肠黏膜屏障功能下降（对应脾虚）、肠道分泌渗透异常（对应湿盛）、肠道菌群失调。",
+        "biological_basis": "肠黏膜紧密连接蛋白ZO-1/Occludin表达下降→肠屏障受损（\"脾虚失运\"）→肠腔抗原渗入黏膜→TLR4激活→NF-κB至肠道炎症→肠上皮CFTR通道异常→肠道水电解质分泌增加（\"湿盛下注\"）→腹泻",
+        "evidence_level": "C级-队列研究",
+        "key_references": ["《中医内科学·泄泻》十三五规划教材", "《慢性腹泻基层诊疗指南》", "张声生等.脾虚证的生物学基础研究"]},
+    "clinical": {"recommended_formula": "参苓白术散", "formula_source": "《太平惠民和剂局方》",
+        "modifications": [
+            {"condition": "水样便、肠鸣甚", "adjustment": "加车前子、泽泻利小便实大便"},
+            {"condition": "腹痛怕冷", "adjustment": "加炮姜、煨肉豆蔻、补骨脂温脾暖肠"},
+            {"condition": "纳差、食后胀甚", "adjustment": "加砂仁、神曲、炒谷麦芽醒脾消食"},
+            {"condition": "久泻脱肛", "adjustment": "合补中益气汤升阳举陷"}],
+        "acupuncture_rx": ["天枢", "足三里", "脾俞", "中脘", "关元", "阴陵泉", "三阴交"],
+        "dietary_therapy": "山药芡实粥、莲子薏米粥、炒面糊、蒸苹果；忌生冷油腻海鲜牛奶",
+        "prognosis": "多数患者经调治后可控制症状；部分可痊愈；需注意慢性病程中营养状态",
+        "caution": "排除感染性腹泻、炎症性肠病、结直肠肿瘤等器质性疾病；长期腹泻需监测电解质和营养"},
+    "teaching": {"difficulty": 2, "stage": "住院医-1",
+        "sage_ref_zhang": "《伤寒论》第277条：\"自利不渴者，属太阴，以其藏有寒故也，当温之，宜服四逆辈。\"",
+        "sage_ref_sun": "《备急千金要方》卷十五·脾脏下·冷痢第八：孙思邈论久痢以温涩法为主。",
+        "typical_case": "患者刘某，男，42岁。反复腹泻3年，大便溏薄日3-4次，餐后明显，腹部隐痛喜按，神疲纳差。肠镜无异常。舌淡胖苔白腻，脉濡细。予参苓白术散：党参15g、白术15g、茯苓15g、白扁豆15g、莲子肉12g、山药15g、薏苡仁20g、砂仁6g、桔梗6g、炙甘草6g。14剂后大便减为日1-2次成形。加黄芪20g升麻6g续服14剂，大便正常，体重增加2kg。随访3月未复发。",
+        "teaching_points": ["\"湿盛则濡泄\"——从水液代谢理解泄泻病机", "参苓白术散培土生金健脾渗湿的配伍特色", "利小便实大便法（分利法）的理论内涵"],
+        "exam_questions": ["参苓白术散中桔梗的作用是什么？体现了培土生金理论的哪些内涵？", "试述脾虚泄泻与肾虚泄泻（五更泻）的鉴别要点？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00046 慢性胃炎 ============
+add({
+    "id": "DSU-00046", "disease_side": {"disease_name": "慢性胃炎", "icd_code": "DA42.7", "category": "消化系统疾病",
+        "molecular_targets": ["H+/K+-ATP酶质子泵", "胃泌素受体CCK2R", "COX-2环氧化酶", "EGFR表皮生长因子受体"],
+        "gene_pathways": ["NF-κB胃黏膜炎症通路", "Wnt/β-catenin胃黏膜修复通路", "Hedgehog胃腺体分化通路", "TLR2/4幽门螺杆菌识别通路"],
+        "biomarkers": ["胃镜+病理（金标准）", "幽门螺杆菌13C呼气试验", "胃蛋白酶原I/II比值PGI/PGII", "G-17胃泌素-17"],
+        "epidemiology": "我国成人患病率>50%，Hp感染率约55%，慢性萎缩性胃炎癌变风险约0.5-1%/年",
+        "western_treatment": "Hp阳性四联疗法（PPI+铋剂+2种抗生素）；抑酸PPI/H2RA；胃黏膜保护剂（瑞巴派特、替普瑞酮）"},
+    "syndrome_side": {"syndrome_name": "脾胃湿热证", "pattern_type": "脾胃湿热证", "zangfu": "脾·胃", "six_channels": "太阴病",
+        "eight_principles": {"yin_yang": "阳证", "exterior_interior": "里证", "cold_heat": "热证", "deficiency_excess": "实证"},
+        "key_symptoms": ["胃脘灼热胀痛", "口苦口黏", "泛酸嘈杂", "胃纳呆滞"],
+        "secondary_symptoms": ["脘腹痞闷", "渴不欲饮", "大便黏滞不爽", "身重困倦", "恶心"],
+        "tongue": "舌红苔黄腻", "pulse": "脉滑数或濡数",
+        "field_theory": "脾胃居中焦主运化，为气机升降枢纽。饮食不节、嗜食辛辣厚味损伤脾胃，运化失职则湿浊内停。湿热相合如油入面，胶结难解。湿热蕴胃阻滞气机则胃脘痞闷胀痛；热邪偏盛则灼热泛酸；湿热上蒸则口苦口黏；湿困中焦则纳呆身重。黄腻苔和滑数脉是湿热证的典型特征。",
+        "classical_basis": "《温病条辨·中焦篇》薛生白论湿热。半夏泻心汤辛开苦降法为后世治疗脾胃湿热证的核心组方法则。"},
+    "bridge": {"mapping_type": "间接对应",
+        "mapping_description": "脾胃湿热证的胃脘灼热、泛酸、黄腻苔特征对应Hp感染引起的胃黏膜炎症反应、中性粒细胞浸润、胃酸分泌紊乱。\"湿热\"对应炎症（热）加黏液水肿（湿）。",
+        "biological_basis": "Hp感染→胃黏膜TLR2/4激活→MyD88/NF-κB→IL-8、TNF-α、IL-1β↑→中性粒细胞浸润（\"热\"）+ 充血水肿黏液分泌异常（\"湿\"）→胃腺体破坏→PGI/PGII下降→胃黏膜萎缩/肠化→胃癌前病变",
+        "evidence_level": "A级-多中心RCT",
+        "key_references": ["《中国慢性胃炎诊治指南》2023", "《慢性胃炎中医诊疗专家共识》", "《中医内科学·胃痛/痞满》十三五教材"]},
+    "clinical": {"recommended_formula": "连朴饮合半夏泻心汤", "formula_source": "《霍乱论》合《伤寒论》",
+        "modifications": [
+            {"condition": "泛酸明显", "adjustment": "加煅瓦楞子、海螵蛸、浙贝母制酸"},
+            {"condition": "Hp阳性", "adjustment": "加蒲公英、黄连、半枝莲清热解毒"},
+            {"condition": "痞满甚", "adjustment": "加枳实、厚朴、大腹皮行气消痞"},
+            {"condition": "大便黏滞不爽", "adjustment": "加火麻仁、冬瓜仁、槟榔导滞通便"}],
+        "acupuncture_rx": ["中脘", "足三里", "内关", "胃俞", "丰隆", "阴陵泉", "合谷"],
+        "dietary_therapy": "薏米赤豆粥、苦瓜炒蛋、冬瓜汤；忌辛辣油炸甜腻咖啡浓茶酒精",
+        "prognosis": "非萎缩性胃炎经治疗可逆；萎缩性胃炎伴肠化需定期随访1-2年胃镜",
+        "caution": "需行胃镜+病理明确萎缩/肠化程度；Hp必须根除；重视胃癌家族史和癌前病变监测"},
+    "teaching": {"difficulty": 3, "stage": "住院医-2",
+        "sage_ref_zhang": "《伤寒论》第149条：\"但满而不痛者，此为痞……宜半夏泻心汤。\"——仲景论寒热错杂、痞塞中焦，辛开苦降法，为后世治疗脾胃湿热证提供了核心组方法则。",
+        "sage_ref_sun": "《备急千金要方》卷十五·脾脏：孙思邈用温脾汤治久痢兼寒热错杂，体现消化系统寒热并见病证的治疗经验。",
+        "typical_case": "患者王某，男，35岁。胃脘胀痛灼热3个月，泛酸口苦纳差。胃镜示慢性非萎缩性胃炎伴糜烂，Hp(+)DOB值36。舌红苔黄厚腻，脉滑数。予连朴饮合半夏泻心汤加减：黄连6g、黄芩10g、厚朴10g、法半夏10g、干姜3g、党参10g、蒲公英20g、煅瓦楞子30g先煎。配合四联疗法。2周后Hp转阴。1月后胃镜复查糜烂愈合。半年随访未复发。",
+        "teaching_points": ["半夏泻心汤\"辛开苦降、寒热并调\"的配伍特点", "慢性胃炎\"Hp+湿热\"的双靶治疗策略", "舌苔黄腻是湿热证最直观的临床标志"],
+        "exam_questions": ["半夏泻心汤证的病机核心是\"寒热错杂\"，请从君臣佐使角度分析其配伍规律？", "慢性胃炎脾胃湿热证与肝胃不和证的鉴别要点？", "从\"炎-癌转化\"角度论述慢性萎缩性胃炎的癌变机制及中医药干预策略？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00047 消化性溃疡 ============
+add({
+    "id": "DSU-00047", "disease_side": {"disease_name": "消化性溃疡", "icd_code": "DA61", "category": "消化系统疾病",
+        "molecular_targets": ["H+/K+-ATP酶质子泵", "胃泌素受体CCK2R", "COX-1/COX-2环氧化酶", "EGFR胃黏膜修复受体"],
+        "gene_pathways": ["胃酸分泌信号通路（组胺/乙酰胆碱/胃泌素）", "NF-κB炎症通路", "VEGF血管新生通路（溃疡愈合）", "Hedgehog胃上皮修复通路"],
+        "biomarkers": ["胃镜（金标准）", "幽门螺杆菌检测", "便潜血试验", "血清胃泌素G-17"],
+        "epidemiology": "终身患病率约5-10%，十二指肠溃疡好发于青壮年，胃溃疡好发于中老年，男女比约3:1",
+        "western_treatment": "PPI抑酸（奥美拉唑、雷贝拉唑）；Hp根除四联疗法；胃黏膜保护剂（瑞巴派特、硫糖铝）"},
+    "syndrome_side": {"syndrome_name": "肝胃不和证", "pattern_type": "肝气郁结证", "zangfu": "肝·胃", "six_channels": "少阳病",
+        "eight_principles": {"yin_yang": "阳证", "exterior_interior": "半表半里证", "cold_heat": "热证", "deficiency_excess": "实证"},
+        "key_symptoms": ["胃脘胀痛连及两胁", "嗳气频作", "每因情志不畅加重", "泛酸嘈杂"],
+        "secondary_symptoms": ["烦躁易怒", "善太息", "纳食减少", "口苦咽干", "恶心呕吐"],
+        "tongue": "舌淡红苔薄白或薄黄", "pulse": "脉弦或弦数",
+        "field_theory": "肝主疏泄调畅气机，胃主受纳腐熟以降为和。肝气郁结疏泄失常，横逆犯胃，胃失和降，气机受阻不通则痛，故见胃脘胀痛连及两胁。气机逆乱向上则嗳气频作。肝郁日久化热，扰胃则泛酸嘈杂、口苦咽干。情志波动则症状加剧。弦脉为肝气郁结之典型脉象。肝为起病之源、胃为传病之所，治当疏肝理气和胃。",
+        "classical_basis": "《素问·六元正纪大论》：\"木郁之发……民病胃脘当心而痛。\"——《伤寒论》第96条小柴胡汤证论\"胸胁苦满、嘿嘿不欲饮食、心烦喜呕\"。"},
+    "bridge": {"mapping_type": "间接对应",
+        "mapping_description": "肝胃不和证的胃痛连胁、情志诱发特征对应消化性溃疡精神应激→HPA轴激活→胃酸增加、黏膜保护因子减少。肝郁对应交感神经激活，胃热对应胃酸胃蛋白酶分泌增加。",
+        "biological_basis": "精神应激→CRH/ACTH↑→糖皮质激素↑→胃黏膜黏液减少、前列腺素合成下降（\"肝郁\"）+ 迷走神经激活→胃泌素释放→壁细胞H+/K+-ATP酶激活→胃酸↑（\"胃热\"）+ Hp感染→脲酶→NH₃→黏膜屏障破坏→溃疡形成",
+        "evidence_level": "C级-队列研究",
+        "key_references": ["《消化性溃疡诊断与治疗共识》", "《中医内科学·胃痛》十三五规划教材"]},
+    "clinical": {"recommended_formula": "柴胡疏肝散", "formula_source": "《景岳全书》",
+        "modifications": [
+            {"condition": "泛酸明显", "adjustment": "加左金丸、煅瓦楞子、海螵蛸制酸"},
+            {"condition": "痛甚", "adjustment": "加延胡索、川楝子理气止痛"},
+            {"condition": "食少纳呆", "adjustment": "加神曲、炒麦芽、鸡内金消食开胃"},
+            {"condition": "大便色黑出血", "adjustment": "加白及、三七粉、仙鹤草止血"}],
+        "acupuncture_rx": ["中脘", "足三里", "期门", "太冲", "内关", "阳陵泉", "肝俞"],
+        "dietary_therapy": "苏打饼干、山药小米粥、卷心菜汁；忌酸辣刺激咖啡浓茶酒精",
+        "prognosis": "规范治疗后溃疡愈合率>90%；需根除Hp减少复发",
+        "caution": "PPI长期使用注意骨质疏松风险；NSAIDs相关溃疡需停用或换用COX-2抑制剂"},
+    "teaching": {"difficulty": 3, "stage": "住院医-2",
+        "sage_ref_zhang": "《伤寒论》第96条小柴胡汤证——仲景以\"胸胁苦满、嘿嘿不欲饮食、心烦喜呕\"等肝胃不和表现，开创从少阳论治消化系统疾病的先河。",
+        "sage_ref_sun": "《备急千金要方》卷十三·心脏·心腹痛第十一：孙思邈治疗心腹痛（包括胃脘痛）体现了肝胃同治思想。",
+        "typical_case": "患者李某，男，45岁。反复上腹痛3年，胃镜示十二指肠球部溃疡A1期，Hp(+)。每于工作压力大或情绪不佳时发作，胃脘胀痛及两胁。舌淡红苔薄黄，脉弦。予柴胡疏肝散加减合四联疗法7剂后疼痛明显减轻，1月后复查胃镜示溃疡愈合。嘱调畅情志规律饮食，半年随访未复发。",
+        "teaching_points": ["肝胃不和的病机特点——\"木郁克土\"理论在消化系统的应用", "消化性溃疡\"无酸无溃疡\"与中医\"胃热\"理论的对应关系", "Hp根除的中西医结合治疗策略"],
+        "exam_questions": ["肝胃不和证的病机核心是什么？柴胡疏肝散的组方原理？", "消化性溃疡的中医辨证分型有哪些？各型代表方剂是什么？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00048 胃食管反流病 ============
+add({
+    "id": "DSU-00048", "disease_side": {"disease_name": "胃食管反流病", "icd_code": "DA22", "category": "消化系统疾病",
+        "molecular_targets": ["食管下括约肌LES平滑肌受体", "一氧化氮合酶nNOS", "TGF-β食管纤维化因子", "PAR-2食管炎症受体"],
+        "gene_pathways": ["NO-cGMP平滑肌松弛通路", "NF-κB食管黏膜炎症通路", "酸敏感离子通道ASIC信号通路"],
+        "biomarkers": ["24h食管pH监测DeMeester评分>14.7", "胃镜LA分级A-D级", "阻抗-pH监测反流次数"],
+        "epidemiology": "我国每周反流症状患病率约12.5%，好发于中老年和肥胖者",
+        "western_treatment": "PPI抑酸一线治疗；促动力药（莫沙必利）；H2RA；抗反流手术（腹腔镜胃底折叠术）"},
+    "syndrome_side": {"syndrome_name": "肝胃郁热证", "pattern_type": "肝火上炎证", "zangfu": "肝·胃·食管", "six_channels": "阳明病",
+        "eight_principles": {"yin_yang": "阳证", "exterior_interior": "里证", "cold_heat": "热证", "deficiency_excess": "实证"},
+        "key_symptoms": ["胸骨后烧灼感烧心", "反酸反食", "嗳气上逆", "胸痛连及两胁"],
+        "secondary_symptoms": ["口干口苦", "咽异物感", "烦躁易怒", "嘈杂", "食后加重"],
+        "tongue": "舌红苔黄腻或薄黄", "pulse": "脉弦滑或弦数",
+        "field_theory": "肝主疏泄胃主通降。肝气郁结日久化热，肝热横逆犯胃，胃气挟肝热上逆，携胃酸上泛食管则为烧心反酸。气机逆乱于胸膈之间，则胸骨后灼痛连及两胁。肝火上扰清窍则口干口苦烦躁易怒。痰热随胃气上逆结于咽喉则有异物感（梅核气）。此为\"肝热犯胃、胃气上逆\"——以降逆制酸为要。",
+        "classical_basis": "《素问·至真要大论》：\"诸逆冲上，皆属于火。\"——《伤寒论》第161条：\"心下痞硬，噫气不除者，旋覆代赭汤主之。\""},
+    "bridge": {"mapping_type": "间接对应",
+        "mapping_description": "肝胃郁热证的烧心、反酸、嗳气特征对应GERD中LES一过性松弛（TLESR）导致胃内容物反流、酸灼伤食管黏膜的病理机制。\"肝火\"对应胃酸分泌增加和LES松弛，\"郁热\"对应食管黏膜炎症。",
+        "biological_basis": "LES压力降低/TLESR频率↑→胃酸胃蛋白酶反流至食管→食管鳞状上皮暴露于pH<4→酸烧伤（\"烧心\"）+ 食管上皮间隙增宽→炎症细胞浸润→IL-8、TNF-α↑→食管炎症（\"郁热\"）+ 持续反流→Barrett食管",
+        "evidence_level": "B级-单中心RCT",
+        "key_references": ["《中国胃食管反流病诊治指南》2024", "《中医内科学·反胃/吐酸》十三五教材", "El-Serag HB. Gut 2014"]},
+    "clinical": {"recommended_formula": "左金丸合旋覆代赭汤", "formula_source": "《丹溪心法》合《伤寒论》",
+        "modifications": [
+            {"condition": "烧心甚", "adjustment": "加煅瓦楞子30g、海螵蛸15g、浙贝母10g制酸"},
+            {"condition": "胸痛明显", "adjustment": "加郁金、佛手、延胡索理气和胃"},
+            {"condition": "咽异物感（梅核气）", "adjustment": "加法半夏、厚朴、紫苏叶、茯苓（半夏厚朴汤意）"},
+            {"condition": "大便干结", "adjustment": "加全瓜蒌、决明子、火麻仁通腑降逆"}],
+        "acupuncture_rx": ["膻中", "中脘", "天突", "内关", "足三里", "太冲", "胃俞"],
+        "dietary_therapy": "少食多餐低脂饮食、禁咖啡浓茶酒精；睡前3小时不进食；抬高床头15-20cm",
+        "prognosis": "多数患者PPI+中药有效控制症状；需长期维持治疗",
+        "caution": "重视Barrett食管癌变风险年约0.5%；肥胖者减重有益"},
+    "teaching": {"difficulty": 3, "stage": "住院医-2",
+        "sage_ref_zhang": "《伤寒论》第161条：\"心下痞硬，噫气不除者，旋覆代赭汤主之。\"——仲景论\"噫气不除\"（嗳气上逆）以降逆化痰益气和胃，为反流基础方。",
+        "sage_ref_sun": "《备急千金要方》卷十六·胃腑·反胃第四：孙思邈记载了多种治疗反胃的方剂。",
+        "typical_case": "患者方某，女，52岁。胸骨后烧灼感半年，反酸嗳气，平卧后加重。胃镜示反流性食管炎LA-B级。舌红苔黄腻，脉弦滑。予左金丸合旋覆代赭汤加减配合雷贝拉唑。2周后烧心减少80%，4周后食管炎愈合。半年随访偶有轻度反酸。",
+        "teaching_points": ["左金丸黄连:吴茱萸=6:1的配伍比例意义", "降逆法中旋覆花-代赭石药对的升降配合", "PPI按需治疗与中药的协同策略"],
+        "exam_questions": ["旋覆代赭汤证的\"心下痞硬、噫气不除\"病机是什么？", "GERD的中医分型与西医LA分级如何对应？", "左金丸中吴茱萸的佐制作用——大寒方中配小量热药？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00049 慢性乙型肝炎 ============
+add({
+    "id": "DSU-00049", "disease_side": {"disease_name": "慢性乙型病毒性肝炎", "icd_code": "1E51.0", "category": "感染性疾病",
+        "molecular_targets": ["HBV S蛋白/核心蛋白", "TLR3/7/8抗病毒免疫受体", "PD-1/PD-L1 T细胞耗竭", "HBV聚合酶逆转录酶"],
+        "gene_pathways": ["TLR3-RIG-I-MAVS抗病毒天然免疫通路", "IFN-α/β-JAK-STAT信号通路", "TGF-β肝纤维化通路", "Fas/FasL肝细胞凋亡通路"],
+        "biomarkers": ["HBsAg（+）超过6个月", "HBV-DNA定量", "ALT/AST肝酶升高", "FibroScan肝脏弹性≥7.3kPa"],
+        "epidemiology": "全球约2.57亿慢性感染者，中国HBsAg阳性率约5-6%",
+        "western_treatment": "核苷类似物（恩替卡韦、丙酚替诺福韦）；聚乙二醇干扰素-α；肝移植（终末期）"},
+    "syndrome_side": {"syndrome_name": "肝郁脾虚证", "pattern_type": "肝气郁结证", "zangfu": "肝·脾", "six_channels": "少阳病",
+        "eight_principles": {"yin_yang": "阳证", "exterior_interior": "半表半里证", "cold_heat": "寒热错杂", "deficiency_excess": "虚实夹杂"},
+        "key_symptoms": ["右胁胀痛或隐痛", "倦怠乏力", "纳呆腹胀", "大便溏薄"],
+        "secondary_symptoms": ["情志抑郁", "善太息", "面色晦暗", "嗳气"],
+        "tongue": "舌淡红边有齿痕苔白腻", "pulse": "脉弦细或弦缓",
+        "field_theory": "肝藏血而主疏泄，脾统血而主运化。肝气郁结，疏泄不及，气滞于肝络则右胁胀痛。木郁克土，脾气受损，运化失司则纳呆腹胀、大便溏薄。气血生化不足则倦怠乏力。本病以肝郁为本、脾虚为标，核心病机是\"毒（HBV）、郁（肝郁）、虚（脾虚）、瘀（血瘀）\"四者交织。",
+        "classical_basis": "《金匮要略·脏腑经络先后病脉证》：\"夫治未病者，见肝之病，知肝传脾，当先实脾。\"——仲景明确\"肝病实脾\"的治未病思想。"},
+    "bridge": {"mapping_type": "机制对应",
+        "mapping_description": "肝郁脾虚证的胁痛、乏力、纳差特征对应慢性乙肝中HBV持续复制→肝脏炎症坏死→肝纤维化的病理过程。\"肝郁\"对应HBV诱导的免疫紊乱和肝细胞损伤，\"脾虚\"对应肝脏代谢功能障碍。",
+        "biological_basis": "HBV cccDNA持续存在于肝细胞核→HBV-DNA复制→内质网应激（\"肝郁毒蕴\"）+ HBV特异性CD8+T细胞PD-1/PD-L1↑→免疫耐受（\"正虚\"）+ 肝星状细胞活化→TGF-β↑→胶原沉积→肝纤维化（\"血瘀\"）→肝硬化",
+        "evidence_level": "A级-多中心RCT",
+        "key_references": ["《慢性乙型肝炎防治指南》2022", "《慢性乙型肝炎中医诊疗专家共识》2020"]},
+    "clinical": {"recommended_formula": "逍遥散合四君子汤", "formula_source": "《太平惠民和剂局方》",
+        "modifications": [
+            {"condition": "ALT明显升高", "adjustment": "加垂盆草、虎杖、五味子降酶"},
+            {"condition": "黄疸尿黄", "adjustment": "加茵陈、栀子、大黄清热利湿退黄"},
+            {"condition": "胁痛明显", "adjustment": "加延胡索、川楝子、郁金理气止痛"},
+            {"condition": "肝纤维化趋势", "adjustment": "加丹参、鳖甲、桃仁、牡蛎软坚散结"}],
+        "acupuncture_rx": ["肝俞", "脾俞", "足三里", "太冲", "三阴交", "阴陵泉", "期门"],
+        "dietary_therapy": "黄芪枸杞炖乌鸡、山药薏米粥；高蛋白维生素饮食；绝对禁酒",
+        "prognosis": "规范抗病毒可抑制HBV-DNA防止肝硬化进展；停药需谨慎",
+        "caution": "核苷类药物需长期服用不可随意停药（警惕病毒学突破）；定期监测ALT、HBV-DNA、AFP、肝脏B超"},
+    "teaching": {"difficulty": 4, "stage": "主治医",
+        "sage_ref_zhang": "《金匮要略·脏腑经络先后病脉证》\"见肝之病知肝传脾当先实脾\"——仲景治未病理论和肝脾传变规律，为慢性肝病提供预防性治疗原则。",
+        "sage_ref_sun": "《备急千金要方》卷十一·肝脏：孙思邈记载了多种治疗肝病的方剂。",
+        "typical_case": "患者周某，男，38岁。HBsAg(+)8年，ALT反复波动60-120U/L，近1年乏力右胁隐痛纳差。HBV-DNA 3.6×10⁵ IU/mL，ALT 86U/L，FibroScan 9.2kPa。舌淡暗苔白腻，脉弦细。予逍遥散合四君子汤加减+恩替卡韦。3月后ALT正常，HBV-DNA<20 IU/mL，FibroScan降至7.6kPa。随访1年稳定。",
+        "teaching_points": ["\"见肝之病知肝传脾当先实脾\"——肝病治脾的学术思想", "核苷类似物抗病毒的分子机制与中医药协同优势", "慢性乙型肝炎肝纤维化逆转的评估与监测"],
+        "exam_questions": ["\"肝病实脾\"的理论依据？在慢性乙型肝炎治疗中如何应用？", "恩替卡韦与替诺福韦的比较优势？", "逍遥散治疗慢性乙型肝炎肝郁脾虚证的组方依据？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00050 肝硬化 ============
+add({
+    "id": "DSU-00050", "disease_side": {"disease_name": "肝硬化", "icd_code": "DB99.1", "category": "消化系统疾病",
+        "molecular_targets": ["肝星状细胞TGF-β受体", "血管紧张素II受体AT1", "VEGF门脉高压形成因子", "MMP-9/TIMP-1基质重塑因子"],
+        "gene_pathways": ["TGF-β/Smad肝纤维化核心通路", "RAAS肾素-血管紧张素-醛固酮系统", "VEGF/HIF-1α血管新生通路", "Hedgehog肝再生通路"],
+        "biomarkers": ["FibroScan≥12.5kPa（F4期）", "血小板<100×10⁹/L", "白蛋白<35g/L", "Child-Pugh/MELD评分"],
+        "epidemiology": "全球约1.12亿人，中国HBV相关肝硬化仍为主要病因",
+        "western_treatment": "病因治疗（抗病毒/戒酒）；并发症管理（利尿剂、内镜套扎、TIPS、肝移植）；肝癌筛查"},
+    "syndrome_side": {"syndrome_name": "水湿内停证（鼓胀）", "pattern_type": "脾肾阳虚证", "zangfu": "肝·脾·肾", "six_channels": "少阴病",
+        "eight_principles": {"yin_yang": "阴证", "exterior_interior": "里证", "cold_heat": "寒证", "deficiency_excess": "虚实夹杂"},
+        "key_symptoms": ["腹胀大如鼓、腹部青筋显露", "下肢水肿", "尿少", "胁下积块（肝脾肿大）"],
+        "secondary_symptoms": ["面色晦暗（肝病面容）", "蜘蛛痣肝掌", "神疲乏力", "纳差便溏", "呕血黑便（晚期）"],
+        "tongue": "舌暗紫或淡紫苔白腻或水滑", "pulse": "脉沉细涩或弦涩",
+        "field_theory": "肝硬化属中医\"鼓胀\"范畴。肝脾肾三脏同病、气滞水停血瘀互结。肝病日久疏泄失职、气机阻滞则胁下积块；气滞血行不畅、瘀血阻于肝络，门脉压力增高则腹壁脉络显露。肝病乘脾，脾虚不能运化水湿则腹胀大如鼓、下肢水肿；久病及肾，肾阳衰微则气化失司尿少。气血水三者互为因果——本虚标实，标急之期以利水消胀为当务之急。",
+        "classical_basis": "《灵枢·水胀》：\"鼓胀何如？岐伯曰：腹胀身皆大……色苍黄，腹筋起，此其候也。\"——《金匮要略·水气病脉证并治》：\"肝水者，其腹大，不能自转侧，胁下腹痛……\""},
+    "bridge": {"mapping_type": "机制对应",
+        "mapping_description": "鼓胀的腹水、胁下积块、青筋显露特征对应肝硬化门脉高压→腹水形成、脾功能亢进、食管静脉曲张。\"水湿内停\"对应门脉高压性腹水，\"血瘀\"对应肝窦毛细血管化和纤维间隔。",
+        "biological_basis": "肝星状细胞持续活化→TGF-β/Smad→ECM大量沉积→假小叶形成（\"瘀血阻络\"）+ 门静脉压力↑→脾脏淤血→脾功能亢进→血小板减少（\"脾虚统血失司\"）+ 内脏血管扩张→RAAS激活→钠水潴留（\"水湿内停\"）→腹水+食管胃底静脉曲张→破裂出血",
+        "evidence_level": "C级-队列研究",
+        "key_references": ["《肝硬化诊治指南》2023", "《鼓胀中医诊疗专家共识》", "Garcia-Tsao G. AASLD 2023"]},
+    "clinical": {"recommended_formula": "实脾饮合血府逐瘀汤", "formula_source": "《济生方》合《医林改错》",
+        "modifications": [
+            {"condition": "大量腹水", "adjustment": "加泽泻、猪苓、车前子、牵牛子逐水"},
+            {"condition": "合并黄疸", "adjustment": "加茵陈、栀子、大黄清热利湿"},
+            {"condition": "呕血黑便", "adjustment": "加白及、三七粉、云南白药、大黄粉止血"},
+            {"condition": "神昏谵妄", "adjustment": "加安宫牛黄丸或至宝丹开窍醒神"}],
+        "acupuncture_rx": ["水分", "水道", "气海", "三阴交", "阴陵泉", "脾俞", "肾俞"],
+        "dietary_therapy": "低盐饮食<2g/日、优质蛋白维生素丰富；绝对禁酒、禁粗糙坚硬食物防静脉曲张破裂",
+        "prognosis": "失代偿期5年生存率约50%；肝移植是唯一根治手段",
+        "caution": "利尿剂需缓慢减重<0.5kg/日防肾损伤；警惕自发性细菌性腹膜炎；HCC筛查每半年一次"},
+    "teaching": {"difficulty": 5, "stage": "副主任医",
+        "sage_ref_zhang": "《金匮要略·水气病脉证并治》\"肝水者，其腹大，不能自转侧，胁下腹痛\"——仲景对肝水（相当于肝硬化腹水）的描写精准。",
+        "sage_ref_sun": "《备急千金要方》卷十一·肝脏：孙思邈论肝病水胀，用\"治肝水方\"以利水化瘀为法。",
+        "typical_case": "患者钱某，男，52岁。HBsAg(+)20年未规律抗病毒，因腹胀进行性加重就诊。腹部膨隆如鼓，移动性浊音(+)，双下肢水肿。FibroScan 22.4kPa，Child-Pugh B级。舌暗紫苔白滑，脉沉细涩。予实脾饮合血府逐瘀汤加减+恩替卡韦+利尿剂。2周后腹围从98cm减至85cm。腹水基本消退后续以健脾补肝肾法调理，随访1年未复发。",
+        "teaching_points": ["鼓胀\"气滞水停血瘀\"三位一体病机——标志肝硬化失代偿期", "Child-Pugh评分与中药用药安全性评估", "肝硬化腹水中西医结合治疗策略"],
+        "exam_questions": ["鼓胀的病机为什么是\"肝脾肾同病、气血水互结\"？", "肝硬化门脉高压的西医病理与中医血瘀证如何对应？", "肝硬化并发症的中西医结合处理原则？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+# ============ DSU-00051 脂肪肝 ============
+add({
+    "id": "DSU-00051", "disease_side": {"disease_name": "代谢相关脂肪性肝病（非酒精性脂肪肝）", "icd_code": "DB92.0", "category": "消化系统疾病",
+        "molecular_targets": ["PPARα/PPARγ核受体", "SREBP-1c脂肪合成转录因子", "TLR4/NF-κB炎症通路", "FXR法尼醇X受体"],
+        "gene_pathways": ["脂肪酸β氧化PPARα信号通路", "肝脏脂肪从头合成SREBP-1c/ChREBP通路", "内质网应激UPR通路", "TLR4/MyD88/NF-κB肝脏炎症通路"],
+        "biomarkers": ["肝脏超声弥漫性回声增强", "FLI指数≥60", "ALT/AST轻度升高ALT>AST", "FIB-4肝纤维化评分"],
+        "epidemiology": "全球患病率约25-30%，中国约29.2%，已取代病毒性肝炎成为慢性肝病第一病因",
+        "western_treatment": "生活方式干预（减重≥7%低碳水饮食）；吡格列酮；GLP-1受体激动剂；奥贝胆酸"},
+    "syndrome_side": {"syndrome_name": "痰湿内阻证", "pattern_type": "痰湿阻肺证", "zangfu": "肝·脾", "six_channels": "太阴病",
+        "eight_principles": {"yin_yang": "阴证", "exterior_interior": "里证", "cold_heat": "寒热错杂", "deficiency_excess": "实证"},
+        "key_symptoms": ["形体肥胖", "右胁胀闷不适", "脘腹痞满", "身重困倦"],
+        "secondary_symptoms": ["呕恶纳呆", "大便黏滞不爽", "口黏腻", "头昏蒙不清", "嗜睡"],
+        "tongue": "舌淡胖苔白厚腻", "pulse": "脉弦滑或濡滑",
+        "field_theory": "过食肥甘厚味少动多静，损伤脾胃运化，水谷不化精微而化为痰湿。痰湿停于肝脏，浸淫肝体、肝失疏泄则胁胀闷不适。湿困中焦脾运失司则脘腹痞满纳呆。湿性重着阻碍清阳升发则身重困倦、头昏蒙不清。痰湿停于皮下则膏脂堆积形体肥胖。\"痰湿非温不化、非通不去\"——治以健脾化痰祛湿通络。",
+        "classical_basis": "《素问·经脉别论》论水液代谢——《金匮要略·痰饮咳嗽病脉证并治》：\"病痰饮者，当以温药和之。\""},
+    "bridge": {"mapping_type": "机制对应",
+        "mapping_description": "痰湿内阻证的肥胖、胁胀、身重特征对应脂肪肝肝脏脂质沉积超过代谢能力、线粒体β氧化障碍、内质网应激驱动的肝脏炎症。\"痰湿\"对应肝脏三酰甘油堆积和脂质毒性。",
+        "biological_basis": "高热量饮食+胰岛素抵抗→肝脏SREBP-1c↑/PPARα↓→脂肪从头合成↑/脂肪酸β氧化↓→肝脏三酰甘油堆积（\"痰湿内停\"）+ 脂毒性→内质网应激→JNK/NF-κB激活→肝细胞损伤炎症NASH（\"痰郁化热\"）+ 肝星状细胞激活→纤维化（\"痰瘀互结\"）",
+        "evidence_level": "B级-单中心RCT",
+        "key_references": ["《代谢相关脂肪性肝病防治指南》2024", "《脂肪肝中医诊疗专家共识》2021"]},
+    "clinical": {"recommended_formula": "导痰汤合五苓散", "formula_source": "《济生方》合《伤寒论》",
+        "modifications": [
+            {"condition": "ALT升高明显", "adjustment": "加垂盆草、田基黄、五味子降酶"},
+            {"condition": "胁痛明显", "adjustment": "加郁金、延胡索、川楝子理气止痛"},
+            {"condition": "肥胖严重", "adjustment": "加荷叶、决明子、生山楂、泽泻降脂化浊"},
+            {"condition": "大便黏滞不爽", "adjustment": "加大黄、枳实、槟榔通腑导滞"}],
+        "acupuncture_rx": ["丰隆", "阴陵泉", "天枢", "中脘", "足三里", "肝俞", "脾俞"],
+        "dietary_therapy": "低糖低脂优质蛋白地中海饮食；决明子山楂茶；忌含糖饮料精制碳水油炸食品",
+        "prognosis": "单纯性脂肪肝经减重>7%后可完全逆转",
+        "caution": "减重速度不宜过快<1.5kg/周以免加重肝脏负担；合并糖尿病/高脂血症需综合管理"},
+    "teaching": {"difficulty": 3, "stage": "住院医-2",
+        "sage_ref_zhang": "《伤寒论》第71条五苓散化气利水，后世用以治疗\"水湿内停\"之脂肪肝。",
+        "sage_ref_sun": "《备急千金要方》卷十一·肝脏·肝劳第三：孙思邈论\"肝劳\"为过度劳伤肝脏所致，与现代NAFLD为代谢应激导致肝脏损伤相通。",
+        "typical_case": "患者高某，男，42岁。ALT 86U/L、B超重度脂肪肝，BMI 29.8。形体肥胖右胁胀闷身重困倦。舌淡胖苔白厚腻，脉弦滑。予导痰汤合五苓散加减，嘱低糖低脂饮食每日快走。3个月后体重下降12kg，ALT正常，B超脂肪肝消失。",
+        "teaching_points": ["代谢相关脂肪性肝病的命名演变NAFLD→MAFLD→MASLD", "\"脾为生痰之源\"——从脂肪肝认识\"痰湿\"的代谢本质", "脂肪肝逆转的金标准——减重7-10%的治疗策略"],
+        "exam_questions": ["导痰汤治疗脂肪肝的核心病机？体现了\"痰湿\"理论的哪些内涵？", "NAFLD与NASH的病理区别及中医病机分界？", "从脂质代谢角度分析\"痰湿内阻\"证的生物学基础？"]},
+    "metadata": {"source_textbook": "D01-S01", "source_chapter": "第5章-消化系统", "version": "1.0.0", "status": "draft", "created_at": "2026-07-23T00:00:00Z"}
+})
+
+save(u)
+print("Batch 005 first 8 DSUs done")

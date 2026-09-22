@@ -1,0 +1,1 @@
+# temporary validator script - safe to delete

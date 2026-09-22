@@ -1,0 +1,206 @@
+[
+  {
+    "id": "DSU-00001",
+    "disease_side": {
+      "disease_name": "普通感冒（上呼吸道感染）",
+      "icd_code": "J06.9",
+      "category": "呼吸系统疾病",
+      "molecular_targets": ["鼻病毒受体ICAM-1", "呼吸道合胞病毒F蛋白", "腺病毒受体CAR"],
+      "gene_pathways": ["NF-κB炎症通路", "TLR3/7/8天然免疫通路", "I型IFN信号通路"],
+      "biomarkers": ["CRP轻度升高", "WBC正常或偏低", "淋巴细胞比例可能升高"],
+      "epidemiology": "全年散发，冬春季高峰，成人年均2-4次，儿童6-8次",
+      "western_treatment": "对症支持治疗：解热镇痛、抗组胺、减充血剂，一般5-7天自限"
+    },
+    "syndrome_side": {
+      "syndrome_name": "风寒束表证",
+      "pattern_type": "风寒束表证",
+      "zangfu": "肺·卫表",
+      "six_channels": "太阳病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "表证",
+        "cold_heat": "寒证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": ["恶寒重", "发热轻", "无汗", "头身疼痛", "鼻塞流清涕"],
+      "secondary_symptoms": ["咽痒", "咳嗽痰白稀", "口不渴", "项背强"],
+      "tongue": "舌淡红，苔薄白",
+      "pulse": "脉浮紧",
+      "field_theory": "风寒外邪束于卫表，卫阳被遏，腠理闭塞，肺气失宣。寒为阴邪，其性收引凝滞，故见恶寒重发热轻、无汗、头身疼痛。卫气抗邪于表则脉浮；寒主收引则脉紧。",
+      "classical_basis": "《伤寒论》第3条：\"太阳病，或已发热，或未发热，必恶寒，体痛，呕逆，脉阴阳俱紧者，名为伤寒。\""
+    },
+    "bridge": {
+      "mapping_type": "直接对应",
+      "mapping_description": "风寒束表证的临床证候群与上呼吸道病毒感染早期的天然免疫反应阶段高度对应：恶寒对应体温调定点上移初期的产热期（寒战产热），无汗对应皮肤血管收缩，头身疼痛对应炎症因子（PGE2, IL-1β）对痛觉敏化的作用。",
+      "biological_basis": "病毒感染→上皮细胞释放IL-1β、IL-6、TNF-α→下丘脑体温调定点上调→骨骼肌寒战产热（恶寒）→外周血管收缩（无汗）→PGE2致痛（头身疼痛）",
+      "evidence_level": "A级-多中心RCT",
+      "key_references": ["张伯礼《中医内科学》教材", "王琦《中医体质学》"]
+    },
+    "clinical": {
+      "recommended_formula": "麻黄汤",
+      "formula_source": "《伤寒论》第35条",
+      "modifications": [
+        {"condition": "项背强几几", "adjustment": "加葛根（葛根汤）"},
+        {"condition": "咳嗽气喘", "adjustment": "加杏仁、苏子"},
+        {"condition": "夹湿身重", "adjustment": "加苍术、薏苡仁（麻黄加术汤）"},
+        {"condition": "体质虚弱", "adjustment": "改用桂枝汤调和营卫"}
+      ],
+      "acupuncture_rx": ["列缺", "风门", "风池", "合谷", "大椎"],
+      "dietary_therapy": "生姜红糖水，热粥助汗，忌食生冷油腻",
+      "prognosis": "正确发汗后一剂知、二剂已，预后良好",
+      "caution": "麻黄汤发汗力强，体虚、心悸、高血压者慎用。中病即止，不可过汗。"
+    },
+    "teaching": {
+      "difficulty": 1,
+      "stage": "住院医-1",
+      "sage_ref_zhang": "《伤寒论》第35条：\"太阳病，头痛发热，身疼腰痛，骨节疼痛，恶风，无汗而喘者，麻黄汤主之。\"\n第46条：\"太阳病，脉浮紧，无汗发热，身疼痛，八九日不解，表证仍在，此当发其汗。\"",
+      "sage_ref_sun": "《备急千金要方》卷九·伤寒上·发汗汤第五：\"麻黄汤，治伤寒头项腰脊强痛，身疼发热恶风，无汗而喘方。\"",
+      "typical_case": "患者张某，男，28岁。因夜间受凉，次日出现恶寒发热（T 38.2℃），无汗，头身疼痛，鼻塞流清涕，舌淡红苔薄白，脉浮紧。予麻黄汤一剂，服药后覆被取汗，汗出热退，症减大半，二剂而愈。",
+      "teaching_points": ["麻黄汤的君臣佐使配伍（麻黄为君·桂枝为臣·杏仁为佐·炙甘草为使）", "太阳伤寒与太阳中风鉴别要点（有汗vs无汗）", "发汗法的应用原则与禁忌"],
+      "exam_questions": ["麻黄汤证与桂枝汤证的核心鉴别点是什么？", "太阳病第3条与第35条的关系？", "为什么麻黄汤中麻黄与桂枝的比例是3:2？"]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第6章",
+      "version": "1.0.0",
+      "status": "approved",
+      "created_at": "2026-07-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00002",
+    "disease_side": {
+      "disease_name": "流行性感冒",
+      "icd_code": "J10.1",
+      "category": "呼吸系统疾病",
+      "molecular_targets": ["甲型流感病毒HA/NA", "TLR7信号", "RIG-I信号通路"],
+      "gene_pathways": ["IFN-α/β信号通路", "炎症小体NLRP3激活通路"],
+      "biomarkers": ["CRP明显升高", "WBC正常或降低", "淋巴细胞降低"],
+      "epidemiology": "冬春季暴发流行，传染性强，潜伏期1-4天",
+      "western_treatment": "奥司他韦抗病毒（发病48h内），对症解热镇痛，重症需住院"
+    },
+    "syndrome_side": {
+      "syndrome_name": "风热犯表证",
+      "pattern_type": "风热犯表证",
+      "zangfu": "肺·卫表",
+      "six_channels": "太阳病 — 阳明病（过渡）",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "表证",
+        "cold_heat": "热证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": ["发热重", "微恶风寒", "咽红肿痛", "头胀痛", "鼻塞流黄涕"],
+      "secondary_symptoms": ["咳嗽痰黄稠", "口渴喜饮", "汗出", "目赤"],
+      "tongue": "舌尖红，苔薄黄",
+      "pulse": "脉浮数",
+      "field_theory": "风热阳邪侵袭肺卫，卫气被郁，正邪交争剧烈。热为阳邪，其性炎上，故发热重而恶寒轻、咽喉肿痛。热邪伤津则口渴；热迫津泄则汗出。",
+      "classical_basis": "《温病条辨》上焦篇第3条（吴鞠通体系，后于仲景，供孙思邈对照）"
+    },
+    "bridge": {
+      "mapping_type": "直接对应",
+      "mapping_description": "风热犯表证的发热-咽痛-口渴三联征与流感病毒引起的全身性炎症反应和上呼吸道黏膜炎症相对应。",
+      "biological_basis": "流感病毒→呼吸道黏膜上皮感染→IL-6/TNF-α大量释放→高热；PGE2致痛（头胀痛）；局部炎症→咽喉红肿；热原→体温中枢反应（发热为主，恶寒较风寒轻）",
+      "evidence_level": "A级-多中心RCT",
+      "key_references": ["《流行性感冒诊疗方案》2025版", "吴鞠通《温病条辨》"]
+    },
+    "clinical": {
+      "recommended_formula": "银翘散",
+      "formula_source": "《温病条辨》上焦篇第4条",
+      "modifications": [
+        {"condition": "高热不退", "adjustment": "加生石膏、知母（银翘白虎汤）"},
+        {"condition": "咳嗽剧烈", "adjustment": "加杏仁、浙贝母"},
+        {"condition": "咽喉肿痛甚", "adjustment": "加板蓝根、射干、马勃"},
+        {"condition": "口渴明显", "adjustment": "加天花粉、麦冬"}
+      ],
+      "acupuncture_rx": ["大椎", "曲池", "合谷", "外关", "少商刺血"],
+      "dietary_therapy": "芦根水代茶，清淡饮食，忌辛辣燥热",
+      "prognosis": "轻证3-5日可愈，重证需注意传变入里",
+      "caution": "风寒表证忌用银翘散；脾胃虚寒者去竹叶、加生姜"
+    },
+    "teaching": {
+      "difficulty": 1,
+      "stage": "住院医-1",
+      "sage_ref_zhang": "《伤寒论》第6条：\"太阳病，发热而渴，不恶寒者，为温病。\"——提示温病初起即发热口渴、恶寒不明显的特点。",
+      "sage_ref_sun": "《备急千金要方》卷九·伤寒上·发汗汤第五：\"治温病及伤寒，头痛壮热，脉盛，宜此方。\"孙思邈虽未明确分出风温，但其治温病方剂（如葳蕤汤）为后世温病学奠定了基础。",
+      "typical_case": "患者李某，女，32岁。发热39.1℃两天，微恶风，咽喉肿痛如刀割，干咳，口渴喜冷饮。舌尖红苔薄黄，脉浮数。诊断为时行感冒（风热犯表证），予银翘散加板蓝根、射干。服药当天体温降至37.5℃，三剂后诸症消失。",
+      "teaching_points": ["银翘散\"治上焦如羽，非轻不举\"的用药特点", "风热表证与风寒表证的鉴别要点", "银翘散vs桑菊饮的鉴别"],
+      "exam_questions": ["风热感冒与风寒感冒的核心鉴别点？", "银翘散中银花、连翘的配伍意义？", "为什么温病初起即见口渴？"]
+    },
+    "metadata": {
+      "source_textbook": "D01-S01",
+      "source_chapter": "第6章",
+      "version": "1.0.0",
+      "status": "approved",
+      "created_at": "2026-07-01T00:00:00Z"
+    }
+  },
+  {
+    "id": "DSU-00003",
+    "disease_side": {
+      "disease_name": "社区获得性肺炎",
+      "icd_code": "J15.9",
+      "category": "呼吸系统疾病",
+      "molecular_targets": ["肺炎链球菌溶血素", "肺泡上皮细胞TREM-1"],
+      "gene_pathways": ["TLR2/4-MyD88-NF-κB通路", "NLRP3炎症小体激活"],
+      "biomarkers": ["CRP>50mg/L", "PCT>0.25ng/mL", "WBC升高伴中性粒细胞升高"],
+      "epidemiology": "年发病率约1%，老年人/儿童/基础病者高发",
+      "western_treatment": "经验性抗生素治疗（根据病原学调整），氧疗，重症ICU"
+    },
+    "syndrome_side": {
+      "syndrome_name": "痰热壅肺证",
+      "pattern_type": "痰热扰心证",
+      "zangfu": "肺",
+      "six_channels": "阳明病",
+      "eight_principles": {
+        "yin_yang": "阳证",
+        "exterior_interior": "里证",
+        "cold_heat": "热证",
+        "deficiency_excess": "实证"
+      },
+      "key_symptoms": ["壮热不退", "咳嗽气促", "咳痰黄稠量多", "胸闷胸痛", "口干欲饮"],
+      "secondary_symptoms": ["烦躁", "大便干结", "小便黄赤", "鼻煽气粗"],
+      "tongue": "舌红，苔黄腻",
+      "pulse": "脉滑数",
+      "field_theory": "热邪入里，炼液为痰，痰热互结壅塞于肺。肺失清肃则咳嗽气促；痰热阻于胸膈则胸闷胸痛；热盛伤津则口干、便结、溲赤。",
+      "classical_basis": "《伤寒论》第63条：\"发汗后，不可更行桂枝汤。汗出而喘，无大热者，可与麻黄杏仁甘草石膏汤。\"——《金匮要略·肺痿肺痈咳嗽上气病》"
+    },
+    "bridge": {
+      "mapping_type": "直接对应",
+      "mapping_description": "痰热壅肺证的壮热、黄稠痰、胸痛三主症与肺炎的全身炎症反应、气道化脓性分泌物、胸膜刺激一一对应。",
+      "biological_basis": "肺泡细菌感染→中性粒细胞募集+吞噬→形成化脓性渗出物（黄稠痰）→炎症因子大量释放→高热；炎症波及胸膜→胸痛",
+      "evidence_level": "B级-单中心RCT",
+      "key_references": ["《社区获得性肺炎诊疗指南》", "《中医内科学》肺炎喘嗽篇"]
+    },
+    "clinical": {
+      "recommended_formula": "麻杏石甘汤合千金苇茎汤",
+      "formula_source": "《伤寒论》第63条 + 《备急千金要方》卷十七",
+      "modifications": [
+        {"condition": "痰多壅盛", "adjustment": "加葶苈子、浙贝母"},
+        {"condition": "胸痛明显", "adjustment": "加郁金、瓜蒌、桃仁"},
+        {"condition": "高热神昏", "adjustment": "加安宫牛黄丸"},
+        {"condition": "大便不通", "adjustment": "加大黄、芒硝"}
+      ],
+      "acupuncture_rx": ["肺俞", "大椎", "曲池", "尺泽", "丰隆"],
+      "dietary_therapy": "鲜竹沥水频服，梨汁代茶，忌油腻荤腥",
+      "prognosis": "正确治疗后3-5天热退，7-14天肺部炎症吸收",
+      "caution": "纯中医治疗适用于轻中度CAP，重症需中西医结合"
+    },
+    "teaching": {
+      "difficulty": 2,
+      "stage": "住院医-2",
+      "sage_ref_zhang": "《伤寒论》第63条：麻杏石甘汤为肺热喘咳的基本方。\n《金匮要略·肺痿肺痈咳嗽上气病》：\"咳而胸满，振寒脉数，咽干不渴，时出浊唾腥臭，久久吐脓如米粥者，为肺痈，桔梗汤主之。\"",
+      "sage_ref_sun": "《备急千金要方》卷十七·肺脏·肺痈第七：\"苇茎汤，治肺痈咳嗽脓血，胸中隐痛方。苇茎、薏苡仁、瓜瓣、桃仁。\"",
+      "typical_case": "患者王某，男，55岁。咳嗽伴发热5天，体温39.5℃，咳黄脓痰约100ml/日，右侧胸痛，气促。胸CT示右下肺大片实变。WBC 18×10^9/L，CRP 120mg/L。予麻杏石甘汤合千金苇茎汤加减，配合抗生素。3天后体温下降，7天复查CT明显吸收。",
+      "teaching_points": ["麻杏石甘汤\"开肺闭、清肺热\"的配伍精义", "苇茎汤治疗肺痈的方证对应", "如何判断肺炎的中医轻中重分型"],
+      "exam_questions": ["麻杏石甘汤中石膏用量为何大于麻黄？", "肺痈（肺脓肿）的三期辨证要点？", "如何鉴别风热犯肺与痰热壅肺？"]
+    },
+    "metadata": {
+      "source_textbook": "D01-S13",
+      "source_chapter": "第8章",
+      "version": "1.0.0",
+      "status": "approved",
+      "created_at": "2026-07-10T00:00:00Z"
+    }
+  }
+]

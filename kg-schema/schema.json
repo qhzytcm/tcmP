@@ -1,0 +1,267 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "病证知识图谱v1骨架",
+  "description": "中医病证单位知识图谱 Schema — 60,000+节点结构定义",
+  "version": "1.0.0",
+
+  "definitions": {
+    "DiseaseSyndromeUnit": {
+      "type": "object",
+      "description": "病证单位：本平台最小编写原子，同时包含西医病侧和中医证侧",
+      "required": ["id", "disease_side", "syndrome_side", "bridge", "clinical"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^DSU-\\d{5}$",
+          "description": "病证单位唯一编号 (DSU-00001 ~ DSU-60000)"
+        },
+        "disease_side": {
+          "$ref": "#/definitions/DiseaseSide",
+          "description": "病侧：西医分子靶点/基因通路层面"
+        },
+        "syndrome_side": {
+          "$ref": "#/definitions/SyndromeSide",
+          "description": "证侧：中医证候场论层面"
+        },
+        "bridge": {
+          "$ref": "#/definitions/Bridge",
+          "description": "病证桥接：中西医对应关系"
+        },
+        "clinical": {
+          "$ref": "#/definitions/Clinical",
+          "description": "临床应用：方剂/针灸/预后"
+        },
+        "teaching": {
+          "$ref": "#/definitions/Teaching",
+          "description": "教学资源：医圣引用/案例/难度"
+        },
+        "metadata": {
+          "$ref": "#/definitions/Metadata",
+          "description": "元数据：来源/版本/审核"
+        }
+      }
+    },
+
+    "DiseaseSide": {
+      "type": "object",
+      "description": "病侧——西医疾病视角",
+      "required": ["disease_name", "molecular_targets"],
+      "properties": {
+        "disease_name": { "type": "string", "description": "西医病名" },
+        "icd_code": { "type": "string", "description": "ICD-11编码" },
+        "category": {
+          "type": "string",
+          "enum": ["感染性疾病", "肿瘤", "血液病", "内分泌代谢病", "精神障碍",
+                   "神经系统疾病", "眼耳鼻喉疾病", "循环系统疾病", "呼吸系统疾病",
+                   "消化系统疾病", "皮肤疾病", "肌肉骨骼疾病", "泌尿生殖疾病",
+                   "妇产科疾病", "围生期疾病", "先天畸形", "损伤中毒", "其他"],
+          "description": "西医疾病分类"
+        },
+        "molecular_targets": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "分子靶点列表",
+          "minItems": 1
+        },
+        "gene_pathways": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "相关基因通路"
+        },
+        "biomarkers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "生物标志物"
+        },
+        "epidemiology": { "type": "string", "description": "流行病学简述" },
+        "western_treatment": { "type": "string", "description": "西医治疗概要" }
+      }
+    },
+
+    "SyndromeSide": {
+      "type": "object",
+      "description": "证侧——中医证候视角",
+      "required": ["syndrome_name", "pattern_type", "key_symptoms"],
+      "properties": {
+        "syndrome_name": { "type": "string", "description": "中医证名 (如: 风寒束表证)" },
+        "pattern_type": {
+          "type": "string",
+          "enum": ["风寒束表证", "风热犯表证", "暑湿袭表证", "气虚外感证",
+                   "阴虚外感证", "阳虚外感证", "表寒里热证", "半表半里证",
+                   "脾胃湿热证", "寒湿困脾证", "肝气郁结证", "肝火上炎证",
+                   "肝肾阴虚证", "脾肾阳虚证", "气滞血瘀证", "痰湿阻肺证",
+                   "肺肾气虚证", "心脾两虚证", "心肾不交证", "痰热扰心证",
+                   "其他"],
+          "description": "证候类型"
+        },
+        "zangfu": {
+          "type": "string",
+          "description": "脏腑定位 (如: 肺·卫表)"
+        },
+        "six_channels": {
+          "type": "string",
+          "enum": ["太阳病", "阳明病", "少阳病", "太阴病", "少阴病", "厥阴病", "不适用"],
+          "description": "六经定位（张仲景体系）"
+        },
+        "eight_principles": {
+          "type": "object",
+          "required": ["yin_yang", "exterior_interior", "cold_heat", "deficiency_excess"],
+          "properties": {
+            "yin_yang": { "type": "string", "enum": ["阴证", "阳证"] },
+            "exterior_interior": { "type": "string", "enum": ["表证", "里证", "半表半里证"] },
+            "cold_heat": { "type": "string", "enum": ["寒证", "热证", "寒热错杂"] },
+            "deficiency_excess": { "type": "string", "enum": ["虚证", "实证", "虚实夹杂"] }
+          }
+        },
+        "key_symptoms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "主症列表"
+        },
+        "secondary_symptoms": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "次症列表"
+        },
+        "tongue": { "type": "string", "description": "舌象" },
+        "pulse": { "type": "string", "description": "脉象" },
+        "field_theory": {
+          "type": "string",
+          "description": "证候场论——阐述该证候在人体中的整体作用场"
+        },
+        "classical_basis": {
+          "type": "string",
+          "description": "中医经典依据 (如: 《伤寒论》第X条)"
+        }
+      }
+    },
+
+    "Bridge": {
+      "type": "object",
+      "description": "病证桥接——中西医对应关系",
+      "required": ["mapping_type", "evidence_level"],
+      "properties": {
+        "mapping_type": {
+          "type": "string",
+          "enum": ["直接对应", "间接对应", "阶段对应", "综合征对应", "机制对应"],
+          "description": "病证对应类型"
+        },
+        "mapping_description": {
+          "type": "string",
+          "description": "对应关系描述"
+        },
+        "biological_basis": {
+          "type": "string",
+          "description": "生物学基础 (如: 炎症因子IL-6↑与湿热证的相关性)"
+        },
+        "evidence_level": {
+          "type": "string",
+          "enum": ["A级-多中心RCT", "B级-单中心RCT", "C级-队列研究",
+                   "D级-病例对照", "E级-专家共识", "F级-经典理论"],
+          "description": "证据等级"
+        },
+        "key_references": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "关键参考文献"
+        }
+      }
+    },
+
+    "Clinical": {
+      "type": "object",
+      "required": ["recommended_formula"],
+      "properties": {
+        "recommended_formula": { "type": "string", "description": "推荐主方" },
+        "formula_source": { "type": "string", "description": "方剂出处 (如: 《伤寒论》)" },
+        "modifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "condition": { "type": "string", "description": "加减条件" },
+              "adjustment": { "type": "string", "description": "加减内容" }
+            }
+          },
+          "description": "方剂加减方案"
+        },
+        "acupuncture_rx": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "针灸配穴"
+        },
+        "dietary_therapy": { "type": "string", "description": "食疗建议" },
+        "prognosis": { "type": "string", "description": "预后判断" },
+        "caution": { "type": "string", "description": "注意事项" }
+      }
+    },
+
+    "Teaching": {
+      "type": "object",
+      "properties": {
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "难度等级: 1(入门) ~ 5(精通)"
+        },
+        "stage": {
+          "type": "string",
+          "enum": ["住院医-1", "住院医-2", "主治医", "副主任医", "主任医", "学科带头人"],
+          "description": "适配的医师成长阶段"
+        },
+        "sage_ref_zhang": {
+          "type": "string",
+          "description": "张仲景相关原文引用 (《伤寒论》《金匮要略》)"
+        },
+        "sage_ref_sun": {
+          "type": "string",
+          "description": "孙思邈相关原文引用 (《千金要方》《千金翼方》)"
+        },
+        "typical_case": {
+          "type": "string",
+          "description": "典型医案（供教学使用）"
+        },
+        "teaching_points": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "教学要点列表"
+        },
+        "exam_questions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "考核题目"
+        }
+      }
+    },
+
+    "Metadata": {
+      "type": "object",
+      "properties": {
+        "source_textbook": { "type": "string", "description": "来源教材编号 (如: D01-S01)" },
+        "source_chapter": { "type": "string", "description": "来源章号" },
+        "version": { "type": "string", "description": "版本号" },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "reviewed", "approved", "published"],
+          "description": "审核状态"
+        },
+        "reviewed_by": { "type": "string", "description": "审核人" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "kg_version": { "type": "string" },
+    "total_units": { "type": "integer" },
+    "units": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/DiseaseSyndromeUnit" }
+    }
+  },
+  "required": ["kg_version", "total_units", "units"]
+}

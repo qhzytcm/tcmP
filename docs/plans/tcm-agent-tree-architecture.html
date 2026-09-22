@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCM 知识树 — 四层 Agent 协作架构</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      min-height: 100vh;
+      padding: 2rem;
+      color: white;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    .header { margin-bottom: 2rem; }
+    .header-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+    .pulse-dot { width: 12px; height: 12px; background: #22d3ee; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+    .subtitle { color: #94a3b8; font-size: 0.875rem; margin-left: 1.75rem; }
+    .diagram-container {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 1rem;
+      border: 1px solid #1e293b;
+      padding: 1.5rem;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 1300px; display: block; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 0.75rem;
+      border: 1px solid #1e293b;
+      padding: 1.25rem;
+    }
+    .card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .card-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .card-dot.cyan { background: #22d3ee; }
+    .card-dot.emerald { background: #34d399; }
+    .card-dot.violet { background: #a78bfa; }
+    .card-dot.amber { background: #fbbf24; }
+    .card-dot.rose { background: #fb7185; }
+    .card h3 { font-size: 0.875rem; font-weight: 600; }
+    .card ul { list-style: none; color: #94a3b8; font-size: 0.75rem; }
+    .card li { margin-bottom: 0.375rem; }
+    .footer { text-align: center; margin-top: 1.5rem; color: #475569; font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-row">
+        <div class="pulse-dot"></div>
+        <h1>中医中药知识树 · 四层 Agent 协作架构</h1>
+      </div>
+      <p class="subtitle">L1 行业主编(1根) → L2 领域主编(8主干) → L3 学科主编(~120分支) → L4 章节作者(N叶子)</p>
+    </div>
+
+    <!-- Architecture Diagram 1: 四层树状结构 -->
+    <div class="diagram-container">
+      <h3 style="font-size:0.75rem;color:#64748b;margin-bottom:0.5rem;">图1：四层 Agent 树状结构（一干八枝）</h3>
+      <svg viewBox="0 0 1300 750">
+        <defs>
+          <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#64748b" />
+          </marker>
+          <marker id="arrowL2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#34d399" />
+          </marker>
+          <marker id="arrowL3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#a78bfa" />
+          </marker>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+
+        <!-- Background Grid -->
+        <rect width="100%" height="100%" fill="url(#grid)" />
+
+        <!-- ============ L1: 根节点 ============ -->
+        <rect x="530" y="20" width="240" height="70" rx="10" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+        <rect x="530" y="20" width="240" height="70" rx="10" fill="rgba(8, 51, 68, 0.5)"/>
+        <text x="650" y="47" fill="#22d3ee" font-size="14" font-weight="700" text-anchor="middle">🏛 行业主编 (L1) · 病证范式终审</text>
+        <text x="650" y="67" fill="#94a3b8" font-size="10" text-anchor="middle">根节点 · 1个实例 · 120学科全域终审</text>
+        <text x="650" y="82" fill="#475569" font-size="8" text-anchor="middle">scope: ALL 120种教材 · 病证单位范式合规</text>
+
+        <!-- L1 → L2 连线 -->
+        <line x1="650" y1="90" x2="650" y2="115" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- ============ L2: 八枝主干 ============ -->
+        <!-- 枝1 基础 -->
+        <rect x="30" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="30" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="100" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝1 · 基础医学院</text>
+        <text x="100" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·基础</text>
+        <text x="100" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 高校教师/科研</text>
+
+        <!-- 枝2 中药 -->
+        <rect x="185" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="185" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="255" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝2 · 中药学院</text>
+        <text x="255" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·中药</text>
+        <text x="255" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 分子药师/药企</text>
+
+        <!-- 枝3 针灸 -->
+        <rect x="340" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="340" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="410" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝3 · 针灸推拿学院</text>
+        <text x="410" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·针灸</text>
+        <text x="410" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 神经调控治疗师</text>
+
+        <!-- 枝4 内科 -->
+        <rect x="495" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="495" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="565" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝4 · 第一临床医学院</text>
+        <text x="565" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·内科</text>
+        <text x="565" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 病证内科医师</text>
+
+        <!-- 枝5 外科 -->
+        <rect x="650" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="650" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="720" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝5 · 第二临床医学院</text>
+        <text x="720" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·外科</text>
+        <text x="720" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 病证外科医师</text>
+
+        <!-- 枝6 中医智能学院 ★ NEW -->
+        <rect x="805" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#fb923c" stroke-width="2"/>
+        <rect x="805" y="120" width="140" height="65" rx="8" fill="rgba(251, 146, 60, 0.25)"/>
+        <text x="875" y="142" fill="#fb923c" font-size="11" font-weight="600" text-anchor="middle">枝6 · 中医智能学院</text>
+        <text x="875" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·智能</text>
+        <text x="875" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → AI工程师</text>
+
+        <!-- 枝7 护理 -->
+        <rect x="960" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="960" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="1030" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝7 · 护理学院</text>
+        <text x="1030" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·护理</text>
+        <text x="1030" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 病证护师/管理</text>
+
+        <!-- 枝8 管理 -->
+        <rect x="1115" y="120" width="140" height="65" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="1115" y="120" width="140" height="65" rx="8" fill="rgba(6, 78, 59, 0.35)"/>
+        <text x="1185" y="142" fill="#34d399" font-size="11" font-weight="600" text-anchor="middle">枝8 · 管理人文学院</text>
+        <text x="1185" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">领域主编·管理</text>
+        <text x="1185" y="174" fill="#475569" font-size="8" text-anchor="middle">15学科 → 智能医院管理</text>
+
+        <!-- L1→L2 连线（展开线） -->
+        <line x1="100" y1="120" x2="100" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="255" y1="120" x2="255" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="410" y1="120" x2="410" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="565" y1="120" x2="565" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="720" y1="120" x2="720" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="875" y1="120" x2="875" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="1030" y1="120" x2="1030" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="1185" y1="120" x2="1185" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="100" y1="115" x2="1185" y2="115" stroke="#22d3ee" stroke-width="1"/>
+        <line x1="650" y1="90" x2="650" y2="115" stroke="#22d3ee" stroke-width="1.5"/>
+
+        <!-- ============ L3 学科主编（以枝2中药域放大展示） ============ -->
+        <!-- L2枝2 → L3 连线 -->
+        <line x1="255" y1="185" x2="255" y2="210" stroke="#34d399" stroke-width="1.2" marker-end="url(#arrowL2)"/>
+
+        <!-- L3 分支展开框 -->
+        <rect x="68" y="215" width="374" height="220" rx="8" fill="transparent" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="78" y="232" fill="#a78bfa" font-size="9" font-weight="600">枝2放大：中药域 → 14个学科主编 (L3)</text>
+
+        <!-- L3 学科节点 行1 -->
+        <rect x="78" y="242" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="133" y="260" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药学</text>
+        <text x="133" y="275" fill="#94a3b8" font-size="8" text-anchor="middle">27章</text>
+
+        <rect x="196" y="242" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="251" y="260" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药炮制学</text>
+        <text x="251" y="275" fill="#94a3b8" font-size="8" text-anchor="middle">12章</text>
+
+        <rect x="314" y="242" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="369" y="260" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药药理学</text>
+        <text x="369" y="275" fill="#94a3b8" font-size="8" text-anchor="middle">15章</text>
+
+        <!-- L3 学科节点 行2 -->
+        <rect x="78" y="292" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="133" y="310" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药鉴定学</text>
+        <text x="133" y="325" fill="#94a3b8" font-size="8" text-anchor="middle">20章</text>
+
+        <rect x="196" y="292" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="251" y="310" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药化学</text>
+        <text x="251" y="325" fill="#94a3b8" font-size="8" text-anchor="middle">18章</text>
+
+        <rect x="314" y="292" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="369" y="310" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药制剂学</text>
+        <text x="369" y="325" fill="#94a3b8" font-size="8" text-anchor="middle">16章</text>
+
+        <!-- L3 学科节点 行3 -->
+        <rect x="78" y="342" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="133" y="360" fill="white" font-size="10" font-weight="600" text-anchor="middle">临床中药学</text>
+        <text x="133" y="375" fill="#94a3b8" font-size="8" text-anchor="middle">22章</text>
+
+        <rect x="196" y="342" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="251" y="360" fill="white" font-size="10" font-weight="600" text-anchor="middle">中药资源学</text>
+        <text x="251" y="375" fill="#94a3b8" font-size="8" text-anchor="middle">10章</text>
+
+        <rect x="314" y="342" width="110" height="42" rx="6" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="369" y="360" fill="white" font-size="10" font-weight="600" text-anchor="middle">... 等14学科</text>
+        <text x="369" y="375" fill="#94a3b8" font-size="8" text-anchor="middle">共14个L3</text>
+
+        <!-- L3 到其他枝的标注 -->
+        <text x="500" y="260" fill="#475569" font-size="8">枝1-8: 各15 L3</text>
+        <text x="500" y="275" fill="#475569" font-size="8">均匀分布</text>
+        <text x="500" y="290" fill="#475569" font-size="8">枝6: 中医智能学院</text>
+        <text x="500" y="305" fill="#475569" font-size="8">(AI辨证·知识图谱·中医LLM)</text>
+        <text x="500" y="320" fill="#475569" font-size="8"></text>
+        <text x="500" y="335" fill="#475569" font-size="8"></text>
+        <text x="500" y="350" fill="#475569" font-size="8"></text>
+        <text x="500" y="375" fill="#a78bfa" font-size="9" font-weight="600">合计: 120 L3 (8域×15)</text>
+
+        <!-- ============ L4 叶子节点（以中药学→解表药章为例） ============ -->
+        <line x1="133" y1="284" x2="133" y2="460" stroke="#a78bfa" stroke-width="1" marker-end="url(#arrowL3)"/>
+
+        <rect x="560" y="460" width="700" height="175" rx="8" fill="transparent" stroke="#fb7185" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="570" y="480" fill="#fb7185" font-size="9" font-weight="600">L4 叶子节点放大：中药学 → 27章对应的章节作者（每章 = N个知识点）</text>
+
+        <!-- L4 节点 -->
+        <rect x="570" y="492" width="100" height="38" rx="5" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+        <text x="620" y="508" fill="white" font-size="9" font-weight="600" text-anchor="middle">第1章·总论</text>
+        <text x="620" y="522" fill="#94a3b8" font-size="7" text-anchor="middle">8个知识点</text>
+
+        <rect x="678" y="492" width="100" height="38" rx="5" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+        <text x="728" y="508" fill="white" font-size="9" font-weight="600" text-anchor="middle">第3章·解表药</text>
+        <text x="728" y="522" fill="#94a3b8" font-size="7" text-anchor="middle">25个知识点</text>
+
+        <rect x="786" y="492" width="100" height="38" rx="5" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+        <text x="836" y="508" fill="white" font-size="9" font-weight="600" text-anchor="middle">第5章·清热药</text>
+        <text x="836" y="522" fill="#94a3b8" font-size="7" text-anchor="middle">30个知识点</text>
+
+        <rect x="894" y="492" width="100" height="38" rx="5" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+        <text x="944" y="508" fill="white" font-size="9" font-weight="600" text-anchor="middle">第7章·泻下药</text>
+        <text x="944" y="522" fill="#94a3b8" font-size="7" text-anchor="middle">15个知识点</text>
+
+        <rect x="1002" y="492" width="100" height="38" rx="5" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+        <text x="1052" y="508" fill="white" font-size="9" font-weight="600" text-anchor="middle">... 共27章</text>
+        <text x="1052" y="522" fill="#94a3b8" font-size="7" text-anchor="middle">~600知识点</text>
+
+        <!-- L4 知识点子节点（以解表药为例） -->
+        <text x="570" y="550" fill="#94a3b8" font-size="8">第3章·解表药 知识点展开:</text>
+        <rect x="570" y="558" width="75" height="28" rx="4" fill="rgba(136, 19, 55, 0.2)" stroke="#fb7185" stroke-width="0.5"/>
+        <text x="607" y="576" fill="#fb7185" font-size="7" text-anchor="middle">麻黄</text>
+        <rect x="652" y="558" width="75" height="28" rx="4" fill="rgba(136, 19, 55, 0.2)" stroke="#fb7185" stroke-width="0.5"/>
+        <text x="689" y="576" fill="#fb7185" font-size="7" text-anchor="middle">桂枝</text>
+        <rect x="734" y="558" width="75" height="28" rx="4" fill="rgba(136, 19, 55, 0.2)" stroke="#fb7185" stroke-width="0.5"/>
+        <text x="771" y="576" fill="#fb7185" font-size="7" text-anchor="middle">紫苏</text>
+        <rect x="816" y="558" width="75" height="28" rx="4" fill="rgba(136, 19, 55, 0.2)" stroke="#fb7185" stroke-width="0.5"/>
+        <text x="853" y="576" fill="#fb7185" font-size="7" text-anchor="middle">生姜</text>
+        <rect x="898" y="558" width="75" height="28" rx="4" fill="rgba(136, 19, 55, 0.2)" stroke="#fb7185" stroke-width="0.5"/>
+        <text x="935" y="576" fill="#fb7185" font-size="7" text-anchor="middle">防风</text>
+        <text x="990" y="576" fill="#475569" font-size="7">... 共25味药 = 25个知识点叶子</text>
+
+        <text x="570" y="605" fill="#475569" font-size="8">全平台 L4 叶子总数 ≈ 120学科 × 平均20章 × 平均25病证单位/章 ≈ 60,000+ 病证单位节点</text>
+        <text x="570" y="622" fill="#64748b" font-size="8">L4 叶子总数 ≈ 2,400+ 章节作者 Agent，每个病证单位 = 病(分子靶点) + 证(证候场论) 双栏</text>
+
+        <!-- ============ 图例 ============ -->
+        <rect x="560" y="655" width="700" height="70" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="#1e293b" stroke-width="1"/>
+        <text x="575" y="675" fill="white" font-size="10" font-weight="600">图例</text>
+        <rect x="575" y="684" width="14" height="10" rx="2" fill="rgba(8, 51, 68, 0.5)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="595" y="692" fill="#94a3b8" font-size="8">L1 行业主编</text>
+        <rect x="680" y="684" width="14" height="10" rx="2" fill="rgba(6, 78, 59, 0.35)" stroke="#34d399" stroke-width="1"/>
+        <text x="700" y="692" fill="#94a3b8" font-size="8">L2 领域主编(八枝)</text>
+        <rect x="810" y="684" width="14" height="10" rx="2" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="830" y="692" fill="#94a3b8" font-size="8">L3 学科主编(~120)</text>
+        <rect x="940" y="684" width="14" height="10" rx="2" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1"/>
+        <text x="960" y="692" fill="#94a3b8" font-size="8">L4 章节作者(N叶子)</text>
+        <line x1="1060" y1="690" x2="1080" y2="690" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="1086" y="692" fill="#94a3b8" font-size="8">层级放大区域</text>
+      </svg>
+    </div>
+
+    <!-- Architecture Diagram 2: 知识点搜索→路由 -->
+    <div class="diagram-container">
+      <h3 style="font-size:0.75rem;color:#64748b;margin-bottom:0.5rem;">图2：知识点搜索 → Agent 路由流程</h3>
+      <svg viewBox="0 0 1300 400">
+        <defs>
+          <marker id="arrowRt" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#22d3ee" />
+          </marker>
+          <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid2)" />
+
+        <!-- 用户输入 -->
+        <rect x="30" y="50" width="200" height="70" rx="8" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1.5"/>
+        <text x="130" y="78" fill="white" font-size="12" font-weight="600" text-anchor="middle">👤 用户输入</text>
+        <text x="130" y="96" fill="#22d3ee" font-size="9" text-anchor="middle">"麻黄汤证候场论的分子靶点?"</text>
+        <text x="130" y="112" fill="#94a3b8" font-size="8" text-anchor="middle">以证溯病 / 以病索证</text>
+
+        <line x1="230" y1="85" x2="290" y2="85" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrowRt)"/>
+
+        <!-- 知识解析器 -->
+        <rect x="295" y="50" width="180" height="70" rx="8" fill="rgba(6, 78, 59, 0.35)" stroke="#34d399" stroke-width="1.5"/>
+        <text x="385" y="78" fill="white" font-size="11" font-weight="600" text-anchor="middle">🔍 知识解析器</text>
+        <text x="385" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">NLP实体识别</text>
+        <text x="385" y="112" fill="#475569" font-size="8" text-anchor="middle">实体:麻黄汤 意图:配伍</text>
+
+        <line x1="475" y1="85" x2="535" y2="85" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrowRt)"/>
+
+        <!-- 树状索引 -->
+        <rect x="540" y="50" width="180" height="70" rx="8" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1.5"/>
+        <text x="630" y="78" fill="white" font-size="11" font-weight="600" text-anchor="middle">🌳 树状索引</text>
+        <text x="630" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">编码匹配</text>
+        <text x="630" y="112" fill="#a78bfa" font-size="8" text-anchor="middle">node: 3.1.3.1.2 ✓</text>
+
+        <line x1="720" y1="85" x2="780" y2="85" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arrowRt)"/>
+
+        <!-- 路由 -->
+        <rect x="785" y="40" width="220" height="90" rx="8" fill="rgba(251, 146, 60, 0.15)" stroke="#fb923c" stroke-width="1.5"/>
+        <text x="895" y="68" fill="white" font-size="11" font-weight="600" text-anchor="middle">🚦 Agent 路由器</text>
+        <text x="895" y="86" fill="#94a3b8" font-size="9" text-anchor="middle">优先级: L4精确→L3→L2→L1</text>
+        <text x="895" y="102" fill="#fb923c" font-size="8" text-anchor="middle">→ L4-章节作者(麻黄汤)</text>
+        <text x="895" y="118" fill="#475569" font-size="8" text-anchor="middle">confidence: 0.97</text>
+
+        <line x1="1005" y1="85" x2="1065" y2="85" stroke="#fb923c" stroke-width="1.5" marker-end="url(#arrowRt)"/>
+
+        <!-- Agent 响应 -->
+        <rect x="1070" y="50" width="200" height="70" rx="8" fill="rgba(136, 19, 55, 0.3)" stroke="#fb7185" stroke-width="1.5"/>
+        <text x="1170" y="78" fill="white" font-size="11" font-weight="600" text-anchor="middle">🤖 Agent 响应</text>
+        <text x="1170" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">L4章节作者·麻黄汤</text>
+        <text x="1170" y="112" fill="#fb7185" font-size="8" text-anchor="middle">基于草稿v3.2回答</text>
+
+        <!-- 降级路径（虚线） -->
+        <rect x="785" y="165" width="485" height="100" rx="8" fill="transparent" stroke="#64748b" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="800" y="185" fill="#64748b" font-size="9">降级策略（L4不可用时自动上溯）</text>
+
+        <rect x="800" y="198" width="100" height="30" rx="4" fill="rgba(136, 19, 55, 0.2)" stroke="#fb7185" stroke-width="0.5"/>
+        <text x="850" y="217" fill="#fb7185" font-size="8" text-anchor="middle">L4 离线 ✗</text>
+
+        <line x1="900" y1="213" x2="925" y2="213" stroke="#64748b" stroke-width="1"/>
+
+        <rect x="930" y="198" width="100" height="30" rx="4" fill="rgba(76, 29, 149, 0.2)" stroke="#a78bfa" stroke-width="0.5"/>
+        <text x="980" y="217" fill="#a78bfa" font-size="8" text-anchor="middle">L3 在线 →</text>
+
+        <line x1="1030" y1="213" x2="1055" y2="213" stroke="#64748b" stroke-width="1"/>
+
+        <text x="1065" y="217" fill="#94a3b8" font-size="8">降级到 L3 学科主编·方剂学</text>
+
+        <!-- 六阶段指示 -->
+        <rect x="30" y="200" width="720" height="175" rx="8" fill="transparent" stroke="#fbbf24" stroke-width="1" stroke-dasharray="8,4"/>
+        <text x="45" y="220" fill="#fbbf24" font-size="10" font-weight="600">六阶段工作流引擎</text>
+
+        <rect x="45" y="235" width="110" height="45" rx="6" fill="rgba(120, 53, 15, 0.2)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="100" y="255" fill="white" font-size="9" font-weight="600" text-anchor="middle">阶段一</text>
+        <text x="100" y="270" fill="#94a3b8" font-size="7" text-anchor="middle">需求分析</text>
+
+        <line x1="155" y1="257" x2="170" y2="257" stroke="#fbbf24" stroke-width="0.8" marker-end="url(#arrowRt)"/>
+
+        <rect x="175" y="235" width="110" height="45" rx="6" fill="rgba(120, 53, 15, 0.2)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="230" y="255" fill="white" font-size="9" font-weight="600" text-anchor="middle">阶段二</text>
+        <text x="230" y="270" fill="#94a3b8" font-size="7" text-anchor="middle">体系设计</text>
+
+        <line x1="285" y1="257" x2="300" y2="257" stroke="#fbbf24" stroke-width="0.8" marker-end="url(#arrowRt)"/>
+
+        <rect x="305" y="235" width="110" height="45" rx="6" fill="rgba(120, 53, 15, 0.2)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="360" y="255" fill="white" font-size="9" font-weight="600" text-anchor="middle">阶段三</text>
+        <text x="360" y="270" fill="#94a3b8" font-size="7" text-anchor="middle">内容编写</text>
+
+        <line x1="415" y1="257" x2="430" y2="257" stroke="#fbbf24" stroke-width="0.8" marker-end="url(#arrowRt)"/>
+
+        <rect x="435" y="235" width="110" height="45" rx="6" fill="rgba(120, 53, 15, 0.2)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="490" y="255" fill="white" font-size="9" font-weight="600" text-anchor="middle">阶段四</text>
+        <text x="490" y="270" fill="#94a3b8" font-size="7" text-anchor="middle">审核评阅</text>
+
+        <line x1="545" y1="257" x2="560" y2="257" stroke="#fbbf24" stroke-width="0.8" marker-end="url(#arrowRt)"/>
+
+        <rect x="565" y="235" width="110" height="45" rx="6" fill="rgba(120, 53, 15, 0.2)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="620" y="255" fill="white" font-size="9" font-weight="600" text-anchor="middle">阶段五</text>
+        <text x="620" y="270" fill="#94a3b8" font-size="7" text-anchor="middle">教学应用</text>
+
+        <line x1="675" y1="257" x2="690" y2="257" stroke="#fbbf24" stroke-width="0.8" marker-end="url(#arrowRt)"/>
+
+        <rect x="45" y="295" width="110" height="35" rx="6" fill="rgba(120, 53, 15, 0.2)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="100" y="317" fill="white" font-size="9" font-weight="600" text-anchor="middle">阶段六</text>
+
+        <!-- 交互方向标注 -->
+        <text x="180" y="320" fill="#64748b" font-size="8">L1→L2→L3→L4</text>
+        <text x="310" y="320" fill="#64748b" font-size="8">L1→L2→L3→L4</text>
+        <text x="450" y="320" fill="#64748b" font-size="8">L4←L3←L2←L1</text>
+        <text x="580" y="320" fill="#64748b" font-size="8">L4→L3→L2→L1</text>
+
+        <text x="45" y="355" fill="#475569" font-size="8">Top-Down 约束传递</text>
+        <text x="180" y="355" fill="#475569" font-size="8">Top-Down 规范下发</text>
+        <text x="310" y="355" fill="#475569" font-size="8">L4主力 + 上层指导</text>
+        <text x="450" y="355" fill="#475569" font-size="8">Bottom-Up 逐层上报</text>
+        <text x="580" y="355" fill="#475569" font-size="8">使用者反馈收集</text>
+      </svg>
+    </div>
+
+    <!-- Architecture Diagram 3: 七后端协同拓扑 -->
+    <div class="diagram-container">
+      <h3 style="font-size:0.75rem;color:#64748b;margin-bottom:0.5rem;">图3：七类终端后端协同拓扑 — 教材项目部署视图</h3>
+      <svg viewBox="0 0 1300 520">
+        <defs>
+          <marker id="arrowBe" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#64748b" />
+          </marker>
+          <pattern id="grid3" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid3)" />
+
+        <!-- ============ 顶部：managed_modal - L1 ============ -->
+        <rect x="450" y="15" width="400" height="65" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+        <rect x="450" y="15" width="400" height="65" rx="10" fill="rgba(251, 191, 36, 0.08)"/>
+        <text x="650" y="42" fill="#fbbf24" font-size="13" font-weight="700" text-anchor="middle">🏭 managed_modal · L1 行业主编</text>
+        <text x="650" y="62" fill="#94a3b8" font-size="9" text-anchor="middle">生产级托管 · 最高安全等级 · 常驻服务 · 终审/签发</text>
+
+        <!-- ============ L1→L2 连接线 ============ -->
+        <line x1="300" y1="80" x2="300" y2="105" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="525" y1="80" x2="525" y2="105" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="775" y1="80" x2="775" y2="105" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="1000" y1="80" x2="1000" y2="105" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- ============ 第二层：singularity / ssh / docker ============ -->
+        <!-- singularity -->
+        <rect x="90" y="110" width="420" height="120" rx="8" fill="transparent" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="105" y="128" fill="#a78bfa" font-size="9" font-weight="600">🔬 singularity · HPC 集群</text>
+
+        <rect x="100" y="140" width="190" height="40" rx="6" fill="rgba(76, 29, 149, 0.25)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="195" y="157" fill="white" font-size="10" font-weight="600" text-anchor="middle">L2·枝1 基础域</text>
+        <text x="195" y="173" fill="#94a3b8" font-size="7" text-anchor="middle">文献分析·术语挖掘</text>
+
+        <rect x="300" y="140" width="190" height="40" rx="6" fill="rgba(76, 29, 149, 0.25)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="395" y="157" fill="white" font-size="10" font-weight="600" text-anchor="middle">L2·枝2 中药域</text>
+        <text x="395" y="173" fill="#94a3b8" font-size="7" text-anchor="middle">跨学科数据计算</text>
+
+        <rect x="100" y="185" width="390" height="35" rx="6" fill="rgba(76, 29, 149, 0.15)" stroke="#a78bfa" stroke-width="0.5"/>
+        <text x="295" y="206" fill="#94a3b8" font-size="8" text-anchor="middle">阶段四(审核) 批量计算 · 阶段六(修订) 影响分析</text>
+
+        <!-- ssh -->
+        <rect x="530" y="110" width="240" height="120" rx="8" fill="transparent" stroke="#34d399" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="545" y="128" fill="#34d399" font-size="9" font-weight="600">🔗 ssh · 远程服务器</text>
+
+        <rect x="540" y="140" width="220" height="40" rx="6" fill="rgba(6, 78, 59, 0.25)" stroke="#34d399" stroke-width="1"/>
+        <text x="650" y="157" fill="white" font-size="10" font-weight="600" text-anchor="middle">L2·枝4 内科域</text>
+        <text x="650" y="173" fill="#94a3b8" font-size="7" text-anchor="middle">团队共享审核·枝5 外科域</text>
+
+        <rect x="540" y="185" width="220" height="35" rx="6" fill="rgba(6, 78, 59, 0.15)" stroke="#34d399" stroke-width="0.5"/>
+        <text x="650" y="206" fill="#94a3b8" font-size="8" text-anchor="middle">全阶段团队协作</text>
+
+        <!-- docker -->
+        <rect x="790" y="110" width="420" height="120" rx="8" fill="transparent" stroke="#22d3ee" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="805" y="128" fill="#22d3ee" font-size="9" font-weight="600">🐳 docker · 容器集群</text>
+
+        <rect x="800" y="140" width="130" height="40" rx="6" fill="rgba(8, 51, 68, 0.25)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="865" y="157" fill="white" font-size="10" font-weight="600" text-anchor="middle">L2·枝3 针灸域</text>
+
+        <rect x="940" y="140" width="130" height="40" rx="6" fill="rgba(8, 51, 68, 0.25)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="1005" y="157" fill="white" font-size="10" font-weight="600" text-anchor="middle">L2·枝7 护理域</text>
+
+        <rect x="1080" y="140" width="120" height="40" rx="6" fill="rgba(8, 51, 68, 0.25)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="1140" y="157" fill="white" font-size="10" font-weight="600" text-anchor="middle">L4 批量×500</text>
+        <text x="1140" y="173" fill="#94a3b8" font-size="7" text-anchor="middle">CI/CD 生成草稿</text>
+
+        <rect x="800" y="185" width="400" height="35" rx="6" fill="rgba(8, 51, 68, 0.12)" stroke="#22d3ee" stroke-width="0.5"/>
+        <text x="1000" y="206" fill="#94a3b8" font-size="8" text-anchor="middle">轻量域容器化 · 批量生成 · 环境一致性</text>
+
+        <!-- ============ L2→L3 连接 ============ -->
+        <line x1="300" y1="230" x2="300" y2="260" stroke="#a78bfa" stroke-width="1" marker-end="url(#arrowBe)"/>
+        <line x1="650" y1="230" x2="650" y2="260" stroke="#34d399" stroke-width="1" marker-end="url(#arrowBe)"/>
+        <line x1="1000" y1="230" x2="1000" y2="260" stroke="#22d3ee" stroke-width="1" marker-end="url(#arrowBe)"/>
+
+        <!-- daytona + local 连接 -->
+        <line x1="525" y1="80" x2="525" y2="105" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="430" y="110" width="100" height="120" rx="8" fill="transparent" stroke="#fb923c" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="442" y="128" fill="#fb923c" font-size="8" font-weight="600">daytona</text>
+        <text x="442" y="155" fill="#94a3b8" font-size="7" text-anchor="middle">L2·枝6 智能</text>
+        <text x="442" y="195" fill="#94a3b8" font-size="7" text-anchor="middle">L3×80</text>
+
+        <!-- ============ 第三层：daytona ============ -->
+        <rect x="130" y="265" width="760" height="75" rx="8" fill="transparent" stroke="#fb923c" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="145" y="283" fill="#fb923c" font-size="9" font-weight="600">🛠️ daytona · 标准化开发环境</text>
+
+        <rect x="140" y="295" width="90" height="35" rx="5" fill="rgba(251, 146, 60, 0.15)" stroke="#fb923c" stroke-width="0.8"/>
+        <text x="185" y="315" fill="white" font-size="9" text-anchor="middle">L3 × 80</text>
+
+        <rect x="240" y="295" width="90" height="35" rx="5" fill="rgba(251, 146, 60, 0.15)" stroke="#fb923c" stroke-width="0.8"/>
+        <text x="285" y="315" fill="white" font-size="9" text-anchor="middle">L4 × 200</text>
+
+        <rect x="340" y="295" width="160" height="35" rx="5" fill="rgba(251, 146, 60, 0.15)" stroke="#fb923c" stroke-width="0.8"/>
+        <text x="420" y="315" fill="white" font-size="9" text-anchor="middle">L2·枝6 结合域</text>
+
+        <text x="540" y="320" fill="#94a3b8" font-size="8">学科主编标准环境 · 阶段一~六持续使用</text>
+
+        <!-- ============ daytona→local 连接 ============ -->
+        <line x1="510" y1="340" x2="510" y2="375" stroke="#fb923c" stroke-width="1" marker-end="url(#arrowBe)"/>
+
+        <!-- ============ 第四层：浪潮服务器（替代 local） ============ -->
+        <rect x="80" y="380" width="1140" height="75" rx="8" fill="transparent" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="95" y="398" fill="#fbbf24" font-size="9" font-weight="600">🖥️ 浪潮服务器 · 192.168.1.11（已部署 CursorAgent + HermesAgent + GitHub）</text>
+
+        <rect x="100" y="410" width="140" height="35" rx="5" fill="rgba(251, 191, 36, 0.15)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="170" y="432" fill="white" font-size="10" text-anchor="middle">L4 × ~50并发</text>
+
+        <rect x="250" y="410" width="130" height="35" rx="5" fill="rgba(251, 191, 36, 0.15)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="315" y="432" fill="white" font-size="10" text-anchor="middle">L2·枝8 管理域</text>
+
+        <rect x="390" y="410" width="200" height="35" rx="5" fill="rgba(251, 191, 36, 0.15)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="490" y="432" fill="white" font-size="10" text-anchor="middle">CursorAgent + HermesAgent</text>
+
+        <text x="620" y="435" fill="#475569" font-size="8">| GitHub 版本管理已启动 · 章节作者主力执行环境</text>
+
+        <!-- modal 独立块 -->
+        <rect x="910" y="265" width="300" height="75" rx="8" fill="transparent" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="925" y="283" fill="#fbbf24" font-size="9" font-weight="600">☁️ modal · 无服务器 GPU</text>
+        <rect x="920" y="295" width="130" height="35" rx="5" fill="rgba(251, 191, 36, 0.15)" stroke="#fbbf24" stroke-width="0.8"/>
+        <text x="985" y="315" fill="white" font-size="9" text-anchor="middle">L1 大规模推理</text>
+        <text x="1060" y="318" fill="#94a3b8" font-size="7">按需启动</text>
+
+        <!-- ============ 图例 ============ -->
+        <rect x="80" y="470" width="1140" height="40" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="#1e293b" stroke-width="1"/>
+        <text x="95" y="495" fill="white" font-size="9" font-weight="600">七后端:</text>
+        <rect x="170" y="484" width="14" height="10" rx="2" fill="rgba(30, 41, 59, 0.5)" stroke="#94a3b8" stroke-width="1"/>
+        <text x="190" y="494" fill="#94a3b8" font-size="8">local</text>
+        <rect x="235" y="484" width="14" height="10" rx="2" fill="rgba(8, 51, 68, 0.35)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="255" y="494" fill="#94a3b8" font-size="8">docker</text>
+        <rect x="315" y="484" width="14" height="10" rx="2" fill="rgba(6, 78, 59, 0.35)" stroke="#34d399" stroke-width="1"/>
+        <text x="335" y="494" fill="#94a3b8" font-size="8">ssh</text>
+        <rect x="375" y="484" width="14" height="10" rx="2" fill="rgba(251, 191, 36, 0.3)" stroke="#fbbf24" stroke-width="1"/>
+        <text x="395" y="494" fill="#94a3b8" font-size="8">modal</text>
+        <rect x="450" y="484" width="14" height="10" rx="2" fill="rgba(251, 146, 60, 0.3)" stroke="#fb923c" stroke-width="1"/>
+        <text x="470" y="494" fill="#94a3b8" font-size="8">daytona</text>
+        <rect x="545" y="484" width="14" height="10" rx="2" fill="rgba(76, 29, 149, 0.3)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="565" y="494" fill="#94a3b8" font-size="8">singularity</text>
+        <rect x="655" y="484" width="14" height="10" rx="2" fill="rgba(251, 191, 36, 0.15)" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="675" y="494" fill="#94a3b8" font-size="8">managed_modal</text>
+        <text x="790" y="495" fill="#475569" font-size="7">代理: ~1,700 / 成本: ~¥17,500/月 / L4就近local → L3标准daytona → L2算力singularity → L1安全managed_modal</text>
+      </svg>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-header"><div class="card-dot cyan"></div><h3>L1 行业主编 · managed_modal</h3></div>
+        <ul>
+          <li>• 全系列 120 种病证单位教材终审</li>
+          <li>• 病证范式合规 · 最高安全</li>
+          <li>• 备选：modal（大规模审计）</li>
+          <li>• 六阶段：签批→终审→签发</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot emerald"></div><h3>L2 领域主编 · 15门/域</h3></div>
+        <ul>
+          <li>• 八域各15门，总量120门</li>
+          <li>• 枝1-2: singularity (HPC)</li>
+          <li>• 枝4-5: ssh (团队共享)</li>
+          <li>• 枝6: 中医智能 · daytona</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot violet"></div><h3>L3 学科主编 · 120精准</h3></div>
+        <ul>
+          <li>• 120 学科主编(8域×15)</li>
+          <li>• 病证单位双栏审核</li>
+          <li>• 分子靶点准确性 + 证候场论完整性</li>
+          <li>• daytona 标准化环境</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot rose"></div><h3>L4 章节作者 · 浪潮服务器</h3></div>
+        <ul>
+          <li>• 浪潮 192.168.1.11 主力执行</li>
+          <li>• CursorAgent + HermesAgent 就绪</li>
+          <li>• GitHub 版本管理已启动</li>
+          <li>• ~50 Agent 并发 · 双栏病证编写</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Second row cards: 7 backends + 病证范式 -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-header"><div class="card-dot amber"></div><h3>病证同存 · 双栏原子</h3></div>
+        <ul>
+          <li>• 病：分子靶点·基因通路·蛋白靶标</li>
+          <li>• 证：证候场论·阴阳盛衰·顺应调控</li>
+          <li>• 枝6 AI桥接：分子↔场论推理</li>
+          <li>• 最小原子=病证单位(不可拆分)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot cyan"></div><h3>原则：就近→标准→算力→安全</h3></div>
+        <ul>
+          <li>• L4 local — 病证双栏就近创作</li>
+          <li>• L3 daytona — 标准病证审核环境</li>
+          <li>• L2 singularity — HPC分子靶点计算</li>
+          <li>• L1 managed_modal — 最高安全终审</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot violet"></div><h3>120学科 · 8域×15门</h3></div>
+        <ul>
+          <li>• 枝1-5: 传统中医临床域</li>
+          <li>• 枝6: 中医智能学院(AI·LLM·KG)</li>
+          <li>• 枝7-8: 护理+管理人文域</li>
+          <li>• 每域15门，均衡化学科布局</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer">
+      中医中药知识树系统 · 病证同存范式 · 四层Agent · 120学科 · 浪潮服务器 · 七后端 · v3.1
+    </p>
+  </div>
+</body>
+</html>
