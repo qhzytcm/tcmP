@@ -23,7 +23,8 @@ def load_chapter(ch: int):
     d = DRAFTS / f'ch{ch:02d}'
     if not d.exists():
         return None, 0, {}
-    files = sorted(d.glob('*.md'))
+    # 只读正文分节文件（排除 chapter-*.md 制品与 check 脚本）
+    files = sorted(f for f in d.glob('*.md') if not f.name.startswith('chapter-'))
     if not files:
         return None, 0, {}
     rows, total, per = [], 0, {}

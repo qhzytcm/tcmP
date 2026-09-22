@@ -61,6 +61,9 @@ def parse_md(text: str):
             buf = []
         elif s.startswith('#') or not s:
             continue
+        elif s.startswith('**图') or s.startswith('![') \
+                or s.startswith('图注：') or s.startswith('【图'):
+            continue   # 图块行（图题/图体/图注）不进入正文（兼容 **图 与 **图7 无空格）
         else:
             buf.append(s)
     if cur_mod and buf:
@@ -84,7 +87,7 @@ def merge_chapter(ch: int, write_py: bool = True):
     if not d.exists():
         print(f'[skip] ch{ch:02d} 目录不存在: {d}')
         return None
-    md_files = sorted(d.glob('*.md'))
+    md_files = sorted(f for f in d.glob('*.md') if not f.name.startswith('chapter-'))
     if not md_files:
         print(f'[skip] ch{ch:02d} 无 md 分节文件')
         return None

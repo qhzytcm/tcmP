@@ -67,8 +67,10 @@ def verify_xlsx(ch: int, n_rows: int):
             return False
         ws = wb[sheet_name]
         data = list(ws.iter_rows(min_row=3, values_only=True))
-        ok = len(data) == n_rows and all(str(r[2] or '').strip() for r in data)
-        print(f'[ch{ch:02d}] xlsx {sheet_name}: 数据行 {len(data)} '
+        # 正文区校验: 非空 C 列行数 >= n_rows（图题/图注文本行计入; 图体行 C 列为空不计）
+        nonempty = sum(1 for r in data if str(r[2] or '').strip())
+        ok = len(data) >= n_rows and nonempty >= n_rows
+        print(f'[ch{ch:02d}] xlsx {sheet_name}: 数据行 {len(data)} 非空 {nonempty} '
               f'({"PASS" if ok else "FAIL"})')
         return ok
     finally:
@@ -102,26 +104,69 @@ def verify_toc2():
     if not XLSX.exists():
         print('FAIL toc2: xlsx 不存在')
         return False
+    # 2a) build 函数级断言: wrange 区间 + 小节概念/方法派生
+    from cmrl_build_toc2 import wrange, sub_sections
+    if wrange(30000) != '24000-36000' or wrange(500) != '400-600':
+        print('FAIL toc2 build.wrange: 区间格式错误')
+        ok = False
+    subs = sub_sections('智能体与环境：医者、医院与患者', 3000)
+    if subs[0][0] != '智能体与环境：概念与内涵' \
+            or subs[1][0] != '智能体与环境：方法与实现':
+        print('FAIL toc2 build.sub_sections: 小节标题未概念化')
+        ok = False
     wb = load_workbook(XLSX, read_only=True)
     try:
         if '0cmrl目录' not in wb.sheetnames:
             print('FAIL toc2: 缺 0cmrl目录 sheet')
             return False
         rows = list(wb['0cmrl目录'].iter_rows(values_only=True))
-        n_ch = sum(1 for r in rows if r[0] == '章')
-        n_sec = sum(1 for r in rows if r[0] == '节')
-        n_sub = sum(1 for r in rows if r[0] == '小节')
-        if not (n_ch == 10 and n_sec == 80 and n_sub == 240):
-            print(f'FAIL toc2 xlsx 层级: 章{n_ch}/节{n_sec}/小节{n_sub} (期望 10/80/240)')
+        # 新结构: 表头+4说明行后为目录; 四级编码分列 A=章 B=节 C=小节 D=段落
+        if len(rows) != 815:
+            print(f'FAIL toc2 xlsx 总行数: {len(rows)} (期望 815)')
             ok = False
-        titles = ' '.join(str(r[2]) for r in rows if r[0] == '章')
+        data = rows[5:]   # 目录区
+        # 分列判定: 章行=A非空且B/C/D空; 节行=B非空且C空; 小节行=C非空且D空; 段落行=D非空
+        n_ch = sum(1 for r in data if str(r[0] or '').strip()
+                   and not str(r[1] or '').strip() and not str(r[2] or '').strip()
+                   and not str(r[3] or '').strip())
+        n_sec = sum(1 for r in data if str(r[1] or '').strip()
+                    and not str(r[2] or '').strip() and not str(r[3] or '').strip())
+        n_sub = sum(1 for r in data if str(r[2] or '').strip()
+                    and not str(r[3] or '').strip())
+        n_para = sum(1 for r in data if str(r[3] or '').strip())
+        if not (n_ch == 10 and n_sec == 80 and n_sub == 240 and n_para == 480):
+            print(f'FAIL toc2 xlsx 分列层级: 章{n_ch}/节{n_sec}/小节{n_sub}/段落{n_para} '
+                  f'(期望 10/80/240/480)')
+            ok = False
+        # 表头 11 列分列
+        hdr = rows[0]
+        if hdr[:4] != ('章', '节', '小节', '段落'):
+            print(f'FAIL toc2 xlsx 表头未分列: {hdr[:4]}')
+            ok = False
+        # 区间化断言: 段落行预计字数(G列 idx6)含 '-'
+        w_cell = [str(r[6]) for r in data if str(r[3] or '').strip()][:5]
+        if not all('-' in w for w in w_cell):
+            print(f'FAIL toc2 xlsx 字数未区间化: {w_cell}')
+            ok = False
+        # 小节标题概念化断言(E列 idx4): 无模板名"知识要点"
+        sub_titles = [str(r[4]) for r in data if str(r[2] or '').strip()
+                      and not str(r[3] or '').strip()]
+        if any('知识要点' in t for t in sub_titles) \
+                or not all('概念与内涵' in t or '方法与实现' in t or '小结与衔接' in t
+                           for t in sub_titles):
+            print('FAIL toc2 xlsx 小节标题未概念化')
+            ok = False
+        titles = ' '.join(str(r[4]) for r in data if str(r[0] or '').strip()
+                          and not str(r[1] or '').strip())
         if not all(k in titles for k in ('认知', '信仰', '幸福')):
             print('FAIL toc2 xlsx 章标题缺三编关键词')
             ok = False
-        if '原第1章' not in str(rows[5][3] or ''):
+        if '原第1章' not in str(data[0][5] or ''):
             print('FAIL toc2 xlsx 第1章内容映射标注缺失')
             ok = False
-        sec8_notes = [str(r[3]) for r in rows if r[0] == '节' and str(r[1]).endswith('.8')]
+        sec8_notes = [str(r[5]) for r in data
+                      if str(r[1] or '').strip() == '8'
+                      and not str(r[2] or '').strip()]
         if len(sec8_notes) != 10 or any('一句话带过' not in s for s in sec8_notes):
             print('FAIL toc2 xlsx 第8节缺少"平台一句话带过"标注')
             ok = False
