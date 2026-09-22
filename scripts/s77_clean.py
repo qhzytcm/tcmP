@@ -10,6 +10,9 @@ S77 正文清理器：去扫描污染噪声 + 标点整理（**确定性**）
   ⑥ 多余空白折叠
 """
 import re
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from ocr_fix_rules import fix as _refix          # 校字规则（含 S80 形近讹字）
 
 SYM = r'[#○〇．·•‥⋯+*﹃﹄【】「」『』]'   # 污染符号；**保留**中文引号 “”（LLM 正当使用）
 PUNCT = '，。、；：？！'
@@ -26,7 +29,9 @@ def clean(t, drop_quotes=False):
     # ③ 段标记前的前导页码残渣（如「一九病源…」）
     o = re.sub(r'^[\s一二三四五六七八九十0-9]{1,6}(?=病源|病状|治法)', '', o)
     o = re.sub(SYM, '', o)                              # ④ 污染符号
-    o = re.sub(r'病源(?=病源)', '', o)                   # ⑤ 重复标记
+    o = re.sub(r'[\[\]]', '', o)                        # ④b OCR 方括号残渣（[病源] 标记在 s72 之后才加）
+    o = _refix(o)                                       # ⑤ 校字（形近讹字，幂等）
+    o = re.sub(r'病源(?=病源)', '', o)                   # ⑥ 重复段标记
     o = re.sub(r'病状(?=病状)', '', o)
     o = re.sub(r'治法(?=治法)', '', o)
     o = re.sub(r'[ \t]{2,}', ' ', o)
