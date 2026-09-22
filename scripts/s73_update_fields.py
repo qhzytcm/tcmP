@@ -40,6 +40,8 @@ try:
     print(f'PDF: {pdf} {os.path.getsize(pdf)} bytes | {n2} 页', flush=True)
 finally:
     if doc is not None:
-        doc.Close(True)
+        # ⚠️ 必须显式传 SaveChanges：doc.Close(True) 会保存 → 抵消 --no-save，
+        #    导致 Word 重写 docx、毁掉「五号仿宋」。0=不保存 / -1=保存。
+        doc.Close(-1 if not NO_SAVE else 0)
     app.Quit()
 print('DONE')
