@@ -1,0 +1,334 @@
+# -*- coding: utf-8 -*-
+"""《中医场景强化学习》第6章 费曼图标准重构版（图表工程师 v3）
+
+按用户【费曼图标准】统一重构：
+  ① 节点-连线主体（账本/链条/表格/闭环=白底黑框节点，箭头=数据流/更新方向）；
+  ② 黑白灰线稿为主，至多 2 种低饱和色点缀（暗绿=目标/新账/最优 max 路径、暗红=警示/修正方向），
+     禁止大面积填充色块；
+  ③ 极简去装饰：无渐变、无阴影、无背景网格；
+  ④ 方向明确：复诊看一步、更新链条、max 更新路径、进化闭环一律用箭头；
+  ⑤ 信息密度高：δt 表达式/价值/α/γ/q 值直接标注在节点与线上；
+  ⑥ 聚焦图段延续：沿用 v2 聚焦版（fig6-2 前 15 回合收敛段；fig6-3 数据 4 路径）；
+  ⑦ 中医场景语义保留：老账/新账比喻、Q 表=证候×方剂、在线进化闭环。
+
+输出：figures/ch06/fig6-1.png ~ fig6-4.png（覆盖 v2 版）。
+风格：SimHei / axes.unicode_minus=False / dpi=200。
+数值：例6.1（γ=0.9, α=0.1）：回合1后(0,0,0,0.1)、回合2后(0,0,0.009,0.19)、
+      第三回合 s3 TD目标=0.171、v(s3)=0.0252、回合3后(0,0.00081,0.0252,0.271)；
+      例6.4：q(s1,左)=-0.1, q(s1,右)=0.01, q(s2,左)=0, q(s2,右)=0.1, max=0.1。
+"""
+import os
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch, Circle
+
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ch06')
+os.makedirs(OUT, exist_ok=True)
+
+# ---------- 费曼风格常量 ----------
+K   = '#111111'
+MG  = '#666666'
+LG = '#999999'
+B = '#5b7d9e'
+R   = '#a35555'
+
+
+def box(ax, x, y, w, h, ec, txt, fs=9.5, lw=1.6, tc=K, fc='white',
+        boxstyle='square,pad=0', linespacing=1.45, bold=False, ls='-'):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle=boxstyle,
+                                facecolor=fc, edgecolor=ec, lw=lw,
+                                linestyle=ls, zorder=3))
+    ax.text(x + w / 2, y + h / 2, txt, ha='center', va='center',
+            fontsize=fs, color=tc, zorder=4, linespacing=linespacing,
+            fontweight=('bold' if bold else 'normal'))
+
+
+def arrow(ax, x1, y1, x2, y2, color=K, lw=2.0, ls='-', rad=0.0, zorder=3):
+    ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2),
+                                 arrowstyle='-|>', color=color, lw=lw,
+                                 linestyle=ls, connectionstyle='arc3,rad={}'.format(rad),
+                                 mutation_scale=14, zorder=zorder))
+
+
+def tag(ax, x, y, txt, color=K, fs=9.0):
+    ax.text(x, y, txt, ha='left', va='center', fontsize=fs,
+            color=color, fontweight='bold')
+
+
+# ======================================================================
+# 图 6-1 TD 一步修正：老账/新账 + 更新链条（聚焦两段核心）
+# ======================================================================
+def fig6_1():
+    fig, ax = plt.subplots(figsize=(12.4, 5.2))
+    ax.set_xlim(-0.3, 13.1)
+    ax.set_ylim(-0.5, 5.2)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    # ---- 左半幅：临床比喻（老账 → 新账 → δt）----
+    tag(ax, 0.2, 4.95, '临床比喻：老账 / 新账')
+    box(ax, 0.2, 2.7, 2.5, 1.7, K,
+        '老账 v(St)\n初诊时的判断\n\n"我对当前证候\n长期前景的估计"', fs=9.6)
+    box(ax, 3.3, 2.7, 2.7, 1.7, B,
+        '新账 Rt+1 + γv(St+1)\n复诊看一步真实反馈\n+ 对后继证候的预判\n\n'
+        '"比老账多了一天\n的观察，自然更可信"', fs=9.4, lw=2.0)
+    arrow(ax, 2.7, 3.55, 3.3, 3.55, color=K, lw=2.4)
+    ax.text(3.0, 3.95, '复诊\n看一步', ha='center', fontsize=8.6, color=K)
+    arrow(ax, 4.65, 2.7, 4.65, 2.32, color=K, lw=1.6)
+    ax.text(4.9, 2.48, '相减得差', ha='left', fontsize=8.4, color=K)
+    box(ax, 0.2, 0.45, 5.8, 1.5, K,
+        'TD 误差（TD error）：δt = v(St) - (Rt+1 + γv(St+1)) = 新账 - 老账\n\n'
+        'δt > 0 估计偏高 → 往下调 ↓　·　δt < 0 估计偏低 → 往上调 ↑　·　δt = 0 无需修正', fs=9.2)
+
+    # ---- 右半幅：TD 更新链条（旧估计 → TD目标 → TD误差 → 新估计）----
+    tag(ax, 6.6, 4.95, 'TD 更新链条：把"经验"翻译成"修正量"')
+    chain = [
+        (6.6, 3.15, '旧估计\nv(St)'),
+        (8.4, 3.15, 'TD目标\nRt+1 + γv(St+1)'),
+        (10.45, 3.15, 'TD误差 δt\n= 目标 - 旧估计'),
+    ]
+    for k, (x, y, txt) in enumerate(chain):
+        box(ax, x, y, 1.35, 1.05, K, txt, fs=8.8, lw=1.8)
+        if k < 2:
+            arrow(ax, x + 1.35, y + 0.52, x + 1.61, y + 0.52, color=K, lw=2.0)
+    box(ax, 10.35, 1.55, 1.9, 1.0, B,
+        '新估计\nv(St) ← v(St) + α·δt', fs=8.8, lw=2.0)
+    arrow(ax, 11.05, 3.15, 11.3, 2.62, color=B, lw=2.0, rad=-0.3)
+    ax.text(11.55, 2.92, 'δt 符号自动给出\n修正方向 ↑/↓', ha='left', fontsize=8.2,
+            color=B,
+            bbox=dict(boxstyle='round,pad=0.15', fc='white', ec=B, lw=1.0, alpha=0.85))
+    box(ax, 6.6, 0.45, 5.6, 1.5, K,
+        '更新式：v(St) ← v(St) + α[Rt+1 + γv(St+1) - v(St)]\n\n'
+        'TD目标（TD target）· TD误差（TD error）· 自举（bootstrapping）\n'
+        '用自己当前的估计改进自己', fs=9.4)
+
+    fig.savefig(os.path.join(OUT, 'fig6-1.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig6-1 done')
+
+
+# ======================================================================
+# 图 6-2 TD(0) 价值学习曲线（聚焦前 15 回合；黑白灰线型区分；无背景网格）
+# ======================================================================
+def fig6_2():
+    gamma, alpha = 0.9, 0.1
+    true_v = [0.729, 0.81, 0.9, 1.0]
+    v = [0.0, 0.0, 0.0, 0.0]
+    N = 60
+    hist = []
+    for ep in range(1, N + 1):
+        start = 1 if ep == 1 else 0
+        for s in range(start, 4):
+            r = 1.0 if s == 3 else 0.0
+            v_next = 0.0 if s == 3 else v[s + 1]
+            target = r + gamma * v_next
+            v[s] += alpha * (target - v[s])
+        hist.append(list(v))
+    assert abs(hist[0][3] - 0.1) < 1e-9, hist[0]
+    assert abs(hist[1][2] - 0.009) < 1e-9, hist[1]
+    assert abs(hist[1][3] - 0.19) < 1e-9, hist[1]
+    assert abs(hist[2][1] - 0.00081) < 1e-9, hist[2]
+    assert abs(hist[2][2] - 0.0252) < 1e-9, hist[2]
+    assert abs(hist[2][3] - 0.271) < 1e-9, hist[2]
+    target_s3 = 0.9 * hist[1][3]
+    assert abs(target_s3 - 0.171) < 1e-9
+    print('  手算校验通过；15回合后 v =', [round(hist[14][i], 4) for i in range(4)])
+
+    FOCUS = 15
+    fig, ax = plt.subplots(figsize=(9.6, 5.8))
+    xs = list(range(1, FOCUS + 1))
+    # 黑白灰线型：v(s4) 墨实线 / v(s3) 深灰实线 / v(s2) 灰虚线 / v(s1) 浅灰点划线
+    styles = [
+        (K, '-', 'v(s4)（估计值）'),
+        (MG, '-', 'v(s3)（估计值）'),
+        (MG, (0, (5, 3)), 'v(s2)（估计值）'),
+        (LG, (0, (1, 2)), 'v(s1)（估计值）'),
+    ]
+    for i in range(4):
+        c, ls, lab = styles[i]
+        ax.plot(xs, [h[i] for h in hist[:FOCUS]], color=c, lw=2.4, ls=ls, label=lab)
+        ax.axhline(true_v[i], color=c, lw=1.1, ls=(0, (8, 4)), alpha=0.55)
+        ax.text(FOCUS + 0.55, true_v[i], '{}'.format(true_v[i]), fontsize=8.6,
+                color=c, va='center')
+    ax.text(FOCUS + 0.55, 0.015, '虚线 = 真实价值', fontsize=8.4, color=MG)
+
+    marks = [
+        (1, 3, 0.1, '回合1后\nv(s4)=0.1', 0.32, 'left'),
+        (2, 3, 0.19, 'v(s4)=0.19', 0.34, 'left'),
+        (2, 2, 0.009, '回合2后\nv(s3)=0.009', 0.075, 'left'),
+        (3, 3, 0.271, '回合3后 v(s4)=0.271', 0.42, 'left'),
+        (3, 2, 0.0252, '回合3：TD目标=0.171\nv(s3)=0.0252', 0.17, 'left'),
+        (3, 1, 0.00081, '回合3后\nv(s2)=0.00081', 0.052, 'left'),
+    ]
+    for (ep, i, val, txt, txty, ha_) in marks:
+        c = styles[i][0]
+        ax.plot(ep, val, 'o', color=c, ms=7, zorder=5)
+        tx = ep + 1.6 if ha_ == 'left' else ep - 1.0
+        ax.annotate(txt, xy=(ep, val), xytext=(tx, txty),
+                    fontsize=8.0, color=c, ha=ha_, va='center',
+                    arrowprops=dict(arrowstyle='-', color=c, lw=0.9,
+                                    shrinkA=2, shrinkB=2),
+                    bbox=dict(boxstyle='round,pad=0.12', fc='white',
+                              ec='none', alpha=0.82))
+
+    # 信息回传弧线（灰色虚线：奖励信息逐格反向回传）
+    ax.annotate('', xy=(2, 0.009), xytext=(1, 0.1),
+                arrowprops=dict(arrowstyle='-|>', color=MG, lw=1.8,
+                                linestyle=(0, (4, 2)),
+                                connectionstyle='arc3,rad=-0.45'), zorder=4)
+    ax.annotate('', xy=(3, 0.00081), xytext=(2, 0.009),
+                arrowprops=dict(arrowstyle='-|>', color=MG, lw=1.8,
+                                linestyle=(0, (4, 2)),
+                                connectionstyle='arc3,rad=-0.45'), zorder=4)
+    ax.text(1.35, 0.14, '奖励信息逐格回传\n（每回合最多一格）', fontsize=8.0,
+            color=MG)
+
+    ax.set_xlabel('回合（episode）——聚焦收敛段（前 15 回合）', fontsize=10.5, color=K)
+    ax.set_ylabel('状态价值估计 v(s)', fontsize=10.5, color=K)
+    ax.set_xlim(0, FOCUS + 1.6)
+    ax.set_ylim(-0.03, 1.05)
+    ax.set_xticks([1, 2, 3, 5, 10, 15])
+    ax.set_yticks([0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
+    ax.tick_params(colors=K)
+    for sp in ax.spines.values():
+        sp.set_color(K)
+    leg = ax.legend(loc='lower right', fontsize=9.0, frameon=True, edgecolor=K)
+    leg.get_frame().set_facecolor('white')
+    fig.savefig(os.path.join(OUT, 'fig6-2.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig6-2 done')
+
+
+# ======================================================================
+# 图 6-3 Q 学习法：Q 表 + max 更新路径（数据 4，目标与行为分离）
+# ======================================================================
+def fig6_3():
+    fig, ax = plt.subplots(figsize=(11.8, 5.9))
+    ax.set_xlim(-0.4, 12.4)
+    ax.set_ylim(-0.5, 5.9)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    # ---- 左区：Q 表（行=状态，列=动作；白底黑框网格）----
+    tag(ax, 0.35, 5.55, 'Q 表：状态（证候）× 动作（方剂）')
+    cell_w, cell_h, x0, y0, gap = 1.5, 1.05, 0.35, 2.15, 0.25
+    header = ['', '动作"左"', '动作"右"']
+    rows = [['s1', '-0.1', '0.01'], ['s2', '0（假设值）', '0.1']]
+    for j, t in enumerate(header):
+        box(ax, x0 + j * cell_w, y0 + 2 * (cell_h + gap) + 0.2, cell_w, 0.75,
+            K, t, fs=9.8, lw=1.4, bold=(j == 0))
+    for i in range(2):
+        for j in range(3):
+            ec, lw, hatch = K, 1.2, ''
+            if i == 0 and j == 2:
+                ec, lw = B, 2.6
+            if i == 1 and j == 2:
+                ec, lw = B, 2.0
+            txt = rows[i][j]
+            if i == 0 and j == 2:
+                txt = '0.01 ← 更新后'
+            y = y0 + (1 - i) * (cell_h + gap)
+            box(ax, x0 + j * cell_w, y, cell_w, cell_h, ec, txt, fs=9.6, lw=lw)
+    mx = x0 + 2 * cell_w + cell_w / 2
+    arrow(ax, mx, y0 + cell_h + 0.04, mx, y0 + cell_h + gap - 0.04,
+          color=B, lw=2.2)
+    ax.text(2.6, 1.78,
+            '绿色箭头：max 源 q(s2,右)=0.1 → 更新格 q(s1,右)=0.01；'
+            '更新目标与行为策略在 s2 的实际动作无关（目标与行为分离）',
+            fontsize=8.2, color=B, ha='center')
+    ax.text(2.6, 1.42, '行 = 状态，列 = 动作', fontsize=8.0,
+            color=LG, ha='center')
+
+    # ---- 中区：两条更新式对比（唯一差别：后继项）----
+    tag(ax, 5.55, 5.35, '唯一差别：后继项')
+    box(ax, 5.55, 3.5, 3.55, 1.1, B,
+        'Q 学习法：q(St,At) ← q(St,At)\n+ α[Rt+1 + γ·max_a\' q(St+1,a\') - q(St,At)]',
+        fs=8.4, lw=2.0)
+    box(ax, 5.55, 2.1, 3.55, 1.1, MG,
+        'Sarsa：q(St,At) ← q(St,At)\n+ α[Rt+1 + γ·q(St+1,At+1) - q(St,At)]',
+        fs=8.4, lw=1.6)
+    ax.text(9.25, 4.05, 'max_a\'\n（最优动作）', fontsize=8.4, color=B, ha='center')
+    ax.text(9.25, 2.65, 'At+1\n（实际动作）', fontsize=8.4, color=MG, ha='center')
+    ax.text(7.32, 1.68, 'Q 学习法：目标与行为分离（异策略 off-policy）',
+            ha='center', fontsize=8.8, color=B)
+
+    # ---- 右区：数据 4 更新路径 ----
+    tag(ax, 9.55, 5.35, '数据 4 的更新路径')
+    box(ax, 9.55, 3.5, 2.4, 1.0, K,
+        '(s1, 右)\nq = 0（更新前）', fs=8.6)
+    box(ax, 9.55, 2.1, 2.4, 1.0, K,
+        '执行"右"\n奖励 r = 0\n到达 s2', fs=8.4)
+    arrow(ax, 10.75, 3.5, 10.75, 3.12, color=K, lw=1.8)
+    box(ax, 9.55, 0.45, 2.4, 1.1, B,
+        'max{0, 0.1} = 0.1\nq(s1,右)=0+0.1×(0.1-0)\n= 0.01', fs=8.2, lw=2.2)
+    arrow(ax, 10.75, 2.1, 10.75, 1.6, color=B, lw=2.4)
+    ax.text(11.08, 1.88, 'Q 学习法（绿）：\n与 s2 处实际动作无关', fontsize=7.6,
+            color=B, ha='left')
+    box(ax, 6.3, 0.45, 2.75, 1.1, MG,
+        '行为策略在 s2 实际选"左"\nq(s2,左)=0\nSarsa 用之：q(s1,右) 保持不变',
+        fs=8.0, lw=1.4, ls=(0, (4, 2)))
+    arrow(ax, 9.95, 2.28, 7.75, 1.62, color=MG, lw=1.8,
+          ls=(0, (4, 2)), rad=-0.18)
+    ax.text(8.75, 1.68, 'Sarsa（灰虚线）：按当前做法实际走下去', fontsize=7.6,
+            color=MG, ha='center')
+
+    fig.savefig(os.path.join(OUT, 'fig6-3.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig6-3 done')
+
+
+# ======================================================================
+# 图 6-4 在线学习进化闭环（对话-日志-更新-服务；白底黑框 + 顺时针箭头）
+# ======================================================================
+def fig6_4():
+    fig, ax = plt.subplots(figsize=(10.0, 6.0))
+    ax.set_xlim(-0.5, 10.5)
+    ax.set_ylim(-0.6, 6.0)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    cx, cy = 5.0, 3.0
+    ax.add_patch(Circle((cx, cy), 1.15, facecolor='white', edgecolor=K,
+                        lw=2.4, zorder=3))
+    ax.text(cx, cy + 0.38, '在线进化\n(online evolution)', ha='center',
+            fontsize=9.6, fontweight='bold', color=K, zorder=4)
+    ax.text(cx, cy - 0.42, '走一步看一步\n边走边修正', ha='center', fontsize=8.6,
+            color=MG, zorder=4)
+
+    nodes = [
+        (5.0, 4.9, '① 对话', '患者与医者Agent\n症状—辨证—反馈\n产生一步经验'),
+        (8.35, 3.0, '② 日志', '进化记录\n状态-动作-奖励-误差\n每一步都有账可查'),
+        (5.0, 1.1, '③ 更新', 'TD 增量更新\nv ← v + α(目标 - 旧值)\n每步经验立即入账'),
+        (1.65, 3.0, '④ 服务', '改进后的辨证与推荐\n价值表刷新\n更好服务'),
+    ]
+    for (x, y, tag_, txt) in nodes:
+        box(ax, x - 1.5, y - 0.72, 3.0, 1.44, K, tag_ + '\n' + txt, fs=8.8, lw=1.8)
+    arrow(ax, 5.85, 4.82, 7.55, 4.05, color=K, lw=2.4, rad=-0.25)
+    arrow(ax, 8.25, 2.2, 7.45, 1.4, color=K, lw=2.4, rad=-0.25)
+    arrow(ax, 4.15, 1.18, 2.45, 1.95, color=K, lw=2.4, rad=-0.25)
+    arrow(ax, 1.75, 3.8, 2.55, 4.6, color=K, lw=2.4, rad=-0.25)
+    ax.text(6.85, 4.75, '一步经验\n可追溯', fontsize=8.0, color=MG)
+    ax.text(8.05, 1.55, '增量更新\n无需等待', fontsize=8.0, color=MG)
+    ax.text(3.0, 1.15, '价值表\n刷新', fontsize=8.0, color=MG)
+    ax.text(1.6, 4.75, '更好服务\n→ 更好数据', fontsize=8.0, color=MG)
+
+    box(ax, 0.3, -0.5, 9.4, 1.0, MG,
+        '四条实现路径：增量更新（数据流驱动进化）　·　探索-利用平衡（ε 随场景周期调度）　·\n'
+        '基线校准（个人定位持续对齐）　·　反馈校准（用实现修正估计）',
+        fs=8.6, lw=1.3)
+
+    fig.savefig(os.path.join(OUT, 'fig6-4.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig6-4 done')
+
+
+if __name__ == '__main__':
+    fig6_1()
+    fig6_2()
+    fig6_3()
+    fig6_4()
+    print('ALL DONE ->', OUT)

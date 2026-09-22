@@ -1,0 +1,36 @@
+== hermes-verify 费曼图重构验证（ad-hoc）==
+python=C:\ProgramData\Anaconda3\python.exe
+PASS: 31
+  PASS: gen_ch07_figures_feynman.py (rc=0, glyph=0)
+  PASS: gen_ch08_figures_feynman.py (rc=0, glyph=0)
+  PASS: gen_ch09_figures_feynman.py (rc=0, glyph=0)
+  PASS: gen_ch10_figures_feynman.py (rc=0, glyph=0)
+  PASS ch07/fig7-1.png size=1838x994 sat=0.36%
+  PASS ch07/fig7-2.png size=1681x1304 sat=0.53%
+  PASS ch07/fig7-3.png size=1939x1085 sat=0.72%
+  PASS ch07/fig7-4.png size=1700x1085 sat=0.60%
+  PASS ch08/fig8-1.png size=1510x922 sat=0.91%
+  PASS ch08/fig8-2.png size=1699x953 sat=0.91%
+  PASS ch08/fig8-3.png size=1970x981 sat=0.36%
+  PASS ch08/fig8-4.png size=1838x994 sat=0.06%
+  PASS ch09/fig9-1.png size=1976x935 sat=0.31%
+  PASS ch09/fig9-2.png size=2215x954 sat=0.70%
+  PASS ch09/fig9-3.png size=1855x939 sat=0.67%
+  PASS ch09/fig9-4.png size=1774x931 sat=0.88%
+  PASS ch10/fig10-1.png size=1373x871 sat=0.16%
+  PASS ch10/fig10-2.png size=1404x810 sat=0.00%
+  PASS ch10/fig10-3.png size=1273x1210 sat=0.34%
+  PASS ch10/fig10-4.png size=1589x1087 sat=0.13%
+  PASS ch10/fig10-5.png size=1404x994 sat=0.33%
+  PASS ch10/fig10-6.png size=1434x1210 sat=0.37%
+  PASS ch10/fig10-7.png size=1438x810 sat=0.85%
+  PASS md 登记 ch07
+  PASS md 登记 ch08
+  PASS md 登记 ch09
+  PASS md 登记 ch10
+  PASS 语法 gen_ch07_figures_feynman.py
+  PASS 语法 gen_ch08_figures_feynman.py
+  PASS 语法 gen_ch09_figures_feynman.py
+  PASS 语法 gen_ch10_figures_feynman.py
+FAIL: 0
+VERDICT: ALL PASS

@@ -39,6 +39,16 @@ credentials.json
 *.db-wal
 *.db-shm
 
+# Large media — 素问讲读视频线（2,693 文件 / 4.68GB，不入主仓）
+# 归档位置见 archive/SUWEN-VIDEO-ARCHIVE.md（主仓外 F:\hermes + 备份）
+drafts/cmrl/figures/book/video/
+*.mp4
+*.mkv
+*.mov
+*.m4a
+*.wav
+*.mp3
+
 # Temp
 *.tmp
 *.temp

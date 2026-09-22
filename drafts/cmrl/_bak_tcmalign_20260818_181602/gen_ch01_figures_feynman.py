@@ -1,0 +1,450 @@
+# -*- coding: utf-8 -*-
+"""《中医场景强化学习》第1章 核心图生成脚本（v3 费曼图标准重构版，图表工程师 2026-08-18）
+
+费曼图重构标准落地（7 条）：
+  ① 主体结构 = 节点（小方块/圆圈，表示状态或概念）+ 连线（直线/箭头/虚线/点线，表示关系/转移/流动/轨迹）；
+  ② 黑白灰线稿为主（印刷友好），低饱和点缀色按图注颜色词对齐（v4 颜色对齐批次）：
+       灰蓝 #5b7d9e = 示例路径/主链/映射；灰红 #a35555 = 禁区/反哺/警示；
+       低饱和橙 #c07a3f = 回路箭头/穿禁区示误轨迹；低饱和绿 #6f9e6f = 轨迹/汇总框；
+       极淡绿 #edf4ed / 极淡蓝 #edf2f6 = 浅绿盒/浅蓝盒底色（彩度≈灰，印刷友好）；
+  ③ 极简：去装饰——无渐变/阴影/背景网格/圆角框，节点连线一律直角方块与黑灰线；
+  ④ 方向明确：流程/时间方向一律箭头标注；
+  ⑤ 信息密度高：状态名/动作/奖励直接标注在节点与线上；
+  ⑥ 聚焦图段延续：继承 v2 的 xlim/ylim 聚焦坐标，不缩字、不缩图；
+  ⑦ 中医场景语义保留：医院垂直切面（走廊-电梯-诊室窗口）、四诊=状态/方剂=动作/疗效=奖励/辨证=策略。
+
+生成：fig1-1 / fig1-2 / fig1-3 / fig1-5 / fig1-6（覆盖 figures/ch01/*.png，SimHei + unicode_minus=False + dpi=200；
+v4 批次：图注颜色词→图体元素对齐，未提元素保持黑白灰，彩色像素占比 <5%）
+"""
+import os
+import math
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle, Circle, Patch
+from matplotlib.lines import Line2D
+
+plt.rcParams['font.sans-serif'] = ['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ch01')
+os.makedirs(OUT, exist_ok=True)
+
+# ---- 费曼色板：黑白灰 + 2 种低饱和点缀 ----
+K   = '#111111'   # 主黑（节点边/主箭头/主曲线/主文字）
+DK  = '#333333'   # 深灰（次结构）
+MG  = '#666666'   # 中灰（次要标注）
+LG  = '#999999'   # 浅灰（辅助线/共享段）
+B   = '#5b7d9e'   # 灰蓝：示例路径/主链/映射（图注"蓝色"）
+R   = '#a35555'   # 灰红：禁区/反哺/警示（图注"红色/灰红"）
+O   = '#c07a3f'   # 低饱和橙：回路箭头/穿禁区示误轨迹（图注"橙色"）
+G   = '#6f9e6f'   # 低饱和绿：轨迹/汇总框（图注"绿色"）
+P_GREEN = '#edf4ed'  # 极淡绿：回报框底/外环浅绿盒（彩度≈灰）
+P_BLUE  = '#edf2f6'  # 极淡蓝：内环浅蓝盒（彩度≈灰）
+G0  = '#efefef'   # 浅灰填充（电梯核 / 目标底）
+G1  = '#f4f4f4'   # 更浅灰（禁区斜纹底 / 高亮底）
+
+
+def state_xy(s):
+    """行优先编号 → 格心坐标 (col, row)"""
+    i = int(s[1:]) - 1
+    return (i % 3, i // 3)
+
+
+# ================================================================ 图 1-1
+def fig1_1():
+    """图 1-1 医院垂直切面网格寻路（费曼版）
+    节点 = 9 个科室方块（中间列电梯核浅灰底、s6 禁区斜纹灰红边、s9 目标黑粗边）；
+    连线 = 黑色粗外框（越界弹回）+ 深灰楼板线 + 蓝色虚线箭头示例路径 s1→s2→s5→s8→s9；
+    方向 = 路径箭头自上而下乘电梯、右转入诊室。
+    """
+    fig, ax = plt.subplots(figsize=(6.4, 6.9))
+    ax.set_xlim(-1.65, 3.60)
+    ax.set_ylim(2.95, -0.95)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    # ---- 医院外轮廓（越界弹回边界：黑粗）+ 两道楼板（深灰粗线） ----
+    for (x0, y0, x1, y1) in [(-0.5, -0.5, 2.5, -0.5), (-0.5, 2.5, 2.5, 2.5),
+                             (-0.5, -0.5, -0.5, 2.5), (2.5, -0.5, 2.5, 2.5)]:
+        ax.plot([x0, x1], [y0, y1], color=K, lw=3.4, solid_capstyle='butt', zorder=2)
+    for y in [0.5, 1.5]:
+        ax.plot([-0.5, 2.5], [y, y], color=DK, lw=2.6, solid_capstyle='butt', zorder=2)
+
+    # ---- 楼层标签（左侧，黑粗） ----
+    for row, name in {0: '1层', 1: '2层', 2: '3层'}.items():
+        ax.text(-1.00, row, name, ha='center', va='center',
+                fontsize=12.5, fontweight='bold', color=K, zorder=5)
+
+    # ---- 中间列：垂直交通核 s2/s5/s8（浅灰底 + 电梯井虚线边界） ----
+    for s in ['s2', 's5', 's8']:
+        col, row = state_xy(s)
+        ax.add_patch(Rectangle((col - 0.5, row - 0.5), 1, 1, facecolor=G0,
+                               edgecolor=MG, lw=1.6, zorder=1))
+        ax.text(col - 0.34, row + 0.33, s, ha='center', va='center',
+                fontsize=8, fontweight='bold', color=MG, zorder=3)
+        ax.text(col, row + 0.12, '走廊', ha='center', va='center',
+                fontsize=8.2, color=MG, zorder=3)
+        ax.text(col, row - 0.24, '电梯↑', ha='center', va='center',
+                fontsize=9, color=K, fontweight='bold', zorder=3)
+    for x in [0.5, 1.5]:
+        ax.plot([x, x], [-0.5, 2.5], color=LG, lw=1.4, linestyle=(0, (3, 2)), zorder=2)
+
+    # ---- 左右两列：诊室房间（白底黑边；s6 禁区斜纹灰红；s9 目标黑粗边） ----
+    room_names = {
+        's1': '大厅·挂号处', 's3': '内科诊室', 's4': '针灸科',
+        's6': '手术区', 's7': '检验科', 's9': '专家门诊',
+    }
+    sides = {'s1': '左手侧', 's3': '右手侧', 's4': '左手侧',
+             's6': '右手侧', 's7': '左手侧', 's9': '右手侧'}
+    for s in ['s1', 's3', 's4', 's6', 's7', 's9']:
+        col, row = state_xy(s)
+        if s == 's6':
+            fc, ec, lw, ht = G1, K, 2.0, '///'
+        elif s == 's9':
+            fc, ec, lw, ht = G0, K, 2.6, None
+        else:
+            fc, ec, lw, ht = 'white', K, 1.2, None
+        ax.add_patch(Rectangle((col - 0.5, row - 0.5), 1, 1, facecolor=fc,
+                               edgecolor=ec, lw=lw, hatch=ht, zorder=1))
+        ax.text(col - 0.33, row + 0.33, s, ha='center', va='center',
+                fontsize=9.5, fontweight='bold', color=K, zorder=3)
+        ax.text(col, row + 0.06, room_names[s], ha='center', va='center',
+                fontsize=8.8, color=DK, zorder=3)
+        if s in ('s6', 's9'):
+            label = '禁区 r = -1' if s == 's6' else '目标 r = +1'
+            color = K
+            ax.text(col, row - 0.36, label, ha='center', va='center',
+                    fontsize=7.4, color=color, fontweight='bold', zorder=3)
+        else:
+            ax.text(col, row - 0.36, sides[s], ha='center', va='center',
+                    fontsize=7.0, color=MG, zorder=3)
+        # 门：朝走廊（中间列）一边
+        dx = 0.5 if col == 0 else -0.5
+        ax.plot([col + dx, col + dx], [row - 0.10, row + 0.10],
+                color=DK, lw=2.0, zorder=3)
+    # s6 / s9 补充标注（指针图段）
+    ax.annotate('患者不可进入', xy=(2, 0.56), xytext=(2, 0.40),
+                arrowprops=dict(arrowstyle='->', color=DK, lw=1.2),
+                ha='center', va='center', fontsize=7.2, color=DK, zorder=4)
+    ax.annotate('右手侧第2窗口', xy=(2.44, 2.08), xytext=(2.62, 2.36),
+                arrowprops=dict(arrowstyle='->', color=DK, lw=1.2),
+                ha='center', va='center', fontsize=7.8, color=DK,
+                fontweight='bold', zorder=4)
+    ax.text(2, 1.56, '敲门进入/候诊叫号', ha='center', va='center',
+            fontsize=6.9, color=DK, zorder=4)
+
+    # ---- 示例路径：灰蓝虚线箭头 s1→s2→s5→s8→s9（沿走廊+电梯，不穿科室） ----
+    for (a, b) in [('s1', 's2'), ('s2', 's5'), ('s5', 's8'), ('s8', 's9')]:
+        x1, y1 = state_xy(a)
+        x2, y2 = state_xy(b)
+        ax.annotate('', xy=(x2, y2), xytext=(x1, y1),
+                    arrowprops=dict(arrowstyle='-|>', color=B, lw=2.4,
+                                    linestyle=(0, (4, 2))), zorder=4)
+    for yy in [0.30, 1.30]:
+        ax.text(1.42, yy, '乘电梯↑', ha='left', va='center',
+                fontsize=7.4, color=B, fontweight='bold', zorder=5)
+
+    handles = [
+        Patch(facecolor='white', edgecolor=K, lw=1.2, label='诊室房间：可进入，r = 0'),
+        Patch(facecolor=G0, edgecolor=MG, lw=1.6, label='垂直交通核（电梯/楼梯）'),
+        Patch(facecolor=G1, edgecolor=K, lw=1.6, hatch='///', label='禁区（手术区）：r = -1'),
+        Patch(facecolor=G0, edgecolor=K, lw=2.6, label='目标（专家门诊）：r = +1'),
+        Line2D([0], [0], color=B, lw=2.4, linestyle=(0, (4, 2)),
+               label='示例路径：沿走廊+乘电梯'),
+        Line2D([0], [0], color=K, lw=3.2, label='越界弹回：r = -1'),
+    ]
+    ax.legend(handles=handles, loc='lower center', bbox_to_anchor=(0.5, -0.14),
+              ncol=2, fontsize=7.6, frameon=True, handlelength=1.8)
+    fig.savefig(os.path.join(OUT, 'fig1-1.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig1-1 done')
+
+
+# ================================================================ 图 1-2
+def fig1_2():
+    """图 1-2 从四诊到疗效：状态—动作—奖励的临床映射（费曼版）
+    节点 = 三个直角方块（S 状态 / A 动作 / R 奖励，白底黑边）；
+    连线 = 黑色实线箭头 S→A（辨证→论治）、A→R（执行动作后收到 Rt+1）；
+           橙色虚线反馈回路 R 底→S 底（复诊转归 → 新状态 St+1）；
+    方向 = 主链从左到右，反馈回路从左到右回绕成闭环。
+    """
+    fig, ax = plt.subplots(figsize=(9.4, 4.5))
+    ax.set_xlim(-0.35, 11.75)
+    ax.set_ylim(-0.45, 4.95)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    boxes = [
+        (0.2, 1.0, 3.0, 3.4, 'white', K,
+         '状态 S：四诊信息\n（"此刻我在哪"）\n\n望 —— 神色形态\n闻 —— 声息气味\n问 —— 症候病史\n切 —— 脉象舌象\n\n辨证 = 读状态'),
+        (4.2, 1.0, 3.0, 3.4, 'white', K,
+         '动作 A：治法方剂\n（"可以怎么改变情形"）\n\n八法：汗·吐·下·和\n温·清·消·补\n具体到方：麻黄汤、\n银翘散、四君子汤……\n\n论治 = 选动作'),
+        (8.2, 1.0, 3.0, 3.4, G1, K,
+         '奖励 R：疗效反馈\n（"做得如何"）\n\n疗效良好 → 正奖励 + \n误诊、疗效不佳 → 负奖励 -\n信任、依从 → 正奖励 + \n\n复诊 = 看奖励'),
+    ]
+    for x, y, w, h, fc, ec, txt in boxes:
+        ax.add_patch(Rectangle((x, y), w, h, facecolor=fc, edgecolor=ec,
+                               lw=1.8, zorder=2))
+        ax.text(x + w / 2, y + h / 2, txt, ha='center', va='center',
+                fontsize=9.8, color=K, zorder=3, linespacing=1.5)
+    # 主箭头 S→A 与 A→R（黑色实线）
+    ax.annotate('', xy=(4.05, 2.7), xytext=(3.35, 2.7),
+                arrowprops=dict(arrowstyle='-|>', color=K, lw=2.4), zorder=3)
+    ax.annotate('', xy=(8.05, 2.7), xytext=(7.35, 2.7),
+                arrowprops=dict(arrowstyle='-|>', color=K, lw=2.4), zorder=3)
+    ax.text(3.7, 3.10, '辨证 → 论治', ha='center', fontsize=9.2, color=K, fontweight='bold')
+    ax.text(7.7, 3.10, '执行动作后收到 Rt+1', ha='center', fontsize=9.2, color=K)
+    # 反馈回路：右框底 → 左框底（灰蓝虚线，复诊转归成新状态）
+    ax.annotate('', xy=(1.7, 0.72), xytext=(9.7, 0.72),
+                arrowprops=dict(arrowstyle='-|>', color=O, lw=1.8,
+                                linestyle=(0, (5, 3))), zorder=3)
+    ax.text(5.7, 0.18, '复诊转归 → 新状态 St+1（交互闭环）', ha='center',
+            fontsize=9.2, color=O, fontweight='bold')
+    fig.savefig(os.path.join(OUT, 'fig1-2.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig1-2 done')
+
+
+# ================================================================ 图 1-3
+def draw_grid_policy(ax):
+    """九宫格（图1-3 右图）：白底黑边方块；s6 禁区斜纹灰红边；s9 目标黑粗边。
+    格内标注：编号左上、动作右上、证候下方（动作=方剂/证候=状态）。"""
+    for s in ['s1', 's2', 's3', 's4', 's5', 's6', 's7', 's8', 's9']:
+        col, row = state_xy(s)
+        if s == 's6':
+            fc, ec, lw, ht = G1, K, 2.0, '///'
+        elif s == 's9':
+            fc, ec, lw, ht = G0, K, 2.6, None
+        else:
+            fc, ec, lw, ht = 'white', K, 1.2, None
+        ax.add_patch(Rectangle((col - 0.5, row - 0.5), 1, 1, facecolor=fc,
+                               edgecolor=ec, lw=lw, hatch=ht, zorder=1))
+        ax.text(col - 0.20, row - 0.20, s, ha='center', va='center',
+                fontsize=12, fontweight='bold', zorder=3)
+        ax.text(col + 0.28, row - 0.15, f'{ACT[s][0]} {ACT[s][1]}', ha='center',
+                va='center', fontsize=8.8, color=DK, zorder=3)
+        ax.text(col, row + 0.30, ZHENG[s], ha='center', va='center',
+                fontsize=7.2, color=MG, zorder=3)
+    for (x0, y0, x1, y1) in [(-0.5, -0.5, 2.5, -0.5), (-0.5, 2.5, 2.5, 2.5),
+                             (-0.5, -0.5, -0.5, 2.5), (2.5, -0.5, 2.5, 2.5)]:
+        ax.plot([x0, x1], [y0, y1], color=K, lw=3.2, solid_capstyle='butt', zorder=2)
+
+
+ACT = {
+    's1': ('↓', 'a3'), 's2': ('↓', 'a3'), 's3': ('←', 'a4'),
+    's4': ('↓', 'a3'), 's5': ('↓', 'a3'), 's6': ('←', 'a4'),
+    's7': ('→', 'a2'), 's8': ('→', 'a2'), 's9': ('·', 'a5'),
+}
+ZHENG = {
+    's1': '风寒表证', 's2': '风热犯表', 's3': '寒湿困脾',
+    's4': '脾虚气弱', 's5': '食积中阻', 's6': '湿热蕴结',
+    's7': '肾阳不足', 's8': '气血两虚', 's9': '向愈恢复',
+}
+
+
+def fig1_3():
+    """图 1-3 辨证论治策略：每一证候一个方剂，处处有决策（费曼版）
+    左表 = 确定性策略表（节点化映射：状态→动作→方剂，黑白表格）；
+    右图 = 九宫格节点 + 三条轨迹连线（蓝色/绿色/橙色，橙色穿禁区示误）。
+    """
+    fig, (axL, axR) = plt.subplots(1, 2, figsize=(10.2, 5.6))
+    # 左：策略表（黑白；禁区行浅灰底灰红边、目标行黑粗框）
+    axL.axis('off')
+    axL.set_title('策略表：状态（证候）→ 动作（方剂）', fontsize=9.5)
+    cols = ['状态', '证候（示意）', '动作', '方剂（示意）']
+    rows = [
+        ['s1', '风寒表证', 'a3（↓）', '麻黄汤（辛温解表）'],
+        ['s2', '风热犯表', 'a3（↓）', '银翘散（辛凉解表）'],
+        ['s3', '寒湿困脾', 'a4（←）', '藿香正气散（芳香化湿）'],
+        ['s4', '脾虚气弱', 'a3（↓）', '四君子汤（益气健脾）'],
+        ['s5', '食积中阻', 'a3（↓）', '保和丸（消食导滞）'],
+        ['s6', '湿热蕴结（禁区）', 'a4（←）', '茵陈蒿汤（清热利湿）'],
+        ['s7', '肾阳不足', 'a2（→）', '金匮肾气丸（温补肾阳）'],
+        ['s8', '气血两虚', 'a2（→）', '八珍汤（益气养血）'],
+        ['s9', '向愈恢复', 'a5（静止）', '静观调护（效不更方）'],
+    ]
+    tbl = axL.table(cellText=rows, colLabels=cols, loc='center', cellLoc='center')
+    tbl.auto_set_font_size(False)
+    tbl.set_fontsize(7.6)
+    tbl.scale(1, 1.38)
+    for j in range(4):
+        c = tbl[0, j]
+        c.set_facecolor(DK)
+        c.set_text_props(color='white', fontweight='bold')
+        c.set_edgecolor(K)
+    for i in range(1, 10):
+        for j in range(4):
+            c = tbl[i, j]
+            if i == 6:               # 禁区行：浅灰底 + 黑边
+                c.set_facecolor(G1)
+                c.set_edgecolor(K)
+                c.set_linewidth(1.2)
+            elif i == 9:             # 目标行：白底 + 黑粗边
+                c.set_facecolor('white')
+                c.set_edgecolor(K)
+                c.set_linewidth(1.6)
+    # 右：九宫格 + 三条轨迹
+    axR.set_xlim(-0.7, 3.4)
+    axR.set_ylim(2.7, -0.7)
+    axR.set_aspect('equal')
+    axR.axis('off')
+    axR.set_title('九宫格轨迹：起点不同、终点相同（殊途同归）', fontsize=9.5)
+    draw_grid_policy(axR)
+    paths = [
+        (['s1', 's4', 's7', 's8', 's9'], B, 'solid', 2.8),   # 蓝色轨迹
+        (['s2', 's5', 's8', 's9'], G, (0, (4, 2)), 2.6),        # 绿色轨迹
+        (['s3', 's6', 's9'], O, (0, (2, 2)), 2.6),              # 橙色穿禁区轨迹
+    ]
+    for p, c, ls, lw in paths:
+        for i in range(len(p) - 1):
+            x1, y1 = state_xy(p[i])
+            x2, y2 = state_xy(p[i + 1])
+            axR.annotate('', xy=(x2, y2), xytext=(x1, y1),
+                         arrowprops=dict(arrowstyle='-|>', color=c, lw=lw,
+                                         linestyle=ls), zorder=2)
+    # 灰红圈提示：改一格、看全局（s5 改走 a2 进禁区）
+    axR.add_patch(Circle((0.66, 1.42), 0.15, facecolor='none',
+                         edgecolor=K, lw=1.8, zorder=4))
+    handles = [
+        Line2D([0], [0], color=B, lw=3, label='从 s1 出发（蓝色轨迹）'),
+        Line2D([0], [0], color=G, lw=2.6, ls=(0, (4, 2)), label='从 s2 出发（绿色轨迹）'),
+        Line2D([0], [0], color=O, lw=2.6, ls=(0, (2, 2)), label='从 s3 出发（橙色穿禁区轨迹）'),
+    ]
+    fig.legend(handles=handles, loc='lower center', bbox_to_anchor=(0.5, 0.02),
+               ncol=3, fontsize=8.2, frameon=True)
+    fig.text(0.5, -0.015,
+             '圆圈：若把 s5 的动作改为 a2（向右），将进入禁区 s6 —— "改一格、看全局"（正文 1.4.2 练习）',
+             ha='center', fontsize=7.6, color=DK)
+    fig.subplots_adjust(bottom=0.15, wspace=0.06)
+    fig.savefig(os.path.join(OUT, 'fig1-3.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig1-3 done')
+
+
+# ================================================================ 图 1-5
+def fig1_5():
+    """图 1-5 诊疗全过程：状态—动作—奖励链与回报时间线（费曼版）
+    节点 = 5 个状态方块（s9 痊愈黑粗边浅灰底），时间从左到右；
+    连线 = 蓝色实线箭头链 s1→s2→s5→s8→s9（图注"蓝色箭头链"）；
+    回报 = 右端绿色框（淡绿底+绿边）：G = 0+0+0+1 = 1（图注"绿色框"）。
+    """
+    fig, ax = plt.subplots(figsize=(9.8, 3.3))
+    ax.set_xlim(-0.2, 13.9)
+    ax.set_ylim(3.45, 6.0)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    y = 4.6
+    xs = [0.8, 3.2, 5.6, 8.0, 10.4]
+    main = [('s1', '初诊\n症状组合'), ('s2', '辨证\n风寒表证'), ('s5', '首方\n麻黄汤'),
+            ('s8', '复诊\n表证渐解'), ('s9', '痊愈\n目标 +1')]
+    acts = ['a2 向右', 'a3 向下', 'a3 向下', 'a2 向右']
+    rwds = ['r = 0', 'r = 0', 'r = 0', 'r = +1']
+    for k, (s, txt) in enumerate(main):
+        fc = G0 if s == 's9' else 'white'
+        lw = 2.4 if s == 's9' else 1.4
+        ax.add_patch(Rectangle((xs[k], y - 0.5), 1.7, 1.0, facecolor=fc,
+                               edgecolor=K, lw=lw, zorder=2))
+        ax.text(xs[k] + 0.85, y + 0.12, s, ha='center', va='center',
+                fontsize=12, fontweight='bold', zorder=3)
+        ax.text(xs[k] + 0.85, y - 0.25, txt, ha='center', va='center',
+                fontsize=7.8, color=DK, zorder=3, linespacing=1.3)
+        if k < 4:
+            xa1, xa2 = xs[k] + 1.7, xs[k + 1]
+            ax.annotate('', xy=(xa2, y), xytext=(xa1, y),
+                        arrowprops=dict(arrowstyle='-|>', color=B, lw=2.0), zorder=3)
+            ax.text((xa1 + xa2) / 2, y + 0.38, acts[k], ha='center',
+                    fontsize=8.5, color=DK, fontweight='bold')
+            ax.text((xa1 + xa2) / 2, y - 0.48, rwds[k], ha='center',
+                    fontsize=8.5, color=(DK if k == 3 else MG),
+                    fontweight=('bold' if k == 3 else 'normal'))
+    # 回报框（黑边方块）
+    ax.add_patch(Rectangle((12.25, 4.15), 1.3, 0.85, facecolor=P_GREEN,
+                           edgecolor=G, lw=2.0, zorder=2))
+    ax.text(12.9, 4.55, '回报\n0+0+0+1\nG = 1', ha='center', va='center',
+            fontsize=9.2, color=K, zorder=3, fontweight='bold', linespacing=1.35)
+    fig.savefig(os.path.join(OUT, 'fig1-5.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig1-5 done')
+
+
+# ================================================================ 图 1-6
+def fig1_6():
+    """图 1-6 中医临床元素与强化学习概念：双向映射环（费曼版）
+    节点 = 外环 5 个中医概念方块（浅绿盒：极淡绿底+绿边）+ 内环 5 个 RL 概念方块
+          （浅蓝盒：极淡蓝底+蓝边）+ 中央圆（白底黑粗边"映射⇄反哺"）；
+    连线 = 径向双向箭头：映射 TCM→RL 蓝色实线、反哺 RL→TCM 灰红虚线；
+    方向 = 顺时针临床流程：四诊→辨证→开方→随访→传变→再四诊。
+    """
+    fig, ax = plt.subplots(figsize=(9.6, 9.2))
+    ax.set_xlim(-6.6, 6.6)
+    ax.set_ylim(-6.5, 6.5)
+    ax.set_aspect('equal')
+    ax.axis('off')
+
+    pairs = [
+        (90, '四诊症状', '状态', 'state'),
+        (18, '辨证论治', '策略', 'policy'),
+        (-54, '治法方剂', '动作', 'action'),
+        (-126, '疗效反馈', '奖励', 'reward'),
+        (162, '病邪传变', '状态转移', 'state\ntransition'),
+    ]
+    R_RL, R_TCM = 2.45, 5.05
+    for deg, tcm, rl, en in pairs:
+        a = math.radians(deg)
+        # 内环 RL 概念（浅灰底黑边，两行：中文 + 英文）
+        cx_rl, cy_rl = R_RL * math.cos(a), R_RL * math.sin(a)
+        ax.add_patch(Rectangle((cx_rl - 1.0, cy_rl - 0.475), 2.0, 0.95,
+                               facecolor=P_BLUE, edgecolor=B, lw=1.8, zorder=3))
+        ax.text(cx_rl, cy_rl + 0.13, rl, ha='center', va='center', fontsize=10.5,
+                fontweight='bold', color=K, zorder=4)
+        ax.text(cx_rl, cy_rl - 0.20, en, ha='center', va='center', fontsize=7.2,
+                color=MG, fontstyle='italic', zorder=4, linespacing=1.1)
+        # 外环中医临床元素（白底黑边）
+        cx_tm, cy_tm = R_TCM * math.cos(a), R_TCM * math.sin(a)
+        ax.add_patch(Rectangle((cx_tm - 1.05, cy_tm - 0.425), 2.1, 0.85,
+                               facecolor=P_GREEN, edgecolor=G, lw=1.8, zorder=3))
+        ax.text(cx_tm, cy_tm, tcm, ha='center', va='center', fontsize=10.5,
+                fontweight='bold', color=K, zorder=4)
+        # 双向箭头微错开：映射 TCM→RL 黑实线；反哺 RL→TCM 灰虚线
+        a1, a2 = a + 0.14, a - 0.14
+        x1, y1 = 3.62 * math.cos(a1), 3.62 * math.sin(a1)
+        x2, y2 = 3.82 * math.cos(a1), 3.82 * math.sin(a1)
+        ax.annotate('', xy=(x2, y2), xytext=(x1, y1),
+                    arrowprops=dict(arrowstyle='-|>', color=R, lw=2.0,
+                                    linestyle=(0, (3, 2))), zorder=3)  # 反哺：RL→TCM 灰红虚线
+        x3, y3 = 3.82 * math.cos(a2), 3.82 * math.sin(a2)
+        x4, y4 = 3.62 * math.cos(a2), 3.62 * math.sin(a2)
+        ax.annotate('', xy=(x4, y4), xytext=(x3, y3),
+                    arrowprops=dict(arrowstyle='-|>', color=B, lw=2.2), zorder=3)  # 映射：TCM→RL 蓝实线
+
+    # 中央：映射 ⇄ 反哺（两条反向箭头）
+    ax.add_patch(Circle((0, 0), 1.18, fc='white', ec=K, lw=2.4, zorder=4))
+    ax.text(0, 0.28, '映射', ha='center', va='center', fontsize=15,
+            fontweight='bold', color=K, zorder=5)
+    ax.text(0, -0.30, '反哺', ha='center', va='center', fontsize=15,
+            fontweight='bold', color=MG, zorder=5)
+    ax.annotate('', xy=(0.52, 0.12), xytext=(0.52, -0.12),
+                arrowprops=dict(arrowstyle='-|>', color=B, lw=2.2), zorder=5)   # 临床→算法（映射）蓝
+    ax.annotate('', xy=(-0.52, -0.12), xytext=(-0.52, 0.12),
+                arrowprops=dict(arrowstyle='-|>', color=R, lw=2.0,
+                                linestyle=(0, (3, 2))), zorder=5)   # 算法→临床（反哺）灰红虚线
+    ax.text(0, -0.72, '互译互哺', ha='center', va='center', fontsize=8.5,
+            color=MG, zorder=5)
+
+    # 临床流程环向标注
+    flow = '临床流程环向：四诊（观察）→ 辨证（决策）→ 开方（行动）→ 随访（反馈）→ 传变（转归）→ 再四诊'
+    ax.text(0, -5.6, flow, ha='center', va='center', fontsize=9.5,
+            color=DK, zorder=3)
+    fig.savefig(os.path.join(OUT, 'fig1-6.png'), dpi=200, bbox_inches='tight')
+    plt.close(fig)
+    print('fig1-6 done')
+
+
+if __name__ == '__main__':
+    fig1_1()
+    fig1_2()
+    fig1_3()
+    fig1_5()
+    fig1_6()
+    print('ALL DONE ->', OUT)
