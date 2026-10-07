@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "中医知识树 v1 · 树图一体结构",
+  "version": "1.0.0",
+  "description": "五级骨架（须—根—干—枝—叶）× 跨枝经脉图边；叶＝图节点，枝干路径＝图的分层聚类。",
+  "type": "object",
+  "required": [
+    "meta",
+    "stats",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object"
+    },
+    "stats": {
+      "type": "object"
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "level",
+          "level_index",
+          "name",
+          "kind"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "code5": {
+            "type": "string",
+            "description": "五级点分编码 须.根.干.枝.叶"
+          },
+          "level": {
+            "enum": [
+              "hair",
+              "root",
+              "trunk",
+              "branch",
+              "leaf",
+              "concept"
+            ]
+          },
+          "level_index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "name": {
+            "type": "string"
+          },
+          "parent": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "foundation",
+              "axiom",
+              "domain",
+              "subject",
+              "knowledge_point",
+              "dsu",
+              "concept",
+              "meridian",
+              "six_channel",
+              "syndrome",
+              "disease",
+              "icd11",
+              "skill"
+            ]
+          },
+          "attrs": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "target",
+          "type"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "hierarchy",
+              "nourish",
+              "spine",
+              "prerequisite",
+              "skill_bind",
+              "bridge",
+              "icd11_map",
+              "manifests_as",
+              "disease_is",
+              "wuxing_sheng",
+              "wuxing_ke",
+              "meridian_liuzhu",
+              "meridian_biaoli",
+              "six_chuanbian"
+            ]
+          },
+          "weight": {
+            "type": "number"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

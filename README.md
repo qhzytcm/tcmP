@@ -14,7 +14,7 @@
 
 ## 目录
 
-api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
+api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
 
 ## 访问
 
@@ -68,4 +68,29 @@ python main.py
 | `GET /semantic-search` | 语义检索（向量+FTS5 融合） | `?q=失眠多梦` |
 | `POST /rag` | RAG 诊断报告（LLM 精修） | 症状 → Top-K + 报告 |
 
-技术：TF-IDF 字符 n-gram + SQLite FTS5 + RRF 融合；BGE 语义向量为升级路径（ModelScope 下载）。详见 `docs/ARCH-EMBEDDING.md`
+技术：TF-IDF 字符 n-gram + SQLite FTS5 + RRF 融合；BGE 语义向量为升级路径（ModelScope 下载）。详见 `docs/ARCH-EMBEDDING.md`。
+
+## 中医知识树 · 平台统一知识结构（v1.0.0）
+
+把「120 门学科 / 病证知识图谱 / ICD-11 / 六者 Agent / 医圣成长」编织成**树图一体**的知识结构：
+**须—根—干—枝—叶 五级骨架 × 跨枝经脉图边**（3063 节点 / 3370 边）。
+
+> 知识图谱回答「谁和谁有关系」，知识树回答「谁从哪里来、该先学谁、在哪门课里」——二者合起来才是中医药知识的完整结构。
+
+| 资产 | 说明 |
+|---|---|
+| 构建器 | `scripts/build_knowledge_tree.py`（单一构建点，源变更重跑即可） |
+| 生成物 | `kg/tree/tcm-knowledge-tree.json` · `kg/tree/schema.json` |
+| 查询引擎 | `kg/tree/tcm_tree.py`（零依赖 CLI/库） |
+| 平台 API | `api/tree_router.py` → `/tree/*`（挂载于 sage-api） |
+| 自检 | `scripts/verify_knowledge_tree.py`（24 项） |
+| 部署 | `scripts/deploy-knowledge-tree.ps1`（开发机 → 华为云） |
+| 说明 | [`kg/tree/README.md`](kg/tree/README.md) |
+
+```bash
+python scripts/build_knowledge_tree.py      # 构建（8域/120学科/2489章节叶/103病证单元）
+python scripts/verify_knowledge_tree.py     # 24 项自检
+python kg/tree/tcm_tree.py path DSU-00001   # 根→域→学科→单元 定位
+```
+
+线上：`https://www.zyyywaccn.com.cn/api/sages/tree/stats`

@@ -1,0 +1,1042 @@
+{
+  "source": "tcmP 主仓 domain-specs/DOMAIN_SPEC_D0*.md",
+  "sourceRoot": "C:/Users/DELL/textbook-project",
+  "generatedBy": "scripts/sync-from-tcmP.mjs",
+  "domainCount": 8,
+  "subjectCount": 120,
+  "withTextbook": 120,
+  "domains": [
+    {
+      "domain": "D01",
+      "name": "中医学院",
+      "prefix": "CM",
+      "declaredCount": 28,
+      "extractedCount": 28,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D01-S01",
+          "name": "中医基础理论",
+          "textbook": "CM-01",
+          "stage": "本科U2–U3",
+          "credits": "5/90"
+        },
+        {
+          "s": 2,
+          "code": "D01-S02",
+          "name": "中医诊断学",
+          "textbook": "CM-02",
+          "stage": "本科U3–U4",
+          "credits": "5/90"
+        },
+        {
+          "s": 3,
+          "code": "D01-S03",
+          "name": "医古文基础",
+          "textbook": "CM-03",
+          "stage": "本科U1–U2",
+          "credits": "3/54"
+        },
+        {
+          "s": 4,
+          "code": "D01-S04",
+          "name": "中国医学史",
+          "textbook": "CM-04",
+          "stage": "本科U1",
+          "credits": "2/36"
+        },
+        {
+          "s": 5,
+          "code": "D01-S05",
+          "name": "中医思维方法论",
+          "textbook": "CM-05",
+          "stage": "本科U3",
+          "credits": "2/36"
+        },
+        {
+          "s": 6,
+          "code": "D01-S06",
+          "name": "中医文献学",
+          "textbook": "CM-06",
+          "stage": "本科U3",
+          "credits": "2/36"
+        },
+        {
+          "s": 7,
+          "code": "D01-S07",
+          "name": "中医经典导读",
+          "textbook": "CM-07",
+          "stage": "本科U4",
+          "credits": "3/54"
+        },
+        {
+          "s": 8,
+          "code": "D01-S08",
+          "name": "中医伦理学",
+          "textbook": "CM-08",
+          "stage": "本科U5",
+          "credits": "1/18"
+        },
+        {
+          "s": 9,
+          "code": "D01-S09",
+          "name": "内经选读",
+          "textbook": "CM-09",
+          "stage": "本科U4–U5",
+          "credits": "4/72"
+        },
+        {
+          "s": 10,
+          "code": "D01-S10",
+          "name": "伤寒论讲义",
+          "textbook": "CM-10",
+          "stage": "本科U5–U6",
+          "credits": "5/90"
+        },
+        {
+          "s": 11,
+          "code": "D01-S11",
+          "name": "金匮要略讲义",
+          "textbook": "CM-11",
+          "stage": "本科U5",
+          "credits": "4/72"
+        },
+        {
+          "s": 12,
+          "code": "D01-S12",
+          "name": "温病学",
+          "textbook": "CM-12",
+          "stage": "本科U6",
+          "credits": "5/90"
+        },
+        {
+          "s": 13,
+          "code": "D01-S13",
+          "name": "中医内科学（上）",
+          "textbook": "CM-13",
+          "stage": "本科U6",
+          "credits": "6/108"
+        },
+        {
+          "s": 14,
+          "code": "D01-S14",
+          "name": "中医内科学（下）",
+          "textbook": "CM-14",
+          "stage": "本科U7",
+          "credits": "6/108"
+        },
+        {
+          "s": 15,
+          "code": "D01-S15",
+          "name": "中医外科学",
+          "textbook": "CM-15",
+          "stage": "本科U7",
+          "credits": "5/90"
+        },
+        {
+          "s": 16,
+          "code": "D01-S16",
+          "name": "中医妇科学",
+          "textbook": "CM-16",
+          "stage": "本科U7",
+          "credits": "3/54"
+        },
+        {
+          "s": 17,
+          "code": "D01-S17",
+          "name": "中医儿科学",
+          "textbook": "CM-17",
+          "stage": "本科U8",
+          "credits": "3/54"
+        },
+        {
+          "s": 18,
+          "code": "D01-S18",
+          "name": "中医急诊学",
+          "textbook": "CM-18",
+          "stage": "本科U8",
+          "credits": "3/54"
+        },
+        {
+          "s": 19,
+          "code": "D01-S19",
+          "name": "中医皮肤科学",
+          "textbook": "CM-19",
+          "stage": "本科U8",
+          "credits": "2/36"
+        },
+        {
+          "s": 20,
+          "code": "D01-S20",
+          "name": "中医男科学",
+          "textbook": "CM-20",
+          "stage": "本科U9",
+          "credits": "2/36"
+        },
+        {
+          "s": 21,
+          "code": "D01-S21",
+          "name": "中医老年病学",
+          "textbook": "CM-21",
+          "stage": "本科U9",
+          "credits": "2/36"
+        },
+        {
+          "s": 22,
+          "code": "D01-S22",
+          "name": "中医肿瘤学",
+          "textbook": "CM-22",
+          "stage": "硕士M1",
+          "credits": "2/36"
+        },
+        {
+          "s": 23,
+          "code": "D01-S23",
+          "name": "中医循证医学",
+          "textbook": "CM-23",
+          "stage": "硕士M1",
+          "credits": "2/36"
+        },
+        {
+          "s": 24,
+          "code": "D01-S24",
+          "name": "中医临床思维与决策",
+          "textbook": "CM-24",
+          "stage": "硕士M2",
+          "credits": "2/36"
+        },
+        {
+          "s": 25,
+          "code": "D01-S25",
+          "name": "各家学说",
+          "textbook": "CM-25",
+          "stage": "",
+          "credits": "3/54"
+        },
+        {
+          "s": 26,
+          "code": "D01-S26",
+          "name": "中医学术史导论",
+          "textbook": "CM-26",
+          "stage": "硕士M2",
+          "credits": "2/36"
+        },
+        {
+          "s": 27,
+          "code": "D01-S27",
+          "name": "中医辨证论治体系研究",
+          "textbook": "CM-27",
+          "stage": "博士D1",
+          "credits": "3/54"
+        },
+        {
+          "s": 28,
+          "code": "D01-S28",
+          "name": "中医学科建设与前沿",
+          "textbook": "CM-28",
+          "stage": "博士D2",
+          "credits": "2/36"
+        }
+      ]
+    },
+    {
+      "domain": "D02",
+      "name": "中药学院",
+      "prefix": "MM",
+      "declaredCount": 20,
+      "extractedCount": 20,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D02-S01",
+          "name": "临床中药学",
+          "textbook": "MM-01",
+          "stage": "本科U3-U5",
+          "credits": "6/108"
+        },
+        {
+          "s": 2,
+          "code": "D02-S02",
+          "name": "方剂学（上）",
+          "textbook": "MM-02",
+          "stage": "本科U5-U6",
+          "credits": "4/72"
+        },
+        {
+          "s": 3,
+          "code": "D02-S03",
+          "name": "方剂学（下）",
+          "textbook": "MM-03",
+          "stage": "本科U6-U7",
+          "credits": "4/72"
+        },
+        {
+          "s": 4,
+          "code": "D02-S04",
+          "name": "药用植物学",
+          "textbook": "MM-04",
+          "stage": "本科U2-U3",
+          "credits": "3/54"
+        },
+        {
+          "s": 5,
+          "code": "D02-S05",
+          "name": "中药化学",
+          "textbook": "MM-05",
+          "stage": "本科U3-U4",
+          "credits": "4/72"
+        },
+        {
+          "s": 6,
+          "code": "D02-S06",
+          "name": "中药药理学",
+          "textbook": "MM-06",
+          "stage": "本科U4-U5",
+          "credits": "4/72"
+        },
+        {
+          "s": 7,
+          "code": "D02-S07",
+          "name": "中药鉴定学",
+          "textbook": "MM-07",
+          "stage": "本科U4-U5",
+          "credits": "4/72"
+        },
+        {
+          "s": 8,
+          "code": "D02-S08",
+          "name": "中药炮制学",
+          "textbook": "MM-08",
+          "stage": "本科U4",
+          "credits": "3/54"
+        },
+        {
+          "s": 9,
+          "code": "D02-S09",
+          "name": "中药资源学",
+          "textbook": "MM-09",
+          "stage": "本科U5",
+          "credits": "2/36"
+        },
+        {
+          "s": 10,
+          "code": "D02-S10",
+          "name": "中药栽培与养殖学",
+          "textbook": "MM-10",
+          "stage": "本科U6",
+          "credits": "2/36"
+        },
+        {
+          "s": 11,
+          "code": "D02-S11",
+          "name": "中药药剂学",
+          "textbook": "MM-11",
+          "stage": "本科U5-U6",
+          "credits": "4/72"
+        },
+        {
+          "s": 12,
+          "code": "D02-S12",
+          "name": "中药分析学",
+          "textbook": "MM-12",
+          "stage": "本科U6",
+          "credits": "3/54"
+        },
+        {
+          "s": 13,
+          "code": "D02-S13",
+          "name": "中药调剂学",
+          "textbook": "MM-13",
+          "stage": "本科U6",
+          "credits": "2/36"
+        },
+        {
+          "s": 14,
+          "code": "D02-S14",
+          "name": "中药制剂分析",
+          "textbook": "MM-14",
+          "stage": "本科U7",
+          "credits": "3/54"
+        },
+        {
+          "s": 15,
+          "code": "D02-S15",
+          "name": "中药商品学",
+          "textbook": "MM-15",
+          "stage": "本科U7",
+          "credits": "2/36"
+        },
+        {
+          "s": 16,
+          "code": "D02-S16",
+          "name": "中药毒理学",
+          "textbook": "MM-16",
+          "stage": "硕士M1",
+          "credits": "2/36"
+        },
+        {
+          "s": 17,
+          "code": "D02-S17",
+          "name": "中药药代动力学",
+          "textbook": "MM-17",
+          "stage": "硕士M1",
+          "credits": "2/36"
+        },
+        {
+          "s": 18,
+          "code": "D02-S18",
+          "name": "中药生物技术",
+          "textbook": "MM-18",
+          "stage": "硕士M2",
+          "credits": "2/36"
+        },
+        {
+          "s": 19,
+          "code": "D02-S19",
+          "name": "海洋中药学",
+          "textbook": "MM-19",
+          "stage": "硕士M2",
+          "credits": "2/36"
+        },
+        {
+          "s": 20,
+          "code": "D02-S20",
+          "name": "民族药学概论",
+          "textbook": "MM-20",
+          "stage": "",
+          "credits": "2/36"
+        }
+      ]
+    },
+    {
+      "domain": "D03",
+      "name": "针灸学院",
+      "prefix": "AT",
+      "declaredCount": 12,
+      "extractedCount": 12,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D03-S01",
+          "name": "经络腧穴学",
+          "textbook": "AT-01",
+          "stage": "本科 U4-U5",
+          "credits": "5/90"
+        },
+        {
+          "s": 2,
+          "code": "D03-S02",
+          "name": "刺法灸法学",
+          "textbook": "AT-02",
+          "stage": "本科 U5",
+          "credits": "4/72"
+        },
+        {
+          "s": 3,
+          "code": "D03-S03",
+          "name": "针灸治疗学",
+          "textbook": "AT-03",
+          "stage": "本科 U6-U7",
+          "credits": "5/90"
+        },
+        {
+          "s": 4,
+          "code": "D03-S04",
+          "name": "针灸医籍选读",
+          "textbook": "AT-04",
+          "stage": "本科 U6",
+          "credits": "2/36"
+        },
+        {
+          "s": 5,
+          "code": "D03-S05",
+          "name": "实验针灸学",
+          "textbook": "AT-05",
+          "stage": "本科 U6",
+          "credits": "3/54"
+        },
+        {
+          "s": 6,
+          "code": "D03-S06",
+          "name": "微针疗法（耳针/头针/腕踝针）",
+          "textbook": "AT-06",
+          "stage": "本科 U7",
+          "credits": "2/36"
+        },
+        {
+          "s": 7,
+          "code": "D03-S07",
+          "name": "针灸神经科学",
+          "textbook": "AT-07",
+          "stage": "本科 U7 / 硕士 M1",
+          "credits": "3/54"
+        },
+        {
+          "s": 8,
+          "code": "D03-S08",
+          "name": "针灸康复学",
+          "textbook": "AT-08",
+          "stage": "本科 U8",
+          "credits": "2/36"
+        },
+        {
+          "s": 9,
+          "code": "D03-S09",
+          "name": "针灸美容与减肥学",
+          "textbook": "AT-09",
+          "stage": "本科 U8",
+          "credits": "2/36"
+        },
+        {
+          "s": 10,
+          "code": "D03-S10",
+          "name": "针灸古典文献研究",
+          "textbook": "AT-10",
+          "stage": "硕士 M1",
+          "credits": "2/36"
+        },
+        {
+          "s": 11,
+          "code": "D03-S11",
+          "name": "针灸临床研究设计",
+          "textbook": "AT-11",
+          "stage": "硕士 M2",
+          "credits": "2/36"
+        },
+        {
+          "s": 12,
+          "code": "D03-S12",
+          "name": "针灸国际传播与标准化",
+          "textbook": "AT-12",
+          "stage": "博士 D1",
+          "credits": "2/36"
+        }
+      ]
+    },
+    {
+      "domain": "D04",
+      "name": "推拿学院",
+      "prefix": "TU",
+      "declaredCount": 10,
+      "extractedCount": 10,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D04-S01",
+          "name": "推拿学基础",
+          "textbook": "TU-01",
+          "stage": "本科四年级（U4）",
+          "credits": ""
+        },
+        {
+          "s": 2,
+          "code": "D04-S02",
+          "name": "推拿手法学",
+          "textbook": "TU-02",
+          "stage": "本科四年级至五年级（U4-U5，跨学年课程）",
+          "credits": ""
+        },
+        {
+          "s": 3,
+          "code": "D04-S03",
+          "name": "推拿诊断学",
+          "textbook": "TU-03",
+          "stage": "本科五年级（U5）",
+          "credits": ""
+        },
+        {
+          "s": 4,
+          "code": "D04-S04",
+          "name": "推拿功法学",
+          "textbook": "TU-04",
+          "stage": "本科四年级（U4）",
+          "credits": ""
+        },
+        {
+          "s": 5,
+          "code": "D04-S05",
+          "name": "推拿治疗学",
+          "textbook": "TU-05",
+          "stage": "本科六年级至七年级（U6-U7，跨学年课程）",
+          "credits": ""
+        },
+        {
+          "s": 6,
+          "code": "D04-S06",
+          "name": "小儿推拿学",
+          "textbook": "TU-06",
+          "stage": "本科六年级（U6）",
+          "credits": ""
+        },
+        {
+          "s": 7,
+          "code": "D04-S07",
+          "name": "脏腑推拿学",
+          "textbook": "TU-07",
+          "stage": "本科七年级（U7）",
+          "credits": ""
+        },
+        {
+          "s": 8,
+          "code": "D04-S08",
+          "name": "一指禅推拿学",
+          "textbook": "TU-08",
+          "stage": "本科八年级（U8）",
+          "credits": ""
+        },
+        {
+          "s": 9,
+          "code": "D04-S09",
+          "name": "推拿康复学",
+          "textbook": "TU-09",
+          "stage": "本科八年级（U8）/ 硕士一年级（M1）",
+          "credits": ""
+        },
+        {
+          "s": 10,
+          "code": "D04-S10",
+          "name": "国际推拿交流与标准化",
+          "textbook": "TU-10",
+          "stage": "硕士二年级（M2）",
+          "credits": ""
+        }
+      ]
+    },
+    {
+      "domain": "D05",
+      "name": "骨伤学院",
+      "prefix": "OR",
+      "declaredCount": 12,
+      "extractedCount": 12,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D05-S01",
+          "name": "中医骨伤科学基础",
+          "textbook": "OR-01",
+          "stage": "本科 U5",
+          "credits": ""
+        },
+        {
+          "s": 2,
+          "code": "D05-S02",
+          "name": "骨伤诊断学",
+          "textbook": "OR-02",
+          "stage": "本科 U5-U6",
+          "credits": ""
+        },
+        {
+          "s": 3,
+          "code": "D05-S03",
+          "name": "骨伤影像学",
+          "textbook": "OR-03",
+          "stage": "本科 U6",
+          "credits": ""
+        },
+        {
+          "s": 4,
+          "code": "D05-S04",
+          "name": "骨伤生物力学",
+          "textbook": "OR-04",
+          "stage": "本科 U6",
+          "credits": ""
+        },
+        {
+          "s": 5,
+          "code": "D05-S05",
+          "name": "中医正骨学",
+          "textbook": "OR-05",
+          "stage": "本科 U6-U7",
+          "credits": ""
+        },
+        {
+          "s": 6,
+          "code": "D05-S06",
+          "name": "中医筋伤学",
+          "textbook": "OR-06",
+          "stage": "本科 U7",
+          "credits": ""
+        },
+        {
+          "s": 7,
+          "code": "D05-S07",
+          "name": "中医骨病学",
+          "textbook": "OR-07",
+          "stage": "本科 U7-U8",
+          "credits": ""
+        },
+        {
+          "s": 8,
+          "code": "D05-S08",
+          "name": "骨科手术学基础",
+          "textbook": "OR-08",
+          "stage": "本科 U8",
+          "credits": ""
+        },
+        {
+          "s": 9,
+          "code": "D05-S09",
+          "name": "关节损伤学",
+          "textbook": "OR-09",
+          "stage": "本科 U8",
+          "credits": ""
+        },
+        {
+          "s": 10,
+          "code": "D05-S10",
+          "name": "脊柱损伤学",
+          "textbook": "OR-10",
+          "stage": "本科 U8 / 硕士 M1",
+          "credits": ""
+        },
+        {
+          "s": 11,
+          "code": "D05-S11",
+          "name": "骨伤康复学",
+          "textbook": "OR-11",
+          "stage": "硕士 M1",
+          "credits": ""
+        },
+        {
+          "s": 12,
+          "code": "D05-S12",
+          "name": "骨伤手法学",
+          "textbook": "OR-12",
+          "stage": "硕士 M1",
+          "credits": ""
+        }
+      ]
+    },
+    {
+      "domain": "D06",
+      "name": "五官口腔学院",
+      "prefix": "ENT",
+      "declaredCount": null,
+      "extractedCount": 10,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D06-S01",
+          "name": "中医眼科学",
+          "textbook": "ENT-01",
+          "stage": "本科 U7-U8（第七至第八学期）",
+          "credits": "3/54"
+        },
+        {
+          "s": 2,
+          "code": "D06-S02",
+          "name": "中医耳鼻喉科学",
+          "textbook": "ENT-02",
+          "stage": "本科 U7-U8（第七至第八学期）",
+          "credits": "3/54"
+        },
+        {
+          "s": 3,
+          "code": "D06-S03",
+          "name": "中医口腔科学",
+          "textbook": "ENT-03",
+          "stage": "本科 U8（第八学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 4,
+          "code": "D06-S04",
+          "name": "中医喉科学",
+          "textbook": "ENT-04",
+          "stage": "本科 U8（第八学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 5,
+          "code": "D06-S05",
+          "name": "中医五官科护理学",
+          "textbook": "ENT-05",
+          "stage": "本科 U8（第八学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 6,
+          "code": "D06-S06",
+          "name": "中西医结合眼科学",
+          "textbook": "ENT-06",
+          "stage": "硕士 M1（第一学年）",
+          "credits": "3/54"
+        },
+        {
+          "s": 7,
+          "code": "D06-S07",
+          "name": "中西医结合耳鼻喉科学",
+          "textbook": "ENT-07",
+          "stage": "硕士 M1（第一学年）",
+          "credits": "3/54"
+        },
+        {
+          "s": 8,
+          "code": "D06-S08",
+          "name": "口腔内科学",
+          "textbook": "ENT-08",
+          "stage": "硕士 M1（第一学年）",
+          "credits": "3/54"
+        },
+        {
+          "s": 9,
+          "code": "D06-S09",
+          "name": "口腔颌面外科学",
+          "textbook": "ENT-09",
+          "stage": "硕士 M2（第二学年）",
+          "credits": "3/54"
+        },
+        {
+          "s": 10,
+          "code": "D06-S10",
+          "name": "口腔正畸学",
+          "textbook": "ENT-10",
+          "stage": "硕士 M2（第二学年）",
+          "credits": "2/36"
+        }
+      ]
+    },
+    {
+      "domain": "D07",
+      "name": "中医智能学院",
+      "prefix": "AI",
+      "declaredCount": 14,
+      "extractedCount": 14,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D07-S01",
+          "name": "中医药人工智能导论",
+          "textbook": "AI-01",
+          "stage": "本科U2（大学二年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 2,
+          "code": "D07-S02",
+          "name": "中医信息学",
+          "textbook": "AI-02",
+          "stage": "本科U3（大学三年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 3,
+          "code": "D07-S03",
+          "name": "中医药数据科学",
+          "textbook": "AI-03",
+          "stage": "本科U3-U4（大学三至四年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 4,
+          "code": "D07-S04",
+          "name": "中医知识图谱",
+          "textbook": "AI-04",
+          "stage": "本科U4（大学四年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 5,
+          "code": "D07-S05",
+          "name": "中医智能诊断学",
+          "textbook": "AI-05",
+          "stage": "本科U5-U6（大学五至六年级）",
+          "credits": "4/72"
+        },
+        {
+          "s": 6,
+          "code": "D07-S06",
+          "name": "中医自然语言处理",
+          "textbook": "AI-06",
+          "stage": "本科U6（大学六年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 7,
+          "code": "D07-S07",
+          "name": "中医智能问诊系统",
+          "textbook": "AI-07",
+          "stage": "本科U6-U7（大学六至七年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 8,
+          "code": "D07-S08",
+          "name": "中医机器学习",
+          "textbook": "AI-08",
+          "stage": "本科U6（大学六年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 9,
+          "code": "D07-S09",
+          "name": "中医影像智能分析",
+          "textbook": "AI-09",
+          "stage": "本科U7（大学七年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 10,
+          "code": "D07-S10",
+          "name": "中医电子病历与临床决策支持",
+          "textbook": "AI-10",
+          "stage": "本科U7-U8（大学七至八年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 11,
+          "code": "D07-S11",
+          "name": "中医智能仪器与可穿戴设备",
+          "textbook": "AI-11",
+          "stage": "本科U8（大学八年级）",
+          "credits": "2/36"
+        },
+        {
+          "s": 12,
+          "code": "D07-S12",
+          "name": "计算中医学",
+          "textbook": "AI-12",
+          "stage": "硕士M1（研究生一年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 13,
+          "code": "D07-S13",
+          "name": "中医药数字化诊疗",
+          "textbook": "AI-13",
+          "stage": "硕士M2（研究生二年级）",
+          "credits": "3/54"
+        },
+        {
+          "s": 14,
+          "code": "D07-S14",
+          "name": "中医药人工智能伦理与治理",
+          "textbook": "AI-14",
+          "stage": "硕士M2 / 博士D1（研究生二/三年级或博士生一年级）",
+          "credits": "2/36"
+        }
+      ]
+    },
+    {
+      "domain": "D08",
+      "name": "中医管理学院",
+      "prefix": "MG",
+      "declaredCount": 14,
+      "extractedCount": 14,
+      "subjects": [
+        {
+          "s": 1,
+          "code": "D08-S01",
+          "name": "医院管理学",
+          "textbook": "MG-01",
+          "stage": "本科 U4-U5（第四至第五学期）",
+          "credits": "4/72"
+        },
+        {
+          "s": 2,
+          "code": "D08-S02",
+          "name": "中医药经济学",
+          "textbook": "MG-02",
+          "stage": "本科 U5（第五学期）",
+          "credits": "3/54"
+        },
+        {
+          "s": 3,
+          "code": "D08-S03",
+          "name": "中医药市场营销",
+          "textbook": "MG-03",
+          "stage": "本科 U6（第六学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 4,
+          "code": "D08-S04",
+          "name": "中医药政策与法规",
+          "textbook": "MG-04",
+          "stage": "本科 U5（第五学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 5,
+          "code": "D08-S05",
+          "name": "中医医疗机构管理",
+          "textbook": "MG-05",
+          "stage": "本科 U6（第六学期）",
+          "credits": "3/54"
+        },
+        {
+          "s": 6,
+          "code": "D08-S06",
+          "name": "中医健康管理",
+          "textbook": "MG-06",
+          "stage": "本科 U6-U7（第六至第七学期）",
+          "credits": "3/54"
+        },
+        {
+          "s": 7,
+          "code": "D08-S07",
+          "name": "中医养生管理",
+          "textbook": "MG-07",
+          "stage": "本科 U7（第七学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 8,
+          "code": "D08-S08",
+          "name": "中医公共卫生管理",
+          "textbook": "MG-08",
+          "stage": "本科 U7（第七学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 9,
+          "code": "D08-S09",
+          "name": "中医药医保管理",
+          "textbook": "MG-09",
+          "stage": "本科 U8（第八学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 10,
+          "code": "D08-S10",
+          "name": "中医药知识产权与标准化",
+          "textbook": "MG-10",
+          "stage": "本科 U8（第八学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 11,
+          "code": "D08-S11",
+          "name": "中医药国际传播",
+          "textbook": "MG-11",
+          "stage": "硕士 M1（硕士研究生第一学年）",
+          "credits": "2/36"
+        },
+        {
+          "s": 12,
+          "code": "D08-S12",
+          "name": "中医药信息管理",
+          "textbook": "MG-12",
+          "stage": "本科 U7（第七学期）",
+          "credits": "2/36"
+        },
+        {
+          "s": 13,
+          "code": "D08-S13",
+          "name": "中医药人力资源与绩效管理",
+          "textbook": "MG-13",
+          "stage": "硕士 M1（硕士研究生第一学年）",
+          "credits": "2/36"
+        },
+        {
+          "s": 14,
+          "code": "D08-S14",
+          "name": "中医药康养产业管理",
+          "textbook": "MG-14",
+          "stage": "硕士 M2（硕士研究生第二学年）",
+          "credits": "2/36"
+        }
+      ]
+    }
+  ]
+}
