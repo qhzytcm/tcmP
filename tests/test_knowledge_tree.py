@@ -75,3 +75,17 @@ def test_router_and_e2e_script():
                        capture_output=True, text=True, timeout=180, cwd=str(REPO))
     assert r.returncode == 0, (r.stdout[-2000:] + "\n" + r.stderr[-1000:])
     assert "自检全部通过" in r.stdout
+
+
+def test_stable_id_deterministic_no_collision():
+    """回归：聚合节点 id 必须跨进程确定（曾用内置 hash()，受 PYTHONHASHSEED 随机化，
+    导致同一源每次构建产出不同 id，破坏生成物可复现性）。"""
+    sys.path.insert(0, str(REPO / "scripts"))
+    import build_knowledge_tree as B  # noqa: E402
+    names = ["风寒束表证", "肝胆湿热证", "心脾两虚证"]
+    a = [B._stable_id("SYN", t, {}) for t in names]
+    b = [B._stable_id("SYN", t, {}) for t in names]
+    assert a == b, "同一文本在不同 registry 下应得同一 id"
+    reg = {}
+    ids = [B._stable_id("SYN", f"证-{i}", reg) for i in range(300)]
+    assert len(set(ids)) == 300, "不同文本不得发生 id 冲突"

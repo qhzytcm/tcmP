@@ -35,6 +35,7 @@ import argparse
 import json
 import re
 import sys
+import zlib
 from collections import Counter
 from pathlib import Path
 
@@ -232,6 +233,24 @@ def _obj_num(code: str) -> int:
     return int(code[5:])
 
 
+def _stable_id(prefix: str, text: str, registry: dict) -> str:
+    """确定性且唯一的聚合节点 id。
+
+    用 zlib.crc32（跨进程稳定）而非内置 hash()（受 PYTHONHASHSEED 随机化，
+    会导致同一源每次构建产出不同 id —— 破坏“可复现生成物”）。
+    registry: dict[str, str] = text -> id，兼作去重与冲突消解。
+    """
+    if text in registry:
+        return registry[text]
+    used = set(registry.values())
+    n = zlib.crc32(text.encode("utf-8")) % 1_000_000
+    while f"{prefix}-{n:06d}" in used:
+        n = (n + 1) % 1_000_000
+    rid = f"{prefix}-{n:06d}"
+    registry[text] = rid
+    return rid
+
+
 # ══════════════════════════════════════════════════════════════════════
 # 三、树图构建
 # ══════════════════════════════════════════════════════════════════════
@@ -322,7 +341,7 @@ def build(domains, subjects, chapters, prereq, dsu, skills):
             skill_bound += 1
 
     # ── 叶：病证单元 DSU + 病证桥接 + ICD-11 ──
-    icd_nodes, syn_nodes, dis_nodes = {}, {}, {}
+    icd_nodes, syn_ids, dis_ids = {}, {}, {}
     for u in dsu:
         did = u["id"]
         d, sy, br = u.get("disease_side", {}), u.get("syndrome_side", {}), u.get("bridge", {})
@@ -342,16 +361,16 @@ def build(domains, subjects, chapters, prereq, dsu, skills):
         if sc in SIX:
             edges.append(dict(source=did, target=f"SC-{SIX.index(sc) + 1}", type="bridge"))
         if syn:
-            sid = "SYN-%05d" % (abs(hash(syn)) % 100000)
-            if sid not in syn_nodes:
-                syn_nodes[sid] = syn
-                add(sid, "concept", 3, syn, None, "syndrome", code5=f"SYN.{len(syn_nodes):04d}")
+            new_syn = syn not in syn_ids
+            sid = _stable_id("SYN", syn, syn_ids)
+            if new_syn:
+                add(sid, "concept", 3, syn, None, "syndrome", code5=f"SYN.{len(syn_ids):04d}")
             edges.append(dict(source=did, target=sid, type="manifests_as"))
         if disp:
-            dis_id = "DIS-%05d" % (abs(hash(disp)) % 100000)
-            if dis_id not in dis_nodes:
-                dis_nodes[dis_id] = disp
-                add(dis_id, "concept", 3, disp, None, "disease", code5=f"DIS.{len(dis_nodes):04d}")
+            new_dis = disp not in dis_ids
+            dis_id = _stable_id("DIS", disp, dis_ids)
+            if new_dis:
+                add(dis_id, "concept", 3, disp, None, "disease", code5=f"DIS.{len(dis_ids):04d}")
             edges.append(dict(source=did, target=dis_id, type="disease_is"))
         icd = d.get("icd11_code")
         if icd:
@@ -371,7 +390,7 @@ def build(domains, subjects, chapters, prereq, dsu, skills):
         levels={k: lv.get(k, 0) for k in ["hair", "root", "trunk", "branch", "leaf", "concept"]},
         kinds=dict(kd.most_common()), edge_types=dict(et.most_common()),
         knowledge_points=kp, dsu=len(dsu), skills=len(skills), skill_bound=skill_bound,
-        syndromes=len(syn_nodes), diseases=len(dis_nodes), icd11=len(icd_nodes),
+        syndromes=len(syn_ids), diseases=len(dis_ids), icd11=len(icd_nodes),
         domains=len(domains), subjects=len(subjects),
         prerequisites=et.get("prerequisite", 0),
         max_fanout=max(child.values()) if child else 0,
