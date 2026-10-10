@@ -14,7 +14,7 @@ if (-not $SkipBuild) {
 
 Write-Host "=== [2/5] upload kg/device ===" -ForegroundColor Cyan
 ssh @SSH $HOST_ "mkdir -p $REMOTE/kg/device"
-scp @SSH -q kg\device\tcm-device.json kg\device\holter.py kg\device\sensing.py kg\device\neuro.py "${HOST_}:$REMOTE/kg/device/"
+scp @SSH -q kg\device\tcm-device.json kg\device\holter.py kg\device\sensing.py kg\device\neuro.py kg\device\itcm.py "${HOST_}:$REMOTE/kg/device/"
 
 Write-Host "=== [3/5] upload router + mount helper ===" -ForegroundColor Cyan
 scp @SSH -q api\device_router.py scripts\_server_mount_device.py "${HOST_}:$REMOTE/sage-api/"
@@ -30,7 +30,8 @@ foreach ($u in @(
     "https://www.zyyywaccn.com.cn/api/sages/device/holter/demo",
     "https://www.zyyywaccn.com.cn/api/sages/device/sensing",
     "https://www.zyyywaccn.com.cn/api/sages/device/six-quick",
-    "https://www.zyyywaccn.com.cn/api/sages/device/optogenetics"
+    "https://www.zyyywaccn.com.cn/api/sages/device/optogenetics",
+    "https://www.zyyywaccn.com.cn/api/sages/device/intelligent-tcm"
 )) {
     try { $r = Invoke-WebRequest -Uri $u -TimeoutSec 15 -UseBasicParsing; Write-Host ("  " + $r.StatusCode + "  " + $u) }
     catch { Write-Host ("  ERR " + $u + "  " + $_.Exception.Message) }

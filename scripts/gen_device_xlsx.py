@@ -152,6 +152,34 @@ def add_ext_sheets(wb, cat, used):
     sw.row(["复刻换算常量（本平台）", json.dumps(cv, ensure_ascii=False)], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
     sw.row(["备注", rf.get("note", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
 
+def add_itcm_sheet(wb, cat, used):
+    """智能中医学对接页（对标《智能中医学概论》田贵华、商洪才 2021）。"""
+    it = cat.get("intelligent_tcm", {})
+    if not it:
+        return
+    sw = SW(wb.create_sheet(sanitize("智能中医学", used)), [26, 78])
+    bk = it.get("book", {})
+    sw.title("智能中医学对接 · 《%s》（%s · %s · ISBN %s）" % (bk.get("title"), bk.get("publisher"), bk.get("date"), bk.get("isbn")), 2)
+    sw.row(["项", "内容"], [None, None], [F_H, F_H], [AL_C, AL_L], 20)
+    sw.row(["作者", " · ".join(bk.get("authors", []))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["学科定义", it.get("concept", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["实现路径", it.get("path", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["发展理念", it.get("motto", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["辨证框架", it.get("framework", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["方法学", it.get("method", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["典型应用", it.get("case", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["数据来源", bk.get("source", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【作者简介】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for a in it.get("authors", []):
+        sw.row([a["name"], "%s ｜ %s ｜ %s" % (a["role"], a["work"], a["honor"])], [None, None], [F_B, F_B], [AL_C, AL_L], 34)
+    sw.row(["【全书目录（实测）】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for t in it.get("toc", []):
+        sw.row([t["ch"], " / ".join(t["secs"]) if t["secs"] else "—"], [None, None], [F_B, F_B], [AL_L, AL_L], 26)
+    sw.row(["【与本课程对接点】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    sw.row(["原书位置", "本课程章节 ｜ 说明"], [None, None], [F_H, F_H], [AL_C, AL_L], 20)
+    for b in it.get("bridge", []):
+        sw.row([b["book"], "%s ｜ %s" % (b["here"], b["note"])], [None, None], [F_B, F_B], [AL_L, AL_L], 26)
+
 def main():
     cat = json.loads(CAT.read_text(encoding="utf-8"))
     wb = Workbook(); wb.remove(wb.active); used = set()
@@ -161,6 +189,7 @@ def main():
     write_book(wb, BOOK, meta, used)
     add_data_sheets(wb, cat, used)
     add_ext_sheets(wb, cat, used)
+    add_itcm_sheet(wb, cat, used)
     add_embed_sheet(wb, used)
     wb.save(OUT)
     print("[产出] " + str(OUT))

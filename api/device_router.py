@@ -65,6 +65,11 @@ def holter_demo():
     return {"count": len(_d()["holter"]), "cases": _d()["holter"], "note": "验证序列为标注的仿真数据，非临床"}
 
 
+@router.get("/intelligent-tcm")
+def intelligent_tcm():
+    return _d()["intelligent_tcm"]
+
+
 @router.get("/sensing")
 def sensing_layer():
     return _d()["sensing"]

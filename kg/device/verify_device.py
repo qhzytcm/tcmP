@@ -10,6 +10,7 @@ sys.path.insert(0, str(HERE))
 import holter as H  # noqa: E402
 import neuro as NE  # noqa: E402
 import sensing as SD  # noqa: E402
+import itcm as IT  # noqa: E402
 
 JSON = HERE / "tcm-device.json"
 ok = fail = 0
@@ -74,6 +75,17 @@ def main():
     check("光遗传学边界声明齐备（>=4 条）", len(nw["boundary"]) >= 4 and any("不得作为临床疗法宣传" in b for b in nw["boundary"]))
     check("数据集含扩展层（sensing/optogenetics/ref_impl）", set(("sensing", "optogenetics", "ref_impl")).issubset(data.keys()))
     check("参考实现登记（fitbit-googlefit）", data["ref_impl"]["repo"] == "pkpio/fitbit-googlefit")
+    # ── 智能中医学对接层（对标《智能中医学概论》2021）──
+    it = IT.summary()
+    check("书目：人民卫生出版社 2021-11 · ISBN 9787117323505",
+          it["book"]["publisher"] == "人民卫生出版社" and it["book"]["date"] == "2021-11" and it["book"]["isbn"] == "9787117323505")
+    check("作者 = 田贵华 · 商洪才", it["book"]["authors"] == ["田贵华", "商洪才"])
+    check("七章目录（含绪言共 8 条）", it["stats"]["chapters"] == 8 and len(it["toc"]) == 8)
+    check("辨证框架 = 象—素—候—证", it["framework"] == "象—素—候—证")
+    check("发展理念 = 数据筑基、智慧引航", it["motto"] == "数据筑基、智慧引航")
+    check("典型应用 = 中医慢性疼痛智能诊疗", it["case"] == "中医慢性疼痛智能诊疗")
+    check("对接点 >=5 且含「四诊数据采集」", it["stats"]["bridge_points"] >= 5 and any("四诊数据采集" in b["book"] for b in it["bridge"]))
+    check("数据集含 intelligent_tcm", "intelligent_tcm" in data)
     # 确定性构建
     import tempfile
     with tempfile.TemporaryDirectory() as td:
