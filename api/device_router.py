@@ -65,6 +65,11 @@ def holter_demo():
     return {"count": len(_d()["holter"]), "cases": _d()["holter"], "note": "验证序列为标注的仿真数据，非临床"}
 
 
+@router.get("/curriculum")
+def curriculum():
+    return _d()["curriculum"]
+
+
 @router.get("/wise-tcm")
 def wise_tcm():
     return _d()["wise_tcm"]

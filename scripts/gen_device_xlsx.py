@@ -220,6 +220,46 @@ def add_wise_tcm_sheet(wb, cat, used):
     for d in wt.get("improve", []):
         sw.row(["", d["name"], "改进", d["dir"], d["issue"]], [None] * 5, [F_B] * 5, [AL_C, AL_L, AL_C, AL_L, AL_L], 26)
 
+def add_curriculum_sheet(wb, cat, used):
+    """认知地图页：认知四阶 × 语义张量（v2.0 目录重构依据）。"""
+    cu = cat.get("curriculum", {})
+    if not cu:
+        return
+    sw = SW(wb.create_sheet(sanitize("认知地图", used)), [10, 14, 12, 12, 34, 20])
+    sw.title("认知四阶 × 中医药领域语义张量（D07-S11 v2.0 目录重构）", 6)
+    sw.row(["阶", "名称", "对应", "动词", "产出", "本课程篇"], [None] * 6, [F_H] * 6, [AL_C] * 6, 20)
+    for l in cu.get("ladder", []):
+        sw.row([l["id"], l["name"], l["tcm"], l["verb"], l["outcome"], "%s（%s）" % (l["part"], l["chapters"])],
+               [None] * 6, [F_B] * 6, [AL_C, AL_C, AL_C, AL_C, AL_L, AL_L], 18)
+    sw.row(["【语义张量三轴】", "", "", "", "", ""], [None] * 6, [F_H] * 6, [AL_L] * 6, 18)
+    sw.row(["轴", "名称", "端点", "", "本课程落点", ""], [None] * 6, [F_H] * 6, [AL_C, AL_C, AL_C, AL_C, AL_L, AL_C], 20)
+    for a in cu.get("axes", []):
+        sw.row([a["axis"], a["name"], " / ".join(a["ends"]), "", a["here"], ""],
+               [None] * 6, [F_B] * 6, [AL_C, AL_C, AL_C, AL_C, AL_L, AL_C], 18)
+    sw.row(["【四阶 × 三轴 矩阵】", "", "", "", "", ""], [None] * 6, [F_H] * 6, [AL_L] * 6, 18)
+    mx = {}
+    for m in cu.get("matrix", []):
+        mx[(m["level"], m["axis"])] = m["cell"]
+    sw.row(["阶 \\ 轴", "X 阴阳", "Y 表里", "Z 精气神", "", ""], [None] * 6, [F_H] * 6, [AL_C] * 6, 30)
+    for l in cu.get("ladder", []):
+        sw.row([l["id"] + " " + l["name"], mx.get((l["id"], "X"), ""), mx.get((l["id"], "Y"), ""),
+                mx.get((l["id"], "Z"), ""), "", ""], [None] * 6, [F_B] * 6, [AL_C, AL_L, AL_L, AL_L, AL_C, AL_C], 30)
+    sw.row(["【四元 → 张量】", "", "", "", "", ""], [None] * 6, [F_H] * 6, [AL_L] * 6, 18)
+    for k, v in (cu.get("quanta_to_tensor") or {}).items():
+        sw.row([k, v["semantic"] + "（" + v["axis"] + "）", "", "", v["reason"], ""],
+               [None] * 6, [F_B] * 6, [AL_C, AL_L, AL_C, AL_C, AL_L, AL_C], 18)
+    dd = cu.get("discipline", {})
+    sw.row(["【学科定位】", "", "", "", "", ""], [None] * 6, [F_H] * 6, [AL_L] * 6, 18)
+    sw.row(["课程", dd.get("code"), "", "", dd.get("role"), ""], [None] * 6, [F_B] * 6, [AL_C, AL_C, AL_C, AL_C, AL_L, AL_C], 30)
+    for d in dd.get("domains", []):
+        sw.row([d["prefix"], d["domain"], str(d["count"]) + " 门", "", "", ""],
+               [None] * 6, [F_B] * 6, [AL_C, AL_C, AL_C, AL_C, AL_C, AL_C], 16)
+    an = dd.get("domain_anchor") or {}
+    if an:
+        sw.row(["D07 锚点", "x=%.2f y=%.2f z=%.2f" % (an["anchor"]["x"], an["anchor"]["y"], an["anchor"]["z"]),
+                "r=%.2f" % an["r"], "θ=%.1f°" % an["theta"], "Z 轴「神」极 · 色 " + an["color"], ""],
+               [None] * 6, [F_B] * 6, [AL_C, AL_C, AL_C, AL_C, AL_L, AL_C], 20)
+
 def main():
     cat = json.loads(CAT.read_text(encoding="utf-8"))
     wb = Workbook(); wb.remove(wb.active); used = set()
@@ -231,6 +271,7 @@ def main():
     add_ext_sheets(wb, cat, used)
     add_itcm_sheet(wb, cat, used)
     add_wise_tcm_sheet(wb, cat, used)
+    add_curriculum_sheet(wb, cat, used)
     add_embed_sheet(wb, used)
     wb.save(OUT)
     print("[产出] " + str(OUT))

@@ -12,6 +12,7 @@ import neuro as NE  # noqa: E402
 import sensing as SD  # noqa: E402
 import itcm as IT  # noqa: E402
 import wisetcm as WT  # noqa: E402
+import curriculum as CU  # noqa: E402
 
 JSON = HERE / "tcm-device.json"
 ok = fail = 0
@@ -100,6 +101,19 @@ def main():
     check("伦理要求 4 条 + 基本条件 2 条", len(wt["ethics"]) == 4 and len(wt["basic_conditions"]) == 2)
     check("发展趋势 6 条", wt["stats"]["trends"] == 6)
     check("数据集含 wise_tcm", "wise_tcm" in data)
+    # ── 课程架构层：认知四阶 × 语义张量（v2.0 重构依据）──
+    cu = CU.summary()
+    check("认知四阶 = L1 感知/L2 理解/L3 应用/L4 创造", [l["name"] for l in cu["ladder"]] == ["感知阶", "理解阶", "应用阶", "创造阶"])
+    check("四阶与「象—素—候/证—造」同构", [l["tcm"] for l in cu["ladder"]] == ["象", "素", "候/证", "造"])
+    check("语义张量三轴（阴阳/表里/精气神）", [a["axis"] for a in cu["axes"]] == ["X", "Y", "Z"])
+    check("四阶×三轴矩阵 12 格且每格有落点", cu["stats"]["matrix_cells"] == 12 and all(m["cell"] for m in cu["matrix"]))
+    check("四元→张量 Z 轴（M 精 / E 气 / P·K 神）",
+          [cu["quanta_to_tensor"][k]["semantic"] for k in ("M", "E", "P", "K")] == ["精", "气", "神", "神"])
+    dd = cu["discipline"]
+    check("D07-S11 定位与 8 域 120 学科分布", dd["code"] == "D07-S11" and dd["stats" if False else "total_subjects"] == 120 and len(dd["domains"]) == 8)
+    check("D07 张量锚点 = Z 轴「神」极 (0,0,+0.5)", dd["domain_anchor"]["anchor"] == {"x": 0.0, "y": 0.0, "z": 0.5} and dd["domain_anchor"]["theta"] == 90.0)
+    check("全书 6 篇 26 章", cu["stats"]["parts"] == 6 and cu["stats"]["chapters"] == 26)
+    check("数据集含 curriculum", "curriculum" in data)
     # 确定性构建
     import tempfile
     with tempfile.TemporaryDirectory() as td:
