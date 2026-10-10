@@ -14,7 +14,7 @@
 
 ## 目录
 
-api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树** & **信息学** & **语义张量**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
+api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树** & **信息学** & **语义张量** & **器械**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
 
 ## 访问
 
@@ -139,3 +139,23 @@ r = clip(0.35·证据 + 0.35·症状密度 + 0.30·桥接完备, 0.20, 1.00)
 - 契约（冻结）：`GET /api/sages/semtensor/spec`（机器可读标准镜像）· `/semtensor/health`（口径与公理指纹）
 - 校验：`python kg/semtensor/verify_semtensor.py`（22 项，含三球镜像不变色、球面往返 <1e-12）
 - 论文/教材：《中医信息学》v2.0 以「公理层 → 语义张量层 → 学科映射层」重构（10 篇 34 章）
+
+## 中医智能仪器与可穿戴设备 · D07-S11（v1.0.0）
+
+> 平台的「器械与感知」层：让中医四诊可被**仪器采集**、被**算法分析**、被**网络流通**。
+> 单一来源：`kg/device/holter.py`（算法）· `kg/device/build_device.py`（构建）· `kg/device/tcm-device.json`（产物）。
+
+**六类器械 × 六种可穿戴形态 × 六条信号通道 × 数据标准 × 六 AI 算子 × 中医药关联**
+
+| 重点能力 | 实测（`python kg/device/build_device.py`） |
+| --- | --- |
+| Holter 心律检测 | 六场景：正常/心动过速(107bpm)/过缓(50bpm)/**停搏(danger)**/早搏/**房颤提示** |
+| 时域 HRV | HR · SDNN · RMSSD · pNN50 · CV |
+| 中医药关联 | 房颤提示→心悸怔忡（脉结代/促/涩）；SDNN<30→心气虚/心脉瘀阻（**仅提示，不构成诊断**） |
+
+- 接口：`GET /api/sages/device/{schema,classes,forms,signals,operators,stats}` · `POST /api/sages/device/holter/analyze`
+- 平台既有 **械者 6 端点**：`/devices/{maintenance,imaging,procurement,qc,trace,emergency}`
+- 自检：`python kg/device/verify_device.py`（19 项，含输入鲁棒性与确定性）
+- 教材素材：桌面 `中医智能仪器与可穿戴设备.xlsx`（21 sheet · D07-S11）
+
+> ⚠️ 边界声明：算法输出仅供教学/研究参考，**不构成医学诊断**；验证序列为**标注的仿真数据**（非临床）。
