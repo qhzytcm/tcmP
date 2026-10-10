@@ -1,0 +1,4959 @@
+{
+ "st_meta": {
+  "source": "tcmP 三维极坐标语义张量-可视化标准 v1.0",
+  "generator": "kg/semtensor/build_semtensor.py",
+  "axiom_fingerprint": {
+   "version": "1.0",
+   "coordinate": "X=r·cosθ·cosφ; Y=r·cosθ·sinφ; Z=r·sinθ",
+   "theta_range": [
+    -90,
+    90
+   ],
+   "phi_range": [
+    0,
+    360
+   ],
+   "r_range": [
+    0.0,
+    1.0
+   ],
+   "axis_end_color": {
+    "X": [
+     "橙",
+     "绿",
+     "紫"
+    ],
+    "Y": [
+     "蓝",
+     "绿",
+     "红"
+    ],
+    "Z": [
+     "黄",
+     "绿",
+     "青"
+    ]
+   },
+   "axis_semantics": {
+    "X": [
+     "阴",
+     "中（阴阳平和）",
+     "阳"
+    ],
+    "Y": [
+     "表",
+     "半表半里",
+     "里"
+    ],
+    "Z": [
+     "精（形质）",
+     "气（能量）",
+     "神（神志情志）"
+    ]
+   },
+   "C_O": "#00B050",
+   "wavelength_nm": {
+    "红": 685,
+    "橙": 605,
+    "黄": 578,
+    "绿": 533,
+    "青": 493,
+    "蓝": 458,
+    "紫": 415
+   },
+   "ev_center": {
+    "红": 1.81,
+    "橙": 2.05,
+    "黄": 2.15,
+    "绿": 2.33,
+    "青": 2.52,
+    "蓝": 2.65,
+    "紫": 2.99
+   },
+   "mirror": {
+    "母": [
+     -1,
+     -1,
+     1
+    ],
+    "子": [
+     1,
+     1,
+     1
+    ],
+    "父": [
+     1,
+     1,
+     1
+    ]
+   },
+   "xy_face": {
+    "母": 2.356194490192345,
+    "子": 0.7853981633974483,
+    "父": 0.7853981633974483
+   }
+  },
+  "domain_anchor": {
+   "中医学院": [
+    0.0,
+    0.3,
+    -0.2
+   ],
+   "中药学院": [
+    -0.2,
+    0.2,
+    -0.6
+   ],
+   "针灸学院": [
+    0.3,
+    -0.5,
+    0.2
+   ],
+   "推拿学院": [
+    0.2,
+    -0.7,
+    0.0
+   ],
+   "骨伤学院": [
+    0.0,
+    0.4,
+    -0.5
+   ],
+   "五官口腔学院": [
+    0.1,
+    -0.4,
+    0.1
+   ],
+   "中医智能学院": [
+    0.0,
+    0.0,
+    0.5
+   ],
+   "中医管理学院": [
+    0.0,
+    0.1,
+    0.3
+   ]
+  },
+  "subject_r": 0.55,
+  "note": "单位向量承载语义方向；r 承载语义张量尺度；颜色 = 坐标函数（读色即读义）"
+ },
+ "units": [
+  {
+   "id": "DSU-00001",
+   "disease": "普通感冒（上呼吸道感染）",
+   "syndrome": "风寒束表证",
+   "six_channel": "太阳病",
+   "zangfu": "肺·卫表",
+   "x": 0.2,
+   "y": -0.4,
+   "z": -0.25,
+   "r": 0.9305,
+   "theta": -29.2059,
+   "phi": 296.5651,
+   "color": "#2F976E",
+   "color_rgb": [
+    0.1855,
+    0.5911,
+    0.4318
+   ],
+   "octant": "+--",
+   "jqs": {
+    "精": 1,
+    "气": 2,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00002",
+   "disease": "流行性感冒",
+   "syndrome": "风热犯表证",
+   "six_channel": "太阳病 — 阳明病（过渡）",
+   "zangfu": "肺·卫表",
+   "x": 1.0,
+   "y": -0.4,
+   "z": 0.3333,
+   "r": 0.848,
+   "theta": 17.1953,
+   "phi": 338.1986,
+   "color": "#5755DB",
+   "color_rgb": [
+    0.3403,
+    0.3351,
+    0.8578
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 0,
+    "气": 1,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00003",
+   "disease": "社区获得性肺炎",
+   "syndrome": "痰热壅肺证",
+   "six_channel": "阳明病",
+   "zangfu": "肺",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.0,
+   "r": 0.7275,
+   "theta": 0.0,
+   "phi": 45.0,
+   "color": "#B2247F",
+   "color_rgb": [
+    0.7,
+    0.1392,
+    0.498
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 3,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00004",
+   "disease": "慢性胃炎（慢性浅表性胃炎）",
+   "syndrome": "脾胃湿热证",
+   "six_channel": "太阴病 — 阳明病（合病）",
+   "zangfu": "脾·胃",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.0,
+   "r": 0.825,
+   "theta": 0.0,
+   "phi": 45.0,
+   "color": "#B2247F",
+   "color_rgb": [
+    0.7,
+    0.1392,
+    0.498
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00005",
+   "disease": "胃溃疡（消化性溃疡）",
+   "syndrome": "脾胃虚寒证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.1667,
+   "r": 0.8655,
+   "theta": 8.7983,
+   "phi": 158.1986,
+   "color": "#DB761C",
+   "color_rgb": [
+    0.8576,
+    0.4615,
+    0.1111
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 0,
+    "气": 4,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00006",
+   "disease": "肠易激综合征",
+   "syndrome": "肝郁脾虚证",
+   "six_channel": "太阴病 — 少阳病（合病）",
+   "zangfu": "肝·脾",
+   "x": 0.2,
+   "y": 0.4,
+   "z": 0.3333,
+   "r": 0.9065,
+   "theta": 36.6965,
+   "phi": 63.4349,
+   "color": "#318F65",
+   "color_rgb": [
+    0.1936,
+    0.5589,
+    0.3945
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 9,
+    "神": 7
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00007",
+   "disease": "慢性乙型肝炎",
+   "syndrome": "肝胆湿热证",
+   "six_channel": "少阳病 — 厥阴病",
+   "zangfu": "肝·胆",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.3333,
+   "r": 0.967,
+   "theta": 13.2614,
+   "phi": 45.0,
+   "color": "#993B89",
+   "color_rgb": [
+    0.6,
+    0.2308,
+    0.5384
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 1,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00008",
+   "disease": "原发性高血压",
+   "syndrome": "肝阳上亢证",
+   "six_channel": "不适用",
+   "zangfu": "肝",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.1429,
+   "r": 0.932,
+   "theta": 5.7699,
+   "phi": 45.0,
+   "color": "#A72E84",
+   "color_rgb": [
+    0.6533,
+    0.182,
+    0.5169
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 2,
+    "气": 1,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00009",
+   "disease": "冠心病（稳定型心绞痛）",
+   "syndrome": "气滞血瘀证",
+   "six_channel": "不适用",
+   "zangfu": "心·肝",
+   "x": 0.2,
+   "y": 1.0,
+   "z": -0.5,
+   "r": 0.935,
+   "theta": -26.1183,
+   "phi": 78.6901,
+   "color": "#D84F2B",
+   "color_rgb": [
+    0.848,
+    0.3082,
+    0.1689
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 7,
+    "气": 6,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证（本质）或热证（化火时）",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00010",
+   "disease": "2型糖尿病",
+   "syndrome": "阴虚燥热证",
+   "six_channel": "不适用",
+   "zangfu": "肺·胃·肾",
+   "x": 1.0,
+   "y": 0.4,
+   "z": 0.0,
+   "r": 0.95,
+   "theta": 0.0,
+   "phi": 21.8014,
+   "color": "#A127A9",
+   "color_rgb": [
+    0.6319,
+    0.1518,
+    0.6644
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 3,
+    "气": 2,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00011",
+   "disease": "慢性肾小球肾炎",
+   "syndrome": "脾肾阳虚证",
+   "six_channel": "太阴病 — 少阴病",
+   "zangfu": "脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.0,
+   "r": 0.789,
+   "theta": 0.0,
+   "phi": 158.1986,
+   "color": "#F56C08",
+   "color_rgb": [
+    0.9597,
+    0.4235,
+    0.0314
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 0,
+    "气": 11,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00012",
+   "disease": "类风湿关节炎",
+   "syndrome": "寒湿痹阻证",
+   "six_channel": "不适用",
+   "zangfu": "肝·肾·筋骨",
+   "x": -1.0,
+   "y": 1.0,
+   "z": -0.7,
+   "r": 0.84,
+   "theta": -26.3342,
+   "phi": 135.0,
+   "color": "#EE710A",
+   "color_rgb": [
+    0.9345,
+    0.4412,
+    0.0407
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 7,
+    "气": 2,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00013",
+   "disease": "湿疹（特应性皮炎）",
+   "syndrome": "湿热浸淫证",
+   "six_channel": "不适用",
+   "zangfu": "脾·胃·肌肤",
+   "x": 1.0,
+   "y": -0.4,
+   "z": 0.0,
+   "r": 0.9125,
+   "theta": 0.0,
+   "phi": 338.1986,
+   "color": "#6B3ADF",
+   "color_rgb": [
+    0.4213,
+    0.2291,
+    0.8762
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表里同病",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00014",
+   "disease": "原发性痛经",
+   "syndrome": "寒凝血瘀证",
+   "six_channel": "不适用",
+   "zangfu": "胞宫·冲任",
+   "x": -1.0,
+   "y": 1.0,
+   "z": -0.8421,
+   "r": 0.8425,
+   "theta": -30.7719,
+   "phi": 135.0,
+   "color": "#EE750A",
+   "color_rgb": [
+    0.9352,
+    0.4572,
+    0.0386
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 16,
+    "气": 2,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00015",
+   "disease": "功能失调性子宫出血（异常子宫出血）",
+   "syndrome": "气虚不摄证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·冲任",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4643,
+   "r": 0.7445,
+   "theta": -23.3205,
+   "phi": 158.1986,
+   "color": "#F48106",
+   "color_rgb": [
+    0.957,
+    0.5075,
+    0.0236
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 14,
+    "气": 12,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00016",
+   "disease": "慢性盆腔炎",
+   "syndrome": "湿热瘀结证",
+   "six_channel": "不适用",
+   "zangfu": "胞宫·下焦(肝·脾)",
+   "x": 1.0,
+   "y": 1.0,
+   "z": -0.3333,
+   "r": 0.755,
+   "theta": -13.2614,
+   "phi": 45.0,
+   "color": "#BC3A6D",
+   "color_rgb": [
+    0.7356,
+    0.228,
+    0.4269
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00017",
+   "disease": "颈椎病",
+   "syndrome": "气滞血瘀证(颈部)",
+   "six_channel": "不适用",
+   "zangfu": "颈项·督脉·足太阳膀胱经",
+   "x": 0.2,
+   "y": 1.0,
+   "z": -0.5,
+   "r": 0.755,
+   "theta": -26.1183,
+   "phi": 78.6901,
+   "color": "#D84F2B",
+   "color_rgb": [
+    0.848,
+    0.3082,
+    0.1689
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 8,
+    "气": 4,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00018",
+   "disease": "腰椎间盘突出症",
+   "syndrome": "寒湿痹阻证(腰部)",
+   "six_channel": "不适用",
+   "zangfu": "腰府·肾·足太阳膀胱经",
+   "x": -1.0,
+   "y": 1.0,
+   "z": -0.1,
+   "r": 0.755,
+   "theta": -4.0447,
+   "phi": 135.0,
+   "color": "#ED590D",
+   "color_rgb": [
+    0.9303,
+    0.35,
+    0.0523
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 3,
+    "气": 4,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00019",
+   "disease": "膝关节骨关节炎",
+   "syndrome": "肝肾亏虚证",
+   "six_channel": "不适用",
+   "zangfu": "肝·肾·筋骨",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.913,
+   "r": 0.755,
+   "theta": -40.2879,
+   "phi": 158.1986,
+   "color": "#F48E05",
+   "color_rgb": [
+    0.9555,
+    0.5567,
+    0.019
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 21,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00020",
+   "disease": "变应性鼻炎（过敏性鼻炎）",
+   "syndrome": "肺气虚寒证",
+   "six_channel": "不适用",
+   "zangfu": "肺·鼻窍·卫表",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.0952,
+   "r": 0.93,
+   "theta": -5.0513,
+   "phi": 158.1986,
+   "color": "#F57107",
+   "color_rgb": [
+    0.959,
+    0.445,
+    0.0294
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 3,
+    "气": 16,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00021",
+   "disease": "慢性咽炎",
+   "syndrome": "阴虚肺燥证",
+   "six_channel": "不适用",
+   "zangfu": "肺·咽喉",
+   "x": -0.2,
+   "y": 0.4,
+   "z": -0.3333,
+   "r": 0.72,
+   "theta": -36.6965,
+   "phi": 116.5651,
+   "color": "#5E9635",
+   "color_rgb": [
+    0.3685,
+    0.5887,
+    0.2071
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00022",
+   "disease": "原发性失眠（慢性失眠障碍）",
+   "syndrome": "心肾不交证",
+   "six_channel": "少阴病",
+   "zangfu": "心·肾",
+   "x": -0.2,
+   "y": 0.4,
+   "z": 0.6364,
+   "r": 0.8425,
+   "theta": 54.9034,
+   "phi": 116.5651,
+   "color": "#479564",
+   "color_rgb": [
+    0.2798,
+    0.5857,
+    0.3923
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 8
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00023",
+   "disease": "偏头痛（无先兆偏头痛）",
+   "syndrome": "肝阳上亢证(头部)",
+   "six_channel": "少阳病",
+   "zangfu": "肝·胆·头目",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.1667,
+   "r": 0.93,
+   "theta": 6.7227,
+   "phi": 45.0,
+   "color": "#A53085",
+   "color_rgb": [
+    0.6461,
+    0.1885,
+    0.5198
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 7,
+    "气": 5,
+    "神": 11
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00024",
+   "disease": "支气管哮喘",
+   "syndrome": "寒哮证（冷哮）",
+   "six_channel": "太阴病",
+   "zangfu": "肺·肾",
+   "x": -1.0,
+   "y": 1.0,
+   "z": 0.0,
+   "r": 0.965,
+   "theta": 0.0,
+   "phi": 135.0,
+   "color": "#ED540E",
+   "color_rgb": [
+    0.9294,
+    0.3294,
+    0.0549
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 0,
+    "气": 12,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00025",
+   "disease": "急性支气管炎",
+   "syndrome": "风热犯肺证",
+   "six_channel": "太阳病",
+   "zangfu": "肺·卫表",
+   "x": 1.0,
+   "y": -0.4,
+   "z": -0.1429,
+   "r": 0.793,
+   "theta": -7.5578,
+   "phi": 338.1986,
+   "color": "#7847CB",
+   "color_rgb": [
+    0.4702,
+    0.2784,
+    0.795
+   ],
+   "octant": "+--",
+   "jqs": {
+    "精": 2,
+    "气": 3,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00026",
+   "disease": "慢性支气管炎",
+   "syndrome": "痰湿壅肺证",
+   "six_channel": "太阴病",
+   "zangfu": "肺·脾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.0909,
+   "r": 0.7975,
+   "theta": 4.8242,
+   "phi": 158.1986,
+   "color": "#E67214",
+   "color_rgb": [
+    0.9012,
+    0.4453,
+    0.077
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 0,
+    "气": 9,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00027",
+   "disease": "慢性阻塞性肺疾病",
+   "syndrome": "肺肾气虚证",
+   "six_channel": "少阴病",
+   "zangfu": "肺·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.0,
+   "r": 0.8775,
+   "theta": 0.0,
+   "phi": 158.1986,
+   "color": "#F56C08",
+   "color_rgb": [
+    0.9597,
+    0.4235,
+    0.0314
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 0,
+    "气": 30,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00028",
+   "disease": "肺气肿",
+   "syndrome": "肺脾肾虚、痰瘀互结证",
+   "six_channel": "少阴病",
+   "zangfu": "肺·脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.0556,
+   "r": 0.829,
+   "theta": -2.9552,
+   "phi": 158.1986,
+   "color": "#F56F08",
+   "color_rgb": [
+    0.9593,
+    0.4364,
+    0.0302
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 1,
+    "气": 16,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00029",
+   "disease": "肺结核",
+   "syndrome": "肺阴亏虚证",
+   "six_channel": "少阴病",
+   "zangfu": "肺·肾",
+   "x": -0.2,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.93,
+   "theta": -48.1897,
+   "phi": 116.5651,
+   "color": "#76962D",
+   "color_rgb": [
+    0.4627,
+    0.5879,
+    0.1768
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 5,
+    "气": 1,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00030",
+   "disease": "社区获得性肺炎",
+   "syndrome": "风热犯肺证",
+   "six_channel": "太阳病",
+   "zangfu": "肺·卫表",
+   "x": 1.0,
+   "y": -0.4,
+   "z": -0.3,
+   "r": 0.832,
+   "theta": -15.5648,
+   "phi": 338.1986,
+   "color": "#8352B8",
+   "color_rgb": [
+    0.5144,
+    0.323,
+    0.7216
+   ],
+   "octant": "+--",
+   "jqs": {
+    "精": 4,
+    "气": 4,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表里同病",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00031",
+   "disease": "肺源性心脏病",
+   "syndrome": "阳虚水泛证",
+   "six_channel": "少阴病",
+   "zangfu": "肺·脾·肾·心",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.0,
+   "r": 0.823,
+   "theta": 0.0,
+   "phi": 158.1986,
+   "color": "#F56C08",
+   "color_rgb": [
+    0.9597,
+    0.4235,
+    0.0314
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 2,
+    "气": 16,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00032",
+   "disease": "特发性肺间质纤维化",
+   "syndrome": "气阴两虚、痰瘀阻络证",
+   "six_channel": "太阴病",
+   "zangfu": "肺·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4211,
+   "r": 0.755,
+   "theta": -21.3546,
+   "phi": 158.1986,
+   "color": "#F48006",
+   "color_rgb": [
+    0.9572,
+    0.5015,
+    0.0241
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 8,
+    "气": 10,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00033",
+   "disease": "原发性高血压",
+   "syndrome": "肝阳上亢证",
+   "six_channel": "少阳病",
+   "zangfu": "肝·肾",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.0,
+   "r": 0.8775,
+   "theta": 0.0,
+   "phi": 45.0,
+   "color": "#B2247F",
+   "color_rgb": [
+    0.7,
+    0.1392,
+    0.498
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 4,
+    "气": 3,
+    "神": 4
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00034",
+   "disease": "冠状动脉粥样硬化性心脏病（冠心病）",
+   "syndrome": "胸阳痹阻、痰瘀互结证",
+   "six_channel": "少阴病",
+   "zangfu": "心·胸",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.3846,
+   "r": 0.8245,
+   "theta": -19.6512,
+   "phi": 158.1986,
+   "color": "#F47F06",
+   "color_rgb": [
+    0.9574,
+    0.4962,
+    0.0246
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 5,
+    "气": 7,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00035",
+   "disease": "心律失常",
+   "syndrome": "心脾两虚证",
+   "six_channel": "太阴病",
+   "zangfu": "心·脾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.0606,
+   "r": 0.665,
+   "theta": 3.2204,
+   "phi": 158.1986,
+   "color": "#EB7010",
+   "color_rgb": [
+    0.9198,
+    0.4383,
+    0.0624
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 9,
+    "气": 12,
+    "神": 11
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00036",
+   "disease": "慢性心力衰竭",
+   "syndrome": "心肾阳虚、水饮凌心证",
+   "six_channel": "少阴病",
+   "zangfu": "心·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.0435,
+   "r": 0.9195,
+   "theta": -2.3128,
+   "phi": 158.1986,
+   "color": "#F56F08",
+   "color_rgb": [
+    0.9593,
+    0.4337,
+    0.0304
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 3,
+    "气": 17,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00037",
+   "disease": "病毒性心肌炎",
+   "syndrome": "热毒侵心、气阴两伤证",
+   "six_channel": "少阴病",
+   "zangfu": "心·肺",
+   "x": 1.0,
+   "y": -1.0,
+   "z": 0.2143,
+   "r": 0.7295,
+   "theta": 8.6166,
+   "phi": 315.0,
+   "color": "#4C52DB",
+   "color_rgb": [
+    0.2993,
+    0.3235,
+    0.8601
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 0,
+    "气": 10,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表里同病",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00038",
+   "disease": "高脂血症",
+   "syndrome": "痰湿内阻证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·肝",
+   "x": -1.0,
+   "y": 1.0,
+   "z": -0.625,
+   "r": 0.7945,
+   "theta": -23.8426,
+   "phi": 135.0,
+   "color": "#EE6E0B",
+   "color_rgb": [
+    0.9341,
+    0.4321,
+    0.0418
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 5,
+    "气": 2,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00039",
+   "disease": "动脉粥样硬化",
+   "syndrome": "气虚血瘀证",
+   "six_channel": "少阴病",
+   "zangfu": "心·脉",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4839,
+   "r": 0.8095,
+   "theta": -24.1939,
+   "phi": 158.1986,
+   "color": "#F48206",
+   "color_rgb": [
+    0.9569,
+    0.5102,
+    0.0233
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 16,
+    "气": 13,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00040",
+   "disease": "风湿性心脏瓣膜病",
+   "syndrome": "风寒湿痹、内含于心证",
+   "six_channel": "少阴病",
+   "zangfu": "心·经络",
+   "x": -1.0,
+   "y": -1.0,
+   "z": -0.25,
+   "r": 0.7415,
+   "theta": -10.025,
+   "phi": 225.0,
+   "color": "#9A7F60",
+   "color_rgb": [
+    0.6039,
+    0.4976,
+    0.3782
+   ],
+   "octant": "---",
+   "jqs": {
+    "精": 5,
+    "气": 9,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "表里同病",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00041",
+   "disease": "稳定型心绞痛",
+   "syndrome": "气阴两虚、心脉瘀阻证",
+   "six_channel": "少阴病",
+   "zangfu": "心·脉",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.1429,
+   "r": 0.808,
+   "theta": -7.5578,
+   "phi": 158.1986,
+   "color": "#F47407",
+   "color_rgb": [
+    0.9587,
+    0.4548,
+    0.0285
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 5,
+    "气": 13,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00042",
+   "disease": "急性心肌梗死",
+   "syndrome": "真心痛（阳衰血瘀）证",
+   "six_channel": "少阴病",
+   "zangfu": "心·脉",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.2143,
+   "r": 0.906,
+   "theta": -11.2533,
+   "phi": 158.1986,
+   "color": "#F47707",
+   "color_rgb": [
+    0.9583,
+    0.4683,
+    0.0272
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 5,
+    "气": 6,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00043",
+   "disease": "肺动脉高压",
+   "syndrome": "肺肾气虚、痰瘀阻络证",
+   "six_channel": "少阴病",
+   "zangfu": "肺·肾·心",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.1875,
+   "r": 0.7295,
+   "theta": -9.8756,
+   "phi": 158.1986,
+   "color": "#F47607",
+   "color_rgb": [
+    0.9584,
+    0.4634,
+    0.0277
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 7,
+    "气": 23,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00044",
+   "disease": "慢性便秘",
+   "syndrome": "气虚便秘证",
+   "six_channel": "太阴病",
+   "zangfu": "大肠·脾·肺",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.0909,
+   "r": 0.828,
+   "theta": -4.8242,
+   "phi": 158.1986,
+   "color": "#F57108",
+   "color_rgb": [
+    0.959,
+    0.4441,
+    0.0295
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 2,
+    "气": 19,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00045",
+   "disease": "慢性腹泻",
+   "syndrome": "脾虚湿盛证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃·大肠",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.0833,
+   "r": 0.7375,
+   "theta": -4.4226,
+   "phi": 158.1986,
+   "color": "#F57108",
+   "color_rgb": [
+    0.9591,
+    0.4425,
+    0.0296
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 2,
+    "气": 8,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00046",
+   "disease": "慢性胃炎",
+   "syndrome": "脾胃湿热证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.0,
+   "r": 0.9335,
+   "theta": 0.0,
+   "phi": 45.0,
+   "color": "#B2247F",
+   "color_rgb": [
+    0.7,
+    0.1392,
+    0.498
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 6,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00047",
+   "disease": "消化性溃疡",
+   "syndrome": "肝胃不和证",
+   "six_channel": "少阳病",
+   "zangfu": "肝·胃",
+   "x": 1.0,
+   "y": 0.3,
+   "z": 0.4348,
+   "r": 0.7675,
+   "theta": 22.6099,
+   "phi": 16.6992,
+   "color": "#7550B9",
+   "color_rgb": [
+    0.4605,
+    0.3118,
+    0.7255
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 10,
+    "神": 11
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00048",
+   "disease": "胃食管反流病",
+   "syndrome": "肝胃郁热证",
+   "six_channel": "阳明病",
+   "zangfu": "肝·胃·食管",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.2,
+   "r": 0.8775,
+   "theta": 8.0495,
+   "phi": 45.0,
+   "color": "#A23286",
+   "color_rgb": [
+    0.6364,
+    0.1975,
+    0.5237
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 9,
+    "神": 4
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00049",
+   "disease": "慢性乙型病毒性肝炎",
+   "syndrome": "肝郁脾虚证",
+   "six_channel": "少阳病",
+   "zangfu": "肝·脾",
+   "x": 0.2,
+   "y": -0.3,
+   "z": 0.1579,
+   "r": 0.93,
+   "theta": 23.6503,
+   "phi": 303.6901,
+   "color": "#119B79",
+   "color_rgb": [
+    0.066,
+    0.6067,
+    0.473
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 4,
+    "气": 7,
+    "神": 7
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00050",
+   "disease": "肝硬化",
+   "syndrome": "水湿内停证（鼓胀）",
+   "six_channel": "少阴病",
+   "zangfu": "肝·脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.375,
+   "r": 0.79,
+   "theta": -19.197,
+   "phi": 158.1986,
+   "color": "#F47E06",
+   "color_rgb": [
+    0.9574,
+    0.4948,
+    0.0247
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 6,
+    "气": 9,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00051",
+   "disease": "代谢相关脂肪性肝病（非酒精性脂肪肝）",
+   "syndrome": "痰湿内阻证",
+   "six_channel": "太阴病",
+   "zangfu": "肝·脾",
+   "x": -1.0,
+   "y": 1.0,
+   "z": -0.3333,
+   "r": 0.8775,
+   "theta": -13.2614,
+   "phi": 135.0,
+   "color": "#EE640C",
+   "color_rgb": [
+    0.9322,
+    0.391,
+    0.0471
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00052",
+   "disease": "急性胆囊炎",
+   "syndrome": "肝胆湿热证",
+   "six_channel": "少阳病",
+   "zangfu": "肝·胆",
+   "x": 1.0,
+   "y": 0.3,
+   "z": 0.25,
+   "r": 0.8775,
+   "theta": 13.4663,
+   "phi": 16.6992,
+   "color": "#8341B7",
+   "color_rgb": [
+    0.5154,
+    0.2559,
+    0.7189
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 0,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00053",
+   "disease": "急性胰腺炎",
+   "syndrome": "阳明腑实证/结胸证",
+   "six_channel": "阳明病",
+   "zangfu": "脾·胃·大肠",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.1667,
+   "r": 0.8775,
+   "theta": 6.7227,
+   "phi": 45.0,
+   "color": "#A53085",
+   "color_rgb": [
+    0.6461,
+    0.1885,
+    0.5198
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 7,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00054",
+   "disease": "慢性肾小球肾炎",
+   "syndrome": "脾肾气虚、水湿内停证",
+   "six_channel": "少阴病",
+   "zangfu": "脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.2143,
+   "r": 0.79,
+   "theta": -11.2533,
+   "phi": 158.1986,
+   "color": "#F47707",
+   "color_rgb": [
+    0.9583,
+    0.4683,
+    0.0272
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 3,
+    "气": 10,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00055",
+   "disease": "肾结石（肾盂结石）",
+   "syndrome": "下焦湿热瘀阻证",
+   "six_channel": "太阳病",
+   "zangfu": "肾·膀胱",
+   "x": 1.0,
+   "y": 1.0,
+   "z": -0.5,
+   "r": 0.93,
+   "theta": -19.4712,
+   "phi": 45.0,
+   "color": "#BF4366",
+   "color_rgb": [
+    0.7498,
+    0.2635,
+    0.3984
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 5,
+    "气": 4,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00056",
+   "disease": "良性前列腺增生（BPH）",
+   "syndrome": "肾虚瘀阻证（癃闭）",
+   "six_channel": "少阴病",
+   "zangfu": "肾·膀胱",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.3333,
+   "r": 0.79,
+   "theta": -17.1953,
+   "phi": 158.1986,
+   "color": "#F47D06",
+   "color_rgb": [
+    0.9576,
+    0.4884,
+    0.0253
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 5,
+    "气": 9,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00057",
+   "disease": "急性膀胱炎",
+   "syndrome": "膀胱湿热证（热淋）",
+   "six_channel": "太阳病",
+   "zangfu": "肾·膀胱",
+   "x": 1.0,
+   "y": 1.0,
+   "z": -0.25,
+   "r": 0.93,
+   "theta": -10.025,
+   "phi": 45.0,
+   "color": "#BA3571",
+   "color_rgb": [
+    0.7277,
+    0.2083,
+    0.4427
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 3,
+    "气": 3,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00058",
+   "disease": "尿道炎",
+   "syndrome": "湿热下注证（热淋/白浊）",
+   "six_channel": "太阳病",
+   "zangfu": "肾·膀胱·尿道",
+   "x": 1.0,
+   "y": 1.0,
+   "z": -0.3333,
+   "r": 0.72,
+   "theta": -13.2614,
+   "phi": 45.0,
+   "color": "#BC3A6D",
+   "color_rgb": [
+    0.7356,
+    0.228,
+    0.4269
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00059",
+   "disease": "肠易激综合征（IBS）",
+   "syndrome": "肝郁脾虚证（痛泻）",
+   "six_channel": "少阳病",
+   "zangfu": "肝·脾·大肠",
+   "x": 0.2,
+   "y": -0.3,
+   "z": 0.2857,
+   "r": 0.755,
+   "theta": 38.3929,
+   "phi": 303.6901,
+   "color": "#0E9F78",
+   "color_rgb": [
+    0.0553,
+    0.6247,
+    0.4699
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 1,
+    "气": 12,
+    "神": 7
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00060",
+   "disease": "溃疡性结肠炎",
+   "syndrome": "大肠湿热蕴毒证",
+   "six_channel": "阳明病",
+   "zangfu": "大肠·脾",
+   "x": 1.0,
+   "y": 1.0,
+   "z": -0.6,
+   "r": 0.755,
+   "theta": -22.9898,
+   "phi": 45.0,
+   "color": "#C14862",
+   "color_rgb": [
+    0.7575,
+    0.2827,
+    0.3831
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 6,
+    "气": 3,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00061",
+   "disease": "慢性胰腺炎",
+   "syndrome": "脾虚瘀阻证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·肝·胃",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4615,
+   "r": 0.72,
+   "theta": -23.1947,
+   "phi": 158.1986,
+   "color": "#F48106",
+   "color_rgb": [
+    0.957,
+    0.5071,
+    0.0236
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 6,
+    "气": 6,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00062",
+   "disease": "慢性肾衰竭（尿毒症）",
+   "syndrome": "脾肾阳虚、湿浊内蕴证",
+   "six_channel": "少阴病",
+   "zangfu": "脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.2667,
+   "r": 0.79,
+   "theta": 13.9081,
+   "phi": 158.1986,
+   "color": "#CE7B27",
+   "color_rgb": [
+    0.8061,
+    0.4806,
+    0.1512
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 1,
+    "气": 8,
+    "神": 5
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00063",
+   "disease": "复杂性尿路感染",
+   "syndrome": "湿热下注、邪留正伤证",
+   "six_channel": "太阳病—少阴病",
+   "zangfu": "肾·膀胱",
+   "x": -0.2,
+   "y": 0.4,
+   "z": 0.0,
+   "r": 0.755,
+   "theta": 0.0,
+   "phi": 116.5651,
+   "color": "#5C8437",
+   "color_rgb": [
+    0.3624,
+    0.5166,
+    0.2175
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 0,
+    "气": 5,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00064",
+   "disease": "缺血性脑卒中",
+   "syndrome": "气虚血瘀、风中经络证",
+   "six_channel": "不适用",
+   "zangfu": "肝·脾·经络",
+   "x": -1.0,
+   "y": -0.3,
+   "z": -0.3158,
+   "r": 0.845,
+   "theta": -16.8296,
+   "phi": 196.6992,
+   "color": "#D38F28",
+   "color_rgb": [
+    0.8269,
+    0.5591,
+    0.158
+   ],
+   "octant": "---",
+   "jqs": {
+    "精": 7,
+    "气": 10,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00065",
+   "disease": "特发性面神经麻痹（Bell麻痹）",
+   "syndrome": "风邪外袭、经络痹阻证",
+   "six_channel": "太阳病",
+   "zangfu": "经络·阳明·少阳",
+   "x": 0.2,
+   "y": -0.4,
+   "z": 0.1667,
+   "r": 0.7845,
+   "theta": 20.4431,
+   "phi": 296.5651,
+   "color": "#159486",
+   "color_rgb": [
+    0.0818,
+    0.579,
+    0.5262
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 2,
+    "气": 5,
+    "神": 4
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00066",
+   "disease": "三叉神经痛",
+   "syndrome": "肝火上炎、风火上扰证",
+   "six_channel": "少阳病",
+   "zangfu": "肝·胆·经络",
+   "x": 1.0,
+   "y": 0.3,
+   "z": 0.0,
+   "r": 0.638,
+   "theta": 0.0,
+   "phi": 16.6992,
+   "color": "#9D28B4",
+   "color_rgb": [
+    0.6145,
+    0.1551,
+    0.7071
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 3,
+    "气": 1,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00067",
+   "disease": "腰椎间盘突出症/坐骨神经痛",
+   "syndrome": "寒湿阻络、气滞血瘀证",
+   "six_channel": "不适用",
+   "zangfu": "肾·膀胱经·经络",
+   "x": -1.0,
+   "y": 1.0,
+   "z": -0.4286,
+   "r": 0.6335,
+   "theta": -16.8603,
+   "phi": 135.0,
+   "color": "#EE670C",
+   "color_rgb": [
+    0.9329,
+    0.4055,
+    0.0452
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 4,
+    "气": 1,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00068",
+   "disease": "偏头痛",
+   "syndrome": "肝阳上亢、风阳上扰证",
+   "six_channel": "少阳病",
+   "zangfu": "肝·胆·经络",
+   "x": 1.0,
+   "y": 0.3,
+   "z": 0.2,
+   "r": 0.7515,
+   "theta": 10.8445,
+   "phi": 16.6992,
+   "color": "#883DB7",
+   "color_rgb": [
+    0.5325,
+    0.2384,
+    0.7169
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 1,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00069",
+   "disease": "癫痫",
+   "syndrome": "风痰闭窍、肝风内动证（痫证）",
+   "six_channel": "厥阴病",
+   "zangfu": "肝·脾·心",
+   "x": 0.2,
+   "y": 1.0,
+   "z": 0.8333,
+   "r": 0.617,
+   "theta": 39.2529,
+   "phi": 78.6901,
+   "color": "#796476",
+   "color_rgb": [
+    0.4756,
+    0.3904,
+    0.461
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 0,
+    "神": 5
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00070",
+   "disease": "帕金森病",
+   "syndrome": "肝肾阴虚、虚风内动证（颤证）",
+   "six_channel": "厥阴病",
+   "zangfu": "肝·肾·筋脉",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.6667,
+   "r": 0.6475,
+   "theta": -31.7581,
+   "phi": 158.1986,
+   "color": "#F48805",
+   "color_rgb": [
+    0.9562,
+    0.5323,
+    0.0213
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 7,
+    "气": 0,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00071",
+   "disease": "甲状腺功能亢进症",
+   "syndrome": "肝火亢盛、气阴两虚证（瘿病）",
+   "six_channel": "少阳病",
+   "zangfu": "肝·心·肾",
+   "x": 1.0,
+   "y": -0.3,
+   "z": 0.5,
+   "r": 0.757,
+   "theta": 25.5904,
+   "phi": 343.3008,
+   "color": "#525FD9",
+   "color_rgb": [
+    0.3209,
+    0.3739,
+    0.851
+   ],
+   "octant": "+-+",
+   "jqs": {
+    "精": 0,
+    "气": 4,
+    "神": 5
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00072",
+   "disease": "甲状腺功能减退症",
+   "syndrome": "脾肾阳虚证",
+   "six_channel": "少阴病",
+   "zangfu": "脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.1333,
+   "r": 0.866,
+   "theta": -7.0554,
+   "phi": 158.1986,
+   "color": "#F47307",
+   "color_rgb": [
+    0.9587,
+    0.4528,
+    0.0286
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 3,
+    "气": 10,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00073",
+   "disease": "2型糖尿病",
+   "syndrome": "气阴两虚证（消渴）",
+   "six_channel": "少阴病",
+   "zangfu": "肾·肺·胃",
+   "x": -0.2,
+   "y": 0.4,
+   "z": -0.2,
+   "r": 0.9455,
+   "theta": -24.0948,
+   "phi": 116.5651,
+   "color": "#5E9136",
+   "color_rgb": [
+    0.3667,
+    0.5671,
+    0.2102
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 2,
+    "气": 7,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00074",
+   "disease": "痛风",
+   "syndrome": "湿热下注、痹阻经络证（热痹）",
+   "six_channel": "太阴病",
+   "zangfu": "脾·肾·经络",
+   "x": 1.0,
+   "y": 1.0,
+   "z": 0.0,
+   "r": 0.8775,
+   "theta": 0.0,
+   "phi": 45.0,
+   "color": "#B2247F",
+   "color_rgb": [
+    0.7,
+    0.1392,
+    0.498
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 1,
+    "气": 3,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00075",
+   "disease": "肥胖症",
+   "syndrome": "痰湿内盛、脾虚不运证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.5455,
+   "r": 0.861,
+   "theta": -26.8615,
+   "phi": 158.1986,
+   "color": "#F48406",
+   "color_rgb": [
+    0.9567,
+    0.5181,
+    0.0226
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 6,
+    "气": 4,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00076",
+   "disease": "骨质疏松症",
+   "syndrome": "肾精亏虚、骨痿证",
+   "six_channel": "少阴病",
+   "zangfu": "肾·肝·骨",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.9167,
+   "r": 0.664,
+   "theta": -40.4023,
+   "phi": 158.1986,
+   "color": "#F48E05",
+   "color_rgb": [
+    0.9555,
+    0.557,
+    0.019
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 22,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00077",
+   "disease": "缺铁性贫血",
+   "syndrome": "脾胃虚弱、气血两虚证",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃·心",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4667,
+   "r": 0.676,
+   "theta": -23.4281,
+   "phi": 158.1986,
+   "color": "#F48206",
+   "color_rgb": [
+    0.957,
+    0.5078,
+    0.0235
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 8,
+    "气": 5,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00078",
+   "disease": "再生障碍性贫血",
+   "syndrome": "肾精亏虚、髓枯血虚证",
+   "six_channel": "少阴病",
+   "zangfu": "肾·脾·髓",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.9474,
+   "r": 0.611,
+   "theta": -41.3361,
+   "phi": 158.1986,
+   "color": "#F48F05",
+   "color_rgb": [
+    0.9554,
+    0.5596,
+    0.0187
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 18,
+    "气": 0,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00079",
+   "disease": "急性髓系白血病",
+   "syndrome": "热毒炽盛、气阴两虚证(急劳/热劳)",
+   "six_channel": "厥阴病",
+   "zangfu": "肾·髓·心·肝",
+   "x": 1.0,
+   "y": 0.4,
+   "z": -0.9048,
+   "r": 0.7075,
+   "theta": -40.0331,
+   "phi": 21.8014,
+   "color": "#C16467",
+   "color_rgb": [
+    0.7564,
+    0.3909,
+    0.4036
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 19,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00080",
+   "disease": "弥漫大B细胞淋巴瘤",
+   "syndrome": "痰瘀互结、气阴两虚证(石疽/恶核)",
+   "six_channel": "少阳病",
+   "zangfu": "肝·脾·经络",
+   "x": 1.0,
+   "y": -0.3,
+   "z": -0.25,
+   "r": 0.7255,
+   "theta": -13.4663,
+   "phi": 343.3008,
+   "color": "#864EBC",
+   "color_rgb": [
+    0.5257,
+    0.3051,
+    0.7365
+   ],
+   "octant": "+--",
+   "jqs": {
+    "精": 1,
+    "气": 2,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00081",
+   "disease": "格林-巴利综合征(多发性神经炎)",
+   "syndrome": "湿热浸淫、筋脉失养证(痿证)",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃·经络",
+   "x": 1.0,
+   "y": 0.4,
+   "z": -0.1667,
+   "r": 0.558,
+   "theta": -8.7983,
+   "phi": 21.8014,
+   "color": "#AA3797",
+   "color_rgb": [
+    0.6657,
+    0.2166,
+    0.5937
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 2,
+    "气": 2,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00082",
+   "disease": "重症肌无力",
+   "syndrome": "脾胃虚弱、中气下陷证(痿证/睑废)",
+   "six_channel": "太阴病",
+   "zangfu": "脾·肾·筋脉",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.6215,
+   "theta": -24.9025,
+   "phi": 158.1986,
+   "color": "#F48306",
+   "color_rgb": [
+    0.9569,
+    0.5123,
+    0.0231
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 4,
+    "气": 3,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00083",
+   "disease": "阿尔茨海默病",
+   "syndrome": "髓海不足、肾虚痰瘀证(痴呆)",
+   "six_channel": "少阴病",
+   "zangfu": "肾·心·脾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4545,
+   "r": 0.6635,
+   "theta": -22.8794,
+   "phi": 158.1986,
+   "color": "#F48106",
+   "color_rgb": [
+    0.9571,
+    0.5062,
+    0.0237
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 7,
+    "气": 1,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00084",
+   "disease": "带状疱疹",
+   "syndrome": "湿热火毒蕴结、气滞血瘀证(蛇串疮/缠腰火丹)",
+   "six_channel": "少阳病",
+   "zangfu": "肝·胆·经络",
+   "x": 1.0,
+   "y": 0.3,
+   "z": 0.3684,
+   "r": 0.8505,
+   "theta": 19.4361,
+   "phi": 16.6992,
+   "color": "#7A4BB8",
+   "color_rgb": [
+    0.4788,
+    0.2931,
+    0.7233
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 3,
+    "气": 5,
+    "神": 10
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00085",
+   "disease": "银屑病",
+   "syndrome": "血热风盛、瘀毒内蕴证(白疕/松皮癣)",
+   "six_channel": "不适用",
+   "zangfu": "肺·肝·肌肤",
+   "x": 1.0,
+   "y": -0.4,
+   "z": -0.3636,
+   "r": 0.8775,
+   "theta": -18.6544,
+   "phi": 338.1986,
+   "color": "#8756B1",
+   "color_rgb": [
+    0.5301,
+    0.3387,
+    0.6955
+   ],
+   "octant": "+--",
+   "jqs": {
+    "精": 7,
+    "气": 0,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00086",
+   "disease": "寻常痤疮",
+   "syndrome": "肺经风热、湿热瘀结证",
+   "six_channel": "阳明病",
+   "zangfu": "肺·胃·大肠",
+   "x": 1.0,
+   "y": 1.0,
+   "z": -0.1111,
+   "r": 0.8425,
+   "theta": -4.4919,
+   "phi": 45.0,
+   "color": "#B62C78",
+   "color_rgb": [
+    0.7131,
+    0.1719,
+    0.4718
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 4,
+    "气": 1,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00087",
+   "disease": "荨麻疹",
+   "syndrome": "风热外袭、营卫不和证(瘾疹/风疹块)",
+   "six_channel": "太阳病",
+   "zangfu": "肌肤·卫表",
+   "x": 1.0,
+   "y": -0.4,
+   "z": -0.1429,
+   "r": 0.8425,
+   "theta": -7.5578,
+   "phi": 338.1986,
+   "color": "#7847CB",
+   "color_rgb": [
+    0.4702,
+    0.2784,
+    0.795
+   ],
+   "octant": "+--",
+   "jqs": {
+    "精": 2,
+    "气": 3,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "表证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00088",
+   "disease": "湿疹(特应性皮炎)",
+   "syndrome": "湿热浸淫、脾虚湿蕴证(湿疮/浸淫疮)",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃·肌肤",
+   "x": 0.2,
+   "y": 0.4,
+   "z": 0.0,
+   "r": 0.8425,
+   "theta": 0.0,
+   "phi": 63.4349,
+   "color": "#4D7756",
+   "color_rgb": [
+    0.3012,
+    0.4659,
+    0.3357
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 2,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00089",
+   "disease": "原发性开角型青光眼",
+   "syndrome": "肝肾阴虚、肝阳上亢证(青风内障/绿风内障)",
+   "six_channel": "厥阴病",
+   "zangfu": "肝·肾·目",
+   "x": -1.0,
+   "y": 0.4,
+   "z": 0.2727,
+   "r": 0.7735,
+   "theta": 14.2084,
+   "phi": 158.1986,
+   "color": "#CD7B27",
+   "color_rgb": [
+    0.8032,
+    0.4817,
+    0.1535
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 2,
+    "气": 3,
+    "神": 5
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00090",
+   "disease": "白内障(年龄相关性)",
+   "syndrome": "肝肾不足、晶珠混浊证(圆翳内障/如银内障)",
+   "six_channel": "不适用",
+   "zangfu": "肝·肾·目",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.4167,
+   "r": 0.7505,
+   "theta": -21.1513,
+   "phi": 158.1986,
+   "color": "#F48006",
+   "color_rgb": [
+    0.9572,
+    0.5009,
+    0.0242
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 7,
+    "气": 2,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00091",
+   "disease": "分泌性中耳炎",
+   "syndrome": "风寒外袭、痰湿阻窍证(耳胀/耳闭)",
+   "six_channel": "太阳病",
+   "zangfu": "肺·肾·耳窍",
+   "x": -1.0,
+   "y": -0.4,
+   "z": 0.0,
+   "r": 0.7535,
+   "theta": 0.0,
+   "phi": 201.8014,
+   "color": "#BF803E",
+   "color_rgb": [
+    0.749,
+    0.5008,
+    0.2431
+   ],
+   "octant": "--+",
+   "jqs": {
+    "精": 0,
+    "气": 1,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "表证",
+    "cold_heat": "寒证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00092",
+   "disease": "慢性鼻窦炎伴鼻息肉",
+   "syndrome": "肺经风热、湿热上蒸证(鼻渊/鼻鼽)",
+   "six_channel": "阳明病",
+   "zangfu": "肺·脾·鼻窍",
+   "x": 1.0,
+   "y": 0.4,
+   "z": -0.2222,
+   "r": 0.8425,
+   "theta": -11.657,
+   "phi": 21.8014,
+   "color": "#AC3C92",
+   "color_rgb": [
+    0.6754,
+    0.2352,
+    0.5734
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 4,
+    "气": 2,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00093",
+   "disease": "抑郁症(抑郁发作)",
+   "syndrome": "肝气郁结、心神失养证(郁证/百合病)",
+   "six_channel": "少阳病",
+   "zangfu": "肝·心·脾",
+   "x": -1.0,
+   "y": -0.3,
+   "z": 0.4412,
+   "r": 0.79,
+   "theta": 22.9086,
+   "phi": 196.6992,
+   "color": "#989458",
+   "color_rgb": [
+    0.5953,
+    0.5786,
+    0.3444
+   ],
+   "octant": "--+",
+   "jqs": {
+    "精": 5,
+    "气": 8,
+    "神": 20
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00094",
+   "disease": "广泛性焦虑障碍",
+   "syndrome": "胆郁痰扰、心神不宁证(惊悸/不寐)",
+   "six_channel": "少阳病",
+   "zangfu": "胆·心·脾",
+   "x": 1.0,
+   "y": 0.3,
+   "z": 0.6842,
+   "r": 0.79,
+   "theta": 33.2386,
+   "phi": 16.6992,
+   "color": "#675FBB",
+   "color_rgb": [
+    0.4026,
+    0.3707,
+    0.7324
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 0,
+    "气": 5,
+    "神": 13
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00095",
+   "disease": "失眠症(慢性)",
+   "syndrome": "心肾不交、阴虚火旺证(不寐)",
+   "six_channel": "少阴病",
+   "zangfu": "心·肾·肝",
+   "x": -0.2,
+   "y": 0.4,
+   "z": 0.0833,
+   "r": 0.79,
+   "theta": 10.5513,
+   "phi": 116.5651,
+   "color": "#518A40",
+   "color_rgb": [
+    0.3182,
+    0.5422,
+    0.252
+   ],
+   "octant": "-++",
+   "jqs": {
+    "精": 2,
+    "气": 6,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚证"
+   }
+  },
+  {
+   "id": "DSU-00096",
+   "disease": "肺癌(非小细胞肺癌)",
+   "syndrome": "气阴两虚、痰瘀毒结证(肺积/息贲)",
+   "six_channel": "太阴病",
+   "zangfu": "肺·肾·经络",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.3333,
+   "r": 0.909,
+   "theta": -17.1953,
+   "phi": 158.1986,
+   "color": "#F47D06",
+   "color_rgb": [
+    0.9576,
+    0.4884,
+    0.0253
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 4,
+    "气": 7,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00097",
+   "disease": "胃癌",
+   "syndrome": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
+   "six_channel": "太阴病",
+   "zangfu": "脾·胃·经络",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.125,
+   "r": 0.93,
+   "theta": -6.6201,
+   "phi": 158.1986,
+   "color": "#F47307",
+   "color_rgb": [
+    0.9588,
+    0.4512,
+    0.0288
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 3,
+    "气": 2,
+    "神": 2
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00098",
+   "disease": "肝细胞肝癌",
+   "syndrome": "肝郁脾虚、瘀毒互结证(肝积/鼓胀)",
+   "six_channel": "厥阴病",
+   "zangfu": "肝·脾·肾",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.0909,
+   "r": 0.947,
+   "theta": -4.8242,
+   "phi": 158.1986,
+   "color": "#F57108",
+   "color_rgb": [
+    0.959,
+    0.4441,
+    0.0295
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 4,
+    "气": 3,
+    "神": 3
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00099",
+   "disease": "乳腺癌(浸润性导管癌)",
+   "syndrome": "肝气郁结、冲任失调证(乳岩/乳石痈)",
+   "six_channel": "厥阴病",
+   "zangfu": "肝·胃·冲任",
+   "x": -1.0,
+   "y": -0.3,
+   "z": 0.375,
+   "r": 0.93,
+   "theta": 19.7575,
+   "phi": 196.6992,
+   "color": "#9E9253",
+   "color_rgb": [
+    0.6188,
+    0.5706,
+    0.3271
+   ],
+   "octant": "--+",
+   "jqs": {
+    "精": 3,
+    "气": 3,
+    "神": 9
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00100",
+   "disease": "结直肠癌",
+   "syndrome": "湿热蕴结、瘀毒内阻证(肠蕈/脏毒)",
+   "six_channel": "阳明病",
+   "zangfu": "大肠·脾",
+   "x": 1.0,
+   "y": 0.4,
+   "z": -0.5385,
+   "r": 0.921,
+   "theta": -26.5643,
+   "phi": 21.8014,
+   "color": "#B8527A",
+   "color_rgb": [
+    0.72,
+    0.321,
+    0.4799
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 7,
+    "气": 5,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "虚实夹杂"
+   }
+  },
+  {
+   "id": "DSU-00101",
+   "disease": "鼻咽癌(非角化性)",
+   "syndrome": "热毒犯肺、痰瘀阻络证(失荣/上石疽)",
+   "six_channel": "少阳病",
+   "zangfu": "肺·胆·经络",
+   "x": 1.0,
+   "y": 0.3,
+   "z": -0.4,
+   "r": 0.93,
+   "theta": -20.9634,
+   "phi": 16.6992,
+   "color": "#B14C8A",
+   "color_rgb": [
+    0.6932,
+    0.2976,
+    0.5407
+   ],
+   "octant": "++-",
+   "jqs": {
+    "精": 3,
+    "气": 0,
+    "神": 1
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "热证",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00102",
+   "disease": "甲状腺乳头状癌",
+   "syndrome": "痰气交阻、瘀毒凝结证(石瘿)",
+   "six_channel": "少阳病",
+   "zangfu": "肝·脾·经络",
+   "x": 0.2,
+   "y": 0.3,
+   "z": 0.2143,
+   "r": 0.788,
+   "theta": 30.7256,
+   "phi": 56.3099,
+   "color": "#279460",
+   "color_rgb": [
+    0.1537,
+    0.5814,
+    0.3781
+   ],
+   "octant": "+++",
+   "jqs": {
+    "精": 2,
+    "气": 6,
+    "神": 5
+   },
+   "eight": {
+    "yin_yang": "阳证",
+    "exterior_interior": "半表半里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "实证"
+   }
+  },
+  {
+   "id": "DSU-00103",
+   "disease": "前列腺癌",
+   "syndrome": "肾虚瘀毒证(癃闭/积证)",
+   "six_channel": "少阴病",
+   "zangfu": "肾·膀胱·精室",
+   "x": -1.0,
+   "y": 0.4,
+   "z": -0.7333,
+   "r": 0.93,
+   "theta": -34.2491,
+   "phi": 158.1986,
+   "color": "#F48A05",
+   "color_rgb": [
+    0.956,
+    0.5395,
+    0.0206
+   ],
+   "octant": "-+-",
+   "jqs": {
+    "精": 11,
+    "气": 3,
+    "神": 0
+   },
+   "eight": {
+    "yin_yang": "阴证",
+    "exterior_interior": "里证",
+    "cold_heat": "寒热错杂",
+    "deficiency_excess": "虚实夹杂"
+   }
+  }
+ ],
+ "domains": [
+  {
+   "name": "中医学院",
+   "prefix": "CM",
+   "declared": 28,
+   "extracted": 28,
+   "anchor": {
+    "x": 0.0,
+    "y": 0.3,
+    "z": -0.2
+   },
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "name": "中药学院",
+   "prefix": "MM",
+   "declared": 20,
+   "extracted": 20,
+   "anchor": {
+    "x": -0.2,
+    "y": 0.2,
+    "z": -0.6
+   },
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "name": "针灸学院",
+   "prefix": "AT",
+   "declared": 12,
+   "extracted": 12,
+   "anchor": {
+    "x": 0.3,
+    "y": -0.5,
+    "z": 0.2
+   },
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "name": "推拿学院",
+   "prefix": "TU",
+   "declared": 10,
+   "extracted": 10,
+   "anchor": {
+    "x": 0.2,
+    "y": -0.7,
+    "z": 0.0
+   },
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "name": "骨伤学院",
+   "prefix": "OR",
+   "declared": 12,
+   "extracted": 12,
+   "anchor": {
+    "x": 0.0,
+    "y": 0.4,
+    "z": -0.5
+   },
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "name": "五官口腔学院",
+   "prefix": "ENT",
+   "declared": null,
+   "extracted": 10,
+   "anchor": {
+    "x": 0.1,
+    "y": -0.4,
+    "z": 0.1
+   },
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "name": "中医智能学院",
+   "prefix": "AI",
+   "declared": 14,
+   "extracted": 14,
+   "anchor": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.5
+   },
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "name": "中医管理学院",
+   "prefix": "MG",
+   "declared": 14,
+   "extracted": 14,
+   "anchor": {
+    "x": 0.0,
+    "y": 0.1,
+    "z": 0.3
+   },
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  }
+ ],
+ "subjects": [
+  {
+   "code": "D01-S01",
+   "name": "中医基础理论",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S02",
+   "name": "中医诊断学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S03",
+   "name": "医古文基础",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S04",
+   "name": "中国医学史",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S05",
+   "name": "中医思维方法论",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S06",
+   "name": "中医文献学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S07",
+   "name": "中医经典导读",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S08",
+   "name": "中医伦理学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S09",
+   "name": "内经选读",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S10",
+   "name": "伤寒论讲义",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S11",
+   "name": "金匮要略讲义",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S12",
+   "name": "温病学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S13",
+   "name": "中医内科学（上）",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S14",
+   "name": "中医内科学（下）",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S15",
+   "name": "中医外科学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S16",
+   "name": "中医妇科学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S17",
+   "name": "中医儿科学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S18",
+   "name": "中医急诊学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S19",
+   "name": "中医皮肤科学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S20",
+   "name": "中医男科学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S21",
+   "name": "中医老年病学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S22",
+   "name": "中医肿瘤学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S23",
+   "name": "中医循证医学",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S24",
+   "name": "中医临床思维与决策",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S25",
+   "name": "各家学说",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S26",
+   "name": "中医学术史导论",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S27",
+   "name": "中医辨证论治体系研究",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D01-S28",
+   "name": "中医学科建设与前沿",
+   "domain": "中医学院",
+   "x": 0.0,
+   "y": 0.3,
+   "z": -0.2,
+   "r": 0.55,
+   "theta": -33.6901,
+   "phi": 90.0,
+   "color": "#44983D"
+  },
+  {
+   "code": "D02-S01",
+   "name": "临床中药学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S02",
+   "name": "方剂学（上）",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S03",
+   "name": "方剂学（下）",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S04",
+   "name": "药用植物学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S05",
+   "name": "中药化学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S06",
+   "name": "中药药理学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S07",
+   "name": "中药鉴定学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S08",
+   "name": "中药炮制学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S09",
+   "name": "中药资源学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S10",
+   "name": "中药栽培与养殖学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S11",
+   "name": "中药药剂学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S12",
+   "name": "中药分析学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S13",
+   "name": "中药调剂学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S14",
+   "name": "中药制剂分析",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S15",
+   "name": "中药商品学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S16",
+   "name": "中药毒理学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S17",
+   "name": "中药药代动力学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S18",
+   "name": "中药生物技术",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S19",
+   "name": "海洋中药学",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D02-S20",
+   "name": "民族药学概论",
+   "domain": "中药学院",
+   "x": -0.2,
+   "y": 0.2,
+   "z": -0.6,
+   "r": 0.55,
+   "theta": -64.7606,
+   "phi": 135.0,
+   "color": "#90A023"
+  },
+  {
+   "code": "D03-S01",
+   "name": "经络腧穴学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S02",
+   "name": "刺法灸法学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S03",
+   "name": "针灸治疗学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S04",
+   "name": "针灸医籍选读",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S05",
+   "name": "实验针灸学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S06",
+   "name": "微针疗法（耳针/头针/腕踝针）",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S07",
+   "name": "针灸神经科学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S08",
+   "name": "针灸康复学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S09",
+   "name": "针灸美容与减肥学",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S10",
+   "name": "针灸古典文献研究",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S11",
+   "name": "针灸临床研究设计",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D03-S12",
+   "name": "针灸国际传播与标准化",
+   "domain": "针灸学院",
+   "x": 0.3,
+   "y": -0.5,
+   "z": 0.2,
+   "r": 0.55,
+   "theta": 18.9318,
+   "phi": 300.9638,
+   "color": "#1C8B94"
+  },
+  {
+   "code": "D04-S01",
+   "name": "推拿学基础",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S02",
+   "name": "推拿手法学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S03",
+   "name": "推拿诊断学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S04",
+   "name": "推拿功法学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S05",
+   "name": "推拿治疗学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S06",
+   "name": "小儿推拿学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S07",
+   "name": "脏腑推拿学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S08",
+   "name": "一指禅推拿学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S09",
+   "name": "推拿康复学",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D04-S10",
+   "name": "国际推拿交流与标准化",
+   "domain": "推拿学院",
+   "x": 0.2,
+   "y": -0.7,
+   "z": 0.0,
+   "r": 0.55,
+   "theta": 0.0,
+   "phi": 285.9454,
+   "color": "#2670B1"
+  },
+  {
+   "code": "D05-S01",
+   "name": "中医骨伤科学基础",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S02",
+   "name": "骨伤诊断学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S03",
+   "name": "骨伤影像学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S04",
+   "name": "骨伤生物力学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S05",
+   "name": "中医正骨学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S06",
+   "name": "中医筋伤学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S07",
+   "name": "中医骨病学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S08",
+   "name": "骨科手术学基础",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S09",
+   "name": "关节损伤学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S10",
+   "name": "脊柱损伤学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S11",
+   "name": "骨伤康复学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D05-S12",
+   "name": "骨伤手法学",
+   "domain": "骨伤学院",
+   "x": 0.0,
+   "y": 0.4,
+   "z": -0.5,
+   "r": 0.55,
+   "theta": -51.3402,
+   "phi": 90.0,
+   "color": "#74942E"
+  },
+  {
+   "code": "D06-S01",
+   "name": "中医眼科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S02",
+   "name": "中医耳鼻喉科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S03",
+   "name": "中医口腔科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S04",
+   "name": "中医喉科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S05",
+   "name": "中医五官科护理学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S06",
+   "name": "中西医结合眼科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S07",
+   "name": "中西医结合耳鼻喉科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S08",
+   "name": "口腔内科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S09",
+   "name": "口腔颌面外科学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D06-S10",
+   "name": "口腔正畸学",
+   "domain": "五官口腔学院",
+   "x": 0.1,
+   "y": -0.4,
+   "z": 0.1,
+   "r": 0.55,
+   "theta": 13.633,
+   "phi": 284.0362,
+   "color": "#119486"
+  },
+  {
+   "code": "D07-S01",
+   "name": "中医药人工智能导论",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S02",
+   "name": "中医信息学",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S03",
+   "name": "中医药数据科学",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S04",
+   "name": "中医知识图谱",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S05",
+   "name": "中医智能诊断学",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S06",
+   "name": "中医自然语言处理",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S07",
+   "name": "中医智能问诊系统",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S08",
+   "name": "中医机器学习",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S09",
+   "name": "中医影像智能分析",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S10",
+   "name": "中医电子病历与临床决策支持",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S11",
+   "name": "中医智能仪器与可穿戴设备",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S12",
+   "name": "计算中医学",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S13",
+   "name": "中医药数字化诊疗",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D07-S14",
+   "name": "中医药人工智能伦理与治理",
+   "domain": "中医智能学院",
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.5,
+   "r": 0.55,
+   "theta": 90.0,
+   "phi": 0.0,
+   "color": "#00BC8C"
+  },
+  {
+   "code": "D08-S01",
+   "name": "医院管理学",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S02",
+   "name": "中医药经济学",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S03",
+   "name": "中医药市场营销",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S04",
+   "name": "中医药政策与法规",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S05",
+   "name": "中医医疗机构管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S06",
+   "name": "中医健康管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S07",
+   "name": "中医养生管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S08",
+   "name": "中医公共卫生管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S09",
+   "name": "中医药医保管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S10",
+   "name": "中医药知识产权与标准化",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S11",
+   "name": "中医药国际传播",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S12",
+   "name": "中医药信息管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S13",
+   "name": "中医药人力资源与绩效管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  },
+  {
+   "code": "D08-S14",
+   "name": "中医药康养产业管理",
+   "domain": "中医管理学院",
+   "x": 0.0,
+   "y": 0.1,
+   "z": 0.3,
+   "r": 0.55,
+   "theta": 71.5651,
+   "phi": 90.0,
+   "color": "#10AA67"
+  }
+ ],
+ "stats": {
+  "units": 103,
+  "subjects": 120,
+  "domains": 8,
+  "octant": {
+   "+--": 6,
+   "+-+": 7,
+   "+++": 21,
+   "-++": 12,
+   "++-": 13,
+   "-+-": 39,
+   "---": 2,
+   "--+": 3
+  },
+  "x_range": [
+   -1.0,
+   1.0
+  ],
+  "y_range": [
+   -1.0,
+   1.0
+  ],
+  "z_range": [
+   -0.9474,
+   0.8333
+  ],
+  "r_range": [
+   0.558,
+   0.967
+  ],
+  "theta_range": [
+   -48.1897,
+   54.9034
+  ]
+ }
+}

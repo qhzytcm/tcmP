@@ -184,6 +184,53 @@ def add_embed_sheet(wb, used):
             sw.row(["", ln], [None, None], [F_B, F_C], [AL_L, AL_L], 15 if ln.strip() else 12)
 
 
+def add_semtensor_sheets(wb, used):
+    """语义张量数据页（对标 tcmP 三维极坐标语义张量标准 v1.0）。"""
+    ST = REPO / "kg" / "semtensor" / "semtensor.json"
+    if not ST.exists():
+        return
+    st = json.loads(ST.read_text(encoding="utf-8"))
+
+    ws = wb.create_sheet(sanitize("语义张量·定理", used)); sw = SW(ws, [22, 90])
+    sw.title("语义张量 · 公理指纹（st_meta）", 2)
+    sw.row(["项", "值"], [None, None], [F_H, F_H], [AL_C, AL_L], 20)
+    fp = st["st_meta"]["axiom_fingerprint"]
+    for k in ("version", "coordinate", "theta_range", "phi_range", "r_range", "C_O"):
+        sw.row([k, json.dumps(fp[k], ensure_ascii=False)], [None, None], [F_B, F_B], [AL_C, AL_L], 16)
+    sw.row(["axis_end_color", json.dumps(fp["axis_end_color"], ensure_ascii=False)], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["mirror", json.dumps(fp["mirror"], ensure_ascii=False)], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+
+    ws = wb.create_sheet(sanitize("语义张量·轴端色", used)); sw = SW(ws, [10, 22, 14, 12, 12, 22, 14])
+    sw.title("轴端色表（I/O/T，三球共用）", 7)
+    sw.row(["轴", "语义", "端", "波长nm", "色", "HEX", "说明"], [None] * 7, [F_H] * 7, [AL_C] * 7, 20)
+    for ax, ends in (("X", ("橙", "绿", "紫")), ("Y", ("蓝", "绿", "红")), ("Z", ("黄", "绿", "青"))):
+        for i, (lab, cn_) in enumerate(zip(("I(−1)", "O(0)", "T(+1)"), ends)):
+            sw.row([ax + ("（阴阳）" if ax == "X" else "（表里）" if ax == "Y" else "（精气神）"),
+                    st["st_meta"]["axiom_fingerprint"]["axis_semantics"][ax][i], lab,
+                    fp["wavelength_nm"][cn_], cn_, fp["axis_end_color"][ax][i], ""],
+                   [None] * 7, [F_B] * 7, [AL_C] * 7, 16)
+
+    ws = wb.create_sheet(sanitize("语义张量·域锚点", used)); sw = SW(ws, [20, 8, 8, 8, 8, 10, 10, 10, 40])
+    sw.title("8 域锚点（平台裁定 · 可复核）", 9)
+    sw.row(["域", "学科数", "X", "Y", "Z", "r", "θ", "φ", "色"], [None] * 9, [F_H] * 9, [AL_C] * 9, 20)
+    for d in st["domains"]:
+        sw.row([d["name"], d["declared"], d["anchor"]["x"], d["anchor"]["y"], d["anchor"]["z"],
+                d["r"], d["theta"], d["phi"], d["color"]], [None] * 9, [F_B] * 9, [AL_C] * 9, 16)
+
+    ws = wb.create_sheet(sanitize("语义张量·学科", used)); sw = SW(ws, [12, 30, 20, 9, 9, 9, 9, 10, 10, 10])
+    sw.title("120 学科 → 语义张量坐标", 10)
+    sw.row(["编码", "学科", "域", "x", "y", "z", "r", "θ", "φ", "色"], [None] * 10, [F_H] * 10, [AL_C] * 10, 20)
+    for s in st["subjects"]:
+        sw.row([s["code"], s["name"], s["domain"], s["x"], s["y"], s["z"], s["r"], s["theta"], s["phi"], s["color"]],
+               [None] * 10, [F_B] * 10, [AL_C] * 10, 16)
+
+    ws = wb.create_sheet(sanitize("语义张量·DSU", used)); sw = SW(ws, [12, 24, 24, 9, 9, 9, 9, 10, 10, 10, 8])
+    sw.title("103 病证单元 → 语义张量坐标（含卦限）", 11)
+    sw.row(["DSU", "疾病", "证候", "x", "y", "z", "r", "θ", "φ", "色", "卦限"], [None] * 11, [F_H] * 11, [AL_C] * 11, 20)
+    for u in st["units"]:
+        sw.row([u["id"], u["disease"][:16], u["syndrome"][:16], u["x"], u["y"], u["z"], u["r"],
+                u["theta"], u["phi"], u["color"], u["octant"]], [None] * 11, [F_B] * 11, [AL_C] * 11, 16)
+
 def main():
     cat = json.loads(CAT.read_text(encoding="utf-8"))
     wb = Workbook()
@@ -197,6 +244,7 @@ def main():
     chapters = [(part, ct, cf) for part, chs in outline for ct, cf in chs]
     write_toc(wb, chapters, used)
     add_data_sheets(wb, cat, used)
+    add_semtensor_sheets(wb, used)
     add_embed_sheet(wb, used)
     wb.save(OUT)
     print(f"[产出] {OUT}")

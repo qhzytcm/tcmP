@@ -14,7 +14,7 @@
 
 ## 目录
 
-api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树** & **信息学**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
+api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树** & **信息学** & **语义张量**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
 
 ## 访问
 
@@ -116,3 +116,26 @@ python kg/tree/tcm_tree.py path DSU-00001   # 根→域→学科→单元 定位
 - 部署：`powershell -File scripts/deploy-informatics.ps1`
 - 教材素材：桌面 `中医信息学.xlsx`（23 sheet · D07-S02 / AI-02）
 - 详文档：`kg/informatics/README.md`
+
+## 语义张量 · 三维极坐标（v1.0）
+
+> 标准本体：`tcmP-三维极坐标语义张量-可视化标准 v1.0`；代码单一来源：`kg/semtensor/axioms.py`、`kg/semtensor/encoder.py`。
+
+**方向承载语义，r 承载尺度，颜色是坐标的函数**（读色即读义）：
+
+```
+X = r·cosθ·cosφ ; Y = r·cosθ·sinφ ; Z = r·sinθ
+x = 0.60·阴阳 + 0.40·寒热 ；y = 0.70·表里 + 0.30·虚实 ；z = (神分−精分)/(精分+气分+神分+1)
+r = clip(0.35·证据 + 0.35·症状密度 + 0.30·桥接完备, 0.20, 1.00)
+```
+
+| 轴 | I(−1) | O(0) | T(+1) |
+| --- | --- | --- | --- |
+| X 阴阳 | 橙 `#FF8C00` | 绿 `#00B050` | 紫 `#8A2BE2` |
+| Y 表里 | 蓝 `#1F61D9` | 绿 `#00B050` | 红 `#DB1C1C` |
+| Z 精气神 | 黄 `#F2C200` | 绿 `#00B050` | 青 `#00C7C7` |
+
+- 覆盖：**DSU 103 · 学科 120（8 域）· 域 8**；`kg/semtensor/semtensor.json`
+- 契约（冻结）：`GET /api/sages/semtensor/spec`（机器可读标准镜像）· `/semtensor/health`（口径与公理指纹）
+- 校验：`python kg/semtensor/verify_semtensor.py`（22 项，含三球镜像不变色、球面往返 <1e-12）
+- 论文/教材：《中医信息学》v2.0 以「公理层 → 语义张量层 → 学科映射层」重构（10 篇 34 章）
