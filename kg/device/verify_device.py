@@ -8,6 +8,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import holter as H  # noqa: E402
+import neuro as NE  # noqa: E402
+import sensing as SD  # noqa: E402
 
 JSON = HERE / "tcm-device.json"
 ok = fail = 0
@@ -55,6 +57,23 @@ def main():
     check("Holter 六场景齐备", set(data["holter"]) == {"normal", "tachy", "brady", "pause", "premature", "af"})
     check("D07-S11 归属正确", data["meta"]["code"] == "D07-S11" and data["meta"]["domain"] == "中医智能学院")
 
+    # ── 扩展层：可感测四元 / 六快 / 健康自动评价 / 光遗传学 / 参考实现 ──
+    check("四元可感测物理量=4（光子/电/质量/运动）", [q["id"] for q in SD.QUANTA] == ["P", "E", "M", "K"], [q["id"] for q in SD.QUANTA])
+    check("六快=6（吃喝拉撒睡+警觉安全）", [q["name"] for q in SD.SIX_QUICK] == ["吃", "喝", "拉", "撒", "睡", "警觉安全"])
+    hs = SD.health_score(SD.DEMO_RECORD)
+    check("健康自动评价输出总分与分级", hs["total"] is not None and hs["grade"] in ("优", "良", "中", "差"), hs["grade"])
+    check("六快每维均有评分", sum(1 for v in hs["dimensions"].values() if v["score"] is not None) == 6)
+    check("评价含边界声明", "不构成医学诊断" in hs["disclaimer"])
+    check("评价确定性", SD.health_score(SD.DEMO_RECORD) == SD.health_score(SD.DEMO_RECORD))
+    check("缺数据覆盖率正确（1/6）", SD.health_score({"sleep_minutes": 420})["coverage"] == round(1 / 6, 3))
+    check("无可评维度返回「数据不足」且 coverage=0", SD.health_score({"steps": 100})["coverage"] == 0.0 and SD.health_score({"steps": 100})["grade"] == "数据不足")
+    check("单位换算口径（150lb / 1mile / 1min）",
+          abs(SD.lb_to_kg(150) - 68.0389) < 1e-3 and abs(SD.mile_to_m(1) - 1609.34) < 0.01 and SD.minutes_to_nanos(1) == 60000000000)
+    nw = NE.summary()
+    check("Nobel2026 光遗传学三获奖者", nw["nobel"]["laureates"] == ["Karl Deisseroth", "Peter Hegemann", "Georg Nagel"])
+    check("光遗传学边界声明齐备（>=4 条）", len(nw["boundary"]) >= 4 and any("不得作为临床疗法宣传" in b for b in nw["boundary"]))
+    check("数据集含扩展层（sensing/optogenetics/ref_impl）", set(("sensing", "optogenetics", "ref_impl")).issubset(data.keys()))
+    check("参考实现登记（fitbit-googlefit）", data["ref_impl"]["repo"] == "pkpio/fitbit-googlefit")
     # 确定性构建
     import tempfile
     with tempfile.TemporaryDirectory() as td:

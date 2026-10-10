@@ -14,6 +14,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import holter as H  # noqa: E402
+import neuro as NE  # noqa: E402
+import sensing as SD  # noqa: E402
 
 REPO = HERE.parent.parent
 
@@ -75,7 +77,24 @@ def build():
         holter[k] = dict(rr=rr, metrics=res["metrics"],
                          diagnoses=[d["code"] for d in res["diagnoses"]],
                          tcm_hints=[h["syndrome"] for h in res["tcm_hints"]])
+    hb = SD.health_score(SD.DEMO_RECORD)
+    sensing = dict(quanta=SD.QUANTA, six_quick=SD.SIX_QUICK, six_quick_quanta=SD.SIX_QUICK_QUANTA,
+                   demo_record=SD.DEMO_RECORD, demo_health=hb,
+                   conversions=dict(pounds_per_kilogram=SD.POUNDS_PER_KILOGRAM,
+                                    meters_per_mile=SD.METERS_PER_MILE,
+                                    nanos_per_second=SD.NANOS_PER_SECOND,
+                                    nanos_per_minute=SD.NANOS_PER_MINUTE))
+    optogenetics = NE.summary()
+    ref_impl = dict(repo="pkpio/fitbit-googlefit", stars=518,
+                    desc="Export Fitbit data to Google Fit (fine granularity)",
+                    pipeline="Fitbit API(OAuth2) -> convertors.py unit/time conversion -> Google Fit API",
+                    granularity=dict(steps="分钟级", distance="分钟级", heart_rate="秒级",
+                                     calories="分钟级", sleep="分钟级", weight="按次", body_fat="按次"),
+                    deps=["fitbit==0.3.1", "google-api-python-client==2.65.0", "oauth2client==4.1.3"],
+                    note="本平台以相同口径复刻换算常量（见 sensing.py）")
     stats = dict(classes=len(CLASSES), forms=len(FORMS), signals=len(SIGNALS),
+                 sensing_quanta=len(SD.QUANTA), six_quick=len(SD.SIX_QUICK),
+                 opto_laureates=len(NE.NOBEL_2026['laureates']), health_total=hb['total'],
                  standards=len(STANDARDS), operators=len(OPERATORS), platform=len(PLATFORM),
                  holter_cases=len(holter))
     return dict(meta=dict(subject="中医智能仪器与可穿戴设备", code="D07-S11", domain="中医智能学院",
@@ -85,7 +104,8 @@ def build():
                           sources=["kg/device/holter.py", "api/main.py(/devices/*)", "data/tcmP-subjects.json"]),
                 classes=CLASSES, forms=FORMS, signals=SIGNALS,
                 standards=STANDARDS, operators=OPERATORS, platform=PLATFORM,
-                holter=holter, stats=stats)
+                holter=holter, sensing=sensing, optogenetics=optogenetics,
+                ref_impl=ref_impl, stats=stats)
 
 
 def main():
@@ -95,7 +115,7 @@ def main():
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     data = build()
     s = data["stats"]
-    if not (s["classes"] == 6 and s["holter_cases"] == 6 and s["platform"] == 6):
+    if not (s["classes"] == 6 and s["holter_cases"] == 6 and s["platform"] == 6 and s["sensing_quanta"] == 4 and s["six_quick"] == 6 and s["opto_laureates"] == 3):
         print("[校验] 失败", s); raise SystemExit(1)
     (out / "tcm-device.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print("[器械] 分类 %d · 形态 %d · 信号 %d · 标准 %d · 算子 %d · 平台 %d"
@@ -104,6 +124,9 @@ def main():
         print("  Holter[%-9s] HR=%6.1f SDNN=%6.2f RMSSD=%7.2f pNN50=%5.1f -> %s"
               % (k, v["metrics"]["hr"], v["metrics"]["sdnn"], v["metrics"]["rmssd"],
                  v["metrics"]["pnn50"], ",".join(v["diagnoses"])))
+    print("  [扩展] 可感测四元 %d · 六快 %d · 健康评分 %.1f(%s) · Nobel2026 获奖者 %d"
+          % (s["sensing_quanta"], s["six_quick"], data["sensing"]["demo_health"]["total"],
+             data["sensing"]["demo_health"]["grade"], s["opto_laureates"]))
     print("[产出]", out / "tcm-device.json")
 
 

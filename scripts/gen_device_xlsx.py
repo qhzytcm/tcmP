@@ -96,6 +96,62 @@ def add_embed_sheet(wb, used):
             sw.row(["", ln], [None, None], [F_B, F_C], [AL_L, AL_L], 15 if ln.strip() else 12)
 
 
+def add_ext_sheets(wb, cat, used):
+    """扩展层数据页：可感测四元 / 六快 / 健康自动评价 / 光遗传学 / 参考实现。"""
+    SW_ = lambda nm, w: SW(wb.create_sheet(sanitize(nm, used)), w)
+    sen = cat.get("sensing", {})
+    sw = SW_("可感测四元", [8, 18, 18, 26, 26, 40]); sw.title("可感测物理量四元：光子 · 电子电压 · 质量 · 运动", 6)
+    sw.row(["元", "名称", "单位", "传感器", "可测量", "中医对应"], [None] * 6, [F_H] * 6, [AL_C] * 6, 20)
+    for q in sen.get("quanta", []):
+        sw.row([q["id"], q["name"], q["unit"], q["sensor"], q["meas"], q["tcm"]],
+               [None] * 6, [F_B] * 6, [AL_C, AL_L, AL_C, AL_L, AL_L, AL_L], 18)
+
+    sw = SW_("六快", [8, 14, 34, 40, 18]); sw.title("中医药通用六快：吃 / 喝 / 拉 / 撒 / 睡 / 警觉安全", 5)
+    sw.row(["编号", "快", "可感测", "中医关联", "承载四元"], [None] * 5, [F_H] * 5, [AL_C] * 5, 20)
+    sq = sen.get("six_quick_quanta", {})
+    for q in sen.get("six_quick", []):
+        sw.row([q["id"], q["name"], q["sense"], q["tcm"], "+".join(sq.get(q["id"], []))],
+               [None] * 5, [F_B] * 5, [AL_C, AL_C, AL_L, AL_L, AL_C], 18)
+
+    hb = sen.get("demo_health", {})
+    sw = SW_("健康自动评价", [14, 12, 40, 44]); sw.title(
+        "健康自动评价（six-quick scoring）· 总分 %s（%s）· 覆盖 %s" % (hb.get("total"), hb.get("grade"), hb.get("coverage")), 4)
+    sw.row(["维度", "评分", "证据（record）", "中医药提示"], [None] * 4, [F_H] * 4, [AL_C] * 4, 20)
+    for k, v in (hb.get("dimensions") or {}).items():
+        sw.row([v.get("name"), v.get("score"), json.dumps(v.get("evidence"), ensure_ascii=False), v.get("tcm")],
+               [None] * 4, [F_B] * 4, [AL_C, AL_C, AL_L, AL_L], 18)
+    sw.row(["总分 / 分级", "%s / %s" % (hb.get("total"), hb.get("grade")), "薄弱维度：" + "、".join(hb.get("weak_dimensions") or []),
+            hb.get("disclaimer")], [None] * 4, [F_H] * 4, [AL_C, AL_C, AL_L, AL_L], 30)
+
+    op = cat.get("optogenetics", {})
+    nb = op.get("nobel", {})
+    sw = SW_("光遗传学", [26, 78]); sw.title("光遗传学与神经调控 · 2026 诺贝尔生理学或医学奖", 2)
+    sw.row(["项", "内容"], [None, None], [F_H, F_H], [AL_C, AL_L], 20)
+    sw.row(["奖项 / 日期 / 奖金", "%s · %s · %s SEK" % (nb.get("prize"), nb.get("date"), nb.get("amount_sek"))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["获奖者", " · ".join(nb.get("laureates", []))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["获奖理由", nb.get("motivation_en", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["来源", nb.get("source", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【技术原理】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for t in op.get("tech", []):
+        sw.row([t["k"], t["v"]], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【与中医对照】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for t in op.get("tcm_contrast", []):
+        sw.row([t["item"], "光遗传：%s ｜ 中医：%s ｜ %s" % (t["opto"], t["tcm"], t["note"])], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【边界声明】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for b in op.get("boundary", []):
+        sw.row(["⚠", b], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+
+    rf = cat.get("ref_impl", {})
+    sw = SW_("参考实现", [26, 78]); sw.title("参考实现：%s（★%s）" % (rf.get("repo"), rf.get("stars")), 2)
+    sw.row(["项", "内容"], [None, None], [F_H, F_H], [AL_C, AL_L], 20)
+    sw.row(["说明", rf.get("desc", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["管线", rf.get("pipeline", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["粒度", json.dumps(rf.get("granularity", {}), ensure_ascii=False)], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["依赖", " · ".join(rf.get("deps", []))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    cv = sen.get("conversions", {})
+    sw.row(["复刻换算常量（本平台）", json.dumps(cv, ensure_ascii=False)], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["备注", rf.get("note", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+
 def main():
     cat = json.loads(CAT.read_text(encoding="utf-8"))
     wb = Workbook(); wb.remove(wb.active); used = set()
@@ -104,6 +160,7 @@ def main():
                 note="D07-S11 教材素材 · 与 kg/device 单一构建点同步")
     write_book(wb, BOOK, meta, used)
     add_data_sheets(wb, cat, used)
+    add_ext_sheets(wb, cat, used)
     add_embed_sheet(wb, used)
     wb.save(OUT)
     print("[产出] " + str(OUT))

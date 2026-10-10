@@ -13,8 +13,10 @@ DEV = ROOT / "kg" / "device"
 sys.path.insert(0, str(DEV))
 try:
     import holter as H
+    import neuro as NE
+    import sensing as S
 except Exception:
-    H = None
+    H = NE = S = None
 
 router = APIRouter(prefix="/device", tags=["中医智能仪器与可穿戴设备"])
 _DATA = None
@@ -61,6 +63,35 @@ def stats():
 @router.get("/holter/demo")
 def holter_demo():
     return {"count": len(_d()["holter"]), "cases": _d()["holter"], "note": "验证序列为标注的仿真数据，非临床"}
+
+
+@router.get("/sensing")
+def sensing_layer():
+    return _d()["sensing"]
+
+
+@router.get("/six-quick")
+def six_quick():
+    d = _d()["sensing"]
+    return {"count": len(d["six_quick"]), "items": d["six_quick"], "quanta_map": d["six_quick_quanta"]}
+
+
+@router.get("/optogenetics")
+def optogenetics():
+    return _d()["optogenetics"]
+
+
+class HealthRequest(BaseModel):
+    record: dict = {}
+
+
+@router.post("/health-score")
+def health_score(rec: HealthRequest):
+    if S is None:
+        raise HTTPException(503, "sensing engine unavailable")
+    if not rec.record:
+        raise HTTPException(422, "record 不能为空（至少一项六快指标）")
+    return S.health_score(rec.record)
 
 
 class RRRequest(BaseModel):

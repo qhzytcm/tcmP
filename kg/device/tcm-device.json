@@ -715,10 +715,307 @@
    ]
   }
  },
+ "sensing": {
+  "quanta": [
+   {
+    "id": "P",
+    "name": "光子（光）",
+    "unit": "cd / nm / lux",
+    "sensor": "光电二极管·相机·PPG",
+    "meas": "光强/波长/光谱/反射",
+    "tcm": "望诊（舌色面色）· 脉搏波 · 光疗/光生物调节"
+   },
+   {
+    "id": "E",
+    "name": "电子/电压（电）",
+    "unit": "mV / Ω / S",
+    "sensor": "电极·ECG·皮电",
+    "meas": "电位/电流/阻抗/皮电反应",
+    "tcm": "心电（脉率节律）· 经络电阻 · 情志（皮电）"
+   },
+   {
+    "id": "M",
+    "name": "质量（力/重）",
+    "unit": "kg / N / mmHg",
+    "sensor": "应变片·称重·压力阵列",
+    "meas": "体重/体脂/压力/握力",
+    "tcm": "形体胖瘦 · 脉象压力（脉位脉势）· 握力（筋骨）"
+   },
+   {
+    "id": "K",
+    "name": "运动（位移/加速度）",
+    "unit": "m / m·s⁻² / °·s⁻¹",
+    "sensor": "加速度计·陀螺·磁力计",
+    "meas": "步数/体动/姿态/平衡",
+    "tcm": "行走坐卧（活动）· 震颤（风证）· 睡眠体动"
+   }
+  ],
+  "six_quick": [
+   {
+    "id": "Q1",
+    "name": "吃",
+    "sense": "咀嚼加速度·进食图像·餐次/体重",
+    "tcm": "脾胃运化；饮食自倍，肠胃乃伤"
+   },
+   {
+    "id": "Q2",
+    "name": "喝",
+    "sense": "饮水量（称重/容量）·皮肤电",
+    "tcm": "津液代谢；口渴多饮与消渴"
+   },
+   {
+    "id": "Q3",
+    "name": "拉",
+    "sense": "排便频次/形态（自评）·腹部体动",
+    "tcm": "大肠传导；便溏便秘辨脾肾"
+   },
+   {
+    "id": "Q4",
+    "name": "撒",
+    "sense": "尿量/频次（自评+传感）",
+    "tcm": "肾与膀胱气化；夜尿与肾气"
+   },
+   {
+    "id": "Q5",
+    "name": "睡",
+    "sense": "加速度+心率+皮温 → 睡眠分期",
+    "tcm": "心神；阳入于阴则寐"
+   },
+   {
+    "id": "Q6",
+    "name": "警觉安全",
+    "sense": "跌倒检测（加速度）·HRV·定位",
+    "tcm": "神与气血；老年跌倒属正气不足"
+   }
+  ],
+  "six_quick_quanta": {
+   "Q1": [
+    "K",
+    "M",
+    "P"
+   ],
+   "Q2": [
+    "M",
+    "E"
+   ],
+   "Q3": [
+    "K",
+    "M",
+    "P"
+   ],
+   "Q4": [
+    "M",
+    "E"
+   ],
+   "Q5": [
+    "K",
+    "E",
+    "M"
+   ],
+   "Q6": [
+    "K",
+    "E"
+   ]
+  },
+  "demo_record": {
+   "steps": 8420,
+   "distance_mi": 3.7,
+   "resting_hr": 62,
+   "hrv_sdnn": 41.5,
+   "weight_kg": 68.2,
+   "body_fat_pct": 22.4,
+   "calories": 1980,
+   "meals_count": 3,
+   "water_ml": 1500,
+   "bowel_count": 1,
+   "urine_count": 6,
+   "sleep_minutes": 445,
+   "fall_events": 0,
+   "activity_minutes": 48
+  },
+  "demo_health": {
+   "total": 96.6,
+   "grade": "优",
+   "dimensions": {
+    "Q1": {
+     "name": "吃",
+     "score": 100.0,
+     "evidence": {
+      "meals_count": 3
+     },
+     "tcm": "餐次规律则脾胃安；暴食/漏餐伤运化"
+    },
+    "Q2": {
+     "name": "喝",
+     "score": 100.0,
+     "evidence": {
+      "water_ml": 1500
+     },
+     "tcm": "津液充足则口不渴；多饮多尿当察消渴"
+    },
+    "Q3": {
+     "name": "拉",
+     "score": 100.0,
+     "evidence": {
+      "bowel_count": 1
+     },
+     "tcm": "一日一次、成形为常；溏/秘辨虚实"
+    },
+    "Q4": {
+     "name": "撒",
+     "score": 100.0,
+     "evidence": {
+      "urine_count": 6
+     },
+     "tcm": "小便通利为气化正常；夜尿多为肾气虚"
+    },
+    "Q5": {
+     "name": "睡",
+     "score": 100.0,
+     "evidence": {
+      "sleep_minutes": 445
+     },
+     "tcm": "阳入于阴则寐；少寐多梦多属心神不宁"
+    },
+    "Q6": {
+     "name": "警觉安全",
+     "score": 79.4,
+     "evidence": {
+      "fall_events": 0,
+      "hrv_sdnn": 41.5
+     },
+     "tcm": "神清气足则步稳；跌仆多因正气不足、眩晕"
+    }
+   },
+   "coverage": 1.0,
+   "weak_dimensions": [
+    "警觉安全",
+    "吃"
+   ],
+   "tcm_hint": "优先关注：警觉安全、吃；神清气足则步稳；跌仆多因正气不足、眩晕",
+   "disclaimer": "本评分由确定性的启发式规则生成，用于教学与自我记录参考，不构成医学诊断或治疗建议；异常须就医，不得据以调整用药。"
+  },
+  "conversions": {
+   "pounds_per_kilogram": 2.20462,
+   "meters_per_mile": 1609.34,
+   "nanos_per_second": 1000000000,
+   "nanos_per_minute": 60000000000
+  }
+ },
+ "optogenetics": {
+  "nobel": {
+   "prize": "The Nobel Prize in Physiology or Medicine 2026",
+   "date": "2026-10-05",
+   "amount_sek": 12000000,
+   "laureates": [
+    "Karl Deisseroth",
+    "Peter Hegemann",
+    "Georg Nagel"
+   ],
+   "portions": [
+    "1/3",
+    "1/3",
+    "1/3"
+   ],
+   "motivation_en": "for their discoveries concerning light-gated ion channels and optogenetics",
+   "motivation_cn": "表彰其关于**光门控离子通道与光遗传学**的发现",
+   "source": "https://api.nobelprize.org/2.1/nobelPrizes?nobelPrizeYear=2026（实测抓取）"
+  },
+  "tech": [
+   {
+    "k": "光敏蛋白（视蛋白）",
+    "v": "ChR2 等光门控阳离子通道 → 光照去极化（兴奋）；Halorhodopsin 氯泵 → 光照超极化（抑制）"
+   },
+   {
+    "k": "基因导入",
+    "v": "病毒载体/转基因把视蛋白表达在特定神经元群"
+   },
+   {
+    "k": "光传输",
+    "v": "植入光纤/微型 LED，时相精度毫秒级"
+   },
+   {
+    "k": "读出",
+    "v": "电生理记录 + 行为学 + 影像（fMRI/钙成像）"
+   },
+   {
+    "k": "时间分辨率",
+    "v": "毫秒级（远高于药理学调控的分钟—小时级）"
+   },
+   {
+    "k": "空间分辨率",
+    "v": "细胞类型特异（由启动子决定），优于电极的解剖特异"
+   }
+  ],
+  "tcm_contrast": [
+   {
+    "item": "兴奋/抑制",
+    "opto": "光门控通道去极化/超极化",
+    "tcm": "补/泻；阴阳调节",
+    "note": "层级不同：细胞—环路 vs 证候—整体"
+   },
+   {
+    "item": "刺激位点",
+    "opto": "特定核团/神经元类型",
+    "tcm": "腧穴—经络（体表）",
+    "note": "靶点尺度与作用路径均不同"
+   },
+   {
+    "item": "物理手段",
+    "opto": "可见光（基因依赖）",
+    "tcm": "针·灸·按·光（无基因依赖）",
+    "note": "光遗传需基因操作，非无创疗法"
+   },
+   {
+    "item": "证据等级",
+    "opto": "实验动物强证据，人体研究阶段",
+    "tcm": "临床经验+循证研究",
+    "note": "两者不可互相背书"
+   }
+  ],
+  "boundary": [
+   "光遗传学≠中医光疗：前者需要基因导入，属实验技术；后者（如低强度激光/红外）为无创物理因子。",
+   "人体光遗传学应用尚处研究阶段，涉及基因治疗监管与伦理审查，**不得作为临床疗法宣传**。",
+   "中医相关的研究方向（如经穴光刺激、光生物调节）须按医疗器械/临床研究路径取证，不可引用本 Nobel 为其背书。",
+   "本教材所有仪器与算法输出均为**提示性**，不替代医师判断。"
+  ],
+  "layers": [
+   "分子（光敏蛋白）",
+   "细胞（神经元类型）",
+   "环路（核团）",
+   "行为（整体）"
+  ],
+  "tcm_layer": "证候—整体（与上四层不同尺度，需通过「感—知—证」桥接）"
+ },
+ "ref_impl": {
+  "repo": "pkpio/fitbit-googlefit",
+  "stars": 518,
+  "desc": "Export Fitbit data to Google Fit (fine granularity)",
+  "pipeline": "Fitbit API(OAuth2) -> convertors.py unit/time conversion -> Google Fit API",
+  "granularity": {
+   "steps": "分钟级",
+   "distance": "分钟级",
+   "heart_rate": "秒级",
+   "calories": "分钟级",
+   "sleep": "分钟级",
+   "weight": "按次",
+   "body_fat": "按次"
+  },
+  "deps": [
+   "fitbit==0.3.1",
+   "google-api-python-client==2.65.0",
+   "oauth2client==4.1.3"
+  ],
+  "note": "本平台以相同口径复刻换算常量（见 sensing.py）"
+ },
  "stats": {
   "classes": 6,
   "forms": 6,
   "signals": 6,
+  "sensing_quanta": 4,
+  "six_quick": 6,
+  "opto_laureates": 3,
+  "health_total": 96.6,
   "standards": 5,
   "operators": 6,
   "platform": 6,
