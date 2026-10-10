@@ -180,6 +180,46 @@ def add_itcm_sheet(wb, cat, used):
     for b in it.get("bridge", []):
         sw.row([b["book"], "%s ｜ %s" % (b["here"], b["note"])], [None, None], [F_B, F_B], [AL_L, AL_L], 26)
 
+def add_wise_tcm_sheet(wb, cat, used):
+    """智慧中医学对接页 + 综合实训设备清单（对标《智慧中医学》高教社 2026）。"""
+    wt = cat.get("wise_tcm", {})
+    if not wt:
+        return
+    bk = wt.get("book", {})
+    sw = SW(wb.create_sheet(sanitize("智慧中医学", used)), [26, 78])
+    sw.title("智慧中医学对接 · 《%s》（%s · %s · ISBN %s）" % (bk.get("title"), bk.get("publisher"), bk.get("date"), bk.get("isbn")), 2)
+    sw.row(["项", "内容"], [None, None], [F_H, F_H], [AL_C, AL_L], 20)
+    sw.row(["系列 / 结构", "%s ｜ %s" % (bk.get("series"), bk.get("structure"))], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["适用对象", bk.get("audience", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 30)
+    sw.row(["数字资源", bk.get("digital", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["数据来源", bk.get("source", "")], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["AI 三要素", " · ".join(wt.get("ai3", []))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["技术清单", " · ".join(wt.get("tech", []))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["生成式 AI", " · ".join(wt.get("genai", []))], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【三篇七章目录（实测）】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for p in wt.get("toc", []):
+        sw.row([p["part"], ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+        for c in p["chapters"]:
+            sw.row([c["ch"], " / ".join(c["secs"])], [None, None], [F_B, F_B], [AL_L, AL_L], 30)
+    sw.row(["【伦理要求】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for e in wt.get("ethics", []):
+        sw.row(["⚠", e], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【基本条件】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for e in wt.get("basic_conditions", []):
+        sw.row(["·", e], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+    sw.row(["【发展趋势六条】", ""], [None, None], [F_H, F_B], [AL_L, AL_L], 18)
+    for i, t in enumerate(wt.get("trends", []), 1):
+        sw.row([str(i), t], [None, None], [F_B, F_B], [AL_C, AL_L], 18)
+
+    sw = SW(wb.create_sheet(sanitize("实训设备", used)), [8, 26, 16, 34, 40])
+    sw.title("智慧中医综合实训设备清单（对标《智慧中医学》第六章）", 5)
+    sw.row(["#", "设备", "归类", "本课程对应", "说明"], [None] * 5, [F_H] * 5, [AL_C] * 5, 20)
+    for i, d in enumerate(wt.get("training_devices", []), 1):
+        sw.row([str(i), d["name"], d["cat"], d["here"], d["note"]], [None] * 5, [F_B] * 5, [AL_C, AL_L, AL_C, AL_L, AL_L], 18)
+    sw.row(["", "【问题导向改进对象】", "", "", ""], [None] * 5, [F_H] * 5, [AL_C] * 5, 18)
+    for d in wt.get("improve", []):
+        sw.row(["", d["name"], "改进", d["dir"], d["issue"]], [None] * 5, [F_B] * 5, [AL_C, AL_L, AL_C, AL_L, AL_L], 26)
+
 def main():
     cat = json.loads(CAT.read_text(encoding="utf-8"))
     wb = Workbook(); wb.remove(wb.active); used = set()
@@ -190,6 +230,7 @@ def main():
     add_data_sheets(wb, cat, used)
     add_ext_sheets(wb, cat, used)
     add_itcm_sheet(wb, cat, used)
+    add_wise_tcm_sheet(wb, cat, used)
     add_embed_sheet(wb, used)
     wb.save(OUT)
     print("[产出] " + str(OUT))

@@ -11,6 +11,7 @@ import holter as H  # noqa: E402
 import neuro as NE  # noqa: E402
 import sensing as SD  # noqa: E402
 import itcm as IT  # noqa: E402
+import wisetcm as WT  # noqa: E402
 
 JSON = HERE / "tcm-device.json"
 ok = fail = 0
@@ -86,6 +87,19 @@ def main():
     check("典型应用 = 中医慢性疼痛智能诊疗", it["case"] == "中医慢性疼痛智能诊疗")
     check("对接点 >=5 且含「四诊数据采集」", it["stats"]["bridge_points"] >= 5 and any("四诊数据采集" in b["book"] for b in it["bridge"]))
     check("数据集含 intelligent_tcm", "intelligent_tcm" in data)
+    # ── 智慧中医学对接层（对标《智慧中医学》高教社 2026）──
+    wt = WT.summary()
+    check("书目：高等教育出版社 2026-03-05 · ISBN 9787040652802",
+          wt["book"]["publisher"] == "高等教育出版社" and wt["book"]["date"] == "2026-03-05" and wt["book"]["isbn"] == "9787040652802")
+    check("三篇七章结构", wt["stats"]["parts"] == 3 and wt["stats"]["chapters"] == 7)
+    check("实训设备 7 件（含四诊仪/艾灸机器人）",
+          wt["stats"]["devices"] == 7 and any("艾灸机器人" in d["name"] for d in wt["training_devices"]))
+    check("问题导向改进对象 3 件", wt["stats"]["improve"] == 3)
+    check("生成式 AI 含 DeepSeek", "开源高性能大模型 DeepSeek" in wt["genai"])
+    check("扩展现实/智能装备在技术列表内", "扩展现实" in wt["tech"] and "智能装备" in wt["tech"])
+    check("伦理要求 4 条 + 基本条件 2 条", len(wt["ethics"]) == 4 and len(wt["basic_conditions"]) == 2)
+    check("发展趋势 6 条", wt["stats"]["trends"] == 6)
+    check("数据集含 wise_tcm", "wise_tcm" in data)
     # 确定性构建
     import tempfile
     with tempfile.TemporaryDirectory() as td:

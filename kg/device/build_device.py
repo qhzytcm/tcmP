@@ -17,6 +17,7 @@ import holter as H  # noqa: E402
 import neuro as NE  # noqa: E402
 import sensing as SD  # noqa: E402
 import itcm as IT  # noqa: E402
+import wisetcm as WT  # noqa: E402
 
 REPO = HERE.parent.parent
 
@@ -87,6 +88,7 @@ def build():
                                     nanos_per_minute=SD.NANOS_PER_MINUTE))
     optogenetics = NE.summary()
     intelligent_tcm = IT.summary()
+    wise_tcm = WT.summary()
     ref_impl = dict(repo="pkpio/fitbit-googlefit", stars=518,
                     desc="Export Fitbit data to Google Fit (fine granularity)",
                     pipeline="Fitbit API(OAuth2) -> convertors.py unit/time conversion -> Google Fit API",
@@ -98,6 +100,8 @@ def build():
                  sensing_quanta=len(SD.QUANTA), six_quick=len(SD.SIX_QUICK),
                  opto_laureates=len(NE.NOBEL_2026['laureates']), health_total=hb['total'],
                  itcm_chapters=len(IT.TOC), itcm_bridge=len(IT.BRIDGE),
+                 wise_parts=wise_tcm['stats']['parts'], wise_chapters=wise_tcm['stats']['chapters'],
+                 wise_devices=len(WT.TRAINING_DEVICES),
                  standards=len(STANDARDS), operators=len(OPERATORS), platform=len(PLATFORM),
                  holter_cases=len(holter))
     return dict(meta=dict(subject="中医智能仪器与可穿戴设备", code="D07-S11", domain="中医智能学院",
@@ -108,7 +112,7 @@ def build():
                 classes=CLASSES, forms=FORMS, signals=SIGNALS,
                 standards=STANDARDS, operators=OPERATORS, platform=PLATFORM,
                 holter=holter, sensing=sensing, optogenetics=optogenetics,
-                ref_impl=ref_impl, intelligent_tcm=intelligent_tcm, stats=stats)
+                ref_impl=ref_impl, intelligent_tcm=intelligent_tcm, wise_tcm=wise_tcm, stats=stats)
 
 
 def main():
@@ -118,7 +122,7 @@ def main():
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
     data = build()
     s = data["stats"]
-    if not (s["classes"] == 6 and s["holter_cases"] == 6 and s["platform"] == 6 and s["sensing_quanta"] == 4 and s["six_quick"] == 6 and s["opto_laureates"] == 3 and s["itcm_chapters"] == 8):
+    if not (s["classes"] == 6 and s["holter_cases"] == 6 and s["platform"] == 6 and s["sensing_quanta"] == 4 and s["six_quick"] == 6 and s["opto_laureates"] == 3 and s["itcm_chapters"] == 8 and s["wise_chapters"] == 7 and s["wise_devices"] == 7):
         print("[校验] 失败", s); raise SystemExit(1)
     (out / "tcm-device.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     print("[器械] 分类 %d · 形态 %d · 信号 %d · 标准 %d · 算子 %d · 平台 %d"
