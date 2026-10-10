@@ -1,4 +1,4 @@
-﻿# 六者·中医医院AI网络教育平台
+# 六者·中医医院AI网络教育平台
 
 > 支撑中医药行业人才成长的AI网络平台
 
@@ -14,7 +14,7 @@
 
 ## 目录
 
-api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
+api(后端) · agents(六者SOUL) · sages(医圣) · kg(图谱 & **知识树** & **信息学**) · mobile-app(PWA) · docs(架构) · .github(CI/CD)
 
 ## 访问
 
@@ -94,3 +94,25 @@ python kg/tree/tcm_tree.py path DSU-00001   # 根→域→学科→单元 定位
 ```
 
 线上：`https://www.zyyywaccn.com.cn/api/sages/tree/stats`
+
+## 中医信息学 · 平台信息结构（v1.0.0）
+
+> 知识树管**组织**（谁从哪里来），信息学管**运算**（怎么编码、怎么检索、怎么挖出规律）。
+
+`kg/informatics/` 以平台真实资产（103 病证单元 / 31,838 ICD-11 实体 / 120 学科 / 84 技能）现算
+**S 信息标准 × A 数据资产 × M 信息挖掘算子** 三层结构，产物确定性、可校验。
+
+| 能力 | 端点 | 实测 |
+| --- | --- | --- |
+| 统计概览 | `GET /api/sages/informatics/stats` | 103 单元 · 96 证候 · 45 规则 |
+| 信息标准 / 资产 / 算子 | `/standards` `/assets` `/operators` | 5 / 4 / 7 |
+| 频次分布 | `/dist/{key}` | 六经 · 证据 · 分类 … |
+| 关联规则（support/confidence/lift） | `/rules/{kind}` | 症状→证候 · 证候→方剂 · 脏腑→方剂 |
+| 证候聚类 / 编码覆盖 / 数据质量 | `/clusters` `/coverage` `/quality` | 覆盖 74/103 · 质量 36 项 |
+| 检索（TF-IDF ⊕ FTS5 ⊕ RRF） | `/retrieve?q=` | 向量 + FTS5 + RRF 融合 |
+
+- 构建：`python scripts/build_informatics.py`（单一构建点，两次构建字节一致）
+- 自检：`python scripts/verify_informatics.py`（27 项）
+- 部署：`powershell -File scripts/deploy-informatics.ps1`
+- 教材素材：桌面 `中医信息学.xlsx`（23 sheet · D07-S02 / AI-02）
+- 详文档：`kg/informatics/README.md`

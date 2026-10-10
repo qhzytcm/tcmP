@@ -1,0 +1,1325 @@
+{
+ "meta": {
+  "name": "中医信息学",
+  "en": "TCM Informatics",
+  "version": "1.0.0",
+  "model": "S 信息标准 × A 数据资产 × M 信息挖掘算子",
+  "sources": [
+   "kg/samples/dsu-samples-*.json",
+   "data/icd11_mms.db",
+   "data/tcmP-subjects.json",
+   "kg/schema/schema.json"
+  ],
+  "note": "挖掘结果由本构建器从真实语料现算，确定性（无 hash() 随机）",
+  "generated_by": "scripts/build_informatics.py"
+ },
+ "standards": [
+  {
+   "code": "ICD-11 TM1",
+   "name": "ICD-11 传统医学病证模块一",
+   "org": "WHO",
+   "kind": "分类",
+   "platform": "icd11_mms.db + /icd/* 三端点",
+   "verify": "已落地"
+  },
+  {
+   "code": "ICD-11 MMS",
+   "name": "ICD-11 死亡与发病统计（线性化）",
+   "org": "WHO",
+   "kind": "分类",
+   "platform": "本地库 31,838 实体（release 2026-01）",
+   "verify": "已落地"
+  },
+  {
+   "code": "GB/T 15657",
+   "name": "中医病证分类与代码",
+   "org": "国家中医药管理局",
+   "kind": "分类代码",
+   "platform": "与 ICD-11 桥接的国内口径",
+   "verify": "待核"
+  },
+  {
+   "code": "ISO/TC 215",
+   "name": "健康信息学（含中医药信息标准化）",
+   "org": "ISO",
+   "kind": "术语/互操作",
+   "platform": "中医术语国际标准化对接",
+   "verify": "待核"
+  },
+  {
+   "code": "DSU-Schema v1",
+   "name": "病证单元六段式 Schema（自建平台标准）",
+   "org": "tcmP",
+   "kind": "数据模型",
+   "platform": "kg/schema/schema.json（病/证/桥/临床/教学/元）",
+   "verify": "已落地"
+  }
+ ],
+ "assets": [
+  {
+   "id": "A1",
+   "name": "病证单元语料（DSU）",
+   "size": 103,
+   "unit": "单元",
+   "path": "kg/samples/dsu-samples-*.json",
+   "note": "病侧×证侧×桥接×临床×教学"
+  },
+  {
+   "id": "A2",
+   "name": "ICD-11 本地编码库",
+   "size": 31838,
+   "unit": "实体",
+   "path": "data/icd11_mms.db",
+   "note": "Foundation ID → MMS 标准编码"
+  },
+  {
+   "id": "A3",
+   "name": "教材学科目录",
+   "size": 120,
+   "unit": "学科",
+   "path": "data/tcmP-subjects.json",
+   "note": "8 域 × 15/域"
+  },
+  {
+   "id": "A4",
+   "name": "教育技能目录",
+   "size": 84,
+   "unit": "技能",
+   "path": "agent-tcmedu-skills/catalog.json",
+   "note": "可挂接到学科枝"
+  }
+ ],
+ "operators": [
+  {
+   "id": "M1",
+   "name": "频次与分布分析",
+   "algo": "Counter / 直方图",
+   "use": "症状·证候·脏腑·六经·证据·分类分布"
+  },
+  {
+   "id": "M2",
+   "name": "关联规则挖掘",
+   "algo": "co-occurrence + support/confidence/lift",
+   "use": "症状→证候、证候→方剂、脏腑→方剂"
+  },
+  {
+   "id": "M3",
+   "name": "证候聚类",
+   "algo": "症状集合重叠系数 Overlap + 单链聚类",
+   "use": "相似证候归并、证候族"
+  },
+  {
+   "id": "M4",
+   "name": "编码覆盖率与冲突检测",
+   "algo": "集合差 / 覆盖率",
+   "use": "ICD-11 标注率、未编码清单"
+  },
+  {
+   "id": "M5",
+   "name": "数据质量门禁",
+   "algo": "枚举一致性校验",
+   "use": "证据等级/六经/桥接越界、缺失项"
+  },
+  {
+   "id": "M6",
+   "name": "检索与排序",
+   "algo": "TF-IDF 字符 n-gram + SQLite FTS5 + RRF 融合",
+   "use": "内网零 token 检索"
+  },
+  {
+   "id": "M7",
+   "name": "上下文工程装配",
+   "algo": "Top-K + 出处锚定 + 证据等级排序",
+   "use": "LLM 小上下文（↓95% token）"
+  }
+ ],
+ "distributions": {
+  "symptom": [
+   [
+    "神疲乏力",
+    5
+   ],
+   [
+    "胸闷胸痛",
+    4
+   ],
+   [
+    "腰膝酸软",
+    3
+   ],
+   [
+    "心悸气短",
+    3
+   ],
+   [
+    "咳嗽气促",
+    2
+   ],
+   [
+    "口苦口黏",
+    2
+   ],
+   [
+    "口苦咽干",
+    2
+   ],
+   [
+    "面红目赤",
+    2
+   ],
+   [
+    "失眠多梦",
+    2
+   ],
+   [
+    "痛有定处",
+    2
+   ],
+   [
+    "痛引肩背",
+    2
+   ],
+   [
+    "多食易饥",
+    2
+   ]
+  ],
+  "syndrome": [
+   [
+    "脾胃湿热证",
+    2
+   ],
+   [
+    "肝郁脾虚证",
+    2
+   ],
+   [
+    "肝胆湿热证",
+    2
+   ],
+   [
+    "肝阳上亢证",
+    2
+   ],
+   [
+    "脾肾阳虚证",
+    2
+   ],
+   [
+    "风热犯肺证",
+    2
+   ],
+   [
+    "痰湿内阻证",
+    2
+   ],
+   [
+    "风寒束表证",
+    1
+   ],
+   [
+    "风热犯表证",
+    1
+   ],
+   [
+    "痰热壅肺证",
+    1
+   ],
+   [
+    "脾胃虚寒证",
+    1
+   ],
+   [
+    "气滞血瘀证",
+    1
+   ]
+  ],
+  "disease": [
+   [
+    "社区获得性肺炎",
+    2
+   ],
+   [
+    "原发性高血压",
+    2
+   ],
+   [
+    "2型糖尿病",
+    2
+   ],
+   [
+    "慢性肾小球肾炎",
+    2
+   ],
+   [
+    "普通感冒（上呼吸道感染）",
+    1
+   ],
+   [
+    "流行性感冒",
+    1
+   ],
+   [
+    "慢性胃炎（慢性浅表性胃炎）",
+    1
+   ],
+   [
+    "胃溃疡（消化性溃疡）",
+    1
+   ],
+   [
+    "肠易激综合征",
+    1
+   ],
+   [
+    "慢性乙型肝炎",
+    1
+   ],
+   [
+    "冠心病（稳定型心绞痛）",
+    1
+   ],
+   [
+    "类风湿关节炎",
+    1
+   ]
+  ],
+  "formula": [
+   [
+    "天麻钩藤饮",
+    3
+   ],
+   [
+    "连朴饮合半夏泻心汤",
+    2
+   ],
+   [
+    "萆薢渗湿汤合五味消毒饮",
+    2
+   ],
+   [
+    "黄连阿胶汤合交泰丸",
+    2
+   ],
+   [
+    "补阳还五汤",
+    2
+   ],
+   [
+    "龙胆泻肝汤",
+    2
+   ],
+   [
+    "麻黄汤",
+    1
+   ],
+   [
+    "银翘散",
+    1
+   ],
+   [
+    "麻杏石甘汤合千金苇茎汤",
+    1
+   ],
+   [
+    "黄芪建中汤",
+    1
+   ],
+   [
+    "痛泻要方合四逆散",
+    1
+   ],
+   [
+    "茵陈蒿汤合龙胆泻肝汤",
+    1
+   ]
+  ],
+  "zangfu": [
+   [
+    "肺·卫表",
+    4
+   ],
+   [
+    "脾·胃",
+    4
+   ],
+   [
+    "脾·肾",
+    4
+   ],
+   [
+    "肺·肾",
+    4
+   ],
+   [
+    "肾·膀胱",
+    4
+   ],
+   [
+    "肝·脾",
+    3
+   ],
+   [
+    "心·脉",
+    3
+   ],
+   [
+    "肝·脾·经络",
+    3
+   ],
+   [
+    "肝·胆·经络",
+    3
+   ],
+   [
+    "肝·胆",
+    2
+   ],
+   [
+    "肝·肾·筋骨",
+    2
+   ],
+   [
+    "脾·胃·肌肤",
+    2
+   ]
+  ],
+  "six_channel": [
+   [
+    "少阴病",
+    24
+   ],
+   [
+    "太阴病",
+    20
+   ],
+   [
+    "不适用",
+    16
+   ],
+   [
+    "少阳病",
+    15
+   ],
+   [
+    "太阳病",
+    9
+   ],
+   [
+    "阳明病",
+    7
+   ],
+   [
+    "厥阴病",
+    6
+   ],
+   [
+    "太阳病 — 阳明病（过渡）",
+    1
+   ],
+   [
+    "太阴病 — 阳明病（合病）",
+    1
+   ],
+   [
+    "太阴病 — 少阳病（合病）",
+    1
+   ],
+   [
+    "少阳病 — 厥阴病",
+    1
+   ],
+   [
+    "太阴病 — 少阴病",
+    1
+   ]
+  ],
+  "category": [
+   [
+    "消化系统疾病",
+    15
+   ],
+   [
+    "循环系统疾病",
+    13
+   ],
+   [
+    "神经系统疾病",
+    11
+   ],
+   [
+    "呼吸系统疾病",
+    10
+   ],
+   [
+    "内分泌代谢病",
+    8
+   ],
+   [
+    "泌尿生殖疾病",
+    8
+   ],
+   [
+    "肿瘤",
+    8
+   ],
+   [
+    "皮肤疾病",
+    6
+   ],
+   [
+    "眼耳鼻喉疾病",
+    6
+   ],
+   [
+    "肌肉骨骼疾病",
+    4
+   ],
+   [
+    "精神障碍",
+    4
+   ],
+   [
+    "血液病",
+    4
+   ]
+  ],
+  "evidence": [
+   [
+    "B级-单中心RCT",
+    40
+   ],
+   [
+    "C级-队列研究",
+    31
+   ],
+   [
+    "A级-多中心RCT",
+    26
+   ],
+   [
+    "D级-病例对照",
+    4
+   ],
+   [
+    "E级-专家共识",
+    1
+   ],
+   [
+    "I级-专家共识",
+    1
+   ]
+  ],
+  "mapping": [
+   [
+    "机制对应",
+    51
+   ],
+   [
+    "间接对应",
+    30
+   ],
+   [
+    "直接对应",
+    14
+   ],
+   [
+    "阶段对应",
+    8
+   ]
+  ]
+ },
+ "rules": {
+  "symptom_to_syndrome": [
+   {
+    "left": "PSA升高",
+    "right": "肾虚瘀毒证(癃闭/积证)",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "一侧三叉神经分布区（Ⅱ/Ⅲ支）",
+    "right": "肝火上炎、风火上扰证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "一侧腰臀至下肢后外侧放射性疼痛",
+    "right": "寒湿阻络、气滞血瘀证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "上睑下垂/复视",
+    "right": "脾胃虚弱、中气下陷证(痿证/睑废)",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "上腹反复发作隐痛或胀痛",
+    "right": "脾虚瘀阻证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "上腹持续性剧痛拒按",
+    "right": "阳明腑实证/结胸证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "上腹疼痛(早期不典型/晚期持续)",
+    "right": "脾胃虚弱、瘀毒内结证(胃积/反胃)",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "下肢水肿",
+    "right": "水湿内停证（鼓胀）",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "下肢水肿或全身浮肿",
+    "right": "阳虚水泛证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "下肢水肿按之不起",
+    "right": "心肾阳虚、水饮凌心证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "丘疹水疱密集",
+    "right": "湿热浸淫证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "两目上视牙关紧闭",
+    "right": "风痰闭窍、肝风内动证（痫证）",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "中重度反复发作",
+    "right": "肝阳上亢、风阳上扰证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "久坐久立后加重",
+    "right": "肝肾亏虚证",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "乏力",
+    "right": "痰瘀互结、气阴两虚证(石疽/恶核)",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   }
+  ],
+  "syndrome_to_formula": [
+   {
+    "left": "下焦湿热瘀阻证",
+    "right": "石苇散合三金排石汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "大肠湿热蕴毒证",
+    "right": "白头翁汤合芍药汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "寒凝血瘀证",
+    "right": "少腹逐瘀汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "寒哮证（冷哮）",
+    "right": "射干麻黄汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "寒湿痹阻证",
+    "right": "乌头汤合桂枝芍药知母汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "寒湿痹阻证(腰部)",
+    "right": "独活寄生汤合肾着汤(苓桂术甘汤加味)",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "寒湿阻络、气滞血瘀证",
+    "right": "独活寄生汤合身痛逐瘀汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心肾阳虚、水饮凌心证",
+    "right": "真武汤合葶苈大枣泻肺汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心脾两虚证",
+    "right": "炙甘草汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "气滞血瘀证",
+    "right": "血府逐瘀汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "气滞血瘀证(颈部)",
+    "right": "身痛逐瘀汤加减",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "气虚不摄证",
+    "right": "固冲汤（张锡纯方）合补中益气汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "气虚便秘证",
+    "right": "黄芪汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "气阴两虚、心脉瘀阻证",
+    "right": "生脉散合丹参饮",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "气阴两虚、痰瘀毒结证(肺积/息贲)",
+    "right": "百合固金汤合千金苇茎汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   }
+  ],
+  "zangfu_to_formula": [
+   {
+    "left": "大肠·脾·肺",
+    "right": "黄芪汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心·经络",
+    "right": "独活寄生汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心·肝",
+    "right": "血府逐瘀汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心·肺",
+    "right": "银翘散合生脉散",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心·胸",
+    "right": "瓜蒌薤白半夏汤合血府逐瘀汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "心·脾",
+    "right": "炙甘草汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "经络·阳明·少阳",
+    "right": "牵正散",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肌肤·卫表",
+    "right": "消风散",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·心·肾",
+    "right": "龙胆泻肝汤合生脉散",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·心·脾",
+    "right": "柴胡疏肝散合甘麦大枣汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·肾·筋脉",
+    "right": "大定风珠合地黄饮子",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·胃",
+    "right": "柴胡疏肝散",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·胃·冲任",
+    "right": "逍遥散合阳和汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·胃·食管",
+    "right": "左金丸合旋覆代赭汤",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   },
+   {
+    "left": "肝·胆·头目",
+    "right": "天麻钩藤饮加减",
+    "support": 0.0097,
+    "confidence": 1.0,
+    "lift": 103.0,
+    "n": 1
+   }
+  ]
+ },
+ "clusters": [
+  {
+   "size": 2,
+   "members": [
+    "气阴两虚证（消渴）",
+    "阴虚燥热证"
+   ]
+  }
+ ],
+ "cluster_edges": [
+  [
+   0.5,
+   "气阴两虚证（消渴）",
+   "阴虚燥热证"
+  ]
+ ],
+ "icd_coverage": {
+  "total": 103,
+  "mapped": 74,
+  "unmapped": 29,
+  "rate": 0.7184,
+  "unmapped_sample": [
+   {
+    "id": "DSU-00003",
+    "disease": "社区获得性肺炎",
+    "icd11": "",
+    "icd": "J15.9"
+   },
+   {
+    "id": "DSU-00004",
+    "disease": "慢性胃炎（慢性浅表性胃炎）",
+    "icd11": "",
+    "icd": "DA42.7"
+   },
+   {
+    "id": "DSU-00009",
+    "disease": "冠心病（稳定型心绞痛）",
+    "icd11": "",
+    "icd": "BA80.0"
+   },
+   {
+    "id": "DSU-00011",
+    "disease": "慢性肾小球肾炎",
+    "icd11": "",
+    "icd": "GB40.4"
+   },
+   {
+    "id": "DSU-00012",
+    "disease": "类风湿关节炎",
+    "icd11": "",
+    "icd": "FA20"
+   },
+   {
+    "id": "DSU-00013",
+    "disease": "湿疹（特应性皮炎）",
+    "icd11": "",
+    "icd": "EA80"
+   },
+   {
+    "id": "DSU-00014",
+    "disease": "原发性痛经",
+    "icd11": "",
+    "icd": "GA34.3"
+   },
+   {
+    "id": "DSU-00015",
+    "disease": "功能失调性子宫出血（异常子宫出血）",
+    "icd11": "",
+    "icd": "GA21.0"
+   },
+   {
+    "id": "DSU-00017",
+    "disease": "颈椎病",
+    "icd11": "",
+    "icd": "FA82.0"
+   },
+   {
+    "id": "DSU-00030",
+    "disease": "社区获得性肺炎",
+    "icd11": "",
+    "icd": "CA40"
+   }
+  ]
+ },
+ "data_quality": {
+  "by_field": {
+   "six_channels": 6,
+   "icd11_code": 29,
+   "evidence_level": 1
+  },
+  "issues": [
+   {
+    "id": "DSU-00002",
+    "field": "six_channels",
+    "value": "太阳病 — 阳明病（过渡）",
+    "rule": "∉ 七值（含合病/过渡变体）",
+    "fix": "按主证归并或扩展枚举"
+   },
+   {
+    "id": "DSU-00003",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00004",
+    "field": "six_channels",
+    "value": "太阴病 — 阳明病（合病）",
+    "rule": "∉ 七值（含合病/过渡变体）",
+    "fix": "按主证归并或扩展枚举"
+   },
+   {
+    "id": "DSU-00004",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00006",
+    "field": "six_channels",
+    "value": "太阴病 — 少阳病（合病）",
+    "rule": "∉ 七值（含合病/过渡变体）",
+    "fix": "按主证归并或扩展枚举"
+   },
+   {
+    "id": "DSU-00007",
+    "field": "six_channels",
+    "value": "少阳病 — 厥阴病",
+    "rule": "∉ 七值（含合病/过渡变体）",
+    "fix": "按主证归并或扩展枚举"
+   },
+   {
+    "id": "DSU-00009",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00011",
+    "field": "six_channels",
+    "value": "太阴病 — 少阴病",
+    "rule": "∉ 七值（含合病/过渡变体）",
+    "fix": "按主证归并或扩展枚举"
+   },
+   {
+    "id": "DSU-00011",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00012",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00013",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00014",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00015",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00017",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00030",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00036",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00040",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00045",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00046",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00051",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00054",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00057",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00058",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00059",
+    "field": "evidence_level",
+    "value": "I级-专家共识",
+    "rule": "∉ A–F 级",
+    "fix": "枚举越界（疑似 I级→E级）"
+   },
+   {
+    "id": "DSU-00063",
+    "field": "six_channels",
+    "value": "太阳病—少阴病",
+    "rule": "∉ 七值（含合病/过渡变体）",
+    "fix": "按主证归并或扩展枚举"
+   },
+   {
+    "id": "DSU-00063",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00065",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00069",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00078",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00088",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00091",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00093",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00095",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00096",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00098",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   },
+   {
+    "id": "DSU-00099",
+    "field": "icd11_code",
+    "value": "",
+    "rule": "覆盖率<100%",
+    "fix": "补 ICD-11 编码（内网 API 或本地 db）"
+   }
+  ]
+ },
+ "stats": {
+  "units": 103,
+  "distinct": {
+   "syndrome": 96,
+   "disease": 99,
+   "formula": 96,
+   "symptom": 396
+  },
+  "icd11": {
+   "total": 103,
+   "mapped": 74,
+   "unmapped": 29,
+   "rate": 0.7184,
+   "unmapped_sample": [
+    {
+     "id": "DSU-00003",
+     "disease": "社区获得性肺炎",
+     "icd11": "",
+     "icd": "J15.9"
+    },
+    {
+     "id": "DSU-00004",
+     "disease": "慢性胃炎（慢性浅表性胃炎）",
+     "icd11": "",
+     "icd": "DA42.7"
+    },
+    {
+     "id": "DSU-00009",
+     "disease": "冠心病（稳定型心绞痛）",
+     "icd11": "",
+     "icd": "BA80.0"
+    },
+    {
+     "id": "DSU-00011",
+     "disease": "慢性肾小球肾炎",
+     "icd11": "",
+     "icd": "GB40.4"
+    },
+    {
+     "id": "DSU-00012",
+     "disease": "类风湿关节炎",
+     "icd11": "",
+     "icd": "FA20"
+    },
+    {
+     "id": "DSU-00013",
+     "disease": "湿疹（特应性皮炎）",
+     "icd11": "",
+     "icd": "EA80"
+    },
+    {
+     "id": "DSU-00014",
+     "disease": "原发性痛经",
+     "icd11": "",
+     "icd": "GA34.3"
+    },
+    {
+     "id": "DSU-00015",
+     "disease": "功能失调性子宫出血（异常子宫出血）",
+     "icd11": "",
+     "icd": "GA21.0"
+    },
+    {
+     "id": "DSU-00017",
+     "disease": "颈椎病",
+     "icd11": "",
+     "icd": "FA82.0"
+    },
+    {
+     "id": "DSU-00030",
+     "disease": "社区获得性肺炎",
+     "icd11": "",
+     "icd": "CA40"
+    }
+   ]
+  },
+  "data_quality_issues": 36,
+  "clusters": 1,
+  "rules": 45
+ }
+}
