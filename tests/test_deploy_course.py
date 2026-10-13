@@ -55,6 +55,17 @@ def test_deploy_secondary_missing_creds_when_reachable(tmp_path, monkeypatch):
     """SSH 可达但无凭据/站点根 → 仍返回 None（阻塞）。"""
     monkeypatch.setattr(d, "_ssh_reachable", lambda *a, **k: True)
     monkeypatch.delenv("TCM_SECONDARY_PASS", raising=False)
+    monkeypatch.delenv("TCM_SECONDARY_KEY", raising=False)
     monkeypatch.delenv("TCM_SECONDARY_ROOT", raising=False)
     book = _fake_book(tmp_path / "book")
     assert d.deploy_secondary("zhongji-jichu", book, "", "", "") is None
+
+
+def test_deploy_secondary_key_but_no_root_blocked(tmp_path, monkeypatch):
+    """给了密钥但无站点根路径 → 仍阻塞（不盲写）。"""
+    monkeypatch.setattr(d, "_ssh_reachable", lambda *a, **k: True)
+    monkeypatch.delenv("TCM_SECONDARY_PASS", raising=False)
+    monkeypatch.delenv("TCM_SECONDARY_KEY", raising=False)
+    monkeypatch.delenv("TCM_SECONDARY_ROOT", raising=False)
+    book = _fake_book(tmp_path / "book")
+    assert d.deploy_secondary("x", book, "Administrator", "", "", r"C:\k") is None

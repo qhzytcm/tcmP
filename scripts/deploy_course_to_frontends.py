@@ -85,22 +85,26 @@ def _secondary_blocked_msg() -> str:
             f"  或改为提供 445(SMB) 凭据 / IIS 站点实际绝对路径。")
 
 
-def deploy_secondary(slug: str, local: Path, user: str, password: str, root: str) -> bool | None:
-    """返回 True=成功 / False=失败 / None=阻塞（不可达或缺凭据）。"""
+def deploy_secondary(slug: str, local: Path, user: str, password: str, root: str,
+                     key: str = "") -> bool | None:
+    """返回 True=成功 / False=失败 / None=阻塞（不可达或缺凭据）。支持密钥或口令认证。"""
     if not _ssh_reachable(SECONDARY_HOST):
         print(_secondary_blocked_msg())
         return None
     user = user or os.environ.get("TCM_SECONDARY_USER", "Administrator")
     password = password or os.environ.get("TCM_SECONDARY_PASS", "")
     root = root or os.environ.get("TCM_SECONDARY_ROOT", "")
-    if not password or not root:
-        print(f"[从前端 {SECONDARY_HOST}] SSH 可达，但缺 password/站点根路径 → "
-              f"请传 --secondary-pass 与 --secondary-root（或 env TCM_SECONDARY_PASS/ROOT）")
+    key = key or os.environ.get("TCM_SECONDARY_KEY", "")
+    if (not password and not key) or not root:
+        print(f"[从前端 {SECONDARY_HOST}] SSH 可达，但缺 认证方式(password 或 key) / 站点根路径 → "
+              f"请传 --secondary-pass 或 --secondary-key 与 --secondary-root"
+              f"（或 env TCM_SECONDARY_PASS/KEY/ROOT）")
         return None
     import paramiko
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(SECONDARY_HOST, username=user, password=password, timeout=20)
+    ssh.connect(SECONDARY_HOST, username=user, password=(password or None),
+                key_filename=(key or None), look_for_keys=False, timeout=20)
     rdir = f"{root.rstrip(chr(92))}\\{slug}"
     sftp = ssh.open_sftp()
     try:
@@ -129,6 +133,7 @@ def main():
     ap.add_argument("--skip-secondary", action="store_true")
     ap.add_argument("--secondary-user", default="")
     ap.add_argument("--secondary-pass", default="")
+    ap.add_argument("--secondary-key", default="")
     ap.add_argument("--secondary-root", default="")
     args = ap.parse_args()
     local = Path(args.local)
@@ -139,7 +144,7 @@ def main():
     sec = None
     if not args.skip_secondary:
         sec = deploy_secondary(args.slug, local, args.secondary_user,
-                               args.secondary_pass, args.secondary_root)
+                               args.secondary_pass, args.secondary_root, args.secondary_key)
     print("DEPLOY_RESULT cloud=" + ("OK" if cloud_ok else "FAIL")
           + " secondary=" + ("OK" if sec else ("BLOCKED" if sec is None else "FAIL")))
 
