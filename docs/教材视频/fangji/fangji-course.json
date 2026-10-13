@@ -1,0 +1,223 @@
+{
+ "book": "方剂学",
+ "slug": "fangji",
+ "source": "方剂学.xlsx",
+ "chapters": [
+  {
+   "no": 1,
+   "name": "1绪论",
+   "file": "第01章-1绪论-视频课程.html",
+   "video": "第01章-1绪论.mp4",
+   "segs": 10,
+   "size_kb": 6029,
+   "html": true
+  },
+  {
+   "no": 2,
+   "name": "2方剂与治法",
+   "file": "第02章-2方剂与治法-视频课程.html",
+   "video": "第02章-2方剂与治法.mp4",
+   "segs": 10,
+   "size_kb": 4632,
+   "html": true
+  },
+  {
+   "no": 3,
+   "name": "3组成",
+   "file": "第03章-3组成-视频课程.html",
+   "video": "第03章-3组成.mp4",
+   "segs": 8,
+   "size_kb": 4490,
+   "html": true
+  },
+  {
+   "no": 4,
+   "name": "4剂型煎服",
+   "file": "第04章-4剂型煎服-视频课程.html",
+   "video": "第04章-4剂型煎服.mp4",
+   "segs": 6,
+   "size_kb": 3662,
+   "html": true
+  },
+  {
+   "no": 5,
+   "name": "5解表剂",
+   "file": "第05章-5解表剂-视频课程.html",
+   "video": "第05章-5解表剂.mp4",
+   "segs": 13,
+   "size_kb": 9820,
+   "html": true
+  },
+  {
+   "no": 6,
+   "name": "6泻下剂",
+   "file": "第06章-6泻下剂-视频课程.html",
+   "video": "第06章-6泻下剂.mp4",
+   "segs": 13,
+   "size_kb": 6166,
+   "html": true
+  },
+  {
+   "no": 7,
+   "name": "7和解剂",
+   "file": "第07章-7和解剂-视频课程.html",
+   "video": "第07章-7和解剂.mp4",
+   "segs": 13,
+   "size_kb": 5340,
+   "html": true
+  },
+  {
+   "no": 8,
+   "name": "8清热剂",
+   "file": "第08章-8清热剂-视频课程.html",
+   "video": "第08章-8清热剂.mp4",
+   "segs": 13,
+   "size_kb": 16356,
+   "html": true
+  },
+  {
+   "no": 9,
+   "name": "9祛暑剂",
+   "file": "第09章-9祛暑剂-视频课程.html",
+   "video": "第09章-9祛暑剂.mp4",
+   "segs": 9,
+   "size_kb": 2618,
+   "html": true
+  },
+  {
+   "no": 10,
+   "name": "10温里剂",
+   "file": "第10章-10温里剂-视频课程.html",
+   "video": "第10章-10温里剂.mp4",
+   "segs": 13,
+   "size_kb": 4741,
+   "html": true
+  },
+  {
+   "no": 11,
+   "name": "11表里双解",
+   "file": "第11章-11表里双解-视频课程.html",
+   "video": "第11章-11表里双解.mp4",
+   "segs": 6,
+   "size_kb": 2708,
+   "html": true
+  },
+  {
+   "no": 12,
+   "name": "12补益剂",
+   "file": "第12章-12补益剂-视频课程.html",
+   "video": "第12章-12补益剂.mp4",
+   "segs": 13,
+   "size_kb": 14425,
+   "html": true
+  },
+  {
+   "no": 13,
+   "name": "13固涩剂",
+   "file": "第13章-13固涩剂-视频课程.html",
+   "video": "第13章-13固涩剂.mp4",
+   "segs": 12,
+   "size_kb": 3892,
+   "html": true
+  },
+  {
+   "no": 14,
+   "name": "14安神开窍",
+   "file": "第14章-14安神开窍-视频课程.html",
+   "video": "第14章-14安神开窍.mp4",
+   "segs": 13,
+   "size_kb": 5861,
+   "html": true
+  },
+  {
+   "no": 15,
+   "name": "15理气剂",
+   "file": "第15章-15理气剂-视频课程.html",
+   "video": "第15章-15理气剂.mp4",
+   "segs": 13,
+   "size_kb": 7638,
+   "html": true
+  },
+  {
+   "no": 16,
+   "name": "16理血剂",
+   "file": "第16章-16理血剂-视频课程.html",
+   "video": "第16章-16理血剂.mp4",
+   "segs": 13,
+   "size_kb": 11494,
+   "html": true
+  },
+  {
+   "no": 17,
+   "name": "17治风剂",
+   "file": "第17章-17治风剂-视频课程.html",
+   "video": "第17章-17治风剂.mp4",
+   "segs": 13,
+   "size_kb": 7169,
+   "html": true
+  },
+  {
+   "no": 18,
+   "name": "18治燥剂",
+   "file": "第18章-18治燥剂-视频课程.html",
+   "video": "第18章-18治燥剂.mp4",
+   "segs": 13,
+   "size_kb": 5106,
+   "html": true
+  },
+  {
+   "no": 19,
+   "name": "19祛湿剂",
+   "file": "第19章-19祛湿剂-视频课程.html",
+   "video": "第19章-19祛湿剂.mp4",
+   "segs": 13,
+   "size_kb": 10675,
+   "html": true
+  },
+  {
+   "no": 20,
+   "name": "20祛痰剂",
+   "file": "第20章-20祛痰剂-视频课程.html",
+   "video": "第20章-20祛痰剂.mp4",
+   "segs": 13,
+   "size_kb": 7145,
+   "html": true
+  },
+  {
+   "no": 21,
+   "name": "21消食剂",
+   "file": "第21章-21消食剂-视频课程.html",
+   "video": "第21章-21消食剂.mp4",
+   "segs": 9,
+   "size_kb": 3014,
+   "html": true
+  },
+  {
+   "no": 22,
+   "name": "22驱虫涌吐",
+   "file": "第22章-22驱虫涌吐-视频课程.html",
+   "video": "第22章-22驱虫涌吐.mp4",
+   "segs": 6,
+   "size_kb": 1978,
+   "html": true
+  },
+  {
+   "no": 23,
+   "name": "23治痈疡",
+   "file": "第23章-23治痈疡-视频课程.html",
+   "video": "第23章-23治痈疡.mp4",
+   "segs": 12,
+   "size_kb": 4117,
+   "html": true
+  },
+  {
+   "no": 24,
+   "name": "24临床应用AI",
+   "file": "第24章-24临床应用AI-视频课程.html",
+   "video": "第24章-24临床应用AI.mp4",
+   "segs": 12,
+   "size_kb": 7443,
+   "html": true
+  }
+ ]
+}

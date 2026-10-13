@@ -1,0 +1,277 @@
+{
+ "book": "中药学",
+ "slug": "zhongyao",
+ "source": "中药学.xlsx",
+ "chapters": [
+  {
+   "no": 1,
+   "name": "1绪论",
+   "file": "第01章-1绪论-视频课程.html",
+   "video": "第01章-1绪论.mp4",
+   "segs": 8,
+   "size_kb": 4646,
+   "html": true
+  },
+  {
+   "no": 2,
+   "name": "2简史",
+   "file": "第02章-2简史-视频课程.html",
+   "video": "第02章-2简史.mp4",
+   "segs": 13,
+   "size_kb": 6892,
+   "html": true
+  },
+  {
+   "no": 3,
+   "name": "3产地采集",
+   "file": "第03章-3产地采集-视频课程.html",
+   "video": "第03章-3产地采集.mp4",
+   "segs": 12,
+   "size_kb": 5899,
+   "html": true
+  },
+  {
+   "no": 4,
+   "name": "4炮制",
+   "file": "第04章-4炮制-视频课程.html",
+   "video": "第04章-4炮制.mp4",
+   "segs": 13,
+   "size_kb": 6316,
+   "html": true
+  },
+  {
+   "no": 5,
+   "name": "5性能",
+   "file": "第05章-5性能-视频课程.html",
+   "video": "第05章-5性能.mp4",
+   "segs": 13,
+   "size_kb": 10333,
+   "html": true
+  },
+  {
+   "no": 6,
+   "name": "6配伍",
+   "file": "第06章-6配伍-视频课程.html",
+   "video": "第06章-6配伍.mp4",
+   "segs": 8,
+   "size_kb": 3925,
+   "html": true
+  },
+  {
+   "no": 7,
+   "name": "7禁忌",
+   "file": "第07章-7禁忌-视频课程.html",
+   "video": "第07章-7禁忌.mp4",
+   "segs": 10,
+   "size_kb": 4951,
+   "html": true
+  },
+  {
+   "no": 8,
+   "name": "8剂量用法",
+   "file": "第08章-8剂量用法-视频课程.html",
+   "video": "第08章-8剂量用法.mp4",
+   "segs": 8,
+   "size_kb": 4883,
+   "html": true
+  },
+  {
+   "no": 9,
+   "name": "9解表药",
+   "file": "第09章-9解表药-视频课程.html",
+   "video": "第09章-9解表药.mp4",
+   "segs": 13,
+   "size_kb": 25144,
+   "html": true
+  },
+  {
+   "no": 10,
+   "name": "10清热药",
+   "file": "第10章-10清热药-视频课程.html",
+   "video": "第10章-10清热药.mp4",
+   "segs": 13,
+   "size_kb": 42217,
+   "html": true
+  },
+  {
+   "no": 11,
+   "name": "11泻下药",
+   "file": "第11章-11泻下药-视频课程.html",
+   "video": "第11章-11泻下药.mp4",
+   "segs": 13,
+   "size_kb": 10890,
+   "html": true
+  },
+  {
+   "no": 12,
+   "name": "12祛风湿药",
+   "file": "第12章-12祛风湿药-视频课程.html",
+   "video": "第12章-12祛风湿药.mp4",
+   "segs": 13,
+   "size_kb": 10692,
+   "html": true
+  },
+  {
+   "no": 13,
+   "name": "13化湿药",
+   "file": "第13章-13化湿药-视频课程.html",
+   "video": "第13章-13化湿药.mp4",
+   "segs": 13,
+   "size_kb": 5233,
+   "html": true
+  },
+  {
+   "no": 14,
+   "name": "14利水渗湿药",
+   "file": "第14章-14利水渗湿药-视频课程.html",
+   "video": "第14章-14利水渗湿药.mp4",
+   "segs": 13,
+   "size_kb": 11954,
+   "html": true
+  },
+  {
+   "no": 15,
+   "name": "15温里药",
+   "file": "第15章-15温里药-视频课程.html",
+   "video": "第15章-15温里药.mp4",
+   "segs": 13,
+   "size_kb": 6981,
+   "html": true
+  },
+  {
+   "no": 16,
+   "name": "16理气药",
+   "file": "第16章-16理气药-视频课程.html",
+   "video": "第16章-16理气药.mp4",
+   "segs": 13,
+   "size_kb": 9312,
+   "html": true
+  },
+  {
+   "no": 17,
+   "name": "17消食药",
+   "file": "第17章-17消食药-视频课程.html",
+   "video": "第17章-17消食药.mp4",
+   "segs": 13,
+   "size_kb": 4076,
+   "html": true
+  },
+  {
+   "no": 18,
+   "name": "18驱虫药",
+   "file": "第18章-18驱虫药-视频课程.html",
+   "video": "第18章-18驱虫药.mp4",
+   "segs": 12,
+   "size_kb": 2813,
+   "html": true
+  },
+  {
+   "no": 19,
+   "name": "19止血药",
+   "file": "第19章-19止血药-视频课程.html",
+   "video": "第19章-19止血药.mp4",
+   "segs": 13,
+   "size_kb": 12730,
+   "html": true
+  },
+  {
+   "no": 20,
+   "name": "20活血化瘀药",
+   "file": "第20章-20活血化瘀药-视频课程.html",
+   "video": "第20章-20活血化瘀药.mp4",
+   "segs": 13,
+   "size_kb": 26602,
+   "html": true
+  },
+  {
+   "no": 21,
+   "name": "21化痰止咳",
+   "file": "第21章-21化痰止咳-视频课程.html",
+   "video": "第21章-21化痰止咳.mp4",
+   "segs": 13,
+   "size_kb": 27480,
+   "html": true
+  },
+  {
+   "no": 22,
+   "name": "22安神药",
+   "file": "第22章-22安神药-视频课程.html",
+   "video": "第22章-22安神药.mp4",
+   "segs": 13,
+   "size_kb": 7805,
+   "html": true
+  },
+  {
+   "no": 23,
+   "name": "23平肝息风",
+   "file": "第23章-23平肝息风-视频课程.html",
+   "video": "第23章-23平肝息风.mp4",
+   "segs": 13,
+   "size_kb": 13858,
+   "html": true
+  },
+  {
+   "no": 24,
+   "name": "24开窍药",
+   "file": "第24章-24开窍药-视频课程.html",
+   "video": "第24章-24开窍药.mp4",
+   "segs": 12,
+   "size_kb": 3343,
+   "html": true
+  },
+  {
+   "no": 25,
+   "name": "25补虚药",
+   "file": "第25章-25补虚药-视频课程.html",
+   "video": "第25章-25补虚药.mp4",
+   "segs": 13,
+   "size_kb": 44694,
+   "html": true
+  },
+  {
+   "no": 26,
+   "name": "26收涩药",
+   "file": "第26章-26收涩药-视频课程.html",
+   "video": "第26章-26收涩药.mp4",
+   "segs": 13,
+   "size_kb": 13388,
+   "html": true
+  },
+  {
+   "no": 27,
+   "name": "27涌吐药",
+   "file": "第27章-27涌吐药-视频课程.html",
+   "video": "第27章-27涌吐药.mp4",
+   "segs": 9,
+   "size_kb": 1992,
+   "html": true
+  },
+  {
+   "no": 28,
+   "name": "28攻毒杀虫",
+   "file": "第28章-28攻毒杀虫-视频课程.html",
+   "video": "第28章-28攻毒杀虫.mp4",
+   "segs": 13,
+   "size_kb": 6242,
+   "html": true
+  },
+  {
+   "no": 29,
+   "name": "29拔毒化腐",
+   "file": "第29章-29拔毒化腐-视频课程.html",
+   "video": "第29章-29拔毒化腐.mp4",
+   "segs": 13,
+   "size_kb": 4109,
+   "html": true
+  },
+  {
+   "no": 30,
+   "name": "30临床中药应用",
+   "file": "第30章-30临床中药应用-视频课程.html",
+   "video": "第30章-30临床中药应用.mp4",
+   "segs": 12,
+   "size_kb": 7473,
+   "html": true
+  }
+ ]
+}

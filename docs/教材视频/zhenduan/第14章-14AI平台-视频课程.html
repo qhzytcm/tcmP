@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中医诊断学 · 第14章 14AI平台 · 视频课程</title>
+<style>
+:root{--primary:#1e8449;--dark:#2c3e50;--gold:#b7950b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Microsoft YaHei","SimHei",sans-serif;background:#f4f1ea;color:#2c3e50;}
+.titlebar{background:linear-gradient(135deg,#1e8449,#145a32);color:#fff;text-align:center;padding:30px 18px;}
+.titlebar h1{font-size:34px;letter-spacing:4px;}
+.titlebar .sub{font-size:15px;opacity:.9;margin-top:8px;}
+.container{max-width:1100px;margin:0 auto;padding:22px 18px 60px;}
+.player{background:#000;border-radius:12px;overflow:hidden;margin-bottom:24px;box-shadow:0 10px 30px rgba(0,0,0,.3);}
+video{width:100%;display:block;aspect-ratio:16/9;}
+.sync-caption{background:#0d1b12;padding:12px 20px;min-height:84px;}
+.cap-sec{color:#7ee2a8;font-size:14px;font-weight:700;margin-bottom:6px;}
+.cap-text{color:#fdf9ef;font-size:16px;line-height:1.75;}
+.cap-gone{opacity:.15;}
+.sec{background:#fff;border-radius:12px;padding:20px 24px;margin-bottom:18px;border:1px solid #e5e0d6;transition:opacity .6s,box-shadow .6s;}
+.sec.now{box-shadow:0 0 0 3px var(--gold);}
+.sec.done{opacity:.6;}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.sec-no{background:var(--primary);color:#fff;padding:4px 14px;border-radius:16px;font-size:13px;}
+.sec h2{font-size:21px;}
+.talk{font-size:16px;line-height:1.9;color:#3a3a3a;text-align:left;}
+.footer{text-align:center;color:#999;font-size:13px;padding:18px;}
+.breadcrumb{font-size:13px;color:#7a7a7a;margin-bottom:14px;}
+.breadcrumb a{color:var(--primary);text-decoration:none;}
+</style></head>
+<body>
+<div class="titlebar"><h1>中医诊断学 · 第14章 14AI平台</h1><div class="sub">tcmP 中医药网络教育平台 · 学科教材授课视频</div></div>
+<div class="container">
+  <div class="breadcrumb"><a href="index.html">← 返回课程目录</a></div>
+  <div class="player">
+    <video id="v" controls autoplay muted playsinline preload="auto">
+      <source src="第14章-14AI平台.mp4" type="video/mp4">
+      您的浏览器不支持 HTML5 视频，请下载后观看：<a href="第14章-14AI平台.mp4">第14章-14AI平台.mp4</a>
+    </video>
+    <div class="sync-caption"><div class="cap-sec" id="capSec">▍ 第 1 段</div><div class="cap-text" id="capText"></div></div>
+  </div>
+  <div class="sec" data-i="1">
+    <div class="sec-head"><span class="sec-no">第一段</span><h2>14.1.1.1 舌脉症-证候-病机的语义网络</h2></div>
+    <div class="talk">四诊-辨证知识图谱：以'舌象、脉象、症状、体征→证候→病机→治法'为核心节点构建语义网络。节点属性须完整（定义、临床特征、鉴别要点、常见兼证、舌脉依据），关系边须标注依据来源（教材/指南/专家共识）。如'刺痛固定拒按——血瘀证——瘀血内阻——活血化瘀'与'舌紫暗瘀斑——血瘀证'构成互证链。</div>
+  </div>
+  <div class="sec" data-i="2">
+    <div class="sec-head"><span class="sec-no">第二段</span><h2>14.1.1.2 关系边的中医逻辑约束</h2></div>
+    <div class="talk">关系边的中医逻辑约束：禁止用统计相关替代逻辑因果（如'舌紫'既可见于血瘀亦可见于寒凝——多义性必须保留）；关系边方向须符合中医认知（'肝气郁结→胁胀'可，'胁胀→肝气郁结'须加'常兼'限定）；'可辅助参考'与'必然'须分级标注，避免硬性映射造成误诊引导。</div>
+  </div>
+  <div class="sec" data-i="3">
+    <div class="sec-head"><span class="sec-no">第三段</span><h2>14.2.1.1 问诊流程的数字化与输入输出边界</h2></div>
+    <div class="talk">智能问诊系统：将'十问歌'流程数字化——按主诉引导逐项采集（寒热、汗、疼痛、头身胸腹、耳目、睡眠、饮食口味、二便、经带、小儿），输入输出边界明确：系统只负责资料采集与提示，不作终决诊断。设计原则：①问题可理解（患者能听懂）；②逻辑可追溯（每项问题有中医依据）；③边界可说明（明确告知哪些信息AI无法获取，如望神切脉须真实医者执行）。</div>
+  </div>
+  <div class="sec" data-i="4">
+    <div class="sec-head"><span class="sec-no">第四段</span><h2>14.2.1.2 辅助辨证的推理链设计</h2></div>
+    <div class="talk">辅助辨证推理链设计：输入（四诊资料）→证候要素提取（病位、病性）→候选证候生成（按八纲/病性/脏腑辨证规则）→证据链呈现（每个候选证候附支持症状与舌脉依据）→不确定性标注（低置信度提示'建议人工复核'）。推理链全程透明，禁止黑箱输出；训练数据须声明来源（教材病案、临床真实数据）与人群偏见（年龄、地域、体质分布）。</div>
+  </div>
+  <div class="sec" data-i="5">
+    <div class="sec-head"><span class="sec-no">第五段</span><h2>14.2.2.1 中医大模型辅助诊断的边界</h2></div>
+    <div class="talk">中医大模型辅助诊断的边界：大模型可承担知识检索、病案生成辅助、辨证思路提示等'辅助决策'功能，但不得替代医师的最终诊断；输出必须可溯源（引用教材/指南条款）、标注不确定性（'可能''需结合临床'）、支持人工复核（'辅助决策+人工复核'双轨机制）。禁止'替代性幻觉'——如AI自动开方无需医师审核、AI直接下中医诊断结论。</div>
+  </div>
+  <div class="sec" data-i="6">
+    <div class="sec-head"><span class="sec-no">第六段</span><h2>14.2.2.2 舌诊多维度分析与AI辅助预警（结直肠癌预警等）</h2></div>
+    <div class="talk">舌诊多维度分析与AI辅助预警：基于中医舌诊多维度分析体系（舌色、舌形、苔色、苔质、舌下络脉等分维度特征提取），结合临床大数据构建预警模型（如国家科技重大专项'基于中医舌诊多维度分析体系的结直肠癌预警技术研究'方向）。应用红线：AI舌诊只作'辅助参考'，不得替代四诊合参；预警结果须由医师结合病史、检查（如肠镜、病理）综合判断；模型须报告敏感度、特异度与适用人群。</div>
+  </div>
+  <div class="sec" data-i="7">
+    <div class="sec-head"><span class="sec-no">第七段</span><h2>14.3.1.1 四诊技能与辨证能力的多维评价</h2></div>
+    <div class="talk">四诊技能与辨证能力的多维评价：①知识层（概念、术语、标准掌握度——对齐GB/T 16751.2-2021）；②技能层（舌象辨识、脉象指感、问诊完整性、病案书写规范）；③思维层（辨证推理链完整性、四诊合参运用、病证结合能力）；④素养层（批判性思维、医患沟通、AI工具合理使用）。评价方式：知识树测试、模拟舌象/脉象辨识、智能问诊病案推演、临床见习考核、AI辨证复核练习。</div>
+  </div>
+  <div class="sec" data-i="8">
+    <div class="sec-head"><span class="sec-no">第八段</span><h2>14.3.1.2 知识树掌握度与临床思维评估</h2></div>
+    <div class="talk">知识树掌握度评估：以诊断知识树的节点覆盖度、关系正确率、推理链完整度为指标（如'血瘀证'节点须能正确关联四诊要点与兼证鉴别）；临床思维评估：以典型病案为载体的辨证思维路径评分（从主诉到证候诊断的推理质量）。</div>
+  </div>
+  <div class="sec" data-i="9">
+    <div class="sec-head"><span class="sec-no">第九段</span><h2>14.3.2.1 识别AI辨证误判（真寒假热等）</h2></div>
+    <div class="talk">识别AI辨证误判：设计对抗性训练案例——真寒假热（AI按'面赤、烦躁'判热证而忽略舌淡脉微）、真实假虚（AI按'倦怠、脉细'判虚证而忽略苔黄腹满）、血瘀兼证遗漏（AI只判'血瘀证'而未辨气虚血瘀/气滞血瘀兼夹）等，训练学生识别AI的'模式化误判'，坚持四诊合参与舌脉优先。</div>
+  </div>
+  <div class="sec" data-i="10">
+    <div class="sec-head"><span class="sec-no">第十段</span><h2>14.3.2.2 辅助决策+人工复核的双轨机制</h2></div>
+    <div class="talk">辅助决策+人工复核的双轨机制：AI平台输出任何诊断建议均须经医师复核签字方可进入病案；教学场景中学生使用AI辨证须同时提交人工推理过程；平台设计'质疑按钮'（对AI结论标注异议并给出依据）培养学生的批判性使用能力——技术服务于人，人始终是诊断的主体。</div>
+  </div>
+</div>
+<div class="footer">中医诊断学 · 第14章 14AI平台 · 知识网络课程教学</div>
+<script>
+const SUBS = [{"no": 1, "title": "14.1.1.1 舌脉症-证候-病机的语义网络", "text": "四诊-辨证知识图谱：以'舌象、脉象、症状、体征→证候→病机→治法'为核心节点构建语义网络。节点属性须完整（定义、临床特征、鉴别要点、常见兼证、舌脉依据），关系边须标注依据来源（教材/指南/专家共识）。如'刺痛固定拒按——血瘀证——瘀血内阻——活血化瘀'与'舌紫暗瘀斑——血瘀证'构成互证链。"}, {"no": 2, "title": "14.1.1.2 关系边的中医逻辑约束", "text": "关系边的中医逻辑约束：禁止用统计相关替代逻辑因果（如'舌紫'既可见于血瘀亦可见于寒凝——多义性必须保留）；关系边方向须符合中医认知（'肝气郁结→胁胀'可，'胁胀→肝气郁结'须加'常兼'限定）；'可辅助参考'与'必然'须分级标注，避免硬性映射造成误诊引导。"}, {"no": 3, "title": "14.2.1.1 问诊流程的数字化与输入输出边界", "text": "智能问诊系统：将'十问歌'流程数字化——按主诉引导逐项采集（寒热、汗、疼痛、头身胸腹、耳目、睡眠、饮食口味、二便、经带、小儿），输入输出边界明确：系统只负责资料采集与提示，不作终决诊断。设计原则：①问题可理解（患者能听懂）；②逻辑可追溯（每项问题有中医依据）；③边界可说明（明确告知哪些信息AI无法获取，如望神切脉须真实医者执行）。"}, {"no": 4, "title": "14.2.1.2 辅助辨证的推理链设计", "text": "辅助辨证推理链设计：输入（四诊资料）→证候要素提取（病位、病性）→候选证候生成（按八纲/病性/脏腑辨证规则）→证据链呈现（每个候选证候附支持症状与舌脉依据）→不确定性标注（低置信度提示'建议人工复核'）。推理链全程透明，禁止黑箱输出；训练数据须声明来源（教材病案、临床真实数据）与人群偏见（年龄、地域、体质分布）。"}, {"no": 5, "title": "14.2.2.1 中医大模型辅助诊断的边界", "text": "中医大模型辅助诊断的边界：大模型可承担知识检索、病案生成辅助、辨证思路提示等'辅助决策'功能，但不得替代医师的最终诊断；输出必须可溯源（引用教材/指南条款）、标注不确定性（'可能''需结合临床'）、支持人工复核（'辅助决策+人工复核'双轨机制）。禁止'替代性幻觉'——如AI自动开方无需医师审核、AI直接下中医诊断结论。"}, {"no": 6, "title": "14.2.2.2 舌诊多维度分析与AI辅助预警（结直肠癌预警等）", "text": "舌诊多维度分析与AI辅助预警：基于中医舌诊多维度分析体系（舌色、舌形、苔色、苔质、舌下络脉等分维度特征提取），结合临床大数据构建预警模型（如国家科技重大专项'基于中医舌诊多维度分析体系的结直肠癌预警技术研究'方向）。应用红线：AI舌诊只作'辅助参考'，不得替代四诊合参；预警结果须由医师结合病史、检查（如肠镜、病理）综合判断；模型须报告敏感度、特异度与适用人群。"}, {"no": 7, "title": "14.3.1.1 四诊技能与辨证能力的多维评价", "text": "四诊技能与辨证能力的多维评价：①知识层（概念、术语、标准掌握度——对齐GB/T 16751.2-2021）；②技能层（舌象辨识、脉象指感、问诊完整性、病案书写规范）；③思维层（辨证推理链完整性、四诊合参运用、病证结合能力）；④素养层（批判性思维、医患沟通、AI工具合理使用）。评价方式：知识树测试、模拟舌象/脉象辨识、智能问诊病案推演、临床见习考核、AI辨证复核练习。"}, {"no": 8, "title": "14.3.1.2 知识树掌握度与临床思维评估", "text": "知识树掌握度评估：以诊断知识树的节点覆盖度、关系正确率、推理链完整度为指标（如'血瘀证'节点须能正确关联四诊要点与兼证鉴别）；临床思维评估：以典型病案为载体的辨证思维路径评分（从主诉到证候诊断的推理质量）。"}, {"no": 9, "title": "14.3.2.1 识别AI辨证误判（真寒假热等）", "text": "识别AI辨证误判：设计对抗性训练案例——真寒假热（AI按'面赤、烦躁'判热证而忽略舌淡脉微）、真实假虚（AI按'倦怠、脉细'判虚证而忽略苔黄腹满）、血瘀兼证遗漏（AI只判'血瘀证'而未辨气虚血瘀/气滞血瘀兼夹）等，训练学生识别AI的'模式化误判'，坚持四诊合参与舌脉优先。"}, {"no": 10, "title": "14.3.2.2 辅助决策+人工复核的双轨机制", "text": "辅助决策+人工复核的双轨机制：AI平台输出任何诊断建议均须经医师复核签字方可进入病案；教学场景中学生使用AI辨证须同时提交人工推理过程；平台设计'质疑按钮'（对AI结论标注异议并给出依据）培养学生的批判性使用能力——技术服务于人，人始终是诊断的主体。"}];
+const v = document.getElementById('v');
+const capSec = document.getElementById('capSec');
+const capText = document.getElementById('capText');
+const SECS = document.querySelectorAll('.sec');
+const LEAD = 1.6, DUR = 20;
+const total = SUBS.length * DUR;
+function setCap(s,on){
+  capSec.classList.toggle('cap-gone',!on);
+  capText.classList.toggle('cap-gone',!on);
+  if(on&&s){capSec.textContent='\u258d §'+s.no+' '+s.title;capText.textContent=s.text;}
+}
+function bridge(i){
+  const prev=SUBS[i-1],next=SUBS[i];
+  capSec.textContent='\u258d 段间衔接';
+  capText.textContent=prev?('…'+(prev.text.slice(-30))+'（下一段：'+(next?next.title:'')+'）'):'';
+}
+function mark(i){SECS.forEach(function(el,k){const n=k+1;el.classList.toggle('now',n===i);el.classList.toggle('done',n<i);});}
+if(v){
+ v.addEventListener('timeupdate',function(){
+  const frac=(v.currentTime||0)/(v.duration||600);
+  const t=frac*total;
+  let i=Math.floor(t/DUR); if(i<0)i=0; if(i>=SUBS.length)i=SUBS.length-1;
+  const start=i*DUR-LEAD, end=i*DUR+DUR+0.8;
+  if(t>=start&&t<=end){setCap(SUBS[i],true);}else{bridge(Math.min(i+(t>end?1:0),SUBS.length-1));}
+  mark(i);
+ });
+ v.muted=true; v.play().catch(function(){});
+ const un=function(){v.muted=false;};
+ document.addEventListener('click',un,{once:true});
+ document.addEventListener('keydown',un,{once:true});
+}
+</script>
+</body></html>

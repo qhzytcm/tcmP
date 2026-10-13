@@ -1,0 +1,133 @@
+{
+ "book": "中医诊断学",
+ "slug": "zhenduan",
+ "source": "中医诊断学.xlsx",
+ "chapters": [
+  {
+   "no": 1,
+   "name": "1绪论",
+   "file": "第01章-1绪论-视频课程.html",
+   "video": "第01章-1绪论.mp4",
+   "segs": 13,
+   "size_kb": 10400,
+   "html": true
+  },
+  {
+   "no": 2,
+   "name": "2望诊",
+   "file": "第02章-2望诊-视频课程.html",
+   "video": "第02章-2望诊.mp4",
+   "segs": 13,
+   "size_kb": 16058,
+   "html": true
+  },
+  {
+   "no": 3,
+   "name": "3闻诊",
+   "file": "第03章-3闻诊-视频课程.html",
+   "video": "第03章-3闻诊.mp4",
+   "segs": 9,
+   "size_kb": 4365,
+   "html": true
+  },
+  {
+   "no": 4,
+   "name": "4问诊",
+   "file": "第04章-4问诊-视频课程.html",
+   "video": "第04章-4问诊.mp4",
+   "segs": 13,
+   "size_kb": 11928,
+   "html": true
+  },
+  {
+   "no": 5,
+   "name": "5切诊",
+   "file": "第05章-5切诊-视频课程.html",
+   "video": "第05章-5切诊.mp4",
+   "segs": 13,
+   "size_kb": 10529,
+   "html": true
+  },
+  {
+   "no": 6,
+   "name": "6八纲辨证",
+   "file": "第06章-6八纲辨证-视频课程.html",
+   "video": "第06章-6八纲辨证.mp4",
+   "segs": 13,
+   "size_kb": 9738,
+   "html": true
+  },
+  {
+   "no": 7,
+   "name": "7病性辨证",
+   "file": "第07章-7病性辨证-视频课程.html",
+   "video": "第07章-7病性辨证.mp4",
+   "segs": 13,
+   "size_kb": 10634,
+   "html": true
+  },
+  {
+   "no": 8,
+   "name": "8脏腑辨证",
+   "file": "第08章-8脏腑辨证-视频课程.html",
+   "video": "第08章-8脏腑辨证.mp4",
+   "segs": 13,
+   "size_kb": 16235,
+   "html": true
+  },
+  {
+   "no": 9,
+   "name": "9经络辨证",
+   "file": "第09章-9经络辨证-视频课程.html",
+   "video": "第09章-9经络辨证.mp4",
+   "segs": 6,
+   "size_kb": 3082,
+   "html": true
+  },
+  {
+   "no": 10,
+   "name": "10六经辨证",
+   "file": "第10章-10六经辨证-视频课程.html",
+   "video": "第10章-10六经辨证.mp4",
+   "segs": 8,
+   "size_kb": 3718,
+   "html": true
+  },
+  {
+   "no": 11,
+   "name": "11卫气营血辨证",
+   "file": "第11章-11卫气营血辨证-视频课程.html",
+   "video": "第11章-11卫气营血辨证.mp4",
+   "segs": 6,
+   "size_kb": 2923,
+   "html": true
+  },
+  {
+   "no": 12,
+   "name": "12三焦辨证",
+   "file": "第12章-12三焦辨证-视频课程.html",
+   "video": "第12章-12三焦辨证.mp4",
+   "segs": 4,
+   "size_kb": 1719,
+   "html": true
+  },
+  {
+   "no": 13,
+   "name": "13诊断与病案",
+   "file": "第13章-13诊断与病案-视频课程.html",
+   "video": "第13章-13诊断与病案.mp4",
+   "segs": 8,
+   "size_kb": 6924,
+   "html": true
+  },
+  {
+   "no": 14,
+   "name": "14AI平台",
+   "file": "第14章-14AI平台-视频课程.html",
+   "video": "第14章-14AI平台.mp4",
+   "segs": 10,
+   "size_kb": 7129,
+   "html": true
+  }
+ ]
+}
