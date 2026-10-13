@@ -9,63 +9,107 @@
    "file": "第01章-1绪论-视频课程.html",
    "video": "第01章-1绪论.mp4",
    "segs": 13,
-   "size_kb": 9955,
+   "size_kb": 9957,
    "html": true
   },
   {
    "no": 2,
    "name": "2哲思",
-   "html": false
+   "file": "第02章-2哲思-视频课程.html",
+   "video": "第02章-2哲思.mp4",
+   "segs": 13,
+   "size_kb": 14749,
+   "html": true
   },
   {
    "no": 3,
    "name": "3脏腑",
-   "html": false
+   "file": "第03章-3脏腑-视频课程.html",
+   "video": "第03章-3脏腑.mp4",
+   "segs": 13,
+   "size_kb": 19336,
+   "html": true
   },
   {
    "no": 4,
    "name": "4精神",
-   "html": false
+   "file": "第04章-4精神-视频课程.html",
+   "video": "第04章-4精神.mp4",
+   "segs": 13,
+   "size_kb": 23562,
+   "html": true
   },
   {
    "no": 5,
    "name": "5经络",
-   "html": false
+   "file": "第05章-5经络-视频课程.html",
+   "video": "第05章-5经络.mp4",
+   "segs": 13,
+   "size_kb": 21359,
+   "html": true
   },
   {
    "no": 6,
    "name": "6体窍",
-   "html": false
+   "file": "第06章-6体窍-视频课程.html",
+   "video": "第06章-6体窍.mp4",
+   "segs": 13,
+   "size_kb": 11539,
+   "html": true
   },
   {
    "no": 7,
    "name": "7病因",
-   "html": false
+   "file": "第07章-7病因-视频课程.html",
+   "video": "第07章-7病因.mp4",
+   "segs": 13,
+   "size_kb": 36735,
+   "html": true
   },
   {
    "no": 8,
    "name": "8发病",
-   "html": false
+   "file": "第08章-8发病-视频课程.html",
+   "video": "第08章-8发病.mp4",
+   "segs": 13,
+   "size_kb": 19766,
+   "html": true
   },
   {
    "no": 9,
    "name": "9病机",
-   "html": false
+   "file": "第09章-9病机-视频课程.html",
+   "video": "第09章-9病机.mp4",
+   "segs": 13,
+   "size_kb": 33695,
+   "html": true
   },
   {
    "no": 10,
    "name": "10治则",
-   "html": false
+   "file": "第10章-10治则-视频课程.html",
+   "video": "第10章-10治则.mp4",
+   "segs": 13,
+   "size_kb": 24213,
+   "html": true
   },
   {
    "no": 11,
    "name": "11养康",
-   "html": false
+   "file": "第11章-11养康-视频课程.html",
+   "video": "第11章-11养康.mp4",
+   "segs": 13,
+   "size_kb": 28711,
+   "html": true
   },
   {
    "no": 12,
    "name": "12平台度量",
-   "html": false
+   "file": "第12章-12平台度量-视频课程.html",
+   "video": "第12章-12平台度量.mp4",
+   "segs": 13,
+   "size_kb": 11385,
+   "html": true
   }
  ]
 }
