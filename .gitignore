@@ -76,3 +76,9 @@ data/bingyuan_terms_icd.json
 data/bingyuan_entries.json
 # 词表缓存（可从语料重建）
 data/tcm_ref_lexicon.json
+
+# ===== 教材授课视频（2026-10）：媒体不入库（本地+服务器保留），只入库课件/索引/清单 =====
+docs/教材视频/**/*.mp4
+docs/教材视频/**/*.video
+docs/教材视频/**/*.wav
+docs/教材视频/**/ch*/

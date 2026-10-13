@@ -1,0 +1,71 @@
+{
+ "book": "中医基础理论",
+ "slug": "zhongji-jichu",
+ "source": "中医基础理论final.xlsx",
+ "chapters": [
+  {
+   "no": 1,
+   "name": "1绪论",
+   "file": "第01章-1绪论-视频课程.html",
+   "video": "第01章-1绪论.mp4",
+   "segs": 13,
+   "size_kb": 9955,
+   "html": true
+  },
+  {
+   "no": 2,
+   "name": "2哲思",
+   "html": false
+  },
+  {
+   "no": 3,
+   "name": "3脏腑",
+   "html": false
+  },
+  {
+   "no": 4,
+   "name": "4精神",
+   "html": false
+  },
+  {
+   "no": 5,
+   "name": "5经络",
+   "html": false
+  },
+  {
+   "no": 6,
+   "name": "6体窍",
+   "html": false
+  },
+  {
+   "no": 7,
+   "name": "7病因",
+   "html": false
+  },
+  {
+   "no": 8,
+   "name": "8发病",
+   "html": false
+  },
+  {
+   "no": 9,
+   "name": "9病机",
+   "html": false
+  },
+  {
+   "no": 10,
+   "name": "10治则",
+   "html": false
+  },
+  {
+   "no": 11,
+   "name": "11养康",
+   "html": false
+  },
+  {
+   "no": 12,
+   "name": "12平台度量",
+   "html": false
+  }
+ ]
+}
