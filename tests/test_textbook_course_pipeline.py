@@ -89,3 +89,27 @@ def test_parse_chapter_extracts_prose_and_skips_noise(book):
 def test_parse_chapter_second_chapter(book):
     segs = tcp.parse_chapter(book, "2哲思")
     assert segs and segs[0]["text"].startswith("气是构成人体")
+
+
+def test_parse_chapter_trailing_empty_column(tmp_path):
+    """回归: 表头“内容”列不在行尾(尾部有空列)时仍取到正确内容列。
+
+    实测 2026-10-13: 《方剂学》9 章(解表/清热/固涩/理血/治风/祛痰/消食/治痈疡/AI)
+    的 sheet 有 6 列(末尾空列)，旧实现 cells[-1] 读到空 → 0 段、被静默跳过。
+    """
+    p = tmp_path / "b.xlsx"
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "1绪论"
+    for r in [
+        ["章", "节", "小节", "段", "内容", ""],                 # 6 列，末列为空
+        ["01", "", "", "", "第1章 绪论", ""],
+        ["", "1", "", "", "1.1 学科对象", ""],
+        ["", "", "1", "", "1.1.1 定义", ""],
+        ["", "", "", "1", "这是正文，应当被解析为段落文本。", ""],
+    ]:
+        ws.append(r)
+    wb.save(p)
+    segs = tcp.parse_chapter(p, "1绪论")
+    assert segs, "尾部空列导致 0 段（回归）"
+    assert "正文" in segs[0]["text"]

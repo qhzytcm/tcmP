@@ -62,12 +62,20 @@ def parse_chapter(xlsx: Path, sheet: str) -> list[dict]:
     stack: dict[int, str] = {}     # level -> heading text
     buckets: list[dict] = []       # [{title, level, paras:[...]}]
     cur: dict | None = None
+    content_idx: int | None = None  # 以表头“内容”列定位；兼容尾部空列
 
     for row in ws.iter_rows(values_only=True):
         cells = [(str(c).strip() if c is not None else "") for c in row]
         if not cells:
             continue
-        content = cells[-1]
+        if content_idx is None and "内容" in cells:
+            content_idx = cells.index("内容")
+            continue  # 表头行
+        if content_idx is not None and content_idx < len(cells):
+            content = cells[content_idx]
+        else:
+            nonempty = [c for c in cells if c]
+            content = nonempty[-1] if nonempty else ""
         if not content or content == "内容" or SKIP_RE.match(content):
             continue
         # 章/节/小节/段 列另有编码——但标题文本总在最后一列
