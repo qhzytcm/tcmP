@@ -20,7 +20,13 @@ KANBAN_JSON = Path(sys.argv[1]) if len(sys.argv) > 1 else BASE / "kanban_tmp.jso
 # 截至 2026-09-04 周报：textbook 看板 done=24, blocked=2, ready=14（40 卡）
 # 截至 2026-09-11 周报：textbook 板已于 9/8 16:59 归档重建（当前 0 卡）；
 #   归档板 hermes-home/kanban/boards/_archived/textbook-1788857952/kanban.db 终态 = 65 done + 2 archived（67 卡）
-BASELINE = {"done": 65, "blocked": 0, "ready": 0, "archived": 2}
+# 截至 2026-10-16 周报（第 43 周）：🎉 结构性解冻 —— 10/13 17:00–18:00 一次性新建 1,145 卡。
+#   全项目未归档板合计 = 1,216 卡（91 ready + 1,088 todo + 37 archived；0 blocked）；
+#   textbook 当前板 = 0 卡（空白板，9/8 归档重建后第 38 天）；归档板 67 卡不变。
+#   ⚠️ 关键落差：1,088 章卡 assignee=tcm-author 但停留在 todo；91 张 ready 卡全部无 assignee
+#   （dispatch dry-run → Skipped (unassigned)）；gateway 连续第 7 周无进程。
+#   详见 archive/weekly-progress-20261016.md
+BASELINE = {"done": 65, "blocked": 0, "ready": 91, "todo": 1088, "archived": 37}
 
 def count_md_files(subdir):
     """统计某目录下所有 .md 文件（递归）。"""
