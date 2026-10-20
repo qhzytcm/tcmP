@@ -82,3 +82,8 @@ docs/教材视频/**/*.mp4
 docs/教材视频/**/*.video
 docs/教材视频/**/*.wav
 docs/教材视频/**/ch*/
+# ===== 2026-10-20 OpenViking 部署产物：大体积 wheel 与含明文凭据的探针脚本不入库 =====
+deps/ov/
+scripts/hw.py
+scripts/lc_file.py
+scripts/lc_ssh.py
